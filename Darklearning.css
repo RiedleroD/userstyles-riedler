@@ -1,0 +1,410 @@
+@-moz-document domain("elearning.tgm.ac.at") {
+/*NO FRICKING TEXT SHADOW, OK?*/
+h1,h2,h3,h4,h5,h6,a,p,li,label,div,span{
+    color:#888;}
+img.userpicture{
+    filter:none !important}
+*{
+    text-shadow:none !important;}
+/*MathJax Equations*/
+.filter_mathjaxloader_equation{
+    color:#888}
+/*Error Boxes*/
+div.errorbox{
+    background-color:#622;
+    border:none;}
+div.errorbox p.errormessage{
+    color:#AAA !important}
+div.errorbox p.errorcode{
+    color:#418BA4 !important}
+div.errorbox p.errorcode:hover{
+    color:#6AC !important}
+/*generally all links*/
+a{
+    color:#418BA4}
+a:hover{
+    color:#6AC}
+/*main page background, y'know*/
+#page, :root{
+    background-color:#222 !important;}
+/*Dashboard Navbar*/
+.breadcrumb>li{
+    background-color:#333 !important;
+    border-color:#333 !important;
+    color:#888 !important;}
+.breadcrumb>li>span>a::before{
+    color:#888 !important}
+.breadcrumb>li::after{
+    border-left-color:#333 !important}
+.breadcrumb>li::before{
+    border-left-color:#888 !important}
+/*Navbar*/
+#essentialnavbar>.navbar>.navbar-inner{
+    filter: invert(0.80) hue-rotate(180deg);
+    border-radius:0 !important}
+.btn-navbar{
+    background-image: none !important;
+    box-shadow:none !important;
+    border:none !important;}
+.btn-navbar span{
+    background-color:#418BA4 !important;
+    box-shadow:none !important}
+.custommenus *{
+    border:none !important;}
+.dropdown-menu img.icon{
+    filter:invert(0.8) hue-rotate(180deg) }
+/*right navbar buttons*/
+.popover-region-toggle,#custom_menu_editing>ul>li>a{
+    filter:invert(0.80)}
+/*Buttons*/
+.heading-rts>a,.footer-rts>a{
+    background-color:#418BA4 !important;
+    color:#151515 !important;
+    background-image:none !important;
+    border:none !important;
+    box-shadow:none;}
+input[type="submit"]{
+    background-color:#418BA4 !important;
+    color:#151515 !important;
+    background-image:none !important;
+    border:none !important;
+    box-shadow:none;}
+/*textareas*/
+textarea{
+    background-color:#333;
+    box-shadow:none;}
+/*TGM logo Banner*/
+#page-header div{
+    background-color:#222;}
+#page-header img{
+    filter: invert(1) hue-rotate(169deg) brightness(1.24) opacity(0.7);
+    margin-top: -1em}
+#page-header{
+    border:none !important}
+/*main box in most pages*/
+#region-main{
+    background-color:#333 !important;
+    border:none !important;}
+/*these seperators made of tiny squares*/
+.bor{
+    filter:brightness(0.6)}
+/*side boxes*/
+div[id^="inst"]{
+    background-color:#333 !important;
+    border:none;}
+div[id^="inst"] h2{
+    color:#888 !important;}
+div[id^="inst"] .nowDiv{
+    filter:invert(1) brightness(0.5)}
+/*navigation box*/
+.title{
+    border-color:#888 !important;}
+#inst4 li *{
+    color:#418BA4 !important;}
+#inst4 li:hover>p>a{
+    color:#6AC !important;}
+#inst4 li:hover{
+    border:0.1em solid #FFF3;
+    border-radius:0.7em;
+    margin-top:-0.3em;
+    margin-bottom:-0.3em;
+    margin-left:-0.1em;
+    background-color:#0002}
+/*Scrollbar*/
+::-webkit-scrollbar,::-webkit-scrollbar-track,::-webkit-scrollbar-track-piece{
+    background-color:#418BA4 !important}
+::-webkit-scrollbar-corner,::-webkit-scrollbar-thumb{
+    background-color:#222 !important;
+    border-radius:0.4em;}
+}
+
+@-moz-document url("https://elearning.tgm.ac.at/my/"), url("http://elearning.tgm.ac.at/my/"), url("http://elearning.tgm.ac.at/my/index.php"), url("https://elearning.tgm.ac.at/my/index.php") {
+/*all minor border edits*/
+.well-small,.block_myoverview,.btn-group a,.nav-tabs,.nav-tabs a,.header>.title,.calendarwrapper>.event>hr{
+    border-color:#444 !important;}
+/*left sidebars*/
+.block{
+    background-color:#222 !important;
+    border:0.15em solid #444 !important;}
+/*main box*/
+#region-main{
+    background-color:#333 !important;
+    border:none !important;}
+#region-main>div{
+    background-color:#333 !important;}
+.block_myoverview{
+    border:none !important;
+    background-color:#333 !important;}
+/*mini boxes in main box*/
+#pc-for-in-progress>.row-fluid>.span6>.well{
+    background-color:#222 !important;
+    border:none !important;}
+/*mini boxes text*/
+.course-info-container>.media>.media-body>h4>a{
+    color:#418BA4 !important}
+.course-info-container>.media>.media-body>h4>a:hover{
+    color:#6AC !important}
+.course-info-container>.text-muted{
+    color:#888}
+/*mini boxes progress circles*/
+.progress-chart-container>div{
+    background-color:#222 !important}
+.progress-indicator>svg>g>circle{
+    stroke:#222 !important;
+    stroke-width:20px !important;}
+.progress-text{
+    color:#418BA4 !important}
+.progress-doughnut{
+    border-color:#888 !important}
+.fa-graduation-cap::before{
+    color:#888}
+.coursepattern{
+    filter: brightness(0.5)}
+}
+
+@-moz-document url("https://elearning.tgm.ac.at/login/index.php"), url("http://elearning.tgm.ac.at/login/index.php") {
+/*Main Box*/
+.loginbox,div [role="main"],#region-main{
+    background-color:#333 !important;
+    border:none !important;}
+/*Standard Text*/
+h2,label,.desc{
+    color:#888}
+/*buttons and input fields*/
+#loginbtn,.guestform>input,.form-input>input{
+    background-color:#444 !important;
+    background-image:none !important;
+    border:none !important;
+    box-shadow:none !important;
+    color:#888 !important}
+/*links*/
+.forgetpass a{
+    color:#418BA4 !important}
+.forgetpass a:hover{
+    color:#6AC !important}
+}
+
+@-moz-document url-prefix("http://elearning.tgm.ac.at/course/view.php"), url-prefix("https://elearning.tgm.ac.at/course/view.php") {
+/*some table in there*/
+.mod-indent-outer>div>.contentwithoutlink>.no-overflow table{
+    background-color:#222 !important;
+    border-radius:0.8em;
+    border:0;}
+.mod-indent-outer>div>.contentwithoutlink>.no-overflow table *{
+    border-color:#333 !important;}
+/*some links*/
+.activityinstance>a{
+    color:#418BA4 !important}
+.activityinstance>a:hover{
+    color:#6AC !important}
+/*main box*/
+#maincontent{
+    background-color:#333 !important}
+#region-main>div>.course-content>.topics>li[id^="section-"]{
+    background-color:#333;}
+/*images in main box*/
+#content img{
+    filter: brightness(0.5)}
+/*progress indicators*/
+.barRow>div{
+    border-right:none !important;
+    border-color:#333 !important}
+.progressEventInfo[id^="progressBarInfo"]{
+    color:#888;
+    background-color:#222;
+    border-radius:0.5em}
+.progressEventInfo[id^="progressBarInfo"] img{
+    padding-top:0.4em;
+    padding-left:0.2em;}
+.progressEventInfo[id^="progressBarInfo"]#text{
+    background-color:#FFF !important}
+.progressEventInfo>a{
+    color:#418BA4 !important}
+.progressEventInfo>a:hover{
+    color:#6AC !important}
+/*avilability info*/
+.availabilityinfo span{
+    background-color:#418BA4 !important;
+    color:#151515 !important;
+    font-weight: 500}
+}
+
+@-moz-document url-prefix("http://elearning.tgm.ac.at/mod/assign/view.php"), url-prefix("https://elearning.tgm.ac.at/mod/assign/view.php") {
+#region-main>div[role="main"]{
+    background-color:#333 !important}
+.generaltable *{
+    background-color:#0000 !important;
+    border:none !important;
+    color:#888;}
+.generaltable{
+    background-color:#222 !important;
+    border-radius:1em !important;
+    border:0em solid !important;}
+.submissionnotgraded{
+    color:#888 !important}
+.generaltable tr:hover:nth-child(even) .c0{
+    color:#888 !important}
+.submithelp{
+    color:#888;}
+#fgroup_id_buttonar{
+    background-color:#333 !important;
+    border:none !important;
+    padding-right:0.35em !important;
+    box-shadow: 0 0 0.5em #000}
+.fp-navbar,.filemanager-container{
+    filter:invert(0.9) hue-rotate(180deg)}
+.fp-restrictions span{
+    color:#888 !important;}
+label[for="id_files_filemanager"]{
+    color:#888}
+.generaltable .latesubmission{
+    color:#888 !important}
+/*settings box*/
+#inst5{
+    background-color:#222 !important;
+    border:none;}
+/*all images in main div*/
+#content img{
+    filter: invert(0.9) hue-rotate(180deg)}
+}
+
+@-moz-document url-prefix("http://elearning.tgm.ac.at/mod/lesson/view.php"), url-prefix("https://elearning.tgm.ac.at/mod/lesson/view.php") {
+#region-main>div[role="main"]>div.contents img{
+    filter:invert(1)}
+#region-main>div[role="main"]{
+    background-color:#333 !important}
+video{
+    filter:invert(1)}
+}
+
+@-moz-document url-prefix("http://elearning.tgm.ac.at/mod/"), url-prefix("https://elearning.tgm.ac.at/mod/") {
+#prev-activity-link,#next-activity-link{
+    color:#418BA4;
+    text-decoration:none}
+#prev-activity-link:hover,#next-activity-link:hover{
+    color:#6AC;}
+#jump-to-activity{
+    background-color:#222;
+    border:none;
+    color:#888 !important}
+.generaltable .lastcol>a{
+    background-color:#222 !important}
+.generaltable a:hover{
+    color:#6AC !important}
+.generaltable th{
+    color:#888}
+.generaltable textarea{
+    background-color:#333 !important;
+    color:#888 !important;
+    resize:none;
+    height:10em;
+    width:25em;
+    overflow:hidden;}
+pre,code{
+    background-color:#222;
+    color:#888;
+    border-color:#418BA4}
+.autolink{
+    color:#418BA4 !important}
+.autolink:hover{
+    color:#6AC !important}
+}
+
+@-moz-document url-prefix("http://elearning.tgm.ac.at/mod/quiz/"), url-prefix("https://elearning.tgm.ac.at/mod/quiz/") {
+#region-main>div[role="main"]{
+    background-color:#333 !important}
+#region-main table tr *.cell{
+    background-color:#0000 !important;
+    border:none;
+    color:#888;}
+#region-main table tr>td.cell, #region-main table tr>td.cell *{
+    color:#418BA4 !important}
+#region-main table{
+    background-color:#222;
+    border-radius:0.7em}
+form.questionflagsaveform>div>div.que div.info{
+    border-radius:0.7em !important;}
+form.questionflagsaveform>div>div.que div{
+    background-color:#222;
+    border:none;
+    color:#888;}
+.que.multichoice .answer div.r0.incorrect,
+.que.multichoice .answer div.r1.incorrect{
+    background-color:#922 !important;
+    border-radius:0.7em;}
+.que.multichoice .answer div.r0.correct,
+.que.multichoice .answer div.r1.correct,
+table.answer>tbody>tr>td.correct>select{
+    background-color:#272 !important;
+    border-radius:0.7em;
+    color:#151515 !important;
+    border:none}
+table.answer>tbody>tr>td{
+    background-color:#0000 !important;}
+.incorrect>.fa-fw:before,.fa-check:before{
+    display:none;}
+form.questionflagsaveform div.outcome{
+    background-color:#333 !important;
+    border-radius:0}
+form.questionflagsaveform div.outcome>div.feedback{
+    border:1em solid #222;
+    border-radius:0.7em}
+input[type^="text"]{
+    background-color:#222 !important;}
+#region-main>div[role="main"] img{
+    filter: invert(0.85) hue-rotate(153deg);
+    border-radius:0.7em;}
+#mod_quiz_navblock{
+    background-color:#333 !important;
+    border:none;}
+#mod_quiz_navblock>div.header *{
+    color:#418BA4 !important}
+#mod_quiz_navblock>div.content>div.qn_buttons>a.qnbutton{
+    background-color:#222;
+    color:#888;
+    border:none !important;
+    box-shadow:none}
+#mod_quiz_navblock>div.content>div.qn_buttons>a.qnbutton>span.thispageholder{
+    border:none;}
+#mod_quiz_navblock>div.content>div.qn_buttons>a.qnbutton.flagged>span.thispageholder{
+    background: transparent url(https://riedler.gelse.net/sfto/red_triangle_top_right.svg) 15px 0 no-repeat}
+div.formulation.clearfix{
+    background-color:#444;
+    border:none}
+input[type="text"]{
+    background-color:#222 !important;
+    color:#888 !important;
+    border:none}
+div.info{
+    background-color:#444 !important;
+    color:#888;
+    border:none !important;}
+a.notyetanswered span.trafficlight{
+    background-color:#888 !important}
+a.invalidanswer span.trafficlight{
+    background-color:#722 !important;
+    background-image:none !important}
+select.custom-select{
+    background-color:#333;
+    border:none;
+    color:#888;}
+}
+
+@-moz-document url("http://elearning.tgm.ac.at/"), url("https://elearning.tgm.ac.at/") {
+#marketing-spots .span4{
+    background-color:#333 !important;
+    border:none !important}
+.marketing-image{
+    filter:invert(0.85) hue-rotate(180deg)}
+#region-main>div{
+    background-color:#333 !important}
+}
+
+@-moz-document url("https://elearning.tgm.ac.at/course/view.php?id=1035"), url("http://elearning.tgm.ac.at/course/view.php?id=1035") {
+/*
+  Workaround because *someone* can't code in html.
+  Oh wait, that's MedT.
+*/
+span{
+    color:#888 !important}
+}
