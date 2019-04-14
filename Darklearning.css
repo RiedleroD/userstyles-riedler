@@ -393,6 +393,10 @@ select.custom-select{
     background-color:#333;
     border:none;
     color:#888;}
+input.correct{
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 6px #7aba7b !important;}
+input.incorrect{
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 6px #722 !important;}
 }
 
 @-moz-document url("http://elearning.tgm.ac.at/"), url("https://elearning.tgm.ac.at/") {
