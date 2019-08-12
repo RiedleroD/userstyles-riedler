@@ -1,4 +1,10 @@
 @-moz-document domain("elearning.tgm.ac.at") {
+/*scrollbar*/
+::-webkit-scrollbar,::-webkit-scrollbar-track-piece{
+    background-color:#151515 !important}
+::-webkit-scrollbar-corner,::-webkit-scrollbar-thumb{
+    background-color:#333 !important;
+    border-radius:0.4em;}
 /*navbar*/
 .navbar{
     background-color:#222;}
@@ -38,6 +44,17 @@
     border-bottom-color:#444;}
 .message-app .message.send .tail{
     border-bottom-color:#555;}
+.message-app .list-group .list-group-item{
+    background:#333;}
+.message-app .nav-pills{
+    border:solid #888 1px;}
+.message-app .nav-pills>.nav-item>a:not(.active){
+    background-color:#333;}
+.message-app .nav-pills>.nav-item>a.active{
+    background-color:#444;}
+.message-app>.footer-container>.bg-white{
+    background-color:#222 !important;
+    border-color:#888 !important;}
 #conversation-actions-menu-button{
     color:#888;}
 #conversation-actions-menu-button:hover{
@@ -46,8 +63,13 @@
     background-color:#666;}
 
 /*text*/
-span,p,.text-center,h1,h2,h3,h4,h5,h6,.text-right{
+span,p,.text-center,h1,h2,h3,h4,h5,h6,.text-right,body{
     color:#AAA;}
+textarea.form-control{
+    background-color:#555 !important;
+    border:solid #888 1px;
+    border-radius:0.25em;
+}
 /*links*/
 a{
     color:#418BA4 !important;}
