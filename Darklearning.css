@@ -110,7 +110,7 @@
     border:none !important;}
 
 /*text*/
-span,p,.text-center,h1,h2,h3,h4,h5,h6,.text-right,body{
+span,p,.text-center,h1,h2,h3,h4,h5,h6,.text-right,body,.logininfo{
     color:#AAA;}
 textarea.form-control{
     background-color:#555 !important;
@@ -162,4 +162,31 @@ a:hover{
 /*Dropdown menus*/
 .dropdown-item:active,.dropdown-item.active{
     background-color:#444;}
+
+/*Replacement images*/
+img[src="https://elearning.tgm.ac.at/pluginfile.php/26624/mod_forum/post/2131/MeineKurse.png"]{
+    content:url("https://riedler.gelse.net/sfto/screenshot_darklearning_1.png");}
+}
+
+@-moz-document url("http://elearning.tgm.ac.at/"), url("https://elearning.tgm.ac.at/") {
+#page-header>div>div.card,#region-main{
+    background-color:#222;
+}
+.sitelink{
+    filter:invert(1) hue-rotate(180deg)
+}
+#login_username,#login_password{
+    background-color:#333 !important;
+    color:#AAA !important;
+}
+.btn-primary{
+    color:#CCC;
+    background-color:#418BA4
+}
+.btn-primary:hover{
+    background-color:#6AC
+}
+.forumpost{
+    border-color:#888 !important;
+    border-radius:0.5em;}
 }
