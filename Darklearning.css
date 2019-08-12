@@ -110,15 +110,14 @@
 
 /*text*/
 span,p,.text-center,h1,h2,h3,h4,h5,h6,.text-right,body,.logininfo{
-    color:#AAA;}
+    color:#AAA !important;}
 textarea.form-control{
     background-color:#555 !important;
     border:solid #888 1px;
     border-radius:0.25em;}
-/*links*/
-a{
+a,a>span{
     color:#418BA4 !important;}
-a:hover{
+a:hover,a>span:hover{
     color:#6AC !important;}
 /*icons*/
 .logo>img{
@@ -198,4 +197,24 @@ img.img-fluid{
     background-color:#418BA4;}
 .btn-primary:hover{
     background-color:#6AC;}
+}
+
+@-moz-document url-prefix("https://elearning.tgm.ac.at/course/view.php"), url-prefix("http://elearning.tgm.ac.at/course/view.php") {
+/*Page header*/
+#page-header .card{
+    background-color:#222;}
+/*Main box*/
+#region-main{
+    background-color:#222;}
+/*row where it displays what you've done and what you didn't y'know?*/
+.barRow .progressBarCell[style*="background-color:#73A839"]{
+    background-color:#272 !important;}
+.barRow .progressBarCell[style*="background-color:#C71C22"]{
+    background-color:#922 !important;}
+.barRow .progressBarCell{
+    border-color:#222;}
+.barRow .firstProgressBarCell{
+    border-right:none !important;}
+.badge-info{
+    background-color:#444;}
 }
