@@ -6,8 +6,7 @@
     background-color:#333 !important;
     border-radius:0.4em;}
 /*navbar*/
-.navbar{
-    background-color:#222;}
+.navbar{background-color:#222;}
     
     /*dropdown-menu*/
     .dropdown-menu{
@@ -78,6 +77,10 @@
         background-color:#555;}
     #conversation-actions-menu-button:focus{
         background-color:#666;}
+/*body*/
+:root,body,#page{
+    background-color:#151515 !important;
+}
 
 /*text*/
 span,p,.text-center,h1,h2,h3,h4,h5,h6,.text-right,body{
