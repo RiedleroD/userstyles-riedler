@@ -1,4 +1,14 @@
 @-moz-document domain("elearning.tgm.ac.at") {
+/*Animations*/
+
+/* Animation by Philip Damianik */
+@keyframes bg-pulse-grey {
+    0% {background-color: #333;}
+    50% {background-color: #444;}
+    100% {background-color: #333;}
+}
+
+
 /*scrollbar*/
 ::-webkit-scrollbar,::-webkit-scrollbar-track-piece{
     background-color:#151515 !important;}
@@ -97,7 +107,9 @@
     background-color:#333 !important;}
 .progress{
     background-color:#151515 !important;
-    border-color:#151515 !important;}
+    border-color:#151515 !important;
+    margin-bottom: 0.5rem; /* added by Philip Damianik */
+    height: .35rem!important; /* added by Philip Damianik */}
 .progress-bar{
     background-color:#418BA4;}
 .coursemenubtn:hover,.coursemenubtn:focus{
@@ -157,7 +169,8 @@ a:hover,a>span:hover{
     filter:invert(1);}
 /*Dropdown menus*/
 .dropdown-item:active,.dropdown-item.active{
-    background-color:#444;}
+    background-color:#444;
+}
 
 /*Replacement images*/
 img[src="https://elearning.tgm.ac.at/pluginfile.php/26624/mod_forum/post/2131/MeineKurse.png"]{
