@@ -1,7 +1,7 @@
 @-moz-document domain("elearning.tgm.ac.at") {
 /*scrollbar*/
 ::-webkit-scrollbar,::-webkit-scrollbar-track-piece{
-    background-color:#151515 !important}
+    background-color:#151515 !important;}
 ::-webkit-scrollbar-corner,::-webkit-scrollbar-thumb{
     background-color:#333 !important;
     border-radius:0.4em;}
@@ -26,13 +26,13 @@
     #nav-notification-popover-container .popover-region-header-container,
     #nav-notification-popover-container .popover-region-content-container,
     #nav-notification-popover-container .notification{
-        outline: #000 auto 1px}
+        outline: #000 auto 1px;}
     .content-item-container:hover .content-item-footer .timestamp{
-        color:#AAA}
+        color:#AAA;}
     #nav-notification-popover-container .see-all-link>div{
         background-color:#222;}
     .popover-region-toggle::before,.popover-region-toggle::after{
-        display:none}
+        display:none;}
     /*message drawer*/
     .message-app{
         background-color:#222 !important}
@@ -82,8 +82,7 @@
     background-color:#151515 !important;}
 /*footer*/
 #page-footer{
-    background-color:#222 !important;
-}
+    background-color:#222 !important;}
 /*sideblocks*/
 .block.card{
     background-color:#222;}
@@ -115,8 +114,7 @@ span,p,.text-center,h1,h2,h3,h4,h5,h6,.text-right,body,.logininfo{
 textarea.form-control{
     background-color:#555 !important;
     border:solid #888 1px;
-    border-radius:0.25em;
-}
+    border-radius:0.25em;}
 /*links*/
 a{
     color:#418BA4 !important;}
@@ -130,8 +128,7 @@ a:hover{
 .popover-region:hover>.nav-link>.fa-bell,.fa-bell:hover{
     color:#6AC;}
 .empty-placeholder-image-lg{
-    filter:invert(1)
-}
+    filter:invert(1);}
 /*Buttons*/
 .btn-outline-secondary{
     border-color:#888 !important;}
@@ -170,23 +167,35 @@ img[src="https://elearning.tgm.ac.at/pluginfile.php/26624/mod_forum/post/2131/Me
 
 @-moz-document url("http://elearning.tgm.ac.at/"), url("https://elearning.tgm.ac.at/") {
 #page-header>div>div.card,#region-main{
-    background-color:#222;
-}
+    background-color:#222;}
 .sitelink{
-    filter:invert(1) hue-rotate(180deg)
-}
+    filter:invert(1) hue-rotate(180deg);}
 #login_username,#login_password{
     background-color:#333 !important;
-    color:#AAA !important;
-}
+    color:#AAA !important;}
 .btn-primary{
     color:#CCC;
-    background-color:#418BA4
-}
+    background-color:#418BA4;}
 .btn-primary:hover{
-    background-color:#6AC
-}
+    background-color:#6AC;}
 .forumpost{
     border-color:#888 !important;
     border-radius:0.5em;}
+}
+
+@-moz-document url("https://elearning.tgm.ac.at/login/index.php"), url("http://elearning.tgm.ac.at/login/index.php") {
+.card{
+    background-color:#333;
+}
+.mt-3{
+    color:#AAA;
+}
+img.img-fluid{
+    filter:invert(1) hue-rotate(180deg) brightness(0.9)
+}
+.btn-primary{
+    color:#CCC;
+    background-color:#418BA4;}
+.btn-primary:hover{
+    background-color:#6AC;}
 }
