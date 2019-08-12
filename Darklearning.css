@@ -22,8 +22,14 @@
     #nav-notification-popover-container>.popover-region-container{
         background-color:#222;
         border-color:#888;}
-    .popover-region-content{
-        border-color:#888 !important;}
+    #nav-notification-popover-container .notification{
+        background-color:#0000 !important;}
+    #nav-notification-popover-container .popover-region-header-container,
+    #nav-notification-popover-container .popover-region-content-container,
+    #nav-notification-popover-container .notification{
+        outline: #000 auto 1px}
+    .content-item-container:hover .content-item-footer .timestamp{
+        color:#AAA}
     #nav-notification-popover-container .see-all-link>div{
         background-color:#222;}
     .popover-region-toggle::before,.popover-region-toggle::after{
