@@ -16,7 +16,10 @@
     background-color:#333 !important;
     border-radius:0.4em;}
 /*navbar*/
-.navbar{background-color:#222;}
+.navbar{
+    background-color:#222;
+    border-bottom-right-radius:0.5em;
+    border-bottom-left-radius:0.5em;}
     
     /*dropdown-menu*/
     .dropdown-menu{
@@ -90,9 +93,13 @@
 /*body*/
 :root,body,#page{
     background-color:#151515 !important;}
+#region-main{
+    border-radius:0.5em;}
 /*footer*/
 #page-footer{
-    background-color:#222 !important;}
+    background-color:#222 !important;
+    border-top-left-radius:0.5em;
+    border-top-right-radius:0.5em;}
 /*sideblocks*/
 .block.card{
     background-color:#222;}
@@ -177,6 +184,8 @@ a:hover,a>span:hover{
 .matchtext{
     background-color:#6AC !important;
     color:#333 !important;}
+.card{
+    border-radius:0.5em;}
 /*Replacement images*/
 img[src="https://elearning.tgm.ac.at/pluginfile.php/26624/mod_forum/post/2131/MeineKurse.png"]{
     content:url("https://riedler.gelse.net/sfto/screenshot_darklearning_1.png");}
@@ -309,5 +318,6 @@ table td,table th{
 #page-header .card,#region-main{
     background-color:#222;}
 #region-main .profile_tree>.node_category{
-    background-color:#333;}
+    background-color:#333;
+    border-radius:0.5em;}
 }
