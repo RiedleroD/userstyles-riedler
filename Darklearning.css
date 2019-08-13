@@ -46,50 +46,90 @@
         background-color:#222;}
     .popover-region-toggle::before,.popover-region-toggle::after{
         display:none;}
-    /*message drawer*/
-    .message-app{
-        background-color:#222 !important}
-    .message-app .input-group>input,.input-group-text{
-        background-color:#333 !important;
-        border-color:#888;
-        color:#888;}
-    .message-app .form-control:focus{
-        color:#AAA;}
-    .message-app .card{
-        background-color:#222;}
-    .message-app .border-bottom{
-        border-color:#888 !important;}
-    .message-app .input-group .btn{
-        border-color:#888;}
-    .message-app .card.expanded .list-group .list-group-item{
-        background-color:#333;}
-    .message-app>.header-container>.bg-white{
-        background-color:#333 !important;}
-    .message-app .message.send{
-        background-color:#555 !important;}
-    .message-app .message.received{
-        background-color:#444 !important;}
-    .message-app .message.received .tail{
-        border-bottom-color:#444;}
-    .message-app .message.send .tail{
-        border-bottom-color:#555;}
-    .message-app .list-group .list-group-item{
-        background:#333;}
-    .message-app .nav-pills{
-        border:solid #888 1px;}
-    .message-app .nav-pills>.nav-item>a:not(.active){
-        background-color:#333;}
-    .message-app .nav-pills>.nav-item>a.active{
-        background-color:#444;}
-    .message-app>.footer-container>.bg-white{
-        background-color:#222 !important;
-        border-color:#888 !important;}
-    #conversation-actions-menu-button{
-        color:#888;}
-    #conversation-actions-menu-button:hover{
-        background-color:#555;}
-    #conversation-actions-menu-button:focus{
-        background-color:#666;}
+/*message drawer*/
+.message-app{
+    background-color:#222 !important}
+.message-app .input-group>input,.input-group-text{
+    background-color:#333 !important;
+    border-color:#888;
+    color:#888;}
+.message-app .form-control:focus{
+    color:#AAA;}
+.message-app .card{
+    background-color:#222;}
+.message-app .border-bottom{
+    border-color:#888 !important;}
+.message-app .input-group .btn{
+    border-color:#888;}
+.message-app .card.expanded .list-group .list-group-item{
+    background-color:#333;}
+.message-app>.header-container>.bg-white{
+    background-color:#333 !important;}
+.message-app .message.send{
+    background-color:#555 !important;}
+.message-app .message.received{
+    background-color:#444 !important;}
+.message-app .message.received .tail{
+    border-bottom-color:#444;}
+.message-app .message.send .tail{
+    border-bottom-color:#555;}
+.message-app .list-group .list-group-item{
+    background:#333;}
+.message-app .nav-pills{
+    border:solid #888 1px;}
+.message-app .nav-pills>.nav-item>a:not(.active){
+    background-color:#333;}
+.message-app .nav-pills>.nav-item>a.active{
+    background-color:#444;}
+.message-app>.footer-container>.bg-white{
+    background-color:#222 !important;
+    border-color:#888 !important;}
+#conversation-actions-menu-button{
+    color:#888;}
+#conversation-actions-menu-button:hover{
+    background-color:#555;}
+#conversation-actions-menu-button:focus{
+    background-color:#666;}
+.message-app .no-gutters{
+    outline:solid 1px #333}
+.message-app .content-message-container>div[data-region="self-conversation-message-container"]{
+    background-color:#444 !important;}
+.message-app .header-container>.bg-white{
+    background-color:#333 !important;
+    border-color:#333 !important;}
+.message-app>div>div>div{
+    outline:solid 1px #333;}
+.message-app .col-8>.footer-container>.bg-white{
+    background-color:#333 !important;
+    border:none !important;}
+.message-app button.btn-icon.btn-link:hover,
+.message-app button.btn-icon.btn-link:focus{
+    background-color:#555 !important;}
+.message-app textarea.form-control{
+    background-color:#444 !important;
+    border:none;}
+.message-app .body-container div[data-region="settings"]{
+    background-color:#222;}
+.custom-control-label::before{
+    background-color:#888;}
+.custom-control-input:checked~.custom-control-label::before{
+    background-color:#418BA4 !important;}
+.switch input+label::before{
+    background-color:#888;}
+.switch input:checked + label::before{
+    background-color:#418BA4;}
+.message-app .body-container>div.h-100.bg-white{
+    background-color:#222 !important;}
+.message-app [data-region="contacts-container"]{
+    background-color:#333;}
+.message-app [data-region="non-contacts-container"]{
+    background-color:#333;
+    border-top-color:#888 !important;}
+.message-app div[data-region="all-contacts-container"] .text-right{
+    background-color:#333;
+    border-top: solid 1px #888;}
+.message-app div[data-region="all-contacts-container"] .text-right:hover{
+    background-color:#555;}
 /*body*/
 :root,body,#page{
     background-color:#151515 !important;}
@@ -159,8 +199,7 @@ a:hover,a>span:hover{
 .btn-outline-secondary:not(:disabled):not(.disabled):active,
 .btn-outline-secondary:not(:disabled):not(.disabled).active,
 .btn-outline-secondary.dropdown-toggle:focus{
-    background-color:#444;
-}
+    background-color:#444;}
 .pagination>.page-item>a,.pagination>.page-item.disabled>a{
     background-color:#333;
     border-color:#222;}
@@ -178,8 +217,7 @@ a:hover,a>span:hover{
     filter:invert(1);}
 /*Dropdown menus*/
 .dropdown-item:active,.dropdown-item.active{
-    background-color:#444;
-}
+    background-color:#444;}
 /*Misc*/
 .matchtext{
     background-color:#6AC !important;
@@ -272,46 +310,6 @@ table td,table th{
 @-moz-document url-prefix("http://elearning.tgm.ac.at/message/index.php"), url-prefix("https://elearning.tgm.ac.at/message/index.php") {
 #region-main .border-right.h-100{
     border-color:#333 !important;}
-.message-app .no-gutters{
-    outline:solid 1px #333}
-.message-app .content-message-container>div[data-region="self-conversation-message-container"]{
-    background-color:#444 !important;}
-.message-app .header-container>.bg-white{
-    background-color:#333 !important;
-    border-color:#333 !important;}
-.message-app>div>div>div{
-    outline:solid 1px #333;}
-.message-app .col-8>.footer-container>.bg-white{
-    background-color:#333 !important;
-    border:none !important;}
-.message-app button.btn-icon.btn-link:hover,
-.message-app button.btn-icon.btn-link:focus{
-    background-color:#555 !important;}
-.message-app textarea.form-control{
-    background-color:#444 !important;
-    border:none;}
-.message-app .body-container div[data-region="settings"]{
-    background-color:#222;}
-.custom-control-label::before{
-    background-color:#888;}
-.custom-control-input:checked~.custom-control-label::before{
-    background-color:#418BA4 !important;}
-.switch input+label::before{
-    background-color:#888;}
-.switch input:checked + label::before{
-    background-color:#418BA4;}
-.message-app .body-container>div.h-100.bg-white{
-    background-color:#222 !important;}
-.message-app [data-region="contacts-container"]{
-    background-color:#333;}
-.message-app [data-region="non-contacts-container"]{
-    background-color:#333;
-    border-top-color:#888 !important;}
-.message-app div[data-region="all-contacts-container"] .text-right{
-    background-color:#333;
-    border-top: solid 1px #888;}
-.message-app div[data-region="all-contacts-container"] .text-right:hover{
-    background-color:#555;}
 }
 
 @-moz-document url-prefix("http://elearning.tgm.ac.at/user/profile.php"), url-prefix("https://elearning.tgm.ac.at/user/profile.php") {
