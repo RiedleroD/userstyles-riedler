@@ -140,6 +140,8 @@ a:hover,a>span:hover{
     color:#6AC;}
 .empty-placeholder-image-lg{
     filter:invert(1);}
+.dndupload-arrow{
+    filter:invert(0.9) hue-rotate(180deg);}
 /*Buttons*/
 .btn-outline-secondary{
     border-color:#888 !important;}
@@ -171,7 +173,10 @@ a:hover,a>span:hover{
 .dropdown-item:active,.dropdown-item.active{
     background-color:#444;
 }
-
+/*Misc*/
+.matchtext{
+    background-color:#6AC !important;
+    color:#333 !important;}
 /*Replacement images*/
 img[src="https://elearning.tgm.ac.at/pluginfile.php/26624/mod_forum/post/2131/MeineKurse.png"]{
     content:url("https://riedler.gelse.net/sfto/screenshot_darklearning_1.png");}
@@ -230,4 +235,79 @@ img.img-fluid{
     border-right:none !important;}
 .badge-info{
     background-color:#444;}
+}
+
+@-moz-document url-prefix("https://elearning.tgm.ac.at/user/files.php"), url-prefix("http://elearning.tgm.ac.at/user/files.php") {
+#page-header .card,#region-main{
+    background-color:#222;
+}
+.filemanager-container,.fp-navbar{
+    background-color:#333;
+    border:none !important;}
+a.btn-sm{
+    background-color:#444;}
+a.btn-sm:active, a.btn-sm.active, a.btn-sm:focus, a.btn-sm.checked{
+    background-color:#666 !important}
+}
+
+@-moz-document url-prefix("https://elearning.tgm.ac.at/grade/report/overview/index.php"), url-prefix("http://elearning.tgm.ac.at/grade/report/overview/index.php") {
+#page-header .card,#region-main{
+    background-color:#222;
+}
+thead>tr>th{
+    border-bottom:none !important;}
+table td,table th{
+    border-color:#888 !important;}
+}
+
+@-moz-document url-prefix("http://elearning.tgm.ac.at/message/index.php"), url-prefix("https://elearning.tgm.ac.at/message/index.php") {
+#region-main .border-right.h-100{
+    border-color:#333 !important;}
+.message-app .no-gutters{
+    outline:solid 1px #333}
+.message-app .content-message-container>div[data-region="self-conversation-message-container"]{
+    background-color:#444 !important;}
+.message-app .header-container>.bg-white{
+    background-color:#333 !important;
+    border-color:#333 !important;}
+.message-app>div>div>div{
+    outline:solid 1px #333;}
+.message-app .col-8>.footer-container>.bg-white{
+    background-color:#333 !important;
+    border:none !important;}
+.message-app button.btn-icon.btn-link:hover,
+.message-app button.btn-icon.btn-link:focus{
+    background-color:#555 !important;}
+.message-app textarea.form-control{
+    background-color:#444 !important;
+    border:none;}
+.message-app .body-container div[data-region="settings"]{
+    background-color:#222;}
+.custom-control-label::before{
+    background-color:#888;}
+.custom-control-input:checked~.custom-control-label::before{
+    background-color:#418BA4 !important;}
+.switch input+label::before{
+    background-color:#888;}
+.switch input:checked + label::before{
+    background-color:#418BA4;}
+.message-app .body-container>div.h-100.bg-white{
+    background-color:#222 !important;}
+.message-app [data-region="contacts-container"]{
+    background-color:#333;}
+.message-app [data-region="non-contacts-container"]{
+    background-color:#333;
+    border-top-color:#888 !important;}
+.message-app div[data-region="all-contacts-container"] .text-right{
+    background-color:#333;
+    border-top: solid 1px #888;}
+.message-app div[data-region="all-contacts-container"] .text-right:hover{
+    background-color:#555;}
+}
+
+@-moz-document url-prefix("http://elearning.tgm.ac.at/user/profile.php"), url-prefix("https://elearning.tgm.ac.at/user/profile.php") {
+#page-header .card,#region-main{
+    background-color:#222;}
+#region-main .profile_tree>.node_category{
+    background-color:#333;}
 }
