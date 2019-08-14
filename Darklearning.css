@@ -262,6 +262,10 @@ img.img-fluid{
     background-color:#418BA4;}
 .btn-primary:hover{
     background-color:#6AC;}
+
+#modal-content{background-color:#222;}
+#modal-header{border-bottom:none;}
+#modal-footer{border-top:none;}
 }
 
 @-moz-document url-prefix("https://elearning.tgm.ac.at/course/view.php"), url-prefix("http://elearning.tgm.ac.at/course/view.php") {
