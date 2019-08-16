@@ -135,6 +135,8 @@
     background-color:#151515 !important;}
 #region-main{
     border-radius:0.5em;}
+#page-header>div>div.card,#region-main{
+    background-color:#222;}
 /*footer*/
 #page-footer{
     background-color:#222 !important;
@@ -204,11 +206,37 @@ a:hover,a>span:hover{
     background-color:#6AC !important;
     color:#333 !important;}
 .card{
-    border-radius:0.5em;}
+    border-radius:0.5em;
+    overflow:hidden;}
 .alert-danger{	
     background-color:#922;	
     color:#AAA;	
     border-radius:0.5em;}
+/*Editor Atto*/
+.editor_atto .icon{
+    filter:invert(1) hue-rotate(180deg);}
+.editor_atto_content_wrap{
+    border-color:#888 !important;}
+.editor_atto_content{
+    background-color:#222 !important;
+    border:none !important;
+    border-bottom-left-radius:0.5em;
+    border-bottom-right-radius:0.5em;
+    resize:none;}
+.editor_atto_toolbar{
+    background-color:#222 !important;
+    border-color:#888 !important;
+    border-top-left-radius:0.5em;
+    border-top-right-radius:0.5em;}
+.atto_group{
+    background-color:#333 !important;
+    border:none !important;}
+.atto_group>button{
+    border-color:#888 !important;}
+.editor_atto_content_wrap{
+    background-color:#333;
+    border-bottom-left-radius:0.5em;
+    border-bottom-right-radius:0.5em;}
 /*Replacement images*/
 img[src="https://elearning.tgm.ac.at/pluginfile.php/26624/mod_forum/post/2131/MeineKurse.png"]{
     content:url("https://riedler.gelse.net/sfto/screenshot_darklearning_1.png");}
@@ -220,9 +248,7 @@ img[src="https://elearning.tgm.ac.at/theme/image.php/classic/block_progress/1565
 /*Kurse*/
 .dashboard-card{
     border-width:0;
-    border-radius:0.5em;
-    background-color:#333;
-    overflow:hidden;}
+    background-color:#333;}
 .course-info-container{
     background-color:#333;}
 .card-img{
@@ -246,8 +272,6 @@ img[src="https://elearning.tgm.ac.at/theme/image.php/classic/block_progress/1565
 }
 
 @-moz-document url("http://elearning.tgm.ac.at/"), url("https://elearning.tgm.ac.at/") {
-#page-header>div>div.card,#region-main{
-    background-color:#222;}
 .sitelink{
     filter:invert(1) hue-rotate(180deg);}
 #login_username,#login_password{
@@ -285,9 +309,6 @@ img.img-fluid{
 }
 
 @-moz-document url-prefix("https://elearning.tgm.ac.at/course/view.php"), url-prefix("http://elearning.tgm.ac.at/course/view.php") {
-/*Page header*/
-#page-header .card{
-    background-color:#222;}
 /*Main box*/
 #region-main{
     background-color:#222;}
@@ -306,9 +327,6 @@ img.img-fluid{
 }
 
 @-moz-document url-prefix("https://elearning.tgm.ac.at/user/files.php"), url-prefix("http://elearning.tgm.ac.at/user/files.php") {
-#page-header .card,#region-main{
-    background-color:#222;
-}
 .filemanager-container,.fp-navbar{
     background-color:#333;
     border:none !important;}
@@ -319,9 +337,6 @@ a.btn-sm:active, a.btn-sm.active, a.btn-sm:focus, a.btn-sm.checked{
 }
 
 @-moz-document url-prefix("https://elearning.tgm.ac.at/grade/report/overview/index.php"), url-prefix("http://elearning.tgm.ac.at/grade/report/overview/index.php") {
-#page-header .card,#region-main{
-    background-color:#222;
-}
 thead>tr>th{
     border-bottom:none !important;}
 table td,table th{
@@ -334,20 +349,12 @@ table td,table th{
 }
 
 @-moz-document url-prefix("http://elearning.tgm.ac.at/user/profile.php"), url-prefix("https://elearning.tgm.ac.at/user/profile.php") {
-#page-header .card,#region-main{
-    background-color:#222;}
 #region-main .profile_tree>.node_category{
     background-color:#333;
     border-radius:0.5em;}
 }
 
 @-moz-document url-prefix("http://elearning.tgm.ac.at/mod/assign/view.php"), url-prefix("https://elearning.tgm.ac.at/mod/assign/view.php") {
-/*Page header*/
-#page-header .card{
-    background-color:#222;}
-/*Main box*/
-#region-main{
-    background-color:#222;}
 /*Abgabestatus*/
 td.submissiongraded{
     background-color:#272 !important;
@@ -359,4 +366,9 @@ td.submissionnotgraded{
     background-color:#333;
     border-color:#888;
     color:#AAA;}
+}
+
+@-moz-document url-prefix("http://elearning.tgm.ac.at/user/preferences.php"), url-prefix("https://elearning.tgm.ac.at/user/preferences.php") {
+#region-main .card.mb-3{
+    background-color:#333;}
 }
