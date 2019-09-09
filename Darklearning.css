@@ -206,12 +206,21 @@ a:hover,a>span:hover{
     background-color:#6AC !important;
     color:#333 !important;}
 .card{
-    border-radius:0.5em;
+    border-radius:0.5em;}
+.card-img{
+    border-radius:0.5em 0.5em 0 0;
     overflow:hidden;}
+.card-body{
+    border-radius:0 0 0.5em 0.5em;}
 .alert-danger{	
     background-color:#922;	
     color:#AAA;	
     border-radius:0.5em;}
+div.comment-area textarea{
+    background-color:#333;
+    border-color:#888;
+    border-radius:0.5em;
+    color:#AAA !important;}
 /*Editor Atto*/
 .editor_atto .icon{
     filter:invert(1) hue-rotate(180deg);}
