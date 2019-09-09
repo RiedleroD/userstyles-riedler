@@ -221,6 +221,10 @@ div.comment-area textarea{
     border-color:#888;
     border-radius:0.5em;
     color:#AAA !important;}
+#coursesearchbox{
+    background-color:#333;
+    border-color:#888;
+    color:#AAA;}
 /*Editor Atto*/
 .editor_atto .icon{
     filter:invert(1) hue-rotate(180deg);}
