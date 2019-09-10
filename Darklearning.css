@@ -212,10 +212,14 @@ a:hover,a>span:hover{
     overflow:hidden;}
 .card-body{
     border-radius:0 0 0.5em 0.5em;}
+.alert{
+    border-radius:0.5em;}
 .alert-danger{	
     background-color:#922;	
-    color:#AAA;	
-    border-radius:0.5em;}
+    color:#AAA;}
+.alert-info{
+    background-color:#669;
+    color:#151515 !important;}
 div.comment-area textarea{
     background-color:#333;
     border-color:#888;
@@ -225,6 +229,27 @@ div.comment-area textarea{
     background-color:#333;
     border-color:#888;
     color:#AAA;}
+.generaltable tr>th,.generaltable tr>td{
+    border-color:#888;}
+.modal-dialog>.modal-content{
+    background-color:#444;
+    border-radius:0.5em;}
+.modal-header{
+    border-color:#888;}
+.modal-footer{
+    border-color:#888;}
+.modal-body .form-control{
+    color:#AAA;}
+#id_comments{
+    color:#AAA;}
+.custom-select{
+    color:#AAA;
+    border-color:#888;
+    border-radius:0.5em;
+    background-color:#333;
+    background-image:url("https://riedler.gelse.net/sfto/double_triangles_top_bottom_AAA.svg");
+    background-repeat:no-repeat;
+    background-size:0.75em;}
 /*Editor Atto*/
 .editor_atto .icon{
     filter:invert(1) hue-rotate(180deg);}
@@ -255,6 +280,9 @@ img[src="https://elearning.tgm.ac.at/pluginfile.php/26624/mod_forum/post/2131/Me
     content:url("https://riedler.gelse.net/sfto/screenshot_darklearning_1.png");}
 img[src="https://elearning.tgm.ac.at/theme/image.php/classic/block_progress/1565168979/right"]{
     content:url("https://riedler.gelse.net/sfto/darklearning_triangle_top_right.svg")}
+img[src="https://elearning.tgm.ac.at/theme/image.php/classic/core/1568020337/i/loading_small"]{
+    filter:invert(1)
+}
 }
 
 @-moz-document url("http://elearning.tgm.ac.at/my/"), url-prefix("https://elearning.tgm.ac.at/my/") {
@@ -384,4 +412,9 @@ td.submissionnotgraded{
 @-moz-document url-prefix("http://elearning.tgm.ac.at/user/preferences.php"), url-prefix("https://elearning.tgm.ac.at/user/preferences.php") {
 #region-main .card.mb-3{
     background-color:#333;}
+}
+
+@-moz-document url-prefix("http://elearning.tgm.ac.at/admin/tool/dataprivacy/mydatarequests.php"), url-prefix("https://elearning.tgm.ac.at/admin/tool/dataprivacy/mydatarequests.php") {
+div[data-region="datarequests"]>.mt-1.mb-1>.btn.btn-primary{
+    color:#AAA !important;}
 }
