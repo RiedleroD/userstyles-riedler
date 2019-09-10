@@ -130,6 +130,13 @@
     border-top: solid 1px #888;}
 .message-app div[data-region="all-contacts-container"] .text-right:hover{
     background-color:#555;}
+.message-app div[data-region="content-placeholder"] div.px-2.pb-2.pt-0.h-100{
+    background-color:#333 !important;}
+.message-app div[data-region="content-placeholder"] div.px-2.pb-2.pt-0.h-100>.mt-4>.mb-4>.mx-auto{
+    background-color:#555 !important;
+    border-radius:0.25rem;}
+.message-app div[data-region="content-placeholder"] div.px-2.pb-2.pt-0.h-100>.mt-4>.d-flex.flex-column.p-2.rounded.mb-2{
+    background-color:#555 !important;}
 /*body*/
 :root,body,#page{
     background-color:#151515 !important;}
@@ -220,6 +227,17 @@ a:hover,a>span:hover{
 .alert-info{
     background-color:#669;
     color:#151515 !important;}
+.moodle-dialogue>.moodle-dialogue-content{
+    background-color:#333 !important;}
+.close, .moodle-dialogue-base .closebutton{
+    text-shadow:none;
+    opacity:1;
+    color:#AAA;
+}
+.yui3-button{
+    background-image:none;}
+.modal-header, .moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd, .path-mod-assign [data-region="grade-panel"] .popout>.col-md-3{
+    border-color:#888;}
 div.comment-area textarea{
     background-color:#333;
     border-color:#888;
