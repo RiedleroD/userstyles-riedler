@@ -205,6 +205,9 @@ a:hover,a>span:hover{
     border-color:#888;}
 .block-timeline .tab-content img{
     filter:invert(1);}
+.preference-state-status-container>span.on-text,
+.preference-state-status-container>span.off-text{
+    color:#151515 !important;}
 /*Dropdown menus*/
 .dropdown-item:active,.dropdown-item.active{
     background-color:#444;}
@@ -283,6 +286,20 @@ table.flexible thead th,
     background-image:url("https://riedler.gelse.net/sfto/double_triangles_top_bottom_AAA.svg");
     background-repeat:no-repeat;
     background-size:0.75em;}
+input[type="checkbox"]{
+    -webkit-appearance:none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance:none;
+    width:1em;
+    height:1em;
+    border:0.12em solid #AAA;
+    border-radius:0.25em;}
+input[type="checkbox"]:checked{
+    background:url("https://img.icons8.com/metro/344/checkmark.png") no-repeat;
+    background-position:center;
+    background-size:0.8em;
+    filter:invert(0.5)}
 /*Editor Atto*/
 .editor_atto .icon{
     filter:invert(1) hue-rotate(180deg);}
