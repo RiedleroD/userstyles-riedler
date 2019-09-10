@@ -232,8 +232,7 @@ a:hover,a>span:hover{
 .close, .moodle-dialogue-base .closebutton{
     text-shadow:none;
     opacity:1;
-    color:#AAA;
-}
+    color:#AAA;}
 .yui3-button{
     background-image:none;}
 .modal-header, .moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd, .path-mod-assign [data-region="grade-panel"] .popout>.col-md-3{
@@ -247,8 +246,24 @@ div.comment-area textarea{
     background-color:#333;
     border-color:#888;
     color:#AAA;}
-.generaltable tr>th,.generaltable tr>td{
+.table th,
+table.collection th,
+table.flexible th,
+.generaltable th,
+.table td,
+table.collection td,
+table.flexible td,
+.generaltable td,
+.table thead th,
+table.collection thead th,
+table.flexible thead th,
+.generaltable thead th,
+.preferences-container .preference-table{
     border-color:#888;}
+.preferences-container .preference-table tr td:nth-child(even),
+.preferences-container .preference-table tr th:nth-child(even){
+    border-color:#888;
+    background-color:#252525;}
 .modal-dialog>.modal-content{
     background-color:#444;
     border-radius:0.5em;}
