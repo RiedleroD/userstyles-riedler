@@ -474,3 +474,40 @@ td.submissionnotgraded{
 div[data-region="datarequests"]>.mt-1.mb-1>.btn.btn-primary{
     color:#AAA !important;}
 }
+
+@-moz-document url-prefix("http://elearning.tgm.ac.at/mod/quiz"), url-prefix("https://elearning.tgm.ac.at/mod/quiz") {
+.que .formulation{
+    background-color:#333;
+    color:#AAA;
+    border-radius:0.5em;}
+.answer .incorrect{
+    background-color:#922;}
+.answer .correct{
+    background-color:#262;}
+.answer>.form-control{
+     border-color:#888;
+    color:#AAA;
+    border-radius:0.5em;}
+.que .outcome{
+    background-color:#333;
+    color:#AAA;
+    border-radius:0.5em;}
+.que .info{
+    background-color:#333;
+    border-radius:0.5em;
+    border:none;}
+.path-mod-quiz #mod_quiz_navblock .qnbutton.correct>.trafficlight{
+    background-color:#262;
+    background-image:none;}
+.path-mod-quiz #mod_quiz_navblock .qnbutton.incorrect>.trafficlight{
+    background-color:#922;
+    background-image:none;}
+.path-mod-quiz #mod_quiz_navblock .qnbutton{
+    color:#AAA !important;
+    background-color:#444;}
+#mod_quiz_navblock .qnbutton>.thispageholder{
+    border:none !important;
+}
+.quizreviewsummary>tbody>tr>.cell{
+    background-color:#333;}
+}
