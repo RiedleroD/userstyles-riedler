@@ -529,7 +529,11 @@ div[data-region="datarequests"]>.mt-1.mb-1>.btn.btn-primary{
     background-color:#333;
     border-radius:0.5em;}
 .submitbtns input[type="submit"].btn.mod_quiz-next-nav{
-   background-color:#126DAA;}
+   background-color:#418BA4;
+   border-color:#418BA4;}
+.submitbtns input[type="submit"].btn.mod_quiz-next-nav:hover{
+   background-color:#6AC;
+   border-color:#6AC;}
 .quizstartbuttondiv button[type="submit"]{
     background-color:#333;
     border-radius:0.5em;}
