@@ -482,3 +482,74 @@ td.submissionnotgraded{
 div[data-region="datarequests"]>.mt-1.mb-1>.btn.btn-primary{
     color:#AAA !important;}
 }
+@-moz-document url-prefix("http://elearning.tgm.ac.at/mod/quiz"), url-prefix("https://elearning.tgm.ac.at/mod/quiz") {	
+.que .formulation{	
+    background-color:#333;	
+    color:#AAA;	
+    border-radius:0.5em;}	
+.answer .incorrect{	
+    background-color:#922;}	
+.answer .correct{	
+    background-color:#262;}	
+.answer>.form-control{	
+     border-color:#888;	
+    color:#AAA;	
+    border-radius:0.5em;}	
+.que .outcome{	
+    background-color:#333;	
+    color:#AAA;	
+    border-radius:0.5em;}	
+.que .info{	
+    background-color:#333;	
+    border-radius:0.5em;	
+    border:none;}	
+.path-mod-quiz #mod_quiz_navblock .qnbutton.correct>.trafficlight{	
+    background-color:#262;	
+    background-image:none;}	
+.path-mod-quiz #mod_quiz_navblock .qnbutton.incorrect>.trafficlight{	
+    background-color:#922;	
+    background-image:none;}	
+.path-mod-quiz #mod_quiz_navblock .qnbutton{	
+    color:#AAA !important;	
+    background-color:#444;}	
+#mod_quiz_navblock .qnbutton>.thispageholder{	
+    border:none !important;	
+}	
+.quizreviewsummary>tbody>tr>.cell{	
+    background-color:#333;}	
+.path-mod-quiz #mod_quiz_navblock .qnbutton.notyetanswered>.trafficlight{	
+    background-color:#444;}	
+.path-mod-quiz #mod_quiz_navblock .qnbutton.answersaved>.trafficlight,	
+.path-mod-quiz #mod_quiz_navblock .qnbutton.invalidanswer>.trafficlight{	
+    background-color:#888;}	
+.path-mod-quiz #mod_quiz_navblock .qnbutton.thispage>.trafficlight{	
+    filter:brightness(1.3)}	
+.answer>input[type="text"]{	
+    background-color:#444;}	
+.subquestion input[type="text"]{	
+    background-color:#444;	
+    border-color:#888;	
+    border-radius:0.5em;	
+    color:#AAA;}	
+.submitbtns button[type="submit"].btn,	
+.submitbtns input[type="submit"].btn{	
+    background-color:#333;	
+    border-radius:0.5em;}	
+.submitbtns input[type="submit"].btn.mod_quiz-next-nav{	
+   background-color:#418BA4;	
+   border-color:#418BA4;}	
+.submitbtns input[type="submit"].btn.mod_quiz-next-nav:hover{	
+   background-color:#6AC;	
+   border-color:#6AC;}	
+.quizstartbuttondiv button[type="submit"]{	
+    background-color:#333;	
+    border-radius:0.5em;}	
+.que.incorrect .answer>input[type="text"]{	
+    background-color:#922;}	
+.que.correct .answer>input[type="text"]{	
+    background-color:#262;}	
+input[type="text"].correct{	
+    background-color:#262;}	
+input[type="text"].incorrect{	
+    background-color:#922;}	
+}
