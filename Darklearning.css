@@ -336,9 +336,17 @@ img[src="https://elearning.tgm.ac.at/pluginfile.php/26624/mod_forum/post/2131/Me
     content:url("https://riedler.gelse.net/sfto/screenshot_darklearning_1.png");}
 img[src="https://elearning.tgm.ac.at/theme/image.php/classic/block_progress/1565168979/right"]{
     content:url("https://riedler.gelse.net/sfto/darklearning_triangle_top_right.svg")}
-img[src="https://elearning.tgm.ac.at/theme/image.php/classic/core/1568020337/i/loading_small"]{
-    filter:invert(1)
-}
+img[src$="elearning.tgm.ac.at/theme/image.php/classic/core/"][src$="/i/loading_small"]{
+    filter:invert(1);}
+.loading{
+    background-image:none !important;}
+.loading:before,
+.loading:before{
+    content:"\00a0";
+    background-image:url("https://elearning.tgm.ac.at/theme/image.php/classic/core/123456/i/loading_small");
+    background-repeat:no-repeat;
+    filter:invert(1)}
+
 }
 
 @-moz-document url("http://elearning.tgm.ac.at/my/"), url-prefix("https://elearning.tgm.ac.at/my/") {
@@ -473,76 +481,4 @@ td.submissionnotgraded{
 @-moz-document url-prefix("http://elearning.tgm.ac.at/admin/tool/dataprivacy/mydatarequests.php"), url-prefix("https://elearning.tgm.ac.at/admin/tool/dataprivacy/mydatarequests.php") {
 div[data-region="datarequests"]>.mt-1.mb-1>.btn.btn-primary{
     color:#AAA !important;}
-}
-
-@-moz-document url-prefix("http://elearning.tgm.ac.at/mod/quiz"), url-prefix("https://elearning.tgm.ac.at/mod/quiz") {
-.que .formulation{
-    background-color:#333;
-    color:#AAA;
-    border-radius:0.5em;}
-.answer .incorrect{
-    background-color:#922;}
-.answer .correct{
-    background-color:#262;}
-.answer>.form-control{
-     border-color:#888;
-    color:#AAA;
-    border-radius:0.5em;}
-.que .outcome{
-    background-color:#333;
-    color:#AAA;
-    border-radius:0.5em;}
-.que .info{
-    background-color:#333;
-    border-radius:0.5em;
-    border:none;}
-.path-mod-quiz #mod_quiz_navblock .qnbutton.correct>.trafficlight{
-    background-color:#262;
-    background-image:none;}
-.path-mod-quiz #mod_quiz_navblock .qnbutton.incorrect>.trafficlight{
-    background-color:#922;
-    background-image:none;}
-.path-mod-quiz #mod_quiz_navblock .qnbutton{
-    color:#AAA !important;
-    background-color:#444;}
-#mod_quiz_navblock .qnbutton>.thispageholder{
-    border:none !important;
-}
-.quizreviewsummary>tbody>tr>.cell{
-    background-color:#333;}
-.path-mod-quiz #mod_quiz_navblock .qnbutton.notyetanswered>.trafficlight{
-    background-color:#444;}
-.path-mod-quiz #mod_quiz_navblock .qnbutton.answersaved>.trafficlight,
-.path-mod-quiz #mod_quiz_navblock .qnbutton.invalidanswer>.trafficlight{
-    background-color:#888;}
-.path-mod-quiz #mod_quiz_navblock .qnbutton.thispage>.trafficlight{
-    filter:brightness(1.3)}
-.answer>input[type="text"]{
-    background-color:#444;}
-.subquestion input[type="text"]{
-    background-color:#444;
-    border-color:#888;
-    border-radius:0.5em;
-    color:#AAA;}
-.submitbtns button[type="submit"].btn,
-.submitbtns input[type="submit"].btn{
-    background-color:#333;
-    border-radius:0.5em;}
-.submitbtns input[type="submit"].btn.mod_quiz-next-nav{
-   background-color:#418BA4;
-   border-color:#418BA4;}
-.submitbtns input[type="submit"].btn.mod_quiz-next-nav:hover{
-   background-color:#6AC;
-   border-color:#6AC;}
-.quizstartbuttondiv button[type="submit"]{
-    background-color:#333;
-    border-radius:0.5em;}
-.que.incorrect .answer>input[type="text"]{
-    background-color:#922;}
-.que.correct .answer>input[type="text"]{
-    background-color:#262;}
-input[type="text"].correct{
-    background-color:#262;}
-input[type="text"].incorrect{
-    background-color:#922;}
 }
