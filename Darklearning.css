@@ -183,6 +183,8 @@ a:hover,a>span:hover{
 .block-timeline .tab-content img{
     filter:none;}
 /*Buttons*/
+.btn{
+    border-radius:0.25em;}
 .btn-outline-secondary{
     border-color:#888 !important;}
 .btn-outline-secondary:hover{
@@ -334,6 +336,8 @@ input[type="checkbox"]:checked{
     overflow:hidden;}
 .badge{
     border-radius:0.25em;}
+.border-bottom{
+    border-bottom-color:#888 !important;}
 /*Editor Atto*/
 .editor_atto .icon{
     filter:invert(1) hue-rotate(180deg);}
