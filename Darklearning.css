@@ -152,7 +152,8 @@
 /*sideblocks*/
 .block.card{
     background-color:#222;}
-
+.block-timeline .paged-content-page-container .list-group-flush>.list-group-item{
+    background-color:#222;}
 /*text*/
 span,p,.text-center,h1,h2,h3,h4,h5,h6,.text-right,body,.logininfo{
     color:#AAA !important;}
@@ -179,6 +180,8 @@ a:hover,a>span:hover{
     color:#418BA4 !important;}
 .fa-question-circle:hover,.fa-question-circle:active{
     color:#6AC !important;}
+.block-timeline .tab-content img{
+    filter:none;}
 /*Buttons*/
 .btn-outline-secondary{
     border-color:#888 !important;}
@@ -203,8 +206,6 @@ a:hover,a>span:hover{
     background-color:#444;
     color:#BBB;
     border-color:#888;}
-.block-timeline .tab-content img{
-    filter:invert(1);}
 .preference-state-status-container>span.on-text,
 .preference-state-status-container>span.off-text{
     color:#151515 !important;}
