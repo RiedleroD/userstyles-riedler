@@ -453,6 +453,9 @@ img.img-fluid{
     border-right:none !important;}
 .badge-info{
     background-color:#444;}
+/*Misc*/
+.section{
+    border-bottom-color:#888 !important;}
 }
 
 @-moz-document url-prefix("https://elearning.tgm.ac.at/user/files.php"), url-prefix("http://elearning.tgm.ac.at/user/files.php") {
