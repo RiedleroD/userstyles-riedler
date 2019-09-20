@@ -292,6 +292,15 @@ table.flexible thead th,
     background-image:url("https://riedler.gelse.net/sfto/double_triangles_top_bottom_AAA.svg");
     background-repeat:no-repeat;
     background-size:0.75em;}
+.custom-select:disabled{
+    color:#888;
+    background-color:#888;
+    background-image:none;}
+.custom-select:disabled:hover{
+    color:#888;
+    background-color:#888;}
+.custom-select:focus{
+    color:#AAA;}
 input[type="checkbox"]{
     -webkit-appearance:none;
     -moz-appearance: none;
@@ -306,6 +315,22 @@ input[type="checkbox"]:checked{
     background-position:center;
     background-size:0.8em;
     filter:invert(0.5)}
+.form-control{
+    border-radius:0.5em;
+    background-color:#333;
+    border-color:#888;}
+.input-group>.form-control{
+    border-radius:0.5em 0 0 0.5em;}
+.form-control:hover{
+    background-color:#444;}
+.form-control:focus{
+    background-color:#555;}
+.input-group-append{
+    border-top:solid 1px #888;
+    border-right:solid 1px #888;
+    border-bottom:solid 1px #888;
+    border-radius:0 0.5em 0.5em 0;
+    overflow:hidden;}
 /*Editor Atto*/
 .editor_atto .icon{
     filter:invert(1) hue-rotate(180deg);}
@@ -346,7 +371,6 @@ img[src$="elearning.tgm.ac.at/theme/image.php/classic/core/"][src$="/i/loading_s
     background-image:url("https://elearning.tgm.ac.at/theme/image.php/classic/core/123456/i/loading_small");
     background-repeat:no-repeat;
     filter:invert(1)}
-
 }
 
 @-moz-document url("http://elearning.tgm.ac.at/my/"), url-prefix("https://elearning.tgm.ac.at/my/") {
@@ -482,7 +506,8 @@ td.submissionnotgraded{
 div[data-region="datarequests"]>.mt-1.mb-1>.btn.btn-primary{
     color:#AAA !important;}
 }
-@-moz-document url-prefix("http://elearning.tgm.ac.at/mod/quiz"), url-prefix("https://elearning.tgm.ac.at/mod/quiz") {	
+
+@-moz-document url-prefix("http://elearning.tgm.ac.at/mod/quiz"), url-prefix("https://elearning.tgm.ac.at/mod/quiz") {
 .que .formulation{	
     background-color:#333;	
     color:#AAA;	
@@ -551,5 +576,5 @@ div[data-region="datarequests"]>.mt-1.mb-1>.btn.btn-primary{
 input[type="text"].correct{	
     background-color:#262;}	
 input[type="text"].incorrect{	
-    background-color:#922;}	
+    background-color:#922;}
 }
