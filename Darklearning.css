@@ -195,8 +195,11 @@ a:hover,a>span:hover{
 .btn-outline-secondary:not(:disabled):not(.disabled).active,
 .btn-outline-secondary.dropdown-toggle:focus{
     background-color:#444;}
-.pagination>.page-item>a,.pagination>.page-item.disabled>a{
+.pagination>.page-item>a{
     background-color:#333;
+    border-color:#222;}
+.pagination>.page-item.disabled>a{
+    filter:grayscale(1);
     border-color:#222;}
 .pagination>.page-item>a:hover{
     background-color:#555;}
@@ -320,14 +323,16 @@ input[type="checkbox"]:checked{
     filter:invert(0.5)}
 .form-control{
     border-radius:0.5em;
-    background-color:#333;
-    border-color:#888;}
+    background-color:#444;
+    border-color:#888;
+    color:#AAA;}
 .input-group>.form-control{
     border-radius:0.5em 0 0 0.5em;}
 .form-control:hover{
     background-color:#444;}
 .form-control:focus{
-    background-color:#555;}
+    background-color:#555;
+    color:#AAA;}
 .input-group-append{
     border-top:solid 1px #888;
     border-right:solid 1px #888;
