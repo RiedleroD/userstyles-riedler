@@ -368,6 +368,18 @@ input[type="checkbox"]:checked{
     background-color:#333;
     border-bottom-left-radius:0.5em;
     border-bottom-right-radius:0.5em;}
+/*Sidebar Calendar*/
+.calendar_event_course{
+    background-color:#533;}
+.calendar_event_category{
+    background-color:#535}
+.calendar_event_group{
+    background-color:#553}
+.calendar_event_user{
+    background-color:#555;}
+.calendar_event_site{
+    background-color:#353;}
+
 /*Replacement images*/
 img[src="https://elearning.tgm.ac.at/pluginfile.php/26624/mod_forum/post/2131/MeineKurse.png"]{
     content:url("https://riedler.gelse.net/sfto/screenshot_darklearning_1.png");}
