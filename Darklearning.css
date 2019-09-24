@@ -383,8 +383,10 @@ input[type="checkbox"]:checked{
 /*Replacement images*/
 img[src="https://elearning.tgm.ac.at/pluginfile.php/26624/mod_forum/post/2131/MeineKurse.png"]{
     content:url("https://riedler.gelse.net/sfto/screenshot_darklearning_1.png");}
-img[src="https://elearning.tgm.ac.at/theme/image.php/classic/block_progress/1565168979/right"]{
+.progressBarCell>.nowDiv>.icon[src$="/right"]{
     content:url("https://riedler.gelse.net/sfto/darklearning_triangle_top_right.svg")}
+.progressBarCell>.nowDiv>.icon[src$="/left"]{
+    content:url("https://riedler.gelse.net/sfto/darklearning_triangle_top_left.svg")}
 img[src$="elearning.tgm.ac.at/theme/image.php/classic/core/"][src$="/i/loading_small"]{
     filter:invert(1);}
 .loading{
@@ -480,6 +482,9 @@ img.img-fluid{
 /*Misc*/
 .section{
     border-bottom-color:#888 !important;}
+.progressEventInfo .iconInInfo{ /*Fixes a specific icon being distorted because someone forgot that width was set to 12px*/
+    width:1.2em;
+    height:1.2em;}
 }
 
 @-moz-document url-prefix("https://elearning.tgm.ac.at/user/files.php"), url-prefix("http://elearning.tgm.ac.at/user/files.php") {
