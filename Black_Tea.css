@@ -1,6 +1,6 @@
 @-moz-document domain("try.gitea.io"), domain("gitea.gelse.eu") {
 body {
- background: #1A2632;
+ background: #222;
  color: #9e9e9e;
 }
 
@@ -9,7 +9,7 @@ a {
 }
 
 .following.bar.light {
-  background: #24292E;   
+  background: #333;   
 }
 
 .ui.secondary.menu .active.item {
@@ -25,18 +25,18 @@ a {
 }
 
 .following.bar.light {
-  border-bottom: 1px solid #313131;
+  border-bottom: 1px solid #333;
 }
 
 .ui.attached.header {
-  background: #304251;
-  border: 1px solid #304251;
+  background: #333;
+  border: 1px solid #333;
   color: #dbdbdb;
 }
 
 .ui.attached.table {
   border: 1px solid #304251;
-  background: #304251;
+  background: #303030;
 }
 
 .feeds .list ul li:not(:last-child) {
@@ -44,7 +44,7 @@ a {
 }
 
 .feeds .list ul li.private {
- 	background: #151F29; 
+ 	background: #151515; 
 }
 
 .ui.secondary.menu .dropdown.item:hover, .ui.secondary.menu .link.item:hover, .ui.secondary.menu a.item:hover {
@@ -52,7 +52,7 @@ a {
 }
 
 .ui.menu .ui.dropdown .menu>.item {
-	background: #1A2632 !important;
+	background: #222 !important;
   color: #9e9e9e !important;
 }
 
@@ -61,12 +61,12 @@ a {
 }
 
 footer {
- 	background: #24292E;
-  border-top: 1px solid #313131;
+ 	background: #333;
+  border-top: 1px solid #333;
 }
 
 .ui.menu .dropdown.item .menu {
-  background: #1a2632;
+  background: #222;
 }
 
 .ui.menu .ui.dropdown .menu>.item:hover, .ui.menu .ui.dropdown .menu>.selected.item {
@@ -83,12 +83,12 @@ footer {
 }
 
 .ui.menu {
-  background: #151F29;
+  background: #151515;
   border: 1px solid #304251;
 }
 
 .ui.menu .item {
-  background: #1A2632;
+  background: #222;
   color: #9e9e9e;
 }
 
@@ -101,25 +101,25 @@ footer {
 }
 
 .ui.menu .active.item {
-  background: #1A2632;
+  background: #222;
   color: #dbdbdb;
 }
 
 .ui.input input {
-  background: #151F29;
-  border: 1px solid #304251;
+  background-color: #222;
+  border: 1px solid #222;
   color: #dbdbdb;
 }
 
 .ui.input input:focus, .ui.input.focus input {
-  background: #151F29;
-  border: 1px solid #456580;
+  background: #2A2A2A;
+  border: 1px solid #2A2A2A;
   color: #dbdbdb;
 }
 
 .ui.label {
   color: #dbdbdb;
-  background-color: #313f4c;
+  background-color: #3A3A3A;
 }
 
 .issue.list > .item .title {
@@ -154,7 +154,7 @@ footer {
 }
 
 .ui.menu .item {
-  background: #151f29;
+  background: #151515;
   color: #9e9e9e;
 }
 
@@ -168,11 +168,11 @@ footer {
 }
 
 .repository .header-wrapper {
-  background-color: #151f29;
+  background-color: #151515;
 }
 
 .ui.tabular.menu .active.item {
-  background: #1a2632;
+  background: #202020;
   color: #dbdbdb;
   border-left: 1px solid transparent;
   border-right: 1px solid transparent;
@@ -209,12 +209,12 @@ footer {
 }
 
 .ui.form input:not([type]), .ui.form input[type=text], .ui.form input[type=email], .ui.form input[type=search], .ui.form input[type=password], .ui.form input[type=date], .ui.form input[type=datetime-local], .ui.form input[type=tel], .ui.form input[type=time], .ui.form input[type=url], .ui.form input[type=number] {
-  background: #151f29;
+  background: #151515;
   border: 1px solid rgb(48, 66, 81);
 }
 
 .ui.form input:not([type]):focus, .ui.form input[type=text]:focus, .ui.form input[type=email]:focus, .ui.form input[type=search]:focus, .ui.form input[type=password]:focus, .ui.form input[type=date]:focus, .ui.form input[type=datetime-local]:focus, .ui.form input[type=tel]:focus, .ui.form input[type=time]:focus, .ui.form input[type=url]:focus, .ui.form input[type=number]:focus {
-  background: #151f29;
+  background: #151515;
   border: 1px solid #456580;
   color: #dbdbdb;
 }
@@ -228,19 +228,19 @@ footer {
 }
 
 .ui.button {
-  background: #1a2632;
-  border: 1px solid #313c47;
+  background-color: #222;
+  border: 1px solid #222;
   color: #dbdbdb;
 }
 
 .ui.labeled.button:not([class*="left labeled"])>.label, .ui[class*="left labeled"].button>.button {
-  background: #151f29;
+  background: #151515;
   border: 1px solid #313c47;
   color: #607d8b;
 }
 
 .ui.button:hover {
-  background-color: #151f29;
+  background-color: #151515;
   color: #dbdbdb
 }
 
@@ -250,13 +250,13 @@ footer {
 }
 
 .repository.file.list #repo-files-table tr:hover {
-  background-color: #1a2632;
+  background-color: #222;
 }
 
 .ui.table {
-  color: #797979!important;
-  border: 1px solid #313c47;
-  background: #18242f;
+  color: #9a9a9a!important;
+  border: 1px solid #333;
+  background: #333;
 }
 
 .ui.table tbody tr {
@@ -264,7 +264,7 @@ footer {
 }
 
 .ui.attached.table.segment {
-  background: #151f29;
+  background: #2A2A2A;
   color: #dbdbdb!important;
 }
 
@@ -283,7 +283,7 @@ footer {
 }
 
 .ui.dropdown .menu {
-  background: #151f29;
+  background: #151515;
 }
 
 .ui.dropdown .menu>.message:not(.ui) {
@@ -295,9 +295,9 @@ footer {
 }
 
 .ui.segment {
-  background: #151f29;
+  background: #2A2A2A;
   color: #9e9e9e!important;
-  border: 1px solid #313c47;
+  border: none;
 }
 
 .ui.active.button:active, .ui.button:active,
@@ -319,11 +319,11 @@ footer {
 }
 
 .ui.attached.segment {
-  border: 1px solid #313c47;
+  border: 1px solid #333;
 }
 
 .repository.view.issue .comment-list .comment .content > .bottom.segment {
-  background: #151f29;
+  background: #151515;
 }
 
 .repository.view.issue .comment-list .comment .content .header {
@@ -370,7 +370,7 @@ footer {
 
 .ui.form textarea,
 .ui.form textarea:focus {
-  background: #1a2632;
+  background: #222;
   border: 1px solid #313c47;
   color: #dbdbdb;
 }
@@ -385,7 +385,7 @@ footer {
 
 .repository .diff-file-box .file-body.file-code .lines-num {
   color: #9e9e9e;
-  background: #151f29;
+  background: #151515;
 }
 
 .ui.table tbody tr {
@@ -412,7 +412,7 @@ footer {
 
 .repository .diff-file-box .file-body.file-code .lines-num {
   color: #9e9e9e;
-  background: #151f29;
+  background: #151515;
 }
 
 .repository .diff-file-box .code-diff tbody tr.tag-code td, .repository .diff-file-box .code-diff tbody tr td.tag-code {
@@ -440,11 +440,11 @@ footer {
 }
 
 .ui.vertical.menu .active.item {
-  background: #1a2632;
+  background: #222;
 }
 
 .ui.vertical.menu .item {
-  background: #151f29;
+  background: #151515;
 }
 
 .ui.vertical.menu .header.item {
@@ -452,7 +452,7 @@ footer {
 }
 
 .ui.vertical.menu {
-  background: #151f29;
+  background: #151515;
 }
 
 .ui.repository.list .item:not(:first-child) {
@@ -460,8 +460,8 @@ footer {
 }
 
 .ui.selection.dropdown {
-  background: #151f29;
-  border: 1px solid rgb(48, 66, 81);
+  background: #151515;
+  border: 1px solid #333;
   color: #9e9e9e;
 }
 
@@ -474,7 +474,7 @@ footer {
 }
 
 .ui.card, .ui.cards>.card {
-  background: #151f29;
+  background: #151515;
   box-shadow: 0 1px 3px 0 #304251, 0 0 0 1px #304251;
 }
 
@@ -496,12 +496,12 @@ footer {
 
 .ui.secondary.pointing.menu .active.item {
     color: #dbdbdb;
-    background: #1a2632;
+    background: #222;
 }
 
 .ui.secondary.pointing.menu .active.item:hover {
   border-top-color: #304251;
-  background: #1a2632;
+  background: #222;
   color: #dbdbdb;
 }
 
@@ -559,16 +559,17 @@ footer {
 }
 
 .ui.checkbox input:checked~.box:before, .ui.checkbox input:checked~label:before {
-  background: #304251;
+  background: #333;
 }
 
 .ui.checkbox .box:hover::before, .ui.checkbox label:hover::before {
-  background: #304251;
+  background: #2A2A2A;
+  border: solid 1px #222;
 }
 
 .ui.checkbox .box:before, .ui.checkbox label:before {
-	background: #304251;
-  border: 1px solid #304251;
+	background: #222;
+  border: 1px solid #222;
 }
 
 .ui.checkbox .box:active::before, .ui.checkbox label:active::before {
@@ -577,27 +578,27 @@ footer {
 }
 
 .ui.checkbox input:checked~.box:before, .ui.checkbox input:checked~label:before {
-  border-color: #304251;
-  background: #304251;
+  border-color: #333;
+  background: #333;
 }
 
 .ui.checkbox input:focus~.box:before, .ui.checkbox input:focus~label:before {
-  border-color: #304251;
-  background: #304251;
+  border-color: #333;
+  background: #333;
 }
 
 .ui.checkbox input:checked:focus~.box:before, .ui.checkbox input:checked:focus~label:before, .ui.checkbox input:not([type=radio]):indeterminate:focus~.box:before, .ui.checkbox input:not([type=radio]):indeterminate:focus~label:before {
-  border-color: #304251;
-  background: #304251;
+  border-color: #333;
+  background: #333;
 }
 
 .ui.checkbox input:checked~.box:after, .ui.checkbox input:checked~label:after {
 	opacity: 1;
-  color: rgb(127, 152, 173);
+  color: #9a9a9a;
 }
 
 .ui.checkbox input:checked:focus~.box:after, .ui.checkbox input:checked:focus~label:after, .ui.checkbox input:not([type=radio]):indeterminate:focus~.box:after, .ui.checkbox input:not([type=radio]):indeterminate:focus~label:after {
-  color: rgb(127, 152, 173);
+  color: #9a9a9a;
 }
 
 .ui.checkbox input:focus~.box:after, .ui.checkbox input:focus~label, .ui.checkbox input:focus~label:after {
@@ -606,8 +607,7 @@ footer {
 
 .ui.selection.dropdown:hover {
   border-color: rgba(34,36,38,.35);
-  border: 1px solid #456580;
-}
+  border: 1px solid #333;}
 
 .ui.selection.dropdown .menu>.item {
   border-top: 1px solid #313c47;
@@ -661,33 +661,33 @@ footer {
 }
 
 .repository.file.list #file-content .code-view .lines-num {
-  background: #1a2632;
+  background: #222;
 }
 
 .repository.file.list #file-content .code-view .lines-num pre, .repository.file.list #file-content .code-view .lines-code pre, .repository.file.list #file-content .code-view .lines-num ol, .repository.file.list #file-content .code-view .lines-code ol, .repository.file.list #file-content .code-view .lines-num .hljs, .repository.file.list #file-content .code-view .lines-code .hljs {
-  background-color: #151f29;
+  background-color: #151515;
 }
 
 a.ui.label:hover, a.ui.labels .label:hover {
-  background-color: #26577b;
+  background-color: #444;
   color: rgb(219, 219, 219);
 }
 
 .ui.secondary.segment {
-  background: #1a2632;
+  background: #222;
 }
 
 .explore .navbar {
-  background-color: #151f29 !important;
+  background-color: #151515 !important;
 }
 
 .ui.menu.new-menu {
-  background-color: #151f29 !important;
+  background-color: #202020 !important;
 }
 
 input {
   line-height: normal;
-  background: #1a2632;
+  background: #222;
   border: 1px solid #313c47;
   padding: 7px 12px;
 }
@@ -721,4 +721,25 @@ input {
 .repository .ui.segment.sub-menu .list .item a:hover{
     color:#dbdbdb;
     transition: color 0.1s;}
+.ui.black.button{
+    background-color:#222;
+    color:#dbdbdb;}
+.ui.radio.checkbox input:checked~.box:before,
+.ui.radio.checkbox input:checked~label:before{
+    background-color:#333;}
+.ui.radio.checkbox input:checked~.box:after,
+.ui.radio.checkbox input:checked~label:after {
+    background-color:#9a9a9a;}
+.ui.radio.checkbox input:focus:checked~.box:before,
+.ui.radio.checkbox input:focus:checked~label:before{
+    background-color:#444;}
+.ui.radio.checkbox input:focus:checked~.box:after,
+.ui.radio.checkbox input:focus:checked~label:after{
+    background-color:#9a9a9a;}
+.ui.selection.active.dropdown,
+.ui.selection.active.dropdown:hover,
+.ui.selection.active.dropdown .menu,
+.ui.selection.active.dropdown:hover .menu,
+.ui.selection.dropdown:focus{
+    border-color:#333;}
 }
