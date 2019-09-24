@@ -715,4 +715,10 @@ input {
     background-color:inherit !important;}
 .repository .diff-file-box .code-diff .lines-num{
     border-color:#2d2d2d;}
+.repository .ui.segment.sub-menu .list .item a{
+    color:#797979;
+    transition: color 0.1s;}
+.repository .ui.segment.sub-menu .list .item a:hover{
+    color:#dbdbdb;
+    transition: color 0.1s;}
 }
