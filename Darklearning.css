@@ -379,6 +379,9 @@ input[type="checkbox"]:checked{
     background-color:#555;}
 .calendar_event_site{
     background-color:#353;}
+.qtext>div{
+    background-color:#151515 !important;
+}
 
 /*Replacement images*/
 img[src="https://elearning.tgm.ac.at/pluginfile.php/26624/mod_forum/post/2131/MeineKurse.png"]{
@@ -609,4 +612,12 @@ input[type="text"].correct{
     background-color:#262;}	
 input[type="text"].incorrect{	
     background-color:#922;}
+.que .answer>.correct>.specificfeedback{
+    background-color:#262;
+    border: solid 1px #888;
+    border-radius:0.25em}
+.que .answer>.incorrect>.specificfeedback{
+    background-color:#922;
+    border: solid 1px #888;
+    border-radius:0.25em}
 }
