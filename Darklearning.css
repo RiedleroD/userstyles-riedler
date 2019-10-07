@@ -382,7 +382,9 @@ input[type="checkbox"]:checked{
 .qtext>div{
     background-color:#151515 !important;
 }
-
+.qtext>div>table>tbody>tr>td>pre{
+    color:#AAA;
+}
 /*Replacement images*/
 img[src="https://elearning.tgm.ac.at/pluginfile.php/26624/mod_forum/post/2131/MeineKurse.png"]{
     content:url("https://riedler.gelse.net/sfto/screenshot_darklearning_1.png");}
