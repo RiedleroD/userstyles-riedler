@@ -155,7 +155,7 @@
 .block-timeline .paged-content-page-container .list-group-flush>.list-group-item{
     background-color:#222;}
 /*text*/
-span,p,.text-center,h1,h2,h3,h4,h5,h6,.text-right,body,.logininfo{
+span,p,.text-center,h1,h2,h3,h4,h5,h6,.text-right,body,.logininfo,pre{
     color:#AAA !important;}
 textarea.form-control{
     background-color:#555 !important;
