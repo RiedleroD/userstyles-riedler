@@ -528,16 +528,20 @@ table td,table th{
 
 @-moz-document url-prefix("http://elearning.tgm.ac.at/mod/assign/view.php"), url-prefix("https://elearning.tgm.ac.at/mod/assign/view.php") {
 /*Abgabestatus*/
-td.submissiongraded{
-    background-color:#272 !important;
-    color:#151515 !important;}
-td.submissionnotgraded{
-    background-color:#922 !important;
-    color:#AAA !important;}
+.submissionsummarytable td.submissiongraded{
+    background-color:#262;
+    color:#AAA;}
+.submissionsummarytable td.submissionnotgraded{
+    background-color:#922;
+    color:#AAA;}
 #jump-to-activity{
     background-color:#333;
     border-color:#888;
     color:#AAA;}
+.submissionsummarytable td.submissionstatussubmitted{
+    background-color:#262;
+    color:#AAA;}
+
 }
 
 @-moz-document url-prefix("http://elearning.tgm.ac.at/user/preferences.php"), url-prefix("https://elearning.tgm.ac.at/user/preferences.php") {
