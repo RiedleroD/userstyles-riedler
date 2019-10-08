@@ -343,6 +343,12 @@ input[type="checkbox"]:checked{
     border-radius:0.25em;}
 .border-bottom{
     border-bottom-color:#888 !important;}
+code{
+    color:#AAA;
+    background-color:#151515;
+    outline:auto 2px #000;
+    font-family:Monospace;
+    font-size:1.08em;}
 /*Editor Atto*/
 .editor_atto .icon{
     filter:invert(1) hue-rotate(180deg);}
