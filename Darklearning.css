@@ -374,6 +374,44 @@ code{
     background-color:#333;
     border-bottom-left-radius:0.5em;
     border-bottom-right-radius:0.5em;}
+/*Filemanager*/
+.filemanager .fp-navbar{
+    background-color:#333;
+    border-radius: 0.5em 0.5em 0 0;
+    border:none;
+    border-bottom:solid 1px #888;}
+.filemanager .filemanager-container{
+    background-color:#333;
+    border-radius: 0 0 0.5em 0.5em;
+    border:none !important;}
+.filemanager>.filemanager-container .yui3-datatable-header{
+    background-color:#333 !important;
+    text-shadow:none;
+    color:#AAA !important;
+    border-bottom-color:#888 !important;}
+.filemanager>.filemanager-container .yui3-datatable-sort-indicator{
+    filter:invert(1);}
+.filemanager>.filemanager-container .yui3-datatable-data>tr>td{
+    background-color:#333 !important;}
+.filemanager .btn{
+    background-color:#555;}
+.filemanager .btn:hover{
+    background-color:#666;}
+.filemanager .btn:active{
+    background-color:#888 !important;}
+.filemanager .fp-content:focus{
+    outline:none;}
+.filemanager .fp-iconview .fp-file .fp-thumbnail{
+    border:none;
+    background-color:#555;
+    border-radius:0.5em 0.5em 0 0;
+    min-width:112px;}
+.filemanager .fp-iconview .fp-file .fp-thumbnail img{
+    border:none;}
+.filemanager .fp-iconview .fp-filename{
+    background-color:#555;}
+.filemanager .fp-iconview .fp-filename-field{
+    border-radius: 0 0 0.5em 0.5em;}
 /*Sidebar Calendar*/
 .calendar_event_course{
     background-color:#533;}
