@@ -183,6 +183,12 @@ a:hover,a>span:hover{
 .block-timeline .tab-content img{
     filter:none;}
 /*Buttons*/
+.close:hover,
+.moodle-dialogue-base .closebutton:hover,
+.close:focus,
+.moodle-dialogue-base .closebutton:focus{
+    color:#AAA;
+    opacity:1;}
 .btn{
     border-radius:0.25em;}
 .btn-outline-secondary{
@@ -401,17 +407,36 @@ code{
     background-color:#888 !important;}
 .filemanager .fp-content:focus{
     outline:none;}
-.filemanager .fp-iconview .fp-file .fp-thumbnail{
+.filemanager .fp-iconview .fp-file .fp-thumbnail,
+.moodle-dialogue .filemanager .fp-thumbnail{
     border:none;
-    background-color:#555;
-    border-radius:0.5em 0.5em 0 0;
-    min-width:112px;}
-.filemanager .fp-iconview .fp-file .fp-thumbnail img{
+    min-width:112px;
+    background-color:#0000;}
+.filemanager .fp-iconview .fp-file .fp-thumbnail{
+    border-bottom:none;}
+.filemanager .fp-file{
+    box-shadow:0 0 0.5em #000;
+    border-radius:0.5em 0.5em 0 0;}
+.filemanager .fp-thumbnail img{
     border:none;}
 .filemanager .fp-iconview .fp-filename{
-    background-color:#555;}
-.filemanager .fp-iconview .fp-filename-field{
-    border-radius: 0 0 0.5em 0.5em;}
+    background-color:#333;
+    border-top:none;
+    border-radius: 0 0 0.5em 0.5em;
+    padding:0 0.1em 0.1em 0.1em;
+    box-shadow:0 0 0.5em #000;}
+.fp-filename-field{
+    padding-left:1em;
+    margin-left:-1em;
+    padding-right:1em;
+    margin-right:-1em;}
+.filemanager .fp-info .fp-thumbnail{
+    border-radius:0.5em;
+    box-shadow:0 0 0.5em #000;}
+.filemanager .fp-iconview .fp-file:hover .fp-filename-field{
+    overflow:hidden;}
+.dndupload-target{
+    background-color:#333 !important;}
 /*Sidebar Calendar*/
 .calendar_event_course{
     background-color:#533;}
@@ -424,11 +449,9 @@ code{
 .calendar_event_site{
     background-color:#353;}
 .qtext>div{
-    background-color:#151515 !important;
-}
+    background-color:#151515 !important;}
 .qtext>div>table>tbody>tr>td>pre{
-    color:#AAA;
-}
+    color:#AAA;}
 /*Replacement images*/
 img[src="https://elearning.tgm.ac.at/pluginfile.php/26624/mod_forum/post/2131/MeineKurse.png"]{
     content:url("https://riedler.gelse.net/sfto/screenshot_darklearning_1.png");}
