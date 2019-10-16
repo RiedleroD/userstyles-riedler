@@ -48,7 +48,7 @@
         display:none;}
 /*message drawer*/
 .message-app{
-    background-color:#222 !important}
+    background-color:#222 !important;}
 .message-app .input-group>input,.input-group-text{
     background-color:#333 !important;
     border-color:#888;
@@ -91,7 +91,7 @@
 #conversation-actions-menu-button:focus{
     background-color:#666;}
 .message-app .no-gutters{
-    outline:solid 1px #333}
+    outline:solid 1px #333;}
 .message-app .content-message-container>div[data-region="self-conversation-message-container"]{
     background-color:#444 !important;}
 .message-app .header-container>.bg-white{
@@ -326,7 +326,7 @@ input[type="checkbox"]:checked{
     background:url("https://img.icons8.com/metro/344/checkmark.png") no-repeat;
     background-position:center;
     background-size:0.8em;
-    filter:invert(0.5)}
+    filter:invert(0.5);}
 .form-control{
     border-radius:0.5em;
     background-color:#444;
@@ -441,9 +441,9 @@ code{
 .calendar_event_course{
     background-color:#533;}
 .calendar_event_category{
-    background-color:#535}
+    background-color:#535;}
 .calendar_event_group{
-    background-color:#553}
+    background-color:#553;}
 .calendar_event_user{
     background-color:#555;}
 .calendar_event_site{
@@ -456,9 +456,9 @@ code{
 img[src="https://elearning.tgm.ac.at/pluginfile.php/26624/mod_forum/post/2131/MeineKurse.png"]{
     content:url("https://riedler.gelse.net/sfto/screenshot_darklearning_1.png");}
 .progressBarCell>.nowDiv>.icon[src$="/right"]{
-    content:url("https://riedler.gelse.net/sfto/darklearning_triangle_top_right.svg")}
+    content:url("https://riedler.gelse.net/sfto/darklearning_triangle_top_right.svg");}
 .progressBarCell>.nowDiv>.icon[src$="/left"]{
-    content:url("https://riedler.gelse.net/sfto/darklearning_triangle_top_left.svg")}
+    content:url("https://riedler.gelse.net/sfto/darklearning_triangle_top_left.svg");}
 img[src$="elearning.tgm.ac.at/theme/image.php/classic/core/"][src$="/i/loading_small"]{
     filter:invert(1);}
 .loading{
@@ -468,7 +468,7 @@ img[src$="elearning.tgm.ac.at/theme/image.php/classic/core/"][src$="/i/loading_s
     content:"\00a0";
     background-image:url("https://elearning.tgm.ac.at/theme/image.php/classic/core/123456/i/loading_small");
     background-repeat:no-repeat;
-    filter:invert(1)}
+    filter:invert(1);}
 }
 
 @-moz-document url("http://elearning.tgm.ac.at/my/"), url-prefix("https://elearning.tgm.ac.at/my/") {
@@ -516,14 +516,11 @@ img[src$="elearning.tgm.ac.at/theme/image.php/classic/core/"][src$="/i/loading_s
 
 @-moz-document url("https://elearning.tgm.ac.at/login/index.php"), url("http://elearning.tgm.ac.at/login/index.php") {
 .card{
-    background-color:#333;
-}
+    background-color:#333;}
 .mt-3{
-    color:#AAA;
-}
+    color:#AAA;}
 img.img-fluid{
-    filter:invert(1) hue-rotate(180deg) brightness(0.9)
-}
+    filter:invert(1) hue-rotate(180deg) brightness(0.9);}
 .btn-primary{
     color:#CCC;
     background-color:#418BA4;}
@@ -566,7 +563,7 @@ img.img-fluid{
 a.btn-sm{
     background-color:#444;}
 a.btn-sm:active, a.btn-sm.active, a.btn-sm:focus, a.btn-sm.checked{
-    background-color:#666 !important}
+    background-color:#666 !important;}
 }
 
 @-moz-document url-prefix("https://elearning.tgm.ac.at/grade/report/overview/index.php"), url-prefix("http://elearning.tgm.ac.at/grade/report/overview/index.php") {
@@ -646,8 +643,7 @@ div[data-region="datarequests"]>.mt-1.mb-1>.btn.btn-primary{
     color:#AAA !important;	
     background-color:#444;}	
 #mod_quiz_navblock .qnbutton>.thispageholder{	
-    border:none !important;	
-}	
+    border:none !important;}	
 .quizreviewsummary>tbody>tr>.cell{	
     background-color:#333;}	
 .path-mod-quiz #mod_quiz_navblock .qnbutton.notyetanswered>.trafficlight{	
@@ -656,7 +652,7 @@ div[data-region="datarequests"]>.mt-1.mb-1>.btn.btn-primary{
 .path-mod-quiz #mod_quiz_navblock .qnbutton.invalidanswer>.trafficlight{	
     background-color:#888;}	
 .path-mod-quiz #mod_quiz_navblock .qnbutton.thispage>.trafficlight{	
-    filter:brightness(1.3)}	
+    filter:brightness(1.3);}
 .answer>input[type="text"]{	
     background-color:#444;}	
 .subquestion input[type="text"]{	
@@ -688,9 +684,9 @@ input[type="text"].incorrect{
 .que .answer>.correct>.specificfeedback{
     background-color:#262;
     border: solid 1px #888;
-    border-radius:0.25em}
+    border-radius:0.25em;}
 .que .answer>.incorrect>.specificfeedback{
     background-color:#922;
     border: solid 1px #888;
-    border-radius:0.25em}
+    border-radius:0.25em;}
 }
