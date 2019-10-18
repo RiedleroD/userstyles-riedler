@@ -141,7 +141,8 @@
 :root,body,#page{
     background-color:#151515 !important;}
 #region-main{
-    border-radius:0.5em;}
+    border-radius:0.5em;
+    overflow:visible;}
 #page-header>div>div.card,#region-main{
     background-color:#222;}
 /*footer*/
@@ -305,14 +306,16 @@ table.flexible thead th,
     background-repeat:no-repeat;
     background-size:0.75em;}
 .custom-select:disabled{
-    color:#888;
-    background-color:#888;
+    color:#AAA;
+    background-color:#333;
     background-image:none;}
 .custom-select:disabled:hover{
-    color:#888;
-    background-color:#888;}
+    color:#AAA;
+    background-color:#333;}
 .custom-select:focus{
     color:#AAA;}
+.que .correct .custom-select{
+    background-color:#262;}
 input[type="checkbox"]{
     -webkit-appearance:none;
     -moz-appearance: none;
@@ -437,16 +440,21 @@ code{
     overflow:hidden;}
 .dndupload-target{
     background-color:#333 !important;}
-/*Sidebar Calendar*/
-.calendar_event_course{
+/*Calendar*/
+.calendar_event_course,
+.path-calendar .maincalendar .calendarmonth ul li .badge.badge-circle.calendar_event_course{
     background-color:#533;}
-.calendar_event_category{
+.calendar_event_category,
+.path-calendar .maincalendar .calendarmonth ul li .badge.badge-circle.calendar_event_category{
     background-color:#535;}
-.calendar_event_group{
+.calendar_event_group,
+.path-calendar .maincalendar .calendarmonth ul li .badge.badge-circle.calendar_event_group{
     background-color:#553;}
-.calendar_event_user{
+.calendar_event_user,
+.path-calendar .maincalendar .calendarmonth ul li .badge.badge-circle.calendar_event_user{
     background-color:#555;}
-.calendar_event_site{
+.calendar_event_site,
+.path-calendar .maincalendar .calendarmonth ul li .badge.badge-circle.calendar_event_site{
     background-color:#353;}
 .qtext>div{
     background-color:#151515 !important;}
@@ -689,4 +697,23 @@ input[type="text"].incorrect{
     background-color:#922;
     border: solid 1px #888;
     border-radius:0.25em;}
+}
+
+@-moz-document url-prefix("https://elearning.tgm.ac.at/calendar/view.php"), url-prefix("http://elearning.tgm.ac.at/calendar/view.php") {
+.eventlist .event .card{
+    background-color:#333;
+    border-radius:0.5em !important;
+    overflow:hidden;}
+.path-calendar .maincalendar .calendar_event_course{
+    border:none;}
+.path-calendar .maincalendar .calendarmonth ul li>a:hover{
+    overflow:visible;
+    transform:translate(0,0);
+    margin-bottom:0.45em;}
+.path-calendar .maincalendar .calendarmonth ul li>a:hover .eventname{
+    background-color:#333;
+    position:absolute;
+    right:-3.5em;}
+.path-calendar .maincalendar .calendarmonth ul li>a{
+    text-overflow:clip;}
 }
