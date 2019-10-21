@@ -207,6 +207,7 @@ a:hover,a>span:hover{
     border-color:#222;}
 .pagination>.page-item.disabled>a{
     filter:grayscale(1);
+	background-color:#444;
     border-color:#222;}
 .pagination>.page-item>a:hover{
     background-color:#555;}
@@ -647,7 +648,8 @@ div[data-region="datarequests"]>.mt-1.mb-1>.btn.btn-primary{
 .path-mod-quiz #mod_quiz_navblock .qnbutton.incorrect>.trafficlight{	
     background-color:#922;	
     background-image:none;}	
-.path-mod-quiz #mod_quiz_navblock .qnbutton{	
+.path-mod-quiz #mod_quiz_navblock span.qnbutton,
+.path-mod-quiz #mod_quiz_navblock a.qnbutton{	
     color:#AAA !important;	
     background-color:#444;}	
 #mod_quiz_navblock .qnbutton>.thispageholder{	
@@ -659,8 +661,8 @@ div[data-region="datarequests"]>.mt-1.mb-1>.btn.btn-primary{
 .path-mod-quiz #mod_quiz_navblock .qnbutton.answersaved>.trafficlight,	
 .path-mod-quiz #mod_quiz_navblock .qnbutton.invalidanswer>.trafficlight{	
     background-color:#888;}	
-.path-mod-quiz #mod_quiz_navblock .qnbutton.thispage>.trafficlight{	
-    filter:brightness(1.3);}
+.path-mod-quiz #mod_quiz_navblock span.qnbutton.thispage{	
+    box-shadow:0 0 0.2em #FFF}
 .answer>input[type="text"]{	
     background-color:#444;}	
 .subquestion input[type="text"]{	
