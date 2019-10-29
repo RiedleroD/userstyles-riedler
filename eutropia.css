@@ -5,15 +5,42 @@
 @description    A dark mode for dolphin-emu.org
 @author         Riedler
 @preprocessor uso
-@var	color	bg1	"Background 1"	#000
-@var	color	txt	"Text"			#AAA
+@var	color	bg1	"Background 1"		#000
+@var	color	bg2	"Background 1"		#151515
+@var	color	txt	"Text"				#AAA
+@var	color	btn	"Buttons"			#248
+@var	color	brd	"Borders"			#888
+@var	color	inf	"Information Boxes"	#223
 ==/UserStyle== */
 @-moz-document domain("dolphin-emu.org") {
 	:root,
 	body{
 		background-color:/*[[bg1]]*/;}
-	a,p,span,
+	*{
+		text-shadow:none !important}
+	a,p,span,pre,
 	h1,h2,h3,h4,h5,h6,
 	td{
 		color:/*[[txt]]*/;}
+	.btn-info,
+	.btn-primary{
+		background-image:none;
+		background-color:/*[[btn]]*/;
+		border:none;}
+	pre{
+		background-color:/*[[bg1]]*/;
+		border-color:/*[[brd]]*/;}
+	footer{
+		border-color:/*[[brd]]*/;}
+	.alert-info{
+		background-image:none;
+		background-color:/*[[inf]]*/;
+		border:none;
+		color:/*[[txt]]*/}
+	.page-header,
+	.versions-list tr:first-child,
+	.versions-list tr.download{
+		border-color:/*[[brd]]*/;}
+	.alert{
+		box-shadow:inset 0 1px 0 /*[[brd]]*/, 0 1px 2px rgba(0,0,0,0.05)}
 }
