@@ -1,20 +1,60 @@
 @-moz-document domain("try.gitea.io"), domain("gitea.gelse.eu") {
+/*Animations*/
+@keyframes width-expand{
+	from{transform:scale(0,0);}
+	to{transform:scale(1,1);}
+}
+@keyframes fade-in{
+	from{opacity:0}
+	to{opacity:1}
+}
+/*Colors*/
 :root{
+	--white-green:#5F5;
+	--light-green:#3A3;
 	--green:#292;
 	--dark-green:#060;
+	--black-green:#040;
+	--white-red:#F55;
+	--light-red:#C33;
 	--red:#922;
-	--light-red:#D33;
+	--dark-red:#800;
+	--black-red:#500;
+	--white-blue:#46F;
+	--light-blue:#24C;
 	--blue:#03A;
 	--dark-blue:#028;
+	--black-blue:#005;
+	--white-turqouise:#0EE;
+	--light-turqouise:#0AA;
+	--turqouise:#088;
+	--dark-turqouise:#066;
+	--black-turqouise:#044;
+	--white-teal:#0EA;
+	--light-teal:#0A8;
+	--teal:#097;
+	--dark-teal:#075;
+	--black-teal:#053;
+	--white-purple:#A5E;
+	--light-purple:#83A;
 	--purple:#629;
+	--dark-purple:#408;
+	--black-purple:#306;
+	--white-orange:#FA0;
+	--light-orange:#F80;
+	--orange:#E60;
+	--dark-orange:#A40;
+	--black-orange:#830;
 	--b0:#000;
 	--b1:#151515;
 	--b2:#222;
 	--b3:#333;
 	--b4:#444;
+	--dark:#555;
 	--grey:#888;
-	--light-grey:#AAA;
-	--white:#CCC;}
+	--light:#AAA;
+	--white:#CCC;
+	background-color:#000;}
 /*Header*/
 .repository>.header-wrapper{
 	background-color:var(--b0);}
@@ -26,35 +66,88 @@
 /*Text*/
 *,
 .ui.basic.buttons .button{
-	color:var(--light-grey) !important;}
+	color:var(--light) !important;}
 .ui.label.has-emoji{
 	color:var(--b1) !important;}
+.ui .text.grey{
+	color:var(--light) !important;}
 .ui .text.grey a{
 	color:var(--grey) !important;}
 .ui .text.grey a:hover{
-	color:var(--light-grey) !important;}
+	color:var(--light) !important;}
+.ui .text.red{
+	color:var(--red) !important;}
+.ui .text.green{
+	color:var(--green) !important;}
+.ui .text.purple{
+	color:var(--purple);}
+a[href]{
+	color:var(--light-blue) !important;}
+a[href]:hover{
+	color:var(--white-blue) !important;}
+.issue.list>.item .title{
+	color:var(--light) !important;}
+.issue.list>.item .title:hover{
+	color:var(--white) !important;}
+.issue.list>.item .desc a.milestone{
+	color:var(--grey) !important;}
+.issue.list>.item .desc a.milestone:hover{
+	color:var(--light) !important;}
+/*Also Text, but the file view linter*/
+.hljs-title,
+.hljs-section,
+.hljs-selector-id{
+	color:var(--red) !important;}
+.hljs-number,
+.hljs-literal,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag .hljs-attr{
+	color:var(--turqouise) !important;}
+.hljs-tag,
+.hljs-name,
+.hljs-attribute{
+	color:var(--blue) !important;}
+.hljs-string,
+.hljs-doctag{
+	color:var(--light-red) !important;}
+.hljs-comment,
+.hljs-quote{
+	color:var(--dark) !important;}
+.hljs-meta{
+	color:var(--grey) !important;}
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-subst{
+	color:var(--dark) !important;}
 /*Buttons*/
+.ui.basic.button:focus,
+.ui.basic.buttons .button:focus{
+	background-color:#5555 !important;}
 .ui.basic.button,
 .ui.basic.buttons>.ui.basic.button{
-	color:var(--light-grey) !important;
+	color:var(--light) !important;
 	background-color:#0000 !important;
 	box-shadow:none;
 	border:solid 1px var(--grey);}
 .ui.basic.button:hover,
 .ui.basic.buttons>.ui.basic.button:hover{
 	color:var(--white) !important;
-	background-color:#0000 !important;
+	background-color:#5555 !important;
 	border-color:var(--grey);
 	box-shadow:none !important;}
 .ui.button{
-	background-color:var(--b);}
+	background-color:var(--b);
+	color:var(--light) !important;}
+.ui.button:hover{
+	color:var(--white) !important;}
 .octicon{
 	color:inherit !important}
 .ui.labeled.button:not(.icon){
 	border:solid 1px var(--grey) !important;}
 .ui.labeled.button .ui.basic.label{
 	background-color:#0000;
-	color:var(--light-grey);
+	color:var(--light);
 	border-left:solid 1px var(--grey) !important;}
 .repo-buttons .disabled-repo-button a.button,
 .repo-buttons .disabled-repo-button a.button:hover{
@@ -157,7 +250,7 @@
 .ui.checkbox input:checked:focus~label:after,
 .ui.checkbox input:not([type=radio]):indeterminate:focus~.box:after,
 .ui.checkbox input:not([type=radio]):indeterminate:focus~label:after{
-	color:var(--light-grey);}
+	color:var(--light);}
 /*navbar*/
 .ui.secondary.menu .dropdown.item:hover,
 .ui.secondary.menu .link.item:hover,
@@ -168,7 +261,7 @@
 	border:none;}
 .ui.menu.navbar .item,
 .ui.menu.navbar .active.item{
-	color:var(--light-grey) !important;}
+	color:var(--light) !important;}
 /*Footer*/
 footer{
 	background-color:var(--b1);
@@ -190,7 +283,7 @@ footer .container .links>*{
 	background-color:var(--b2);}
 .ui.segment.sub-menu{
 	background-color:var(--b2);
-	color:var(--light-grey) !important;}
+	color:var(--light) !important;}
 body>div.full.height{
 	background-color:var(--b1);}
 .repository.view.issue .comment-list .comment .content>.header{
@@ -210,6 +303,8 @@ body>div.full.height{
 	border-color:var(--grey);}
 .ui.menu .item>.label{
 	background-color:var(--b3);}
+.ui.menu .item{
+	color:#AAA !important;}
 .markdown:not(code) h1{
 	border-color:var(--grey);}
 .ui.positive.message{
@@ -238,10 +333,103 @@ a.ui.labels .label:hover,
 	background-color:var(--green) !important;}
 .ui .background.purple{
 	background-color:var(--purple)}
-.ui .text.red{
-	color:var(--red) !important;}
-.ui .text.green{
-	color:var(--green) !important;}
-.ui .text.purple{
-	color:var(--purple);}
+.markdown:not(code) .highlight pre,
+.markdown:not(code) pre{
+	background-color:var(--b3);}
+.repository.view.issue .comment-list .event .octicon.octicon-primitive-dot{
+	color:var(--green) !important;
+	text-shadow:none;}
+.repository.file.list .non-diff-file-content .code-view .lines-num{
+	background-color:var(--b2);}
+.repository.file.list .non-diff-file-content .code-view .lines-code .hljs,
+.repository.file.list .non-diff-file-content .code-view .lines-code ol,
+.repository.file.list .non-diff-file-content .code-view .lines-code pre,
+.repository.file.list .non-diff-file-content .code-view .lines-num .hljs,
+.repository.file.list .non-diff-file-content .code-view .lines-num ol,
+.repository.file.list .non-diff-file-content .code-view .lines-num pre{
+	background-color:var(--b2);}
+.ui .info.segment.top{
+	background-color:var(--b2) !important;}
+.repository .diff-detail-box{
+	background-color:var(--b2);}
+.repository .diff-file-box .code-diff tbody tr td.tag-code,
+.repository .diff-file-box .code-diff tbody tr.tag-code td{
+	background-color:var(--b1) !important;
+	border:none;}
+.repository .diff-file-box .file-body.file-code .lines-num{
+	background-color:var(--b1);
+	border:none;}
+.repository .diff-file-box .file-body.file-code .nl-0.ol-0>.lines-num{
+	border:none;}
+.repository .diff-file-box .code-diff-split tbody tr td.del-code,
+.repository .diff-file-box .code-diff-split tbody tr.del-code td:nth-child(1),
+.repository .diff-file-box .code-diff-split tbody tr.del-code td:nth-child(2),
+.repository .diff-file-box .code-diff-split tbody tr.del-code td:nth-child(3){
+	background-color:var(--black-red) !important;}
+.repository .diff-file-box .code-diff-split tbody tr td.add-code,
+.repository .diff-file-box .code-diff-split tbody tr.add-code td:nth-child(4),
+.repository .diff-file-box .code-diff-split tbody tr.add-code td:nth-child(5),
+.repository .diff-file-box .code-diff-split tbody tr.add-code td:nth-child(6){
+	background-color:var(--black-green) !important;}
+.repository .diff-file-box .code-diff-split tbody tr td.del-code,
+.repository .diff-file-box .code-diff-split tbody tr.del-code td:nth-child(1),
+.repository .diff-file-box .code-diff-split tbody tr.del-code td:nth-child(2),
+.repository .diff-file-box .code-diff-split tbody tr.del-code td:nth-child(3){
+	border-color:var(--grey) !important;}
+.repository .diff-file-box .code-diff-split tbody tr.add-code td:nth-child(1),
+.repository .diff-file-box .code-diff-split tbody tr.add-code td:nth-child(2),
+.repository .diff-file-box .code-diff-split tbody tr.add-code td:nth-child(3),
+.repository .diff-file-box .code-diff-split tbody tr.del-code td:nth-child(4),
+.repository .diff-file-box .code-diff-split tbody tr.del-code td:nth-child(5),
+.repository .diff-file-box .code-diff-split tbody tr.del-code td:nth-child(6){
+	background-color:var(--b1);}
+.repository .diff-file-box .code-diff tbody tr .added-code{
+	background-color:var(--dark-green);
+	box-shadow:0 0 0.2em var(--light);}
+.repository .diff-file-box .code-diff tbody tr .removed-code{
+	background-color:var(--dark-red);
+	box-shadow:0 0 0.2em var(--light);}
+.repository .diff-box .header .count .bar{
+	background-color:var(--dark-red);}
+.repository .diff-box .header .count .bar .add{
+	background-color:var(--dark-green);}
+.ui.card{
+	background-color:var(--b3);
+	box-shadow:none;}
+.user.profile .ui.card .extra.content ul li:not(:last-child){
+	border-color:var(--grey);}
+.ui.repository.list .item:not(:first-child){
+	border-color:var(--grey);}
+.ui.secondary.segment{
+	background-color:var(--b2);}
+.feeds .list ul li.private{
+	background-color:var(--b2);}
+.feeds .list ul li:not(:last-child){
+	border-color:var(--grey);}
+.ui.attached+.ui.attached.table:not(.top){
+	margin-top:-0.2em;}
+[data-tooltip]:after{
+	background-color:var(--b3);
+	color:var(--light);
+	border-color:var(--grey);
+	box-shadow:none;}
+[data-tooltip]:not([data-position]):before{
+	background-color:var(--b3);
+	box-shadow:1px 1px 0 0 var(--grey);}
+.repository.release #release-list>li .detail .download .list,
+.repository.release #release-list>li .detail .download .list li{
+	border-color:var(--grey);}
+.ui.orange.label,
+.ui.orange.labels .label{
+	background-color:var(--dark-orange) !important;
+	border:none;}
+.ui.label,
+.ui.labels .label{
+	overflow:hidden;
+	white-space:nowrap;}
+.ui.comments .comment .actions a{
+	color:var(--light) !important;}
+.ui.label.
+.ui.label:hover{
+	color:var(--light) !important;}
 }
