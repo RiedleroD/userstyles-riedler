@@ -1,0 +1,19 @@
+/* ==UserStyle==
+@name           Eutropia
+@namespace      https://gitea.gelse.eu/Riedler/Userstyles-Riedler/src/branch/eutropia
+@version        0.0.1
+@description    A dark mode for dolphin-emu.org
+@author         Riedler
+@preprocessor uso
+@var	color	bg1	"Background 1"	#000
+@var	color	txt	"Text"			#AAA
+==/UserStyle== */
+@-moz-document domain("dolphin-emu.org") {
+	:root,
+	body{
+		background-color:/*[[bg1]]*/;}
+	a,p,span,
+	h1,h2,h3,h4,h5,h6,
+	td{
+		color:/*[[txt]]*/;}
+}
