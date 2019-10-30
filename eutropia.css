@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Eutropia
 @namespace      https://gitea.gelse.eu/Riedler/Userstyles-Riedler/src/branch/eutropia
-@version        0.0.1
+@version        0.0.2
 @description    A dark mode for dolphin-emu.org
 @author         Riedler
 @preprocessor	uso
@@ -20,21 +20,47 @@
 @var	color	pl1		"Game: Playable"	#2A2
 @var	color	pl2		"Game: Starts"		#CA0
 @var	color	pl3		"Game: Broken"		#B33
+@var	color	lgt		"Highlight"			#FFFFFF15
 ==/UserStyle== */
 @-moz-document domain("dolphin-emu.org") {
 	:root,
 	body{
 		background-color:/*[[bg0]]*/;}
-	*{
-		text-shadow:none !important}
-	p,span,pre,
+	body{
+		padding-top:5em;}
+	:root,body,
+	p,span,pre,code,
 	h1,h2,h3,h4,h5,h6,
-	td,dt,figcaption{
-		color:/*[[txt]]*/;}
-	a{
+	td,dt,figcaption,li{
+		color:/*[[txt]]*/;
+		text-shadow:none !important}
+	.col-row .col{
+		background-color:/*[[bg1]]*/;}
+	.col-row{
+		border-radius:0.5rem;}
+	.compat-list>tbody{
+		background-color:/*[[bg1]]*/;
+		border-radius:0.5rem;}
+	.compat-list tbody tr:nth-child(2n+1){
+		background-color:transparent;}
+	.compat-list tbody tr:nth-child(2n){
+		background-color:/*[[lgt]]*/;}
+	a[href],
+	a[href] span{
 		color:/*[[lnk]]*/}
-	a:hover{
+	a[href]:hover,
+	a[href]:hover span{
 		color:/*[[hlnk]]*/}
+	#navbar-dolphin{
+		background-image:none;
+		background-color:/*[[bg1]]*/;
+		position:fixed;
+		z-index:3;
+		top:0;
+		width:100vw;
+		height:4em;}
+	.breadcrumb{
+		background-color:/*[[bg1]]*/}
 	.btn-info,
 	.btn-primary{
 		background-image:none;
@@ -106,6 +132,59 @@
 	.rss-tag:focus{
 		background-color:/*[[hbtn]]*/;
 		color:/*[[htxt]]*/;}
+	.nav>li>a:hover,
+	.nav>li>a:focus{
+		background-color:/*[[bg2]]*/;}
+	code{
+		background-color:/*[[lgt]]*/;}
+	#toc{
+		background-color:/*[[bg1]]*/;
+		border:none;
+		border-radius:0.5rem;}
+	div.thumbinner{
+		background-color:/*[[bg1]]*/;
+		border:none;
+		border-radius:0.5rem;}
+	.category>img[title="Wiiware"],
+	.category>img[title="Gamecube"],
+	.category>img[title="Wii"],
+	.category>img[title="Virtual-console"],
+	.category>img[title="Channel"]{
+		filter:invert(0.8);}
+	img[src="//dolphin-emu.org/m/static/img/stars/5.7d3488bc4093.png"]{
+		margin-left:-1em;
+		content:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='20px' width='120px'><text x='0' y='16.5' font-size='19'>⭐⭐⭐⭐⭐</text></svg>");}
+	img[src="//dolphin-emu.org/m/static/img/stars/4.5096f691933f.png"]{
+		margin-left:-1em;
+		content:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='20px' width='120px'><text x='0' y='16.5' font-size='19'>⭐⭐⭐⭐</text></svg>");}
+	img[src="//dolphin-emu.org/m/static/img/stars/3.43fe25f46703.png"]{
+		margin-left:-1em;
+		content:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='20px' width='120px'><text x='0' y='16.5' font-size='19'>⭐⭐⭐</text></svg>");}
+	img[src="//dolphin-emu.org/m/static/img/stars/2.195f9785addd.png"]{
+		margin-left:-1em;
+		content:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='20px' width='120px'><text x='0' y='16.5' font-size='19'>⭐⭐</text></svg>");}
+	img[src="//dolphin-emu.org/m/static/img/stars/1.6dfb2570f44e.png"]{
+		margin-left:-1em;
+		content:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='20px' width='120px'><text x='0' y='16.5' font-size='19'>⭐</text></svg>");}
+	.pagination>.active>a,
+	.pagination>.active>span,
+	.pagination>.active>a:hover,
+	.pagination>.active>span:hover,
+	.pagination>.active>a:focus,
+	.pagination>.active>span:focus{
+		background-color:/*[[btn]]*/;
+		border-color:/*[[btn]]*/;}
+	.pagination>li>a, .pagination>li>span{
+		background-color:/*[[bg1]]*/;
+		border-color:/*[[brd]]*/;
+		color:/*[[lnk]]*/}
+	.pagination>li>a:hover,
+	.pagination>li>span:hover,
+	.pagination>li>a:focus,
+	.pagination>li>span:focus{
+		background-color:/*[[bg2]]*/;
+		color:/*[[hlnk]]*/;
+		border-color:/*[[txt]]*/}
 }
 @-moz-document regexp("(.*\\.|)dolphin\\-emu\\.org\\/media(\\.?|\\/).*"){
 	#gallery>a{
