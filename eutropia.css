@@ -196,6 +196,14 @@
 	.dropdown-menu>li>a:focus{
 		background-image:none;
 		background-color:/*[[bg2]]*/}
+	::-webkit-scrollbar{
+    	background:transparent;
+		background-image:linear-gradient(to right,transparent 0,transparent 95%,/*[[bg1]]*/ 90%);}
+	::-webkit-scrollbar-thumb{
+		background-image:linear-gradient(to right,transparent 0,transparent 95%,/*[[btn]]*/ 90%);}
+	::-webkit-scrollbar-thumb:hover{
+		background-image:linear-gradient(to right,/*[[btn]]*/ 0,/*[[btn]]*/ 90%);
+		box-shadow:0 0 0 100vh /*[[bg1]]*/;}
 }
 @-moz-document regexp("(.*\\.|)dolphin\\-emu\\.org\\/media(\\.?|\\/).*"){
 	#gallery>a{
