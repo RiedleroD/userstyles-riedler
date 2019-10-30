@@ -45,11 +45,11 @@
 		background-color:transparent;}
 	.compat-list tbody tr:nth-child(2n){
 		background-color:/*[[lgt]]*/;}
-	a[href],
-	a[href] span{
+	a[href]:not(.btn),
+	a[href]:not(.btn) span{
 		color:/*[[lnk]]*/}
-	a[href]:hover,
-	a[href]:hover span{
+	a[href]:not(.btn):hover,
+	a[href]:not(.btn):hover span{
 		color:/*[[hlnk]]*/}
 	#navbar-dolphin{
 		background-image:none;
