@@ -45,11 +45,11 @@
 		background-color:transparent;}
 	.compat-list tbody tr:nth-child(2n){
 		background-color:/*[[lgt]]*/;}
-	a[href]:not(.btn),
-	a[href]:not(.btn) span{
+	a[href]:not([class^="tag"]):not(.btn),
+	a[href]:not([class^="tag"]):not(.btn) span{
 		color:/*[[lnk]]*/}
-	a[href]:not(.btn):hover,
-	a[href]:not(.btn):hover span{
+	a[href]:not([class^="tag"]):not(.btn):hover,
+	a[href]:not([class^="tag"]):not(.btn):hover span{
 		color:/*[[hlnk]]*/}
 	#navbar-dolphin{
 		background-image:none;
@@ -204,6 +204,13 @@
 	::-webkit-scrollbar-thumb:hover{
 		background-image:linear-gradient(to right,/*[[btn]]*/ 0,/*[[btn]]*/ 90%);
 		box-shadow:0 0 0 100vh /*[[bg1]]*/;}
+	.carousel-caption>p{
+		text-shadow:2px 2px 0.1em #000 !important;
+		color:/*[[htxt]]*/;
+		font-weight:bold;
+		display:none;}
+	#carousel-sshot:hover .carousel-caption>p{
+		display:initial;}
 }
 @-moz-document regexp("https?:(\\/\\/.*(?<!forums)\\.|\\/\\/)dolphin-emu\\.org\\/media(\\.?|\\/).*"){
 	#gallery>a{
