@@ -4,34 +4,54 @@
 @version        0.0.1
 @description    A dark mode for dolphin-emu.org
 @author         Riedler
-@preprocessor uso
-@var	color	bg1	"Background 1"		#000
-@var	color	bg2	"Background 1"		#151515
-@var	color	txt	"Text"				#AAA
-@var	color	btn	"Buttons"			#248
-@var	color	brd	"Borders"			#888
-@var	color	inf	"Information Boxes"	#223
+@preprocessor	uso
+@var	color	bg0		"Background 0"		#000
+@var	color	bg1		"Background 1"		#151515
+@var	color	bg2		"Background 2"		#222
+@var	color	txt		"Text"				#BBB
+@var	color	htxt	"Hovered Text"		#DDD
+@var	color	btn		"Buttons"			rgb(55, 100, 153)
+@var	color	hbtn	"Hovered buttons"	rgb(82,148,226)
+@var	color	brd		"Borders"			#888
+@var	color	inf		"Information Boxes"	rgba(55, 100, 153, .25)
+@var	color	lnk		"Links"				rgb(55, 100, 153)
+@var	color	hlnk	"Hovered links"		rgb(82,148,226)
+@var	color	pl0		"Game: Perfect"		rgb(55, 100, 153)
+@var	color	pl1		"Game: Playable"	#2A2
+@var	color	pl2		"Game: Starts"		#CA0
+@var	color	pl3		"Game: Broken"		#B33
 ==/UserStyle== */
 @-moz-document domain("dolphin-emu.org") {
 	:root,
 	body{
-		background-color:/*[[bg1]]*/;}
+		background-color:/*[[bg0]]*/;}
 	*{
 		text-shadow:none !important}
-	a,p,span,pre,
+	p,span,pre,
 	h1,h2,h3,h4,h5,h6,
-	td{
+	td,dt,figcaption{
 		color:/*[[txt]]*/;}
+	a{
+		color:/*[[lnk]]*/}
+	a:hover{
+		color:/*[[hlnk]]*/}
 	.btn-info,
 	.btn-primary{
 		background-image:none;
 		background-color:/*[[btn]]*/;
-		border:none;}
+		border:none;
+		color:/*[[txt]]*/}
+	.btn-info:hover,
+	.btn-primary:hover{
+		background-color:/*[[hbtn]]*/;
+		color:/*[[htxt]]*/}
 	pre{
 		background-color:/*[[bg1]]*/;
 		border-color:/*[[brd]]*/;}
 	footer{
 		border-color:/*[[brd]]*/;}
+	img{
+		border-radius:0.5rem;}
 	.alert-info{
 		background-image:none;
 		background-color:/*[[inf]]*/;
@@ -42,5 +62,54 @@
 	.versions-list tr.download{
 		border-color:/*[[brd]]*/;}
 	.alert{
-		box-shadow:inset 0 1px 0 /*[[brd]]*/, 0 1px 2px rgba(0,0,0,0.05)}
+		box-shadow:inset 0 1px 0 /*[[brd]]*/, 0 1px 2px rgba(0,0,0,0.05);}
+	.jumbotron{	/*I'm not laughing, you're laughing!*/
+		background-color:/*[[bg1]]*/;}
+	.jumbotron h1,
+	.jumbotron .h1{
+		color:/*[[txt]]*/;}
+	.well{
+		background-color:/*[[bg1]]*/;
+		background-image:none;
+		border:none;
+		border-radius:0.5rem;
+		box-shadow:none;}
+	.progress{
+		background-color:/*[[bg2]]*/;
+		background-image:none;}
+	.progress-bar-info{
+		background-color:/*[[pl0]]*/;
+		background-image:none;}
+	.progress-bar-success{
+		background-color:/*[[pl1]]*/;
+		background-image:none;}
+	.progress-bar-warning{
+		background-color:/*[[pl2]]*/;
+		background-image:none;}
+	.progress-bar-danger{
+		background-color:/*[[pl3]]*/;
+		background-image:none;}
+	input[type="text"]{
+		background-color:/*[[bg1]]*/;
+		border:none;}
+	.input-group>span>button{
+		background-color:/*[[bg1]]*/;
+		color:/*[[txt]]*/;}
+	.input-group>span>button:hover{
+		background-color:/*[[bg1]]*/;
+		color:/*[[htxt]]*/;}
+	ul.tag-cloud a,
+	.rss-tag{
+		background-color:/*[[btn]]*/;
+		color:/*[[txt]]*/;}
+	.rss-tag:hover,
+	.rss-tag:focus{
+		background-color:/*[[hbtn]]*/;
+		color:/*[[htxt]]*/;}
+}
+@-moz-document regexp("(.*\\.|)dolphin\\-emu\\.org\\/media(\\.?|\\/).*"){
+	#gallery>a{
+		border:none;}
+	img{
+		border-radius:0.5rem;}
 }
