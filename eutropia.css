@@ -27,7 +27,7 @@
 	body{
 		background-color:/*[[bg0]]*/;}
 	body{
-		padding-top:5em;}
+		padding-top:7rem;}
 	:root,body,
 	p,span,pre,code,
 	h1,h2,h3,h4,h5,h6,
@@ -58,7 +58,7 @@
 		z-index:3;
 		top:0;
 		width:100vw;
-		height:4em;}
+		height:5rem;}
 	.breadcrumb{
 		background-color:/*[[bg1]]*/}
 	.btn-info,
@@ -173,18 +173,29 @@
 	.pagination>.active>a:focus,
 	.pagination>.active>span:focus{
 		background-color:/*[[btn]]*/;
-		border-color:/*[[btn]]*/;}
+		border-color:/*[[btn]]*/;
+		z-index:1}
 	.pagination>li>a, .pagination>li>span{
 		background-color:/*[[bg1]]*/;
 		border-color:/*[[brd]]*/;
-		color:/*[[lnk]]*/}
+		color:/*[[lnk]]*/;}
 	.pagination>li>a:hover,
 	.pagination>li>span:hover,
 	.pagination>li>a:focus,
 	.pagination>li>span:focus{
 		background-color:/*[[bg2]]*/;
 		color:/*[[hlnk]]*/;
-		border-color:/*[[txt]]*/}
+		border-color:/*[[txt]]*/;}
+	.dropdown-menu{
+		background-color:/*[[bg1]]*/;
+		position:absolute;
+		overflow-y:scroll;
+		max-height:100vh;
+		top:0;}
+	.dropdown-menu>li>a:hover,
+	.dropdown-menu>li>a:focus{
+		background-image:none;
+		background-color:/*[[bg2]]*/}
 }
 @-moz-document regexp("(.*\\.|)dolphin\\-emu\\.org\\/media(\\.?|\\/).*"){
 	#gallery>a{
