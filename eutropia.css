@@ -22,7 +22,7 @@
 @var	color	pl3		"Game: Broken"		#B33
 @var	color	lgt		"Highlight"			#FFFFFF15
 ==/UserStyle== */
-@-moz-document domain("dolphin-emu.org") {
+@-moz-document regexp("https?:(\\/\\/.*(?<!forums)\\.|\\/\\/)dolphin-emu\\.org($|\\/.*)") {
 	:root,
 	body{
 		background-color:/*[[bg0]]*/;}
@@ -205,7 +205,7 @@
 		background-image:linear-gradient(to right,/*[[btn]]*/ 0,/*[[btn]]*/ 90%);
 		box-shadow:0 0 0 100vh /*[[bg1]]*/;}
 }
-@-moz-document regexp("(.*\\.|)dolphin\\-emu\\.org\\/media(\\.?|\\/).*"){
+@-moz-document regexp("https?:(\\/\\/.*(?<!forums)\\.|\\/\\/)dolphin-emu\\.org\\/media(\\.?|\\/).*"){
 	#gallery>a{
 		border:none;}
 	img{
