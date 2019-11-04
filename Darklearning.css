@@ -622,6 +622,8 @@ div[data-region="datarequests"]>.mt-1.mb-1>.btn.btn-primary{
 }
 
 @-moz-document url-prefix("http://elearning.tgm.ac.at/mod/quiz"), url-prefix("https://elearning.tgm.ac.at/mod/quiz") {
+.moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd.yui3-widget-hd{
+	color:#AAA;}
 .que .formulation{	
     background-color:#333;	
     color:#AAA;	
