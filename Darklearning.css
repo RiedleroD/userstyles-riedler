@@ -550,9 +550,15 @@ img.img-fluid{
     background-color:#922 !important;}
 /*.barRow .progressBarCell[style*="background-color:#025187"]{} This color is pretty good, I'll let it there.*/
 .barRow .progressBarCell{
-    border-color:#222;}
+    border-color:#222;
+    border-radius:0;}
 .barRow .firstProgressBarCell{
-    border-right:none !important;}
+    border-right:none !important;
+    border-radius:0.5em 0 0 1em !important;}
+.barRow .lastProgressBarCell{
+    border-radius:0 0.5em 1em 0 !important;}
+.barRow .firstProgressBarCell.lastProgressBarCell{
+    border-radius:0.5em 0.5em 1em 1em !important;}
 .badge-info{
     background-color:#444;}
 /*Misc*/
@@ -606,7 +612,6 @@ table td,table th{
 .submissionsummarytable td.submissionstatussubmitted{
     background-color:#262;
     color:#AAA;}
-
 }
 
 @-moz-document url-prefix("http://elearning.tgm.ac.at/user/preferences.php"), url-prefix("https://elearning.tgm.ac.at/user/preferences.php") {
