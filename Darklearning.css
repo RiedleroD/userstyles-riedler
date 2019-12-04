@@ -441,6 +441,13 @@ code{
     overflow:hidden;}
 .dndupload-target{
     background-color:#333 !important;}
+.filemanager .fp-treeview .fp-folder>tbody>tr>td{
+    background-color:#333;}
+/*Filepicker*/
+.file-picker .card{
+    background-color:#333;
+    border:solid 1px #888;
+    padding-bottom:0.4em;}
 /*Calendar*/
 .calendar_event_course,
 .path-calendar .maincalendar .calendarmonth ul li .badge.badge-circle.calendar_event_course{
@@ -734,4 +741,20 @@ input[type="text"].incorrect{
     right:-3.5em;}
 .path-calendar .maincalendar .calendarmonth ul li>a{
     text-overflow:clip;}
+}
+
+@-moz-document url-prefix("https://elearning.tgm.ac.at/mod/lesson/view.php"), url-prefix("http://elearning.tgm.ac.at/mod/lesson/view.php") {
+/*Mathekurse S01A bis S06D*/
+.course-1021 img.img-responsive.atto_image_button_text-bottom,
+.course-1022 img.img-responsive.atto_image_button_text-bottom,
+.course-1023 img.img-responsive.atto_image_button_text-bottom,
+.course-1024 img.img-responsive.atto_image_button_text-bottom,
+.course-1025 img.img-responsive.atto_image_button_text-bottom,
+.course-1026 img.img-responsive.atto_image_button_text-bottom,
+.course-1027 img.img-responsive.atto_image_button_text-bottom,
+.course-1028 img.img-responsive.atto_image_button_text-bottom,
+.course-1029 img.img-responsive.atto_image_button_text-bottom,
+.course-1030 img.img-responsive.atto_image_button_text-bottom,
+.course-1031 img.img-responsive.atto_image_button_text-bottom{
+    filter:invert(0.86) hue-rotate(180deg);}
 }
