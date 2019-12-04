@@ -15,6 +15,10 @@
 ::-webkit-scrollbar-corner,::-webkit-scrollbar-thumb{
     background-color:#333 !important;
     border-radius:0.4em;}
+:root{/*Because Firefox doesn't have the ::-moz-scrollbar selectors*/
+    scrollbar-width:thin;
+    scrollbar-color:#333 #151515;}
+
 /*navbar*/
 .navbar{
     background-color:#222;
