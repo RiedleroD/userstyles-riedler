@@ -8,13 +8,16 @@
     100% {background-color: #333;}
 }
 
-
 /*scrollbar*/
 ::-webkit-scrollbar,::-webkit-scrollbar-track-piece{
     background-color:#151515 !important;}
 ::-webkit-scrollbar-corner,::-webkit-scrollbar-thumb{
     background-color:#333 !important;
     border-radius:0.4em;}
+:root{/*Because Firefox doesn't have the ::-moz-scrollbar selectors*/
+    scrollbar-width:thin;
+    scrollbar-color:#333 #151515;}
+
 /*navbar*/
 .navbar{
     background-color:#222;
@@ -155,6 +158,15 @@
     background-color:#222;}
 .block-timeline .paged-content-page-container .list-group-flush>.list-group-item{
     background-color:#222;}
+#inst4:not(:hover) li.contains_branch>ul{
+    padding-left:0 !important;
+}
+#inst4 li.contains_branch>ul{
+    transition: padding-left 0.2s;
+}
+#inst4>div{
+    padding-right:0 !important;
+}
 /*text*/
 span,p,.text-center,h1,h2,h3,h4,h5,h6,.text-right,body,.logininfo,pre{
     color:#AAA !important;}
@@ -232,6 +244,16 @@ a:hover,a>span:hover{
 .dropdown-item:active,.dropdown-item.active{
     background-color:#444;}
 /*Misc*/
+.grade-navigation>.nav>.nav-item{
+    background-color:#222;}
+.grade-navigation>.nav>.nav-item>.nav-link{
+    border:none;
+    border-bottom:solid 1px #888;}
+.grade-navigation>.nav>.nav-item>.nav-link.active{
+    background-color:#333;
+    border-bottom:solid 1px #AAA;}
+.nav-tabs{
+    border-bottom-color:#888;}
 .matchtext{
     background-color:#6AC !important;
     color:#333 !important;}
@@ -441,6 +463,13 @@ code{
     overflow:hidden;}
 .dndupload-target{
     background-color:#333 !important;}
+.filemanager .fp-treeview .fp-folder>tbody>tr>td{
+    background-color:#333;}
+/*Filepicker*/
+.file-picker .card{
+    background-color:#333;
+    border:solid 1px #888;
+    padding-bottom:0.4em;}
 /*Calendar*/
 .calendar_event_course,
 .path-calendar .maincalendar .calendarmonth ul li .badge.badge-circle.calendar_event_course{
@@ -462,10 +491,16 @@ code{
 .qtext>div>table>tbody>tr>td>pre{
     color:#AAA;}
 /*Replacement images*/
-.progressBarCell>.nowDiv>.icon[src$="/right"]{
-    content:url('data:image/svg+xml;utf-8,<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1"><path d="M0 0 16 16V0Z" fill="rgb(127,127,127)"/></svg>');}
-.progressBarCell>.nowDiv>.icon[src$="/left"]{
-    content:url("data:image/svg+xml;utf-8,<svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1'><path d='M0 0V16L16 0Z' fill='rgb(127,127,127)'/></svg>");}
+.progressBarCell>.nowDiv>.icon{
+    display:none;}
+.progressBarCell>.nowDiv.lastHalfNow{
+    background:url('data:image/svg+xml;utf-8,<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1"><path d="M0 0 16 16V0Z" fill="rgb(127,127,127)"/></svg>') no-repeat;
+    background-position:5.5em 5px;
+    padding-right:1.3em;}
+.progressBarCell>.nowDiv.firstNow{
+    background:url("data:image/svg+xml;utf-8,<svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1'><path d='M0 0V16L16 0Z' fill='rgb(127,127,127)'/></svg>") no-repeat;
+    background-position:0em 5px;
+    padding-left:1.3em;}
 img[src$="elearning.tgm.ac.at/theme/image.php/classic/core/"][src$="/i/loading_small"]{
     filter:invert(1);}
 .loading{
@@ -499,7 +534,12 @@ img[src$="elearning.tgm.ac.at/theme/image.php/classic/core/"][src$="/i/loading_s
 .coursemenubtn:hover,.coursemenubtn:focus{
     background-color:#444 !important;}
 .course-listitem{
-    background-color:#333;}
+    background-color:#222;
+    border-color:#0000;
+    border-top-color:#888;
+    border-bottom-color:#888;}
+.block-myoverview>.container-fluid.p-0{
+    margin-top:1.5em;}
 .course-summaryitem{
     background-color:#333 !important;
     border:none !important;}
@@ -723,4 +763,20 @@ input[type="text"].incorrect{
     right:-3.5em;}
 .path-calendar .maincalendar .calendarmonth ul li>a{
     text-overflow:clip;}
+}
+
+@-moz-document url-prefix("https://elearning.tgm.ac.at/mod/lesson/view.php"), url-prefix("http://elearning.tgm.ac.at/mod/lesson/view.php") {
+/*Mathekurse S01A bis S06D*/
+.course-1021 img.img-responsive.atto_image_button_text-bottom,
+.course-1022 img.img-responsive.atto_image_button_text-bottom,
+.course-1023 img.img-responsive.atto_image_button_text-bottom,
+.course-1024 img.img-responsive.atto_image_button_text-bottom,
+.course-1025 img.img-responsive.atto_image_button_text-bottom,
+.course-1026 img.img-responsive.atto_image_button_text-bottom,
+.course-1027 img.img-responsive.atto_image_button_text-bottom,
+.course-1028 img.img-responsive.atto_image_button_text-bottom,
+.course-1029 img.img-responsive.atto_image_button_text-bottom,
+.course-1030 img.img-responsive.atto_image_button_text-bottom,
+.course-1031 img.img-responsive.atto_image_button_text-bottom{
+    filter:invert(0.86) hue-rotate(180deg);}
 }
