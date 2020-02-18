@@ -158,11 +158,17 @@
     background-color:#222;}
 .block-timeline .paged-content-page-container .list-group-flush>.list-group-item{
     background-color:#222;}
-#inst4:not(:hover) li.contains_branch>ul{
-    padding-left:0 !important;
+#inst4 li.contains_branch>ul{
+    padding-left:0;
+}
+#inst4:hover li.contains_branch>ul{
+    padding-left:0.5rem;
 }
 #inst4 li.contains_branch>ul{
     transition: padding-left 0.2s;
+}
+#inst4 .tree_item{
+    padding-left:0;
 }
 #inst4>div{
     padding-right:0 !important;
