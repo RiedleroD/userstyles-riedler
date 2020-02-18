@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Eutropia
 @namespace      https://gitea.gelse.eu/Riedler/Userstyles-Riedler/src/branch/eutropia
-@version        0.0.2
+@version        0.0.3
 @description    A dark mode for dolphin-emu.org
 @author         Riedler
 @preprocessor	uso
@@ -22,7 +22,7 @@
 @var	color	pl3		"Game: Broken"		#B33
 @var	color	lgt		"Highlight"			#FFFFFF15
 ==/UserStyle== */
-@-moz-document regexp("https?:(\\/\\/.*(?<!forums)\\.|\\/\\/)dolphin-emu\\.org($|\\/.*)") {
+@-moz-document regexp("https?:\\/\\/dolphin-emu\\.org($|\\/.*)") {
 	:root,
 	body{
 		background-color:/*[[bg0]]*/;}
@@ -151,21 +151,12 @@
 	.category>img[title="Virtual-console"],
 	.category>img[title="Channel"]{
 		filter:invert(0.8);}
-	img[src="//dolphin-emu.org/m/static/img/stars/5.7d3488bc4093.png"]{
-		margin-left:-1em;
-		content:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='20px' width='120px'><text x='0' y='16.5' font-size='19'>⭐⭐⭐⭐⭐</text></svg>");}
-	img[src="//dolphin-emu.org/m/static/img/stars/4.5096f691933f.png"]{
-		margin-left:-1em;
-		content:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='20px' width='120px'><text x='0' y='16.5' font-size='19'>⭐⭐⭐⭐</text></svg>");}
-	img[src="//dolphin-emu.org/m/static/img/stars/3.43fe25f46703.png"]{
-		margin-left:-1em;
-		content:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='20px' width='120px'><text x='0' y='16.5' font-size='19'>⭐⭐⭐</text></svg>");}
-	img[src="//dolphin-emu.org/m/static/img/stars/2.195f9785addd.png"]{
-		margin-left:-1em;
-		content:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='20px' width='120px'><text x='0' y='16.5' font-size='19'>⭐⭐</text></svg>");}
-	img[src="//dolphin-emu.org/m/static/img/stars/1.6dfb2570f44e.png"]{
-		margin-left:-1em;
-		content:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='20px' width='120px'><text x='0' y='16.5' font-size='19'>⭐</text></svg>");}
+	img[src="//dolphin-emu.org/m/static/img/stars/5.7d3488bc4093.png"],
+    img[src="//dolphin-emu.org/m/static/img/stars/4.5096f691933f.png"],
+    img[src="//dolphin-emu.org/m/static/img/stars/3.43fe25f46703.png"],
+    img[src="//dolphin-emu.org/m/static/img/stars/2.195f9785addd.png"],
+    img[src="//dolphin-emu.org/m/static/img/stars/1.6dfb2570f44e.png"]{
+        filter:invert(1) hue-rotate(175deg) brightness(2);}
 	.pagination>.active>a,
 	.pagination>.active>span,
 	.pagination>.active>a:hover,
@@ -212,9 +203,31 @@
 	#carousel-sshot:hover .carousel-caption>p{
 		display:initial;}
 }
-@-moz-document regexp("https?:(\\/\\/.*(?<!forums)\\.|\\/\\/)dolphin-emu\\.org\\/media(\\.?|\\/).*"){
+@-moz-document regexp("https?:\\/\\/dolphin-emu\\.org\\/media($|\\/.*)"){
 	#gallery>a{
 		border:none;}
 	img{
 		border-radius:0.5rem;}
+}
+@-moz-document regexp("https?:\\/\\/forums\\.dolphin-emu\\.org($|\\/.*)"){
+    #container{
+        background-color:/*[[bg0]]*/;
+        border:none;
+        border-radius:0.5em;}
+    table.tborder{
+        background-color:/*[[bg1]]*/;
+        border:none;}
+    table.tborder td.thead,
+    table.tborder td.tfoot{
+        background-color:/*[[bg2]]*/;}
+    table.tborder tr:nth-child(2n+1){
+        background-color:/*[[bg2]]*/;}
+    .smalltext,td{
+        color:/*[[txt]]*/;}
+    a:link,
+    .thead a:link{
+        color:/*[[lnk]]*/;}
+    a:link:hover{
+        color:/*[[hlnk]]*/;
+        text-decoration:underline;}
 }
