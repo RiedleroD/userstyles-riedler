@@ -1,3 +1,13 @@
+/* ==UserStyle==
+@name           Darklearning
+@namespace      github.com/openstyles/stylus
+@version        1.1.1
+@description    Darker version of Elearning
+@author         Riedler
+@preprocessor uso
+@advanced select PBCS "ProgressBarCell Shape" {"Pronounced":"1em","Rounded":"0.5em"}
+==/UserStyle== */
+
 @-moz-document domain("elearning.tgm.ac.at") {
 /*Animations*/
 
@@ -600,11 +610,11 @@ img.img-fluid{
     border-radius:0;}
 .barRow .firstProgressBarCell{
     border-right:none !important;
-    border-radius:0.5em 0 0 1em !important;}
+    border-radius:0.5em 0 0 /*[[PBCS]]*/ !important;}
 .barRow .lastProgressBarCell{
-    border-radius:0 0.5em 1em 0 !important;}
+    border-radius:0 0.5em /*[[PBCS]]*/ 0 !important;}
 .barRow .firstProgressBarCell.lastProgressBarCell{
-    border-radius:0.5em 0.5em 1em 1em !important;}
+    border-radius:0.5em 0.5em /*[[PBCS]]*/ /*[[PBCS]]*/ !important;}
 .badge-info{
     background-color:#444;}
 /*Misc*/
