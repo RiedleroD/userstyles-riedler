@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Eutropia
 @namespace      https://gitea.gelse.eu/Riedler/Userstyles-Riedler/src/branch/eutropia
-@version        0.0.4
+@version        0.1.0
 @description    A dark mode for dolphin-emu.org
 @author         Riedler
 @preprocessor	uso
@@ -22,35 +22,55 @@
 @var	color	pl3		"Game: Broken"		#B33
 @var	color	lgt		"Highlight"			#FFFFFF15
 ==/UserStyle== */
-@-moz-document regexp("https?:\\/\\/dolphin-emu\\.org($|\\/.*)") {
+@-moz-document regexp("https?:\\/\\/(..\\.)?dolphin-emu\\.org($|\\/.*)") {
 	:root,
 	body{
 		background-color:/*[[bg0]]*/;}
-	body{
-		padding-top:7rem;}
-	:root,body,
-	p,span,pre,code,
-	h1,h2,h3,h4,h5,h6,
-	td,dt,figcaption,li{
-		color:/*[[txt]]*/;
-		text-shadow:none !important}
-	.col-row .col{
+    .col-row .col,
+    .breadcrumb,
+    .jumbotron{/*I'm not laughing, you're laughing!*/
 		background-color:/*[[bg1]]*/;}
-	.col-row{
-		border-radius:0.5rem;}
-	.compat-list>tbody{
-		background-color:/*[[bg1]]*/;
-		border-radius:0.5rem;}
-	.compat-list tbody tr:nth-child(2n+1){
-		background-color:transparent;}
-	.compat-list tbody tr:nth-child(2n){
+    .nav>li>a:hover,
+	.nav>li>a:focus{
+		background-color:/*[[bg2]]*/;}
+    .compat-list tbody tr:nth-child(2n),
+    code{
 		background-color:/*[[lgt]]*/;}
-	a[href]:not([class^="tag"]):not(.btn),
+    footer,
+    .page-header,
+	.versions-list tr:first-child,
+	.versions-list tr.download{
+		border-color:/*[[brd]]*/;}
+    a[href]:not([class^="tag"]):not(.btn),
 	a[href]:not([class^="tag"]):not(.btn) span{
 		color:/*[[lnk]]*/}
 	a[href]:not([class^="tag"]):not(.btn):hover,
 	a[href]:not([class^="tag"]):not(.btn):hover span{
 		color:/*[[hlnk]]*/}
+    .compat-list tbody tr:nth-child(2n+1){
+		background-color:transparent;}
+    .col-row,
+    img{
+		border-radius:0.5rem;}
+    :root,body,
+	p,span,pre,code,
+	h1,h2,h3,h4,h5,h6,
+	td,dt,figcaption,li,
+    .jumbotron h1,
+	.jumbotron .h1,
+    a[href]:not([class^="tag"]):not(.btn).rss-tag,
+    ul.tag-cloud>li>a[rel="tag"]:not(.btn){
+		color:/*[[txt]]*/;
+        text-shadow:none !important}
+    ul.tag-cloud>li>a[rel="tag"]:not(.btn):hover,
+    a[href]:not([class^="tag"]):not(.btn).rss-tag:hover{
+        color:/*[[htxt]]*/;
+        background-color:/*[[hbtn]]*/;}
+	body{
+        padding-top:7rem;}
+	.compat-list>tbody{
+		background-color:/*[[bg1]]*/;
+        border-radius:0.5rem;}
 	#navbar-dolphin{
 		background-image:none;
 		background-color:/*[[bg1]]*/;
@@ -58,9 +78,7 @@
 		z-index:3;
 		top:0;
 		width:100vw;
-		height:5rem;}
-	.breadcrumb{
-		background-color:/*[[bg1]]*/}
+        height:5rem;}
 	.btn-info,
 	.btn-primary{
 		background-image:none;
@@ -74,26 +92,13 @@
 	pre{
 		background-color:/*[[bg1]]*/;
 		border-color:/*[[brd]]*/;}
-	footer{
-		border-color:/*[[brd]]*/;}
-	img{
-		border-radius:0.5rem;}
 	.alert-info{
 		background-image:none;
 		background-color:/*[[inf]]*/;
 		border:none;
 		color:/*[[txt]]*/}
-	.page-header,
-	.versions-list tr:first-child,
-	.versions-list tr.download{
-		border-color:/*[[brd]]*/;}
 	.alert{
 		box-shadow:inset 0 1px 0 /*[[brd]]*/, 0 1px 2px rgba(0,0,0,0.05);}
-	.jumbotron{	/*I'm not laughing, you're laughing!*/
-		background-color:/*[[bg1]]*/;}
-	.jumbotron h1,
-	.jumbotron .h1{
-		color:/*[[txt]]*/;}
 	.well{
 		background-color:/*[[bg1]]*/;
 		background-image:none;
@@ -132,11 +137,6 @@
 	.rss-tag:focus{
 		background-color:/*[[hbtn]]*/;
 		color:/*[[htxt]]*/;}
-	.nav>li>a:hover,
-	.nav>li>a:focus{
-		background-color:/*[[bg2]]*/;}
-	code{
-		background-color:/*[[lgt]]*/;}
 	#toc{
 		background-color:/*[[bg1]]*/;
 		border:none;
@@ -203,7 +203,7 @@
 	#carousel-sshot:hover .carousel-caption>p{
 		display:initial;}
 }
-@-moz-document regexp("https?:\\/\\/dolphin-emu\\.org\\/media($|\\/.*)"){
+@-moz-document regexp("https?:\\/\\/(..\\.)?dolphin-emu\\.org\\/media($|\\/.*)"){
 	#gallery>a{
 		border:none;}
 	img{
@@ -280,6 +280,9 @@
         background-color:/*[[bg1]]*/;
         border:solid 1px /*[[brd]]*/;
         color:/*[[txt]]*/;}
+    input.textbox:focus{
+        background-color:/*[[bg2]]*/;
+        color:/*[[htxt]]*/;}
     input.button{
         background-color:/*[[btn]]*/;
         background-image:none;
@@ -300,13 +303,13 @@
     .thread_status{
         filter:brightness(0.8);}
     select{
-        background-color:/*[[bg0]]*/;
+        background-color:/*[[bg1]]*/;
         border:solid 1px /*[[brd]]*/;
         color:/*[[txt]]*/;
         border-radius:0.5em 0 0 0.5em;}
-    select:hover{
+    select:focus{
         color:/*[[htxt]]*/;
-        background-color:/*[[bg1]]*/;}
+        background-color:/*[[bg2]]*/;}
     #copyright>span::after{ /*inserts myself into the copyright notice*/
         content:"| Dark theme by Riedler"}
     .post>.post_date{
@@ -392,4 +395,40 @@
         background-color:/*[[bg2]]*/;
         border:none;
         color:/*[[txt]]*/}
+    #select2-drop{
+        background-color:/*[[bg1]]*/;}
+    #select2-results-1>li{
+        background-color:/*[[bg1]]*/;
+        color:/*[[txt]]*/;}
+    #select2-results-1>li:not(:last-child){
+        border-bottom:solid 1px /*[[brd]]*/;}
+    .select2-search>input,
+    .select2-search input.select2-active{
+        background-color:/*[[bg1]]*/;
+        background-image:none;
+        color:/*[[txt]]*/;
+        border:solid 1px /*[[brd]]*/;
+        border-radius:0.5em;}
+    .select2-container .select2-choice,
+    .select2-container>.select2-choice.select2-default{
+        background-color:/*[[bg1]]*/;
+        background-image:none;
+        text-decoration:none !important;}
+    .select2-container .select2-choice .select2-arrow{
+        background-image:none;
+        background-color:/*[[bg1]]*/;
+        border-left:none;}
+    .select2-dropdown-open .select2-choice{
+        box-shadow:none;}
+    .pmspace_unused{
+        background-color:/*[[bg2]]*/;}
+    .pmspace_used.low{
+        background-color:/*[[pl1]]*/;
+        border:none;
+        border-left:solid 1px /*[[pl1]]*/;}
+    .pmspace_container{
+        border:none;
+        line-height:2;
+        margin-bottom:-0.3em;
+        background-color:#0000;}
 }
