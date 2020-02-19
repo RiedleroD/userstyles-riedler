@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Eutropia
 @namespace      https://gitea.gelse.eu/Riedler/Userstyles-Riedler/src/branch/eutropia
-@version        0.0.3
+@version        0.0.4
 @description    A dark mode for dolphin-emu.org
 @author         Riedler
 @preprocessor	uso
@@ -222,12 +222,68 @@
         background-color:/*[[bg2]]*/;}
     table.tborder tr:nth-child(2n+1){
         background-color:/*[[bg2]]*/;}
-    .smalltext,td{
+    .smalltext,td,.pagination{
         color:/*[[txt]]*/;}
+    #copyright{
+        color:/*[[htxt]]*/;}
     a:link,
     .thead a:link{
         color:/*[[lnk]]*/;}
     a:link:hover{
         color:/*[[hlnk]]*/;
         text-decoration:underline;}
+    .forum_status{
+        filter:invert(1) hue-rotate(180deg);}
+    .pagination .pagination_current{
+        background-color:/*[[hbtn]]*/;
+        border-radius:0.5em;
+        color:/*[[htxt]]*/;
+        border:none;}
+    .pagination .pagination_page,
+    .pagination .pagination_last,
+    .pagination .pagination_next{
+        background-color:/*[[btn]]*/;
+        border:none;
+        color:/*[[txt]]*/;
+        border-radius:0.5em;}
+    .pagination .pagination_page:hover,
+    .pagination .pagination_last:hover,
+    .pagination .pagination_next:hover{
+        background-color:/*[[hbtn]]*/;
+        color:/*[[htxt]]*/;
+        text-decoration:none;}
+    .pagination .go_page>img{
+        display:none;}
+    .pagination a.go_page{
+        border-bottom:solid 0.5em #FFF;
+        border-right:solid 0.5em #0000;
+        border-left:solid 0.5em #0000;
+        border-top:none;
+        padding:0;
+        border-radius:0;
+        line-height:0.5em;
+        background-color:#0000;}
+    .pagination .drop_go_page{
+        background-color:/*[[inf]]*/;}
+    input.textbox{
+        background-color:/*[[bg1]]*/;
+        border:none;
+        color:/*[[txt]]*/;}
+    input.button{
+        background-color:/*[[btn]]*/;
+        background-image:none;
+        color:/*[[txt]]*/ !important;
+        border:none;}
+    input.button:hover{
+        background-color:/*[[hbtn]]*/;
+        background-image:none;
+        color:/*[[htxt]]*/ !important;}
+    .trow_sep{
+        background-color:/*[[bg0]]*/;
+        color:/*[[txt]]*/;}
+    .star_rating{
+        filter:invert(1) hue-rotate(175deg) brightness(2);}
+    .star_rating a:not(.current_rating){
+        filter:brightness(1.8) hue-rotate(30deg);}
+    
 }
