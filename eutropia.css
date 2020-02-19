@@ -222,14 +222,23 @@
         background-color:/*[[bg2]]*/;}
     table.tborder tr:nth-child(2n+1){
         background-color:/*[[bg2]]*/;}
-    .smalltext,td,.pagination{
+    .smalltext,
+    span,
+    td,
+    .pagination,
+    .navigation .active,
+    strong{
         color:/*[[txt]]*/;}
-    #copyright{
+    #copyright,
+    blockquote cite,
+    strong{
         color:/*[[htxt]]*/;}
     a:link,
     .thead a:link{
         color:/*[[lnk]]*/;}
-    a:link:hover{
+    a:link:hover,
+    .navigation a:hover,
+    .navigation a:active{
         color:/*[[hlnk]]*/;
         text-decoration:underline;}
     .forum_status{
@@ -238,7 +247,8 @@
         background-color:/*[[hbtn]]*/;
         border-radius:0.5em;
         color:/*[[htxt]]*/;
-        border:none;}
+        border:none;
+        text-decoration:none;}
     .pagination .pagination_page,
     .pagination .pagination_last,
     .pagination .pagination_next{
@@ -254,8 +264,9 @@
         text-decoration:none;}
     .pagination .go_page>img{
         display:none;}
-    .pagination a.go_page{
-        border-bottom:solid 0.5em #FFF;
+    .pagination a.go_page,
+    #breadcrumb_multipage{
+        border-bottom:solid 0.5em /*[[btn]]*/;
         border-right:solid 0.5em #0000;
         border-left:solid 0.5em #0000;
         border-top:none;
@@ -267,7 +278,7 @@
         background-color:/*[[inf]]*/;}
     input.textbox{
         background-color:/*[[bg1]]*/;
-        border:none;
+        border:solid 1px /*[[brd]]*/;
         color:/*[[txt]]*/;}
     input.button{
         background-color:/*[[btn]]*/;
@@ -285,5 +296,100 @@
         filter:invert(1) hue-rotate(175deg) brightness(2);}
     .star_rating a:not(.current_rating){
         filter:brightness(1.8) hue-rotate(30deg);}
-    
+    .thread_legend img,
+    .thread_status{
+        filter:brightness(0.8);}
+    select{
+        background-color:/*[[bg0]]*/;
+        border:solid 1px /*[[brd]]*/;
+        color:/*[[txt]]*/;
+        border-radius:0.5em 0 0 0.5em;}
+    select:hover{
+        color:/*[[htxt]]*/;
+        background-color:/*[[bg1]]*/;}
+    #copyright>span::after{ /*inserts myself into the copyright notice*/
+        content:"| Dark theme by Riedler"}
+    .post>.post_date{
+        background-image:linear-gradient(/*[[bg1]]*/ 0%,/*[[bg2]]*/ 50%);
+        padding-top:2em;}
+    .post>.post_author,
+    .post>.post_content{
+        background-color:/*[[bg2]]*/;
+        border:none;}
+    .post>.post_controls{
+        background-image:linear-gradient(/*[[bg2]]*/ 50%,/*[[bg1]]*/ 100%);
+        border:none;
+        padding-bottom:2em;}
+    .postbit_buttons>a:link{
+        background-image:none;
+        background-color:/*[[btn]]*/;
+        color:/*[[txt]]*/;
+        border:none;}
+    .postbit_buttons>a:link:hover{
+        background-color:/*[[hbtn]]*/;
+        color:/*[[htxt]]*/;}
+    .codeblock{
+        background-color:/*[[bg0]]*/;
+        border:none;}
+    .buddy_status{
+        filter:invert(1) hue-rotate(180deg);}
+    .post>.post_author>.author_avatar>a>img{
+        background-color:/*[[bg0]]*/;
+        border:none;
+        border-radius:1em;
+        overflow:hidden;
+        padding:0;}
+    img[src="/images/groupimages/english/team-developer.gif"],
+    img[src=" /images/groupimages/english/team-contentcreator.png"]{
+        filter:brightness(0.8);}
+    #breadcrumb_multipage{
+        height:0;}
+    #breadcrumb_multipage_popup{
+        border:none;
+        outline:none;
+        background:/*[[inf]]*/;
+        border-radius:0.5em;}
+    #breadcrumb_multipage_popup>.pagination_current{
+        background-color:/*[[btn]]*/;
+        color:/*[[txt]]*/;}
+    #breadcrumb_multipage_popup>.pagination_current:hover{
+        background-color:/*[[hbtn]]*/;
+        color:/*[[htxt]]*/;
+        text-decoration:none;}
+    .pm_alert{
+        background-color:/*[[inf]]*/;
+        color:/*[[htxt]]*/;
+        border:none;}
+    .sceditor-container,
+    .sceditor-container>.sceditor-toolbar{
+        background-color:/*[[bg2]]*/;
+        border:none;}
+    .sceditor-container>iframe{
+        background-color:/*[[bg2]]*/;}
+    blockquote{
+        background-color:/*[[bg2]]*/;
+        color:/*[[txt]]*/;
+        border:none;}
+    div.sceditor-group{
+        background-color:/*[[bg1]]*/;
+        border-bottom:none;}
+    .sceditor-button:hover,
+    .sceditor-button:active,
+    .sceditor-button.active{
+        background-color:/*[[bg0]]*/;}
+    .popup_menu,
+    .popup_menu .popup_item{
+        background-color:/*[[bg2]]*/;
+        color:/*[[txt]]*/ !important;}
+    .popup_menu .popup_item:hover{
+        color:/*[[htxt]]*/ !important;}
+    hr,
+    .navMain hr{
+        background-color:/*[[brd]]*/;}
+    fieldset{
+        border-color:/*[[brd]]*/;}
+    textarea{
+        background-color:/*[[bg2]]*/;
+        border:none;
+        color:/*[[txt]]*/}
 }
