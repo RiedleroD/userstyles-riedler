@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Eutropia
 @namespace      https://gitea.gelse.eu/Riedler/Userstyles-Riedler/src/branch/eutropia
-@version        0.1.0
+@version        0.1.1
 @description    A dark mode for dolphin-emu.org
 @author         Riedler
 @preprocessor	uso
@@ -23,6 +23,14 @@
 @var	color	lgt		"Highlight"			#FFFFFF15
 ==/UserStyle== */
 @-moz-document regexp("https?:\\/\\/(..\\.)?dolphin-emu\\.org($|\\/.*)") {
+	::-webkit-scrollbar,::-webkit-scrollbar-track-piece{
+		background-color:/*[[bg0]]*/ !important;}
+	::-webkit-scrollbar-corner,::-webkit-scrollbar-thumb{
+		background-color:/*[[bg2]]*/ !important;
+		border-radius:0.4em;}
+	:root{/*Because Firefox doesn't have the ::-moz-scrollbar selectors*/
+		scrollbar-width:thin;
+		scrollbar-color:/*[[bg2]]*/ /*[[bg0]]*/;}
 	:root,
 	body{
 		background-color:/*[[bg0]]*/;}
@@ -41,11 +49,11 @@
 	.versions-list tr:first-child,
 	.versions-list tr.download{
 		border-color:/*[[brd]]*/;}
-    a[href]:not([class^="tag"]):not(.btn),
-	a[href]:not([class^="tag"]):not(.btn) span{
+    :not(.active)>a[href]:not([class^="tag"]):not(.btn),
+	:not(.active)>a[href]:not([class^="tag"]):not(.btn) span{
 		color:/*[[lnk]]*/}
-	a[href]:not([class^="tag"]):not(.btn):hover,
-	a[href]:not([class^="tag"]):not(.btn):hover span{
+	:not(.active)>a[href]:not([class^="tag"]):not(.btn):hover,
+	:not(.active)>a[href]:not([class^="tag"]):not(.btn):hover span{
 		color:/*[[hlnk]]*/}
     .compat-list tbody tr:nth-child(2n+1){
 		background-color:transparent;}
@@ -157,26 +165,28 @@
     img[src="//dolphin-emu.org/m/static/img/stars/2.195f9785addd.png"],
     img[src="//dolphin-emu.org/m/static/img/stars/1.6dfb2570f44e.png"]{
         filter:invert(1) hue-rotate(175deg) brightness(2);}
-	.pagination>.active>a,
-	.pagination>.active>span,
-	.pagination>.active>a:hover,
-	.pagination>.active>span:hover,
-	.pagination>.active>a:focus,
-	.pagination>.active>span:focus{
+	.pagination>li>a,
+	.pagination>li>span{
+		background-color:/*[[bg1]]*/;
+		border-color:#0000;
+		color:/*[[lnk]]*/;}
+	.pagination>li.active>a,
+	.pagination>li.active>span,
+	.pagination>li.active>a:hover,
+	.pagination>li.active>span:hover,
+	.pagination>li.active>a:focus,
+	.pagination>li.active>span:focus{
 		background-color:/*[[btn]]*/;
 		border-color:/*[[btn]]*/;
-		z-index:1}
-	.pagination>li>a, .pagination>li>span{
-		background-color:/*[[bg1]]*/;
-		border-color:/*[[brd]]*/;
-		color:/*[[lnk]]*/;}
+		z-index:1;
+		color:/*[[txt]]*/;}
 	.pagination>li>a:hover,
 	.pagination>li>span:hover,
 	.pagination>li>a:focus,
 	.pagination>li>span:focus{
 		background-color:/*[[bg2]]*/;
 		color:/*[[hlnk]]*/;
-		border-color:/*[[txt]]*/;}
+		border-color:#0000;}
 	.dropdown-menu{
 		background-color:/*[[bg1]]*/;
 		position:absolute;
