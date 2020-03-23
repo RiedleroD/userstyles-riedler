@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Darklearning
 @namespace      github.com/openstyles/stylus
-@version        1.1.5
+@version        1.1.7
 @description    Darker version of Elearning
 @author         Riedler
 @preprocessor uso
@@ -18,6 +18,8 @@
 @var	color	hbrd	"Bright Border"				#AAA
 @var	color	txt		"Text"						#AAA
 @var	color	htxt	"Bright Text"				#CCC
+@var	color	hhtxt	"Very bright text"			#FFF
+@var	color	mtxt	"codeblock Text"			#8AA
 @var	color	lnk		"Links"						#418BA4
 @var	color	hlnk	"Hovered Links"				#6AC
 @var	color	btn		"Blue Background"			#418BA4
@@ -269,12 +271,13 @@ a:hover,a>span:hover{
     border:none;}
 .btn-secondary:hover{
     background-color:#FFF4;
-    color:/*[[hbrd]]*/;
+    color:/*[[htxt]]*/;
     border-color:/*[[brd]]*/;}
 .btn-primary{
-    color:/*[[hbrd]]*/;
+    color:/*[[htxt]]*/;
     background-color:/*[[btn]]*/;}
 .btn-primary:hover{
+	color:/*[[hhtxt]]*/;
     background-color:/*[[hbtn]]*/;}
 .preference-state-status-container>span.on-text,
 .preference-state-status-container>span.off-text{
@@ -289,6 +292,8 @@ a:hover,a>span:hover{
 .dropdown-item:active,.dropdown-item.active{
     background-color:/*[[bg4]]*/;}
 /*Misc*/
+.mform fieldset{
+	border-bottom-color:/*[[brd]]*/}
 .grade-navigation>.nav>.nav-item{
     background-color:/*[[bg2]]*/;}
 .grade-navigation>.nav>.nav-item>.nav-link{
@@ -421,9 +426,9 @@ input[type="checkbox"]:checked{
 .border-bottom{
     border-bottom-color:/*[[brd]]*/ !important;}
 code{
-    color:/*[[txt]]*/;
+    color:/*[[mtxt]]*/;
     background-color:/*[[bg1]]*/;
-    outline:auto 2px /*[[bg0]]*/;
+    outline:solid 2px /*[[bg0]]*/;
     font-family:Monospace;
     font-size:1.08em;}
 /*Editor Atto*/
@@ -764,16 +769,13 @@ div[data-region="datarequests"]>.mt-1.mb-1>.btn.btn-primary{
 .submitbtns button[type="submit"].btn,	
 .submitbtns input[type="submit"].btn{	
     background-color:/*[[bg3]]*/;	
-    border-radius:0.5em;}	
+    border-radius:0.5em;}
 .submitbtns input[type="submit"].btn.mod_quiz-next-nav{	
    background-color:/*[[btn]]*/;	
    border-color:/*[[btn]]*/;}	
 .submitbtns input[type="submit"].btn.mod_quiz-next-nav:hover{	
    background-color:/*[[hbtn]]*/;	
-   border-color:/*[[hbtn]]*/;}	
-.quizstartbuttondiv button[type="submit"]{	
-    background-color:/*[[bg3]]*/;	
-    border-radius:0.5em;}	
+   border-color:/*[[hbtn]]*/;}
 .que.incorrect .answer>input[type="text"]{	
     background-color:/*[[fals]]*/;}	
 .que.correct .answer>input[type="text"]{	
