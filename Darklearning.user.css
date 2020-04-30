@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Darklearning
 @namespace      github.com/openstyles/stylus
-@version        1.1.7
+@version        1.1.8
 @description    Darker version of Elearning
 @author         Riedler
 @preprocessor uso
@@ -210,7 +210,12 @@
     padding-right:0 !important;
 }
 /*text*/
-span,p,.text-center,h1,h2,h3,h4,h5,h6,.text-right,body,.logininfo,pre{
+span,p,pre,
+.text-center,.text-right,
+.logininfo,
+h1,h2,h3,h4,h5,h6,
+body,:root,
+ul,ol{
     color:/*[[txt]]*/ !important;}
 textarea.form-control{
     background-color:/*[[bg5]]*/ !important;
