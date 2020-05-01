@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Darklearning
 @namespace      github.com/openstyles/stylus
-@version        1.1.8
+@version        1.1.7
 @description    Darker version of Elearning
 @author         Riedler
 @preprocessor uso
@@ -296,6 +296,17 @@ a:hover,a>span:hover{
 /*Dropdown menus*/
 .dropdown-item:active,.dropdown-item.active{
     background-color:/*[[bg4]]*/;}
+/*php-generated code block with colors without classes*/
+div[style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"]{
+	background-color:#000 !important;}
+div[style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"] span[style*="color: #000080"]{
+	color:#66A !important;}
+div[style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"] span[style*="color: #008800"]{
+	color:#3C3 !important;}
+div[style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"] span[style*="color: #0000FF"]{
+	color:#CC3 !important;}
+div[style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"] span[style*="color: #FF0000"]{
+	color:#C33 !important;}
 /*Misc*/
 .mform fieldset{
 	border-bottom-color:/*[[brd]]*/}
