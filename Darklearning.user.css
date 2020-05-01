@@ -32,6 +32,10 @@
 @var	color	cal3	"Calendar 3"				#555
 @var	color	cal4	"Calendar 4"				#353
 @var	color	pb		"Pale Blue"					#669
+@var	color	c0		"Codeblock 0"				#66A
+@var	color	c1		"Codeblock 1"				#3C3
+@var	color	c2		"Codeblock 2"				#CC3
+@var	color	c3		"Codeblock 3"				#C33
 ==/UserStyle== */
 
 @-moz-document domain("elearning.tgm.ac.at") {
@@ -298,15 +302,15 @@ a:hover,a>span:hover{
     background-color:/*[[bg4]]*/;}
 /*php-generated code block with colors without classes*/
 div[style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"]{
-	background-color:#000 !important;}
+	background-color:/*[[bg0]]*/ !important;}
 div[style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"] span[style*="color: #000080"]{
-	color:#66A !important;}
+	color:/*[[c0]]*/ !important;}
 div[style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"] span[style*="color: #008800"]{
-	color:#3C3 !important;}
+	color:/*[[c1]]*/ !important;}
 div[style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"] span[style*="color: #0000FF"]{
-	color:#CC3 !important;}
+	color:/*[[c2]]*/ !important;}
 div[style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"] span[style*="color: #FF0000"]{
-	color:#C33 !important;}
+	color:/*[[c3]]*/ !important;}
 /*Misc*/
 .mform fieldset{
 	border-bottom-color:/*[[brd]]*/}
