@@ -30,7 +30,7 @@
 
 @-moz-document domain("owa.tgm.ac.at") {
     
-    /*=general=*/
+    /*general*/
     ._n_q1 {
         border-radius: 10px;
     }
@@ -43,7 +43,7 @@
         color: yellow;
     }
     
-    /*=left bar=*/
+    /*left bar*/
     
     
     div[spellcheck="true"],
@@ -80,7 +80,7 @@
     }
     
     
-    /*=email list items=*/
+    /*email list items*/
     .flex.flexcolumn {
         background-color: /*[[bg4]]*/;
     }
@@ -159,7 +159,7 @@
         color: #545050;
     }
     
-    /*=main content=*/
+    /*main content*/
     .conductorContent {
         background-color: /*[[bg3]]*/;
     }
@@ -186,7 +186,7 @@
         background-color: /*[[bg3]]*/ !important;
     }
     
-    /*=other stuff=*/
+    /*other stuff*/
     .ms-Icon--emptyFolder {
         color: white;
     }
