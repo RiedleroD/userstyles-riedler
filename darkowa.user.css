@@ -29,169 +29,106 @@
 ==/UserStyle== */
 
 @-moz-document domain("owa.tgm.ac.at") {
-    
     /*general*/
-    ._n_q1 {
-        border-radius: 10px;
-    }
-    
-    a {
-        color: /*[[lnk]]*/
-    }
-    
-    ._n_w4.owaimg.ms-Icon--chevronUp.ms-icon-font-size-14.ms-fcl-ns-b {
-        color: yellow;
-    }
-    
+    ._n_q1{
+        border-radius: 10px;}
+    a{
+        color: /*[[lnk]]*/;}
+    ._n_w4.owaimg.ms-Icon--chevronUp.ms-icon-font-size-14.ms-fcl-ns-b{
+        color:yellow;}
     /*left bar*/
-    
-    
     div[spellcheck="true"],
-    div[autoid="_n_a"] {
-        background-color: /*[[bg6]]*/;
-    }
-    
+    div[autoid="_n_a"]{
+        background-color: /*[[bg6]]*/;}
     div[autoid="_n_c"],
     ._n_h4,
-    ._n_d4 {
-        background-color: /*[[bg6]]*/;
-    }
-    
-    span[id*="MailFolderPane.FavoritesHeader"] {
-        color: white;
-    }
-    
-    span[id*="folder"] {
-        color: white;
-    }
-    
-    ._n_F4, ._n_44 {display: none;}
-    
+    ._n_d4{
+        background-color: /*[[bg6]]*/;}
+    span[id*="MailFolderPane.FavoritesHeader"]{
+        color: white;}
+    span[id*="folder"]{
+        color: white;}
+    ._n_F4,
+    ._n_44{
+        display: none;}
     /*focus & hover*/
-    .ms-bg-color-themeLight, .ms-bg-color-themeLight:focus, .ms-bg-color-themeLight span {
+    .ms-bg-color-themeLight,
+    .ms-bg-color-themeLight:focus,
+    .ms-bg-color-themeLight span{
         color: black;
-        background-color: #C7E0F4;
-    }
-    
-    div[aria-labelledby*="folder"]:hover, div[aria-labelledby*="folder"]:hover span, 
-    div[aria-owns*="subfolders"]:hover, div[aria-owns*="subfolders"]:hover span {
+        background-color: #C7E0F4;}
+    div[aria-labelledby*="folder"]:hover,
+    div[aria-labelledby*="folder"]:hover span, 
+    div[aria-owns*="subfolders"]:hover,
+    div[aria-owns*="subfolders"]:hover span{
         color: black;
-        background-color: lightgray;
-    }
-    
-    
+        background-color: lightgray;}
     /*email list items*/
-    .flex.flexcolumn {
-        background-color: /*[[bg4]]*/;
-    }
-    
-    .folderHeaderLabel {
+    .flex.flexcolumn{
+        background-color: /*[[bg4]]*/;}
+    .folderHeaderLabel{
         color: white;
-        font-weight: 900;
-    }
-    
-    button[autoid="_db_s"] {
+        font-weight: 900;}
+    button[autoid="_db_s"]{
         background-color: lightgray;
-        border-radius: 2px;
-    }
-    
+        border-radius: 2px;}
     /*context menu*/
-    .contextMenuDropShadow.contextMenuPopup.removeFocusOutline {
+    .contextMenuDropShadow.contextMenuPopup.removeFocusOutline{
         border: 1px solid gray;
-        border-radius: 3px;
-    }
-    
-    div[autoid="_fce_5"] {
-        background-color: lightgray;
-    }
-    
+        border-radius: 3px;}
+    div[autoid="_fce_5"]{
+        background-color: lightgray;}
     /*email list items*/
-    
-    ._n_31 {
-        margin: 0 16px;
-    }
-    
-    div[autoid="_n_g"] {
-        border-left-color: lightblue;
-    }
-    
-    .listItemDefaultBackground {
-        background-color: /*[[bg4]]*/;
-    }
-    
-    span[autoid="_lvv_5"] {
+    ._n_31{
+        margin: 0 16px;}
+    div[autoid="_n_g"]{
+        border-left-color: lightblue;}
+    .listItemDefaultBackground{
+        background-color: /*[[bg4]]*/;}
+    span[autoid="_lvv_5"]{
         color: white;
-        font-weight: 900;
-    }
-    
-    span[autoid="_lvv_6"] {
-        color: white;
-    }
-    
-    span[autoid="_lvv_7"] {
-        color: #E8E8E8;
-    }
-    
-    span[autoid="_lvv_j"] {
+        font-weight: 900;}
+    span[autoid="_lvv_6"]{
+        color: white;}
+    span[autoid="_lvv_7"]{
+        color: #E8E8E8;}
+    span[autoid="_lvv_j"]{
         color: lightblue;
         background-color: /*[[bg3]]*/;
         border-bottom-style: solid;
-        border-bottom-color: lightblue;
-    }
-    
+        border-bottom-color: lightblue;}
     /*focus & hover*/
-    div[autoid="_lvv_3"]:focus {
-        background-color: #C7E0F4;
-    }
-    
+    div[autoid="_lvv_3"]:focus{
+        background-color: #C7E0F4;}
     div[autoid="_lvv_3"]:focus span[autoid="_lvv_5"],
-    div[autoid="_lvv_3"]:hover span[autoid="_lvv_5"] {
-        color: #424048;
-    }
-    
+    div[autoid="_lvv_3"]:hover span[autoid="_lvv_5"]{
+        color: #424048;}
     div[autoid="_lvv_3"]:focus span[autoid="_lvv_6"],
-    div[autoid="_lvv_3"]:hover span[autoid="_lvv_6"] {
-        color: #222;
-    }
-    
+    div[autoid="_lvv_3"]:hover span[autoid="_lvv_6"]{
+        color: #222;}
     div[autoid="_lvv_3"]:focus span[autoid="_lvv_7"],
-    div[autoid="_lvv_3"]:hover span[autoid="_lvv_7"] {
-        color: #545050;
-    }
-    
+    div[autoid="_lvv_3"]:hover span[autoid="_lvv_7"]{
+        color: #545050;}
     /*main content*/
-    .conductorContent {
-        background-color: /*[[bg3]]*/;
-    }
-    
-    span[autoid="_rp_4"] {
+    .conductorContent{
+        background-color: /*[[bg3]]*/;}
+    span[autoid="_rp_4"]{
         color: white;
-        font-weight: 900;
-    }
-    
-    ._pe_l {
-        color: #C7E0F4;
-    }
-    
+        font-weight: 900;}
+    ._pe_l{
+        color: #C7E0F4;}
     div[id*="MessageUniqueBody"],
     #divtagdefaultwrapper span,
     div[autoid="_rp_u"] span,
-    div[autoid="_rp_u"] p {
-        color: white !important;
-    }
-    
+    div[autoid="_rp_u"] p{
+        color: white !important;}
     .x_MsoNormal,
-    .x_MsoNormal span {
+    .x_MsoNormal span{
         color: #E8E8E8 !important;
-        background-color: /*[[bg3]]*/ !important;
-    }
-    
+        background-color: /*[[bg3]]*/ !important;}
     /*other stuff*/
-    .ms-Icon--emptyFolder {
-        color: white;
-    }
-    
-    ._n_Q2 {
-        color: white;
-    }
+    .ms-Icon--emptyFolder{
+        color: white;}
+    ._n_Q2{
+        color: white;}
 }
