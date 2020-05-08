@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Darklearning
 @namespace      github.com/openstyles/stylus
-@version        1.1.9
+@version        1.1.10
 @description    Darker version of Elearning
 @author         Riedler
 @preprocessor uso
@@ -16,6 +16,7 @@
 @var	color	bg6		"Background 6"				#666
 @var	color	brd		"Border"					#888
 @var	color	hbrd	"Bright Border"				#AAA
+@var	color	dtxt	"Dark Text"					#151515
 @var	color	txt		"Text"						#AAA
 @var	color	htxt	"Bright Text"				#CCC
 @var	color	hhtxt	"Very bright text"			#FFF
@@ -229,6 +230,10 @@ a,a>span{
     color:/*[[lnk]]*/ !important;}
 a:hover,a>span:hover{
     color:/*[[hlnk]]*/ !important;}
+/*Text with inline background coloring*/
+span[style*="background-color: rgb(125, 159, 211);"]{
+	background-color:/*[[btn]]*/ !important;
+	color:/*[[dtxt]]*/ !important}
 /*icons*/
 .logo>img{
     filter:invert(1) hue-rotate(180deg);}
@@ -300,6 +305,16 @@ a:hover,a>span:hover{
 /*Dropdown menus*/
 .dropdown-item:active,.dropdown-item.active{
     background-color:/*[[bg4]]*/;}
+/*These new tiles, ykwim*/
+.tiles>.tile{
+	background-color:/*[[bg2]]*/ !important;}
+.tiles>.section{
+	background-color:/*[[bg2]]*/ !important;}
+.format-tiles #header-overlay,
+.format-tiles #window-overlay{
+	opacity:0;}
+.format-tiles #page .course-content ul li.section.main{
+	background-color:/*[[bg2]]*/}
 /*php-generated code block with colors without classes*/
 div[style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"]{
 	background-color:/*[[bg0]]*/ !important;}
@@ -312,6 +327,21 @@ div[style="background: #ffffff; overflow:auto;width:auto;border:solid gray;borde
 div[style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"] span[style*="color: #FF0000"]{
 	color:/*[[c3]]*/ !important;}
 /*Misc*/
+.format-tiles .sectiontitle::after,
+.format-tiles .tag-info{
+	background-color:/*[[true]]*/;}
+.format-tiles .course-content ul.tiles .tile,
+.format-tiles .course-content ul.tiles .tile_bar{
+	border-top-color:/*[[true]]*/;}
+.format-tiles .course-content li.activity.label h1,
+.format-tiles .course-content .section li.activity.label h2,
+.format-tiles .course-content li.activity.label h3,
+.format-tiles .course-content li.activity.label h4,
+.format-tiles .editor_atto_content_wrap h1,
+.format-tiles .editor_atto_content_wrap h2,
+.format-tiles .editor_atto_content_wrap h3,
+.format-tiles .editor_atto_content_wrap h4{
+	border-left-color:/*[[true]]*/;}
 .mform fieldset{
 	border-bottom-color:/*[[brd]]*/}
 .grade-navigation>.nav>.nav-item{
