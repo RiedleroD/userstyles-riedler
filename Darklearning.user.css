@@ -327,6 +327,8 @@ div[style="background: #ffffff; overflow:auto;width:auto;border:solid gray;borde
 div[style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"] span[style*="color: #FF0000"]{
 	color:/*[[c3]]*/ !important;}
 /*Misc*/
+span[style*="background-color: rgb(239, 69, 64);"]{
+	background-color:/*[[fals]]*/ !important;}
 .format-tiles .sectiontitle::after,
 .format-tiles .tag-info{
 	background-color:/*[[true]]*/;}
