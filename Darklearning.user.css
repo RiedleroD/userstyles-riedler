@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Darklearning
 @namespace      github.com/openstyles/stylus
-@version        1.1.10
+@version        1.1.11
 @description    Darker version of Elearning
 @author         Riedler
 @preprocessor uso
@@ -455,6 +455,18 @@ input[type="checkbox"]:checked{
     background-position:center;
     background-size:0.8em;
     filter:invert(0.5);}
+input[type="radio"]{
+    -webkit-appearance:none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance:none;
+    width:1em;
+    height:1em;
+	background-color:/*[[hlnk]]*/;
+    border:0.265em solid /*[[btn]]*/;
+    border-radius:100%;}
+input[type="radio"]:checked{
+    background-color:/*[[bg3]]*/;}
 .form-control{
     border-radius:0.5em;
     background-color:/*[[bg4]]*/;
@@ -765,22 +777,22 @@ div[data-region="datarequests"]>.mt-1.mb-1>.btn.btn-primary{
 @-moz-document url-prefix("http://elearning.tgm.ac.at/mod/quiz"), url-prefix("https://elearning.tgm.ac.at/mod/quiz") {
 .moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd.yui3-widget-hd{
 	color:/*[[txt]]*/;}
-.que .formulation{	
-    background-color:/*[[bg3]]*/;	
-    color:/*[[txt]]*/;	
-    border-radius:0.5em;}	
-.answer .incorrect{	
-    background-color:/*[[fals]]*/;}	
-.answer .correct{	
-    background-color:/*[[true]]*/;}	
-.answer>.form-control{	
-     border-color:/*[[brd]]*/;	
-    color:/*[[txt]]*/;	
-    border-radius:0.5em;}	
-.que .outcome{	
-    background-color:/*[[bg3]]*/;	
-    color:/*[[txt]]*/;	
-    border-radius:0.5em;}	
+.que .formulation{
+    background-color:/*[[bg3]]*/;
+    color:/*[[txt]]*/;
+    border-radius:0.5em;}
+.answer .incorrect{
+    background-color:/*[[fals]]*/;}
+.answer .correct{
+    background-color:/*[[true]]*/;}
+.answer>.form-control{
+     border-color:/*[[brd]]*/;
+    color:/*[[txt]]*/;
+    border-radius:0.5em;}
+.que .outcome{
+    background-color:/*[[bg3]]*/;
+    color:/*[[txt]]*/;
+    border-radius:0.5em;}
 .que .info{	
     background-color:/*[[bg3]]*/;	
     border-radius:0.5em;	
