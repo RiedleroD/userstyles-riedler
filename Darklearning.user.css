@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Darklearning
 @namespace      github.com/openstyles/stylus
-@version        1.1.11
+@version        1.1.12
 @description    Darker version of Elearning
 @author         Riedler
 @preprocessor uso
@@ -602,7 +602,9 @@ code{
     background-color:/*[[bg1]]*/ !important;}
 .qtext>div>table>tbody>tr>td>pre{
     color:/*[[txt]]*/;}
-/*Replacement images*/
+/*Replacement images + image manipulation*/
+.atto_image_button_text-bottom.img-responsive{/*most likely embedded images in 	assignment descriptions*/
+	filter:invert(0.86) hue-rotate(180deg);}
 .progressBarCell>.nowDiv>.icon{
     display:none;}
 .progressBarCell>.nowDiv.lastHalfNow{
