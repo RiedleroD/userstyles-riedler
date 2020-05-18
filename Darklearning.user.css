@@ -6,6 +6,7 @@
 @author         Riedler
 @preprocessor uso
 @advanced select PBCS "ProgressBarCell Shape" {"Pronounced":"1em","Rounded":"0.5em"}
+@advanced select EICC "Embedded Image Color Correction" {"On":"invert(0.86) hue-rotate(180deg)","Off":"none"}
 @var	color	bg0		"Background 0"				#000
 @var	color	bg1		"Background 1"				#151515
 @var	color	bg2		"Background 2"				#222
@@ -605,7 +606,7 @@ code{
     color:/*[[txt]]*/;}
 /*Replacement images + image manipulation*/
 .atto_image_button_text-bottom.img-responsive{/*most likely embedded images in 	assignment descriptions*/
-	filter:invert(0.86) hue-rotate(180deg);}
+	filter:/*[[EICC]]*/;}
 .progressBarCell>.nowDiv>.icon{
     display:none;}
 .progressBarCell>.nowDiv.lastHalfNow{
