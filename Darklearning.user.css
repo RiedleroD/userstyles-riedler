@@ -376,6 +376,9 @@ span[style*="background-color: rgb(239, 69, 64);"]{
 .alert-info{
     background-color:/*[[pb]]*/;
     color:/*[[bg1]]*/ !important;}
+.alert-success{
+	background-color:/*[[true]]*/;
+	color:/*[[txt]]*/;}
 .moodle-dialogue>.moodle-dialogue-content{
     background-color:/*[[bg3]]*/ !important;}
 .close, .moodle-dialogue-base .closebutton{
