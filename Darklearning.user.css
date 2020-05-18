@@ -755,6 +755,9 @@ table td,table th{
     color:/*[[txt]]*/;}
 .submissionsummarytable	td.overdue>font{
 	color:/*[[txt]]*/;}
+.submissionsummarytable td.earlysubmission{
+    background-color:/*[[true]]*/;
+    color:/*[[txt]]*/;}
 #jump-to-activity{
     background-color:/*[[bg3]]*/;
     border-color:/*[[brd]]*/;
