@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Darklearning
 @namespace      github.com/openstyles/stylus
-@version        1.1.12
+@version        1.1.13
 @description    Darker version of Elearning
 @author         Riedler
 @preprocessor uso
@@ -368,8 +368,9 @@ span[style*="background-color: rgb(239, 69, 64);"]{
     border-radius:0 0 0.5em 0.5em;}
 .alert{
     border-radius:0.5em;}
-.alert-danger{	
-    background-color:/*[[fals]]*/;	
+.alert-danger,
+#page-mod-quiz-attempt #connection-error{
+    background-color:/*[[fals]]*/;
     color:/*[[txt]]*/;}
 .alert-info{
     background-color:/*[[pb]]*/;
