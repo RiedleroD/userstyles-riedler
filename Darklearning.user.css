@@ -289,10 +289,10 @@ span[style*="background-color: rgb(125, 159, 211);"]{
     color:/*[[htxt]]*/;
     border-color:/*[[brd]]*/;}
 .btn-primary{
-    color:/*[[htxt]]*/;
+    color:/*[[htxt]]*/ !important;
     background-color:/*[[btn]]*/;}
 .btn-primary:hover{
-	color:/*[[hhtxt]]*/;
+	color:/*[[hhtxt]]*/ !important;
     background-color:/*[[hbtn]]*/;}
 .preference-state-status-container>span.on-text,
 .preference-state-status-container>span.off-text{
@@ -881,3 +881,4 @@ input[type="text"].incorrect{
 .path-calendar .maincalendar .calendarmonth ul li>a{
     text-overflow:clip;}
 }
+
