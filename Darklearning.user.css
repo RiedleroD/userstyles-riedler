@@ -608,7 +608,8 @@ code{
 .qtext>div>table>tbody>tr>td>pre{
     color:/*[[txt]]*/;}
 /*Replacement images + image manipulation*/
-.atto_image_button_text-bottom.img-responsive{/*most likely embedded images in 	assignment descriptions*/
+.atto_image_button_text-bottom.img-responsive,
+.atto_image_button_text-top.img-responsive{/*most likely embedded images in 	assignment descriptions*/
 	filter:/*[[EICC]]*/;}
 .progressBarCell>.nowDiv>.icon{
     display:none;}
