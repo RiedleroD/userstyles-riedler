@@ -805,18 +805,20 @@ div[data-region="datarequests"]>.mt-1.mb-1>.btn.btn-primary{
     background-color:/*[[bg3]]*/;	
     border-radius:0.5em;	
     border:none;}	
-.path-mod-quiz #mod_quiz_navblock .qnbutton.correct>.trafficlight{	
-    background-color:/*[[true]]*/;	
-    background-image:none;}	
-.path-mod-quiz #mod_quiz_navblock .qnbutton.incorrect>.trafficlight{	
-    background-color:/*[[fals]]*/;	
-    background-image:none;}	
+.path-mod-quiz #mod_quiz_navblock .qnbutton.correct>.trafficlight{
+    background-color:/*[[true]]*/;
+    background-image:none;}
+.path-mod-quiz #mod_quiz_navblock .qnbutton.incorrect>.trafficlight{
+    background-color:/*[[fals]]*/;
+    background-image:none;}
 .path-mod-quiz #mod_quiz_navblock span.qnbutton,
-.path-mod-quiz #mod_quiz_navblock a.qnbutton{	
-    color:/*[[txt]]*/ !important;	
-    background-color:/*[[bg4]]*/;}	
-#mod_quiz_navblock .qnbutton>.thispageholder{	
-    border:none !important;}	
+.path-mod-quiz #mod_quiz_navblock a.qnbutton{
+    color:/*[[txt]]*/ !important;
+    background-color:/*[[bg4]]*/;}
+#mod_quiz_navblock .qnbutton>.thispageholder{
+    border:none !important;}
+#mod_quiz_navblock .qn_buttons:not(.allquestionsononepage) .qnbutton.thispage>.thispageholder{
+	box-shadow:0 0 1px 1px /*[[brd]]*/;}
 .quizreviewsummary>tbody>tr>.cell{
 	background-color:/*[[bg3]]*/;}
 #page-mod-quiz-view table.quizattemptsummary tr.bestrow td{
