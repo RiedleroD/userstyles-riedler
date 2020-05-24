@@ -634,7 +634,24 @@ img[src$="elearning.tgm.ac.at/theme/image.php/classic/core/"][src$="/i/loading_s
     background-repeat:no-repeat;
     filter:invert(1);}
 }
-
+/*row where it displays what you've done and what you didn't. Normally only in course/view.php, but also in other places*/
+.barRow .progressBarCell[style*="background-color:#73A839"]{
+    background-color:/*[[true]]*/ !important;}
+.barRow .progressBarCell[style*="background-color:#C71C22"]{
+    background-color:/*[[fals]]*/ !important;}
+/*.barRow .progressBarCell[style*="background-color:#025187"]{} This color is pretty good, I'll let it be there.*/
+.barRow .progressBarCell{
+    border-color:/*[[bg2]]*/;
+    border-radius:0;}
+.barRow .firstProgressBarCell{
+    border-right:none !important;
+    border-radius:0.5em 0 0 /*[[PBCS]]*/ !important;}
+.barRow .lastProgressBarCell{
+    border-radius:0 0.5em /*[[PBCS]]*/ 0 !important;}
+.barRow .firstProgressBarCell.lastProgressBarCell{
+    border-radius:0.5em 0.5em /*[[PBCS]]*/ /*[[PBCS]]*/ !important;}
+.badge-info{
+    background-color:/*[[bg4]]*/;}
 @-moz-document url("http://elearning.tgm.ac.at/my/"), url-prefix("https://elearning.tgm.ac.at/my/") {
 /*Kurse*/
 .dashboard-card{
@@ -695,24 +712,6 @@ img.img-fluid{
 /*Main box*/
 #region-main{
     background-color:/*[[bg2]]*/;}
-/*row where it displays what you've done and what you didn't y'know?*/
-.barRow .progressBarCell[style*="background-color:#73A839"]{
-    background-color:/*[[true]]*/ !important;}
-.barRow .progressBarCell[style*="background-color:#C71C22"]{
-    background-color:/*[[fals]]*/ !important;}
-/*.barRow .progressBarCell[style*="background-color:#025187"]{} This color is pretty good, I'll let it there.*/
-.barRow .progressBarCell{
-    border-color:/*[[bg2]]*/;
-    border-radius:0;}
-.barRow .firstProgressBarCell{
-    border-right:none !important;
-    border-radius:0.5em 0 0 /*[[PBCS]]*/ !important;}
-.barRow .lastProgressBarCell{
-    border-radius:0 0.5em /*[[PBCS]]*/ 0 !important;}
-.barRow .firstProgressBarCell.lastProgressBarCell{
-    border-radius:0.5em 0.5em /*[[PBCS]]*/ /*[[PBCS]]*/ !important;}
-.badge-info{
-    background-color:/*[[bg4]]*/;}
 /*Misc*/
 .section{
     border-bottom-color:/*[[brd]]*/ !important;}
