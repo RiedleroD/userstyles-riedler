@@ -617,8 +617,9 @@ code{
 /*Replacement images + image manipulation*/
 .atto_image_button_text-bottom.img-responsive,
 .atto_image_button_text-top.img-responsive,/*most likely embedded images in 	assignment descriptions*/
-.qtext img,
-img[src*="mod_page"]{/*images in the question text, most of the time classless*/
+.qtext img,/*images in the question text, most of the time classless*/
+img[src*="mod_page"],/*images with mod_page in the source url, most of the images in courses have this*/
+.region-main-content img:not([class]):not([src^="https://elearning.tgm.ac.at/theme/"]){/*images without class - a last resort, really*/
 	filter:/*[[EICC]]*/;}
 .progressBarCell>.nowDiv>.icon{
     display:none;}
