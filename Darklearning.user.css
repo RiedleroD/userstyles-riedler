@@ -327,6 +327,10 @@ div[style="background: #ffffff; overflow:auto;width:auto;border:solid gray;borde
 	color:/*[[c2]]*/ !important;}
 div[style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"] span[style*="color: #FF0000"]{
 	color:/*[[c3]]*/ !important;}
+/*tooltips: popups that pop up when you hover over stuff with set tooltips*/
+.tooltip>*{
+	background-color:/*[[bg3]]*/ !important;
+	color:/*[[txt]]*/ !important;}
 /*Misc*/
 span[style*="background-color: rgb(239, 69, 64);"]{
 	background-color:/*[[fals]]*/ !important;}
@@ -613,7 +617,8 @@ code{
 /*Replacement images + image manipulation*/
 .atto_image_button_text-bottom.img-responsive,
 .atto_image_button_text-top.img-responsive,/*most likely embedded images in 	assignment descriptions*/
-.qtext img{/*images in the question text, most of the time classless*/
+.qtext img,
+img[src*="mod_page"]{/*images in the question text, most of the time classless*/
 	filter:/*[[EICC]]*/;}
 .progressBarCell>.nowDiv>.icon{
     display:none;}
@@ -890,4 +895,3 @@ input[type="text"].incorrect{
 .path-calendar .maincalendar .calendarmonth ul li>a{
     text-overflow:clip;}
 }
-
