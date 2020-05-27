@@ -6,7 +6,7 @@
 @author         Riedler
 @preprocessor uso
 @advanced select PBCS "ProgressBarCell Shape" {"Pronounced":"1em","Rounded":"0.5em"}
-@advanced select EICC "Embedded Image Color Correction" {"On":"invert(0.86) hue-rotate(180deg)","Off":"none"}
+@advanced select EICC "Embedded Image Color Correction" {"Recommended":"invert(0.86) hue-rotate(180deg)","Full":"invert(1) hue-rotate(180deg)","Debug":"invert(1) hue-rotate(180deg) saturate(100)","Off":"none"}
 @var	color	bg0		"Background 0"				#000
 @var	color	bg1		"Background 1"				#151515
 @var	color	bg2		"Background 2"				#222
@@ -895,3 +895,4 @@ input[type="text"].incorrect{
 .path-calendar .maincalendar .calendarmonth ul li>a{
     text-overflow:clip;}
 }
+
