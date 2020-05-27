@@ -660,7 +660,7 @@ img[src$="elearning.tgm.ac.at/theme/image.php/classic/core/"][src$="/i/loading_s
     border-radius:0.5em 0.5em /*[[PBCS]]*/ /*[[PBCS]]*/ !important;}
 .badge-info{
     background-color:/*[[bg4]]*/;}
-@-moz-document url("http://elearning.tgm.ac.at/my/"), url-prefix("https://elearning.tgm.ac.at/my/") {
+@-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/my/.*?") {
 /*Kurse*/
 .dashboard-card{
     border-width:0;
@@ -692,7 +692,7 @@ img[src$="elearning.tgm.ac.at/theme/image.php/classic/core/"][src$="/i/loading_s
     border:none !important;}
 }
 
-@-moz-document url("http://elearning.tgm.ac.at/"), url("https://elearning.tgm.ac.at/") {
+@-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/(\\?.*)?") {
 .sitelink{
     filter:invert(1) hue-rotate(180deg);}
 #login_username,#login_password{
@@ -703,7 +703,7 @@ img[src$="elearning.tgm.ac.at/theme/image.php/classic/core/"][src$="/i/loading_s
     border-radius:0.5em;}
 }
 
-@-moz-document url("https://elearning.tgm.ac.at/login/index.php"), url("http://elearning.tgm.ac.at/login/index.php") {
+@-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/login/index\\.php.*?") {
 .card{
     background-color:/*[[bg3]]*/;}
 .mt-3{
@@ -716,7 +716,7 @@ img.img-fluid{
 #modal-footer{border-top:none;}
 }
 
-@-moz-document url-prefix("https://elearning.tgm.ac.at/course/view.php"), url-prefix("http://elearning.tgm.ac.at/course/view.php") {
+@-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/course/view\\.php.*?") {
 /*Main box*/
 #region-main{
     background-color:/*[[bg2]]*/;}
@@ -728,7 +728,7 @@ img.img-fluid{
     height:1.2em;}
 }
 
-@-moz-document url-prefix("https://elearning.tgm.ac.at/user/files.php"), url-prefix("http://elearning.tgm.ac.at/user/files.php") {
+@-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/user/files\\.php.*?") {
 .filemanager-container,.fp-navbar{
     background-color:/*[[bg3]]*/;
     border:none !important;}
@@ -738,25 +738,25 @@ a.btn-sm:active, a.btn-sm.active, a.btn-sm:focus, a.btn-sm.checked{
     background-color:/*[[bg6]]*/ !important;}
 }
 
-@-moz-document url-prefix("https://elearning.tgm.ac.at/grade/report/overview/index.php"), url-prefix("http://elearning.tgm.ac.at/grade/report/overview/index.php") {
+@-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/grade/report/overview/index\\.php.*?") {
 thead>tr>th{
     border-bottom:none !important;}
 table td,table th{
     border-color:/*[[brd]]*/ !important;}
 }
 
-@-moz-document url-prefix("http://elearning.tgm.ac.at/message/index.php"), url-prefix("https://elearning.tgm.ac.at/message/index.php") {
+@-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/message/index\\.php.*?") {
 #region-main .border-right.h-100{
     border-color:/*[[bg3]]*/ !important;}
 }
 
-@-moz-document url-prefix("http://elearning.tgm.ac.at/user/profile.php"), url-prefix("https://elearning.tgm.ac.at/user/profile.php") {
+@-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/user/(profile|view)\\.php.*?") {
 #region-main .profile_tree>.node_category{
     background-color:/*[[bg3]]*/;
     border-radius:0.5em;}
 }
 
-@-moz-document url-prefix("http://elearning.tgm.ac.at/mod/assign/view.php"), url-prefix("https://elearning.tgm.ac.at/mod/assign/view.php") {
+@-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/mod/assign/view\\.php.*?") {
 /*Abgabestatus*/
 .submissionsummarytable td.submissiongraded{
     background-color:/*[[true]]*/;
@@ -782,17 +782,17 @@ table td,table th{
     color:/*[[txt]]*/;}
 }
 
-@-moz-document url-prefix("http://elearning.tgm.ac.at/user/preferences.php"), url-prefix("https://elearning.tgm.ac.at/user/preferences.php") {
+@-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/user/preferences\\.php.*?") {
 #region-main .card.mb-3{
     background-color:/*[[bg3]]*/;}
 }
 
-@-moz-document url-prefix("http://elearning.tgm.ac.at/admin/tool/dataprivacy/mydatarequests.php"), url-prefix("https://elearning.tgm.ac.at/admin/tool/dataprivacy/mydatarequests.php") {
+@-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/admin/tool/dataprivacy/mydatarequests\\.php.*?") {
 div[data-region="datarequests"]>.mt-1.mb-1>.btn.btn-primary{
     color:/*[[txt]]*/ !important;}
 }
 
-@-moz-document url-prefix("http://elearning.tgm.ac.at/mod/quiz"), url-prefix("https://elearning.tgm.ac.at/mod/quiz") {
+@-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/mod/quiz.*?") {
 .moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd.yui3-widget-hd{
 	color:/*[[txt]]*/;}
 .que .formulation{
@@ -878,7 +878,7 @@ input[type="text"].incorrect{
     border-radius:0.25em;}
 }
 
-@-moz-document url-prefix("https://elearning.tgm.ac.at/calendar/view.php"), url-prefix("http://elearning.tgm.ac.at/calendar/view.php") {
+@-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/calendar/view\\.php.*?") {
 .eventlist .event .card{
     background-color:/*[[bg3]]*/;
     border-radius:0.5em !important;
