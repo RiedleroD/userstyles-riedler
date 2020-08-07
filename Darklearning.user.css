@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Darklearning
 @namespace      github.com/openstyles/stylus
-@version        1.1.14
+@version        1.1.15
 @description    Darker version of Elearning
 @author         Riedler
 @preprocessor uso
@@ -641,7 +641,6 @@ img[src$="elearning.tgm.ac.at/theme/image.php/classic/core/"][src$="/i/loading_s
     background-image:url("https://elearning.tgm.ac.at/theme/image.php/classic/core/123456/i/loading_small");
     background-repeat:no-repeat;
     filter:invert(1);}
-}
 /*row where it displays what you've done and what you didn't. Normally only in course/view.php, but also in other places*/
 .barRow .progressBarCell[style*="background-color:#73A839"]{
     background-color:/*[[true]]*/ !important;}
@@ -660,6 +659,7 @@ img[src$="elearning.tgm.ac.at/theme/image.php/classic/core/"][src$="/i/loading_s
     border-radius:0.5em 0.5em /*[[PBCS]]*/ /*[[PBCS]]*/ !important;}
 .badge-info{
     background-color:/*[[bg4]]*/;}
+}
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/my/.*?") {
 /*Kurse*/
 .dashboard-card{
