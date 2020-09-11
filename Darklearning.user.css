@@ -525,8 +525,16 @@ code{
     font-size:1.08em;}
 .highlight{
 	outline:solid 1px /*[[hlnk]]*/;}
+.aalink.focus,/*I basically overwrote an entire css rule from the original stylesheet because that thing was ugly as hell*/
 .aalink:focus,
-a:not([class]):focus{
+.arrow_link.focus,
+.arrow_link:focus,
+a:not([class]).focus,
+a:not([class]):focus,
+.activityinstance>a.focus,
+.activityinstance>a:focus,
+#page-footer a:not([class]).focus,
+#page-footer a:not([class]):focus{
 	background-color:#0000;
 	box-shadow:0 -0.2rem /*[[brd]]*/,0 0.2rem /*[[brd]]*/;
 	border-radius:0.3em;}
