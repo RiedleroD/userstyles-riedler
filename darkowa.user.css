@@ -1,0 +1,195 @@
+/* ==UserStyle==
+@name           DarkOwa
+@namespace      none
+@version        0.1.0
+@description    dark theme for owa.tgm.ac.at
+@author         Andreas Sünder (this style), Riedler (Documentation comment, color palette)
+
+@preprocessor uso
+@advanced select PBCS "ProgressBarCell Shape" {"Pronounced":"1em","Rounded":"0.5em"}
+@var	color	bg0		"Background 0"				#000
+@var	color	bg1		"Background 1"				#151515
+@var	color	bg2		"Background 2"				#222
+@var	color	bg2_5	"Background 2.5"			#252525
+@var	color	bg3		"Background 3"				#333
+@var	color	bg4		"Background 4"				#444
+@var	color	bg5		"Background 5"				#555
+@var	color	bg6		"Background 6"				#666
+@var	color	brd		"Border"					#888
+@var	color	hbrd	"Bright Border"				#AAA
+@var	color	txt		"Text"						#AAA
+@var	color	htxt	"Bright Text"				#CCC
+@var	color	hhtxt	"Very bright text"			#FFF
+@var	color	mtxt	"codeblock Text"			#8AA
+@var	color	lnk		"Links"						#418BA4
+@var	color	hlnk	"Hovered Links"				#6AC
+@var	color	btn		"Blue Background"			#418BA4
+@var	color	hbtn	"Bright Blue Background"	#6AC
+==/UserStyle== */
+
+@-moz-document domain("owa.tgm.ac.at") {
+	.ms-bgc-tl{/*selected mails*/
+		background-color:/*[[bg5]]*/;}
+	.ms-font-l{/*probably large Text*/
+		color:/*[[htxt]]*/;/*normally #333*/}
+	.ms-font-s{/*probably small text*/
+		color:/*[[htxt]]*/;/*normally #AAA*/}
+	.o365cs-base.o365cst.o365cs-topnavBGColor-2{/*2nd top nav color in office 365*/
+		background-color:/*[[bg0]]*/;/*normally #000*/}
+	/*primary neutral font*/
+	.ms-font-color-neutralPrimary,
+	.ms-fontColor-neutralPrimary,
+	.ms-fcl-np,
+	.ms-font-color-neutralPrimary-hover:hover,
+	.ms-font-color-neutralPrimary-focus:focus,
+	.ms-font-color-neutralPrimary-before::before,
+	.ms-fcl-np-h:hover,
+	.ms-fcl-np-f:focus,
+	.ms-fcl-np-b::before{
+		color:/*[[txt]]*/;}
+	/*secondary neutral font*/
+	.ms-font-color-neutralSecondary,
+	.ms-fontColor-neutralSecondary,
+	.ms-fcl-ns,
+	.ms-font-color-neutralSecondary-hover:hover,
+	.ms-font-color-neutralSecondary-focus:focus,
+	.ms-font-color-neutralSecondary-before::before,
+	.ms-fcl-ns-h:hover,
+	.ms-fcl-ns-f:focus,
+	.ms-fcl-ns-b::before{
+		color:/*[[txt]]*/;/*normally #666*/}
+	/*primary accent color font*/
+	.ms-font-color-themePrimary,
+	.ms-fontColor-themePrimary,
+	.ms-fontColor-themePrimary,
+	.ms-fcl-tp,
+	.ms-font-color-themePrimary-hover:hover,
+	.ms-font-color-themePrimary-focus:focus,
+	.ms-font-color-themePrimary-before::before,
+	.ms-fcl-tp-h:hover,
+	.ms-fcl-tp-f:focus,
+	.ms-fcl-tp-b::before{
+		color:/*[[hlnk]]*/;/*normally blue but I lost the exact color*/}
+	/*alternative lighter background color*/
+	.ms-bg-color-themeLighterAlt,
+	.ms-bgc-tlra,
+	.ms-bg-color-themeLighterAlt-hover:hover,
+	.ms-bg-color-themeLighterAlt-focus:focus,
+	.ms-bg-color-themeLighterAlt-before::before,
+	.ms-bgc-tlra-h:hover,
+	.ms-bgc-tlra-f:focus,
+	.ms-bgc-tlra-b::before{
+		background-color:/*[[bg2]]*/;/*normally #EFF6FC*/}
+	/*lighter background color*/
+	.ms-bg-color-themeLighter,
+	.ms-bgc-tlr,
+	.ms-bg-color-themeLighter-hover:hover,
+	.ms-bg-color-themeLighter-focus:focus,
+	.ms-bg-color-themeLighter-before::before,
+	.ms-bgc-tlr-h:hover,
+	.ms-bgc-tlr-f:focus,
+	.ms-bgc-tlr-b::before{
+		background-color:/*[[bg2]]*/;}
+	/*general*/
+    ._n_q1{
+        border-radius: 10px;}
+    a:link{
+        color: /*[[lnk]]*/;}
+    ._n_w4.owaimg.ms-Icon--chevronUp.ms-icon-font-size-14.ms-fcl-ns-b{
+        color:yellow;}
+    /*left bar*/
+    div[spellcheck="true"],
+    div[autoid="_n_a"]{
+        background-color:/*[[bg4]]*/;}
+    div[autoid="_n_c"],
+    ._n_h4,
+    ._n_d4{
+        background-color: /*[[bg4]]*/;}
+    span[id*="MailFolderPane.FavoritesHeader"],
+	span[id*="folder"]{
+        color: /*[[hhtxt]]*/;}
+    ._n_F4,
+    ._n_44{
+        display: none;}
+    /*focus & hover*/
+    .ms-bg-color-themeLight,
+    .ms-bg-color-themeLight:focus,
+    .ms-bg-color-themeLight span{
+        color: black;
+        background-color: #C7E0F4;}
+    div[aria-labelledby*="folder"]:hover,
+    div[aria-labelledby*="folder"]:hover span, 
+    div[aria-owns*="subfolders"]:hover,
+    div[aria-owns*="subfolders"]:hover span{
+        color: black;
+        background-color: lightgray;}
+    /*email list items*/
+    .flex.flexcolumn{
+        background-color: /*[[bg4]]*/;}
+    .folderHeaderLabel{
+        color: /*[[hhtxt]]*/ !important;
+        font-weight: 900;}
+    button[autoid="_db_s"]{
+        background-color: /*[[btn]]*/;
+        border-radius: 2px;
+		color:/*[[htxt]]*/;}
+    /*context menu*/
+    .contextMenuDropShadow.contextMenuPopup.removeFocusOutline{
+        border: 1px solid /*[[brd]]*/;
+        border-radius: 3px;}
+    div[autoid="_fce_5"]{
+        background-color: /*[[bg6]]*/;}
+    /*email list items*/
+    ._n_31{
+        margin: 0 16px;}
+    div[autoid="_n_g"]{
+        border-left-color: lightblue;}
+    .listItemDefaultBackground{
+        background-color: /*[[bg4]]*/;}
+    span[autoid="_lvv_5"]{
+        color:/*[[hhtxt]]*/;
+        font-weight: 900;}
+    span[autoid="_lvv_6"]{
+        color:/*[[hhtxt]]*/;}
+    span[autoid="_lvv_7"]{
+        color:/*[[htxt]]*/;}
+    span[autoid="_lvv_j"]{
+        color: lightblue;
+        background-color: /*[[bg3]]*/;
+        border-bottom-style: solid;
+        border-bottom-color: lightblue;}
+    /*focus & hover*/
+    div[autoid="_lvv_3"]:focus{
+        background-color: #C7E0F4;}
+    div[autoid="_lvv_3"]:focus span[autoid="_lvv_5"],
+    div[autoid="_lvv_3"]:hover span[autoid="_lvv_5"]{
+        color: #424048;}
+    div[autoid="_lvv_3"]:focus span[autoid="_lvv_6"],
+    div[autoid="_lvv_3"]:hover span[autoid="_lvv_6"]{
+        color: #222;}
+    div[autoid="_lvv_3"]:focus span[autoid="_lvv_7"],
+    div[autoid="_lvv_3"]:hover span[autoid="_lvv_7"]{
+        color: #545050;}
+    /*main content*/
+    .conductorContent{
+        background-color: /*[[bg3]]*/;}
+    span[autoid="_rp_4"]{
+        color:/*[[hhtxt]]*/;
+        font-weight: 900;}
+    ._pe_l{
+        color: #C7E0F4;}
+    div[id*="MessageUniqueBody"],
+    #divtagdefaultwrapper span,
+    div[autoid="_rp_u"] span,
+    div[autoid="_rp_u"] p{
+        color:/*[[hhtxt]]*/ !important;}
+    .x_MsoNormal,
+    .x_MsoNormal span{
+        color: /*[[htxt]]*/ !important;
+        background-color: /*[[bg3]]*/ !important;}
+    /*other stuff*/
+    .ms-Icon--emptyFolder{
+        color:/*[[hhtxt]]*/;}
+    ._n_Q2{
+        color:/*[[hhtxt]]*/;}
+}
