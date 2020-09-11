@@ -326,7 +326,9 @@ span[style*="background-color: rgb(125, 159, 211);"]{
 .format-tiles #window-overlay{
 	opacity:0;}
 .format-tiles #page .course-content ul li.section.main{
-	background-color:/*[[bg2]]*/}
+	background-color:/*[[bg2]]*/;}
+.format-tiles .course-content .section .activity:hover{
+	background-color:/*[[bg3]]*/;}
 /*php-generated code block with colors without classes*/
 div[style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"]{
 	background-color:/*[[bg0]]*/ !important;}
