@@ -278,8 +278,14 @@ span[style*="background-color: rgb(125, 159, 211);"]{
     filter:grayscale(1);
 	background-color:/*[[bg4]]*/;
     border-color:/*[[bg2]]*/;}
-.pagination>.page-item>a:hover{
+.pagination>.page-item:not(.active)>a:hover{
     background-color:/*[[bg5]]*/;}
+.pagination>.page-item.active>a:hover{
+    background-color:/*[[hbtn]]*/;}
+.pagination>.page-item.active>a{
+	color:/*[[htxt]]*/ !important;}
+.pagination>.page-item.active>a:hover{
+	color:/*[[hhtxt]]*/ !important;}
 .btn-secondary{
     background-color:#FFF2;
     color:/*[[txt]]*/;
