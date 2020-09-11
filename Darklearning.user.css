@@ -508,6 +508,8 @@ code{
     outline:solid 2px /*[[bg0]]*/;
     font-family:Monospace;
     font-size:1.08em;}
+.highlight{
+	outline:solid 1px /*[[hlnk]]*/;}
 .aalink:focus{
 	background-color:/*[[htxt]]*/;
 	box-shadow:0 -0.2rem /*[[htxt]]*/,0 0.2rem /*[[bg3]]*/;
