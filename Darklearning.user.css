@@ -329,6 +329,11 @@ span[style*="background-color: rgb(125, 159, 211);"]{
 	background-color:/*[[bg2]]*/;}
 .format-tiles .course-content .section .activity:hover{
 	background-color:/*[[bg3]]*/;}
+.format-tiles li.activity.subtile{
+	background-color:/*[[bg2]]*/;
+	border-color:/*[[brd]]*/;}
+.format-tiles li.activity.subtile .activitytitle a{
+	background:linear-gradient(to bottom,/*[[bg4]]*/ 85%,#0000)}
 /*php-generated code block with colors without classes*/
 div[style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"]{
 	background-color:/*[[bg0]]*/ !important;}
