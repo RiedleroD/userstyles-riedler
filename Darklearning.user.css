@@ -303,6 +303,9 @@ span[style*="background-color: rgb(125, 159, 211);"]{
 .hover-tooltip::after{
     border-top-color:/*[[bg3]]*/ !important;
     filter:drop-shadow(0 1px 0 /*[[brd]]*/);}
+#goto-top-link>a.btn{
+	background-color:/*[[bg3]]*/;
+	border:none;}
 /*Dropdown menus*/
 .dropdown-item:active,.dropdown-item.active{
     background-color:/*[[bg4]]*/;}
@@ -896,4 +899,5 @@ input[type="text"].incorrect{
 .path-calendar .maincalendar .calendarmonth ul li>a{
     text-overflow:clip;}
 }
+
 
