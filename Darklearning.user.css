@@ -522,8 +522,8 @@ code{
 	outline:solid 1px /*[[hlnk]]*/;}
 .aalink:focus,
 a:not([class]):focus{
-	background-color:/*[[htxt]]*/;
-	box-shadow:0 -0.2rem /*[[htxt]]*/,0 0.2rem /*[[bg3]]*/;
+	background-color:#0000;
+	box-shadow:0 -0.2rem /*[[brd]]*/,0 0.2rem /*[[brd]]*/;
 	border-radius:0.3em;}
 /*Editor Atto*/
 .editor_atto .icon{
