@@ -218,11 +218,13 @@
 /*text*/
 span,p,pre,
 .text-center,.text-right,
-.logininfo,
+.logininfo,.generaltable,
 h1,h2,h3,h4,h5,h6,
 body,:root,
 ul,ol{
     color:/*[[txt]]*/ !important;}
+.generaltable tbody tr:hover{
+	color:/*[[htxt]]*/ !important;}
 textarea.form-control{
     background-color:/*[[bg5]]*/ !important;
     border:solid /*[[brd]]*/ 1px;
