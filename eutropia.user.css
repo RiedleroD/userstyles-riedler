@@ -5,6 +5,7 @@
 @description    A dark mode for dolphin-emu.org
 @author         Riedler
 @preprocessor	uso
+@advanced select EICC "Default Image Color Correction" {"Dim":"brightness(0.8)","Recommended":"invert(0.86) hue-rotate(180deg)","Full":"invert(1) hue-rotate(180deg)","Debug":"invert(1) hue-rotate(180deg) saturate(100)","Off":"none"}
 @var	color	bg0		"Background 0"		#000
 @var	color	bg1		"Background 1"		#151515
 @var	color	bg2		"Background 2"		#222
@@ -457,6 +458,9 @@
 	/*administrator badges*/
 	img[src="images/groupimages/english/team-administrator.gif"]{
 		filter:brightness(0.85);}
+	/*profile pictures*/
+	.author_avatar>a>img{
+		filter:/*[[EICC]]*/}
 }
 @-moz-document regexp("https?:\\/\\/wiki\\.dolphin-emu\\.org($|\\/.*)") {
     :root,
