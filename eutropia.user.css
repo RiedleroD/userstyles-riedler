@@ -318,8 +318,14 @@
         background-color:/*[[bg1]]*/;
         border:solid 1px /*[[brd]]*/;
         color:/*[[txt]]*/;
-        border-radius:0.5em 0 0 0.5em;}
-    select:focus{
+        border-radius:0.5em 0 0 0.5em;
+		appearance:none;
+		-moz-appearance:none;
+		-webkit-appearance:none;
+		background-image:url("https://riedler.wien/sfto/darklearning/double_triangles_top_bottom_AAA.svg");
+		background-repeat:no-repeat;
+		background-position:center right;}
+    select:hover{
         color:/*[[htxt]]*/;
         background-color:/*[[bg2]]*/;}
     #copyright>span::after{ /*inserts myself into the copyright notice*/
