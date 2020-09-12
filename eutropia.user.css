@@ -460,7 +460,32 @@
 		filter:brightness(0.85);}
 	/*profile pictures*/
 	.author_avatar>a>img{
-		filter:/*[[EICC]]*/}
+		filter:/*[[EICC]]*/;}
+	/*smilies*/
+	.smilie_1,/*smile*/
+	.smilie_2,/*wink*/
+	.smilie_3,/*cool*/
+	.smilie_4,/*grin*/
+	.smilie_5,/*tongue*/
+	.smilie_6,/*look up*/
+	.smilie_7,/*look down*/
+	.smilie_8,/*sad*/
+	.smilie_10,/*angel*/
+	.smilie_12,/*blush*/
+	.smilie_13,/*squiggly mouth*/
+	.smilie_14,/*annoyed*/
+	.smilie_15,/*exclamation mark*/
+	.smilie_17,/*confused*/
+	.smilie_18,/*idea*/
+	.smilie_19,/*smug*/
+	.smilie_20{/*unsure*/
+		filter:invert(0.8) hue-rotate(180deg) saturate(3) brightness(1.2);}
+	.smilie_16{/*heart*/
+		filter:invert(1) hue-rotate(220deg) saturate(1.5) brightness(0.93);}
+	.smilie_11{/*mad*/
+		filter:invert(1) hue-rotate(180deg) saturate(1.3) brightness(0.93);}
+	.posticons_label>img{/*posticons, this is only rough, but it's good enough*/
+		filter:invert(1) hue-rotate(180deg) saturate(0.8) brightness(1.3)}
 }
 @-moz-document regexp("https?:\\/\\/wiki\\.dolphin-emu\\.org($|\\/.*)") {
     :root,
