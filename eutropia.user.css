@@ -222,7 +222,7 @@
 		border-radius:0.5rem;}
 }
 @-moz-document regexp("https?:\\/\\/forums\\.dolphin-emu\\.org($|\\/.*)"){
-    #container{
+    #container,body{/*the body here is for the printable post version*/
         background-color:/*[[bg0]]*/;
         border:none;
         border-radius:0.5em;}
