@@ -8,8 +8,9 @@
 @var	color	bg0		"Background 0"		#000
 @var	color	bg1		"Background 1"		#151515
 @var	color	bg2		"Background 2"		#222
-@var	color	txt		"Text"				#BBB
-@var	color	htxt	"Hovered Text"		#DDD
+@var	color	bg3		"Background 3"		#333
+@var	color	txt		"Text"				#CCC
+@var	color	htxt	"Hovered Text"		#EEE
 @var	color	btn		"Buttons"			rgb(55, 100, 153)
 @var	color	hbtn	"Hovered buttons"	rgb(82,148,226)
 @var	color	brd		"Borders"			#888
@@ -441,6 +442,14 @@
         line-height:2;
         margin-bottom:-0.3em;
         background-color:#0000;}
+	.button{
+		background:linear-gradient(to bottom,/*[[bg3]]*/ 5%,/*[[bg2]]*/ 8%);
+		border-color:/*[[brd]]*/;
+		color:/*[[txt]]*/}
+	.button:hover{
+		background:linear-gradient(to bottom,/*[[bg3]]*/ 5%,/*[[bg3]]*/ 8%);
+		border-color:/*[[brd]]*/;
+		color:/*[[htxt]]*/}
 	/*those red stars next to the posters name*/
 	img[src="images/small-red-star.gif"]{
 		filter:invert(0.8) hue-rotate(180deg) brightness(0.8) saturate(2);
