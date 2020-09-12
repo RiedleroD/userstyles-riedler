@@ -306,6 +306,8 @@
         background-color:/*[[hbtn]]*/;
         background-image:none;
         color:/*[[htxt]]*/ !important;}
+	input[type="checkbox"]{
+		filter:invert(1) hue-rotate(180deg);}
     .trow_sep{
         background-color:/*[[bg0]]*/;
         color:/*[[txt]]*/;}
