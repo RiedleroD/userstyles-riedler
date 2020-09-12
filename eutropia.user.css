@@ -354,9 +354,6 @@
         border-radius:1em;
         overflow:hidden;
         padding:0;}
-    img[src="/images/groupimages/english/team-developer.gif"],
-    img[src=" /images/groupimages/english/team-contentcreator.png"]{
-        filter:brightness(0.8);}
     #breadcrumb_multipage{
         height:0;}
     #breadcrumb_multipage_popup{
@@ -455,8 +452,10 @@
 	img[src="images/small-red-star.gif"]{
 		filter:invert(0.8) hue-rotate(180deg) brightness(0.8) saturate(2);
 	}
-	/*administrator badges*/
-	img[src="images/groupimages/english/team-administrator.gif"]{
+	/*poster badges*/
+	img[src="images/groupimages/english/team-administrator.gif"],
+	img[src="/images/groupimages/english/team-developer.gif"],
+    img[src=" /images/groupimages/english/team-contentcreator.png"]{
 		filter:brightness(0.85);}
 	/*profile pictures*/
 	.author_avatar>a>img{
