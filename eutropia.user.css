@@ -399,7 +399,7 @@
     .navMain hr{
         background-color:/*[[brd]]*/;}
     fieldset{
-        border-color:/*[[brd]]*/;}
+        border:solid 1px /*[[brd]]*/;}
     textarea{
         background-color:/*[[bg2]]*/;
         border:none;
@@ -498,6 +498,9 @@
 		border:none;}
 	.spoiler_contenido{
 		background-color:/*[[bg2]]*/;}
+	/*post attachments*/
+	img.attachment{
+		border-color:/*[[brd]]*/;}
 }
 @-moz-document regexp("https?:\\/\\/wiki\\.dolphin-emu\\.org($|\\/.*)") {
     :root,
