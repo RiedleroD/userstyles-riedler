@@ -454,6 +454,9 @@
 	img[src="images/small-red-star.gif"]{
 		filter:invert(0.8) hue-rotate(180deg) brightness(0.8) saturate(2);
 	}
+	/*administrator badges*/
+	img[src="images/groupimages/english/team-administrator.gif"]{
+		filter:brightness(0.85);}
 }
 @-moz-document regexp("https?:\\/\\/wiki\\.dolphin-emu\\.org($|\\/.*)") {
     :root,
