@@ -489,6 +489,15 @@
 	img[src$="Simpl/paperclip.png"]{
 		filter:invert(1);
 	}
+	/*spoiler popdowns*/
+	.spoiler{
+		background-color:/*[[bg2]]*/;
+		border-color:/*[[brd]]*/;}
+	.spoiler_cabecera{
+		background-color:/*[[bg3]]*/;
+		border:none;}
+	.spoiler_contenido{
+		background-color:/*[[bg2]]*/;}
 }
 @-moz-document regexp("https?:\\/\\/wiki\\.dolphin-emu\\.org($|\\/.*)") {
     :root,
