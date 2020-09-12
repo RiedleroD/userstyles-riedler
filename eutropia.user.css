@@ -352,6 +352,14 @@
     .postbit_buttons>a:link:hover{
         background-color:/*[[hbtn]]*/;
         color:/*[[htxt]]*/;}
+	.postbit_buttons>a:visited{
+        background-color:/*[[btn]]*/;
+		background-image:none;
+        color:/*[[txt]]*/;}
+	.postbit_buttons>a:visited:hover{
+        background-color:/*[[hbtn]]*/;
+		background-image:none;
+        color:/*[[htxt]]*/;}
     .codeblock{
         background-color:/*[[bg0]]*/;
         border:none;}
