@@ -441,6 +441,10 @@
         line-height:2;
         margin-bottom:-0.3em;
         background-color:#0000;}
+	/*those red stars next to the posters name*/
+	img[src="images/small-red-star.gif"]{
+		filter:invert(0.8) hue-rotate(180deg) brightness(0.8) saturate(2);
+	}
 }
 @-moz-document regexp("https?:\\/\\/wiki\\.dolphin-emu\\.org($|\\/.*)") {
     :root,
@@ -735,3 +739,4 @@
 	img[src="/images/4/41/Stars0.png"]{
         filter:invert(1) hue-rotate(175deg) brightness(2);}
 }
+
