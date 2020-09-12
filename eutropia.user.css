@@ -225,7 +225,8 @@
     #container,body{/*the body here is for the printable post version*/
         background-color:/*[[bg0]]*/;
         border:none;
-        border-radius:0.5em;}
+        border-radius:0.5em;
+		color:/*[[txt]]*/;}
     table.tborder{
         background-color:/*[[bg1]]*/;
         border:none;}
