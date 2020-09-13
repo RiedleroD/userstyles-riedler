@@ -598,7 +598,8 @@
     div#mw-panel div.portal h3,
     div.vectorTabs li.selected a,
     div.vectorTabs li.selected a:visited,
-    div#simpleSearch>input{
+    div#simpleSearch>input,
+	#bodyContent div.mw-number-text h3{
         color:/*[[txt]]*/;
 		text-decoration:none;}
     a:link,
