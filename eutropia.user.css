@@ -76,15 +76,13 @@
     a[href]:not([class^="tag"]):not(.btn).rss-tag:hover{
         color:/*[[htxt]]*/;
         background-color:/*[[hbtn]]*/;}
-	body{
-        padding-top:7rem;}
 	.compat-list>tbody{
 		background-color:/*[[bg1]]*/;
         border-radius:0.5rem;}
 	#navbar-dolphin{
 		background-image:none;
 		background-color:/*[[bg1]]*/;
-		position:fixed;
+		position:sticky;
 		z-index:3;
 		top:0;
 		width:100vw;
