@@ -1,15 +1,17 @@
 /* ==UserStyle==
 @name           Eutropia
-@namespace      https://gitea.gelse.eu/Riedler/Userstyles-Riedler/src/branch/eutropia
-@version        0.1.3
+@namespace      https://github.com/RiedleroD/userstyles-riedler/
+@version        0.2.0
 @description    A dark mode for dolphin-emu.org
 @author         Riedler
 @preprocessor	uso
+@advanced select EICC "Default Image Color Correction" {"Dim":"brightness(0.8)","Recommended Invert":"invert(0.86) hue-rotate(180deg)","Full Invert":"invert(1) hue-rotate(180deg)","Debug":"invert(1) hue-rotate(180deg) saturate(100)","Off":"none"}
 @var	color	bg0		"Background 0"		#000
 @var	color	bg1		"Background 1"		#151515
 @var	color	bg2		"Background 2"		#222
-@var	color	txt		"Text"				#BBB
-@var	color	htxt	"Hovered Text"		#DDD
+@var	color	bg3		"Background 3"		#333
+@var	color	txt		"Text"				#CCC
+@var	color	htxt	"Hovered Text"		#EEE
 @var	color	btn		"Buttons"			rgb(55, 100, 153)
 @var	color	hbtn	"Hovered buttons"	rgb(82,148,226)
 @var	color	brd		"Borders"			#888
@@ -220,10 +222,23 @@
 		border-radius:0.5rem;}
 }
 @-moz-document regexp("https?:\\/\\/forums\\.dolphin-emu\\.org($|\\/.*)"){
-    #container{
+    #container,body{/*the body here is for the printable post version*/
         background-color:/*[[bg0]]*/;
         border:none;
-        border-radius:0.5em;}
+        border-radius:0.5em;
+		color:/*[[txt]]*/;}
+	/*scrollbar styling*/
+	:root{/*for firefox and future use*/
+		scrollbar-color:/*[[bg2]]*/ /*[[bg0]]*/;
+		scrollbar-width:thin;}
+	::-webkit-scrollbar-button{/*for chrome and safari*/
+		display:none;}
+	::-webkit-scrollbar-track{
+		background-color:/*[[bg0]]*/;}
+	::-webkit-scrollbar-thumb{
+		background-color:/*[[bg2]]*/;}
+	/*miscellanious stuff lol
+	  I don't want to sort those*/
     table.tborder{
         background-color:/*[[bg1]]*/;
         border:none;}
@@ -261,6 +276,7 @@
         text-decoration:none;}
     .pagination .pagination_page,
     .pagination .pagination_last,
+	.pagination .pagination_previous,
     .pagination .pagination_next{
         background-color:/*[[btn]]*/;
         border:none;
@@ -268,6 +284,7 @@
         border-radius:0.5em;}
     .pagination .pagination_page:hover,
     .pagination .pagination_last:hover,
+	.pagination .pagination_previous:hover,
     .pagination .pagination_next:hover{
         background-color:/*[[hbtn]]*/;
         color:/*[[htxt]]*/;
@@ -302,6 +319,8 @@
         background-color:/*[[hbtn]]*/;
         background-image:none;
         color:/*[[htxt]]*/ !important;}
+	input[type="checkbox"]{
+		filter:invert(1) hue-rotate(180deg);}
     .trow_sep{
         background-color:/*[[bg0]]*/;
         color:/*[[txt]]*/;}
@@ -316,10 +335,44 @@
         background-color:/*[[bg1]]*/;
         border:solid 1px /*[[brd]]*/;
         color:/*[[txt]]*/;
-        border-radius:0.5em 0 0 0.5em;}
-    select:focus{
+        border-radius:0.5em 0 0 0.5em;
+		padding-right:1em;
+		appearance:none;
+		-moz-appearance:none;
+		-webkit-appearance:none;
+		background-image:url("https://riedler.wien/sfto/darklearning/double_triangles_top_bottom_AAA.svg");
+		background-repeat:no-repeat;
+		background-position:center right;}
+    select:hover{
         color:/*[[htxt]]*/;
         background-color:/*[[bg2]]*/;}
+	.select2-container-multi .select2-choices{
+		background-color:/*[[bg2]]*/;
+		background-image:none;
+		border-color:/*[[brd]]*/;}
+	.select2-container-multi .select2-choices .select2-search-field input{
+		color:/*[[txt]]*/;}
+	.select2-container-multi .select2-choices .select2-search-field input.select2-active{
+		background-color:/*[[bg3]]*/ !important;
+		background-blend-mode:multiply;
+		color:/*[[htxt]]*/;}
+	.select2-results .select2-no-results,
+	.select2-results .select2-searching,
+	.select2-results .select2-ajax-error,
+	.select2-results .select2-selection-limit{
+		background-color:/*[[bg1]]*/;
+		color:/*[[txt]]*/;}
+	.select2-drop{
+		color:/*[[txt]]*/;}
+	.select2-results .select2-highlighted{
+		color:/*[[htxt]]*/;
+		background-color:/*[[bg3]]*/;}
+	.select2-container-multi .select2-choices .select2-search-choice{
+		background-color:/*[[bg3]]*/;
+		color:/*[[htxt]]*/;
+		background-image:none;
+		border-color:/*[[brd]]*/;
+		box-shadow: 0 0 2px /*[[bg1]]*/ inset, 0 1px 0 #0000;}
     #copyright>span::after{ /*inserts myself into the copyright notice*/
         content:"| Dark theme by Riedler"}
     .post>.post_date{
@@ -341,6 +394,14 @@
     .postbit_buttons>a:link:hover{
         background-color:/*[[hbtn]]*/;
         color:/*[[htxt]]*/;}
+	.postbit_buttons>a:visited{
+        background-color:/*[[btn]]*/;
+		background-image:none;
+        color:/*[[txt]]*/;}
+	.postbit_buttons>a:visited:hover{
+        background-color:/*[[hbtn]]*/;
+		background-image:none;
+        color:/*[[htxt]]*/;}
     .codeblock{
         background-color:/*[[bg0]]*/;
         border:none;}
@@ -352,9 +413,6 @@
         border-radius:1em;
         overflow:hidden;
         padding:0;}
-    img[src="/images/groupimages/english/team-developer.gif"],
-    img[src=" /images/groupimages/english/team-contentcreator.png"]{
-        filter:brightness(0.8);}
     #breadcrumb_multipage{
         height:0;}
     #breadcrumb_multipage_popup{
@@ -400,7 +458,7 @@
     .navMain hr{
         background-color:/*[[brd]]*/;}
     fieldset{
-        border-color:/*[[brd]]*/;}
+        border:solid 1px /*[[brd]]*/;}
     textarea{
         background-color:/*[[bg2]]*/;
         border:none;
@@ -441,6 +499,68 @@
         line-height:2;
         margin-bottom:-0.3em;
         background-color:#0000;}
+	.button{
+		background:linear-gradient(to bottom,/*[[bg3]]*/ 5%,/*[[bg2]]*/ 8%);
+		border-color:/*[[brd]]*/;
+		color:/*[[txt]]*/}
+	.button:hover{
+		background:linear-gradient(to bottom,/*[[bg3]]*/ 5%,/*[[bg3]]*/ 8%);
+		border-color:/*[[brd]]*/;
+		color:/*[[htxt]]*/}
+	.author_avatar>a>img,/*profile pictures*/
+	img.attachment,
+	img:not([class]){/*classless images*/
+		filter:/*[[EICC]]*/;}
+	/*those red stars next to the posters name*/
+	img[src="images/small-red-star.gif"]{
+		filter:invert(0.8) hue-rotate(180deg) brightness(0.8) saturate(2);
+	}
+	/*poster badges*/
+	img[src="images/groupimages/english/team-administrator.gif"],
+	img[src="/images/groupimages/english/team-developer.gif"],
+    img[src=" /images/groupimages/english/team-contentcreator.png"]{
+		filter:brightness(0.85);}
+	/*smilies*/
+	.smilie_1,/*smile*/
+	.smilie_2,/*wink*/
+	.smilie_3,/*cool*/
+	.smilie_4,/*grin*/
+	.smilie_5,/*tongue*/
+	.smilie_6,/*look up*/
+	.smilie_7,/*look down*/
+	.smilie_8,/*sad*/
+	.smilie_10,/*angel*/
+	.smilie_12,/*blush*/
+	.smilie_13,/*squiggly mouth*/
+	.smilie_14,/*annoyed*/
+	.smilie_15,/*exclamation mark*/
+	.smilie_17,/*confused*/
+	.smilie_18,/*idea*/
+	.smilie_19,/*smug*/
+	.smilie_20{/*unsure*/
+		filter:invert(0.8) hue-rotate(180deg) saturate(3) brightness(1.2);}
+	.smilie_16{/*heart*/
+		filter:invert(1) hue-rotate(220deg) saturate(1.5) brightness(0.93);}
+	.smilie_11{/*mad*/
+		filter:invert(1) hue-rotate(180deg) saturate(1.3) brightness(0.93);}
+	.posticons_label>img{/*posticons, this is only rough, but it's good enough*/
+		filter:invert(1) hue-rotate(180deg) saturate(0.8) brightness(1.3)}
+	/*paperclip icon*/
+	img[src$="Simpl/paperclip.png"]{
+		filter:invert(1);
+	}
+	/*spoiler popdowns*/
+	.spoiler{
+		background-color:/*[[bg2]]*/;
+		border-color:/*[[brd]]*/;}
+	.spoiler_cabecera{
+		background-color:/*[[bg3]]*/;
+		border:none;}
+	.spoiler_contenido{
+		background-color:/*[[bg2]]*/;}
+	/*post attachments*/
+	img.attachment{
+		border-color:/*[[brd]]*/;}
 }
 @-moz-document regexp("https?:\\/\\/wiki\\.dolphin-emu\\.org($|\\/.*)") {
     :root,
@@ -735,3 +855,4 @@
 	img[src="/images/4/41/Stars0.png"]{
         filter:invert(1) hue-rotate(175deg) brightness(2);}
 }
+
