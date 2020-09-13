@@ -474,9 +474,10 @@
         background-color:/*[[brd]]*/;}
     fieldset{
         border:solid 1px /*[[brd]]*/;}
-    textarea{
+    textarea,
+	.sceditor-container iframe, .sceditor-container textarea{
         background-color:/*[[bg2]]*/;
-        border:none;
+        border:solid 1px /*[[brd]]*/;
         color:/*[[txt]]*/}
     #select2-drop{
         background-color:/*[[bg1]]*/;}
