@@ -40,6 +40,10 @@
     .breadcrumb,
     .jumbotron{/*I'm not laughing, you're laughing!*/
 		background-color:/*[[bg1]]*/;}
+	.my-hero h1.title{/*lol*/
+		background-color:/*[[bg1]]*/;
+		background-blend-mode:hard-light;
+		filter:saturate(0.6);}
     .nav>li>a:hover,
 	.nav>li>a:focus{
 		background-color:/*[[bg2]]*/;}
