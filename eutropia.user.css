@@ -682,7 +682,8 @@
 		background-color:/*[[bg2]]*/;
 		border:none;}
 	#toc,
-	.toc{
+	.toc,
+	#filetoc{
 		background-color:/*[[bg2]]*/;
 		border:none;
 		border-radius:0.5em;}
