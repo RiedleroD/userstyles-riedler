@@ -653,6 +653,12 @@
 	.mw-datatable tr:hover td{
 		background-color:/*[[bg3]]*/;
 		color:/*[[htxt]]*/;}
+	.TablePager_nav td.TablePager_nav-next .TablePager_nav-enabled,
+	.TablePager_nav td.TablePager_nav-last .TablePager_nav-enabled,
+	.TablePager_nav td.TablePager_nav-prev .TablePager_nav-enabled,
+	.TablePager_nav td.TablePager_nav-first .TablePager_nav-enabled{
+		background-color:/*[[bg2]]*/;
+		border-radius:0.5em;}
 	a[role="button"]{
 		color:/*[[txt]]*/;
 		background-color:/*[[btn]]*/;
