@@ -675,6 +675,7 @@
 	input[type="checkbox"],
 	input[type="radio"]{
 		filter:invert(1) hue-rotate(180deg);}
+	.client-js .mw-ui-checkbox:not(#noop) input[type="checkbox"] + label::before,
 	.oo-ui-checkboxInputWidget [type="checkbox"] + span{
 		background-color:/*[[bg2]]*/;}
 	.oo-ui-checkboxInputWidget.oo-ui-widget-enabled [type="checkbox"]:checked + span{
@@ -683,13 +684,27 @@
 	.oo-ui-checkboxInputWidget.oo-ui-widget-enabled [type="checkbox"]:checked:hover + span{
 		background-color:/*[[hbtn]]*/;
 		border-color:/*[[hbtn]]*/;}
+	.mw-ui-input{
+		background-color:/*[[bg2]]*/;
+		box-shadow:none;
+		border-color:/*[[brd]]*/;
+		color:/*[[txt]]*/;}
 	.oo-ui-dropdownWidget.oo-ui-widget-enabled.oo-ui-dropdownWidget-open .oo-ui-dropdownWidget-handle,
 	.oo-ui-dropdownWidget.oo-ui-widget-enabled .oo-ui-dropdownWidget-handle{
 		background-color:/*[[bg2]]*/;}
+	.mw-ui-input:hover,
+	.mw-ui-input:focus,
 	.oo-ui-dropdownWidget.oo-ui-widget-enabled .oo-ui-dropdownWidget-handle:hover,
 	.oo-ui-dropdownWidget.oo-ui-widget-enabled .oo-ui-dropdownWidget-handle:focus,
 	.oo-ui-menuOptionWidget.oo-ui-optionWidget-selected{
 		background-color:/*[[bg3]]*/;}
+	.client-js .mw-ui-checkbox:not(#noop) input[type="checkbox"]:active + label::before{
+		background-color:/*[[bg3]]*/;
+		border-color:/*[[brd]]*/;}
+	.client-js .mw-ui-checkbox:not(#noop) input[type="checkbox"]:focus:hover + label::before{
+		border-bottom-width:2px;}
+	.client-js .mw-ui-checkbox:not(#noop) input[type="checkbox"]:hover + label::before{
+		border-bottom-width:1px;}
 	h1,h2,h3,h4,h5,h6{
 		border-color:/*[[brd]]*/;
 		color:/*[[txt]]*/;}
