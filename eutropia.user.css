@@ -199,7 +199,16 @@
 	.dropdown-menu>li>a:hover,
 	.dropdown-menu>li>a:focus{
 		background-image:none;
-		background-color:/*[[bg2]]*/}
+		background-color:/*[[bg2]]*/;}
+	.modal-content{
+		background-color:/*[[bg1]]*/;}
+	.modal-header{
+		border-color:/*[[brd]]*/;}
+	.close{
+		color:/*[[txt]]*/;}
+	.close:hover,
+	.close:focus{
+		color:/*[[pl3]]*/;}
 	::-webkit-scrollbar{
     	background:transparent;
 		background-image:linear-gradient(to right,transparent 0,transparent 95%,/*[[bg1]]*/ 90%);}
