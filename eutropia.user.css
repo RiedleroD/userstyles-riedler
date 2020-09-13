@@ -167,6 +167,9 @@
     img[src="//dolphin-emu.org/m/static/img/stars/2.195f9785addd.png"],
     img[src="//dolphin-emu.org/m/static/img/stars/1.6dfb2570f44e.png"]{
         filter:invert(1) hue-rotate(175deg) brightness(2);}
+	img:not([class]),
+	iframe[src^="//www.youtube.com/embed"]{
+		filter:/*[[EICC]]*/;}
 	.pagination>li>a,
 	.pagination>li>span{
 		background-color:/*[[bg1]]*/;
