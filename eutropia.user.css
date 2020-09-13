@@ -334,7 +334,8 @@
         background-color:/*[[hbtn]]*/;
         background-image:none;
         color:/*[[htxt]]*/ !important;}
-	input[type="checkbox"]{
+	input[type="checkbox"],
+	input[type="radio"]{
 		filter:invert(1) hue-rotate(180deg);}
     .trow_sep{
         background-color:/*[[bg0]]*/;
