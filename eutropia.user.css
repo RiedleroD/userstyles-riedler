@@ -580,6 +580,12 @@
 		background-color:/*[[bg2]]*/;}
 	/*miscellanious stuff lol
 	  I don't want to sort those*/
+	#mw-createaccount-join{
+		background-color:/*[[bg2]]*/;
+		border-color:/*[[brd]]*/;}
+	#mw-createaccount-join:hover{
+		background-color:/*[[bg3]]*/;
+		border-color:/*[[brd]]*/;}
     div.vectorTabs,
     div.vectorTabs>ul>li.selected{
         background-image:linear-gradient(/*[[bg0]]*/,/*[[bg1]]*/);}
@@ -692,6 +698,12 @@
 	.oo-ui-dropdownWidget.oo-ui-widget-enabled.oo-ui-dropdownWidget-open .oo-ui-dropdownWidget-handle,
 	.oo-ui-dropdownWidget.oo-ui-widget-enabled .oo-ui-dropdownWidget-handle{
 		background-color:/*[[bg2]]*/;}
+	.mw-ui-button.mw-ui-progressive,
+	.mw-ui-button.mw-ui-constructive{
+		background-color:/*[[btn]]*/;}
+	.mw-ui-button.mw-ui-progressive:hover,
+	.mw-ui-button.mw-ui-constructive:hover{
+		background-color:/*[[hbtn]]*/;}
 	.mw-ui-input:hover,
 	.mw-ui-input:focus,
 	.oo-ui-dropdownWidget.oo-ui-widget-enabled .oo-ui-dropdownWidget-handle:hover,
