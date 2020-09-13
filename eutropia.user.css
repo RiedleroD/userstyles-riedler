@@ -568,6 +568,18 @@
     #mw-page-base{
         background-color:/*[[bg0]]*/;
         background-image:none;}
+	/*scrollbar styling*/
+	:root{/*for firefox and future use*/
+		scrollbar-color:/*[[bg2]]*/ /*[[bg0]]*/;
+		scrollbar-width:thin;}
+	::-webkit-scrollbar-button{/*for chrome and safari*/
+		display:none;}
+	::-webkit-scrollbar-track{
+		background-color:/*[[bg0]]*/;}
+	::-webkit-scrollbar-thumb{
+		background-color:/*[[bg2]]*/;}
+	/*miscellanious stuff lol
+	  I don't want to sort those*/
     div.vectorTabs,
     div.vectorTabs>ul>li.selected{
         background-image:linear-gradient(/*[[bg0]]*/,/*[[bg1]]*/);}
