@@ -612,6 +612,8 @@
     div#mw-panel div.portal div.body ul li a:visited:hover,
 	a:hover>span.toctext{
         color:/*[[hlnk]]*/;}
+	div#mw-head div.vectorMenu h3,
+	div.vectorTabs ul,
     div.vectorTabs>ul>li>span{
         background-image:none;}
     div.vectorTabs>ul>li{
