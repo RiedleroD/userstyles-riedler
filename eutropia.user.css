@@ -621,6 +621,8 @@
     div.vectorTabs>ul>li:first-child{
         border-left:solid 1px /*[[brd]]*/;
         margin-left:-1px;}
+	div.vectorMenu h3 span{
+		color:/*[[txt]]*/;}
 	div.vectorMenu div.menu{
 		background-color:/*[[bg2]]*/;
 		color:/*[[txt]]*/;
@@ -658,6 +660,9 @@
 	textarea{
 		background-color:/*[[bg0]]*/;
 		color:/*[[txt]]*/;}
+	input[type="checkbox"],
+	input[type="radio"]{
+		filter:invert(1) hue-rotate(180deg);}
 	h1,h2,h3,h4,h5,h6{
 		border-color:/*[[brd]]*/;
 		color:/*[[txt]]*/;}
