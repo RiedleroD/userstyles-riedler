@@ -663,6 +663,21 @@
 	input[type="checkbox"],
 	input[type="radio"]{
 		filter:invert(1) hue-rotate(180deg);}
+	.oo-ui-checkboxInputWidget [type="checkbox"] + span{
+		background-color:/*[[bg2]]*/;}
+	.oo-ui-checkboxInputWidget.oo-ui-widget-enabled [type="checkbox"]:checked + span{
+		background-color:/*[[btn]]*/;
+		border-color:/*[[btn]]*/;}
+	.oo-ui-checkboxInputWidget.oo-ui-widget-enabled [type="checkbox"]:checked:hover + span{
+		background-color:/*[[hbtn]]*/;
+		border-color:/*[[hbtn]]*/;}
+	.oo-ui-dropdownWidget.oo-ui-widget-enabled.oo-ui-dropdownWidget-open .oo-ui-dropdownWidget-handle,
+	.oo-ui-dropdownWidget.oo-ui-widget-enabled .oo-ui-dropdownWidget-handle{
+		background-color:/*[[bg2]]*/;}
+	.oo-ui-dropdownWidget.oo-ui-widget-enabled .oo-ui-dropdownWidget-handle:hover,
+	.oo-ui-dropdownWidget.oo-ui-widget-enabled .oo-ui-dropdownWidget-handle:focus,
+	.oo-ui-menuOptionWidget.oo-ui-optionWidget-selected{
+		background-color:/*[[bg3]]*/;}
 	h1,h2,h3,h4,h5,h6{
 		border-color:/*[[brd]]*/;
 		color:/*[[txt]]*/;}
@@ -712,6 +727,14 @@
 		border:solid 1px /*[[brd]]*/;
 		background-color:#0000;
 		color:/*[[txt]]*/}
+	.oo-ui-textInputWidget .oo-ui-pendingElement-pending{
+		background-blend-mode:multiply;
+		background-color:/*[[brd]]*/;}
+	.oo-ui-menuSelectWidget{
+		background-color:/*[[bg2]]*/;}
+	.oo-ui-menuOptionWidget.oo-ui-optionWidget-highlighted{
+		background-color:/*[[bg3]]*/;
+		color:/*[[htxt]]*/;}
 	/*search bar*/
 	#searchform>#simpleSearch{
 		border-color:/*[[bg2]]*/;
