@@ -964,5 +964,7 @@
 	img[src="/images/4/4a/Stars1.png"],
 	img[src="/images/4/41/Stars0.png"]{
         filter:invert(1) hue-rotate(175deg) brightness(2);}
+	.mw-wiki-logo{
+		filter:brightness(0.8);}
 }
 
