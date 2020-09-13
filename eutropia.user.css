@@ -580,6 +580,11 @@
 		background-color:/*[[bg2]]*/;}
 	/*miscellanious stuff lol
 	  I don't want to sort those*/
+	.mw-ui-vform .error{
+		background-color:/*[[pl3]]*/;
+		border-color:#FFF3;
+		border-radius:0.3em;
+		color:/*[[htxt]]*/;}
 	#mw-createaccount-join{
 		background-color:/*[[bg2]]*/;
 		border-color:/*[[brd]]*/;}
