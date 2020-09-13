@@ -170,6 +170,7 @@
     img[src="//dolphin-emu.org/m/static/img/stars/1.6dfb2570f44e.png"]{
         filter:invert(1) hue-rotate(175deg) brightness(2);}
 	img:not([class]),
+	img.fp-sshot,
 	iframe[src^="//www.youtube.com/embed"]{
 		filter:/*[[EICC]]*/;}
 	.pagination>li>a,
