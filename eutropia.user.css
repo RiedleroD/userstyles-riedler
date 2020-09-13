@@ -564,6 +564,9 @@
 	img[src$="Simpl/paperclip.png"]{
 		filter:invert(1);
 	}
+	/*generic star icon*/
+	img[src="images/icons/star.gif"]{
+		filter:invert(0.8) hue-rotate(180deg) brightness(1.5)}
 	/*spoiler popdowns*/
 	.spoiler{
 		background-color:/*[[bg2]]*/;
