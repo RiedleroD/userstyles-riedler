@@ -334,6 +334,33 @@
     select:hover{
         color:/*[[htxt]]*/;
         background-color:/*[[bg2]]*/;}
+	.select2-container-multi .select2-choices{
+		background-color:/*[[bg2]]*/;
+		background-image:none;
+		border-color:/*[[brd]]*/;}
+	.select2-container-multi .select2-choices .select2-search-field input{
+		color:/*[[txt]]*/;}
+	.select2-container-multi .select2-choices .select2-search-field input.select2-active{
+		background-color:/*[[bg3]]*/ !important;
+		background-blend-mode:multiply;
+		color:/*[[htxt]]*/;}
+	.select2-results .select2-no-results,
+	.select2-results .select2-searching,
+	.select2-results .select2-ajax-error,
+	.select2-results .select2-selection-limit{
+		background-color:/*[[bg1]]*/;
+		color:/*[[txt]]*/;}
+	.select2-drop{
+		color:/*[[txt]]*/;}
+	.select2-results .select2-highlighted{
+		color:/*[[htxt]]*/;
+		background-color:/*[[bg3]]*/;}
+	.select2-container-multi .select2-choices .select2-search-choice{
+		background-color:/*[[bg3]]*/;
+		color:/*[[htxt]]*/;
+		background-image:none;
+		border-color:/*[[brd]]*/;
+		box-shadow: 0 0 2px /*[[bg1]]*/ inset, 0 1px 0 #0000;}
     #copyright>span::after{ /*inserts myself into the copyright notice*/
         content:"| Dark theme by Riedler"}
     .post>.post_date{
