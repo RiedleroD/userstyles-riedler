@@ -647,6 +647,12 @@
 	.mw_metadata th{
 		background-color:/*[[bg2]]*/;
 		border-color:/*[[brd]]*/;}
+	.mw-datatable, .mw-datatable td, .mw-datatable th{
+		background-color:/*[[bg2]]*/;
+		border-color:/*[[brd]]*/;}
+	.mw-datatable tr:hover td{
+		background-color:/*[[bg3]]*/;
+		color:/*[[htxt]]*/;}
 	a[role="button"]{
 		color:/*[[txt]]*/;
 		background-color:/*[[btn]]*/;
