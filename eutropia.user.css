@@ -635,6 +635,20 @@
         background-color:/*[[inf]]*/ !important;
         color:/*[[txt]]*/;
         border:none;}
+	.mw_metadata td,
+	.mw_metadata th{
+		background-color:/*[[bg2]]*/;
+		border-color:/*[[brd]]*/;}
+	a[role="button"]{
+		color:/*[[txt]]*/;
+		background-color:/*[[btn]]*/;
+		padding:0 0.3em 0 0.3em;
+		border-radius:0.3em;}
+	a[role="button"]:hover,
+	a[role="button"]:focus{
+		color:/*[[htxt]]*/;
+		background-color:/*[[hbtn]]*/;
+		text-decoration:none;}
 	textarea{
 		background-color:/*[[bg0]]*/;
 		color:/*[[txt]]*/;}
