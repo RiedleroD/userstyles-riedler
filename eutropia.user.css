@@ -826,7 +826,10 @@
 		background-color:/*[[hbtn]]*/;
 		color:/*[[htxt]]*/;
 		border-color:/*[[hbtn]]*/;}
-    /*Image replacements*/
+    /*Image replacements and adjustments*/
+	img:not([class]),
+	img.thumbimage{
+		filter:/*[[EICC]]*/}
     img[src="/images/5/56/Gamecube.png"]{
         box-sizing:border-box;
         padding-left:180px;
