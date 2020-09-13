@@ -621,6 +621,10 @@
     div.vectorTabs>ul>li:first-child{
         border-left:solid 1px /*[[brd]]*/;
         margin-left:-1px;}
+	div.vectorMenu div.menu{
+		background-color:/*[[bg2]]*/;
+		color:/*[[txt]]*/;
+		border-color:/*[[brd]]*/;}
 	div#mw-panel div.portal div.body{
 		background-image:none;
 		border-top:solid 1px /*[[brd]]*/;}
