@@ -452,7 +452,8 @@ table.collection thead th,
 table.flexible thead th,
 .generaltable thead th,
 .preferences-container .preference-table{
-    border-color:/*[[brd]]*/;}
+    border-color:/*[[brd]]*/;
+	color:/*[[txt]]*/;}
 .preferences-container .preference-table tr td:nth-child(even),
 .preferences-container .preference-table tr th:nth-child(even){
     border-color:/*[[brd]]*/;
