@@ -350,6 +350,22 @@ div[style="background: #ffffff; overflow:auto;width:auto;border:solid gray;borde
 	background-color:/*[[bg3]]*/ !important;
 	color:/*[[txt]]*/ !important;}
 /*Misc*/
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-item.show .nav-link{
+	background-color:/*[[bg3]]*/;
+	border-color:/*[[brd]]*/;
+	border:none;}
+.nav-tabs .nav-link:hover,
+.nav-tabs .nav-link:focus{
+	border-color:/*[[hbrd]]*/;}
+.wiki-toc{
+	background-color:/*[[bg3]]*/;
+	border-color:/*[[brd]]*/;
+	border-radius:0.4em;}
+.form-autocomplete-suggestions{
+	background-color:/*[[bg3]]*/;
+	border-color:/*[[brd]]*/;
+	border-width:1px;}
 span[style*="background-color: rgb(239, 69, 64);"]{
 	background-color:/*[[fals]]*/ !important;}
 .format-tiles .sectiontitle::after,
