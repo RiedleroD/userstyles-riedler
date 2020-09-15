@@ -831,15 +831,15 @@ table td,table th{
 .submissionsummarytable td.submissionstatussubmitted{
     background-color:/*[[true]]*/;
     color:/*[[txt]]*/;}
+.feedback .criteria .criterion.even,
+.gradingform_guide .criteria .criterion.even{
+	background-color:/*[[bg3]]*/;}
 .earlysubmission .criteria .criterion.even{
 	background-color:/*[[true]]*/;
 	filter:brightness(0.85);}
 .latesubmission .criteria .criterion.even{
 	background-color:/*[[fals]]*/;
 	filter:brightness(0.85);}
-.feedback .criteria .criterion.even,
-.gradingform_guide .criteria .criterion.even{
-	background-color:/*[[bg3]]*/;}
 .criteria .criterion{
 	border:none;
 	outline:solid 1px /*[[brd]]*/;}
