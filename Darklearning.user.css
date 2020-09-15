@@ -496,7 +496,8 @@ input[type="checkbox"]{
     width:1em;
     height:1em;
     border:0.12em solid /*[[hbrd]]*/;
-    border-radius:0.25em;}
+    border-radius:0.25em;
+	color:/*[[txt]]*/;}
 input[type="checkbox"]:checked:after{
 	content:"";
 	position:absolute;
