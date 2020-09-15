@@ -518,6 +518,12 @@ input[type="radio"]:checked{
     background-color:/*[[bg4]]*/;
     border-color:/*[[brd]]*/;
     color:/*[[txt]]*/;}
+.form-control:disabled,
+.form-control[readonly],
+.form-control:disabled:hover,
+.form-control[readonly]:hover{
+	background-color:/*[[bg5]]*/;
+	cursor:default;}
 .input-group>.form-control{
     border-radius:0.5em 0 0 0.5em;}
 .form-control:hover{
