@@ -352,6 +352,18 @@ div[style="background: #ffffff; overflow:auto;width:auto;border:solid gray;borde
 	background-color:/*[[bg3]]*/ !important;
 	color:/*[[txt]]*/ !important;}
 /*Misc*/
+.nav-tabs,
+.nav-pills{
+	background-color:/*[[bg3]]*/;}
+.nav-tabs .nav-link.active:not(:disabled):not(.disabled):active,
+.nav-pills .nav-link.active:not(:disabled):not(.disabled):active,
+.nav-tabs .nav-link.active:not(:disabled):not(.disabled).active,
+.nav-pills .nav-link.active:not(:disabled):not(.disabled).active,
+.show>.nav-tabs .nav-link.active.dropdown-toggle,
+.show>.nav-pills .nav-link.active.dropdown-toggle{
+	background-color:/*[[bg4]]*/;}
+.nav-tabs .nav-link, .nav-pills .nav-link{
+	background-color:/*[[bg3]]*/;}
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-item.show .nav-link{
 	background-color:/*[[bg3]]*/;
