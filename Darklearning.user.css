@@ -831,8 +831,13 @@ table td,table th{
 .submissionsummarytable td.submissionstatussubmitted{
     background-color:/*[[true]]*/;
     color:/*[[txt]]*/;}
+#guide-criteria .criterion.even{
+	background-color:/*[[true]]*/;
+	filter:brightness(0.85);}
+#guide-criteria .criterion{
+	border:none;
+	outline:solid 1px /*[[brd]]*/;}
 }
-
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/user/preferences\\.php.*?") {
 #region-main .card.mb-3{
     background-color:/*[[bg3]]*/;}
