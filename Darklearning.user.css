@@ -537,6 +537,14 @@ input[type="radio"]:checked{
     border-bottom:solid 1px /*[[brd]]*/;
     border-radius:0 0.5em 0.5em 0;
     overflow:hidden;}
+#searchwiki{
+	background-color:/*[[bg3]]*/;
+	border:solid 1px /*[[brd]]*/;
+	border-radius:0.25em;
+	height:2rem;
+	color:/*[[txt]]*/;}
+#searchwiki:hover{
+	background-color:/*[[bg4]]*/;}
 .badge{
     border-radius:0.25em;}
 .border-bottom{
