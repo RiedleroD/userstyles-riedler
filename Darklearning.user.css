@@ -831,10 +831,12 @@ table td,table th{
 .submissionsummarytable td.submissionstatussubmitted{
     background-color:/*[[true]]*/;
     color:/*[[txt]]*/;}
-#guide-criteria .criterion.even{
+.earlysubmission .criteria .criterion.even{
 	background-color:/*[[true]]*/;
 	filter:brightness(0.85);}
-#guide-criteria .criterion{
+.feedback .criteria .criterion.even{
+	background-color:/*[[bg3]]*/;}
+.criteria .criterion{
 	border:none;
 	outline:solid 1px /*[[brd]]*/;}
 }
