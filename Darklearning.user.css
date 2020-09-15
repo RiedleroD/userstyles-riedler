@@ -834,6 +834,9 @@ table td,table th{
 .earlysubmission .criteria .criterion.even{
 	background-color:/*[[true]]*/;
 	filter:brightness(0.85);}
+.latesubmission .criteria .criterion.even{
+	background-color:/*[[fals]]*/;
+	filter:brightness(0.85);}
 .feedback .criteria .criterion.even{
 	background-color:/*[[bg3]]*/;}
 .criteria .criterion{
