@@ -65,7 +65,9 @@
     background-color:/*[[bg2]]*/;
     border-bottom-right-radius:0.5em;
     border-bottom-left-radius:0.5em;}
-    
+.breadcrumb:not(:empty){
+	border-color:/*[[brd]]*/;
+	border-width:1px;}
     /*dropdown-menu*/
     .dropdown-menu{
         background-color:/*[[bg3]]*/;}
@@ -350,6 +352,34 @@ div[style="background: #ffffff; overflow:auto;width:auto;border:solid gray;borde
 	background-color:/*[[bg3]]*/ !important;
 	color:/*[[txt]]*/ !important;}
 /*Misc*/
+.nav-tabs,
+.nav-pills{
+	background-color:/*[[bg3]]*/;}
+.nav-tabs .nav-link.active:not(:disabled):not(.disabled):active,
+.nav-pills .nav-link.active:not(:disabled):not(.disabled):active,
+.nav-tabs .nav-link.active:not(:disabled):not(.disabled).active,
+.nav-pills .nav-link.active:not(:disabled):not(.disabled).active,
+.show>.nav-tabs .nav-link.active.dropdown-toggle,
+.show>.nav-pills .nav-link.active.dropdown-toggle{
+	background-color:/*[[bg4]]*/;}
+.nav-tabs .nav-link, .nav-pills .nav-link{
+	background-color:/*[[bg3]]*/;}
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-item.show .nav-link{
+	background-color:/*[[bg3]]*/;
+	border-color:/*[[brd]]*/;
+	border:none;}
+.nav-tabs .nav-link:hover,
+.nav-tabs .nav-link:focus{
+	border-color:/*[[hbrd]]*/;}
+.wiki-toc{
+	background-color:/*[[bg3]]*/;
+	border-color:/*[[brd]]*/;
+	border-radius:0.4em;}
+.form-autocomplete-suggestions{
+	background-color:/*[[bg3]]*/;
+	border-color:/*[[brd]]*/;
+	border-width:1px;}
 span[style*="background-color: rgb(239, 69, 64);"]{
 	background-color:/*[[fals]]*/ !important;}
 .format-tiles .sectiontitle::after,
@@ -436,7 +466,8 @@ table.collection thead th,
 table.flexible thead th,
 .generaltable thead th,
 .preferences-container .preference-table{
-    border-color:/*[[brd]]*/;}
+    border-color:/*[[brd]]*/;
+	color:/*[[txt]]*/;}
 .preferences-container .preference-table tr td:nth-child(even),
 .preferences-container .preference-table tr th:nth-child(even){
     border-color:/*[[brd]]*/;
@@ -457,7 +488,7 @@ table.flexible thead th,
     border-color:/*[[brd]]*/;
     border-radius:0.5em;
     background-color:/*[[bg3]]*/;
-    background-image:url("https://riedler.gelse.net/sfto/double_triangles_top_bottom_AAA.svg");
+    background-image:url("https://riedler.wien/sfto/darklearning/double_triangles_top_bottom_AAA.svg");
     background-repeat:no-repeat;
     background-size:0.75em;}
 .custom-select:disabled{
@@ -479,7 +510,8 @@ input[type="checkbox"]{
     width:1em;
     height:1em;
     border:0.12em solid /*[[hbrd]]*/;
-    border-radius:0.25em;}
+    border-radius:0.25em;
+	color:/*[[txt]]*/;}
 input[type="checkbox"]:checked:after{
 	content:"";
 	position:absolute;
@@ -500,6 +532,12 @@ input[type="radio"]:checked{
     background-color:/*[[bg4]]*/;
     border-color:/*[[brd]]*/;
     color:/*[[txt]]*/;}
+.form-control:disabled,
+.form-control[readonly],
+.form-control:disabled:hover,
+.form-control[readonly]:hover{
+	background-color:/*[[bg5]]*/;
+	cursor:default;}
 .input-group>.form-control{
     border-radius:0.5em 0 0 0.5em;}
 .form-control:hover{
@@ -513,6 +551,14 @@ input[type="radio"]:checked{
     border-bottom:solid 1px /*[[brd]]*/;
     border-radius:0 0.5em 0.5em 0;
     overflow:hidden;}
+#searchwiki{
+	background-color:/*[[bg3]]*/;
+	border:solid 1px /*[[brd]]*/;
+	border-radius:0.25em;
+	height:2rem;
+	color:/*[[txt]]*/;}
+#searchwiki:hover{
+	background-color:/*[[bg4]]*/;}
 .badge{
     border-radius:0.25em;}
 .border-bottom{
@@ -813,8 +859,19 @@ table td,table th{
 .submissionsummarytable td.submissionstatussubmitted{
     background-color:/*[[true]]*/;
     color:/*[[txt]]*/;}
+.feedback .criteria .criterion.even,
+.gradingform_guide .criteria .criterion.even{
+	background-color:/*[[bg3]]*/;}
+.earlysubmission .criteria .criterion.even{
+	background-color:/*[[true]]*/;
+	filter:brightness(0.85);}
+.latesubmission .criteria .criterion.even{
+	background-color:/*[[fals]]*/;
+	filter:brightness(0.85);}
+.criteria .criterion{
+	border:none;
+	outline:solid 1px /*[[brd]]*/;}
 }
-
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/user/preferences\\.php.*?") {
 #region-main .card.mb-3{
     background-color:/*[[bg3]]*/;}
