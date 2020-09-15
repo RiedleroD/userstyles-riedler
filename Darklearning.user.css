@@ -65,7 +65,9 @@
     background-color:/*[[bg2]]*/;
     border-bottom-right-radius:0.5em;
     border-bottom-left-radius:0.5em;}
-    
+.breadcrumb:not(:empty){
+	border-color:/*[[brd]]*/;
+	border-width:1px;}
     /*dropdown-menu*/
     .dropdown-menu{
         background-color:/*[[bg3]]*/;}
