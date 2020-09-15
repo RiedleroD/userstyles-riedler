@@ -837,7 +837,8 @@ table td,table th{
 .latesubmission .criteria .criterion.even{
 	background-color:/*[[fals]]*/;
 	filter:brightness(0.85);}
-.feedback .criteria .criterion.even{
+.feedback .criteria .criterion.even,
+.gradingform_guide .criteria .criterion.even{
 	background-color:/*[[bg3]]*/;}
 .criteria .criterion{
 	border:none;
