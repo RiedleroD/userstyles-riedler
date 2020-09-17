@@ -189,7 +189,8 @@
     background-color:/*[[bg1]]*/ !important;}
 #region-main{
     border-radius:0.5em;
-    overflow:visible;}
+    overflow:visible;
+	margin-bottom:1.5em;}
 #page-header>div>div.card,#region-main{
     background-color:/*[[bg2]]*/;}
 /*footer*/
