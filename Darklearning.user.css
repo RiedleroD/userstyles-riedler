@@ -304,6 +304,9 @@ span[style*="background-color: rgb(125, 159, 211);"]{
 .btn-primary:hover{
 	color:/*[[hhtxt]]*/ !important;
     background-color:/*[[hbtn]]*/;}
+.btn-primary:focus,
+.btn-primary.focus{
+	outline:none;}
 .preference-state-status-container>span.on-text,
 .preference-state-status-container>span.off-text{
     color:/*[[bg1]]*/ !important;}
