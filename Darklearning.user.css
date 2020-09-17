@@ -885,6 +885,9 @@ div[data-region="datarequests"]>.mt-1.mb-1>.btn.btn-primary{
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/mod/quiz.*?") {
 .moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd.yui3-widget-hd{
 	color:/*[[txt]]*/;}
+.que.multichoice .answer div.r0 input,
+.que.multichoice .answer div.r1 input{
+	width:1em;}
 .que .formulation{
     background-color:/*[[bg3]]*/;
     color:/*[[txt]]*/;
