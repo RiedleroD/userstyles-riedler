@@ -27,7 +27,7 @@
 @var	color	hbtn	"Bright Blue Background"	#6AC
 ==/UserStyle== */
 
-@-moz-document domain("owa.tgm.ac.at") {
+@-moz-document regexp("https?://owa\\..*") {
 	.ms-bgc-tl{/*selected mails*/
 		background-color:/*[[bg5]]*/;}
 	.ms-font-l{/*probably large Text*/
@@ -192,4 +192,15 @@
         color:/*[[hhtxt]]*/;}
     ._n_Q2{
         color:/*[[hhtxt]]*/;}
+}
+@-moz-document regexp("https?://owa\\.[^/]*/owa/auth/logon.aspx(\\?.*)?") {
+	body{
+		background-image:none !important;
+		background-color:/*[[bg0]]*/ !important;}
+	.owalogo{
+		filter:invert(1);}
+	.mouse .signInInputText{
+		background-color:/*[[bg1]]*/;
+		border-color:/*[[brd]]*/;
+		color:/*[[txt]]*/;}
 }
