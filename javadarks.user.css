@@ -1,28 +1,8 @@
 /* ==UserStyle==
 @name           JavaDarks [Alpha]
-@namespace      USO Archive
-@author         Riedler
-@description    `Basically a dark mode for Javadocs.Don't expect this to work very well yet, it's still in heavy development.Made by Riedler, licensed under Creative Commons BY-SA 4.0.Basically, you can redistribute and 'remix' this as long as you mention me as the original creator.`
-@version        202031.15.31
-@license        CC-BY-SA-4.0
-@preprocessor   uso
-@advanced color bg0 "Background 0" #000000
-@advanced color bg1 "Background 1" #151515
-@advanced color bg2 "Background 2" #222222
-@advanced color bg3 "Background 3" #333333
-@advanced color brd "Border" #888888
-@advanced color txt "Text" #CCCCCC
-@advanced color htxt "Bright Text" #EEEEEE
-@advanced color bgb "Blue Background" #114477
-@advanced color bgo "Orange Background" #CC7700
-@advanced color lnk "Links" #336699
-@advanced color hlnk "Hovered Links" #66AACC
-==/UserStyle== */
-
-/* ==UserStyle==
-@name           JavaDarks
 @namespace      github.com/openstyles/stylus
 @version        0.0.1
+@license        CC-BY-SA-4.0
 @description    Dark mode for docs.oracle.com, specifically the javadocs API part of that.
 @author         Riedler
 @preprocessor   uso
