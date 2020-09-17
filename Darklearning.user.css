@@ -298,6 +298,11 @@ span[style*="background-color: rgb(125, 159, 211);"]{
     background-color:#FFF4;
     color:/*[[htxt]]*/;
     border-color:/*[[brd]]*/;}
+.btn-secondary:focus,
+.btn-secondary.focus{
+	box-shadow:inset 0 0.1em 0 0 /*[[brd]]*/;
+	outline:solid 1px /*[[brd]]*/;
+	outline-offset:1px;}
 .btn-primary{
     color:/*[[htxt]]*/ !important;
     background-color:/*[[btn]]*/;}
