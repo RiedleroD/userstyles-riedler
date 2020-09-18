@@ -36,6 +36,9 @@
 		color:/*[[htxt]]*/;/*normally #AAA*/}
 	.o365cs-base.o365cst.o365cs-topnavBGColor-2{/*2nd top nav color in office 365*/
 		background-color:/*[[bg0]]*/;/*normally #000*/}
+	.headerMenuDropShadow{/*self explanatory*/
+		box-shadow:3px 3px 6px -4px /*[[brd]]*/,-3px 3px 6px -4px /*[[brd]]*/;
+		border-color:/*[[brd]]*/;}
 	/*hovered folders*/
 	div[aria-labelledby*="folder"]:hover,
 	div[aria-labelledby*="folder"]:hover span,
