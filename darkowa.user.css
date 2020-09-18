@@ -262,13 +262,18 @@
         background-color: #C7E0F4;}
     div[autoid="_lvv_3"]:focus span[autoid="_lvv_5"],
     div[autoid="_lvv_3"]:hover span[autoid="_lvv_5"]{
-        color: #424048;}
+        color: /*[[htxt]]*/;}
     div[autoid="_lvv_3"]:focus span[autoid="_lvv_6"],
     div[autoid="_lvv_3"]:hover span[autoid="_lvv_6"]{
-        color: #222;}
+        color: /*[[hhtxt]]*/;}
     div[autoid="_lvv_3"]:focus span[autoid="_lvv_7"],
     div[autoid="_lvv_3"]:hover span[autoid="_lvv_7"]{
-        color: #545050;}
+        color: /*[[htxt]]*/;}
+	div[autoid="_lvv_3"]:focus{
+		background-color:/*[[bg4]]*/;}
+	div[autoid="_lvv_3"]:focus span[autoid="_lvv_6"],
+	div[autoid="_lvv_3"]:hover span[autoid="_lvv_6"]{
+		color:/*[[txt]]*/;}
     /*main content*/
     .conductorContent{
         background-color: /*[[bg2]]*/;}
