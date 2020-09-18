@@ -69,6 +69,17 @@
 	.ms-fcl-nd-f:focus,
 	.ms-fcl-nd-b::before{
 		color:/*[[txt]]*/;}
+	/*black font*/
+	.ms-font-color-black,
+	.ms-fontColor-black,
+	.ms-fcl-b,
+	.ms-font-color-black-hover:hover,
+	.ms-font-color-black-focus:focus,
+	.ms-font-color-black-before::before,
+	.ms-fcl-b-h:hover,
+	.ms-fcl-b-f:focus,
+	.ms-fcl-b-b::before{
+		color:/*[[txt]]*/;}
 	/*primary neutral font*/
 	.ms-font-color-neutralPrimary,
 	.ms-fontColor-neutralPrimary,
