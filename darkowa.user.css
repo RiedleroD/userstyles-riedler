@@ -90,10 +90,15 @@
 	.ms-fcl-tp-b::before{
 		color:/*[[hlnk]]*/;/*normally blue but I lost the exact color*/}
 	/*light background color*/
-	div.ms-bg-color-themeLight,
-	div.ms-bg-color-themeLight:focus,
-	div.ms-bg-color-themeLight span{
-		background-color:/*[[bg1]]*/;
+	.ms-bg-color-themeLight,
+	.ms-bgc-tl,
+	.ms-bg-color-themeLight-hover:hover,
+	.ms-bg-color-themeLight-focus:focus,
+	.ms-bg-color-themeLight-before::before,
+	.ms-bgc-tl-h:hover,
+	.ms-bgc-tl-f:focus,
+	.ms-bgc-tl-b::before{
+		background-color:/*[[bg3]]*/;
 		color:/*[[txt]]*/;}
 	/*neutral lighter background*/
 	.ms-bg-color-neutralLighter,
