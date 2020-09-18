@@ -65,7 +65,7 @@
 	.ms-fcl-np-h:hover,
 	.ms-fcl-np-f:focus,
 	.ms-fcl-np-b::before{
-		color:/*[[txt]]*/;}
+		color:/*[[htxt]]*/;}
 	/*secondary neutral font*/
 	.ms-font-color-neutralSecondary,
 	.ms-fontColor-neutralSecondary,
