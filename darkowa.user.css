@@ -58,6 +58,17 @@
 	.ms-fcl-td-f:focus,
 	.ms-fcl-td-b::before{
 		color:/*[[hhtxt]]*/;}
+	/*neutral dark font*/
+	.ms-font-color-neutralDark,
+	.ms-fontColor-neutralDark,
+	.ms-fcl-nd,
+	.ms-font-color-neutralDark-hover:hover,
+	.ms-font-color-neutralDark-focus:focus,
+	.ms-font-color-neutralDark-before::before,
+	.ms-fcl-nd-h:hover,
+	.ms-fcl-nd-f:focus,
+	.ms-fcl-nd-b::before{
+		color:/*[[txt]]*/;}
 	/*primary neutral font*/
 	.ms-font-color-neutralPrimary,
 	.ms-fontColor-neutralPrimary,
@@ -302,6 +313,8 @@
         color:/*[[hhtxt]]*/;}
     ._n_Q2{
         color:/*[[hhtxt]]*/;}
+	._elv_L{
+		color:/*[[txt]]*/;}
 	span[autoid="_lvv_j"]{
 		border-bottom-color:/*[[hbtn]]*/;
 		border-bottom-width:1px;}
