@@ -5,10 +5,28 @@
 @description    Darker version of Elearning
 @author         Riedler
 @preprocessor uso
-@advanced select PBCS	"ProgressBarCell Shape" {"Pronounced":"1em","Rounded":"0.5em"}
-@advanced select NBCS	"Course Navbar Cell Shape" {"Pronounced":"1.5em","Rounded":"0.5em"}
-@advanced select NBS	"Course Navbar Shape" {"Pronounced":"1em","Rounded":"0.5em"}
-@advanced select EICC	"Embedded Image Color Correction" {"Recommended":"invert(0.86) hue-rotate(180deg)","Full":"invert(1) hue-rotate(180deg)","Debug":"invert(1) hue-rotate(180deg) saturate(100)","Off":"none"}
+@var	select	PBCS	"ProgressBarCell Shape" {
+	"Pronounced":"0.5em 0.5em 1em 1em",
+	"Pronounced Reversed":"1em 1em 0.5em 0.5em",
+	"Round":"1em",
+	"Rounded":"0.5em",
+	"Soft Edges":"0.25em",
+	"Rectangle":"0"}
+@var	select	NBCS	"Course Navbar Cell Shape" {
+	"Pronounced":"0.5em 0.5em 1.5em 1.5em",
+	"Pronounced Reversed":"1.5em 1.5em 0.5em 0.5em",
+	"Round":"1.5em",
+	"Rounded":"0.75em",
+	"Soft Edges":"0.25em",
+	"Rectangle":"0"}
+@var	select	NBS		"Course Navbar Shape" {
+	"Pronounced":"0.5em 0.5em 1.5em 1.5em",
+	"Pronounced Reversed":"1.5em 1.5em 0.5em 0.5em",
+	"Round":"1.5em",
+	"Rounded":"0.75em",
+	"Soft Edges":"0.25em",
+	"Rectangle":"0"}
+@var	select	EICC	"Embedded Image Color Correction" {"Recommended":"invert(0.86) hue-rotate(180deg)","Full":"invert(1) hue-rotate(180deg)","Debug":"invert(1) hue-rotate(180deg) saturate(100)","Off":"none"}
 @var	color	bg0		"Background 0"				#000
 @var	color	bg1		"Background 1"				#151515
 @var	color	bg2		"Background 2"				#222
@@ -366,7 +384,7 @@ div[style="background: #ffffff; overflow:auto;width:auto;border:solid gray;borde
 .nav-tabs,
 .nav-pills{
 	background-color:/*[[bg3]]*/;
-	border-radius:/*[[NBS]]*/ /*[[NBS]]*/ 0.5em 0.5em;
+	border-radius:/*[[NBS]]*/;
 	border-bottom:none;}
 .nav-tabs .nav-link.active:not(:disabled):not(.disabled):active,
 .nav-pills .nav-link.active:not(:disabled):not(.disabled):active,
@@ -375,7 +393,7 @@ div[style="background: #ffffff; overflow:auto;width:auto;border:solid gray;borde
 .show>.nav-tabs .nav-link.active.dropdown-toggle,
 .show>.nav-pills .nav-link.active.dropdown-toggle{
 	background-color:/*[[bg4]]*/;
-	border-radius:0.5em 0.5em /*[[NBCS]]*/ /*[[NBCS]]*/;}
+	border-radius:/*[[NBCS]]*/;}
 .nav-tabs .nav-link,
 .nav-pills .nav-link{
 	background-color:#0000;
@@ -742,11 +760,15 @@ img[src$="elearning.tgm.ac.at/theme/image.php/classic/core/"][src$="/i/loading_s
     border-radius:0;}
 .barRow .firstProgressBarCell{
     border-right:none !important;
-    border-radius:0.5em 0 0 /*[[PBCS]]*/ !important;}
+    border-radius:/*[[PBCS]]*/ !important;
+	border-top-right-radius:0 !important;
+	border-bottom-right-radius:0 !important;}
 .barRow .lastProgressBarCell{
-    border-radius:0 0.5em /*[[PBCS]]*/ 0 !important;}
+    border-radius:/*[[PBCS]]*/ !important;
+	border-top-left-radius:0 !important;
+	border-bottom-left-radius:0 !important;}
 .barRow .firstProgressBarCell.lastProgressBarCell{
-    border-radius:0.5em 0.5em /*[[PBCS]]*/ /*[[PBCS]]*/ !important;}
+    border-radius:/*[[PBCS]]*/ !important;}
 .badge-info{
     background-color:/*[[bg4]]*/;}
 }
