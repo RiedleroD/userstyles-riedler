@@ -36,6 +36,9 @@
 		color:/*[[htxt]]*/;/*normally #AAA*/}
 	.o365cs-base.o365cst.o365cs-topnavBGColor-2{/*2nd top nav color in office 365*/
 		background-color:/*[[bg0]]*/;/*normally #000*/}
+	.headerMenuDropShadow{/*self explanatory*/
+		box-shadow:3px 3px 6px -4px /*[[brd]]*/,-3px 3px 6px -4px /*[[brd]]*/;
+		border-color:/*[[brd]]*/;}
 	/*hovered folders*/
 	div[aria-labelledby*="folder"]:hover,
 	div[aria-labelledby*="folder"]:hover span,
@@ -55,6 +58,28 @@
 	.ms-fcl-td-f:focus,
 	.ms-fcl-td-b::before{
 		color:/*[[hhtxt]]*/;}
+	/*neutral dark font*/
+	.ms-font-color-neutralDark,
+	.ms-fontColor-neutralDark,
+	.ms-fcl-nd,
+	.ms-font-color-neutralDark-hover:hover,
+	.ms-font-color-neutralDark-focus:focus,
+	.ms-font-color-neutralDark-before::before,
+	.ms-fcl-nd-h:hover,
+	.ms-fcl-nd-f:focus,
+	.ms-fcl-nd-b::before{
+		color:/*[[txt]]*/;}
+	/*black font*/
+	.ms-font-color-black,
+	.ms-fontColor-black,
+	.ms-fcl-b,
+	.ms-font-color-black-hover:hover,
+	.ms-font-color-black-focus:focus,
+	.ms-font-color-black-before::before,
+	.ms-fcl-b-h:hover,
+	.ms-fcl-b-f:focus,
+	.ms-fcl-b-b::before{
+		color:/*[[txt]]*/;}
 	/*primary neutral font*/
 	.ms-font-color-neutralPrimary,
 	.ms-fontColor-neutralPrimary,
@@ -90,11 +115,49 @@
 	.ms-fcl-tp-b::before{
 		color:/*[[hlnk]]*/;/*normally blue but I lost the exact color*/}
 	/*light background color*/
-	div.ms-bg-color-themeLight,
-	div.ms-bg-color-themeLight:focus,
-	div.ms-bg-color-themeLight span{
-		background-color:/*[[bg1]]*/;
+	.ms-bg-color-themeLight, .ms-bg-color-themeLight:focus, .ms-bg-color-themeLight span{
+		background-color:/*[[bg3]]*/ !important;
+		color:/*[[htxt]]*/ !important;}
+	.ms-bg-color-themeLight,
+	.ms-bgc-tl,
+	.ms-bg-color-themeLight-hover:hover,
+	.ms-bg-color-themeLight-focus:focus,
+	.ms-bg-color-themeLight-before::before,
+	.ms-bgc-tl-h:hover,
+	.ms-bgc-tl-f:focus,
+	.ms-bgc-tl-b::before{
+		background-color:/*[[bg3]]*/;
 		color:/*[[txt]]*/;}
+	/*neutral light background*/
+	.ms-bg-color-neutralLight,
+	.ms-bgc-nl,
+	.ms-bg-color-neutralLight-hover:hover,
+	.ms-bg-color-neutralLight-focus:focus,
+	.ms-bg-color-neutralLight-before::before,
+	.ms-bgc-nl-h:hover,
+	.ms-bgc-nl-f:focus,
+	.ms-bgc-nl-b::before{
+		background-color:/*[[bg3]]*/;}
+	/*neutral lighter background*/
+	.ms-bg-color-neutralLighter,
+	.ms-bgc-nlr,
+	.ms-bg-color-neutralLighter-hover:hover,
+	.ms-bg-color-neutralLighter-focus:focus,
+	.ms-bg-color-neutralLighter-before::before,
+	.ms-bgc-nlr-h:hover,
+	.ms-bgc-nlr-f:focus,
+	.ms-bgc-nlr-b::before{
+		background-color:/*[[bg3]]*/;}
+	/*neutral teritary background*/
+	.ms-bg-color-neutralTertiary,
+	.ms-bgc-nt,
+	.ms-bg-color-neutralTertiary-hover:hover,
+	.ms-bg-color-neutralTertiary-focus:focus,
+	.ms-bg-color-neutralTertiary-before::before,
+	.ms-bgc-nt-h:hover,
+	.ms-bgc-nt-f:focus,
+	.ms-bgc-nt-b::before{
+		background-color:/*[[bg4]]*/;}
 	/*alternative lighter background color*/
 	.ms-bg-color-themeLighterAlt,
 	.ms-bgc-tlra,
@@ -134,6 +197,16 @@
 	.ms-bcl-nta-f:focus,
 	.ms-bcl-nta-b::before{
 		border-color:/*[[brd]]*/;}
+	/*neutral light border color*/
+	.ms-border-color-neutralLight,
+	.ms-bcl-nl,
+	.ms-border-color-neutralLight-hover:hover,
+	.ms-border-color-neutralLight-focus:focus,
+	.ms-border-color-neutralLight-before::before,
+	.ms-bcl-nl-h:hover,
+	.ms-bcl-nl-f:focus,
+	.ms-bcl-nl-b::before{
+		border-color:/*[[hbrd]]*/;}
 	/*general*/
     ._n_q1{
         border-radius: 10px;}
@@ -182,7 +255,7 @@
         border: 1px solid /*[[brd]]*/;
         border-radius: 3px;}
     div[autoid="_fce_5"]{
-        background-color: /*[[bg6]]*/;}
+        background-color: /*[[bg4]]*/;}
     /*email list items*/
     ._n_31{
         margin: 0 16px;}
@@ -211,13 +284,18 @@
         background-color: #C7E0F4;}
     div[autoid="_lvv_3"]:focus span[autoid="_lvv_5"],
     div[autoid="_lvv_3"]:hover span[autoid="_lvv_5"]{
-        color: #424048;}
+        color: /*[[htxt]]*/;}
     div[autoid="_lvv_3"]:focus span[autoid="_lvv_6"],
     div[autoid="_lvv_3"]:hover span[autoid="_lvv_6"]{
-        color: #222;}
+        color: /*[[hhtxt]]*/;}
     div[autoid="_lvv_3"]:focus span[autoid="_lvv_7"],
     div[autoid="_lvv_3"]:hover span[autoid="_lvv_7"]{
-        color: #545050;}
+        color: /*[[htxt]]*/;}
+	div[autoid="_lvv_3"]:focus{
+		background-color:/*[[bg4]]*/;}
+	div[autoid="_lvv_3"]:focus span[autoid="_lvv_6"],
+	div[autoid="_lvv_3"]:hover span[autoid="_lvv_6"]{
+		color:/*[[txt]]*/;}
     /*main content*/
     .conductorContent{
         background-color: /*[[bg2]]*/;}
@@ -246,6 +324,8 @@
         color:/*[[hhtxt]]*/;}
     ._n_Q2{
         color:/*[[hhtxt]]*/;}
+	._elv_L{
+		color:/*[[txt]]*/;}
 	span[autoid="_lvv_j"]{
 		border-bottom-color:/*[[hbtn]]*/;
 		border-bottom-width:1px;}
