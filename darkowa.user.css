@@ -113,11 +113,11 @@
     /*left bar*/
     div[spellcheck="true"],
     div[autoid="_n_a"]{
-        background-color:/*[[bg4]]*/;}
+        background-color:/*[[bg2]]*/;}
     div[autoid="_n_c"],
     ._n_h4,
     ._n_d4{
-        background-color: /*[[bg4]]*/;}
+        background-color: /*[[bg2]]*/;}
     span[id*="MailFolderPane.FavoritesHeader"],
 	span[id*="folder"]{
         color: /*[[hhtxt]]*/;}
