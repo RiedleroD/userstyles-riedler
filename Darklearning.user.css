@@ -5,8 +5,10 @@
 @description    Darker version of Elearning
 @author         Riedler
 @preprocessor uso
-@advanced select PBCS "ProgressBarCell Shape" {"Pronounced":"1em","Rounded":"0.5em"}
-@advanced select EICC "Embedded Image Color Correction" {"Recommended":"invert(0.86) hue-rotate(180deg)","Full":"invert(1) hue-rotate(180deg)","Debug":"invert(1) hue-rotate(180deg) saturate(100)","Off":"none"}
+@advanced select PBCS	"ProgressBarCell Shape" {"Pronounced":"1em","Rounded":"0.5em"}
+@advanced select NBCS	"Course Navbar Cell Shape" {"Pronounced":"1.5em","Rounded":"0.5em"}
+@advanced select NBS	"Course Navbar Shape" {"Pronounced":"1em","Rounded":"0.5em"}
+@advanced select EICC	"Embedded Image Color Correction" {"Recommended":"invert(0.86) hue-rotate(180deg)","Full":"invert(1) hue-rotate(180deg)","Debug":"invert(1) hue-rotate(180deg) saturate(100)","Off":"none"}
 @var	color	bg0		"Background 0"				#000
 @var	color	bg1		"Background 1"				#151515
 @var	color	bg2		"Background 2"				#222
@@ -363,20 +365,20 @@ div[style="background: #ffffff; overflow:auto;width:auto;border:solid gray;borde
 /*Misc*/
 .nav-tabs,
 .nav-pills{
-	background-color:/*[[bg3]]*/;}
+	background-color:/*[[bg3]]*/;
+	border-radius:/*[[NBS]]*/ /*[[NBS]]*/ 0.5em 0.5em;
+	border-bottom:none;}
 .nav-tabs .nav-link.active:not(:disabled):not(.disabled):active,
 .nav-pills .nav-link.active:not(:disabled):not(.disabled):active,
 .nav-tabs .nav-link.active:not(:disabled):not(.disabled).active,
 .nav-pills .nav-link.active:not(:disabled):not(.disabled).active,
 .show>.nav-tabs .nav-link.active.dropdown-toggle,
 .show>.nav-pills .nav-link.active.dropdown-toggle{
-	background-color:/*[[bg4]]*/;}
-.nav-tabs .nav-link, .nav-pills .nav-link{
-	background-color:/*[[bg3]]*/;}
-.nav-tabs .nav-link.active,
-.nav-tabs .nav-item.show .nav-link{
-	background-color:/*[[bg3]]*/;
-	border-color:/*[[brd]]*/;
+	background-color:/*[[bg4]]*/;
+	border-radius:0.5em 0.5em /*[[NBCS]]*/ /*[[NBCS]]*/;}
+.nav-tabs .nav-link,
+.nav-pills .nav-link{
+	background-color:#0000;
 	border:none;}
 .nav-tabs .nav-link:hover,
 .nav-tabs .nav-link:focus{
