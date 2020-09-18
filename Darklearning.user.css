@@ -26,7 +26,12 @@
 	"Rounded":"0.75em",
 	"Soft Edges":"0.25em",
 	"Rectangle":"0"}
-@var	select	EICC	"Embedded Image Color Correction" {"Recommended":"invert(0.86) hue-rotate(180deg)","Full":"invert(1) hue-rotate(180deg)","Debug":"invert(1) hue-rotate(180deg) saturate(100)","Off":"none"}
+@var	select	EICC	"Embedded Image Color Correction" {
+	"Recommended":"invert(0.86) hue-rotate(180deg)",
+	"Full":"invert(1) hue-rotate(180deg)",
+	"Dim":"brightness(0.8)",
+	"Debug":"invert(1) hue-rotate(180deg) saturate(100)",
+	"Off":"none"}
 @var	color	bg0		"Background 0"				#000
 @var	color	bg1		"Background 1"				#151515
 @var	color	bg2		"Background 2"				#222
