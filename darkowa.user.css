@@ -126,6 +126,16 @@
 	.ms-bgc-nlr-f:focus,
 	.ms-bgc-nlr-b::before{
 		background-color:/*[[bg3]]*/;}
+	/*neutral teritary background*/
+	.ms-bg-color-neutralTertiary,
+	.ms-bgc-nt,
+	.ms-bg-color-neutralTertiary-hover:hover,
+	.ms-bg-color-neutralTertiary-focus:focus,
+	.ms-bg-color-neutralTertiary-before::before,
+	.ms-bgc-nt-h:hover,
+	.ms-bgc-nt-f:focus,
+	.ms-bgc-nt-b::before{
+		background-color:/*[[bg4]]*/;}
 	/*alternative lighter background color*/
 	.ms-bg-color-themeLighterAlt,
 	.ms-bgc-tlra,
