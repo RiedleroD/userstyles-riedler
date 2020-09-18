@@ -103,6 +103,25 @@
 	.ms-bgc-tlr-f:focus,
 	.ms-bgc-tlr-b::before{
 		background-color:/*[[bg2]]*/;}
+	/*white background color*/
+	.ms-bg-color-white,
+	.ms-bgc-w,
+	.ms-bg-color-white-hover:hover,
+	.ms-bg-color-white-focus:focus,
+	.ms-bg-color-white-before::before,
+	.ms-bgc-w-h:hover,
+	.ms-bgc-w-b::before{
+		background-color:/*[[bg0]]*/;}
+	/*neutral border color*/
+	.ms-border-color-neutralTertiaryAlt,
+	.ms-bcl-nta,
+	.ms-border-color-neutralTertiaryAlt-hover:hover,
+	.ms-border-color-neutralTertiaryAlt-focus:focus,
+	.ms-border-color-neutralTertiaryAlt-before::before,
+	.ms-bcl-nta-h:hover,
+	.ms-bcl-nta-f:focus,
+	.ms-bcl-nta-b::before{
+		border-color:/*[[brd]]*/;}
 	/*general*/
     ._n_q1{
         border-radius: 10px;}
