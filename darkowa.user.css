@@ -95,6 +95,16 @@
 	div.ms-bg-color-themeLight span{
 		background-color:/*[[bg1]]*/;
 		color:/*[[txt]]*/;}
+	/*neutral lighter background*/
+	.ms-bg-color-neutralLighter,
+	.ms-bgc-nlr,
+	.ms-bg-color-neutralLighter-hover:hover,
+	.ms-bg-color-neutralLighter-focus:focus,
+	.ms-bg-color-neutralLighter-before::before,
+	.ms-bgc-nlr-h:hover,
+	.ms-bgc-nlr-f:focus,
+	.ms-bgc-nlr-b::before{
+		background-color:/*[[bg3]]*/;}
 	/*alternative lighter background color*/
 	.ms-bg-color-themeLighterAlt,
 	.ms-bgc-tlra,
