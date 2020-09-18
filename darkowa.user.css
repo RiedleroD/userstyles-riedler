@@ -144,6 +144,16 @@
 	.ms-bcl-nta-f:focus,
 	.ms-bcl-nta-b::before{
 		border-color:/*[[brd]]*/;}
+	/*neutral light border color*/
+	.ms-border-color-neutralLight,
+	.ms-bcl-nl,
+	.ms-border-color-neutralLight-hover:hover,
+	.ms-border-color-neutralLight-focus:focus,
+	.ms-border-color-neutralLight-before::before,
+	.ms-bcl-nl-h:hover,
+	.ms-bcl-nl-f:focus,
+	.ms-bcl-nl-b::before{
+		border-color:/*[[hbrd]]*/;}
 	/*general*/
     ._n_q1{
         border-radius: 10px;}
