@@ -228,6 +228,9 @@
         color:/*[[hhtxt]]*/;}
     ._n_Q2{
         color:/*[[hhtxt]]*/;}
+	span[autoid="_lvv_j"]{
+		border-bottom-color:/*[[hbtn]]*/;
+		border-bottom-width:1px;}
 }
 @-moz-document regexp("https?://owa\\.[^/]*/owa/auth/logon.aspx(\\?.*)?") {
 	body{
