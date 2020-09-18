@@ -93,6 +93,9 @@
 	.ms-fcl-tp-b::before{
 		color:/*[[hlnk]]*/;/*normally blue but I lost the exact color*/}
 	/*light background color*/
+	.ms-bg-color-themeLight, .ms-bg-color-themeLight:focus, .ms-bg-color-themeLight span{
+		background-color:/*[[bg3]]*/ !important;
+		color:/*[[htxt]]*/ !important;}
 	.ms-bg-color-themeLight,
 	.ms-bgc-tl,
 	.ms-bg-color-themeLight-hover:hover,
