@@ -231,6 +231,12 @@
     div[autoid="_rp_u"] span,
     div[autoid="_rp_u"] p{
         color:/*[[hhtxt]]*/ !important;}
+	.conductorContent span[style*="color:rgb(55,58,60)"]{
+		color:/*[[htxt]]*/ !important;}
+	.conductorContent span[style*="color:rgb(0,0,0)"],
+	.conductorContent font[color="#000000"],
+	#x_divtagdefaultwrapper{
+		color:/*[[txt]]*/ !important;}
     .x_MsoNormal,
     .x_MsoNormal span{
         color: /*[[htxt]]*/ !important;
