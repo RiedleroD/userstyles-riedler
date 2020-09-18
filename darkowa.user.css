@@ -106,6 +106,16 @@
 	.ms-bgc-tl-b::before{
 		background-color:/*[[bg3]]*/;
 		color:/*[[txt]]*/;}
+	/*neutral light background*/
+	.ms-bg-color-neutralLight,
+	.ms-bgc-nl,
+	.ms-bg-color-neutralLight-hover:hover,
+	.ms-bg-color-neutralLight-focus:focus,
+	.ms-bg-color-neutralLight-before::before,
+	.ms-bgc-nl-h:hover,
+	.ms-bgc-nl-f:focus,
+	.ms-bgc-nl-b::before{
+		background-color:/*[[bg3]]*/;}
 	/*neutral lighter background*/
 	.ms-bg-color-neutralLighter,
 	.ms-bgc-nlr,
