@@ -183,6 +183,10 @@ regexp("https?:\\/\\/docs\\.oracle\\.com\\/javase\\/\\d\\/docs\\/api\\/.*") {
 	ul.blockList ul.blockList ul.blockList li.blockList h3{
 		background-color:/*[[bg3]]*/;
 		border:none;}
+	div.details ul.blockList ul.blockList ul.blockList li.blockList h4,
+	div.details ul.blockList ul.blockList ul.blockListLast li.blockList h4{
+		background-color:/*[[bg3]]*/;
+		border:none;}
     .overviewSummary caption span,
     .memberSummary caption span,
     .typeSummary caption span,
