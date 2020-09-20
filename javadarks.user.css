@@ -104,10 +104,10 @@ regexp("https?:\\/\\/docs\\.oracle\\.com\\/javase\\/\\d\\/docs\\/api\\/.*") {
         color:/*[[hlnk]]*/;}
     table>thead,
     table.striped > thead,
-    table.striped>tbody>tr:nth-child(2n),
-    table:not(.striped)>tbody>tr,
-    table:not(.striped)>tbody>tr>th{
+    table.striped>tbody>tr:nth-child(2n){
         background-color:/*[[bg1]]*/;}
+	table:not(.striped)>tbody>tr,
+    table:not(.striped)>tbody>tr>th,
     table.striped>tbody>tr:nth-child(2n+1),
     thead>tr>th.colFirst,
     thead>tr>th.colSecond,
@@ -131,7 +131,7 @@ regexp("https?:\\/\\/docs\\.oracle\\.com\\/javase\\/\\d\\/docs\\/api\\/.*") {
     table>tbody>tr>td[style="background-color:#FFe0d0"]{
         background-color:/*[[bgb]]*/ !important;}
     tbody>tr>*{
-        border-top:solid 1px /*[[brd]]*/;}
+        border-top:/*[[brds]]*/ 1px /*[[brd]]*/;}
     .inheritedList,
     section[class$="Details"] .detail{
         background-color:/*[[bg1]]*/;}
@@ -175,7 +175,8 @@ regexp("https?:\\/\\/docs\\.oracle\\.com\\/javase\\/\\d\\/docs\\/api\\/.*") {
 	.useSummary,
 	.constantsSummary,
 	.deprecatedSummary{
-		border-color:/*[[brd]]*/;}
+		border-color:/*[[brd]]*/;
+		border-style:/*[[brds]]*/;}
 	.memberSummary caption span.tableTab span{
 		background-color:/*[[bgb]]*/;
 		border:/*[[brds]]*/ 1px /*[[brd]]*/;
