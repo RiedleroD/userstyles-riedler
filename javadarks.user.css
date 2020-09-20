@@ -17,6 +17,13 @@
 @var    color   bgo     "Orange bg"     "#C70"
 @var    color   lnk     "Links"         "#369"
 @var    color   hlnk    "Hovered links" "#6AC"
+@var	select	brds	"Border Style"	{
+	"solid":"solid",
+	"hidden":"hidden",
+	"dotted":"dotted",
+	"dashed":"dashed",
+	"inset":"inset",
+	"outset":"outset"}
 ==/UserStyle== */
 
 @-moz-document
@@ -176,17 +183,21 @@ regexp("https?:\\/\\/docs\\.oracle\\.com\\/javase\\/\\d\\/docs\\/api\\/.*") {
 	ul.blockList ul.blockList li.blockList,
 	ul.blockList ul.blockListLast li.blockList{
 		background-color:/*[[bg1]]*/;
+		border-style:/*[[brds]]*/;
 		border-color:/*[[brd]]*/;}
 	ul.blockList ul.blockList ul.blockList li.blockList,
 	ul.blockList ul.blockList ul.blockListLast li.blockList{
-		background-color:/*[[bg2]]*/;}
+		background-color:/*[[bg2]]*/;
+		border:/*[[brds]]*/ 1px /*[[brd]]*/;}
 	ul.blockList ul.blockList ul.blockList li.blockList h3{
 		background-color:/*[[bg3]]*/;
-		border:none;}
+		border:none;
+		border-bottom:/*[[brds]]*/ 1px /*[[brd]]*/;}
 	div.details ul.blockList ul.blockList ul.blockList li.blockList h4,
 	div.details ul.blockList ul.blockList ul.blockListLast li.blockList h4{
 		background-color:/*[[bg3]]*/;
-		border:none;}
+		border:none;
+		border-bottom:/*[[brds]]*/ 1px /*[[brd]]*/;}
     .overviewSummary caption span,
     .memberSummary caption span,
     .typeSummary caption span,
