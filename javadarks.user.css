@@ -137,6 +137,17 @@ regexp("https?:\\/\\/docs\\.oracle\\.com\\/javase\\/\\d\\/docs\\/api\\/.*") {
     .classUses .detail, .serializedClassDetails{
         background-color:/*[[bg1]]*/;
         border:none;}
+	.overviewSummary,
+	.memberSummary,
+	.typeSummary,
+	.useSummary,
+	.constantsSummary,
+	.deprecatedSummary{
+		border-color:/*[[brd]]*/;}
+	ul.blockList ul.blockList li.blockList,
+	ul.blockList ul.blockListLast li.blockList{
+		background-color:/*[[bg1]]*/;
+		border-color:/*[[brd]]*/;}
     .overviewSummary caption span,
     .memberSummary caption span,
     .typeSummary caption span,
