@@ -42,7 +42,31 @@ regexp("https?:\\/\\/docs\\.oracle\\.com\\/javase\\/\\d\\/docs\\/api\\/.*") {
     .inheritance, .block, .title,
     .contentContainer .description dl dt,
     .contentContainer .details dl dt,
-    .serializedFormContainer dl dt{
+    .serializedFormContainer dl dt,
+	.overviewSummary caption a:link,
+	.memberSummary caption a:link,
+	.typeSummary caption a:link,
+	.useSummary caption a:link,
+	.constantsSummary caption a:link,
+	.deprecatedSummary caption a:link,
+	.overviewSummary caption a:hover,
+	.memberSummary caption a:hover,
+	.typeSummary caption a:hover,
+	.useSummary caption a:hover,
+	.constantsSummary caption a:hover,
+	.deprecatedSummary caption a:hover,
+	.overviewSummary caption a:active,
+	.memberSummary caption a:active,
+	.typeSummary caption a:active,
+	.useSummary caption a:active,
+	.constantsSummary caption a:active,
+	.deprecatedSummary caption a:active,
+	.overviewSummary caption a:visited,
+	.memberSummary caption a:visited,
+	.typeSummary caption a:visited,
+	.useSummary caption a:visited,
+	.constantsSummary caption a:visited,
+	.deprecatedSummary caption a:visited{
         color:/*[[txt]]*/;}
     label,
     .navBarCell1Rev{
@@ -144,6 +168,11 @@ regexp("https?:\\/\\/docs\\.oracle\\.com\\/javase\\/\\d\\/docs\\/api\\/.*") {
 	.constantsSummary,
 	.deprecatedSummary{
 		border-color:/*[[brd]]*/;}
+	.memberSummary caption span.tableTab span{
+		background-color:/*[[bgb]]*/;}
+	.memberSummary caption span.activeTableTab span{
+		background-color:/*[[bgo]]*/;
+		color:/*[[htxt]]*/;}
 	ul.blockList ul.blockList li.blockList,
 	ul.blockList ul.blockListLast li.blockList{
 		background-color:/*[[bg1]]*/;
