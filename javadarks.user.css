@@ -32,7 +32,8 @@ regexp("https?:\\/\\/docs\\.oracle\\.com\\/javase\\/\\d\\/docs\\/api\\/.*") {
         scrollbar-color:/*[[bg3]]*/ /*[[bg0]]*/;}
     main,
     header,
-    :root{
+    :root,
+	body{
         background-color:/*[[bg0]]*/;}
     :root{
         font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;}
@@ -192,3 +193,4 @@ regexp("https?:\\/\\/docs\\.oracle\\.com\\/javase\\/\\d\\/docs\\/api\\/.*") {
         margin-bottom:0;
         padding-bottom:1em;}
 }
+
