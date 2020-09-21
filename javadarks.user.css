@@ -187,6 +187,9 @@ regexp("https?:\\/\\/docs\\.oracle\\.com\\/javase\\/\\d\\/docs\\/api\\/.*") {
 	.constantsSummary,
 	.deprecatedSummary{
 		border:/*[[brds]]*/ 1px /*[[brd]]*/;}
+	.inheritedList,
+	section[class$="Details"] .detail{
+		border:/*[[brds]]*/ 1px /*[[brd]]*/}
 	.memberSummary caption span.tableTab span{
 		background-color:/*[[bgb]]*/;
 		border:/*[[brds]]*/ 1px /*[[brd]]*/;
