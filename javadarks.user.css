@@ -140,7 +140,7 @@ regexp("https?:\\/\\/docs\\.oracle\\.com\\/javase\\/\\d\\/docs\\/api\\/.*") {
 	body.class-declaration .summary .inheritedList h2{
 		background-color:/*[[bg2]]*/;
 		border:none;
-		border-bottom:solid 1px /*[[brd]]*/;}
+		border-bottom:/*[[brds]]*/ 1px /*[[brd]]*/;}
 	code{
 		font-family:monospace;
 		border-radius:0.5em;
