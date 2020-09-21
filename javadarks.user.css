@@ -128,6 +128,17 @@ regexp("https?:\\/\\/docs\\.oracle\\.com\\/javase\\/\\d\\/docs\\/api\\/.*") {
 	.providesSummary table,
 	.usesSummary table{
 		border:none;}
+	.overviewSummary caption,
+	.memberSummary caption,
+	.typeSummary caption,
+	.useSummary caption,
+	.constantsSummary caption,
+	.deprecatedSummary caption,
+	.requiresSummary caption,
+	.packagesSummary caption,
+	.providesSummary caption,
+	.usesSummary caption{
+		border-bottom:/*[[brds]]*/ 1px /*[[brd]]*/;}
 	table>tbody>tr>td[style="background-color:#FFe0d0"]{
 		background-color:/*[[bgb]]*/ !important;}
 	tbody>tr>*{
