@@ -186,9 +186,24 @@ regexp("https?:\\/\\/docs\\.oracle\\.com\\/javase\\/\\d\\/docs\\/api\\/.*") {
 		background-color:/*[[bg2]]*/ !important;}
 	.summary section[class$="Summary"],
 	.details section[class$="Details"],
-	.classUses .detail, .serializedClassDetails{
+	.classUses .detail,
+	.serializedClassDetails{
 		background-color:/*[[bg1]]*/;
 		border:none;}
+	section.description{
+		background-color:/*[[bg1]]*/;
+		padding:1px 20px 5px 10px;
+		margin-top:1em;}
+	.contentContainer>div.inheritance{
+		background-color:/*[[bg1]]*/;
+		padding:10px 20px 10px 10px;
+		margin-top:0;}
+	.contentContainer{
+		margin-top:1em;
+		padding-top:0;}
+	.header{
+		background-color:/*[[bg1]]*/;
+		padding:1px 20px 1px 10px;}
 	.overviewSummary,
 	.memberSummary,
 	.typeSummary,
