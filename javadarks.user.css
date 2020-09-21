@@ -152,6 +152,8 @@ regexp("https?:\\/\\/docs\\.oracle\\.com\\/javase\\/\\d\\/docs\\/api\\/.*") {
 		background-color:/*[[bgb]]*/ !important;}
 	tbody>tr>*{
 		border-top:/*[[brds]]*/ 1px /*[[brd]]*/;}
+	caption+tbody>tr:first-child>*{
+		border-top:none;}
 	.inheritedList,
 	section[class$="Details"] .detail{
 		background-color:/*[[bg1]]*/;}
@@ -190,12 +192,12 @@ regexp("https?:\\/\\/docs\\.oracle\\.com\\/javase\\/\\d\\/docs\\/api\\/.*") {
 	.serializedClassDetails{
 		background-color:/*[[bg1]]*/;
 		border:/*[[brds]]*/ 1px /*[[brd]]*/;}
-	section.description{
+	.description{
 		background-color:/*[[bg1]]*/;
 		padding:1px 20px 5px 10px;
 		margin-top:1em;
 		border:/*[[brds]]*/ 1px /*[[brd]]*/;}
-	.contentContainer>div.inheritance{
+	.contentContainer>.inheritance{
 		background-color:/*[[bg1]]*/;
 		padding:10px 20px 10px 10px;
 		margin-top:0;
@@ -214,6 +216,13 @@ regexp("https?:\\/\\/docs\\.oracle\\.com\\/javase\\/\\d\\/docs\\/api\\/.*") {
 	.constantsSummary,
 	.deprecatedSummary{
 		border:/*[[brds]]*/ 1px /*[[brd]]*/;}
+	table.overviewSummary,
+	table.memberSummary,
+	table.typeSummary,
+	table.useSummary,
+	table.constantsSummary,
+	table.deprecatedSummary{
+		border-top:none;}
 	.inheritedList,
 	section[class$="Details"] .detail{
 		border:/*[[brds]]*/ 1px /*[[brd]]*/}
@@ -256,6 +265,9 @@ regexp("https?:\\/\\/docs\\.oracle\\.com\\/javase\\/\\d\\/docs\\/api\\/.*") {
 	.providesSummary caption span,
 	.usesSummary caption span{
 		background-color:/*[[bgb]]*/;}
+	caption>span:not([class]){
+		border:/*[[brds]]*/ 1px /*[[brd]]*/;
+		border-bottom:none;}
 	.overviewSummary [role="tablist"] .tableTab,
 	.memberSummary [role="tablist"] .tableTab,
 	.typeSummary [role="tablist"] .tableTab,
@@ -300,4 +312,13 @@ regexp("https?:\\/\\/docs\\.oracle\\.com\\/javase\\/\\d\\/docs\\/api\\/.*") {
 	footer>p.legalCopy{
 		margin-bottom:0;
 		padding-bottom:1em;}
+}
+@-moz-document
+regexp("https?:\\/\\/docs\\.oracle\\.com\\/javase\\/8\\/docs\\/api\\/.*"){
+	/*specific javase 8 fixes*/
+	.subNav{
+		margin-bottom:1em;}
+	ul.blockList ul.blockList li.blockList,
+	ul.blockList ul.blockListLast li.blockList{
+		border:/*[[brds]]*/ 1px /*[[brd]]*/;}
 }
