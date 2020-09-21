@@ -289,6 +289,9 @@ span[style*="background-color: rgb(125, 159, 211);"]{
 .moodle-dialogue-base .closebutton:focus{
     color:/*[[txt]]*/;
     opacity:1;}
+.moodle-dialogue-base .moodle-dialogue-wrap{
+	border:solid 1px /*[[brd]]*/;
+	border-radius:0.25em;}
 .btn{
     border-radius:0.25em;}
 .btn-outline-secondary{
@@ -1027,5 +1030,6 @@ input[type="text"].incorrect{
 .path-calendar .maincalendar .calendarmonth ul li>a{
     text-overflow:clip;}
 }
+
 
 
