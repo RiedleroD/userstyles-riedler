@@ -243,6 +243,8 @@ regexp("https?:\\/\\/docs\\.oracle\\.com\\/javase\\/\\d\\/docs\\/api\\/.*") {
 		background-color:/*[[bg3]]*/;
 		border:none;
 		border-bottom:/*[[brds]]*/ 1px /*[[brd]]*/;}
+	hr{
+		border-style:/*[[brds]]*/;}
 	.overviewSummary caption span,
 	.memberSummary caption span,
 	.typeSummary caption span,
