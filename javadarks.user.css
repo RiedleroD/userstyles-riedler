@@ -273,7 +273,9 @@ regexp("https?:\\/\\/docs\\.oracle\\.com\\/javase\\/\\d\\/docs\\/api\\/.*") {
 	.typeSummary [role="tablist"] .tableTab,
 	.packagesSummary [role="tablist"] .tableTab{
 		background-color:/*[[bgb]]*/;
-		color:/*[[txt]]*/;}
+		color:/*[[txt]]*/;
+		border:/*[[brds]]*/ 1px /*[[brd]]*/;
+		border-top:none;}
 	.overviewSummary [role="tablist"] .tableTab:hover,
 	.memberSummary [role="tablist"] .tableTab:hover,
 	.typeSummary [role="tablist"] .tableTab:hover,
@@ -285,7 +287,9 @@ regexp("https?:\\/\\/docs\\.oracle\\.com\\/javase\\/\\d\\/docs\\/api\\/.*") {
 	.typeSummary [role="tablist"] .activeTableTab,
 	.packagesSummary [role="tablist"] .activeTableTab{
 		background-color:/*[[bgo]]*/;
-		color:/*[[htxt]]*/;}
+		color:/*[[htxt]]*/;
+		border:/*[[brds]]*/ 1px /*[[hbrd]]*/;
+		border-top:none;}
 	.navBarCell1Rev{
 		background-color:/*[[bgo]]*/;
 		color:/*[[htxt]]*/;
