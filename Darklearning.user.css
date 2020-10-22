@@ -433,6 +433,10 @@ span[style*="background-color: rgb(239, 69, 64);"]{
 .format-tiles .course-content ul.tiles .tile,
 .format-tiles .course-content ul.tiles .tile_bar{
 	border-top-color:/*[[true]]*/;}
+.format-tiles .course-content ul.tiles .tile.phototile .photo-tile-text h3{
+	color:/*[[dtxt]]*/ !important;
+	font-weight:bold;
+	font-size:1.25rem;}
 .format-tiles .course-content li.activity.label h1,
 .format-tiles .course-content .section li.activity.label h2,
 .format-tiles .course-content li.activity.label h3,
