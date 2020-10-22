@@ -380,7 +380,34 @@ span[style*="background-color: rgb(125, 159, 211);"]{
 	background-color:/*[[bg2]]*/;
 	border-color:/*[[brd]]*/;}
 .format-tiles li.activity.subtile .activitytitle a{
-	background:linear-gradient(to bottom,/*[[bg4]]*/ 85%,#0000)}
+	background:linear-gradient(to bottom,/*[[bg4]]*/ 85%,#0000);}
+.format-tiles #buttonhidesec0{
+	background-color:#0000;}
+.format-tiles #buttonhidesec0:hover{
+	background-color:/*[[bg4]]*/;
+	border-radius:0.2em;}
+.format-tiles .sectiontitle::after,
+.format-tiles .tag-info{
+	background-color:/*[[true]]*/;}
+.format-tiles .course-content ul.tiles .tile,
+.format-tiles .course-content ul.tiles .tile_bar{
+	border-top-color:/*[[true]]*/;}
+.format-tiles .course-content ul.tiles .tile.phototile .photo-tile-text h3{
+	color:/*[[dtxt]]*/ !important;
+	font-weight:bold;
+	font-size:1.25rem;}
+.format-tiles .course-content ul.tiles .tile.phototile{
+	background-color:#444 !important;/*darkening the background image*/
+	background-blend-mode:overlay;}
+.format-tiles .course-content li.activity.label h1,
+.format-tiles .course-content .section li.activity.label h2,
+.format-tiles .course-content li.activity.label h3,
+.format-tiles .course-content li.activity.label h4,
+.format-tiles .editor_atto_content_wrap h1,
+.format-tiles .editor_atto_content_wrap h2,
+.format-tiles .editor_atto_content_wrap h3,
+.format-tiles .editor_atto_content_wrap h4{
+	border-left-color:/*[[true]]*/;}
 /*php-generated code block with colors without classes*/
 div[style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"]{
 	background-color:/*[[bg0]]*/ !important;}
@@ -427,33 +454,6 @@ div[style="background: #ffffff; overflow:auto;width:auto;border:solid gray;borde
 	border-width:1px;}
 span[style*="background-color: rgb(239, 69, 64);"]{
 	background-color:/*[[fals]]*/ !important;}
-.format-tiles #buttonhidesec0{
-	background-color:#0000;}
-.format-tiles #buttonhidesec0:hover{
-	background-color:/*[[bg4]]*/;
-	border-radius:0.2em;}
-.format-tiles .sectiontitle::after,
-.format-tiles .tag-info{
-	background-color:/*[[true]]*/;}
-.format-tiles .course-content ul.tiles .tile,
-.format-tiles .course-content ul.tiles .tile_bar{
-	border-top-color:/*[[true]]*/;}
-.format-tiles .course-content ul.tiles .tile.phototile .photo-tile-text h3{
-	color:/*[[dtxt]]*/ !important;
-	font-weight:bold;
-	font-size:1.25rem;}
-.format-tiles .course-content ul.tiles .tile.phototile{
-	background-color:#444 !important;/*darkening the background image*/
-	background-blend-mode:overlay;}
-.format-tiles .course-content li.activity.label h1,
-.format-tiles .course-content .section li.activity.label h2,
-.format-tiles .course-content li.activity.label h3,
-.format-tiles .course-content li.activity.label h4,
-.format-tiles .editor_atto_content_wrap h1,
-.format-tiles .editor_atto_content_wrap h2,
-.format-tiles .editor_atto_content_wrap h3,
-.format-tiles .editor_atto_content_wrap h4{
-	border-left-color:/*[[true]]*/;}
 .mform fieldset{
 	border-bottom-color:/*[[brd]]*/}
 .grade-navigation>.nav>.nav-item{
