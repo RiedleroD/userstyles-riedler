@@ -442,6 +442,9 @@ span[style*="background-color: rgb(239, 69, 64);"]{
 	color:/*[[dtxt]]*/ !important;
 	font-weight:bold;
 	font-size:1.25rem;}
+.format-tiles .course-content ul.tiles .tile.phototile{
+	background-color:#444 !important;/*darkening the background image*/
+	background-blend-mode:overlay;}
 .format-tiles .course-content li.activity.label h1,
 .format-tiles .course-content .section li.activity.label h2,
 .format-tiles .course-content li.activity.label h3,
