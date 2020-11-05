@@ -329,6 +329,11 @@
 	span[autoid="_lvv_j"]{
 		border-bottom-color:/*[[hbtn]]*/;
 		border-bottom-width:1px;}
+	/*input elements*/
+	.textbox{
+		background-color:/*[[bg2]]*/;
+		border-radius:0.25em;
+		color:/*[[txt]]*/;}
 }
 @-moz-document regexp("https?://owa\\.[^/]*/owa/auth/logon.aspx(\\?.*)?") {
 	body{
