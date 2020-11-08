@@ -584,6 +584,17 @@ input[type="radio"]{
     border-radius:100%;}
 input[type="radio"]:checked{
 	background:radial-gradient(/*[[hbrd]]*/ 40%, #0000 45%);}
+input.organizer_filtertable{
+	background-color:/*[[bg2]]*/;
+	color:/*[[txt]]*/;
+	border:solid 1px /*[[brd]]*/;
+	border-radius:0.25em;
+	padding-left:0.25em;
+	padding-right:0.25em;}
+input.organizer_filtertable:focus{
+	background-color:/*[[bg3]]*/;
+	border-color:/*[[hbrd]]*/;
+	color:/*[[htxt]]*/;}
 .form-control{
     border-radius:0.5em;
     background-color:/*[[bg4]]*/;
