@@ -20,6 +20,10 @@
 @var	color	hhtxt	"White Text"			#FFF
 @var	color	dtxt	"Dark Text"				#999
 ==/UserStyle== */
+/*
+	Use https://google.com/recaptcha/api2/demo for testing.
+	Please don't go on random sites to test this site.
+*/
 @-moz-document regexp("https?://www.google.com/recaptcha/api2/anchor\\?.*") {
 	.rc-anchor-light{
 		background-color:/*[[bg0]]*/;
