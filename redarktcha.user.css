@@ -37,11 +37,11 @@
 	.rc-anchor-light div a:link,
 	.rc-anchor-light div a:visited{
 		color:/*[[dtxt]]*/;}
-	/*TODO: there's a white part in that spinner that instantly vanishes again.
-	I have no idea what that is, how to hide it, or how to stop it from disappearing. I've tried stopping js, but that doesn't work.*/
+	.recaptcha-checkbox-spinner-overlay{
+		background-color:/*[[bg2]]*/;}
 	.recaptcha-checkbox-spinner{
 		background-color:/*[[bg2]]*/;
-		border-color:/*[[cl1]]*/ /*[[cl1]]*/ /*[[bg1]]*/ /*[[bg1]]*/;}
+		border-color:/*[[cl1]]*/ /*[[cl1]]*/ /*[[bg2]]*/ /*[[bg2]]*/;}
 	.recaptcha-checkbox-borderAnimation{
 		filter:invert(0.8) hue-rotate(180deg);}
 	.recaptcha-checkbox-disabled .recaptcha-checkbox-border,
