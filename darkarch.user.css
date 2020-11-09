@@ -150,6 +150,8 @@
 		background-color:/*[[bg0]]*/;
 		color:/*[[txt]]*/;
 		outline:solid 1px #000;}
+	pre>code{
+		outline:none;}
 	/*various input elements*/
 	select{
 		background-color:/*[[bg3]]*/;
