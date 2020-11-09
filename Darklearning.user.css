@@ -423,6 +423,37 @@ div[style="background: #ffffff; overflow:auto;width:auto;border:solid gray;borde
 .tooltip>*{
 	background-color:/*[[bg3]]*/ !important;
 	color:/*[[txt]]*/ !important;}
+.popover{
+	background-color:/*[[bg1]]*/;
+	color:/*[[txt]]*/;
+	border:none;
+	border-radius:0.5em;
+	box-shadow:0 0 0.1em 0 /*[[brd]]*/;}
+	/*TODO: this is janky, a better solution is desireable.*/
+.bs-popover-top>.arrow::after,
+.bs-popover-auto[x-placement^="top"]>.arrow::after,
+.bs-popover-bottom>.arrow::after,
+.bs-popover-auto[x-placement^="bottom"]>.arrow::after{
+	border-top-color:/*[[bg1]]*/;
+	border-bottom-color:/*[[bg1]]*/;}
+.bs-popover-top>.arrow::before,
+.bs-popover-auto[x-placement^="top"]>.arrow::before,
+.bs-popover-bottom>.arrow::before,
+.bs-popover-auto[x-placement^="bottom"]>.arrow::before{
+	border-top-color:/*[[brd]]*/;
+	border-bottom-color:/*[[brd]]*/;
+	opacity:0.8;}
+.bs-popover-bottom .popover-header::before,
+.bs-popover-auto[x-placement^="bottom"] .popover-header::before{
+	border-bottom:solid 0.1em /*[[bg2]]*/;}
+.popover-header{
+	background-color:/*[[bg2]]*/;
+	border-bottom-color:#0000;
+	border-radius:0.5em 0.5em 0 0;
+	color:/*[[htxt]]*/ !important;}
+.popover-body{
+	color:/*[[txt]]*/;
+	border-radius:0.5em;}
 /*Misc*/
 .nav-tabs,
 .nav-pills{
