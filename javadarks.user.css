@@ -1,7 +1,7 @@
 /* ==UserStyle==
-@name			JavaDarks [Alpha]
-@namespace		RiedlerStyles
-@version		0.1.0
+@name			JavaDarks
+@namespace		https://github.com/RiedleroD/userstyles-riedler/
+@version		1.0.0
 @license		CC-BY-SA-4.0
 @description	Dark mode for docs.oracle.com, specifically the javadocs API part of that.
 @author			Riedler
@@ -14,6 +14,7 @@
 @var	color	hbrd	"Light border"	"#AAA"
 @var	color	txt		"Text"			"#CCC"
 @var	color	htxt	"Bright Text"	"#EEE"
+@var	color	dtxt	"Dark Text"		"#AAA"
 @var	color	bgb		"Blue bg"		"#147"
 @var	color	bgo		"Orange bg"		"#C70"
 @var	color	lnk		"Links"			"#369"
@@ -76,6 +77,9 @@ regexp("https?:\\/\\/docs\\.oracle\\.com\\/javase\\/\\d\\/docs\\/api\\/.*") {
 	.constantsSummary caption a:visited,
 	.deprecatedSummary caption a:visited{
 		color:/*[[txt]]*/;}
+	a[name],
+	a[name]:hover{
+		color:/*[[dtxt]]*/;}
 	label,
 	.navBarCell1Rev{
 		user-select: none;
@@ -117,6 +121,15 @@ regexp("https?:\\/\\/docs\\.oracle\\.com\\/javase\\/\\d\\/docs\\/api\\/.*") {
 	.constantsSummary th,
 	.packagesSummary th{
 		background-color:/*[[bg2]]*/;}
+	table.striped > thead > tr > th,
+	table.striped > thead > tr > td{
+		border:/*[[brds]]*/ 1px /*[[brd]]*/;}
+	table.striped > tbody > tr > th,
+	table.striped > tbody > tr > td{
+		border-left:/*[[brds]]*/ 1px /*[[brd]]*/;
+		border-right:/*[[brds]]*/ 1px /*[[brd]]*/;}
+	table.striped{
+		border:/*[[brds]]*/ 1px /*[[brd]]*/;}
 	.overviewSummary table,
 	.memberSummary table,
 	.typeSummary table,
@@ -128,10 +141,23 @@ regexp("https?:\\/\\/docs\\.oracle\\.com\\/javase\\/\\d\\/docs\\/api\\/.*") {
 	.providesSummary table,
 	.usesSummary table{
 		border:none;}
+	.overviewSummary caption,
+	.memberSummary caption,
+	.typeSummary caption,
+	.useSummary caption,
+	.constantsSummary caption,
+	.deprecatedSummary caption,
+	.requiresSummary caption,
+	.packagesSummary caption,
+	.providesSummary caption,
+	.usesSummary caption{
+		border-bottom:/*[[brds]]*/ 1px /*[[brd]]*/;}
 	table>tbody>tr>td[style="background-color:#FFe0d0"]{
 		background-color:/*[[bgb]]*/ !important;}
 	tbody>tr>*{
 		border-top:/*[[brds]]*/ 1px /*[[brd]]*/;}
+	caption+tbody>tr:first-child>*{
+		border-top:none;}
 	.inheritedList,
 	section[class$="Details"] .detail{
 		background-color:/*[[bg1]]*/;}
@@ -140,7 +166,7 @@ regexp("https?:\\/\\/docs\\.oracle\\.com\\/javase\\/\\d\\/docs\\/api\\/.*") {
 	body.class-declaration .summary .inheritedList h2{
 		background-color:/*[[bg2]]*/;
 		border:none;
-		border-bottom:solid 1px /*[[brd]]*/;}
+		border-bottom:/*[[brds]]*/ 1px /*[[brd]]*/;}
 	code{
 		font-family:monospace;
 		border-radius:0.5em;
@@ -166,17 +192,44 @@ regexp("https?:\\/\\/docs\\.oracle\\.com\\/javase\\/\\d\\/docs\\/api\\/.*") {
 		background-color:/*[[bg2]]*/ !important;}
 	.summary section[class$="Summary"],
 	.details section[class$="Details"],
-	.classUses .detail, .serializedClassDetails{
+	.classUses .detail,
+	.serializedClassDetails{
 		background-color:/*[[bg1]]*/;
-		border:none;}
+		border:/*[[brds]]*/ 1px /*[[brd]]*/;}
+	.description{
+		background-color:/*[[bg1]]*/;
+		padding:1px 20px 5px 10px;
+		margin-top:1em;
+		border:/*[[brds]]*/ 1px /*[[brd]]*/;}
+	.contentContainer>.inheritance{
+		background-color:/*[[bg1]]*/;
+		padding:10px 20px 10px 10px;
+		margin-top:0;
+		border:/*[[brds]]*/ 1px /*[[brd]]*/;}
+	.contentContainer{
+		margin-top:1em;
+		padding-top:0;}
+	.header{
+		background-color:/*[[bg1]]*/;
+		padding:1px 20px 1px 10px;
+		border:/*[[brds]]*/ 1px /*[[brd]]*/;}
 	.overviewSummary,
 	.memberSummary,
 	.typeSummary,
 	.useSummary,
 	.constantsSummary,
 	.deprecatedSummary{
-		border-color:/*[[brd]]*/;
-		border-style:/*[[brds]]*/;}
+		border:/*[[brds]]*/ 1px /*[[brd]]*/;}
+	table.overviewSummary,
+	table.memberSummary,
+	table.typeSummary,
+	table.useSummary,
+	table.constantsSummary,
+	table.deprecatedSummary{
+		border-top:none;}
+	.inheritedList,
+	section[class$="Details"] .detail{
+		border:/*[[brds]]*/ 1px /*[[brd]]*/}
 	.memberSummary caption span.tableTab span{
 		background-color:/*[[bgb]]*/;
 		border:/*[[brds]]*/ 1px /*[[brd]]*/;
@@ -189,8 +242,7 @@ regexp("https?:\\/\\/docs\\.oracle\\.com\\/javase\\/\\d\\/docs\\/api\\/.*") {
 	ul.blockList ul.blockList li.blockList,
 	ul.blockList ul.blockListLast li.blockList{
 		background-color:/*[[bg1]]*/;
-		border-style:/*[[brds]]*/;
-		border-color:/*[[brd]]*/;}
+		/*no border here please, only the contents*/}
 	ul.blockList ul.blockList ul.blockList li.blockList,
 	ul.blockList ul.blockList ul.blockListLast li.blockList{
 		background-color:/*[[bg2]]*/;
@@ -204,6 +256,8 @@ regexp("https?:\\/\\/docs\\.oracle\\.com\\/javase\\/\\d\\/docs\\/api\\/.*") {
 		background-color:/*[[bg3]]*/;
 		border:none;
 		border-bottom:/*[[brds]]*/ 1px /*[[brd]]*/;}
+	hr{
+		border-style:/*[[brds]]*/;}
 	.overviewSummary caption span,
 	.memberSummary caption span,
 	.typeSummary caption span,
@@ -215,12 +269,17 @@ regexp("https?:\\/\\/docs\\.oracle\\.com\\/javase\\/\\d\\/docs\\/api\\/.*") {
 	.providesSummary caption span,
 	.usesSummary caption span{
 		background-color:/*[[bgb]]*/;}
+	caption>span:not([class]){
+		border:/*[[brds]]*/ 1px /*[[brd]]*/;
+		border-bottom:none;}
 	.overviewSummary [role="tablist"] .tableTab,
 	.memberSummary [role="tablist"] .tableTab,
 	.typeSummary [role="tablist"] .tableTab,
 	.packagesSummary [role="tablist"] .tableTab{
 		background-color:/*[[bgb]]*/;
-		color:/*[[txt]]*/;}
+		color:/*[[txt]]*/;
+		border:/*[[brds]]*/ 1px /*[[brd]]*/;
+		border-top:none;}
 	.overviewSummary [role="tablist"] .tableTab:hover,
 	.memberSummary [role="tablist"] .tableTab:hover,
 	.typeSummary [role="tablist"] .tableTab:hover,
@@ -232,7 +291,9 @@ regexp("https?:\\/\\/docs\\.oracle\\.com\\/javase\\/\\d\\/docs\\/api\\/.*") {
 	.typeSummary [role="tablist"] .activeTableTab,
 	.packagesSummary [role="tablist"] .activeTableTab{
 		background-color:/*[[bgo]]*/;
-		color:/*[[htxt]]*/;}
+		color:/*[[htxt]]*/;
+		border:/*[[brds]]*/ 1px /*[[hbrd]]*/;
+		border-top:none;}
 	.navBarCell1Rev{
 		background-color:/*[[bgo]]*/;
 		color:/*[[htxt]]*/;
@@ -259,4 +320,13 @@ regexp("https?:\\/\\/docs\\.oracle\\.com\\/javase\\/\\d\\/docs\\/api\\/.*") {
 	footer>p.legalCopy{
 		margin-bottom:0;
 		padding-bottom:1em;}
+}
+@-moz-document
+regexp("https?:\\/\\/docs\\.oracle\\.com\\/javase\\/8\\/docs\\/api\\/.*"){
+	/*specific javase 8 fixes*/
+	.subNav{
+		margin-bottom:1em;}
+	ul.blockList ul.blockList li.blockList,
+	ul.blockList ul.blockListLast li.blockList{
+		border:/*[[brds]]*/ 1px /*[[brd]]*/;}
 }
