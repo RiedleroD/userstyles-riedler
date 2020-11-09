@@ -1,0 +1,82 @@
+/* ==UserStyle==
+@name           reDARKTCHA
+@namespace      https://github.com/RiedleroD/userstyles-riedler/
+@version        0.1.0
+@description    A new userstyle
+@author         Riedler
+@preprocessor	uso
+@var	color	cl1		"Theme Color 1"			#6AC
+@var	color	err		"Error color"			#C00
+@var	color	bg0		"Background 0"			#111
+@var	color	bg1		"Background 1"			#222
+@var	color	bg2		"Background 2"			#333
+@var	color	bg3		"Background 3"			#484848
+@var	color	dbrd	"Dark Border"			#484848
+@var	color	brd		"Border"				#666
+@var	color	hbrd	"Light Border"			#999
+@var	color	txt		"Text"					#CCC
+@var	color	htxt	"Light Text"			#EEE
+@var	color	dtxt	"Dark Text"				#999
+==/UserStyle== */
+@-moz-document regexp("https?://www.google.com/recaptcha/api2/anchor\\?.*") {
+	.rc-anchor-light{
+		background-color:/*[[bg0]]*/;
+		color:/*[[txt]]*/}
+	.rc-anchor-light.rc-anchor-normal{
+		border-color:/*[[brd]]*/;}
+	.recaptcha-checkbox-border{
+		background-color:/*[[bg2]]*/;
+		border-color:/*[[brd]]*/;}
+	.recaptcha-checkbox-active .recaptcha-checkbox-border,
+	.recaptcha-checkbox-active .recaptcha-checkbox-spinner-gif{
+		background-color:/*[[bg3]]*/;}
+	.recaptcha-checkbox-hover .recaptcha-checkbox-border,
+	.recaptcha-checkbox-hover .recaptcha-checkbox-spinner-gif{
+		border-color:/*[[hbrd]]*/;}
+	.rc-anchor-light .rc-anchor-logo-text,
+	.rc-anchor-light div a:link,
+	.rc-anchor-light div a:visited{
+		color:/*[[dtxt]]*/;}
+	/*TODO: there's a white part in that spinner that instantly vanishes again.
+	I have no idea what that is, how to hide it, or how to stop it from disappearing. I've tried stopping js, but that doesn't work.*/
+	.recaptcha-checkbox-spinner{
+		background-color:/*[[bg2]]*/;
+		border-color:/*[[cl1]]*/ /*[[cl1]]*/ /*[[bg1]]*/ /*[[bg1]]*/;}
+	.recaptcha-checkbox-borderAnimation{
+		filter:invert(0.8) hue-rotate(180deg);}
+	.recaptcha-checkbox-disabled .recaptcha-checkbox-border,
+	.recaptcha-checkbox-disabled .recaptcha-checkbox-spinner-gif{
+		background-color:/*[[dbrd]]*/;}
+	.recaptcha-checkbox-checkmark{
+		filter:hue-rotate(10deg);}/*I think it looks better with more blue in the green*/
+	.recaptcha-checkbox-expired .recaptcha-checkbox-border,
+	.recaptcha-checkbox-expired .recaptcha-checkbox-spinner-gif{
+		border-color:/*[[err]]*/;}
+	.rc-anchor-error-msg-container{
+		color:/*[[err]]*/;}
+}
+@-moz-document regexp("https?://www.google.com/recaptcha/api2/bframe\\?.*"){
+	:root{
+		color:/*[[txt]]*/;}
+	#rc-imageselect,
+	html{
+		background-color:/*[[bg0]]*/;}
+	.rc-buttons,
+	.rc-audiochallenge-tdownload-link{
+		filter:invert(0.8) hue-rotate(180deg);}
+	.rc-separator{
+		border-top-color:/*[[brd]]*/;}
+	.rc-audiochallenge-play-button .rc-button-default{
+		background-color:/*[[cl1]]*/;
+		color:/*[[htxt]]*/;}
+	.rc-response-input-field{
+		border-color:/*[[brd]]*/;
+		background-color:/*[[bg2]]*/;
+		color:/*[[txt]]*/;}
+}
+@-moz-document regexp(".*"){
+	.g-recaptcha-bubble-arrow{
+		border-right-color:/*[[brd]]*/ !important;}
+	iframe[src^="https://www.google.com/recaptcha/api2/bframe"]{
+		outline:solid 1px /*[[brd]]*/;}
+}
