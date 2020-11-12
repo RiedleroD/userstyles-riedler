@@ -687,7 +687,9 @@ a:not([class]):focus,
 .editor_atto .icon{
     filter:invert(1) hue-rotate(180deg);}
 .editor_atto_content_wrap{
-    border-color:/*[[brd]]*/ !important;}
+    border-color:/*[[brd]]*/ !important;
+	border:solid 1px;
+	border-top:none;}
 .editor_atto_content{
     background-color:/*[[bg2]]*/ !important;
     border:none !important;
