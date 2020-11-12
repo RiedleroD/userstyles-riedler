@@ -706,6 +706,9 @@ a:not([class]):focus,
     border:none !important;}
 .atto_group>button{
     border-color:/*[[brd]]*/ !important;}
+.editor_atto_toolbar button:hover{
+	background:radial-gradient(ellipse at center,/*[[bg3]]*/ 60%,/*[[bg2]]*/ 100%);
+	background-color:/*[[bg2]]*/;}
 .editor_atto_content_wrap{
     background-color:/*[[bg3]]*/;
     border-bottom-left-radius:0.5em;
