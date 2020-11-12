@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Darklearning
-@namespace      github.com/openstyles/stylus
-@version        1.1.19
+@namespace      https://github.com/RiedleroD/userstyles-riedler
+@version        1.1.20
 @description    Darker version of Elearning
 @author         Riedler
 @preprocessor uso
@@ -687,7 +687,9 @@ a:not([class]):focus,
 .editor_atto .icon{
     filter:invert(1) hue-rotate(180deg);}
 .editor_atto_content_wrap{
-    border-color:/*[[brd]]*/ !important;}
+    border-color:/*[[brd]]*/ !important;
+	border:solid 1px;
+	border-top:none;}
 .editor_atto_content{
     background-color:/*[[bg2]]*/ !important;
     border:none !important;
@@ -704,6 +706,9 @@ a:not([class]):focus,
     border:none !important;}
 .atto_group>button{
     border-color:/*[[brd]]*/ !important;}
+.editor_atto_toolbar button:hover{
+	background:radial-gradient(ellipse at center,/*[[bg3]]*/ 60%,/*[[bg2]]*/ 100%);
+	background-color:/*[[bg2]]*/;}
 .editor_atto_content_wrap{
     background-color:/*[[bg3]]*/;
     border-bottom-left-radius:0.5em;
@@ -938,6 +943,15 @@ table td,table th{
     border-radius:0.5em;}
 }
 
+
+@-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/mod/organizer/view\\.php.*") {
+	#organizer_main_cointainer span.countdown_normal{
+		background-color:/*[[true]]*/;
+		color:/*[[htxt]]*/;}
+	#organizer_main_cointainer tr.registered_slot td{
+		background-color:/*[[true]]*/ !important;
+		color:/*[[htxt]]*/;}
+}
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/mod/assign/view\\.php.*?") {
 /*Abgabestatus*/
 .submissionsummarytable td.submissiongraded{
