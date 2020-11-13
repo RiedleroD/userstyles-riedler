@@ -224,6 +224,14 @@
     border-radius:0.25rem;}
 .message-app div[data-region="content-placeholder"] div.px-2.pb-2.pt-0.h-100>.mt-4>.d-flex.flex-column.p-2.rounded.mb-2{
     background-color:/*[[bg5]]*/ !important;}
+.message-app div[data-region="confirm-dialogue"]{
+	background-color:/*[[bg3]]*/ !important;
+	border:solid 1px /*[[brd]]*/;
+	border-radius:0.25rem;}
+.message-app div[data-region="confirm-dialogue"] .btn-primary>span{
+	color:/*[[htxt]]*/ !important;}
+.message-app div[data-region="confirm-dialogue"] .btn-primary:hover>span{
+	color:/*[[hhtxt]]*/ !important;}
 /*body*/
 :root,body,#page{
     background-color:/*[[bg1]]*/ !important;}
