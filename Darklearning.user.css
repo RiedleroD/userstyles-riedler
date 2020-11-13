@@ -32,6 +32,8 @@
 	"Dim":"brightness(0.8)",
 	"Debug":"invert(1) hue-rotate(180deg) saturate(100)",
 	"Off":"none"}
+@var	text	ntip	"Navigation Tree initial padding"	"0"
+@var	text	ntmp	"Navigation Tree max padding"		"0.5rem"
 @var	color	bg0		"Background 0"				#000
 @var	color	bg1		"Background 1"				#151515
 @var	color	bg2		"Background 2"				#222
@@ -269,21 +271,32 @@
     background-color:/*[[bg2]]*/;}
 .block-timeline .paged-content-page-container .list-group-flush>.list-group-item{
     background-color:/*[[bg2]]*/;}
-#inst4 li.contains_branch>ul{
+.block_navigation .block_tree .tree_item.branch,
+.block_settings .block_tree .tree_item.branch,
+.block_navigation .block_tree ul,
+.block_settings .block_tree ul,
+.block_navigation .block_tree p.hasicon,
+.block_settings .block_tree p.hasicon{
     padding-left:0;
-}
-#inst4:hover li.contains_branch>ul{
-    padding-left:0.5rem;
-}
-#inst4 li.contains_branch>ul{
-    transition: padding-left 0.2s;
-}
-#inst4 .tree_item{
-    padding-left:0;
-}
-#inst4>div{
-    padding-right:0 !important;
-}
+	margin-left:0;}
+.block_navigation .block_tree .tree_item{
+	max-width:100%;
+	width:max-content;
+	position:relative;
+	background-color:/*[[bg2]]*/;
+	z-index:2;
+	border-radius:0 0.25em 0.25em 0;
+	transition:0.2s max-width;}
+.block_navigation:hover .block_tree .tree_item{
+	white-space:nowrap;
+	overflow:hidden;
+	max-width:25vw;
+	padding-right:0.25em;}
+.block_navigation .block_tree .contains_branch>ul{
+	transition: padding-left 0.2s;
+	padding-left:/*[[ntip]]*/}
+.block_navigation:hover .block_tree .contains_branch>ul{
+	padding-left:/*[[ntmp]]*/;}
 /*text*/
 span,p,pre,
 .text-center,.text-right,
