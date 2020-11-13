@@ -665,8 +665,15 @@ input.organizer_filtertable:focus{
 .form-control[readonly]:hover{
 	background-color:/*[[bg5]]*/;
 	cursor:default;}
-.input-group>.form-control{
-    border-radius:0.5em 0 0 0.5em;}
+.input-group>.form-control,
+.input-group>.form-control.border-right-0{
+    border-radius:0.25rem 0 0 0.25rem;}
+.input-group>.form-control.border-left-0{
+    border-radius:0 0.25rem 0.25rem 0;}
+.input-group>.form-control.border-left-0.border-right-0{
+    border-radius:0;}
+.input-group-prepend>span{
+	border-radius:0.25rem 0 0 0.25rem;}
 .form-control:hover{
     background-color:/*[[bg4]]*/;}
 .form-control:focus{
