@@ -534,9 +534,22 @@ span[style*="background-color: rgb(239, 69, 64);"]{
     border-color:/*[[brd]]*/;}
 div.comment-area textarea{
     background-color:/*[[bg3]]*/;
-    border-color:/*[[brd]]*/;
-    border-radius:0.5em;
+    border:solid 1px /*[[brd]]*/;
+    border-radius:0.25rem;
+	padding:0.25em;
+	line-height:100%;
     color:/*[[txt]]*/ !important;}
+ul.comment-list>li{
+	background-color:/*[[bg3]]*/ !important;
+	border-radius:0.25rem;}
+ul.comment-list>li .text_to_html{
+	color:/*[[txt]]*/;}
+.comment-delete>a>i{
+	color:/*[[fals]]*/;
+	filter:brightness(1.5);}
+.comment-delete>a:hover>i{
+	color:/*[[fals]]*/;
+	filter:brightness(2);}
 #coursesearchbox{
     background-color:/*[[bg3]]*/;
     border-color:/*[[brd]]*/;
@@ -1106,6 +1119,4 @@ input[type="text"].incorrect{
 .path-calendar .maincalendar .calendarmonth ul li>a{
     text-overflow:clip;}
 }
-
-
 
