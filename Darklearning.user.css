@@ -111,21 +111,28 @@
     .dropdown-item:hover{
         background-color:/*[[bg4]]*/;}
     /*notification drawer*/
-    #nav-notification-popover-container>.popover-region-container{
-        background-color:/*[[bg2]]*/;
-        border-color:/*[[brd]]*/;}
-    #nav-notification-popover-container .notification{
-        background-color:#0000 !important;}
-    #nav-notification-popover-container .popover-region-header-container,
-    #nav-notification-popover-container .popover-region-content-container,
-    #nav-notification-popover-container .notification{
-        outline: /*[[bg0]]*/ auto 1px;}
-    .content-item-container:hover .content-item-footer .timestamp{
-        color:/*[[txt]]*/;}
-    #nav-notification-popover-container .see-all-link>div{
-        background-color:/*[[bg2]]*/;}
-    .popover-region-toggle::before,.popover-region-toggle::after{
-        display:none;}
+	.popover-region-container{
+		background-color:/*[[bg3]]*/;
+		border-color:/*[[brd]]*/;
+		border-radius:0.25rem;}
+	.popover-region-toggle::after{
+		border-bottom-color:/*[[bg3]]*/;}
+	.popover-region-toggle::before{
+		border-bottom-color:/*[[brd]]*/;}
+	.popover-region-header-container{
+		border-bottom-color:/*[[brd]]*/;}
+	.content-item-container:hover{
+		background-color:/*[[bg4]]*/;
+		color:/*[[htxt]]*/;}
+	.content-item-container{
+		border-bottom-color:/*[[brd]]*/;
+		color:/*[[txt]]*/;}
+	.content-item-container .content-item-footer .timestamp{
+		color:/*[[txt]]*/;}
+	.popover-region-footer-container{
+		background-color:/*[[bg3]]*/;
+		border-top-color:/*[[brd]]*/;
+		border-radius:0 0 0.25rem 0.25rem;}
 /*message drawer*/
 .message-app{
     background-color:/*[[bg2]]*/ !important;}
@@ -945,6 +952,27 @@ table td,table th{
     border-color:/*[[brd]]*/ !important;}
 }
 
+@-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/message/output/popup/notifications.php.*?") {
+	.content-item-container:first-child{
+		border-top-left-radius:0.25rem;}
+	.content-item-container{
+		background-color:/*[[bg2]]*/;
+		color:/*[[txt]]*/;
+		border-color:/*[[brd]]*/;}
+	.content-item-container.selected{
+		background-color:/*[[bg3]]*/;
+		border-color:/*[[hbrd]]*/;
+		color:/*[[htxt]]*/;}
+	.notification-area .control-area{
+		border-right-color:/*[[brd]]*/;}
+	.notification-area{
+		border-color:/*[[brd]]*/;}
+	.notification-area .content-area .header{
+		border-bottom-color:/*[[brd]]*/;}
+	.content-item-container.selected .content-item-footer .timestamp,
+	.content-item-container:hover .content-item-footer .timestamp{
+		color:/*[[txt]]*/;}
+}
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/message/index\\.php.*?") {
 #region-main .border-right.h-100{
     border-color:/*[[bg3]]*/ !important;}
