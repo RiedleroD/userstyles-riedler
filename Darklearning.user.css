@@ -199,8 +199,26 @@
     background-color:/*[[bg2]]*/;}
 .custom-control-label::before{
     background-color:/*[[brd]]*/;}
+.custom-control-label{
+	cursor:pointer;}
 .custom-control-input:checked~.custom-control-label::before{
-    background-color:/*[[btn]]*/ !important;}
+    background-color:/*[[btn]]*/ !important;
+	border-color:/*[[btn]]*/ !important;
+	color:/*[[htxt]]*/;
+	cursor:pointer;}
+.custom-control-input:not(:checked)~.custom-control-label::before{
+    background-color:/*[[bg3]]*/ !important;
+	border-color:/*[[brd]]*/;
+	cursor:pointer;}
+.custom-switch .custom-control-input:checked~.custom-control-label::after{
+	background-color:/*[[htxt]]*/;
+	cursor:pointer;}
+.custom-switch .custom-control-input:not(:checked)~.custom-control-label::after{
+	background-color:/*[[brd]]*/;
+	cursor:pointer;}
+.custom-radio .custom-control-input:checked ~ .custom-control-label::after{
+	background-image:radial-gradient(ellipse at center,/*[[htxt]]*/ 0%,/*[[htxt]]*/ 75%,#0000 75%);
+	border-radius:100%;}
 .switch input+label::before{
     background-color:/*[[brd]]*/;}
 .switch input:checked + label::before{
