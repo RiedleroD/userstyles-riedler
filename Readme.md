@@ -16,8 +16,9 @@ Those will always be maintained with a really high standard because I'm using th
 Then, there are the mid-priority ones:
 
 - Dark Grimm (grimmstories.com)
+- Dark Stylebase (stylebase.cc)
 
-I don't use that website anymore, so issues have to be reported by the user.
+I use those websites either not at all or not that much, so issues have to be reported by the user.
 
 Then, the broken or abandoned styles:
 
