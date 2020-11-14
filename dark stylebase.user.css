@@ -1,0 +1,70 @@
+/* ==UserStyle==
+@name           Stylebase Dark
+@namespace      https://github.com/RiedleroD/userstyles-riedler
+@version        1.0.0
+@description    Dark skin for stylebase.cc
+@author         Riedler
+@preprocessor	uso
+@var	text	brdr	"Border Radius"			"0.25rem"
+@var	color	bg0		"Background 0"			#000
+@var	color	bg2		"Background 2"			#222
+@var	color	bg3		"Background 3"			#333
+@var	color	cll0	"Main Color Light"		#368
+@var	color	cll1	"Main Color Lighter"	#418BA4
+@var	color	cll2	"Main Color Lightest"	#6AC
+@var	color	cl		"Main Color"			#257
+@var	color	cld0	"Main Color Dark"		#184466
+@var	color	cld1	"Main Color Darker"		#11365A
+@var	color	cld2	"Main Color Darkest"	#081B2D
+@var	color	txt		"Text"					#CCC
+@var	color	htxt	"Bright Text"			#D8D8D8
+@var	color	hhtxt	"Very Bright Text"		#FFF
+@var	color	brd		"Borders"				#888
+==/UserStyle== */
+
+@-moz-document domain("stylebase.cc") {
+	:root{
+		--color-bg:/*[[bg0]]*/;
+		--color-text:/*[[txt]]*/;
+		--color-focus:/*[[cll1]]*/;
+		--color-border:/*[[brd]]*/;
+		--color-main-lightest:/*[[cll2]]*/;
+		--color-main-lighter:/*[[cll1]]*/;
+		--color-main-light:/*[[cll0]]*/;
+		--color-main:/*[[cl]]*/;
+		--color-main-dark:/*[[cld0]]*/;
+		--color-main-darker:/*[[cld1]]*/;
+		--color-main-darkest:/*[[cld2]]*/;}
+	#app .features{
+		background-color:/*[[bg2]]*/;
+		border-radius:/*[[brdr]]*/;}
+	input[type="text"]{
+		background-color:/*[[bg2]]*/;
+		color:/*[[txt]]*/;
+		border-width:1px;
+		border-radius:/*[[brdr]]*/;}
+	#app .image-container{
+		background-color:/*[[cl]]*/;}
+	img.no-image{
+		filter:invert()}
+	#app .style-card .data{
+		background-color:/*[[bg2]]*/;}
+	.style-button-filled{
+		color:/*[[htxt]]*/;}
+	.style-button-filled:hover,
+	.style-button-filled:focus{
+		color:/*[[hhtxt]]*/;}
+	#app .style-card{
+		border-radius:/*[[brdr]]*/;}
+	#app .base-dialog-window{
+		border-radius:/*[[brdr]]*/;}
+	#app footer{
+		background-color:/*[[cld0]]*/;}
+	a,button{
+		border-radius:/*[[brdr]]*/;}
+	a:not(.button):focus,
+	a:not(.button):hover,
+	button.link:focus,
+	button.link:hover{
+		color:/*[[cll1]]*/;}
+}
