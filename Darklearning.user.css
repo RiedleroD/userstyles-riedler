@@ -840,6 +840,44 @@ a:not([class]):focus,
     background-color:/*[[bg3]]*/ !important;}
 .filemanager .fp-treeview .fp-folder>tbody>tr>td{
     background-color:/*[[bg3]]*/;}
+/*ace editor*/
+.ace-tm{
+	background-color:/*[[bg0]]*/;
+	color:/*[[txt]]*/;}
+.ace-tm .ace_gutter{
+	background-color:/*[[bg2]]*/;
+	color:/*[[txt]]*/;}
+.ace-tm .ace_gutter-active-line{
+	background-color:/*[[bg3]]*/;
+	color:/*[[htxt]]*/;}
+.ace-tm .ace_marker-layer .ace_active-line{
+	background-color:#FFF1;}
+.ace-tm .ace_print-margin{
+	background-color:/*[[brd]]*/;}
+.ace-tm .ace_cursor{
+	color:/*[[htxt]]*/;}
+.ace-tm .ace_indent-guide{
+	background-image:none;
+	border-right:solid 1px /*[[brd]]*/;}
+.ui_wrapper[style*="border: 1px solid darkgrey"]{
+	border-color:/*[[brd]]*/ !important;}
+/*Coderunner*/
+#page-question-type-coderunner div.ui_wrapper,
+.que.coderunner div.ui_wrapper{
+	background-color:/*[[bg1]]*/;}
+.que.coderunner div.coderunner-test-results.bad,
+.que.coderunner div.pre_syntax_error,
+.que.coderunner div.pre_question_error{
+	background-color:/*[[fals]]*/;}
+.que.coderunner div.coderunner-test-results.good,
+#page-question-type-coderunner tr.coderunner-failed-test.fixed{
+	background-color:/*[[true]]*/;}
+
+.que .correctness.notanswered,
+.que .correctness.incorrect{
+	background-color:/*[[fals]]*/;}
+.que .correctness.correct{
+	background-color:/*[[true]]*/;}
 /*Filepicker*/
 .file-picker .card{
     background-color:/*[[bg3]]*/;
