@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Darklearning
 @namespace      https://github.com/RiedleroD/userstyles-riedler
-@version        1.1.20
+@version        1.1.21
 @description    Darker version of Elearning
 @author         Riedler
 @preprocessor uso
@@ -32,6 +32,8 @@
 	"Dim":"brightness(0.8)",
 	"Debug":"invert(1) hue-rotate(180deg) saturate(100)",
 	"Off":"none"}
+@var	text	ntip	"Navigation Tree initial padding"	"0"
+@var	text	ntmp	"Navigation Tree max padding"		"0.5rem"
 @var	color	bg0		"Background 0"				#000
 @var	color	bg1		"Background 1"				#151515
 @var	color	bg2		"Background 2"				#222
@@ -111,21 +113,28 @@
     .dropdown-item:hover{
         background-color:/*[[bg4]]*/;}
     /*notification drawer*/
-    #nav-notification-popover-container>.popover-region-container{
-        background-color:/*[[bg2]]*/;
-        border-color:/*[[brd]]*/;}
-    #nav-notification-popover-container .notification{
-        background-color:#0000 !important;}
-    #nav-notification-popover-container .popover-region-header-container,
-    #nav-notification-popover-container .popover-region-content-container,
-    #nav-notification-popover-container .notification{
-        outline: /*[[bg0]]*/ auto 1px;}
-    .content-item-container:hover .content-item-footer .timestamp{
-        color:/*[[txt]]*/;}
-    #nav-notification-popover-container .see-all-link>div{
-        background-color:/*[[bg2]]*/;}
-    .popover-region-toggle::before,.popover-region-toggle::after{
-        display:none;}
+	.popover-region-container{
+		background-color:/*[[bg3]]*/;
+		border-color:/*[[brd]]*/;
+		border-radius:0.25rem;}
+	.popover-region-toggle::after{
+		border-bottom-color:/*[[bg3]]*/;}
+	.popover-region-toggle::before{
+		border-bottom-color:/*[[brd]]*/;}
+	.popover-region-header-container{
+		border-bottom-color:/*[[brd]]*/;}
+	.content-item-container:hover{
+		background-color:/*[[bg4]]*/;
+		color:/*[[htxt]]*/;}
+	.content-item-container{
+		border-bottom-color:/*[[brd]]*/;
+		color:/*[[txt]]*/;}
+	.content-item-container .content-item-footer .timestamp{
+		color:/*[[txt]]*/;}
+	.popover-region-footer-container{
+		background-color:/*[[bg3]]*/;
+		border-top-color:/*[[brd]]*/;
+		border-radius:0 0 0.25rem 0.25rem;}
 /*message drawer*/
 .message-app{
     background-color:/*[[bg2]]*/ !important;}
@@ -192,8 +201,26 @@
     background-color:/*[[bg2]]*/;}
 .custom-control-label::before{
     background-color:/*[[brd]]*/;}
+.custom-control-label{
+	cursor:pointer;}
 .custom-control-input:checked~.custom-control-label::before{
-    background-color:/*[[btn]]*/ !important;}
+    background-color:/*[[btn]]*/ !important;
+	border-color:/*[[btn]]*/ !important;
+	color:/*[[htxt]]*/;
+	cursor:pointer;}
+.custom-control-input:not(:checked)~.custom-control-label::before{
+    background-color:/*[[bg3]]*/ !important;
+	border-color:/*[[brd]]*/;
+	cursor:pointer;}
+.custom-switch .custom-control-input:checked~.custom-control-label::after{
+	background-color:/*[[htxt]]*/;
+	cursor:pointer;}
+.custom-switch .custom-control-input:not(:checked)~.custom-control-label::after{
+	background-color:/*[[brd]]*/;
+	cursor:pointer;}
+.custom-radio .custom-control-input:checked ~ .custom-control-label::after{
+	background-image:radial-gradient(ellipse at center,/*[[htxt]]*/ 0%,/*[[htxt]]*/ 75%,#0000 75%);
+	border-radius:100%;}
 .switch input+label::before{
     background-color:/*[[brd]]*/;}
 .switch input:checked + label::before{
@@ -217,6 +244,14 @@
     border-radius:0.25rem;}
 .message-app div[data-region="content-placeholder"] div.px-2.pb-2.pt-0.h-100>.mt-4>.d-flex.flex-column.p-2.rounded.mb-2{
     background-color:/*[[bg5]]*/ !important;}
+.message-app div[data-region="confirm-dialogue"]{
+	background-color:/*[[bg3]]*/ !important;
+	border:solid 1px /*[[brd]]*/;
+	border-radius:0.25rem;}
+.message-app div[data-region="confirm-dialogue"] .btn-primary>span{
+	color:/*[[htxt]]*/ !important;}
+.message-app div[data-region="confirm-dialogue"] .btn-primary:hover>span{
+	color:/*[[hhtxt]]*/ !important;}
 /*body*/
 :root,body,#page{
     background-color:/*[[bg1]]*/ !important;}
@@ -236,21 +271,32 @@
     background-color:/*[[bg2]]*/;}
 .block-timeline .paged-content-page-container .list-group-flush>.list-group-item{
     background-color:/*[[bg2]]*/;}
-#inst4 li.contains_branch>ul{
+.block_navigation .block_tree .tree_item.branch,
+.block_settings .block_tree .tree_item.branch,
+.block_navigation .block_tree ul,
+.block_settings .block_tree ul,
+.block_navigation .block_tree p.hasicon,
+.block_settings .block_tree p.hasicon{
     padding-left:0;
-}
-#inst4:hover li.contains_branch>ul{
-    padding-left:0.5rem;
-}
-#inst4 li.contains_branch>ul{
-    transition: padding-left 0.2s;
-}
-#inst4 .tree_item{
-    padding-left:0;
-}
-#inst4>div{
-    padding-right:0 !important;
-}
+	margin-left:0;}
+.block_navigation .block_tree .tree_item{
+	max-width:100%;
+	width:max-content;
+	position:relative;
+	background-color:/*[[bg2]]*/;
+	z-index:2;
+	border-radius:0 0.25em 0.25em 0;
+	transition:0.2s max-width;}
+.block_navigation:hover .block_tree .tree_item{
+	white-space:nowrap;
+	overflow:hidden;
+	max-width:25vw;
+	padding-right:0.25em;}
+.block_navigation .block_tree .contains_branch>ul{
+	transition: padding-left 0.2s;
+	padding-left:/*[[ntip]]*/}
+.block_navigation:hover .block_tree .contains_branch>ul{
+	padding-left:/*[[ntmp]]*/;}
 /*text*/
 span,p,pre,
 .text-center,.text-right,
@@ -455,6 +501,8 @@ div[style="background: #ffffff; overflow:auto;width:auto;border:solid gray;borde
 	color:/*[[txt]]*/;
 	border-radius:0.5em;}
 /*Misc*/
+.card{
+    background-color:/*[[bg3]]*/;}
 .nav-tabs,
 .nav-pills{
 	background-color:/*[[bg3]]*/;
@@ -534,9 +582,22 @@ span[style*="background-color: rgb(239, 69, 64);"]{
     border-color:/*[[brd]]*/;}
 div.comment-area textarea{
     background-color:/*[[bg3]]*/;
-    border-color:/*[[brd]]*/;
-    border-radius:0.5em;
+    border:solid 1px /*[[brd]]*/;
+    border-radius:0.25rem;
+	padding:0.25em;
+	line-height:100%;
     color:/*[[txt]]*/ !important;}
+ul.comment-list>li{
+	background-color:/*[[bg3]]*/ !important;
+	border-radius:0.25rem;}
+ul.comment-list>li .text_to_html{
+	color:/*[[txt]]*/;}
+.comment-delete>a>i{
+	color:/*[[fals]]*/;
+	filter:brightness(1.5);}
+.comment-delete>a:hover>i{
+	color:/*[[fals]]*/;
+	filter:brightness(2);}
 #coursesearchbox{
     background-color:/*[[bg3]]*/;
     border-color:/*[[brd]]*/;
@@ -637,8 +698,15 @@ input.organizer_filtertable:focus{
 .form-control[readonly]:hover{
 	background-color:/*[[bg5]]*/;
 	cursor:default;}
-.input-group>.form-control{
-    border-radius:0.5em 0 0 0.5em;}
+.input-group>.form-control,
+.input-group>.form-control.border-right-0{
+    border-radius:0.25rem 0 0 0.25rem;}
+.input-group>.form-control.border-left-0{
+    border-radius:0 0.25rem 0.25rem 0;}
+.input-group>.form-control.border-left-0.border-right-0{
+    border-radius:0;}
+.input-group-prepend>span{
+	border-radius:0.25rem 0 0 0.25rem;}
 .form-control:hover{
     background-color:/*[[bg4]]*/;}
 .form-control:focus{
@@ -772,6 +840,44 @@ a:not([class]):focus,
     background-color:/*[[bg3]]*/ !important;}
 .filemanager .fp-treeview .fp-folder>tbody>tr>td{
     background-color:/*[[bg3]]*/;}
+/*ace editor*/
+.ace-tm{
+	background-color:/*[[bg0]]*/;
+	color:/*[[txt]]*/;}
+.ace-tm .ace_gutter{
+	background-color:/*[[bg2]]*/;
+	color:/*[[txt]]*/;}
+.ace-tm .ace_gutter-active-line{
+	background-color:/*[[bg3]]*/;
+	color:/*[[htxt]]*/;}
+.ace-tm .ace_marker-layer .ace_active-line{
+	background-color:#FFF1;}
+.ace-tm .ace_print-margin{
+	background-color:/*[[brd]]*/;}
+.ace-tm .ace_cursor{
+	color:/*[[htxt]]*/;}
+.ace-tm .ace_indent-guide{
+	background-image:none;
+	border-right:solid 1px /*[[brd]]*/;}
+.ui_wrapper[style*="border: 1px solid darkgrey"]{
+	border-color:/*[[brd]]*/ !important;}
+/*Coderunner*/
+#page-question-type-coderunner div.ui_wrapper,
+.que.coderunner div.ui_wrapper{
+	background-color:/*[[bg1]]*/;}
+.que.coderunner div.coderunner-test-results.bad,
+.que.coderunner div.pre_syntax_error,
+.que.coderunner div.pre_question_error{
+	background-color:/*[[fals]]*/;}
+.que.coderunner div.coderunner-test-results.good,
+#page-question-type-coderunner tr.coderunner-failed-test.fixed{
+	background-color:/*[[true]]*/;}
+
+.que .correctness.notanswered,
+.que .correctness.incorrect{
+	background-color:/*[[fals]]*/;}
+.que .correctness.correct{
+	background-color:/*[[true]]*/;}
 /*Filepicker*/
 .file-picker .card{
     background-color:/*[[bg3]]*/;
@@ -824,6 +930,8 @@ img[src$="elearning.tgm.ac.at/theme/image.php/classic/core/"][src$="/i/loading_s
     background-image:url("https://elearning.tgm.ac.at/theme/image.php/classic/core/123456/i/loading_small");
     background-repeat:no-repeat;
     filter:invert(1);}
+img[src="https://elearning.tgm.ac.at/theme/image.php/classic/core/1604966287/u/f1"]{
+	filter:brightness(0.39) contrast(2)}
 /*row where it displays what you've done and what you didn't. Normally only in course/view.php, but also in other places*/
 .barRow .progressBarCell[style*="background-color:#73A839"]{
     background-color:/*[[true]]*/ !important;}
@@ -891,8 +999,6 @@ img[src$="elearning.tgm.ac.at/theme/image.php/classic/core/"][src$="/i/loading_s
 }
 
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/login/index\\.php.*?") {
-.card{
-    background-color:/*[[bg3]]*/;}
 .mt-3{
     color:/*[[txt]]*/;}
 img.img-fluid{
@@ -932,6 +1038,27 @@ table td,table th{
     border-color:/*[[brd]]*/ !important;}
 }
 
+@-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/message/output/popup/notifications.php.*?") {
+	.content-item-container:first-child{
+		border-top-left-radius:0.25rem;}
+	.content-item-container{
+		background-color:/*[[bg2]]*/;
+		color:/*[[txt]]*/;
+		border-color:/*[[brd]]*/;}
+	.content-item-container.selected{
+		background-color:/*[[bg3]]*/;
+		border-color:/*[[hbrd]]*/;
+		color:/*[[htxt]]*/;}
+	.notification-area .control-area{
+		border-right-color:/*[[brd]]*/;}
+	.notification-area{
+		border-color:/*[[brd]]*/;}
+	.notification-area .content-area .header{
+		border-bottom-color:/*[[brd]]*/;}
+	.content-item-container.selected .content-item-footer .timestamp,
+	.content-item-container:hover .content-item-footer .timestamp{
+		color:/*[[txt]]*/;}
+}
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/message/index\\.php.*?") {
 #region-main .border-right.h-100{
     border-color:/*[[bg3]]*/ !important;}
@@ -1106,6 +1233,4 @@ input[type="text"].incorrect{
 .path-calendar .maincalendar .calendarmonth ul li>a{
     text-overflow:clip;}
 }
-
-
 
