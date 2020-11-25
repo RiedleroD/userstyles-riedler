@@ -390,6 +390,10 @@ span[style*="background-color: rgb(125, 159, 211);"]{
 	box-shadow:inset 0 0.1em 0 0 /*[[brd]]*/;
 	outline:solid 1px /*[[brd]]*/;
 	outline-offset:1px;}
+.btn-secondary.disabled,
+.btn-secondary:disabled{
+	background-color:/*[[bg5]]*/;
+	color:/*[[txt]]*/;}
 .btn-primary{
     color:/*[[htxt]]*/ !important;
     background-color:/*[[btn]]*/;}
