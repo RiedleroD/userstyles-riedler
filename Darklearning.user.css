@@ -586,7 +586,9 @@ span[style*="background-color: rgb(239, 69, 64);"]{
     color:/*[[txt]]*/;}
 .yui3-button{
     background-image:none;}
-.modal-header, .moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd, .path-mod-assign [data-region="grade-panel"] .popout>.col-md-3{
+.modal-header,
+.moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd,
+.path-mod-assign [data-region="grade-panel"] .popout>.col-md-3{
     border-color:/*[[brd]]*/;}
 .format-tiles ul.tiles .headerabovetiles button.selected,
 .headerabovetiles button:active,
