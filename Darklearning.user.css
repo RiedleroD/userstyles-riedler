@@ -129,6 +129,10 @@
 	.content-item-container{
 		border-bottom-color:/*[[brd]]*/;
 		color:/*[[txt]]*/;}
+	.content-item-container.unread{
+		background-color:/*[[bg4]]*/;}
+	.content-item-container.unread:hover{
+		background-color:/*[[bg5]]*/;}
 	.content-item-container .content-item-footer .timestamp{
 		color:/*[[txt]]*/;}
 	.popover-region-footer-container{
