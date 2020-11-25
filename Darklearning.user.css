@@ -588,6 +588,12 @@ span[style*="background-color: rgb(239, 69, 64);"]{
     background-image:none;}
 .modal-header, .moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd, .path-mod-assign [data-region="grade-panel"] .popout>.col-md-3{
     border-color:/*[[brd]]*/;}
+.format-tiles ul.tiles .headerabovetiles button.selected,
+.headerabovetiles button:active,
+.headerabovetiles button:focus,
+.format-tiles .modal-header{
+	background-color:/*[[btn]]*/;
+	color:/*[[htxt]]*/;}
 div.comment-area textarea{
     background-color:/*[[bg3]]*/;
     border:solid 1px /*[[brd]]*/;
@@ -633,9 +639,15 @@ table.flexible thead th,
     background-color:/*[[bg4]]*/;
     border-radius:0.5em;}
 .modal-header{
-    border-color:/*[[brd]]*/;}
+    border-color:/*[[brd]]*/;
+	border-radius:0.5em 0.5em 0 0;}
 .modal-footer{
     border-color:/*[[brd]]*/;}
+.modal-title,
+.format-tiles .modal-header .close>span{
+	color:/*[[htxt]]*/ !important;}
+.format-tiles .modal-header .close:hover>span{
+	color:/*[[fals]]*/ !important;}
 .modal-body .form-control{
     color:/*[[txt]]*/;}
 #id_comments{
