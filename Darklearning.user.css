@@ -1082,6 +1082,11 @@ table td,table th{
 	#organizer_main_cointainer tr.registered_slot td{
 		background-color:/*[[true]]*/ !important;
 		color:/*[[htxt]]*/;}
+	#organizer_main_cointainer span.countdown_passed{
+		background-color:/*[[bg4]]*/;}
+	#organizer_main_cointainer table tr.past_due td{
+		background-color:/*[[bg4]]*/ !important;}
+	
 }
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/mod/assign/view\\.php.*?") {
 /*Abgabestatus*/
