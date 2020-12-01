@@ -254,6 +254,9 @@
 		background-color:/*[[bg2]]*/;}
 	/*miscellanious stuff lol
 	  I don't want to sort those*/
+	.highlight{
+		color:/*[[htxt]]*/;
+		background-color:/*[[lgt]]*/;}
     table.tborder{
         background-color:/*[[bg1]]*/;
         border:none;}
