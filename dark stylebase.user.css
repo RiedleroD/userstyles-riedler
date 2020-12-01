@@ -69,4 +69,23 @@
 		color:/*[[cll1]]*/;}
 	#app .topics li button{
 		background-color:/*[[bg2]]*/;}
+	input[type="radio"]{
+		appearance:none;
+		border:none;}
+	input[type="radio"]::before{
+		display:block;
+		content:"";
+		width:0.5rem;
+		height:0.5rem;
+		border:solid 0.25rem /*[[cl]]*/;
+		background-color:/*[[cld2]]*/;
+		border-radius:100%;
+		cursor:pointer;}
+	input[type="radio"]:hover::before{
+		background-color:/*[[cld1]]*/;
+		border-color:/*[[cll0]]*/;}
+	input[type="radio"]:checked::before{
+		background-color:/*[[txt]]*/;}
+	input[type="radio"]:checked:hover::before{
+		background-color:/*[[hhtxt]]*/;}
 }
