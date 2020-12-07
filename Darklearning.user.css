@@ -986,7 +986,7 @@ img[src="https://elearning.tgm.ac.at/theme/image.php/classic/core/1604966287/u/f
 .course-info-container{
     background-color:/*[[bg3]]*/;}
 .card-img{
-    filter:invert(1) hue-rotate(180deg);}
+    filter:/*[[EICC]]*/;}
 .card-footer{
     background-color:/*[[bg3]]*/ !important;}
 .progress{
