@@ -7,21 +7,22 @@ Here are all of my personal userstyles. Most of those sites are used by me regul
 The high priority ones are
 
 - Darklearning (moodle)
-- Eutropia (dolphin-emu.org)
-- DarkArch (archlinux.org except for wiki)
-- JavaDarks (Javadocs, but just the reference sheets)
+- Dark BourgyMan (bourgy.net)
+- Dark Stylebase (stylebase.cc)
 
 Those will always be maintained with a really high standard because I'm using the sites all the time and they're not too complicated.
 
 Then, there are the mid-priority ones:
 
-- Dark Grimm (grimmstories.com)
-- Dark Stylebase (stylebase.cc)
+- Eutropia (dolphin-emu.org)
+- JavaDarks (Javadocs, but just the reference sheets)
+- DarkArch (archlinux.org except for wiki)
 
 I use those websites either not at all or not that much, so issues have to be reported by the user.
 
 Then, the broken or abandoned styles:
 
+- Dark Grimm (grimmstories.com; Abandoned, but the website hardly changes so it'll continue to work just fine)
 - Black Tea (Gitea; I don't use it anymore and it isn't finished)
 - Darkowa (Outlook web-app; The website is really complicated, so this style is very much shit. It'll slowly get better though.)
 
