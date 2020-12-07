@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Darklearning
 @namespace      https://github.com/RiedleroD/userstyles-riedler
-@version        1.1.21
+@version        1.1.22
 @description    Darker version of Elearning
 @author         Riedler
 @preprocessor uso
@@ -129,6 +129,10 @@
 	.content-item-container{
 		border-bottom-color:/*[[brd]]*/;
 		color:/*[[txt]]*/;}
+	.content-item-container.unread{
+		background-color:/*[[bg4]]*/;}
+	.content-item-container.unread:hover{
+		background-color:/*[[bg5]]*/;}
 	.content-item-container .content-item-footer .timestamp{
 		color:/*[[txt]]*/;}
 	.popover-region-footer-container{
@@ -386,6 +390,10 @@ span[style*="background-color: rgb(125, 159, 211);"]{
 	box-shadow:inset 0 0.1em 0 0 /*[[brd]]*/;
 	outline:solid 1px /*[[brd]]*/;
 	outline-offset:1px;}
+.btn-secondary.disabled,
+.btn-secondary:disabled{
+	background-color:/*[[bg5]]*/;
+	color:/*[[txt]]*/;}
 .btn-primary{
     color:/*[[htxt]]*/ !important;
     background-color:/*[[btn]]*/;}
@@ -578,8 +586,16 @@ span[style*="background-color: rgb(239, 69, 64);"]{
     color:/*[[txt]]*/;}
 .yui3-button{
     background-image:none;}
-.modal-header, .moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd, .path-mod-assign [data-region="grade-panel"] .popout>.col-md-3{
+.modal-header,
+.moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd,
+.path-mod-assign [data-region="grade-panel"] .popout>.col-md-3{
     border-color:/*[[brd]]*/;}
+.format-tiles ul.tiles .headerabovetiles button.selected,
+.headerabovetiles button:active,
+.headerabovetiles button:focus,
+.format-tiles .modal-header{
+	background-color:/*[[btn]]*/;
+	color:/*[[htxt]]*/;}
 div.comment-area textarea{
     background-color:/*[[bg3]]*/;
     border:solid 1px /*[[brd]]*/;
@@ -625,9 +641,15 @@ table.flexible thead th,
     background-color:/*[[bg4]]*/;
     border-radius:0.5em;}
 .modal-header{
-    border-color:/*[[brd]]*/;}
+    border-color:/*[[brd]]*/;
+	border-radius:0.5em 0.5em 0 0;}
 .modal-footer{
     border-color:/*[[brd]]*/;}
+.modal-title,
+.format-tiles .modal-header .close>span{
+	color:/*[[htxt]]*/ !important;}
+.format-tiles .modal-header .close:hover>span{
+	color:/*[[fals]]*/ !important;}
 .modal-body .form-control{
     color:/*[[txt]]*/;}
 #id_comments{
@@ -757,7 +779,8 @@ a:not([class]):focus,
 .editor_atto_content_wrap{
     border-color:/*[[brd]]*/ !important;
 	border:solid 1px;
-	border-top:none;}
+	border-top:none;
+	color:/*[[txt]]*/;}
 .editor_atto_content{
     background-color:/*[[bg2]]*/ !important;
     border:none !important;
@@ -963,7 +986,7 @@ img[src="https://elearning.tgm.ac.at/theme/image.php/classic/core/1604966287/u/f
 .course-info-container{
     background-color:/*[[bg3]]*/;}
 .card-img{
-    filter:invert(1) hue-rotate(180deg);}
+    filter:/*[[EICC]]*/;}
 .card-footer{
     background-color:/*[[bg3]]*/ !important;}
 .progress{
@@ -1078,6 +1101,11 @@ table td,table th{
 	#organizer_main_cointainer tr.registered_slot td{
 		background-color:/*[[true]]*/ !important;
 		color:/*[[htxt]]*/;}
+	#organizer_main_cointainer span.countdown_passed{
+		background-color:/*[[bg4]]*/;}
+	#organizer_main_cointainer table tr.past_due td{
+		background-color:/*[[bg4]]*/ !important;}
+	
 }
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/mod/assign/view\\.php.*?") {
 /*Abgabestatus*/
@@ -1152,6 +1180,10 @@ div[data-region="datarequests"]>.mt-1.mb-1>.btn.btn-primary{
     background-color:/*[[bg3]]*/;	
     border-radius:0.5em;	
     border:none;}	
+.que.essay .qtype_essay_response.readonly{
+	background-color:/*[[bg4]]*/;
+	padding-left:0.2em;
+	border-radius:0.5rem;}
 .path-mod-quiz #mod_quiz_navblock .qnbutton.correct>.trafficlight{
     background-color:/*[[true]]*/;
     background-image:none;}
