@@ -38,6 +38,15 @@
 		--color-main-dark:/*[[cld0]]*/;
 		--color-main-darker:/*[[cld1]]*/;
 		--color-main-darkest:/*[[cld2]]*/;}
+	/*scrollbar*/
+	::-webkit-scrollbar,::-webkit-scrollbar-track-piece{/*webkit based browsers*/
+		background-color:/*[[bg0]]*/ !important;}
+	::-webkit-scrollbar-corner,::-webkit-scrollbar-thumb{
+		background-color:/*[[bg3]]*/ !important;
+		border-radius:0.4em;}
+	:root{/*Firefox*/
+		scrollbar-width:thin;
+		scrollbar-color:/*[[bg3]]*/ /*[[bg0]]*/;}
 	#app .features{
 		background-color:/*[[bg2]]*/;
 		border-radius:/*[[brdr]]*/;}
