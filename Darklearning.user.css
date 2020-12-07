@@ -779,7 +779,8 @@ a:not([class]):focus,
 .editor_atto_content_wrap{
     border-color:/*[[brd]]*/ !important;
 	border:solid 1px;
-	border-top:none;}
+	border-top:none;
+	color:/*[[txt]]*/;}
 .editor_atto_content{
     background-color:/*[[bg2]]*/ !important;
     border:none !important;
