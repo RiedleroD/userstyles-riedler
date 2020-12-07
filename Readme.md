@@ -10,7 +10,7 @@ The high priority ones are
 - Dark BourgyMan (bourgy.net)
 - Dark Stylebase (stylebase.cc)
 
-Those will always be maintained with a really high standard because I'm using the sites all the time and they're not too complicated.
+Those will always be maintained with a really high standard because I'm using the sites all the time and/or they're not too complicated.
 
 Then, there are the mid-priority ones:
 
