@@ -16,6 +16,9 @@
 @var	color	cld0	"Main Color Dark"		#184466
 @var	color	cld1	"Main Color Darker"		#11365A
 @var	color	cld2	"Main Color Darkest"	#081B2D
+@var	color	sctxt	"Success Text"			#8C8
+@var	color	scbg	"Success Background"	#333
+@var	color	scbrd	"Success Border"		#797
 @var	color	txt		"Text"					#CCC
 @var	color	htxt	"Bright Text"			#D8D8D8
 @var	color	hhtxt	"Very Bright Text"		#FFF
@@ -88,4 +91,8 @@
 		background-color:/*[[txt]]*/;}
 	input[type="radio"]:checked:hover::before{
 		background-color:/*[[hhtxt]]*/;}
+	#app .alert.success{
+		background-color:/*[[scbg]]*/;
+		color:/*[[sctxt]]*/;
+		border-color:/*[[scbrd]]*/;}
 }
