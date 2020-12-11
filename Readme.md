@@ -6,25 +6,25 @@ Here are all of my personal userstyles. Most of those sites are used by me regul
 
 The high priority ones are
 
-- Darklearning (moodle)
-- Dark BourgyMan (bourgy.net)
-- Dark Stylebase (stylebase.cc)
+- [Darklearning](https://raw.githubusercontent.com/RiedleroD/userstyles-riedler/master/Darklearning.user.css) (moodle)
+- [Dark BourgyMan](https://raw.githubusercontent.com/RiedleroD/userstyles-riedler/master/bourgy.user.css) (bourgy.net)
+- [Dark Stylebase](https://raw.githubusercontent.com/RiedleroD/userstyles-riedler/master/dark%20stylebase.user.css) (stylebase.cc)
 
 Those will always be maintained with a really high standard because I'm using the sites all the time and/or they're not too complicated.
 
 Then, there are the mid-priority ones:
 
-- Eutropia (dolphin-emu.org)
-- JavaDarks (Javadocs, but just the reference sheets)
-- DarkArch (archlinux.org except for wiki)
+- [Eutropia](https://raw.githubusercontent.com/RiedleroD/userstyles-riedler/master/eutropia.user.css) (dolphin-emu.org)
+- [JavaDarks](https://raw.githubusercontent.com/RiedleroD/userstyles-riedler/master/javadarks.user.css) (Javadocs, but just the reference sheets)
+- [DarkArch](https://raw.githubusercontent.com/RiedleroD/userstyles-riedler/master/darkarch.user.css) (archlinux.org except for wiki)
 
 I use those websites either not at all or not that much, so issues have to be reported by the user.
 
 Then, the broken or abandoned styles:
 
-- Dark Grimm (grimmstories.com; Abandoned, but the website hardly changes so it'll continue to work just fine)
-- Black Tea (Gitea; I don't use it anymore and it isn't finished)
-- Darkowa (Outlook web-app; The website is really complicated, so this style is very much shit. It'll slowly get better though.)
+- [Dark Grimm](https://raw.githubusercontent.com/RiedleroD/userstyles-riedler/master/dark%20grimm.user.css) (grimmstories.com; Abandoned, but the website hardly changes so it'll continue to work just fine)
+- [Black Tea](https://raw.githubusercontent.com/RiedleroD/userstyles-riedler/master/Black%20tea.user.css) (Gitea; I don't use it anymore and it isn't finished)
+- [Darkowa](https://raw.githubusercontent.com/RiedleroD/userstyles-riedler/master/darkowa.user.css) (Outlook web-app; The website is really complicated, so this style is very much shit. It'll slowly get better though.)
 
 ### How to install
 
