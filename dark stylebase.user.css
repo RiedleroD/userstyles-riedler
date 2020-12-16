@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Stylebase Dark
 @namespace      https://github.com/RiedleroD/userstyles-riedler
-@version        1.0.2
+@version        1.0.3
 @description    Dark skin for stylebase.cc
 @author         Riedler
 @preprocessor	uso
@@ -38,6 +38,15 @@
 		--color-main-dark:/*[[cld0]]*/;
 		--color-main-darker:/*[[cld1]]*/;
 		--color-main-darkest:/*[[cld2]]*/;}
+	/*scrollbar*/
+	::-webkit-scrollbar,::-webkit-scrollbar-track-piece{/*webkit based browsers*/
+		background-color:/*[[bg0]]*/ !important;}
+	::-webkit-scrollbar-corner,::-webkit-scrollbar-thumb{
+		background-color:/*[[bg3]]*/ !important;
+		border-radius:0.4em;}
+	:root{/*Firefox*/
+		scrollbar-width:thin;
+		scrollbar-color:/*[[bg3]]*/ /*[[bg0]]*/;}
 	#app .features{
 		background-color:/*[[bg2]]*/;
 		border-radius:/*[[brdr]]*/;}
@@ -95,4 +104,19 @@
 		background-color:/*[[scbg]]*/;
 		color:/*[[sctxt]]*/;
 		border-color:/*[[scbrd]]*/;}
+	.section-header>.title>span{
+		background-color:/*[[bg3]]*/;
+		border-radius:/*[[brdr]]*/;
+		display:inline-flex;
+		align-items:center;
+		padding:0.25rem;}
+	#app .close-button{
+		background-color:#0000;
+		position:relative;}
+	.close-button>.cross-first-line,
+	.close-button>.cross-second-line{
+		background-color:/*[[txt]]*/;}
+	#app .close-button:hover>.cross-first-line,
+	#app .close-button:hover>.cross-second-line{
+		background-color:/*[[hhtxt]]*/;}
 }
