@@ -509,6 +509,8 @@ div[style="background: #ffffff; overflow:auto;width:auto;border:solid gray;borde
 	color:/*[[txt]]*/;
 	border-radius:0.5em;}
 /*Misc*/
+span[style*="background-color: rgb(255, 207, 53);"]{
+	color:#000 !important;}
 .card{
     background-color:/*[[bg3]]*/;}
 .nav-tabs,
