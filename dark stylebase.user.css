@@ -104,4 +104,19 @@
 		background-color:/*[[scbg]]*/;
 		color:/*[[sctxt]]*/;
 		border-color:/*[[scbrd]]*/;}
+	.section-header>.title>span{
+		background-color:/*[[bg3]]*/;
+		border-radius:/*[[brdr]]*/;
+		display:inline-flex;
+		align-items:center;
+		padding:0.25rem;}
+	#app .close-button{
+		background-color:#0000;
+		position:relative;}
+	.close-button>.cross-first-line,
+	.close-button>.cross-second-line{
+		background-color:/*[[txt]]*/;}
+	#app .close-button:hover>.cross-first-line,
+	#app .close-button:hover>.cross-second-line{
+		background-color:/*[[hhtxt]]*/;}
 }
