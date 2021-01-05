@@ -82,6 +82,9 @@
 	.rc-imageselect-desc-wrapper{
 		background-color:/*[[cl1]]*/;
 		color:/*[[htxt]]*/;}
+	.rc-imageselect-incorrect-response{
+		background-color:/*[[bg1]]*/;
+		color:/*[[err]]*/}
 	.rc-button-default{
 		background-color:/*[[cl1]]*/;
 		color:/*[[htxt]]*/;}
