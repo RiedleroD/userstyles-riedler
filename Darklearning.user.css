@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Darklearning
 @namespace      https://github.com/RiedleroD/userstyles-riedler
-@version        1.1.22
+@version        1.1.23
 @description    Darker version of Elearning
 @author         Riedler
 @preprocessor uso
@@ -509,6 +509,8 @@ div[style="background: #ffffff; overflow:auto;width:auto;border:solid gray;borde
 	color:/*[[txt]]*/;
 	border-radius:0.5em;}
 /*Misc*/
+span[style*="background-color: rgb(255, 207, 53);"]{
+	color:#000 !important;}
 .card{
     background-color:/*[[bg3]]*/;}
 .nav-tabs,
@@ -698,6 +700,22 @@ input[type="radio"]{
     border-radius:100%;}
 input[type="radio"]:checked{
 	background:radial-gradient(/*[[hbrd]]*/ 40%, #0000 45%);}
+input[type="file"]{
+	cursor:pointer;}/*not default for some reason?*/
+input[type="file"]::-webkit-file-upload-button{
+	background-color:/*[[bg4]]*/;
+	color:/*[[txt]]*/;
+	border:none;
+	border-radius:0.5em;
+	cursor:pointer;}
+input[type="file"]::-webkit-file-upload-button:hover{
+	background-color:/*[[bg5]]*/;
+	color:/*[[txt]]*/;}
+@supports (-moz-appearance:none){/*firefox-specific hack*/
+	input[type="file"]{
+		color:/*[[dtxt]]*/;
+		filter:invert(0.8);}
+}
 input.organizer_filtertable{
 	background-color:/*[[bg2]]*/;
 	color:/*[[txt]]*/;
