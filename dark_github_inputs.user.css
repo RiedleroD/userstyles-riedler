@@ -1,14 +1,28 @@
 /* ==UserStyle==
 @name           Dark github inputs
 @namespace      https://RiedleroD/userstyles-riedler/
-@version        0.1.0
-@description    Styles the inputs in github dark, because the github webdevs forgot to style those.
+@version        0.1.1
+@description    Styles the inputs in github dark, because the github webdevs forgot to style those. Also styles scrollbar and text selection.
 @author         Riedler
 @preprocessor	uso
-@var	text	font	"Symbol rendering font"	"FontAwesome"
+@var	text	font	"Symbol rendering font"	"FontAwesome,sans-serif"
 ==/UserStyle== */
 
 @-moz-document domain("github.com"){
+	/*text selections*/
+	::selection{
+		background-color:var(--color-state-selected-primary-bg);
+		color:var(--color-state-selected-primary-text);}
+
+	/*scrollbar*/
+	::-webkit-scrollbar,::-webkit-scrollbar-track-piece{
+		background-color:var(--color-bg-primary) !important;}
+	::-webkit-scrollbar-corner,::-webkit-scrollbar-thumb{
+		background-color:var(--color-btn-bg) !important;
+		border-radius:0.4em;}
+	:root{/*Because Firefox doesn't have the ::-moz-scrollbar selectors*/
+		scrollbar-width:thin;
+		scrollbar-color:var(--color-btn-bg) var(--color-bg-primary);}
 	input[type="checkbox"]{
 		appearance:none;
 		height:1rem;
@@ -19,16 +33,25 @@
 		border-radius:0.2rem;
 		cursor:pointer;
 	}
-	input[type="checkbox"]:checked{
+	input[type="checkbox"]:checked,
+	input[type="checkbox"]:indeterminate{
 		background-color:var(--color-state-selected-primary-bg);
 		border-color:var(--color-state-selected-primary-border);
 	}
+	input[type="checkbox"]::after{
+		display:flex;
+		width:1rem;
+		height:1rem;
+		align-items:center;
+		justify-content:center;
+		margin:-1px 0 0 -1px;
+		font:normal 1rem /*[[font]]*/;
+	}
 	input[type="checkbox"]:checked::after{
-		position:absolute;
-		line-height:1rem;
-		margin:-1px 0 0 0;
-		font-family:/*[[font]]*/;
-		content:"";
+		content:"✔";
+	}
+	input[type="checkbox"]:indeterminate:after{
+		content:"━";
 	}
 	input[type="radio"]{
 		appearance:none;
@@ -36,7 +59,7 @@
 		width:1rem;
 		background-color:#0000;
 		border:solid 1px  var(--color-text-secondary);
-		color:var(--color-text-primary);
+		color:var(--color-state-selected-primary-text);
 		border-radius:100%;
 		cursor:pointer;
 	}
