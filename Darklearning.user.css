@@ -1203,6 +1203,12 @@ div[data-region="datarequests"]>.mt-1.mb-1>.btn.btn-primary{
 	background-color:/*[[bg4]]*/;
 	padding-left:0.2em;
 	border-radius:0.5rem;}
+.que.essay .qtype_essay_monospaced{
+	background-color:/*[[bg2]]*/;
+	padding:0.25em;
+	border-radius:0.5rem;
+	color:/*[[txt]]*/;
+	border-color:/*[[brd]]*/;}
 .path-mod-quiz #mod_quiz_navblock .qnbutton.correct>.trafficlight{
     background-color:/*[[true]]*/;
     background-image:none;}
