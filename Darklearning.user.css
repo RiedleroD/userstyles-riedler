@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Darklearning
 @namespace      https://github.com/RiedleroD/userstyles-riedler
-@version        1.1.23
+@version        1.1.24
 @description    Darker version of Elearning
 @author         Riedler
 @preprocessor uso
@@ -867,10 +867,11 @@ a:not([class]):focus,
     border-radius: 0 0 0.5em 0.5em;
     padding:0 0.1em 0.1em 0.1em;
     box-shadow:0 0 0.5em /*[[bg0]]*/;}
-.fp-filename-field{
+.fp-iconview .fp-filename-field{
     padding-left:1em;
     margin-left:-1em;
     padding-right:1em;
+	margin-top:-3px;
     margin-right:-1em;}
 .filemanager .fp-info .fp-thumbnail{
     border-radius:0.5em;
@@ -1202,6 +1203,12 @@ div[data-region="datarequests"]>.mt-1.mb-1>.btn.btn-primary{
 	background-color:/*[[bg4]]*/;
 	padding-left:0.2em;
 	border-radius:0.5rem;}
+.que.essay .qtype_essay_monospaced{
+	background-color:/*[[bg2]]*/;
+	padding:0.25em;
+	border-radius:0.5rem;
+	color:/*[[txt]]*/;
+	border-color:/*[[brd]]*/;}
 .path-mod-quiz #mod_quiz_navblock .qnbutton.correct>.trafficlight{
     background-color:/*[[true]]*/;
     background-image:none;}
