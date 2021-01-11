@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Stylebase Dark
 @namespace      https://github.com/RiedleroD/userstyles-riedler
-@version        1.0.3
+@version        1.0.4
 @description    Dark skin for stylebase.cc
 @author         Riedler
 @preprocessor	uso
@@ -110,11 +110,10 @@
 		display:inline-flex;
 		align-items:center;
 		padding:0.25rem;}
-	#app .close-button{
-		background-color:#0000;
+	#app .main-container .close-button{
 		position:relative;}
-	.close-button>.cross-first-line,
-	.close-button>.cross-second-line{
+	#app .close-button>.cross-first-line,
+	#app .close-button>.cross-second-line{
 		background-color:/*[[txt]]*/;}
 	#app .close-button:hover>.cross-first-line,
 	#app .close-button:hover>.cross-second-line{
