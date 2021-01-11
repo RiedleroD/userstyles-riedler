@@ -1,0 +1,47 @@
+/* ==UserStyle==
+@name           Dark github inputs
+@namespace      https://RiedleroD/userstyles-riedler/
+@version        0.1.0
+@description    Styles the inputs in github dark, because the github webdevs forgot to style those.
+@author         Riedler
+@preprocessor	uso
+@var	text	font	"Symbol rendering font"	"FontAwesome"
+==/UserStyle== */
+
+@-moz-document domain("github.com"){
+	input[type="checkbox"]{
+		appearance:none;
+		height:1rem;
+		width:1rem;
+		background-color:#0000;
+		border:solid 1px var(--color-text-secondary);
+		color:var(--color-text-primary);
+		border-radius:0.2rem;
+		cursor:pointer;
+	}
+	input[type="checkbox"]:checked{
+		background-color:var(--color-state-selected-primary-bg);
+		border-color:var(--color-state-selected-primary-border);
+	}
+	input[type="checkbox"]:checked::after{
+		position:absolute;
+		line-height:1rem;
+		margin:-1px 0 0 0;
+		font-family:/*[[font]]*/;
+		content:"";
+	}
+	input[type="radio"]{
+		appearance:none;
+		height:1rem;
+		width:1rem;
+		background-color:#0000;
+		border:solid 1px  var(--color-text-secondary);
+		color:var(--color-text-primary);
+		border-radius:100%;
+		cursor:pointer;
+	}
+	input[type="radio"]:checked{
+		background:radial-gradient(var(--color-text-primary) 35%,var(--color-state-selected-primary-bg) 45%);
+		border-color:var(--color-state-selected-primary-border);
+	}
+}
