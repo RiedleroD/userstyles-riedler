@@ -867,10 +867,11 @@ a:not([class]):focus,
     border-radius: 0 0 0.5em 0.5em;
     padding:0 0.1em 0.1em 0.1em;
     box-shadow:0 0 0.5em /*[[bg0]]*/;}
-.fp-filename-field{
+.fp-iconview .fp-filename-field{
     padding-left:1em;
     margin-left:-1em;
     padding-right:1em;
+	margin-top:-3px;
     margin-right:-1em;}
 .filemanager .fp-info .fp-thumbnail{
     border-radius:0.5em;
