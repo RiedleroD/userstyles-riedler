@@ -322,7 +322,15 @@ a:hover,a>span:hover{
 /*Text with inline background coloring*/
 span[style*="background-color: rgb(125, 159, 211);"]{
 	background-color:/*[[btn]]*/ !important;
-	color:/*[[dtxt]]*/ !important}
+	color:/*[[dtxt]]*/ !important;}
+span[style*="background-color: rgb(255, 207, 53);"]{
+	color:#000 !important;}
+span[style*="background-color: rgb(152, 202, 62);"]{
+	color:#000 !important;}
+span[style*="background-color: white;"]:not([class]){
+	background-color:#0000 !important;}
+span[style*="background-color: rgb(239, 69, 64);"]{
+	background-color:/*[[fals]]*/ !important;}
 /*icons*/
 .logo>img{
     filter:invert(1) hue-rotate(180deg);}
@@ -509,10 +517,6 @@ div[style="background: #ffffff; overflow:auto;width:auto;border:solid gray;borde
 	color:/*[[txt]]*/;
 	border-radius:0.5em;}
 /*Misc*/
-span[style*="background-color: rgb(255, 207, 53);"]{
-	color:#000 !important;}
-span[style*="background-color: rgb(152, 202, 62);"]{
-	color:#000 !important;}
 .card{
     background-color:/*[[bg3]]*/;}
 .nav-tabs,
@@ -543,8 +547,6 @@ span[style*="background-color: rgb(152, 202, 62);"]{
 	background-color:/*[[bg3]]*/;
 	border-color:/*[[brd]]*/;
 	border-width:1px;}
-span[style*="background-color: rgb(239, 69, 64);"]{
-	background-color:/*[[fals]]*/ !important;}
 .mform fieldset{
 	border-bottom-color:/*[[brd]]*/}
 .grade-navigation>.nav>.nav-item{
