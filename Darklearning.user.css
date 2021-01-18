@@ -762,6 +762,14 @@ input.organizer_filtertable:focus{
     border-bottom:solid 1px /*[[brd]]*/;
     border-radius:0 0.5em 0.5em 0;
     overflow:hidden;}
+select.form-control{
+	appearance:none;
+	background-image:url("https://riedler.wien/sfto/darklearning/double_triangles_top_bottom_AAA.svg");
+	background-repeat:no-repeat;
+	background-position:right center;
+	background-origin:content-box;
+	background-size:0.75rem;
+	padding-right:0.25rem;}
 #searchwiki{
 	background-color:/*[[bg3]]*/;
 	border:solid 1px /*[[brd]]*/;
