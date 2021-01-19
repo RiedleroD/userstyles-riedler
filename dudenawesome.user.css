@@ -257,5 +257,11 @@ if thm==black
 			margin-top:-30px;}
 		.tabloid__main-column.tabloid__main-column--has-note>article>div>aside{
 			display:none;}
+		.columns:nth-child(6)>.columns__row--width_2{
+			&>.columns__col--no_1{
+				display:none;}
+			&>.columns__col--no_2{
+				grid-column:4/9;}
+		}
 	}
 }
