@@ -160,6 +160,8 @@ if thm==black
 	#block-dudentwitterblock>.essay>.essay__bottom>div>div:not([data-twitter]){
 		background:linear-gradient(#0000,bgc_main) !important;
 	}
+	.essay__title>a:hover{
+		background-image:linear-gradient(to top,bgc_theme 10%,transparent 10%)}
 	.more__arrow{
 		background-color:bgc_theme;
 		box-shadow:1px 1px 0 1px bgc_theme_sd;}
