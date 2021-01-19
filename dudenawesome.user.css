@@ -12,9 +12,7 @@
 @var	checkbox	ovf		"Overflow fix"	1
 ==/UserStyle== */
 
-@-moz-document domain("duden.de")
-	bgc_trickle=#F00
-	if thm==black
+if thm==black
 		bgc_main=#000
 		bgc_secondary=#151515
 		bgc_ter=#222
@@ -63,9 +61,11 @@
 		bgc_theme_sec=#ffedaa
 		bgc_theme_ter=#fff6d0
 		ft1=none
-	body
-		if ovf
-			overflow-x:hidden;
+@-moz-document domain("duden.de"){
+	if ovf{
+		body{
+			overflow-x:hidden;}
+	}
 	button{
 		color:txc_main;}
 	tr{
@@ -256,3 +256,4 @@
 		.tabloid__main-column.tabloid__main-column--has-note>article>div>aside{
 			display:none;}
 	}
+}
