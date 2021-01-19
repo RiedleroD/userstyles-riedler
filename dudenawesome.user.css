@@ -36,15 +36,15 @@
 		bgc_ter=#555
 		txc_main=#EEE
 		txc_secondary=#969b9f
-		bgc_inputs=#000
+		bgc_inputs=#444
 		txc_header=#FFF
-		bgc_theme=#ffd008
-		bgc_theme_sd=#fbb914
-		bgc_theme_l=#ffda4d
+		bgc_theme=#da1
+		bgc_theme_sd=#db2
+		bgc_theme_l=#dc6
 		bgc_theme_op=#A80
-		bgc_theme_opop=#888
+		bgc_theme_opop=#666
 		bgc_theme_sec=#A83
-		bgc_theme_ter=#302815
+		bgc_theme_ter=#873
 		ft1=invert(0.6) hue-rotate(190deg) brightness(1.4) saturate(10)
 	if thm==light
 		bgc_main=#FFF
