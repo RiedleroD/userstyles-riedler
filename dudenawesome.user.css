@@ -169,6 +169,8 @@ if thm==black
 		background-color:bgc_theme;}
 	.stage{
 		background-color:bgc_theme;}
+	.stage__main{
+		background-color:bgc_secondary;}
 	.cc{
 		background-color:bgc_theme_l;}
 	.cc__pause,
