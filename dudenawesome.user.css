@@ -18,6 +18,7 @@ if thm==black
 		bgc_ter=#222
 		txc_main=#DDD
 		txc_secondary=#969b9f
+		txc_teritary=#999
 		txc_header=#EEE
 		bgc_inputs=#222
 		bgc_theme=#ca0
@@ -27,6 +28,7 @@ if thm==black
 		bgc_theme_opop=#333
 		bgc_theme_sec=#a83
 		bgc_theme_ter=#652
+		bgc_theme_qad=#652
 		ft1=invert(0.6) hue-rotate(190deg) brightness(1.4) saturate(10)
 	if thm==dark
 		bgc_main=#333
@@ -34,6 +36,7 @@ if thm==black
 		bgc_ter=#555
 		txc_main=#EEE
 		txc_secondary=#969b9f
+		txc_teritary=#999
 		bgc_inputs=#444
 		txc_header=#FFF
 		bgc_theme=#da1
@@ -43,6 +46,7 @@ if thm==black
 		bgc_theme_opop=#666
 		bgc_theme_sec=#A83
 		bgc_theme_ter=#873
+		bgc_theme_qad=#873
 		ft1=invert(0.6) hue-rotate(190deg) brightness(1.4) saturate(10)
 	if thm==light
 		bgc_main=#FFF
@@ -50,6 +54,7 @@ if thm==black
 		bgc_ter=#dadee0
 		txc_main=#333
 		txc_secondary=#969b9f
+		txc_teritary=#999
 		txc_header=#000
 		brd_ter=#e5e5e5
 		bgc_inputs=#FFF
@@ -60,7 +65,15 @@ if thm==black
 		bgc_theme_opop=#e2e2e2
 		bgc_theme_sec=#ffedaa
 		bgc_theme_ter=#fff6d0
+		bgc_theme_qad=#fffae9
 		ft1=none
+replace_img(w,h,source){
+	box-sizing: border-box;
+	width:w;
+	height:h;
+	padding-left:w;
+	background:url(source) no-repeat;
+}
 @-moz-document domain("duden.de"){
 	if ovf{
 		body{
@@ -232,6 +245,8 @@ if thm==black
 		outline-color:bgc_main;}
 	.division::before{
 		background-color:txc_main;}
+	.scaffold__head{
+		background-color:bgc_theme;}
 	if wide{
 		.tabloid__side-column,
 		.tabloid__note{
@@ -266,4 +281,18 @@ if thm==black
 				grid-column:4/9;}
 		}
 	}
+	img[src="https://cdn.duden.de/public_files/2020-09/firefox_logo.png?null"]{
+		replace_img(260px,48px,"https://www.mozilla.org/media/protocol/img/logos/firefox/browser/logo-word-hor-xs.c87882e8c93c.png");}
+}
+@-moz-document domain("mentor.duden.de"){
+	.desk,
+	.desk__background{
+		background-image:linear-gradient(90deg,bgc_main 50%,bgc_theme_qad 0);}
+	.pad{
+		background-color:bgc_main;}
+	.rim{
+		background-color:bgc_main;
+		color:txc_teritary;}
+	body{
+		color:txc_main;}
 }
