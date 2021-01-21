@@ -217,6 +217,13 @@ replace_img(w,h,source){
 		background-color:bgc_theme_ter;}
 	.wrap-table tr:nth-child(2n){
 		background-color:rgba(bgc_main,0.75);}
+	.mere-table{
+		background-color:bgc_theme_ter;
+		& tr:nth-child(2n){
+			background-color:rgba(bgc_main,0.75);}
+	}
+	.mere-table__head{
+		border-right-color:bgc_main;}
 	.chapters__list{
 		border-bottom-color:bgc_secondary;
 		background-color:bgc_main;}
