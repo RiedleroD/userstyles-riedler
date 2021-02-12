@@ -39,6 +39,7 @@
 @var	color	bg2		"Background 2"				#222
 @var	color	bg2_5	"Background 2.5"			#252525
 @var	color	bg3		"Background 3"				#333
+@var	color	bg3_5	"Background 3.5"			#383838
 @var	color	bg4		"Background 4"				#444
 @var	color	bg5		"Background 5"				#555
 @var	color	bg6		"Background 6"				#666
@@ -56,6 +57,7 @@
 @var	color	hbtn	"Bright Blue Background"	#6AC
 @var	color	true	"Correct"					#262
 @var	color	fals	"Incorrect"					#922
+@var	color	idfk	"Maybe?"					#D81
 @var	color	cal0	"Calendar 0"				#533
 @var	color	cal1	"Calendar 1"				#535
 @var	color	cal2	"Calendar 2"				#553
@@ -677,8 +679,6 @@ table.flexible thead th,
     background-color:/*[[bg3]]*/;}
 .custom-select:focus{
     color:/*[[txt]]*/;}
-.que .correct .custom-select{
-    background-color:/*[[true]]*/;}
 input[type="checkbox"]{
     -webkit-appearance:none;
     -moz-appearance: none;
@@ -926,12 +926,6 @@ a:not([class]):focus,
 .que.coderunner div.coderunner-test-results.good,
 #page-question-type-coderunner tr.coderunner-failed-test.fixed{
 	background-color:/*[[true]]*/;}
-
-.que .correctness.notanswered,
-.que .correctness.incorrect{
-	background-color:/*[[fals]]*/;}
-.que .correctness.correct{
-	background-color:/*[[true]]*/;}
 /*Filepicker*/
 .file-picker .card{
     background-color:/*[[bg3]]*/;
@@ -1136,7 +1130,8 @@ table td,table th{
 		background-color:/*[[bg4]]*/;}
 	#organizer_main_cointainer table tr.past_due td{
 		background-color:/*[[bg4]]*/ !important;}
-	
+	#organizer_main_cointainer span.countdown_critical{
+		background-color:/*[[fals]]*/;}
 }
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/mod/assign/view\\.php.*?") {
 /*Abgabestatus*/
@@ -1182,7 +1177,7 @@ table td,table th{
 
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/admin/tool/dataprivacy/mydatarequests\\.php.*?") {
 div[data-region="datarequests"]>.mt-1.mb-1>.btn.btn-primary{
-    color:/*[[txt]]*/ !important;}
+	color:/*[[txt]]*/ !important;}
 }
 
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/mod/quiz.*?") {
@@ -1195,10 +1190,25 @@ div[data-region="datarequests"]>.mt-1.mb-1>.btn.btn-primary{
     background-color:/*[[bg3]]*/;
     color:/*[[txt]]*/;
     border-radius:0.5em;}
-.answer .incorrect{
+.que.multichoice .answer .incorrect{
     background-color:/*[[fals]]*/;}
-.answer .correct{
+.que.multichoice .answer .correct{
     background-color:/*[[true]]*/;}
+.que.multichoice .answer div.r0,
+.que.multichoice .answer div.r1{
+	border-radius:0.25rem;}
+.que.multichoice .answer div.r0 .icon.fa,
+.que.multichoice .answer div.r1 .icon.fa{
+	align-self:center;}
+.que .correct .custom-select{
+	background-color:/*[[true]]*/;}
+.que .incorrect .custom-select{
+    background-color:/*[[fals]]*/;}
+.que .correctness.notanswered,
+.que .correctness.incorrect{
+	background-color:/*[[fals]]*/;}
+.que .correctness.correct{
+	background-color:/*[[true]]*/;}
 .answer>.form-control{
      border-color:/*[[brd]]*/;
     color:/*[[txt]]*/;
@@ -1223,10 +1233,13 @@ div[data-region="datarequests"]>.mt-1.mb-1>.btn.btn-primary{
 	border-color:/*[[brd]]*/;}
 .path-mod-quiz #mod_quiz_navblock .qnbutton.correct>.trafficlight{
     background-color:/*[[true]]*/;
-    background-image:none;}
+    background-image:url("https://riedler.wien/sfto/checkmarkCCC.svg");}
+.path-mod-quiz #mod_quiz_navblock .qnbutton.partiallycorrect>.trafficlight{
+    background-color:/*[[idfk]]*/;
+    background-image:url("https://riedler.wien/sfto/circleCCC.svg");}
 .path-mod-quiz #mod_quiz_navblock .qnbutton.incorrect>.trafficlight{
     background-color:/*[[fals]]*/;
-    background-image:none;}
+    background-image:url("https://riedler.wien/sfto/crossCCC.svg");}
 .path-mod-quiz #mod_quiz_navblock span.qnbutton,
 .path-mod-quiz #mod_quiz_navblock a.qnbutton{
     color:/*[[txt]]*/ !important;
@@ -1235,7 +1248,14 @@ div[data-region="datarequests"]>.mt-1.mb-1>.btn.btn-primary{
     border:none !important;}
 #mod_quiz_navblock .qn_buttons:not(.allquestionsononepage) .qnbutton.thispage>.thispageholder{
 	box-shadow:0 0 1px 1px /*[[brd]]*/;}
-.quizreviewsummary>tbody>tr>.cell{
+.quizreviewsummary{
+	border-radius:0.5em;
+	overflow:hidden;}
+.quizreviewsummary>tbody>tr:first-child>.cell{
+	border-top:none;}
+.quizreviewsummary>tbody>tr>.cell:first-child{
+	background-color:/*[[bg3_5]]*/;}
+.quizreviewsummary>tbody>tr>.cell:last-child{
 	background-color:/*[[bg3]]*/;}
 #page-mod-quiz-view table.quizattemptsummary tr.bestrow td{
     border-color:/*[[brd]]*/;
@@ -1246,11 +1266,11 @@ div[data-region="datarequests"]>.mt-1.mb-1>.btn.btn-primary{
     background-color:/*[[bg4]]*/;}	
 .path-mod-quiz #mod_quiz_navblock .qnbutton.answersaved>.trafficlight,	
 .path-mod-quiz #mod_quiz_navblock .qnbutton.invalidanswer>.trafficlight{	
-    background-color:/*[[brd]]*/;}	
-.path-mod-quiz #mod_quiz_navblock span.qnbutton.thispage{	
+    background-color:/*[[brd]]*/;}
+.path-mod-quiz #mod_quiz_navblock span.qnbutton.thispage{
     box-shadow:0 0 0.2em #FFF}
 .answer>input[type="text"]{	
-    background-color:/*[[bg4]]*/;}	
+    background-color:/*[[bg4]]*/;}
 .subquestion input[type="text"]{	
     background-color:/*[[bg4]]*/;	
     border-color:/*[[brd]]*/;	
