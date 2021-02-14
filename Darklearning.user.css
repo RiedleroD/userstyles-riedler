@@ -32,6 +32,9 @@
 	"Dim":"brightness(0.8)",
 	"Debug":"invert(1) hue-rotate(180deg) saturate(100)",
 	"Off":"none"}
+@var	select	anon	"Anonymity (for screenshots)" {
+	"Normal":"",
+	"Anonymous":".usertext{display:none;}.userbutton::before{content:\"Anonymous User\";margin-right:0.25rem;color:\/*[[txt]]*\/}"}
 @var	text	ntip	"Navigation Tree initial padding"	"0"
 @var	text	ntmp	"Navigation Tree max padding"		"0.5rem"
 @var	color	bg0		"Background 0"				#000
@@ -519,6 +522,7 @@ div[style="background: #ffffff; overflow:auto;width:auto;border:solid gray;borde
 	color:/*[[txt]]*/;
 	border-radius:0.5em;}
 /*Misc*/
+/*[[anon]]*/
 .card{
     background-color:/*[[bg3]]*/;}
 .nav-tabs,
