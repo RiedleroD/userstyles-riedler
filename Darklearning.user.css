@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Darklearning
 @namespace      https://github.com/RiedleroD/userstyles-riedler
-@version        1.1.25
+@version        1.2.0
 @description    Darker version of Elearning
 @author         Riedler
 @preprocessor uso
@@ -32,6 +32,9 @@
 	"Dim":"brightness(0.8)",
 	"Debug":"invert(1) hue-rotate(180deg) saturate(100)",
 	"Off":"none"}
+@var	select	anon	"Anonymity (for screenshots)" {
+	"Normal":"",
+	"Anonymous":".usertext{display:none;}.userbutton::before{content:\"Anonymous User\";margin-right:0.25rem;color:\/*[[txt]]*\/}"}
 @var	text	ntip	"Navigation Tree initial padding"	"0"
 @var	text	ntmp	"Navigation Tree max padding"		"0.5rem"
 @var	color	bg0		"Background 0"				#000
@@ -39,6 +42,7 @@
 @var	color	bg2		"Background 2"				#222
 @var	color	bg2_5	"Background 2.5"			#252525
 @var	color	bg3		"Background 3"				#333
+@var	color	bg3_5	"Background 3.5"			#383838
 @var	color	bg4		"Background 4"				#444
 @var	color	bg5		"Background 5"				#555
 @var	color	bg6		"Background 6"				#666
@@ -56,6 +60,7 @@
 @var	color	hbtn	"Bright Blue Background"	#6AC
 @var	color	true	"Correct"					#262
 @var	color	fals	"Incorrect"					#922
+@var	color	idfk	"Maybe?"					#D81
 @var	color	cal0	"Calendar 0"				#533
 @var	color	cal1	"Calendar 1"				#535
 @var	color	cal2	"Calendar 2"				#553
@@ -93,7 +98,8 @@
     border-radius:0.4em;}
 :root{/*Because Firefox doesn't have the ::-moz-scrollbar selectors*/
     scrollbar-width:thin;
-    scrollbar-color:/*[[bg3]]*/ /*[[bg1]]*/;}
+    scrollbar-color:/*[[bg3]]*/ /*[[bg1]]*/;
+	--svg-select-arrs:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' version='1'%3E%3Cpath fill='%23aaa' stroke='%23aaa' d='M8 1 2 6h12zM2 10H14L8 15Z' class='s0'/%3E%3C/svg%3E");}
 
 /*navbar*/
 .navbar{
@@ -517,6 +523,7 @@ div[style="background: #ffffff; overflow:auto;width:auto;border:solid gray;borde
 	color:/*[[txt]]*/;
 	border-radius:0.5em;}
 /*Misc*/
+/*[[anon]]*/
 .card{
     background-color:/*[[bg3]]*/;}
 .nav-tabs,
@@ -665,7 +672,7 @@ table.flexible thead th,
     border-color:/*[[brd]]*/;
     border-radius:0.5em;
     background-color:/*[[bg3]]*/;
-    background-image:url("https://riedler.wien/sfto/darklearning/double_triangles_top_bottom_AAA.svg");
+    background-image:var(--svg-select-arrs);
     background-repeat:no-repeat;
     background-size:0.75em;}
 .custom-select:disabled{
@@ -677,8 +684,6 @@ table.flexible thead th,
     background-color:/*[[bg3]]*/;}
 .custom-select:focus{
     color:/*[[txt]]*/;}
-.que .correct .custom-select{
-    background-color:/*[[true]]*/;}
 input[type="checkbox"]{
     -webkit-appearance:none;
     -moz-appearance: none;
@@ -764,7 +769,7 @@ input.organizer_filtertable:focus{
     overflow:hidden;}
 select.form-control{
 	appearance:none;
-	background-image:url("https://riedler.wien/sfto/darklearning/double_triangles_top_bottom_AAA.svg");
+	background-image:var(--svg-select-arrs);
 	background-repeat:no-repeat;
 	background-position:right center;
 	background-origin:content-box;
@@ -925,12 +930,6 @@ a:not([class]):focus,
 	background-color:/*[[fals]]*/;}
 .que.coderunner div.coderunner-test-results.good,
 #page-question-type-coderunner tr.coderunner-failed-test.fixed{
-	background-color:/*[[true]]*/;}
-
-.que .correctness.notanswered,
-.que .correctness.incorrect{
-	background-color:/*[[fals]]*/;}
-.que .correctness.correct{
 	background-color:/*[[true]]*/;}
 /*Filepicker*/
 .file-picker .card{
@@ -1136,7 +1135,8 @@ table td,table th{
 		background-color:/*[[bg4]]*/;}
 	#organizer_main_cointainer table tr.past_due td{
 		background-color:/*[[bg4]]*/ !important;}
-	
+	#organizer_main_cointainer span.countdown_critical{
+		background-color:/*[[fals]]*/;}
 }
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/mod/assign/view\\.php.*?") {
 /*Abgabestatus*/
@@ -1182,7 +1182,7 @@ table td,table th{
 
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/admin/tool/dataprivacy/mydatarequests\\.php.*?") {
 div[data-region="datarequests"]>.mt-1.mb-1>.btn.btn-primary{
-    color:/*[[txt]]*/ !important;}
+	color:/*[[txt]]*/ !important;}
 }
 
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/mod/quiz.*?") {
@@ -1195,10 +1195,25 @@ div[data-region="datarequests"]>.mt-1.mb-1>.btn.btn-primary{
     background-color:/*[[bg3]]*/;
     color:/*[[txt]]*/;
     border-radius:0.5em;}
-.answer .incorrect{
+.que.multichoice .answer .incorrect{
     background-color:/*[[fals]]*/;}
-.answer .correct{
+.que.multichoice .answer .correct{
     background-color:/*[[true]]*/;}
+.que.multichoice .answer div.r0,
+.que.multichoice .answer div.r1{
+	border-radius:0.25rem;}
+.que.multichoice .answer div.r0 .icon.fa,
+.que.multichoice .answer div.r1 .icon.fa{
+	align-self:center;}
+.que .correct .custom-select{
+	background-color:/*[[true]]*/;}
+.que .incorrect .custom-select{
+    background-color:/*[[fals]]*/;}
+.que .correctness.notanswered,
+.que .correctness.incorrect{
+	background-color:/*[[fals]]*/;}
+.que .correctness.correct{
+	background-color:/*[[true]]*/;}
 .answer>.form-control{
      border-color:/*[[brd]]*/;
     color:/*[[txt]]*/;
@@ -1223,10 +1238,13 @@ div[data-region="datarequests"]>.mt-1.mb-1>.btn.btn-primary{
 	border-color:/*[[brd]]*/;}
 .path-mod-quiz #mod_quiz_navblock .qnbutton.correct>.trafficlight{
     background-color:/*[[true]]*/;
-    background-image:none;}
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23CCC' d='M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z'/%3E%3C/svg%3E%0A");}
+.path-mod-quiz #mod_quiz_navblock .qnbutton.partiallycorrect>.trafficlight{
+    background-color:/*[[idfk]]*/;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='-12 -12 24 24'%3E%3Ccircle fill='%23CCC' r='12'/%3E%3C/svg%3E%0A");}
 .path-mod-quiz #mod_quiz_navblock .qnbutton.incorrect>.trafficlight{
     background-color:/*[[fals]]*/;
-    background-image:none;}
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23CCC' d='M 4.828125 2.5 L 2 5.328125 L 9.0703125 12.398438 L 2 19.470703 L 4.828125 22.298828 L 11.898438 15.226562 L 18.970703 22.298828 L 21.798828 19.470703 L 14.726562 12.398438 L 21.798828 5.328125 L 18.970703 2.5 L 11.898438 9.5703125 L 4.828125 2.5 z '/%3E%3C/svg%3E");}
 .path-mod-quiz #mod_quiz_navblock span.qnbutton,
 .path-mod-quiz #mod_quiz_navblock a.qnbutton{
     color:/*[[txt]]*/ !important;
@@ -1235,7 +1253,14 @@ div[data-region="datarequests"]>.mt-1.mb-1>.btn.btn-primary{
     border:none !important;}
 #mod_quiz_navblock .qn_buttons:not(.allquestionsononepage) .qnbutton.thispage>.thispageholder{
 	box-shadow:0 0 1px 1px /*[[brd]]*/;}
-.quizreviewsummary>tbody>tr>.cell{
+.quizreviewsummary{
+	border-radius:0.5em;
+	overflow:hidden;}
+.quizreviewsummary>tbody>tr:first-child>.cell{
+	border-top:none;}
+.quizreviewsummary>tbody>tr>.cell:first-child{
+	background-color:/*[[bg3_5]]*/;}
+.quizreviewsummary>tbody>tr>.cell:last-child{
 	background-color:/*[[bg3]]*/;}
 #page-mod-quiz-view table.quizattemptsummary tr.bestrow td{
     border-color:/*[[brd]]*/;
@@ -1246,11 +1271,11 @@ div[data-region="datarequests"]>.mt-1.mb-1>.btn.btn-primary{
     background-color:/*[[bg4]]*/;}	
 .path-mod-quiz #mod_quiz_navblock .qnbutton.answersaved>.trafficlight,	
 .path-mod-quiz #mod_quiz_navblock .qnbutton.invalidanswer>.trafficlight{	
-    background-color:/*[[brd]]*/;}	
-.path-mod-quiz #mod_quiz_navblock span.qnbutton.thispage{	
+    background-color:/*[[brd]]*/;}
+.path-mod-quiz #mod_quiz_navblock span.qnbutton.thispage{
     box-shadow:0 0 0.2em #FFF}
 .answer>input[type="text"]{	
-    background-color:/*[[bg4]]*/;}	
+    background-color:/*[[bg4]]*/;}
 .subquestion input[type="text"]{	
     background-color:/*[[bg4]]*/;	
     border-color:/*[[brd]]*/;	
