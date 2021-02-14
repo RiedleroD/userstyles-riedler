@@ -98,7 +98,8 @@
     border-radius:0.4em;}
 :root{/*Because Firefox doesn't have the ::-moz-scrollbar selectors*/
     scrollbar-width:thin;
-    scrollbar-color:/*[[bg3]]*/ /*[[bg1]]*/;}
+    scrollbar-color:/*[[bg3]]*/ /*[[bg1]]*/;
+	--svg-select-arrs:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' version='1'%3E%3Cpath fill='%23aaa' stroke='%23aaa' d='M8 1 2 6h12zM2 10H14L8 15Z' class='s0'/%3E%3C/svg%3E");}
 
 /*navbar*/
 .navbar{
@@ -671,7 +672,7 @@ table.flexible thead th,
     border-color:/*[[brd]]*/;
     border-radius:0.5em;
     background-color:/*[[bg3]]*/;
-    background-image:url("https://riedler.wien/sfto/darklearning/double_triangles_top_bottom_AAA.svg");
+    background-image:var(--svg-select-arrs);
     background-repeat:no-repeat;
     background-size:0.75em;}
 .custom-select:disabled{
@@ -768,7 +769,7 @@ input.organizer_filtertable:focus{
     overflow:hidden;}
 select.form-control{
 	appearance:none;
-	background-image:url("https://riedler.wien/sfto/darklearning/double_triangles_top_bottom_AAA.svg");
+	background-image:var(--svg-select-arrs);
 	background-repeat:no-repeat;
 	background-position:right center;
 	background-origin:content-box;
@@ -1237,13 +1238,13 @@ div[data-region="datarequests"]>.mt-1.mb-1>.btn.btn-primary{
 	border-color:/*[[brd]]*/;}
 .path-mod-quiz #mod_quiz_navblock .qnbutton.correct>.trafficlight{
     background-color:/*[[true]]*/;
-    background-image:url("https://riedler.wien/sfto/checkmarkCCC.svg");}
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23CCC' d='M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z'/%3E%3C/svg%3E%0A");}
 .path-mod-quiz #mod_quiz_navblock .qnbutton.partiallycorrect>.trafficlight{
     background-color:/*[[idfk]]*/;
-    background-image:url("https://riedler.wien/sfto/circleCCC.svg");}
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='-12 -12 24 24'%3E%3Ccircle fill='%23CCC' r='12'/%3E%3C/svg%3E%0A");}
 .path-mod-quiz #mod_quiz_navblock .qnbutton.incorrect>.trafficlight{
     background-color:/*[[fals]]*/;
-    background-image:url("https://riedler.wien/sfto/crossCCC.svg");}
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23CCC' d='M 4.828125 2.5 L 2 5.328125 L 9.0703125 12.398438 L 2 19.470703 L 4.828125 22.298828 L 11.898438 15.226562 L 18.970703 22.298828 L 21.798828 19.470703 L 14.726562 12.398438 L 21.798828 5.328125 L 18.970703 2.5 L 11.898438 9.5703125 L 4.828125 2.5 z '/%3E%3C/svg%3E");}
 .path-mod-quiz #mod_quiz_navblock span.qnbutton,
 .path-mod-quiz #mod_quiz_navblock a.qnbutton{
     color:/*[[txt]]*/ !important;
