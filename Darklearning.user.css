@@ -1,38 +1,38 @@
 /* ==UserStyle==
-@name           Darklearning
-@namespace      https://github.com/RiedleroD/userstyles-riedler
-@version        1.2.0
-@description    Darker version of Elearning
-@author         Riedler
-@preprocessor uso
-@var	select	PBCS	"ProgressBarCell Shape" {
+@name			Darklearning
+@namespace		https://github.com/RiedleroD/userstyles-riedler
+@version		1.2.0
+@description	Darker version of Elearning
+@author			Riedler
+@preprocessor	uso
+@var	select	PBCS	"ProgressBarCell Shape"{
 	"Pronounced":"0.5em 0.5em 1em 1em",
 	"Pronounced Reversed":"1em 1em 0.5em 0.5em",
 	"Round":"1em",
 	"Rounded":"0.5em",
 	"Soft Edges":"0.25em",
 	"Rectangle":"0"}
-@var	select	NBCS	"Course Navbar Cell Shape" {
+@var	select	NBCS	"Course Navbar Cell Shape"{
 	"Pronounced":"0.5em 0.5em 1.5em 1.5em",
 	"Pronounced Reversed":"1.5em 1.5em 0.5em 0.5em",
 	"Round":"1.5em",
 	"Rounded":"0.75em",
 	"Soft Edges":"0.25em",
 	"Rectangle":"0"}
-@var	select	NBS		"Course Navbar Shape" {
+@var	select	NBS		"Course Navbar Shape"{
 	"Pronounced":"0.5em 0.5em 1.5em 1.5em",
 	"Pronounced Reversed":"1.5em 1.5em 0.5em 0.5em",
 	"Round":"1.5em",
 	"Rounded":"0.75em",
 	"Soft Edges":"0.25em",
 	"Rectangle":"0"}
-@var	select	EICC	"Embedded Image Color Correction" {
+@var	select	EICC	"Embedded Image Color Correction"{
 	"Recommended":"invert(0.86) hue-rotate(180deg)",
 	"Full":"invert(1) hue-rotate(180deg)",
 	"Dim":"brightness(0.8)",
 	"Debug":"invert(1) hue-rotate(180deg) saturate(100)",
 	"Off":"none"}
-@var	select	anon	"Anonymity (for screenshots)" {
+@var	select	anon	"Anonymity (for screenshots)"{
 	"Normal":"",
 	"Anonymous":".usertext{display:none;}.userbutton::before{content:\"Anonymous User\";margin-right:0.25rem;color:\/*[[txt]]*\/}"}
 @var	text	ntip	"Navigation Tree initial padding"	"0"
@@ -73,14 +73,14 @@
 @var	color	c3		"Codeblock 3"				#C33
 ==/UserStyle== */
 
-@-moz-document domain("elearning.tgm.ac.at") {
+@-moz-document domain("elearning.tgm.ac.at"){
 /*Animations*/
 
 /* Animation by Philip Damianik */
 @keyframes bg-pulse-grey {
-    0% {background-color: /*[[bg3]]*/;}
-    50% {background-color: /*[[bg4]]*/;}
-    100% {background-color: /*[[bg3]]*/;}
+	0% {background-color: /*[[bg3]]*/;}
+	50% {background-color: /*[[bg4]]*/;}
+	100% {background-color: /*[[bg3]]*/;}
 }
 
 /*text selections*/
@@ -92,33 +92,33 @@
 
 /*scrollbar*/
 ::-webkit-scrollbar,::-webkit-scrollbar-track-piece{
-    background-color:/*[[bg1]]*/ !important;}
+	background-color:/*[[bg1]]*/ !important;}
 ::-webkit-scrollbar-corner,::-webkit-scrollbar-thumb{
-    background-color:/*[[bg3]]*/ !important;
-    border-radius:0.4em;}
+	background-color:/*[[bg3]]*/ !important;
+	border-radius:0.4em;}
 :root{/*Because Firefox doesn't have the ::-moz-scrollbar selectors*/
-    scrollbar-width:thin;
-    scrollbar-color:/*[[bg3]]*/ /*[[bg1]]*/;
+	scrollbar-width:thin;
+	scrollbar-color:/*[[bg3]]*/ /*[[bg1]]*/;
 	--svg-select-arrs:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' version='1'%3E%3Cpath fill='%23aaa' stroke='%23aaa' d='M8 1 2 6h12zM2 10H14L8 15Z' class='s0'/%3E%3C/svg%3E");}
 
 /*navbar*/
 .navbar{
-    background-color:/*[[bg2]]*/;
-    border-bottom-right-radius:0.5em;
-    border-bottom-left-radius:0.5em;}
+	background-color:/*[[bg2]]*/;
+	border-bottom-right-radius:0.5em;
+	border-bottom-left-radius:0.5em;}
 .breadcrumb:not(:empty){
 	border-color:/*[[brd]]*/;
 	border-width:1px;}
-    /*dropdown-menu*/
-    .dropdown-menu{
-        background-color:/*[[bg3]]*/;}
-    .dropdown-divider{
-        border-top-color:/*[[brd]]*/;}
-    .dropdown-item,.dropdown-item:focus{
-        background-color:#0000;}
-    .dropdown-item:hover{
-        background-color:/*[[bg4]]*/;}
-    /*notification drawer*/
+	/*dropdown-menu*/
+	.dropdown-menu{
+		background-color:/*[[bg3]]*/;}
+	.dropdown-divider{
+		border-top-color:/*[[brd]]*/;}
+	.dropdown-item,.dropdown-item:focus{
+		background-color:#0000;}
+	.dropdown-item:hover{
+		background-color:/*[[bg4]]*/;}
+	/*notification drawer*/
 	.popover-region-container{
 		background-color:/*[[bg3]]*/;
 		border-color:/*[[brd]]*/;
@@ -147,79 +147,79 @@
 		border-radius:0 0 0.25rem 0.25rem;}
 /*message drawer*/
 .message-app{
-    background-color:/*[[bg2]]*/ !important;}
+	background-color:/*[[bg2]]*/ !important;}
 .message-app .input-group>input,.input-group-text{
-    background-color:/*[[bg3]]*/ !important;
-    border-color:/*[[brd]]*/;
-    color:/*[[brd]]*/;}
+	background-color:/*[[bg3]]*/ !important;
+	border-color:/*[[brd]]*/;
+	color:/*[[brd]]*/;}
 .message-app .form-control:focus{
-    color:/*[[txt]]*/;}
+	color:/*[[txt]]*/;}
 .message-app .card{
-    background-color:/*[[bg2]]*/;}
+	background-color:/*[[bg2]]*/;}
 .message-app .border-bottom{
-    border-color:/*[[brd]]*/ !important;}
+	border-color:/*[[brd]]*/ !important;}
 .message-app .input-group .btn{
-    border-color:/*[[brd]]*/;}
+	border-color:/*[[brd]]*/;}
 .message-app .card.expanded .list-group .list-group-item{
-    background-color:/*[[bg3]]*/;}
+	background-color:/*[[bg3]]*/;}
 .message-app>.header-container>.bg-white{
-    background-color:/*[[bg3]]*/ !important;}
+	background-color:/*[[bg3]]*/ !important;}
 .message-app .message.send{
-    background-color:/*[[bg5]]*/ !important;}
+	background-color:/*[[bg5]]*/ !important;}
 .message-app .message.received{
-    background-color:/*[[bg4]]*/ !important;}
+	background-color:/*[[bg4]]*/ !important;}
 .message-app .message.received .tail{
-    border-bottom-color:/*[[bg4]]*/;}
+	border-bottom-color:/*[[bg4]]*/;}
 .message-app .message.send .tail{
-    border-bottom-color:/*[[bg5]]*/;}
+	border-bottom-color:/*[[bg5]]*/;}
 .message-app .list-group .list-group-item{
-    background:/*[[bg3]]*/;}
+	background:/*[[bg3]]*/;}
 .message-app .nav-pills{
-    border:solid /*[[brd]]*/ 1px;}
+	border:solid /*[[brd]]*/ 1px;}
 .message-app .nav-pills>.nav-item>a:not(.active){
-    background-color:/*[[bg3]]*/;}
+	background-color:/*[[bg3]]*/;}
 .message-app .nav-pills>.nav-item>a.active{
-    background-color:/*[[bg4]]*/;}
+	background-color:/*[[bg4]]*/;}
 .message-app>.footer-container>.bg-white{
-    background-color:/*[[bg2]]*/ !important;
-    border-color:/*[[brd]]*/ !important;}
+	background-color:/*[[bg2]]*/ !important;
+	border-color:/*[[brd]]*/ !important;}
 #conversation-actions-menu-button{
-    color:/*[[brd]]*/;}
+	color:/*[[brd]]*/;}
 #conversation-actions-menu-button:hover{
-    background-color:/*[[bg5]]*/;}
+	background-color:/*[[bg5]]*/;}
 #conversation-actions-menu-button:focus{
-    background-color:/*[[bg6]]*/;}
+	background-color:/*[[bg6]]*/;}
 .message-app .no-gutters{
-    outline:solid 1px /*[[bg3]]*/;}
+	outline:solid 1px /*[[bg3]]*/;}
 .message-app .content-message-container>div[data-region="self-conversation-message-container"]{
-    background-color:/*[[bg4]]*/ !important;}
+	background-color:/*[[bg4]]*/ !important;}
 .message-app .header-container>.bg-white{
-    background-color:/*[[bg3]]*/ !important;
-    border-color:/*[[bg3]]*/ !important;}
+	background-color:/*[[bg3]]*/ !important;
+	border-color:/*[[bg3]]*/ !important;}
 .message-app>div>div>div{
-    outline:solid 1px /*[[bg3]]*/;}
+	outline:solid 1px /*[[bg3]]*/;}
 .message-app .col-8>.footer-container>.bg-white{
-    background-color:/*[[bg3]]*/ !important;
-    border:none !important;}
+	background-color:/*[[bg3]]*/ !important;
+	border:none !important;}
 .message-app button.btn-icon.btn-link:hover,
 .message-app button.btn-icon.btn-link:focus{
-    background-color:/*[[bg5]]*/ !important;}
+	background-color:/*[[bg5]]*/ !important;}
 .message-app textarea.form-control{
-    background-color:/*[[bg4]]*/ !important;
-    border:none;}
+	background-color:/*[[bg4]]*/ !important;
+	border:none;}
 .message-app .body-container div[data-region="settings"]{
-    background-color:/*[[bg2]]*/;}
+	background-color:/*[[bg2]]*/;}
 .custom-control-label::before{
-    background-color:/*[[brd]]*/;}
+	background-color:/*[[brd]]*/;}
 .custom-control-label{
 	cursor:pointer;}
 .custom-control-input:checked~.custom-control-label::before{
-    background-color:/*[[btn]]*/ !important;
+	background-color:/*[[btn]]*/ !important;
 	border-color:/*[[btn]]*/ !important;
 	color:/*[[htxt]]*/;
 	cursor:pointer;}
 .custom-control-input:not(:checked)~.custom-control-label::before{
-    background-color:/*[[bg3]]*/ !important;
+	background-color:/*[[bg3]]*/ !important;
 	border-color:/*[[brd]]*/;
 	cursor:pointer;}
 .custom-switch .custom-control-input:checked~.custom-control-label::after{
@@ -232,28 +232,28 @@
 	background-image:radial-gradient(ellipse at center,/*[[htxt]]*/ 0%,/*[[htxt]]*/ 75%,#0000 75%);
 	border-radius:100%;}
 .switch input+label::before{
-    background-color:/*[[brd]]*/;}
+	background-color:/*[[brd]]*/;}
 .switch input:checked + label::before{
-    background-color:/*[[btn]]*/;}
+	background-color:/*[[btn]]*/;}
 .message-app .body-container>div.h-100.bg-white{
-    background-color:/*[[bg2]]*/ !important;}
+	background-color:/*[[bg2]]*/ !important;}
 .message-app [data-region="contacts-container"]{
-    background-color:/*[[bg3]]*/;}
+	background-color:/*[[bg3]]*/;}
 .message-app [data-region="non-contacts-container"]{
-    background-color:/*[[bg3]]*/;
-    border-top-color:/*[[brd]]*/ !important;}
+	background-color:/*[[bg3]]*/;
+	border-top-color:/*[[brd]]*/ !important;}
 .message-app div[data-region="all-contacts-container"] .text-right{
-    background-color:/*[[bg3]]*/;
-    border-top: solid 1px /*[[brd]]*/;}
+	background-color:/*[[bg3]]*/;
+	border-top: solid 1px /*[[brd]]*/;}
 .message-app div[data-region="all-contacts-container"] .text-right:hover{
-    background-color:/*[[bg5]]*/;}
+	background-color:/*[[bg5]]*/;}
 .message-app div[data-region="content-placeholder"] div.px-2.pb-2.pt-0.h-100{
-    background-color:/*[[bg3]]*/ !important;}
+	background-color:/*[[bg3]]*/ !important;}
 .message-app div[data-region="content-placeholder"] div.px-2.pb-2.pt-0.h-100>.mt-4>.mb-4>.mx-auto{
-    background-color:/*[[bg5]]*/ !important;
-    border-radius:0.25rem;}
+	background-color:/*[[bg5]]*/ !important;
+	border-radius:0.25rem;}
 .message-app div[data-region="content-placeholder"] div.px-2.pb-2.pt-0.h-100>.mt-4>.d-flex.flex-column.p-2.rounded.mb-2{
-    background-color:/*[[bg5]]*/ !important;}
+	background-color:/*[[bg5]]*/ !important;}
 .message-app div[data-region="confirm-dialogue"]{
 	background-color:/*[[bg3]]*/ !important;
 	border:solid 1px /*[[brd]]*/;
@@ -264,30 +264,30 @@
 	color:/*[[hhtxt]]*/ !important;}
 /*body*/
 :root,body,#page{
-    background-color:/*[[bg1]]*/ !important;}
+	background-color:/*[[bg1]]*/ !important;}
 #region-main{
-    border-radius:0.5em;
-    overflow:visible;
+	border-radius:0.5em;
+	overflow:visible;
 	margin-bottom:1.5em;}
 #page-header>div>div.card,#region-main{
-    background-color:/*[[bg2]]*/;}
+	background-color:/*[[bg2]]*/;}
 /*footer*/
 #page-footer{
-    background-color:/*[[bg2]]*/ !important;
-    border-top-left-radius:0.5em;
-    border-top-right-radius:0.5em;}
+	background-color:/*[[bg2]]*/ !important;
+	border-top-left-radius:0.5em;
+	border-top-right-radius:0.5em;}
 /*sideblocks*/
 .block.card{
-    background-color:/*[[bg2]]*/;}
+	background-color:/*[[bg2]]*/;}
 .block-timeline .paged-content-page-container .list-group-flush>.list-group-item{
-    background-color:/*[[bg2]]*/;}
+	background-color:/*[[bg2]]*/;}
 .block_navigation .block_tree .tree_item.branch,
 .block_settings .block_tree .tree_item.branch,
 .block_navigation .block_tree ul,
 .block_settings .block_tree ul,
 .block_navigation .block_tree p.hasicon,
 .block_settings .block_tree p.hasicon{
-    padding-left:0;
+	padding-left:0;
 	margin-left:0;}
 .block_navigation .block_tree .tree_item{
 	max-width:100%;
@@ -314,17 +314,17 @@ span,p,pre,
 h1,h2,h3,h4,h5,h6,
 body,:root,
 ul,ol{
-    color:/*[[txt]]*/ !important;}
+	color:/*[[txt]]*/ !important;}
 .generaltable tbody tr:hover{
 	color:/*[[htxt]]*/ !important;}
 textarea.form-control{
-    background-color:/*[[bg5]]*/ !important;
-    border:solid /*[[brd]]*/ 1px;
-    border-radius:0.25em;}
+	background-color:/*[[bg5]]*/ !important;
+	border:solid /*[[brd]]*/ 1px;
+	border-radius:0.25em;}
 a,a>span{
-    color:/*[[lnk]]*/ !important;}
+	color:/*[[lnk]]*/ !important;}
 a:hover,a>span:hover{
-    color:/*[[hlnk]]*/ !important;}
+	color:/*[[hlnk]]*/ !important;}
 /*Text with inline background coloring*/
 span[style*="background-color: rgb(125, 159, 211);"]{
 	background-color:/*[[btn]]*/ !important;
@@ -339,66 +339,66 @@ span[style*="background-color: rgb(239, 69, 64);"]{
 	background-color:/*[[fals]]*/ !important;}
 /*icons*/
 .logo>img{
-    filter:invert(1) hue-rotate(180deg);}
+	filter:invert(1) hue-rotate(180deg);}
 .fa-bell{
-    color:/*[[lnk]]*/;}
+	color:/*[[lnk]]*/;}
 .popover-region:hover>.nav-link>.fa-bell,.fa-bell:hover{
-    color:/*[[hlnk]]*/;}
+	color:/*[[hlnk]]*/;}
 .empty-placeholder-image-lg{
-    filter:invert(1);}
+	filter:invert(1);}
 .dndupload-arrow{
-    filter:invert(0.9) hue-rotate(180deg);}
+	filter:invert(0.9) hue-rotate(180deg);}
 .fa-question-circle{
-    color:/*[[lnk]]*/ !important;}
+	color:/*[[lnk]]*/ !important;}
 .fa-question-circle:hover,.fa-question-circle:active{
-    color:/*[[hlnk]]*/ !important;}
+	color:/*[[hlnk]]*/ !important;}
 .block-timeline .tab-content img{
-    filter:none;}
+	filter:none;}
 /*Buttons*/
 .close:hover,
 .moodle-dialogue-base .closebutton:hover,
 .close:focus,
 .moodle-dialogue-base .closebutton:focus{
-    color:/*[[txt]]*/;
-    opacity:1;}
+	color:/*[[txt]]*/;
+	opacity:1;}
 .moodle-dialogue-base .moodle-dialogue-wrap{
 	border:solid 1px /*[[brd]]*/;
 	border-radius:0.25em;}
 .btn{
-    border-radius:0.25em;}
+	border-radius:0.25em;}
 .btn-outline-secondary{
-    border-color:/*[[brd]]*/ !important;}
+	border-color:/*[[brd]]*/ !important;}
 .btn-outline-secondary:hover{
-    background-color:/*[[bg3]]*/ !important;}
+	background-color:/*[[bg3]]*/ !important;}
 .btn-outline-secondary:focus{
-    background-color:/*[[bg4]]*/ !important;}
+	background-color:/*[[bg4]]*/ !important;}
 .btn-outline-secondary:not(:disabled):not(.disabled):active,
 .btn-outline-secondary:not(:disabled):not(.disabled).active,
 .btn-outline-secondary.dropdown-toggle:focus{
-    background-color:/*[[bg4]]*/;}
+	background-color:/*[[bg4]]*/;}
 .pagination>.page-item>a{
-    background-color:/*[[bg3]]*/;
-    border-color:/*[[bg2]]*/;}
+	background-color:/*[[bg3]]*/;
+	border-color:/*[[bg2]]*/;}
 .pagination>.page-item.disabled>a{
-    filter:grayscale(1);
+	filter:grayscale(1);
 	background-color:/*[[bg4]]*/;
-    border-color:/*[[bg2]]*/;}
+	border-color:/*[[bg2]]*/;}
 .pagination>.page-item:not(.active)>a:hover{
-    background-color:/*[[bg5]]*/;}
+	background-color:/*[[bg5]]*/;}
 .pagination>.page-item.active>a:hover{
-    background-color:/*[[hbtn]]*/;}
+	background-color:/*[[hbtn]]*/;}
 .pagination>.page-item.active>a{
 	color:/*[[htxt]]*/ !important;}
 .pagination>.page-item.active>a:hover{
 	color:/*[[hhtxt]]*/ !important;}
 .btn-secondary{
-    background-color:#FFF2;
-    color:/*[[txt]]*/;
-    border:none;}
+	background-color:#FFF2;
+	color:/*[[txt]]*/;
+	border:none;}
 .btn-secondary:hover{
-    background-color:#FFF4;
-    color:/*[[htxt]]*/;
-    border-color:/*[[brd]]*/;}
+	background-color:#FFF4;
+	color:/*[[htxt]]*/;
+	border-color:/*[[brd]]*/;}
 .btn-secondary:focus,
 .btn-secondary.focus{
 	box-shadow:inset 0 0.1em 0 0 /*[[brd]]*/;
@@ -409,29 +409,29 @@ span[style*="background-color: rgb(239, 69, 64);"]{
 	background-color:/*[[bg5]]*/;
 	color:/*[[txt]]*/;}
 .btn-primary{
-    color:/*[[htxt]]*/ !important;
-    background-color:/*[[btn]]*/;}
+	color:/*[[htxt]]*/ !important;
+	background-color:/*[[btn]]*/;}
 .btn-primary:hover{
 	color:/*[[hhtxt]]*/ !important;
-    background-color:/*[[hbtn]]*/;}
+	background-color:/*[[hbtn]]*/;}
 .btn-primary:focus,
 .btn-primary.focus{
 	outline:none;}
 .preference-state-status-container>span.on-text,
 .preference-state-status-container>span.off-text{
-    color:/*[[bg1]]*/ !important;}
+	color:/*[[bg1]]*/ !important;}
 .hover-tooltip{
-    background-color:/*[[bg3]]*/ !important;
-    border: solid 1px /*[[brd]]*/ !important;}
+	background-color:/*[[bg3]]*/ !important;
+	border: solid 1px /*[[brd]]*/ !important;}
 .hover-tooltip::after{
-    border-top-color:/*[[bg3]]*/ !important;
-    filter:drop-shadow(0 1px 0 /*[[brd]]*/);}
+	border-top-color:/*[[bg3]]*/ !important;
+	filter:drop-shadow(0 1px 0 /*[[brd]]*/);}
 #goto-top-link>a.btn{
 	background-color:/*[[bg3]]*/;
 	border:none;}
 /*Dropdown menus*/
 .dropdown-item:active,.dropdown-item.active{
-    background-color:/*[[bg4]]*/;}
+	background-color:/*[[bg4]]*/;}
 /*These new tiles, ykwim*/
 .tiles>.tile{
 	background-color:/*[[bg2]]*/ !important;}
@@ -525,7 +525,7 @@ div[style="background: #ffffff; overflow:auto;width:auto;border:solid gray;borde
 /*Misc*/
 /*[[anon]]*/
 .card{
-    background-color:/*[[bg3]]*/;}
+	background-color:/*[[bg3]]*/;}
 .nav-tabs,
 .nav-pills{
 	background-color:/*[[bg3]]*/;
@@ -557,34 +557,34 @@ div[style="background: #ffffff; overflow:auto;width:auto;border:solid gray;borde
 .mform fieldset{
 	border-bottom-color:/*[[brd]]*/}
 .grade-navigation>.nav>.nav-item{
-    background-color:/*[[bg2]]*/;}
+	background-color:/*[[bg2]]*/;}
 .grade-navigation>.nav>.nav-item>.nav-link{
-    border:none;
-    border-bottom:solid 1px /*[[brd]]*/;}
+	border:none;
+	border-bottom:solid 1px /*[[brd]]*/;}
 .grade-navigation>.nav>.nav-item>.nav-link.active{
-    background-color:/*[[bg3]]*/;
-    border-bottom:solid 1px /*[[txt]]*/;}
+	background-color:/*[[bg3]]*/;
+	border-bottom:solid 1px /*[[txt]]*/;}
 .nav-tabs{
-    border-bottom-color:/*[[brd]]*/;}
+	border-bottom-color:/*[[brd]]*/;}
 .matchtext{
-    background-color:/*[[hbtn]]*/ !important;
-    color:/*[[bg3]]*/ !important;}
+	background-color:/*[[hbtn]]*/ !important;
+	color:/*[[bg3]]*/ !important;}
 .card{
-    border-radius:0.5em;}
+	border-radius:0.5em;}
 .card-img{
-    border-radius:0.5em 0.5em 0 0;
-    overflow:hidden;}
+	border-radius:0.5em 0.5em 0 0;
+	overflow:hidden;}
 .card-body{
-    border-radius:0 0 0.5em 0.5em;}
+	border-radius:0 0 0.5em 0.5em;}
 .alert{
-    border-radius:0.5em;}
+	border-radius:0.5em;}
 .alert-danger,
 #page-mod-quiz-attempt #connection-error{
-    background-color:/*[[fals]]*/;
-    color:/*[[txt]]*/;}
+	background-color:/*[[fals]]*/;
+	color:/*[[txt]]*/;}
 .alert-info{
-    background-color:/*[[pb]]*/;
-    color:/*[[bg1]]*/ !important;}
+	background-color:/*[[pb]]*/;
+	color:/*[[bg1]]*/ !important;}
 .alert-info>a{
 	filter:brightness(1.3);}
 .alert-success,
@@ -592,17 +592,17 @@ div[style="background: #ffffff; overflow:auto;width:auto;border:solid gray;borde
 	background-color:/*[[true]]*/;
 	color:/*[[txt]]*/;}
 .moodle-dialogue>.moodle-dialogue-content{
-    background-color:/*[[bg3]]*/ !important;}
+	background-color:/*[[bg3]]*/ !important;}
 .close, .moodle-dialogue-base .closebutton{
-    text-shadow:none;
-    opacity:1;
-    color:/*[[txt]]*/;}
+	text-shadow:none;
+	opacity:1;
+	color:/*[[txt]]*/;}
 .yui3-button{
-    background-image:none;}
+	background-image:none;}
 .modal-header,
 .moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd,
 .path-mod-assign [data-region="grade-panel"] .popout>.col-md-3{
-    border-color:/*[[brd]]*/;}
+	border-color:/*[[brd]]*/;}
 .format-tiles ul.tiles .headerabovetiles button.selected,
 .headerabovetiles button:active,
 .headerabovetiles button:focus,
@@ -610,12 +610,12 @@ div[style="background: #ffffff; overflow:auto;width:auto;border:solid gray;borde
 	background-color:/*[[btn]]*/;
 	color:/*[[htxt]]*/;}
 div.comment-area textarea{
-    background-color:/*[[bg3]]*/;
-    border:solid 1px /*[[brd]]*/;
-    border-radius:0.25rem;
+	background-color:/*[[bg3]]*/;
+	border:solid 1px /*[[brd]]*/;
+	border-radius:0.25rem;
 	padding:0.25em;
 	line-height:100%;
-    color:/*[[txt]]*/ !important;}
+	color:/*[[txt]]*/ !important;}
 ul.comment-list>li{
 	background-color:/*[[bg3]]*/ !important;
 	border-radius:0.25rem;}
@@ -628,9 +628,9 @@ ul.comment-list>li .text_to_html{
 	color:/*[[fals]]*/;
 	filter:brightness(2);}
 #coursesearchbox{
-    background-color:/*[[bg3]]*/;
-    border-color:/*[[brd]]*/;
-    color:/*[[txt]]*/;}
+	background-color:/*[[bg3]]*/;
+	border-color:/*[[brd]]*/;
+	color:/*[[txt]]*/;}
 .table th,
 table.collection th,
 table.flexible th,
@@ -644,69 +644,69 @@ table.collection thead th,
 table.flexible thead th,
 .generaltable thead th,
 .preferences-container .preference-table{
-    border-color:/*[[brd]]*/;
+	border-color:/*[[brd]]*/;
 	color:/*[[txt]]*/;}
 .preferences-container .preference-table tr td:nth-child(even),
 .preferences-container .preference-table tr th:nth-child(even){
-    border-color:/*[[brd]]*/;
-    background-color:/*[[bg2_5]]*/;}
+	border-color:/*[[brd]]*/;
+	background-color:/*[[bg2_5]]*/;}
 .modal-dialog>.modal-content{
-    background-color:/*[[bg4]]*/;
-    border-radius:0.5em;}
+	background-color:/*[[bg4]]*/;
+	border-radius:0.5em;}
 .modal-header{
-    border-color:/*[[brd]]*/;
+	border-color:/*[[brd]]*/;
 	border-radius:0.5em 0.5em 0 0;}
 .modal-footer{
-    border-color:/*[[brd]]*/;}
+	border-color:/*[[brd]]*/;}
 .modal-title,
 .format-tiles .modal-header .close>span{
 	color:/*[[htxt]]*/ !important;}
 .format-tiles .modal-header .close:hover>span{
 	color:/*[[fals]]*/ !important;}
 .modal-body .form-control{
-    color:/*[[txt]]*/;}
+	color:/*[[txt]]*/;}
 #id_comments{
-    color:/*[[txt]]*/;}
+	color:/*[[txt]]*/;}
 .custom-select{
-    color:/*[[txt]]*/;
-    border-color:/*[[brd]]*/;
-    border-radius:0.5em;
-    background-color:/*[[bg3]]*/;
-    background-image:var(--svg-select-arrs);
-    background-repeat:no-repeat;
-    background-size:0.75em;}
+	color:/*[[txt]]*/;
+	border-color:/*[[brd]]*/;
+	border-radius:0.5em;
+	background-color:/*[[bg3]]*/;
+	background-image:var(--svg-select-arrs);
+	background-repeat:no-repeat;
+	background-size:0.75em;}
 .custom-select:disabled{
-    color:/*[[txt]]*/;
-    background-color:/*[[bg3]]*/;
-    background-image:none;}
+	color:/*[[txt]]*/;
+	background-color:/*[[bg3]]*/;
+	background-image:none;}
 .custom-select:disabled:hover{
-    color:/*[[txt]]*/;
-    background-color:/*[[bg3]]*/;}
+	color:/*[[txt]]*/;
+	background-color:/*[[bg3]]*/;}
 .custom-select:focus{
-    color:/*[[txt]]*/;}
+	color:/*[[txt]]*/;}
 input[type="checkbox"]{
-    -webkit-appearance:none;
-    -moz-appearance: none;
-    -o-appearance: none;
-    appearance:none;
-    width:1em;
-    height:1em;
-    border:0.12em solid /*[[hbrd]]*/;
-    border-radius:0.25em;
+	-webkit-appearance:none;
+	-moz-appearance: none;
+	-o-appearance: none;
+	appearance:none;
+	width:1em;
+	height:1em;
+	border:0.12em solid /*[[hbrd]]*/;
+	border-radius:0.25em;
 	color:/*[[txt]]*/;}
 input[type="checkbox"]:checked:after{
 	content:"";
 	position:absolute;
 	font:normal normal normal 14px/1 FontAwesome;}
 input[type="radio"]{
-    -webkit-appearance:none;
-    -moz-appearance: none;
-    -o-appearance: none;
-    appearance:none;
-    width:1em;
-    height:1em;
-    border:0.12em solid /*[[hbrd]]*/;
-    border-radius:100%;}
+	-webkit-appearance:none;
+	-moz-appearance: none;
+	-o-appearance: none;
+	appearance:none;
+	width:1em;
+	height:1em;
+	border:0.12em solid /*[[hbrd]]*/;
+	border-radius:100%;}
 input[type="radio"]:checked{
 	background:radial-gradient(/*[[hbrd]]*/ 40%, #0000 45%);}
 input[type="file"]{
@@ -737,10 +737,10 @@ input.organizer_filtertable:focus{
 	border-color:/*[[hbrd]]*/;
 	color:/*[[htxt]]*/;}
 .form-control{
-    border-radius:0.5em;
-    background-color:/*[[bg4]]*/;
-    border-color:/*[[brd]]*/;
-    color:/*[[txt]]*/;}
+	border-radius:0.5em;
+	background-color:/*[[bg4]]*/;
+	border-color:/*[[brd]]*/;
+	color:/*[[txt]]*/;}
 .form-control:disabled,
 .form-control[readonly],
 .form-control:disabled:hover,
@@ -749,24 +749,24 @@ input.organizer_filtertable:focus{
 	cursor:default;}
 .input-group>.form-control,
 .input-group>.form-control.border-right-0{
-    border-radius:0.25rem 0 0 0.25rem;}
+	border-radius:0.25rem 0 0 0.25rem;}
 .input-group>.form-control.border-left-0{
-    border-radius:0 0.25rem 0.25rem 0;}
+	border-radius:0 0.25rem 0.25rem 0;}
 .input-group>.form-control.border-left-0.border-right-0{
-    border-radius:0;}
+	border-radius:0;}
 .input-group-prepend>span{
 	border-radius:0.25rem 0 0 0.25rem;}
 .form-control:hover{
-    background-color:/*[[bg4]]*/;}
+	background-color:/*[[bg4]]*/;}
 .form-control:focus{
-    background-color:/*[[bg5]]*/;
-    color:/*[[txt]]*/;}
+	background-color:/*[[bg5]]*/;
+	color:/*[[txt]]*/;}
 .input-group-append{
-    border-top:solid 1px /*[[brd]]*/;
-    border-right:solid 1px /*[[brd]]*/;
-    border-bottom:solid 1px /*[[brd]]*/;
-    border-radius:0 0.5em 0.5em 0;
-    overflow:hidden;}
+	border-top:solid 1px /*[[brd]]*/;
+	border-right:solid 1px /*[[brd]]*/;
+	border-bottom:solid 1px /*[[brd]]*/;
+	border-radius:0 0.5em 0.5em 0;
+	overflow:hidden;}
 select.form-control{
 	appearance:none;
 	background-image:var(--svg-select-arrs);
@@ -784,15 +784,15 @@ select.form-control{
 #searchwiki:hover{
 	background-color:/*[[bg4]]*/;}
 .badge{
-    border-radius:0.25em;}
+	border-radius:0.25em;}
 .border-bottom{
-    border-bottom-color:/*[[brd]]*/ !important;}
+	border-bottom-color:/*[[brd]]*/ !important;}
 code{
-    color:/*[[mtxt]]*/;
-    background-color:/*[[bg1]]*/;
-    outline:solid 2px /*[[bg0]]*/;
-    font-family:Monospace;
-    font-size:1.08em;}
+	color:/*[[mtxt]]*/;
+	background-color:/*[[bg1]]*/;
+	outline:solid 2px /*[[bg0]]*/;
+	font-family:Monospace;
+	font-size:1.08em;}
 .highlight{
 	outline:solid 1px /*[[hlnk]]*/;}
 .aalink.focus,/*I basically overwrote an entire css rule from the original stylesheet because that thing was ugly as hell*/
@@ -810,95 +810,95 @@ a:not([class]):focus,
 	border-radius:0.3em;}
 /*Editor Atto*/
 .editor_atto .icon{
-    filter:invert(1) hue-rotate(180deg);}
+	filter:invert(1) hue-rotate(180deg);}
 .editor_atto_content_wrap{
-    border-color:/*[[brd]]*/ !important;
+	border-color:/*[[brd]]*/ !important;
 	border:solid 1px;
 	border-top:none;
 	color:/*[[txt]]*/;}
 .editor_atto_content{
-    background-color:/*[[bg2]]*/ !important;
-    border:none !important;
-    border-bottom-left-radius:0.5em;
-    border-bottom-right-radius:0.5em;
-    resize:none;}
+	background-color:/*[[bg2]]*/ !important;
+	border:none !important;
+	border-bottom-left-radius:0.5em;
+	border-bottom-right-radius:0.5em;
+	resize:none;}
 .editor_atto_toolbar{
-    background-color:/*[[bg2]]*/ !important;
-    border-color:/*[[brd]]*/ !important;
-    border-top-left-radius:0.5em;
-    border-top-right-radius:0.5em;}
+	background-color:/*[[bg2]]*/ !important;
+	border-color:/*[[brd]]*/ !important;
+	border-top-left-radius:0.5em;
+	border-top-right-radius:0.5em;}
 .atto_group{
-    background-color:/*[[bg3]]*/ !important;
-    border:none !important;}
+	background-color:/*[[bg3]]*/ !important;
+	border:none !important;}
 .atto_group>button{
-    border-color:/*[[brd]]*/ !important;}
+	border-color:/*[[brd]]*/ !important;}
 .editor_atto_toolbar button:hover{
 	background:radial-gradient(ellipse at center,/*[[bg3]]*/ 60%,/*[[bg2]]*/ 100%);
 	background-color:/*[[bg2]]*/;}
 .editor_atto_content_wrap{
-    background-color:/*[[bg3]]*/;
-    border-bottom-left-radius:0.5em;
-    border-bottom-right-radius:0.5em;}
+	background-color:/*[[bg3]]*/;
+	border-bottom-left-radius:0.5em;
+	border-bottom-right-radius:0.5em;}
 /*Filemanager*/
 .filemanager .fp-navbar{
-    background-color:/*[[bg3]]*/;
-    border-radius: 0.5em 0.5em 0 0;
-    border:none;
-    border-bottom:solid 1px /*[[brd]]*/;}
+	background-color:/*[[bg3]]*/;
+	border-radius: 0.5em 0.5em 0 0;
+	border:none;
+	border-bottom:solid 1px /*[[brd]]*/;}
 .filemanager .filemanager-container{
-    background-color:/*[[bg3]]*/;
-    border-radius: 0 0 0.5em 0.5em;
-    border:none !important;}
+	background-color:/*[[bg3]]*/;
+	border-radius: 0 0 0.5em 0.5em;
+	border:none !important;}
 .filemanager>.filemanager-container .yui3-datatable-header{
-    background-color:/*[[bg3]]*/ !important;
-    text-shadow:none;
-    color:/*[[txt]]*/ !important;
-    border-bottom-color:/*[[brd]]*/ !important;}
+	background-color:/*[[bg3]]*/ !important;
+	text-shadow:none;
+	color:/*[[txt]]*/ !important;
+	border-bottom-color:/*[[brd]]*/ !important;}
 .filemanager>.filemanager-container .yui3-datatable-sort-indicator{
-    filter:invert(1);}
+	filter:invert(1);}
 .filemanager>.filemanager-container .yui3-datatable-data>tr>td{
-    background-color:/*[[bg3]]*/ !important;}
+	background-color:/*[[bg3]]*/ !important;}
 .filemanager .btn{
-    background-color:/*[[bg5]]*/;}
+	background-color:/*[[bg5]]*/;}
 .filemanager .btn:hover{
-    background-color:/*[[bg6]]*/;}
+	background-color:/*[[bg6]]*/;}
 .filemanager .btn:active{
-    background-color:/*[[brd]]*/ !important;}
+	background-color:/*[[brd]]*/ !important;}
 .filemanager .fp-content:focus{
-    outline:none;}
+	outline:none;}
 .filemanager .fp-iconview .fp-file .fp-thumbnail,
 .moodle-dialogue .filemanager .fp-thumbnail{
-    border:none;
-    min-width:112px;
-    background-color:#0000;}
+	border:none;
+	min-width:112px;
+	background-color:#0000;}
 .filemanager .fp-iconview .fp-file .fp-thumbnail{
-    border-bottom:none;}
+	border-bottom:none;}
 .filemanager .fp-file{
-    box-shadow:0 0 0.5em /*[[bg0]]*/;
-    border-radius:0.5em 0.5em 0 0;}
+	box-shadow:0 0 0.5em /*[[bg0]]*/;
+	border-radius:0.5em 0.5em 0 0;}
 .filemanager .fp-thumbnail img{
-    border:none;}
+	border:none;}
 .filemanager .fp-iconview .fp-filename{
-    background-color:/*[[bg3]]*/;
-    border-top:none;
-    border-radius: 0 0 0.5em 0.5em;
-    padding:0 0.1em 0.1em 0.1em;
-    box-shadow:0 0 0.5em /*[[bg0]]*/;}
+	background-color:/*[[bg3]]*/;
+	border-top:none;
+	border-radius: 0 0 0.5em 0.5em;
+	padding:0 0.1em 0.1em 0.1em;
+	box-shadow:0 0 0.5em /*[[bg0]]*/;}
 .fp-iconview .fp-filename-field{
-    padding-left:1em;
-    margin-left:-1em;
-    padding-right:1em;
+	padding-left:1em;
+	margin-left:-1em;
+	padding-right:1em;
 	margin-top:-3px;
-    margin-right:-1em;}
+	margin-right:-1em;}
 .filemanager .fp-info .fp-thumbnail{
-    border-radius:0.5em;
-    box-shadow:0 0 0.5em /*[[bg0]]*/;}
+	border-radius:0.5em;
+	box-shadow:0 0 0.5em /*[[bg0]]*/;}
 .filemanager .fp-iconview .fp-file:hover .fp-filename-field{
-    overflow:hidden;}
+	overflow:hidden;}
 .dndupload-target{
-    background-color:/*[[bg3]]*/ !important;}
+	background-color:/*[[bg3]]*/ !important;}
 .filemanager .fp-treeview .fp-folder>tbody>tr>td{
-    background-color:/*[[bg3]]*/;}
+	background-color:/*[[bg3]]*/;}
 /*ace editor*/
 .ace-tm{
 	background-color:/*[[bg0]]*/;
@@ -933,29 +933,29 @@ a:not([class]):focus,
 	background-color:/*[[true]]*/;}
 /*Filepicker*/
 .file-picker .card{
-    background-color:/*[[bg3]]*/;
-    border:solid 1px /*[[brd]]*/;
-    padding-bottom:0.4em;}
+	background-color:/*[[bg3]]*/;
+	border:solid 1px /*[[brd]]*/;
+	padding-bottom:0.4em;}
 /*Calendar*/
 .calendar_event_course,
 .path-calendar .maincalendar .calendarmonth ul li .badge.badge-circle.calendar_event_course{
-    background-color:/*[[cal0]]*/;}
+	background-color:/*[[cal0]]*/;}
 .calendar_event_category,
 .path-calendar .maincalendar .calendarmonth ul li .badge.badge-circle.calendar_event_category{
-    background-color:/*[[cal1]]*/;}
+	background-color:/*[[cal1]]*/;}
 .calendar_event_group,
 .path-calendar .maincalendar .calendarmonth ul li .badge.badge-circle.calendar_event_group{
-    background-color:/*[[cal2]]*/;}
+	background-color:/*[[cal2]]*/;}
 .calendar_event_user,
 .path-calendar .maincalendar .calendarmonth ul li .badge.badge-circle.calendar_event_user{
-    background-color:/*[[cal3]]*/;}
+	background-color:/*[[cal3]]*/;}
 .calendar_event_site,
 .path-calendar .maincalendar .calendarmonth ul li .badge.badge-circle.calendar_event_site{
-    background-color:/*[[cal4]]*/;}
+	background-color:/*[[cal4]]*/;}
 .qtext>div{
-    background-color:/*[[bg1]]*/ !important;}
+	background-color:/*[[bg1]]*/ !important;}
 .qtext>div>table>tbody>tr>td>pre{
-    color:/*[[txt]]*/;}
+	color:/*[[txt]]*/;}
 /*Replacement images + image manipulation*/
 .atto_image_button_text-bottom.img-responsive,
 .atto_image_button_text-top.img-responsive,/*most likely embedded images in 	assignment descriptions*/
@@ -964,98 +964,98 @@ img[src*="mod_page"],/*images with mod_page in the source url, most of the image
 .region-main-content img:not([class]):not([src^="https://elearning.tgm.ac.at/theme/"]){/*images without class - a last resort, really*/
 	filter:/*[[EICC]]*/;}
 .progressBarCell>.nowDiv>.icon{
-    display:none;}
+	display:none;}
 .progressBarCell>.nowDiv.lastHalfNow{
-    background:url('data:image/svg+xml;utf-8,<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1"><path d="M0 0 16 16V0Z" fill="rgb(127,127,127)"/></svg>') no-repeat;
-    background-position:5.5em 5px;
-    padding-right:1.3em;}
+	background:url('data:image/svg+xml;utf-8,<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1"><path d="M0 0 16 16V0Z" fill="rgb(127,127,127)"/></svg>') no-repeat;
+	background-position:5.5em 5px;
+	padding-right:1.3em;}
 .progressBarCell>.nowDiv.firstNow{
-    background:url("data:image/svg+xml;utf-8,<svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1'><path d='M0 0V16L16 0Z' fill='rgb(127,127,127)'/></svg>") no-repeat;
-    background-position:0em 5px;
-    padding-left:1.3em;}
+	background:url("data:image/svg+xml;utf-8,<svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1'><path d='M0 0V16L16 0Z' fill='rgb(127,127,127)'/></svg>") no-repeat;
+	background-position:0em 5px;
+	padding-left:1.3em;}
 img[src$="elearning.tgm.ac.at/theme/image.php/classic/core/"][src$="/i/loading_small"]{
-    filter:invert(1);}
+	filter:invert(1);}
 .loading{
-    background-image:none !important;}
+	background-image:none !important;}
 .loading:before,
 .loading:before{
-    content:"\00a0";
-    background-image:url("https://elearning.tgm.ac.at/theme/image.php/classic/core/123456/i/loading_small");
-    background-repeat:no-repeat;
-    filter:invert(1);}
+	content:"\00a0";
+	background-image:url("https://elearning.tgm.ac.at/theme/image.php/classic/core/123456/i/loading_small");
+	background-repeat:no-repeat;
+	filter:invert(1);}
 img[src="https://elearning.tgm.ac.at/theme/image.php/classic/core/1604966287/u/f1"]{
 	filter:brightness(0.39) contrast(2)}
 /*row where it displays what you've done and what you didn't. Normally only in course/view.php, but also in other places*/
 .barRow .progressBarCell[style*="background-color:#73A839"]{
-    background-color:/*[[true]]*/ !important;}
+	background-color:/*[[true]]*/ !important;}
 .barRow .progressBarCell[style*="background-color:#C71C22"]{
-    background-color:/*[[fals]]*/ !important;}
+	background-color:/*[[fals]]*/ !important;}
 /*.barRow .progressBarCell[style*="background-color:#025187"]{} This color is pretty good, I'll let it be there.*/
 .barRow .progressBarCell{
-    border-color:/*[[bg2]]*/;
-    border-radius:0;}
+	border-color:/*[[bg2]]*/;
+	border-radius:0;}
 .barRow .firstProgressBarCell{
-    border-right:none !important;
-    border-radius:/*[[PBCS]]*/ !important;
+	border-right:none !important;
+	border-radius:/*[[PBCS]]*/ !important;
 	border-top-right-radius:0 !important;
 	border-bottom-right-radius:0 !important;}
 .barRow .lastProgressBarCell{
-    border-radius:/*[[PBCS]]*/ !important;
+	border-radius:/*[[PBCS]]*/ !important;
 	border-top-left-radius:0 !important;
 	border-bottom-left-radius:0 !important;}
 .barRow .firstProgressBarCell.lastProgressBarCell{
-    border-radius:/*[[PBCS]]*/ !important;}
+	border-radius:/*[[PBCS]]*/ !important;}
 .badge-info{
-    background-color:/*[[bg4]]*/;}
+	background-color:/*[[bg4]]*/;}
 }
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/my/.*?") {
 /*Kurse*/
 .dashboard-card{
-    border-width:0;
-    background-color:/*[[bg3]]*/;}
+	border-width:0;
+	background-color:/*[[bg3]]*/;}
 .course-info-container{
-    background-color:/*[[bg3]]*/;}
+	background-color:/*[[bg3]]*/;}
 .card-img{
-    filter:/*[[EICC]]*/;}
+	filter:/*[[EICC]]*/;}
 .card-footer{
-    background-color:/*[[bg3]]*/ !important;}
+	background-color:/*[[bg3]]*/ !important;}
 .progress{
-    background-color:/*[[bg1]]*/ !important;
-    border-color:/*[[bg1]]*/ !important;
-    margin-bottom: 0.5rem; /* added by Philip Damianik */
-    height: .35rem!important; /* added by Philip Damianik */}
+	background-color:/*[[bg1]]*/ !important;
+	border-color:/*[[bg1]]*/ !important;
+	margin-bottom: 0.5rem; /* added by Philip Damianik */
+	height: .35rem!important; /* added by Philip Damianik */}
 .progress-bar{
-    background-color:/*[[btn]]*/;}
+	background-color:/*[[btn]]*/;}
 .coursemenubtn:hover,.coursemenubtn:focus{
-    background-color:/*[[bg4]]*/ !important;}
+	background-color:/*[[bg4]]*/ !important;}
 .course-listitem{
-    background-color:/*[[bg2]]*/;
-    border-color:#0000;
-    border-top-color:/*[[brd]]*/;
-    border-bottom-color:/*[[brd]]*/;}
+	background-color:/*[[bg2]]*/;
+	border-color:#0000;
+	border-top-color:/*[[brd]]*/;
+	border-bottom-color:/*[[brd]]*/;}
 .block-myoverview>.container-fluid.p-0{
-    margin-top:1.5em;}
+	margin-top:1.5em;}
 .course-summaryitem{
-    background-color:/*[[bg3]]*/ !important;
-    border:none !important;}
+	background-color:/*[[bg3]]*/ !important;
+	border:none !important;}
 }
 
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/(\\?.*)?") {
 .sitelink{
-    filter:invert(1) hue-rotate(180deg);}
+	filter:invert(1) hue-rotate(180deg);}
 #login_username,#login_password{
-    background-color:/*[[bg3]]*/ !important;
-    color:/*[[txt]]*/ !important;}
+	background-color:/*[[bg3]]*/ !important;
+	color:/*[[txt]]*/ !important;}
 .forumpost{
-    border-color:/*[[brd]]*/ !important;
-    border-radius:0.5em;}
+	border-color:/*[[brd]]*/ !important;
+	border-radius:0.5em;}
 }
 
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/login/index\\.php.*?") {
 .mt-3{
-    color:/*[[txt]]*/;}
+	color:/*[[txt]]*/;}
 img.img-fluid{
-    filter:invert(1) hue-rotate(180deg) brightness(0.9);}
+	filter:invert(1) hue-rotate(180deg) brightness(0.9);}
 
 #modal-content{background-color:/*[[bg2]]*/;}
 #modal-header{border-bottom:none;}
@@ -1065,30 +1065,30 @@ img.img-fluid{
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/course/view\\.php.*?") {
 /*Main box*/
 #region-main{
-    background-color:/*[[bg2]]*/;}
+	background-color:/*[[bg2]]*/;}
 /*Misc*/
 .section{
-    border-bottom-color:/*[[brd]]*/ !important;}
+	border-bottom-color:/*[[brd]]*/ !important;}
 .progressEventInfo .iconInInfo{ /*Fixes a specific icon being distorted because someone forgot that width was set to 12px*/
-    width:1.2em;
-    height:1.2em;}
+	width:1.2em;
+	height:1.2em;}
 }
 
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/user/files\\.php.*?") {
 .filemanager-container,.fp-navbar{
-    background-color:/*[[bg3]]*/;
-    border:none !important;}
+	background-color:/*[[bg3]]*/;
+	border:none !important;}
 a.btn-sm{
-    background-color:/*[[bg4]]*/;}
+	background-color:/*[[bg4]]*/;}
 a.btn-sm:active, a.btn-sm.active, a.btn-sm:focus, a.btn-sm.checked{
-    background-color:/*[[bg6]]*/ !important;}
+	background-color:/*[[bg6]]*/ !important;}
 }
 
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/grade/report/overview/index\\.php.*?") {
 thead>tr>th{
-    border-bottom:none !important;}
+	border-bottom:none !important;}
 table td,table th{
-    border-color:/*[[brd]]*/ !important;}
+	border-color:/*[[brd]]*/ !important;}
 }
 
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/message/output/popup/notifications.php.*?") {
@@ -1114,13 +1114,13 @@ table td,table th{
 }
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/message/index\\.php.*?") {
 #region-main .border-right.h-100{
-    border-color:/*[[bg3]]*/ !important;}
+	border-color:/*[[bg3]]*/ !important;}
 }
 
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/user/(profile|view)\\.php.*?") {
 #region-main .profile_tree>.node_category{
-    background-color:/*[[bg3]]*/;
-    border-radius:0.5em;}
+	background-color:/*[[bg3]]*/;
+	border-radius:0.5em;}
 }
 
 
@@ -1141,27 +1141,27 @@ table td,table th{
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/mod/assign/view\\.php.*?") {
 /*Abgabestatus*/
 .submissionsummarytable td.submissiongraded{
-    background-color:/*[[true]]*/;
-    color:/*[[txt]]*/;}
+	background-color:/*[[true]]*/;
+	color:/*[[txt]]*/;}
 .submissionsummarytable td.submissionnotgraded{
 	background-color:#0000;
 	color:/*[[txt]]*/;}
 .submissionsummarytable td.latesubmission,
 .submissionsummarytable	td.overdue{
-    background-color:/*[[fals]]*/;
-    color:/*[[txt]]*/;}
+	background-color:/*[[fals]]*/;
+	color:/*[[txt]]*/;}
 .submissionsummarytable	td.overdue>font{
 	color:/*[[txt]]*/;}
 .submissionsummarytable td.earlysubmission{
-    background-color:/*[[true]]*/;
-    color:/*[[txt]]*/;}
+	background-color:/*[[true]]*/;
+	color:/*[[txt]]*/;}
 #jump-to-activity{
-    background-color:/*[[bg3]]*/;
-    border-color:/*[[brd]]*/;
-    color:/*[[txt]]*/;}
+	background-color:/*[[bg3]]*/;
+	border-color:/*[[brd]]*/;
+	color:/*[[txt]]*/;}
 .submissionsummarytable td.submissionstatussubmitted{
-    background-color:/*[[true]]*/;
-    color:/*[[txt]]*/;}
+	background-color:/*[[true]]*/;
+	color:/*[[txt]]*/;}
 .feedback .criteria .criterion.even,
 .gradingform_guide .criteria .criterion.even{
 	background-color:/*[[bg3]]*/;}
@@ -1177,7 +1177,7 @@ table td,table th{
 }
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/user/preferences\\.php.*?") {
 #region-main .card.mb-3{
-    background-color:/*[[bg3]]*/;}
+	background-color:/*[[bg3]]*/;}
 }
 
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/admin/tool/dataprivacy/mydatarequests\\.php.*?") {
@@ -1192,13 +1192,13 @@ div[data-region="datarequests"]>.mt-1.mb-1>.btn.btn-primary{
 .que.multichoice .answer div.r1 input{
 	width:1em;}
 .que .formulation{
-    background-color:/*[[bg3]]*/;
-    color:/*[[txt]]*/;
-    border-radius:0.5em;}
+	background-color:/*[[bg3]]*/;
+	color:/*[[txt]]*/;
+	border-radius:0.5em;}
 .que.multichoice .answer .incorrect{
-    background-color:/*[[fals]]*/;}
+	background-color:/*[[fals]]*/;}
 .que.multichoice .answer .correct{
-    background-color:/*[[true]]*/;}
+	background-color:/*[[true]]*/;}
 .que.multichoice .answer div.r0,
 .que.multichoice .answer div.r1{
 	border-radius:0.25rem;}
@@ -1208,24 +1208,24 @@ div[data-region="datarequests"]>.mt-1.mb-1>.btn.btn-primary{
 .que .correct .custom-select{
 	background-color:/*[[true]]*/;}
 .que .incorrect .custom-select{
-    background-color:/*[[fals]]*/;}
+	background-color:/*[[fals]]*/;}
 .que .correctness.notanswered,
 .que .correctness.incorrect{
 	background-color:/*[[fals]]*/;}
 .que .correctness.correct{
 	background-color:/*[[true]]*/;}
 .answer>.form-control{
-     border-color:/*[[brd]]*/;
-    color:/*[[txt]]*/;
-    border-radius:0.5em;}
+	 border-color:/*[[brd]]*/;
+	color:/*[[txt]]*/;
+	border-radius:0.5em;}
 .que .outcome{
-    background-color:/*[[bg3]]*/;
-    color:/*[[txt]]*/;
-    border-radius:0.5em;}
+	background-color:/*[[bg3]]*/;
+	color:/*[[txt]]*/;
+	border-radius:0.5em;}
 .que .info{	
-    background-color:/*[[bg3]]*/;	
-    border-radius:0.5em;	
-    border:none;}	
+	background-color:/*[[bg3]]*/;	
+	border-radius:0.5em;	
+	border:none;}	
 .que.essay .qtype_essay_response.readonly{
 	background-color:/*[[bg4]]*/;
 	padding-left:0.2em;
@@ -1237,20 +1237,20 @@ div[data-region="datarequests"]>.mt-1.mb-1>.btn.btn-primary{
 	color:/*[[txt]]*/;
 	border-color:/*[[brd]]*/;}
 .path-mod-quiz #mod_quiz_navblock .qnbutton.correct>.trafficlight{
-    background-color:/*[[true]]*/;
-    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23CCC' d='M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z'/%3E%3C/svg%3E%0A");}
+	background-color:/*[[true]]*/;
+	background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23CCC' d='M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z'/%3E%3C/svg%3E%0A");}
 .path-mod-quiz #mod_quiz_navblock .qnbutton.partiallycorrect>.trafficlight{
-    background-color:/*[[idfk]]*/;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='-12 -12 24 24'%3E%3Ccircle fill='%23CCC' r='12'/%3E%3C/svg%3E%0A");}
+	background-color:/*[[idfk]]*/;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='-12 -12 24 24'%3E%3Ccircle fill='%23CCC' r='12'/%3E%3C/svg%3E%0A");}
 .path-mod-quiz #mod_quiz_navblock .qnbutton.incorrect>.trafficlight{
-    background-color:/*[[fals]]*/;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23CCC' d='M 4.828125 2.5 L 2 5.328125 L 9.0703125 12.398438 L 2 19.470703 L 4.828125 22.298828 L 11.898438 15.226562 L 18.970703 22.298828 L 21.798828 19.470703 L 14.726562 12.398438 L 21.798828 5.328125 L 18.970703 2.5 L 11.898438 9.5703125 L 4.828125 2.5 z '/%3E%3C/svg%3E");}
+	background-color:/*[[fals]]*/;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23CCC' d='M 4.828125 2.5 L 2 5.328125 L 9.0703125 12.398438 L 2 19.470703 L 4.828125 22.298828 L 11.898438 15.226562 L 18.970703 22.298828 L 21.798828 19.470703 L 14.726562 12.398438 L 21.798828 5.328125 L 18.970703 2.5 L 11.898438 9.5703125 L 4.828125 2.5 z '/%3E%3C/svg%3E");}
 .path-mod-quiz #mod_quiz_navblock span.qnbutton,
 .path-mod-quiz #mod_quiz_navblock a.qnbutton{
-    color:/*[[txt]]*/ !important;
-    background-color:/*[[bg4]]*/;}
+	color:/*[[txt]]*/ !important;
+	background-color:/*[[bg4]]*/;}
 #mod_quiz_navblock .qnbutton>.thispageholder{
-    border:none !important;}
+	border:none !important;}
 #mod_quiz_navblock .qn_buttons:not(.allquestionsononepage) .qnbutton.thispage>.thispageholder{
 	box-shadow:0 0 1px 1px /*[[brd]]*/;}
 .quizreviewsummary{
@@ -1263,68 +1263,68 @@ div[data-region="datarequests"]>.mt-1.mb-1>.btn.btn-primary{
 .quizreviewsummary>tbody>tr>.cell:last-child{
 	background-color:/*[[bg3]]*/;}
 #page-mod-quiz-view table.quizattemptsummary tr.bestrow td{
-    border-color:/*[[brd]]*/;
+	border-color:/*[[brd]]*/;
 	background-color:/*[[bg2]]*/;}
 .quizattemptsummary>thead>tr>th{
 	border-bottom:none;}
 .path-mod-quiz #mod_quiz_navblock .qnbutton.notyetanswered>.trafficlight{	
-    background-color:/*[[bg4]]*/;}	
+	background-color:/*[[bg4]]*/;}	
 .path-mod-quiz #mod_quiz_navblock .qnbutton.answersaved>.trafficlight,	
 .path-mod-quiz #mod_quiz_navblock .qnbutton.invalidanswer>.trafficlight{	
-    background-color:/*[[brd]]*/;}
+	background-color:/*[[brd]]*/;}
 .path-mod-quiz #mod_quiz_navblock span.qnbutton.thispage{
-    box-shadow:0 0 0.2em #FFF}
+	box-shadow:0 0 0.2em #FFF}
 .answer>input[type="text"]{	
-    background-color:/*[[bg4]]*/;}
+	background-color:/*[[bg4]]*/;}
 .subquestion input[type="text"]{	
-    background-color:/*[[bg4]]*/;	
-    border-color:/*[[brd]]*/;	
-    border-radius:0.5em;	
-    color:/*[[txt]]*/;}	
+	background-color:/*[[bg4]]*/;	
+	border-color:/*[[brd]]*/;	
+	border-radius:0.5em;	
+	color:/*[[txt]]*/;}	
 .submitbtns button[type="submit"].btn,	
 .submitbtns input[type="submit"].btn{	
-    background-color:/*[[bg3]]*/;	
-    border-radius:0.5em;}
+	background-color:/*[[bg3]]*/;	
+	border-radius:0.5em;}
 .submitbtns input[type="submit"].btn.mod_quiz-next-nav{	
-   background-color:/*[[btn]]*/;	
-   border-color:/*[[btn]]*/;}	
+	background-color:/*[[btn]]*/;	
+	border-color:/*[[btn]]*/;}	
 .submitbtns input[type="submit"].btn.mod_quiz-next-nav:hover{	
-   background-color:/*[[hbtn]]*/;	
-   border-color:/*[[hbtn]]*/;}
+	background-color:/*[[hbtn]]*/;	
+	border-color:/*[[hbtn]]*/;}
 .que.incorrect .answer>input[type="text"]{	
-    background-color:/*[[fals]]*/;}	
+	background-color:/*[[fals]]*/;}	
 .que.correct .answer>input[type="text"]{	
-    background-color:/*[[true]]*/;}	
+	background-color:/*[[true]]*/;}	
 input[type="text"].correct{	
-    background-color:/*[[true]]*/;}	
+	background-color:/*[[true]]*/;}	
 input[type="text"].incorrect{	
-    background-color:/*[[fals]]*/;}
+	background-color:/*[[fals]]*/;}
 .que .answer>.correct>.specificfeedback{
-    background-color:/*[[true]]*/;
-    border: solid 1px /*[[brd]]*/;
-    border-radius:0.25em;}
+	background-color:/*[[true]]*/;
+	border: solid 1px /*[[brd]]*/;
+	border-radius:0.25em;}
 .que .answer>.incorrect>.specificfeedback{
-    background-color:/*[[fals]]*/;
-    border: solid 1px /*[[brd]]*/;
-    border-radius:0.25em;}
+	background-color:/*[[fals]]*/;
+	border: solid 1px /*[[brd]]*/;
+	border-radius:0.25em;}
 }
 
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/calendar/view\\.php.*?") {
 .eventlist .event .card{
-    background-color:/*[[bg3]]*/;
-    border-radius:0.5em !important;
-    overflow:hidden;}
+	background-color:/*[[bg3]]*/;
+	border-radius:0.5em !important;
+	overflow:hidden;}
 .path-calendar .maincalendar .calendar_event_course{
-    border:none;}
+	border:none;}
 .path-calendar .maincalendar .calendarmonth ul li>a:hover{
-    overflow:visible;
-    transform:translate(0,0);
-    margin-bottom:0.45em;}
+	overflow:visible;
+	transform:translate(0,0);
+	margin-bottom:0.45em;}
 .path-calendar .maincalendar .calendarmonth ul li>a:hover .eventname{
-    background-color:/*[[bg3]]*/;
-    position:absolute;
-    right:-3.5em;}
+	background-color:/*[[bg3]]*/;
+	position:absolute;
+	right:-3.5em;}
 .path-calendar .maincalendar .calendarmonth ul li>a{
-    text-overflow:clip;}
+	text-overflow:clip;}
 }
 
