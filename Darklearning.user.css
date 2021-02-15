@@ -74,22 +74,11 @@
 ==/UserStyle== */
 
 @-moz-document domain("elearning.tgm.ac.at"){
-	/*Animations*/
-
-	/* Animation by Philip Damianik */
-	@keyframes bg-pulse-grey {
-		0% {background-color: /*[[bg3]]*/;}
-		50% {background-color: /*[[bg4]]*/;}
-		100% {background-color: /*[[bg3]]*/;}
-	}
-
 	/*text selections*/
 	::-moz-selection{/*for firefox and derivatives*/
 		background:/*[[slc]]*/;}
-
 	::selection{/*for most other browsers that support this*/
 		background:/*[[slc]]*/;}
-
 	/*scrollbar*/
 	::-webkit-scrollbar,::-webkit-scrollbar-track-piece{
 		background-color:/*[[bg1]]*/ !important;}
@@ -100,7 +89,6 @@
 		scrollbar-width:thin;
 		scrollbar-color:/*[[bg3]]*/ /*[[bg1]]*/;
 		--svg-select-arrs:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' version='1'%3E%3Cpath fill='%23aaa' stroke='%23aaa' d='M8 1 2 6h12zM2 10H14L8 15Z' class='s0'/%3E%3C/svg%3E");}
-
 	/*navbar*/
 	.navbar{
 		background-color:/*[[bg2]]*/;
@@ -1003,7 +991,6 @@
 		background-color:/*[[bg4]]*/;}
 	}
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/my/.*?") {
-	/*Kurse*/
 	.dashboard-card{
 		border-width:0;
 		background-color:/*[[bg3]]*/;}
@@ -1033,7 +1020,6 @@
 		background-color:/*[[bg3]]*/ !important;
 		border:none !important;}
 }
-
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/(\\?.*)?") {
 	.sitelink{
 		filter:invert(1) hue-rotate(180deg);}
@@ -1044,7 +1030,6 @@
 		border-color:/*[[brd]]*/ !important;
 		border-radius:0.5em;}
 }
-
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/login/index\\.php.*?") {
 	.mt-3{
 		color:/*[[txt]]*/;}
@@ -1055,19 +1040,15 @@
 	#modal-header{border-bottom:none;}
 	#modal-footer{border-top:none;}
 }
-
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/course/view\\.php.*?") {
-	/*Main box*/
 	#region-main{
 		background-color:/*[[bg2]]*/;}
-	/*Misc*/
 	.section{
 		border-bottom-color:/*[[brd]]*/ !important;}
 	.progressEventInfo .iconInInfo{ /*Fixes a specific icon being distorted because someone forgot that width was set to 12px*/
 		width:1.2em;
 		height:1.2em;}
 }
-
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/user/files\\.php.*?") {
 	.filemanager-container,.fp-navbar{
 		background-color:/*[[bg3]]*/;
@@ -1077,14 +1058,12 @@
 	a.btn-sm:active, a.btn-sm.active, a.btn-sm:focus, a.btn-sm.checked{
 		background-color:/*[[bg6]]*/ !important;}
 }
-
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/grade/report/overview/index\\.php.*?") {
 	thead>tr>th{
 		border-bottom:none !important;}
 	table td,table th{
 		border-color:/*[[brd]]*/ !important;}
 }
-
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/message/output/popup/notifications.php.*?") {
 	.content-item-container:first-child{
 		border-top-left-radius:0.25rem;}
@@ -1116,8 +1095,6 @@
 		background-color:/*[[bg3]]*/;
 		border-radius:0.5em;}
 }
-
-
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/mod/organizer/view\\.php.*") {
 	#organizer_main_cointainer span.countdown_normal{
 		background-color:/*[[true]]*/;
@@ -1173,12 +1150,10 @@
 	#region-main .card.mb-3{
 		background-color:/*[[bg3]]*/;}
 }
-
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/admin/tool/dataprivacy/mydatarequests\\.php.*?") {
 	div[data-region="datarequests"]>.mt-1.mb-1>.btn.btn-primary{
 		color:/*[[txt]]*/ !important;}
 }
-
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/mod/quiz.*?") {
 	.moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd.yui3-widget-hd{
 		color:/*[[txt]]*/;}
@@ -1302,7 +1277,6 @@
 		border: solid 1px /*[[brd]]*/;
 		border-radius:0.25em;}
 }
-
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/calendar/view\\.php.*?") {
 	.eventlist .event .card{
 		background-color:/*[[bg3]]*/;
