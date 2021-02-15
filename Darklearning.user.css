@@ -685,9 +685,6 @@
 	.custom-select:focus{
 		color:/*[[txt]]*/;}
 	input[type="checkbox"]{
-		-webkit-appearance:none;
-		-moz-appearance: none;
-		-o-appearance: none;
 		appearance:none;
 		width:1em;
 		height:1em;
@@ -699,9 +696,6 @@
 		position:absolute;
 		font:normal normal normal 14px/1 FontAwesome;}
 	input[type="radio"]{
-		-webkit-appearance:none;
-		-moz-appearance: none;
-		-o-appearance: none;
 		appearance:none;
 		width:1em;
 		height:1em;
@@ -1327,4 +1321,3 @@
 	.path-calendar .maincalendar .calendarmonth ul li>a{
 		text-overflow:clip;}
 }
-
