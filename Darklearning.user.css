@@ -58,9 +58,9 @@
 @var	color	hlnk	"Hovered Links"				#6AC
 @var	color	btn		"Blue Background"			#418BA4
 @var	color	hbtn	"Bright Blue Background"	#6AC
-@var	color	true	"Correct"					#262
+@var	color	tru		"Correct"					#262
 @var	color	fals	"Incorrect"					#922
-@var	color	idfk	"Maybe?"					#D81
+@var	color	idk 	"Maybe?"					#D81
 @var	color	cal0	"Calendar 0"				#533
 @var	color	cal1	"Calendar 1"				#535
 @var	color	cal2	"Calendar 2"				#553
@@ -444,10 +444,10 @@
 		border-radius:0.2em;}
 	.format-tiles .sectiontitle::after,
 	.format-tiles .tag-info{
-		background-color:true;}
+		background-color:tru;}
 	.format-tiles .course-content ul.tiles .tile,
 	.format-tiles .course-content ul.tiles .tile_bar{
-		border-top-color:true;}
+		border-top-color:tru;}
 	.format-tiles .course-content ul.tiles .tile.phototile .photo-tile-text h3{
 		color:dtxt !important;
 		font-weight:bold;
@@ -463,7 +463,7 @@
 	.format-tiles .editor_atto_content_wrap h2,
 	.format-tiles .editor_atto_content_wrap h3,
 	.format-tiles .editor_atto_content_wrap h4{
-		border-left-color:true;}
+		border-left-color:tru;}
 	/*php-generated code block with colors without classes*/
 	div[style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"]{
 		background-color:bg0 !important;}
@@ -586,7 +586,7 @@
 		filter:brightness(1.3);}
 	.alert-success,
 	#page-mod-quiz-attempt #connection-ok{
-		background-color:true;
+		background-color:tru;
 		color:txt;}
 	.moodle-dialogue>.moodle-dialogue-content{
 		background-color:bg3 !important;}
@@ -921,7 +921,7 @@
 		background-color:fals;}
 	.que.coderunner div.coderunner-test-results.good,
 	#page-question-type-coderunner tr.coderunner-failed-test.fixed{
-		background-color:true;}
+		background-color:tru;}
 	/*Filepicker*/
 	.file-picker .card{
 		background-color:bg3;
@@ -978,7 +978,7 @@
 		filter:brightness(0.39) contrast(2)}
 	/*row where it displays what you've done and what you didn't. Normally only in course/view.php, but also in other places*/
 	.barRow .progressBarCell[style*="background-color:#73A839"]{
-		background-color:true !important;}
+		background-color:tru !important;}
 	.barRow .progressBarCell[style*="background-color:#C71C22"]{
 		background-color:fals !important;}
 	/*.barRow .progressBarCell[style*="background-color:#025187"]{} This color is pretty good, I'll let it be there.*/
@@ -1106,10 +1106,10 @@
 }
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/mod/organizer/view\\.php.*") {
 	#organizer_main_cointainer span.countdown_normal{
-		background-color:true;
+		background-color:tru;
 		color:htxt;}
 	#organizer_main_cointainer tr.registered_slot td{
-		background-color:true !important;
+		background-color:tru !important;
 		color:htxt;}
 	#organizer_main_cointainer span.countdown_passed{
 		background-color:bg4;}
@@ -1121,7 +1121,7 @@
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/mod/assign/view\\.php.*?") {
 	/*Abgabestatus*/
 	.submissionsummarytable td.submissiongraded{
-		background-color:true;
+		background-color:tru;
 		color:txt;}
 	.submissionsummarytable td.submissionnotgraded{
 		background-color:#0000;
@@ -1133,20 +1133,20 @@
 	.submissionsummarytable	td.overdue>font{
 		color:txt;}
 	.submissionsummarytable td.earlysubmission{
-		background-color:true;
+		background-color:tru;
 		color:txt;}
 	#jump-to-activity{
 		background-color:bg3;
 		border-color:brd;
 		color:txt;}
 	.submissionsummarytable td.submissionstatussubmitted{
-		background-color:true;
+		background-color:tru;
 		color:txt;}
 	.feedback .criteria .criterion.even,
 	.gradingform_guide .criteria .criterion.even{
 		background-color:bg3;}
 	.earlysubmission .criteria .criterion.even{
-		background-color:true;
+		background-color:tru;
 		filter:brightness(0.85);}
 	.latesubmission .criteria .criterion.even{
 		background-color:fals;
@@ -1176,7 +1176,7 @@
 	.que.multichoice .answer .incorrect{
 		background-color:fals;}
 	.que.multichoice .answer .correct{
-		background-color:true;}
+		background-color:tru;}
 	.que.multichoice .answer div.r0,
 	.que.multichoice .answer div.r1{
 		border-radius:0.25rem;}
@@ -1184,14 +1184,14 @@
 	.que.multichoice .answer div.r1 .icon.fa{
 		align-self:center;}
 	.que .correct .custom-select{
-		background-color:true;}
+		background-color:tru;}
 	.que .incorrect .custom-select{
 		background-color:fals;}
 	.que .correctness.notanswered,
 	.que .correctness.incorrect{
 		background-color:fals;}
 	.que .correctness.correct{
-		background-color:true;}
+		background-color:tru;}
 	.answer>.form-control{
 		border-color:brd;
 		color:txt;
@@ -1215,10 +1215,10 @@
 		color:txt;
 		border-color:brd;}
 	.path-mod-quiz #mod_quiz_navblock .qnbutton.correct>.trafficlight{
-		background-color:true;
+		background-color:tru;
 		background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23CCC' d='M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z'/%3E%3C/svg%3E%0A");}
 	.path-mod-quiz #mod_quiz_navblock .qnbutton.partiallycorrect>.trafficlight{
-		background-color:idfk;
+		background-color:idk;
 		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='-12 -12 24 24'%3E%3Ccircle fill='%23CCC' r='12'/%3E%3C/svg%3E%0A");}
 	.path-mod-quiz #mod_quiz_navblock .qnbutton.incorrect>.trafficlight{
 		background-color:fals;
@@ -1272,13 +1272,13 @@
 	.que.incorrect .answer>input[type="text"]{	
 		background-color:fals;}	
 	.que.correct .answer>input[type="text"]{	
-		background-color:true;}	
+		background-color:tru;}	
 	input[type="text"].correct{	
-		background-color:true;}	
+		background-color:tru;}	
 	input[type="text"].incorrect{	
 		background-color:fals;}
 	.que .answer>.correct>.specificfeedback{
-		background-color:true;
+		background-color:tru;
 		border: solid 1px brd;
 		border-radius:0.25em;}
 	.que .answer>.incorrect>.specificfeedback{
