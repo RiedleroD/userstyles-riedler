@@ -511,7 +511,7 @@
 		color:txt;
 		border-radius:0.5em;}
 	/*Misc*/
-	if anon{
+	if(anon==yes){
 		.usertext{
 			display:none;
 		}
