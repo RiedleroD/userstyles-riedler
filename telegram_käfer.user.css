@@ -51,12 +51,20 @@ shade2(cl)
 	header.sticky .sticky-box{
 		background-color:bg0;
 	}
-	.bt-card-title,
-	.bt-card-preview{
-		color:txt;
-	}
 	a.bt-card-row:hover{
 		background-color:bg1;
+	}
+	.bt-card{
+		&-action,
+		&-row-body{
+			& mark.highlight{
+				shade(yel);
+			}
+		}
+		&-title,
+		&-preview{
+			color:txt;
+		}
 	}
 	.form-control{
 		color:txtd;
