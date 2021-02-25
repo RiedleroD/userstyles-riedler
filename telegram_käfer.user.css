@@ -27,6 +27,11 @@ shade2(cl)
 	background-color rgba(cl,0.4)
 	color cl
 	border-color rgba(cl,0.6)
+shade3(cl)
+	background-image linear-gradient(rgba(cl,0.3),rgba(cl,0.3))
+	background-color bg0
+	color rgba(cl,0.9)
+	border-color rgba(cl,0.5)
 @-moz-document domain("bugs.telegram.org"){
 	body{
 		background-color:bg0;
@@ -64,6 +69,12 @@ shade2(cl)
 		&-title,
 		&-preview{
 			color:txt;
+		}
+	}
+	.bt-card-thumb-status{
+		shade3(grn);
+		.thumb-feature &{
+			shade3(cyn);
 		}
 	}
 	.form-control{
