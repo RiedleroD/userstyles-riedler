@@ -160,11 +160,18 @@ shade2(cl)
 	.bt-select-query .select .selected-item{
 		border:solid 1px;
 		box-sizing:border-box;
+		shade(txtd);
 		&.c-orange{
 			shade(org);
 		}
 		&.c-cyan{
 			shade(cyn);
+		}
+		&.c-green{
+			shade(grn);
+		}
+		&.c-lightgreen{
+			shade(yel);
 		}
 	}
 	.bt-issue-tags .bt-tag,
