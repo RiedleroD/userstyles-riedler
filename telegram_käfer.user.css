@@ -69,8 +69,16 @@ shade2(cl)
 	.form-control{
 		color:txtd;
 	}
-	.bt-main-search-form .select{
-		box-shadow:inset 0 0 0 1px bg2;
+	.bt-main-search-form{
+		& .select{
+			box-shadow:inset 0 0 0 1px bg2;
+		}
+		& .select-enter{
+			background-color:cyn;
+		}
+		& .field-focused .select{
+			box-shadow:inset 0 0 0 2px cyn;
+		}
 	}
 	.select{
 		background-color:bg0;
