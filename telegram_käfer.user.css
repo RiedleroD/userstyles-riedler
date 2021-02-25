@@ -77,6 +77,9 @@ shade3(cl)
 			shade3(cyn);
 		}
 	}
+	.bt-card-thumb:not(.thumb-icon){
+		background-color:#0000;
+	}
 	.form-control{
 		color:txtd;
 	}
