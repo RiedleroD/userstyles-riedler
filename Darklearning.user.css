@@ -454,6 +454,12 @@ svg_select_arrs="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' wi
 		background-color:#0000 !important;}
 	span[style*="background-color: rgb(239\, 69\, 64);"]{
 		background-color:fals !important;}
+	span[style*="color: rgb(239\, 69\, 64)"]{
+		color:c3 !important;
+		&[style*="background-color: rgb(255\, 255\, 255)"]{
+			background-color:bg0 !important;
+		}
+	}
 	.logo>img{
 		filter:invert(1) hue-rotate(180deg);}
 	.fa{
@@ -896,8 +902,10 @@ svg_select_arrs="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' wi
 	
 	input[type="checkbox"]{
 		appearance:none;
-		width:1em;
-		height:1em;
+		min-width:1em;
+		max-width:1em;
+		min-height:1em;
+		max-height:1em;
 		border:0.12em solid hbrd;
 		border-radius:0.25em;
 		color:txt;
@@ -909,12 +917,14 @@ svg_select_arrs="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' wi
 	}
 	input[type="radio"]{
 		appearance:none;
-		width:1em;
-		height:1em;
-		border:0.12em solid hbrd;
-		border-radius:100%;
+		min-width:1em;
+		max-width:1em;
+		min-height:1em;
+		max-height:1em;
+		background-image:radial-gradient(#0000 50%,hbrd 60%,#0000 70%);
+		background-size:1em 1em;
 		&:checked{
-			background:radial-gradient(hbrd 40%, #0000 45%);
+			background-image:radial-gradient(hbrd 30%, #0000 40%,#0000 50%,hbrd 60%,#0000 70%);
 		}
 	}
 	input[type="file"]{
@@ -1487,7 +1497,7 @@ svg_select_arrs="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' wi
 		background-color:bg3;
 		border-color:brd;
 		color:txt;}
-	.criteria .criterion{
+	.criteria .criterion{/*TODO: find out where the fuck this is used*/
 		border:none;
 		outline:solid 1px brd;
 		/:is(.feedback,.gradingform_guide) &.even{
@@ -1538,7 +1548,7 @@ svg_select_arrs="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' wi
 	.que .incorrect .custom-select{
 		background-color:fals;}
 	.que .correctness{
-		&.incorrect{
+		&:is(.notanswered,/.incorrect){
 			background-color:fals;
 		}
 		&.correct{
@@ -1567,7 +1577,7 @@ svg_select_arrs="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' wi
 			border-color:brd;
 		}
 	}
-	.que.incorrect .answer>input[type="text"]{	
+	.que:is(.incorrect,/.notanswered) .answer>input[type="text"]{	
 		background-color:fals;}	
 	.que.correct .answer>input[type="text"]{	
 		background-color:tru;}
@@ -1589,12 +1599,12 @@ svg_select_arrs="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' wi
 				background-color:idk;
 				background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='-12 -12 24 24'%3E%3Ccircle fill='%23CCC' r='12'/%3E%3C/svg%3E%0A");
 			}
-			&.incorrect>.trafficlight{
+			&:is(.incorrect,/.notanswered)>.trafficlight{
 				background-color:fals;
 				background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23CCC' d='M 4.828125 2.5 L 2 5.328125 L 9.0703125 12.398438 L 2 19.470703 L 4.828125 22.298828 L 11.898438 15.226562 L 18.970703 22.298828 L 21.798828 19.470703 L 14.726562 12.398438 L 21.798828 5.328125 L 18.970703 2.5 L 11.898438 9.5703125 L 4.828125 2.5 z '/%3E%3C/svg%3E");
 			}
 		}
-		& :is(a,span).qnbutton,{
+		& :is(a,/span).qnbutton{
 			color:txt !important;
 			background-color:bg4;
 		}
@@ -1627,7 +1637,7 @@ svg_select_arrs="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' wi
 		& .qnbutton.notyetanswered>.trafficlight{	
 			background-color:bg4;
 		}
-		& .qnbutton:is(.answersaved,.invalidanswer)>.trafficlight{	
+		& .qnbutton:is(.answersaved,/.invalidanswer)>.trafficlight{	
 			background-color:brd;
 		}
 		& span.qnbutton.thispage{
