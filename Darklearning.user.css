@@ -1415,8 +1415,11 @@ svg_select_arrs="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' wi
 			border-color:hbrd;
 			color:htxt;
 		}
-		&:is(.selected,:hover) .content-item-footer .timestamp{
-			color:txt;
+		&.selector,
+		&:hover{
+ 			&.content-item-footer .timestamp{
+				color:txt;
+			}
 		}
 	}
 	.notification-area{
@@ -1500,7 +1503,8 @@ svg_select_arrs="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' wi
 	.criteria .criterion{/*TODO: find out where the fuck this is used*/
 		border:none;
 		outline:solid 1px brd;
-		/:is(.feedback,.gradingform_guide) &.even{
+		/.feedback &.even,
+		/.gradingform_guide &.even{
 			background-color:bg3;
 		}
 		/.earlysubmission &.even{
@@ -1548,7 +1552,8 @@ svg_select_arrs="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' wi
 	.que .incorrect .custom-select{
 		background-color:fals;}
 	.que .correctness{
-		&:is(.notanswered,/.incorrect){
+		&.notanswered,
+		&.incorrect{
 			background-color:fals;
 		}
 		&.correct{
@@ -1577,8 +1582,12 @@ svg_select_arrs="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' wi
 			border-color:brd;
 		}
 	}
-	.que:is(.incorrect,/.notanswered) .answer>input[type="text"]{	
-		background-color:fals;}	
+	.que.incorrect,
+	.que.notanswered{
+		& .answer>input[type="text"]{
+			background-color:fals;
+		}
+	}
 	.que.correct .answer>input[type="text"]{	
 		background-color:tru;}
 	.que .answer>.correct>.specificfeedback{
@@ -1599,12 +1608,16 @@ svg_select_arrs="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' wi
 				background-color:idk;
 				background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='-12 -12 24 24'%3E%3Ccircle fill='%23CCC' r='12'/%3E%3C/svg%3E%0A");
 			}
-			&:is(.incorrect,/.notanswered)>.trafficlight{
-				background-color:fals;
-				background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23CCC' d='M 4.828125 2.5 L 2 5.328125 L 9.0703125 12.398438 L 2 19.470703 L 4.828125 22.298828 L 11.898438 15.226562 L 18.970703 22.298828 L 21.798828 19.470703 L 14.726562 12.398438 L 21.798828 5.328125 L 18.970703 2.5 L 11.898438 9.5703125 L 4.828125 2.5 z '/%3E%3C/svg%3E");
+			&.incorrect
+			&.notanswered{
+				&>.trafficlight{
+					background-color:fals;
+					background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23CCC' d='M 4.828125 2.5 L 2 5.328125 L 9.0703125 12.398438 L 2 19.470703 L 4.828125 22.298828 L 11.898438 15.226562 L 18.970703 22.298828 L 21.798828 19.470703 L 14.726562 12.398438 L 21.798828 5.328125 L 18.970703 2.5 L 11.898438 9.5703125 L 4.828125 2.5 z '/%3E%3C/svg%3E");
+				}
 			}
 		}
-		& :is(a,/span).qnbutton{
+		& a.qnbutton,
+		& span.qnbutton{
 			color:txt !important;
 			background-color:bg4;
 		}
@@ -1637,8 +1650,11 @@ svg_select_arrs="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' wi
 		& .qnbutton.notyetanswered>.trafficlight{	
 			background-color:bg4;
 		}
-		& .qnbutton:is(.answersaved,/.invalidanswer)>.trafficlight{	
-			background-color:brd;
+		& .qnbutton.answersaved,
+		& .qnbutton.invalidanswer{
+			&>.trafficlight{	
+				background-color:brd;
+			}
 		}
 		& span.qnbutton.thispage{
 			box-shadow:0 0 0.2em #FFF;
