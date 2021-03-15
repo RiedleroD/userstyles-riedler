@@ -1630,7 +1630,7 @@ svg_select_arrs="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' wi
 		border-radius:0.5em;
 		overflow:hidden;
 		&>tbody>tr{
-			&first-child>.cell{
+			&:first-child>.cell{
 				border-top:none;
 			}
 			&>.cell:first-child{
