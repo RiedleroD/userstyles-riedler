@@ -1259,7 +1259,7 @@ svg_select_arrs="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' wi
 	}
 	.loading{
 		background-image:none !important;
-		.loading:before{
+		&:before{
 			content:"\00a0";
 			background-image:url("https://elearning.tgm.ac.at/theme/image.php/classic/core/123456/i/loading_small");
 			background-repeat:no-repeat;
@@ -1303,8 +1303,26 @@ svg_select_arrs="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' wi
 	.dashboard-card{
 		border-width:0;
 		background-color:bg3;}
-	.course-info-container{
-		background-color:bg3;}
+	.course{
+		&-info-container{
+			background-color:bg3;
+		}
+		&-menubtn{
+			&:hover,&:focus{
+				background-color:bg4 !important;
+			}
+		}
+		&listitem{
+			background-color:bg2;
+			border-color:#0000;
+			border-top-color:brd;
+			border-bottom-color:brd;
+		}
+		&-summaryitem{
+			background-color:bg3 !important;
+			border:none !important;
+		}
+	}
 	.card-img{
 		filter:EICC;}
 	.card-footer{
@@ -1313,26 +1331,19 @@ svg_select_arrs="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' wi
 		background-color:bg1 !important;
 		border-color:bg1 !important;
 		margin-bottom: 0.5rem; /* added by Philip Damianik */
-		height: .35rem!important; /* added by Philip Damianik */}
-	.progress-bar{
-		background-color:btn;}
-	.coursemenubtn:hover,.coursemenubtn:focus{
-		background-color:bg4 !important;}
-	.course-listitem{
-		background-color:bg2;
-		border-color:#0000;
-		border-top-color:brd;
-		border-bottom-color:brd;}
+		height: .35rem!important; /* added by Philip Damianik */
+		&-bar{
+			background-color:btn;
+		}
+	}
 	.block-myoverview>.container-fluid.p-0{
 		margin-top:1.5em;}
-	.course-summaryitem{
-		background-color:bg3 !important;
-		border:none !important;}
 }
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/(\\?.*)?") {
 	.sitelink{
 		filter:invert(1) hue-rotate(180deg);}
-	#login_username,#login_password{
+	#login_username,
+	#login_password{
 		background-color:bg3 !important;
 		color:txt !important;}
 	.forumpost{
@@ -1344,10 +1355,11 @@ svg_select_arrs="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' wi
 		color:txt;}
 	img.img-fluid{
 		filter:invert(1) hue-rotate(180deg) brightness(0.9);}
-
-	#modal-content{background-color:bg2;}
-	#modal-header{border-bottom:none;}
-	#modal-footer{border-top:none;}
+	#modal{
+		&-content{background-color:bg2;}
+		&-header{border-bottom:none;}
+		&-footer{border-top:none;}
+	}
 }
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/course/view\\.php.*?") {
 	#region-main{
@@ -1359,40 +1371,53 @@ svg_select_arrs="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' wi
 		height:1.2em;}
 }
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/user/files\\.php.*?") {
-	.filemanager-container,.fp-navbar{
+	.filemanager-container,
+	.fp-navbar{
 		background-color:bg3;
 		border:none !important;}
 	a.btn-sm{
-		background-color:bg4;}
-	a.btn-sm:active, a.btn-sm.active, a.btn-sm:focus, a.btn-sm.checked{
-		background-color:bg6 !important;}
+		background-color:bg4;
+		&:active,
+		&.active,
+		&:focus,
+		&.checked{
+			background-color:bg6 !important;
+		}
+	}
 }
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/grade/report/overview/index\\.php.*?") {
 	thead>tr>th{
 		border-bottom:none !important;}
-	table td,table th{
+	table td,
+	table th{
 		border-color:brd !important;}
 }
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/message/output/popup/notifications.php.*?") {
-	.content-item-container:first-child{
-		border-top-left-radius:0.25rem;}
 	.content-item-container{
 		background-color:bg2;
 		color:txt;
-		border-color:brd;}
-	.content-item-container.selected{
-		background-color:bg3;
-		border-color:hbrd;
-		color:htxt;}
-	.notification-area .control-area{
-		border-right-color:brd;}
+		border-color:brd;
+		&:first-child{
+			border-top-left-radius:0.25rem;
+		}
+		&.selected{
+			background-color:bg3;
+			border-color:hbrd;
+			color:htxt;
+		}
+		&:is(.selected,:hover) .content-item-footer .timestamp{
+			color:txt;
+		}
+	}
 	.notification-area{
-		border-color:brd;}
-	.notification-area .content-area .header{
-		border-bottom-color:brd;}
-	.content-item-container.selected .content-item-footer .timestamp,
-	.content-item-container:hover .content-item-footer .timestamp{
-		color:txt;}
+		border-color:brd;
+		& .control-area{
+			border-right-color:brd;
+		}
+		& .content-area .header{
+			border-bottom-color:brd;
+		}
+	}
 }
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/message/index\\.php.*?") {
 	#region-main .border-right.h-100{
@@ -1405,55 +1430,78 @@ svg_select_arrs="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' wi
 		border-radius:0.5em;}
 }
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/mod/organizer/view\\.php.*") {
-	#organizer_main_cointainer span.countdown_normal{
-		background-color:tru;
-		color:htxt;}
-	#organizer_main_cointainer tr.registered_slot td{
-		background-color:tru !important;
-		color:htxt;}
-	#organizer_main_cointainer span.countdown_passed{
-		background-color:bg4;}
-	#organizer_main_cointainer table tr.past_due td{
-		background-color:bg4 !important;}
-	#organizer_main_cointainer span.countdown_critical{
-		background-color:fals;}
+	#organizer_main_cointainer{
+		& span.countdown{
+			&_normal{
+				background-color:tru;
+				color:htxt;
+			}
+			&_passed{
+				background-color:bg4;
+			}
+			&_critical{
+				background-color:fals;
+			}
+		}
+		& tr.registered_slot td{
+			background-color:tru !important;
+			color:htxt;
+		}
+		
+		& table tr.past_due td{
+			background-color:bg4 !important;
+		}
+	}
 }
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/mod/assign/view\\.php.*?") {
 	/*Abgabestatus*/
-	.submissionsummarytable td.submissiongraded{
-		background-color:tru;
-		color:txt;}
-	.submissionsummarytable td.submissionnotgraded{
-		background-color:#0000;
-		color:txt;}
-	.submissionsummarytable td.latesubmission,
-	.submissionsummarytable	td.overdue{
-		background-color:fals;
-		color:txt;}
-	.submissionsummarytable	td.overdue>font{
-		color:txt;}
-	.submissionsummarytable td.earlysubmission{
-		background-color:tru;
-		color:txt;}
+	.submissionsummarytable td{
+		&.submission{
+			&graded{
+				background-color:tru;
+				color:txt;
+			}
+			&notgraded{
+				background-color:#0000;
+				color:txt;
+			}
+			&statussubmitted{
+				background-color:tru;
+				color:txt;
+			}
+		}
+		&.latesubmission,
+		&.overdue{
+			background-color:fals;
+			color:txt;
+			&>font{
+				color:txt;
+			}
+		}
+		&.earlysubmission{
+			background-color:tru;
+			color:txt;
+		}
+	}
 	#jump-to-activity{
 		background-color:bg3;
 		border-color:brd;
 		color:txt;}
-	.submissionsummarytable td.submissionstatussubmitted{
-		background-color:tru;
-		color:txt;}
-	.feedback .criteria .criterion.even,
-	.gradingform_guide .criteria .criterion.even{
-		background-color:bg3;}
-	.earlysubmission .criteria .criterion.even{
-		background-color:tru;
-		filter:brightness(0.85);}
-	.latesubmission .criteria .criterion.even{
-		background-color:fals;
-		filter:brightness(0.85);}
 	.criteria .criterion{
 		border:none;
-		outline:solid 1px brd;}
+		outline:solid 1px brd;
+		/:is(.feedback,.gradingform_guide) &.even{
+			background-color:bg3;
+		}
+		/.earlysubmission &.even{
+			background-color:tru;
+			filter:brightness(0.85);
+		}
+		/.latesubmission &.even{
+			background-color:fals;
+			filter:brightness(0.85);
+		}
+	}
 }
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/user/preferences\\.php.*?") {
 	#region-main .card.mb-3{
@@ -1466,36 +1514,37 @@ svg_select_arrs="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' wi
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/mod/quiz.*?") {
 	.moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd.yui3-widget-hd{
 		color:txt;}
-	.que.multichoice .answer div.r0 input,
-	.que.multichoice .answer div.r1 input{
-		width:1em;}
+	.que.multichoice .answer{
+		& div.r0,
+		& div.r1{
+			border-radius:0.25rem;
+			& .icon.fa{
+				align-self:center;
+			}
+		}
+		& .incorrect{
+			background-color:fals;
+		}
+		& .correct{
+			background-color:tru;
+		}
+	}
 	.que .formulation{
 		background-color:bg3;
 		color:txt;
 		border-radius:0.5em;}
-	.que.multichoice .answer .incorrect{
-		background-color:fals;}
-	.que.multichoice .answer .correct{
-		background-color:tru;}
-	.que.multichoice .answer div.r0,
-	.que.multichoice .answer div.r1{
-		border-radius:0.25rem;}
-	.que.multichoice .answer div.r0 .icon.fa,
-	.que.multichoice .answer div.r1 .icon.fa{
-		align-self:center;}
 	.que .correct .custom-select{
 		background-color:tru;}
 	.que .incorrect .custom-select{
 		background-color:fals;}
-	.que .correctness.notanswered,
-	.que .correctness.incorrect{
-		background-color:fals;}
-	.que .correctness.correct{
-		background-color:tru;}
-	.answer>.form-control{
-		border-color:brd;
-		color:txt;
-		border-radius:0.5em;}
+	.que .correctness{
+		&.incorrect{
+			background-color:fals;
+		}
+		&.correct{
+			background-color:tru;
+		}
+	}
 	.que .outcome{
 		background-color:bg3;
 		color:txt;
@@ -1504,56 +1553,93 @@ svg_select_arrs="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' wi
 		background-color:bg3;	
 		border-radius:0.5em;	
 		border:none;}	
-	.que.essay .qtype_essay_response.readonly{
-		background-color:bg4;
-		padding-left:0.2em;
-		border-radius:0.5rem;}
-	.que.essay .qtype_essay_monospaced{
-		background-color:bg2;
-		padding:0.25em;
-		border-radius:0.5rem;
-		color:txt;
-		border-color:brd;}
-	.path-mod-quiz #mod_quiz_navblock .qnbutton.correct>.trafficlight{
+	.que.essay .qtype_essay{
+		&_response.readonly{
+			background-color:bg4;
+			padding-left:0.2em;
+			border-radius:0.5rem;
+		}
+		&_monospaced{
+			background-color:bg2;
+			padding:0.25em;
+			border-radius:0.5rem;
+			color:txt;
+			border-color:brd;
+		}
+	}
+	.que.incorrect .answer>input[type="text"]{	
+		background-color:fals;}	
+	.que.correct .answer>input[type="text"]{	
+		background-color:tru;}
+	.que .answer>.correct>.specificfeedback{
 		background-color:tru;
-		background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23CCC' d='M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z'/%3E%3C/svg%3E%0A");}
-	.path-mod-quiz #mod_quiz_navblock .qnbutton.partiallycorrect>.trafficlight{
-		background-color:idk;
-		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='-12 -12 24 24'%3E%3Ccircle fill='%23CCC' r='12'/%3E%3C/svg%3E%0A");}
-	.path-mod-quiz #mod_quiz_navblock .qnbutton.incorrect>.trafficlight{
+		border: solid 1px brd;
+		border-radius:0.25em;}
+	.que .answer>.incorrect>.specificfeedback{
 		background-color:fals;
-		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23CCC' d='M 4.828125 2.5 L 2 5.328125 L 9.0703125 12.398438 L 2 19.470703 L 4.828125 22.298828 L 11.898438 15.226562 L 18.970703 22.298828 L 21.798828 19.470703 L 14.726562 12.398438 L 21.798828 5.328125 L 18.970703 2.5 L 11.898438 9.5703125 L 4.828125 2.5 z '/%3E%3C/svg%3E");}
-	.path-mod-quiz #mod_quiz_navblock span.qnbutton,
-	.path-mod-quiz #mod_quiz_navblock a.qnbutton{
-		color:txt !important;
-		background-color:bg4;}
+		border: solid 1px brd;
+		border-radius:0.25em;}
+	.path-mod-quiz #mod_quiz_navblock{
+		& .qnbutton{
+			&.correct>.trafficlight{
+				background-color:tru;
+				background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23CCC' d='M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z'/%3E%3C/svg%3E%0A");
+			}
+			&.partiallycorrect>.trafficlight{
+				background-color:idk;
+				background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='-12 -12 24 24'%3E%3Ccircle fill='%23CCC' r='12'/%3E%3C/svg%3E%0A");
+			}
+			&.incorrect>.trafficlight{
+				background-color:fals;
+				background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23CCC' d='M 4.828125 2.5 L 2 5.328125 L 9.0703125 12.398438 L 2 19.470703 L 4.828125 22.298828 L 11.898438 15.226562 L 18.970703 22.298828 L 21.798828 19.470703 L 14.726562 12.398438 L 21.798828 5.328125 L 18.970703 2.5 L 11.898438 9.5703125 L 4.828125 2.5 z '/%3E%3C/svg%3E");
+			}
+		}
+		& :is(a,span).qnbutton,{
+			color:txt !important;
+			background-color:bg4;
+		}
+	}
 	#mod_quiz_navblock .qnbutton>.thispageholder{
 		border:none !important;}
 	#mod_quiz_navblock .qn_buttons:not(.allquestionsononepage) .qnbutton.thispage>.thispageholder{
 		box-shadow:0 0 1px 1px brd;}
 	.quizreviewsummary{
 		border-radius:0.5em;
-		overflow:hidden;}
-	.quizreviewsummary>tbody>tr:first-child>.cell{
-		border-top:none;}
-	.quizreviewsummary>tbody>tr>.cell:first-child{
-		background-color:bg3_5;}
-	.quizreviewsummary>tbody>tr>.cell:last-child{
-		background-color:bg3;}
+		overflow:hidden;
+		&>tbody>tr{
+			&first-child>.cell{
+				border-top:none;
+			}
+			&>.cell:first-child{
+				background-color:bg3_5;
+			}
+			&>.cell:last-child{
+				background-color:bg3;
+			}
+		}
+	}
 	#page-mod-quiz-view table.quizattemptsummary tr.bestrow td{
 		border-color:brd;
 		background-color:bg2;}
 	.quizattemptsummary>thead>tr>th{
 		border-bottom:none;}
-	.path-mod-quiz #mod_quiz_navblock .qnbutton.notyetanswered>.trafficlight{	
-		background-color:bg4;}	
-	.path-mod-quiz #mod_quiz_navblock .qnbutton.answersaved>.trafficlight,	
-	.path-mod-quiz #mod_quiz_navblock .qnbutton.invalidanswer>.trafficlight{	
-		background-color:brd;}
-	.path-mod-quiz #mod_quiz_navblock span.qnbutton.thispage{
-		box-shadow:0 0 0.2em #FFF}
+	.path-mod-quiz #mod_quiz_navblock{
+		& .qnbutton.notyetanswered>.trafficlight{	
+			background-color:bg4;
+		}
+		& .qnbutton:is(.answersaved,.invalidanswer)>.trafficlight{	
+			background-color:brd;
+		}
+		& span.qnbutton.thispage{
+			box-shadow:0 0 0.2em #FFF;
+		}
+	}
 	.answer>input[type="text"]{	
 		background-color:bg4;}
+	.answer>.form-control{
+		border-color:brd;
+		color:txt;
+		border-radius:0.5em;}
 	.subquestion input[type="text"]{	
 		background-color:bg4;	
 		border-color:brd;	
@@ -1569,22 +1655,10 @@ svg_select_arrs="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' wi
 	.submitbtns input[type="submit"].btn.mod_quiz-next-nav:hover{	
 		background-color:hbtn;	
 		border-color:hbtn;}
-	.que.incorrect .answer>input[type="text"]{	
-		background-color:fals;}	
-	.que.correct .answer>input[type="text"]{	
-		background-color:tru;}	
 	input[type="text"].correct{	
 		background-color:tru;}	
 	input[type="text"].incorrect{	
 		background-color:fals;}
-	.que .answer>.correct>.specificfeedback{
-		background-color:tru;
-		border: solid 1px brd;
-		border-radius:0.25em;}
-	.que .answer>.incorrect>.specificfeedback{
-		background-color:fals;
-		border: solid 1px brd;
-		border-radius:0.25em;}
 }
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/calendar/view\\.php.*?") {
 	.eventlist .event .card{
