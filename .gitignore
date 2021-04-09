@@ -3,3 +3,4 @@
 !.gitignore
 !Readme.md
 !screenshots/
+!screenshots/*.webp
