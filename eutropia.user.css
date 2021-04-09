@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Eutropia
 @namespace      https://github.com/RiedleroD/userstyles-riedler/
-@version        0.2.0
+@version        1.0.0
 @description    A dark mode for dolphin-emu.org
 @author         Riedler
 @preprocessor	uso
@@ -40,6 +40,10 @@
     .breadcrumb,
     .jumbotron{/*I'm not laughing, you're laughing!*/
 		background-color:/*[[bg1]]*/;}
+	.my-hero h1.title{/*lol*/
+		background-color:/*[[bg1]]*/;
+		background-blend-mode:hard-light;
+		filter:saturate(0.6);}
     .nav>li>a:hover,
 	.nav>li>a:focus{
 		background-color:/*[[bg2]]*/;}
@@ -76,18 +80,16 @@
     a[href]:not([class^="tag"]):not(.btn).rss-tag:hover{
         color:/*[[htxt]]*/;
         background-color:/*[[hbtn]]*/;}
-	body{
-        padding-top:7rem;}
 	.compat-list>tbody{
 		background-color:/*[[bg1]]*/;
         border-radius:0.5rem;}
 	#navbar-dolphin{
 		background-image:none;
 		background-color:/*[[bg1]]*/;
-		position:fixed;
+		position:sticky;
 		z-index:3;
 		top:0;
-		width:100vw;
+		width:100%;
         height:5rem;}
 	.btn-info,
 	.btn-primary{
@@ -167,6 +169,10 @@
     img[src="//dolphin-emu.org/m/static/img/stars/2.195f9785addd.png"],
     img[src="//dolphin-emu.org/m/static/img/stars/1.6dfb2570f44e.png"]{
         filter:invert(1) hue-rotate(175deg) brightness(2);}
+	img:not([class]),
+	img.fp-sshot,
+	iframe[src^="//www.youtube.com/embed"]{
+		filter:/*[[EICC]]*/;}
 	.pagination>li>a,
 	.pagination>li>span{
 		background-color:/*[[bg1]]*/;
@@ -198,7 +204,16 @@
 	.dropdown-menu>li>a:hover,
 	.dropdown-menu>li>a:focus{
 		background-image:none;
-		background-color:/*[[bg2]]*/}
+		background-color:/*[[bg2]]*/;}
+	.modal-content{
+		background-color:/*[[bg1]]*/;}
+	.modal-header{
+		border-color:/*[[brd]]*/;}
+	.close{
+		color:/*[[txt]]*/;}
+	.close:hover,
+	.close:focus{
+		color:/*[[pl3]]*/;}
 	::-webkit-scrollbar{
     	background:transparent;
 		background-image:linear-gradient(to right,transparent 0,transparent 95%,/*[[bg1]]*/ 90%);}
@@ -239,6 +254,9 @@
 		background-color:/*[[bg2]]*/;}
 	/*miscellanious stuff lol
 	  I don't want to sort those*/
+	.highlight{
+		color:/*[[htxt]]*/;
+		background-color:/*[[lgt]]*/;}
     table.tborder{
         background-color:/*[[bg1]]*/;
         border:none;}
@@ -319,7 +337,8 @@
         background-color:/*[[hbtn]]*/;
         background-image:none;
         color:/*[[htxt]]*/ !important;}
-	input[type="checkbox"]{
+	input[type="checkbox"],
+	input[type="radio"]{
 		filter:invert(1) hue-rotate(180deg);}
     .trow_sep{
         background-color:/*[[bg0]]*/;
@@ -459,9 +478,10 @@
         background-color:/*[[brd]]*/;}
     fieldset{
         border:solid 1px /*[[brd]]*/;}
-    textarea{
+    textarea,
+	.sceditor-container iframe, .sceditor-container textarea{
         background-color:/*[[bg2]]*/;
-        border:none;
+        border:solid 1px /*[[brd]]*/;
         color:/*[[txt]]*/}
     #select2-drop{
         background-color:/*[[bg1]]*/;}
@@ -549,6 +569,9 @@
 	img[src$="Simpl/paperclip.png"]{
 		filter:invert(1);
 	}
+	/*generic star icon*/
+	img[src="images/icons/star.gif"]{
+		filter:invert(0.8) hue-rotate(180deg) brightness(1.5)}
 	/*spoiler popdowns*/
 	.spoiler{
 		background-color:/*[[bg2]]*/;
@@ -568,6 +591,29 @@
     #mw-page-base{
         background-color:/*[[bg0]]*/;
         background-image:none;}
+	/*scrollbar styling*/
+	:root{/*for firefox and future use*/
+		scrollbar-color:/*[[bg2]]*/ /*[[bg0]]*/;
+		scrollbar-width:thin;}
+	::-webkit-scrollbar-button{/*for chrome and safari*/
+		display:none;}
+	::-webkit-scrollbar-track{
+		background-color:/*[[bg0]]*/;}
+	::-webkit-scrollbar-thumb{
+		background-color:/*[[bg2]]*/;}
+	/*miscellanious stuff lol
+	  I don't want to sort those*/
+	.mw-ui-vform .error{
+		background-color:/*[[pl3]]*/;
+		border-color:#FFF3;
+		border-radius:0.3em;
+		color:/*[[htxt]]*/;}
+	#mw-createaccount-join{
+		background-color:/*[[bg2]]*/;
+		border-color:/*[[brd]]*/;}
+	#mw-createaccount-join:hover{
+		background-color:/*[[bg3]]*/;
+		border-color:/*[[brd]]*/;}
     div.vectorTabs,
     div.vectorTabs>ul>li.selected{
         background-image:linear-gradient(/*[[bg0]]*/,/*[[bg1]]*/);}
@@ -580,7 +626,8 @@
     div#mw-panel div.portal h3,
     div.vectorTabs li.selected a,
     div.vectorTabs li.selected a:visited,
-    div#simpleSearch>input{
+    div#simpleSearch>input,
+	#bodyContent div.mw-number-text h3{
         color:/*[[txt]]*/;
 		text-decoration:none;}
     a:link,
@@ -600,6 +647,8 @@
     div#mw-panel div.portal div.body ul li a:visited:hover,
 	a:hover>span.toctext{
         color:/*[[hlnk]]*/;}
+	div#mw-head div.vectorMenu h3,
+	div.vectorTabs ul,
     div.vectorTabs>ul>li>span{
         background-image:none;}
     div.vectorTabs>ul>li{
@@ -607,6 +656,12 @@
     div.vectorTabs>ul>li:first-child{
         border-left:solid 1px /*[[brd]]*/;
         margin-left:-1px;}
+	div.vectorMenu h3 span{
+		color:/*[[txt]]*/;}
+	div.vectorMenu div.menu{
+		background-color:/*[[bg2]]*/;
+		color:/*[[txt]]*/;
+		border-color:/*[[brd]]*/;}
 	div#mw-panel div.portal div.body{
 		background-image:none;
 		border-top:solid 1px /*[[brd]]*/;}
@@ -623,9 +678,74 @@
         background-color:/*[[inf]]*/ !important;
         color:/*[[txt]]*/;
         border:none;}
+	.mw_metadata td,
+	.mw_metadata th{
+		background-color:/*[[bg2]]*/;
+		border-color:/*[[brd]]*/;}
+	.mw-datatable, .mw-datatable td, .mw-datatable th{
+		background-color:/*[[bg2]]*/;
+		border-color:/*[[brd]]*/;}
+	.mw-datatable tr:hover td{
+		background-color:/*[[bg3]]*/;
+		color:/*[[htxt]]*/;}
+	.TablePager_nav td.TablePager_nav-next .TablePager_nav-enabled,
+	.TablePager_nav td.TablePager_nav-last .TablePager_nav-enabled,
+	.TablePager_nav td.TablePager_nav-prev .TablePager_nav-enabled,
+	.TablePager_nav td.TablePager_nav-first .TablePager_nav-enabled{
+		background-color:/*[[bg2]]*/;
+		border-radius:0.5em;}
+	a[role="button"]{
+		color:/*[[txt]]*/;
+		background-color:/*[[btn]]*/;
+		padding:0 0.3em 0 0.3em;
+		border-radius:0.3em;}
+	a[role="button"]:hover,
+	a[role="button"]:focus{
+		color:/*[[htxt]]*/;
+		background-color:/*[[hbtn]]*/;
+		text-decoration:none;}
 	textarea{
 		background-color:/*[[bg0]]*/;
 		color:/*[[txt]]*/;}
+	input[type="checkbox"],
+	input[type="radio"]{
+		filter:invert(1) hue-rotate(180deg);}
+	.client-js .mw-ui-checkbox:not(#noop) input[type="checkbox"] + label::before,
+	.oo-ui-checkboxInputWidget [type="checkbox"] + span{
+		background-color:/*[[bg2]]*/;}
+	.oo-ui-checkboxInputWidget.oo-ui-widget-enabled [type="checkbox"]:checked + span{
+		background-color:/*[[btn]]*/;
+		border-color:/*[[btn]]*/;}
+	.oo-ui-checkboxInputWidget.oo-ui-widget-enabled [type="checkbox"]:checked:hover + span{
+		background-color:/*[[hbtn]]*/;
+		border-color:/*[[hbtn]]*/;}
+	.mw-ui-input{
+		background-color:/*[[bg2]]*/;
+		box-shadow:none;
+		border-color:/*[[brd]]*/;
+		color:/*[[txt]]*/;}
+	.oo-ui-dropdownWidget.oo-ui-widget-enabled.oo-ui-dropdownWidget-open .oo-ui-dropdownWidget-handle,
+	.oo-ui-dropdownWidget.oo-ui-widget-enabled .oo-ui-dropdownWidget-handle{
+		background-color:/*[[bg2]]*/;}
+	.mw-ui-button.mw-ui-progressive,
+	.mw-ui-button.mw-ui-constructive{
+		background-color:/*[[btn]]*/;}
+	.mw-ui-button.mw-ui-progressive:hover,
+	.mw-ui-button.mw-ui-constructive:hover{
+		background-color:/*[[hbtn]]*/;}
+	.mw-ui-input:hover,
+	.mw-ui-input:focus,
+	.oo-ui-dropdownWidget.oo-ui-widget-enabled .oo-ui-dropdownWidget-handle:hover,
+	.oo-ui-dropdownWidget.oo-ui-widget-enabled .oo-ui-dropdownWidget-handle:focus,
+	.oo-ui-menuOptionWidget.oo-ui-optionWidget-selected{
+		background-color:/*[[bg3]]*/;}
+	.client-js .mw-ui-checkbox:not(#noop) input[type="checkbox"]:active + label::before{
+		background-color:/*[[bg3]]*/;
+		border-color:/*[[brd]]*/;}
+	.client-js .mw-ui-checkbox:not(#noop) input[type="checkbox"]:focus:hover + label::before{
+		border-bottom-width:2px;}
+	.client-js .mw-ui-checkbox:not(#noop) input[type="checkbox"]:hover + label::before{
+		border-bottom-width:1px;}
 	h1,h2,h3,h4,h5,h6{
 		border-color:/*[[brd]]*/;
 		color:/*[[txt]]*/;}
@@ -656,7 +776,8 @@
 		background-color:/*[[bg2]]*/;
 		border:none;}
 	#toc,
-	.toc{
+	.toc,
+	#filetoc{
 		background-color:/*[[bg2]]*/;
 		border:none;
 		border-radius:0.5em;}
@@ -674,6 +795,14 @@
 		border:solid 1px /*[[brd]]*/;
 		background-color:#0000;
 		color:/*[[txt]]*/}
+	.oo-ui-textInputWidget .oo-ui-pendingElement-pending{
+		background-blend-mode:multiply;
+		background-color:/*[[brd]]*/;}
+	.oo-ui-menuSelectWidget{
+		background-color:/*[[bg2]]*/;}
+	.oo-ui-menuOptionWidget.oo-ui-optionWidget-highlighted{
+		background-color:/*[[bg3]]*/;
+		color:/*[[htxt]]*/;}
 	/*search bar*/
 	#searchform>#simpleSearch{
 		border-color:/*[[bg2]]*/;
@@ -814,7 +943,10 @@
 		background-color:/*[[hbtn]]*/;
 		color:/*[[htxt]]*/;
 		border-color:/*[[hbtn]]*/;}
-    /*Image replacements*/
+    /*Image replacements and adjustments*/
+	img:not([class]),
+	img.thumbimage{
+		filter:/*[[EICC]]*/}
     img[src="/images/5/56/Gamecube.png"]{
         box-sizing:border-box;
         padding-left:180px;
@@ -835,18 +967,6 @@
         padding-left:180px;
         background:url('https://riedler.wien/sfto/virtualconsole.svg') no-repeat center;
         background-size: contain;}
-	img[src="/images/a/ad/Virtual_Console_Logo.png"],
-	img[src="/images/6/68/NES_Nav.png"],
-	img[src="/images/8/8c/Super_Nintendo_Nav.png"],
-	img[src="/images/8/8e/Nintendo_64_Nav.png"],
-	img[src="/images/9/93/Sega_Master_System_Nav.png"],
-	img[src="/images/4/44/Sega_Genesis_Nav.png"],
-	img[src="/images/b/b3/TurboGrafx-16_Nav.png"],
-	img[src="/images/a/a7/NeoGeo_Nav.png"],
-	img[src="/images/9/9d/Commodore64_Nav.png"],
-	img[src="/images/2/24/MSX_Nav.png"],
-	img[src="/images/2/27/VirtualConsoleArcade.png"]{
-		filter:brightness(90%);}
 	img[src="/images/6/62/Stars5.png"],
 	img[src="/images/a/ae/Stars4.png"],
 	img[src="/images/6/6f/Stars3.png"],
@@ -854,5 +974,7 @@
 	img[src="/images/4/4a/Stars1.png"],
 	img[src="/images/4/41/Stars0.png"]{
         filter:invert(1) hue-rotate(175deg) brightness(2);}
+	.mw-wiki-logo{
+		filter:brightness(0.8);}
 }
 
