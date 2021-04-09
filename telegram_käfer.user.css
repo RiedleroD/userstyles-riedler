@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name			Telegram Käfer
 @namespace		https://github.com/RiedleroD/userstyles-riedler/
-@version		1.0.0
+@version		1.0.1
 @description	Black & wide style for bugs.telegram.org
 @author			Riedler
 @preprocessor	stylus
@@ -27,6 +27,11 @@ shade2(cl)
 	background-color rgba(cl,0.4)
 	color cl
 	border-color rgba(cl,0.6)
+shade3(cl)
+	background-image linear-gradient(rgba(cl,0.3),rgba(cl,0.3))
+	background-color bg0
+	color rgba(cl,0.9)
+	border-color rgba(cl,0.5)
 @-moz-document domain("bugs.telegram.org"){
 	body{
 		background-color:bg0;
@@ -51,18 +56,43 @@ shade2(cl)
 	header.sticky .sticky-box{
 		background-color:bg0;
 	}
-	.bt-card-title,
-	.bt-card-preview{
-		color:txt;
-	}
 	a.bt-card-row:hover{
 		background-color:bg1;
+	}
+	.bt-card{
+		&-action,
+		&-row-body{
+			& mark.highlight{
+				shade(yel);
+			}
+		}
+		&-title,
+		&-preview{
+			color:txt;
+		}
+	}
+	.bt-card-thumb-status{
+		shade3(grn);
+		.thumb-feature &{
+			shade3(cyn);
+		}
+	}
+	.bt-card-thumb:not(.thumb-icon){
+		background-color:#0000;
 	}
 	.form-control{
 		color:txtd;
 	}
-	.bt-main-search-form .select{
-		box-shadow:inset 0 0 0 1px bg2;
+	.bt-main-search-form{
+		& .select{
+			box-shadow:inset 0 0 0 1px bg2;
+		}
+		& .select-enter{
+			background-color:cyn;
+		}
+		& .field-focused .select{
+			box-shadow:inset 0 0 0 2px cyn;
+		}
 	}
 	.select{
 		background-color:bg0;
@@ -152,11 +182,18 @@ shade2(cl)
 	.bt-select-query .select .selected-item{
 		border:solid 1px;
 		box-sizing:border-box;
+		shade(txtd);
 		&.c-orange{
 			shade(org);
 		}
 		&.c-cyan{
 			shade(cyn);
+		}
+		&.c-green{
+			shade(grn);
+		}
+		&.c-lightgreen{
+			shade(yel);
 		}
 	}
 	.bt-issue-tags .bt-tag,
