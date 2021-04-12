@@ -1145,7 +1145,9 @@ rbarshape(name,mod){
 		background-color:bg1;
 		outline:solid 2px bg0;
 		font-family:Monospace;
-		font-size:1.08em;}
+		font-size:1.08em;
+		padding:0 0.1em;
+	}
 	.highlight{
 		outline:solid 1px hlnk;}
 	.aalink,
