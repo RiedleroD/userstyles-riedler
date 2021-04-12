@@ -335,6 +335,12 @@ rbarshape(name,mod){
 			background-color:bg2 !important;
 			border-color:brd !important;
 		}
+		&>.closewidget{
+			background-color:bg3 !important;
+			&>a{
+				color:txt !important;
+			}
+		}
 		& [data-region="contacts-container"]{
 			background-color:bg3;}
 		& [data-region="non-contacts-container"]{
