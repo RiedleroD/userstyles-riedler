@@ -6,26 +6,68 @@
 @author			Riedler
 @preprocessor	stylus
 @var	select	PBCS	"ProgressBarCell Shape"{
-	"Pronounced":"0.5em 0.5em 1em 1em",
-	"Pronounced Reversed":"1em 1em 0.5em 0.5em",
-	"Round":"1em",
-	"Rounded":"0.5em",
-	"Soft Edges":"0.25em",
-	"Rectangle":"0"}
+	"Pronounced":"pron",
+	"Teardrop":"tear",
+	"Round":"rnd",
+	"Rounded":"rndd",
+	"Soft Edges":"sft",
+	"Rectangle":"rect",
+	"Modifier debug":"debug_mod"
+}
+@var	select	PBCSm "ProgressBarCell Modifier"{
+	"Normal":"normal",
+	"Horizontal flip":"hflip",
+	"Vertical flip":"vflip",
+	"Flip right side":"rflip",
+	"Flip left side":"lflip",
+	"Flip top side":"tflip",
+	"Flip bottom side":"bflip",
+	"Rotate 90°":"r90",
+	"Rotate 180°":"r180",
+	"Rotate 270°":"r270"
+}
 @var	select	NBCS	"Course Navbar Cell Shape"{
-	"Pronounced":"0.5em 0.5em 1.5em 1.5em",
-	"Pronounced Reversed":"1.5em 1.5em 0.5em 0.5em",
-	"Round":"1.5em",
-	"Rounded":"0.75em",
-	"Soft Edges":"0.25em",
-	"Rectangle":"0"}
+	"Pronounced":"pron",
+	"Teardrop":"tear",
+	"Round":"rnd",
+	"Rounded":"rndd",
+	"Soft Edges":"sft",
+	"Rectangle":"rect",
+	"Modifier debug":"debug_mod"
+}
+@var	select	NBCSm "ProgressBarCell Modifier"{
+	"Normal":"normal",
+	"Horizontal flip":"hflip",
+	"Vertical flip":"vflip",
+	"Flip right side":"rflip",
+	"Flip left side":"lflip",
+	"Flip top side":"tflip",
+	"Flip bottom side":"bflip",
+	"Rotate 90°":"r90",
+	"Rotate 180°":"r180",
+	"Rotate 270°":"r270"
+}
 @var	select	NBS		"Course Navbar Shape"{
-	"Pronounced":"0.5em 0.5em 1.5em 1.5em",
-	"Pronounced Reversed":"1.5em 1.5em 0.5em 0.5em",
-	"Round":"1.5em",
-	"Rounded":"0.75em",
-	"Soft Edges":"0.25em",
-	"Rectangle":"0"}
+	"Pronounced":"pron",
+	"Teardrop":"tear",
+	"Round":"rnd",
+	"Rounded":"rndd",
+	"Soft Edges":"sft",
+	"Rectangle":"rect",
+	"Modifier debug":"debug_mod"
+}
+@var	select	NBSm "ProgressBarCell Modifier"{
+	"Normal":"normal",
+	"Horizontal flip":"hflip",
+	"Vertical flip":"vflip",
+	"Flip right side":"rflip",
+	"Flip left side":"lflip",
+	"Flip top side":"tflip",
+	"Flip bottom side":"bflip",
+	"Rotate 90°":"r90",
+	"Rotate 180°":"r180",
+	"Rotate 270°":"r270"
+}
 @var	select	EICC	"Embedded Image Color Correction"{
 	"Recommended":"invert(0.86) hue-rotate(180deg)",
 	"Full":"invert(1) hue-rotate(180deg)",
@@ -73,6 +115,59 @@
 
 svg_select_arrs="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' version='1'%3E%3Cpath fill='"+rgba(txt,0.999)+"' stroke='"+rgba(txt,0.999)+"' d='M8 1 2 6h12zM2 10H14L8 15Z'/%3E%3C/svg%3E"
 
+barshape_base(name){
+	if name=="pron"{
+		return (0.5em) (0.5em) (1em) (1em)
+	}else if name=="tear"{
+		return (0) (0.5em) (0.5em) (0.5em)
+	}else if name=="rnd"{
+		return (1em) (1em) (1em) (1em)
+	}else if name=="rndd"{
+		return (0.5em) (0.5em) (0.5em) (0.5em)
+	}else if name=="sft"{
+		return (0.25em) (0.25em) (0.25em) (0.25em)
+	}else if name=="rect"{
+		return (0) (0) (0) (0)
+	}else if name=="debug_mod"{
+		return (0) (0.5em) (1em) (0.25em)
+	}else{
+		return (100%) (100%) (100%) (100%)
+	}
+}
+barshape(name,mod){
+	shape=barshape_base(name)
+	if mod=="normal"{
+		return (shape[0]) (shape[1]) (shape[2]) (shape[3])
+	}else if mod=="hflip"{
+		return (shape[3]) (shape[2]) (shape[1]) (shape[0])
+	}else if mod=="vflip"{
+		return (shape[1]) (shape[0]) (shape[3]) (shape[2])
+	}else if mod=="rflip"{
+		return (shape[0]) (shape[2]) (shape[1]) (shape[3])
+	}else if mod=="lflip"{
+		return (shape[3]) (shape[1]) (shape[2]) (shape[0])
+	}else if mod=="tflip"{
+		return (shape[1]) (shape[0]) (shape[2]) (shape[3])
+	}else if mod=="bflip"{
+		return (shape[0]) (shape[1]) (shape[3]) (shape[2])
+	}else if mod=="r90"{
+		return (shape[3]) (shape[0]) (shape[1]) (shape[2])
+	}else if mod=="r180"{
+		return (shape[2]) (shape[3]) (shape[0]) (shape[1])
+	}else if mod=="r270"{
+		return (shape[1]) (shape[2]) (shape[3]) (shape[0])
+	}else{
+		return (100%) (0) (100%) (0)
+	}
+}
+lbarshape(name,mod){
+	shape=barshape(name,mod)
+	return (shape[0]) (0) (0) (shape[3])
+}
+rbarshape(name,mod){
+	shape=barshape(name,mod)
+	return (0) (shape[1]) (shape[2]) (0)
+}
 @-moz-document domain("elearning.tgm.ac.at"){
 	/*text selections*/
 	::-moz-selection{/*for firefox and derivatives*/
@@ -719,31 +814,28 @@ svg_select_arrs="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' wi
 	.nav-tabs,
 	.nav-pills{
 		background-color:bg3;
-		border-radius:NBS;
+		border-radius:barshape(NBS,NBSm);
 		border-bottom:none;
 		.show>& .nav-link.active.dropdown-toggle{
 			background-color:bg4;
-			border-radius:NBCS;
+			border-radius:barshape(NBCS,NBCSm);
 		}
 		& .nav-link{
 			background-color:#0000;
 			border:none;
+			border-bottom:none;
+			padding:0.5em 1em;
 			&.active:not(:disabled):not(.disabled){
 				&.active,
 				&:active{
 					background-color:bg4;
-					border-radius:NBCS;
+					border-radius:barshape(NBCS,NBCSm);
+					border-bottom:none;
 				}
 			}
 		}
-	}
-	.nav-tabs{
-		border-bottom-color:brd;
-		& .nav-link{
-			&:hover,
-			&:focus{
-				border-color:hbrd;
-			}
+		& .nav-item{
+			margin-bottom:0;
 		}
 	}
 	.wiki-toc{
@@ -758,17 +850,6 @@ svg_select_arrs="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' wi
 	}
 	.mform fieldset{
 		border-bottom-color:brd;
-	}
-	.grade-navigation>.nav>.nav-item{
-		background-color:bg2;
-		&>.nav-link{
-			border:none;
-			border-bottom:solid 1px brd;
-			&.active{
-				background-color:bg3;
-				border-bottom:solid 1px txt;
-			}
-		}
 	}
 	.matchtext{
 		background-color:hbtn !important;
@@ -1290,17 +1371,13 @@ svg_select_arrs="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' wi
 		}
 		& .firstProgressBarCell{
 			border-right:none !important;
-			border-radius:PBCS !important;
-			border-top-right-radius:0 !important;
-			border-bottom-right-radius:0 !important;
+			border-radius:lbarshape(PBCS,PBCSm) !important;
 			&.lastProgressBarCell{
-				border-radius:PBCS !important;
+				border-radius:barshape(PBCS,PBCSm) !important;
 			}
 		}
 		& .lastProgressBarCell{
-			border-radius:PBCS !important;
-			border-top-left-radius:0 !important;
-			border-bottom-left-radius:0 !important;
+			border-radius:rbarshape(PBCS,PBCSm) !important;
 		}
 	}
 	.badge-info{
