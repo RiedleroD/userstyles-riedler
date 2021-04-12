@@ -1715,6 +1715,9 @@ rbarshape(name,mod){
 					background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23CCC' d='M 4.828125 2.5 L 2 5.328125 L 9.0703125 12.398438 L 2 19.470703 L 4.828125 22.298828 L 11.898438 15.226562 L 18.970703 22.298828 L 21.798828 19.470703 L 14.726562 12.398438 L 21.798828 5.328125 L 18.970703 2.5 L 11.898438 9.5703125 L 4.828125 2.5 z '/%3E%3C/svg%3E");
 				}
 			}
+			&.flagged .thispageholder{
+				background-position:top right;
+			}
 		}
 		& a.qnbutton,
 		& span.qnbutton{
