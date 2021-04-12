@@ -1243,6 +1243,9 @@ rbarshape(name,mod){
 			&:active{
 				background-color:brd !important;
 			}
+			&>.icon{
+				vertical-align:middle;
+			}
 		}
 		.moodle-dialogue & .fp-thumbnail{
 			border:none;
@@ -1283,6 +1286,29 @@ rbarshape(name,mod){
 		}
 		& .fp-treeview .fp-folder>tbody>tr>td{
 			background-color:bg3;
+		}
+		& .fp-viewbar{
+			background-color:bg5;
+			border-radius:0.2em;
+			overflow:hidden;
+			&>.btn{
+				background-color:bg5;
+				border-radius:0;
+				&:focus{
+					outline:none;
+					box-shadow:none;
+					outline-offset:0;
+				}
+				&:hover{
+					background-color:bg6;
+				}
+				&.checked{
+					background-color:btn;
+					&>.icon{
+						color:htxt;
+					}
+				}
+			}
 		}
 	}
 	.fp-iconview .fp-filename-field{
