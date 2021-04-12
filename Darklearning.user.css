@@ -801,6 +801,12 @@ rbarshape(name,mod){
 			border-radius:0.5em;}
 	}
 	/*Misc*/
+	.usertext{
+		color:lnk !important;
+	}
+	#action-menu-toggle-0:hover .usertext{
+		color:hlnk !important;//TODO: fix this mess by removing the catch-all text colorator
+	}
 	if(anon==1){
 		.usertext{
 			display:none;
@@ -808,7 +814,19 @@ rbarshape(name,mod){
 		.userbutton::before{
 			content:"Anonymous User";
 			margin-right:0.25rem;
-			color:txt;
+			color:lnk;
+		}
+		#action-menu-toggle-0:hover .userbutton::before{
+			color:hlnk;
+		}
+		#page-footer .logininfo>a:first-child{
+			font-size:0;
+			text-decoration:none;//produces visual glitches when left on
+			&::after{
+				font-size:0.9375rem;//that's the usual font size in elearning
+				content:"Anonymous"
+				text-decoration:underline;
+			}
 		}
 	}
 	.nav-tabs,
