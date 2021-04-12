@@ -669,7 +669,17 @@ rbarshape(name,mod){
 	}
 	#goto-top-link>a.btn{
 		background-color:bg3;
-		border:none;}
+		border:none;
+		box-shadow:0 0 0.2rem 1px bg0;
+		transform:translate(-50%,-100%);
+		&:focus{
+			outline:none;
+			box-shadow:0 0 0.2rem 1px lnk;
+		}
+		&>.icon{
+			margin-right:0;
+		}
+	}
 	/*Dropdown menus*/
 	.dropdown-item:active,.dropdown-item.active{
 		background-color:bg4;}
