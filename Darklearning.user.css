@@ -100,7 +100,7 @@
 @var	color	hbtn	"Bright Blue Background"	#6AC
 @var	color	tru		"Correct"					#262
 @var	color	fals	"Incorrect"					#922
-@var	color	idk 	"Maybe?"					#D81
+@var	color	idk 	"Maybe?"					#B60
 @var	color	cal0	"Calendar 0"				#533
 @var	color	cal1	"Calendar 1"				#535
 @var	color	cal2	"Calendar 2"				#553
@@ -809,6 +809,13 @@ rbarshape(name,mod){
 		&-body{
 			color:txt;
 			border-radius:0.5em;}
+	}
+	/*Manually colored tables*/
+	th[style*="background-color: rgb(146\, 208\, 80)"]{
+		background-color:tru !important;
+	}
+	th[style*="background-color: #fef65b"]{
+		background-color:idk !important;
 	}
 	/*Misc*/
 	.usertext{
