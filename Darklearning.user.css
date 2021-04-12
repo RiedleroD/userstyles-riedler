@@ -411,7 +411,7 @@ svg_select_arrs="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' wi
 					z-index:2;
 					border-radius:0 0.25em 0.25em 0;
 					transition:0.2s max-width;
-				}	
+				}
 				& .contains_branch>ul{
 					transition: padding-left 0.2s;
 					padding-left:ntip;
@@ -899,7 +899,7 @@ svg_select_arrs="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' wi
 	}
 	#id_comments{
 		color:txt;}
-	
+
 	input[type="checkbox"]{
 		appearance:none;
 		min-width:1em;
@@ -1417,7 +1417,7 @@ svg_select_arrs="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' wi
 		}
 		&.selector,
 		&:hover{
- 			&.content-item-footer .timestamp{
+			&.content-item-footer .timestamp{
 				color:txt;
 			}
 		}
@@ -1460,7 +1460,7 @@ svg_select_arrs="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' wi
 			background-color:tru !important;
 			color:htxt;
 		}
-		
+
 		& table tr.past_due td{
 			background-color:bg4 !important;
 		}
@@ -1525,7 +1525,7 @@ svg_select_arrs="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' wi
 	div[data-region="datarequests"]>.mt-1.mb-1>.btn.btn-primary{
 		color:txt !important;}
 }
-@-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/mod/quiz.*?") {
+@-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/mod/quiz.*?"){
 	.moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd.yui3-widget-hd{
 		color:txt;}
 	.que.multichoice .answer{
@@ -1564,10 +1564,10 @@ svg_select_arrs="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' wi
 		background-color:bg3;
 		color:txt;
 		border-radius:0.5em;}
-	.que .info{	
-		background-color:bg3;	
-		border-radius:0.5em;	
-		border:none;}	
+	.que .info{
+		background-color:bg3;
+		border-radius:0.5em;
+		border:none;}
 	.que.essay .qtype_essay{
 		&_response.readonly{
 			background-color:bg4;
@@ -1588,16 +1588,23 @@ svg_select_arrs="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' wi
 			background-color:fals;
 		}
 	}
-	.que.correct .answer>input[type="text"]{	
+	.que.correct .answer>input[type="text"]{
 		background-color:tru;}
-	.que .answer>.correct>.specificfeedback{
-		background-color:tru;
-		border: solid 1px brd;
-		border-radius:0.25em;}
-	.que .answer>.incorrect>.specificfeedback{
-		background-color:fals;
-		border: solid 1px brd;
-		border-radius:0.25em;}
+	.que .answer{
+		&>.correct,
+		&>.incorrect{
+			&>.specificfeedback{
+				border: solid 1px brd;
+				border-radius:0.25em;
+			}
+		}
+		&>.correct>.specificfeedback{
+			background-color:tru;
+		}
+		&>.incorrect>.specificfeedback{
+			background-color:fals;
+		}
+	}
 	.path-mod-quiz #mod_quiz_navblock{
 		& .qnbutton{
 			&.correct>.trafficlight{
@@ -1622,10 +1629,14 @@ svg_select_arrs="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' wi
 			background-color:bg4;
 		}
 	}
-	#mod_quiz_navblock .qnbutton>.thispageholder{
-		border:none !important;}
-	#mod_quiz_navblock .qn_buttons:not(.allquestionsononepage) .qnbutton.thispage>.thispageholder{
-		box-shadow:0 0 1px 1px brd;}
+	#mod_quiz_navblock{
+		& .qnbutton>.thispageholder{
+			border:none !important;
+		}
+		& .qn_buttons:not(.allquestionsononepage) .qnbutton.thispage>.thispageholder{
+			box-shadow:0 0 1px 1px brd;
+		}
+	}
 	.quizreviewsummary{
 		border-radius:0.5em;
 		overflow:hidden;
@@ -1647,12 +1658,12 @@ svg_select_arrs="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' wi
 	.quizattemptsummary>thead>tr>th{
 		border-bottom:none;}
 	.path-mod-quiz #mod_quiz_navblock{
-		& .qnbutton.notyetanswered>.trafficlight{	
+		& .qnbutton.notyetanswered>.trafficlight{
 			background-color:bg4;
 		}
 		& .qnbutton.answersaved,
 		& .qnbutton.invalidanswer{
-			&>.trafficlight{	
+			&>.trafficlight{
 				background-color:brd;
 			}
 		}
@@ -1660,47 +1671,59 @@ svg_select_arrs="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' wi
 			box-shadow:0 0 0.2em #FFF;
 		}
 	}
-	.answer>input[type="text"]{	
+	.answer>input[type="text"]{
 		background-color:bg4;}
 	.answer>.form-control{
 		border-color:brd;
 		color:txt;
 		border-radius:0.5em;}
-	.subquestion input[type="text"]{	
-		background-color:bg4;	
-		border-color:brd;	
-		border-radius:0.5em;	
-		color:txt;}	
-	.submitbtns button[type="submit"].btn,	
-	.submitbtns input[type="submit"].btn{	
-		background-color:bg3;	
-		border-radius:0.5em;}
-	.submitbtns input[type="submit"].btn.mod_quiz-next-nav{	
-		background-color:btn;	
-		border-color:btn;}	
-	.submitbtns input[type="submit"].btn.mod_quiz-next-nav:hover{	
-		background-color:hbtn;	
-		border-color:hbtn;}
-	input[type="text"].correct{	
-		background-color:tru;}	
-	input[type="text"].incorrect{	
+	.subquestion input[type="text"]{
+		background-color:bg4;
+		border-color:brd;
+		border-radius:0.5em;
+		color:txt;}
+	.submitbtns{
+		& button[type="submit"].btn,
+		& input[type="submit"].btn{
+			background-color:bg3;
+			border-radius:0.5em;
+			&.mod_quiz-next-nav{
+				background-color:btn;
+				border-color:btn;
+			}
+			&.btn.mod_quiz-next-nav:hover{
+				background-color:hbtn;
+				border-color:hbtn;
+			}
+		}
+	}
+	input[type="text"].correct{
+		background-color:tru;}
+	input[type="text"].incorrect{
 		background-color:fals;}
 }
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/calendar/view\\.php.*?") {
 	.eventlist .event .card{
 		background-color:bg3;
 		border-radius:0.5em !important;
-		overflow:hidden;}
-	.path-calendar .maincalendar .calendar_event_course{
-		border:none;}
-	.path-calendar .maincalendar .calendarmonth ul li>a:hover{
-		overflow:visible;
-		transform:translate(0,0);
-		margin-bottom:0.45em;}
-	.path-calendar .maincalendar .calendarmonth ul li>a:hover .eventname{
-		background-color:bg3;
-		position:absolute;
-		right:-3.5em;}
-	.path-calendar .maincalendar .calendarmonth ul li>a{
-		text-overflow:clip;}
+		overflow:hidden;
+	}
+	.path-calendar .maincalendar{
+		& .calendar_event_course{
+			border:none;
+		}
+		& .calendarmonth ul li>a{
+			text-overflow:clip;
+			&:hover{
+				overflow:visible;
+				transform:translate(0,0);
+				margin-bottom:0.45em;
+				&.eventname{
+					background-color:bg3;
+					position:absolute;
+					right:-3.5em;
+				}
+			}
+		}
+	}
 }
