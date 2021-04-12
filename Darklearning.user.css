@@ -817,6 +817,9 @@ rbarshape(name,mod){
 			border-radius:0.5em;}
 	}
 	/*Manually colored tables*/
+	table[bgcolor="grey"]{
+		background-color:bg4;
+	}
 	th[style*="background-color: rgb(146\, 208\, 80)"]{
 		background-color:tru !important;
 	}
