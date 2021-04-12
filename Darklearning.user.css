@@ -168,7 +168,7 @@ rbarshape(name,mod){
 	shape=barshape(name,mod)
 	return (0) (shape[1]) (shape[2]) (0)
 }
-@-moz-document domain("elearning.tgm.ac.at"){
+@-moz-document domain("elearning.tgm.ac.at"), regexp(".*userstyle_testing/darklearning.*"){
 	/*text selections*/
 	::-moz-selection{/*for firefox and derivatives*/
 		background:slc;}
@@ -1600,7 +1600,7 @@ rbarshape(name,mod){
 	div[data-region="datarequests"]>.mt-1.mb-1>.btn.btn-primary{
 		color:txt !important;}
 }
-@-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/mod/quiz.*?"){
+@-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/mod/quiz.*?"), regexp(".*userstyle_testing/darklearning.*") {
 	.moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd.yui3-widget-hd{
 		color:txt;}
 	.que.multichoice .answer{
