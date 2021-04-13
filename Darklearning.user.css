@@ -1287,26 +1287,27 @@ rbarshape(name,mod){
 		& .fp-treeview .fp-folder>tbody>tr>td{
 			background-color:bg3;
 		}
-		& .fp-viewbar{
+	}
+	.filepicker .fp-viewbar,
+	.filemanager .fp-viewbar{
+		background-color:bg5;
+		border-radius:0.2em;
+		overflow:hidden;
+		&>.btn{
 			background-color:bg5;
-			border-radius:0.2em;
-			overflow:hidden;
-			&>.btn{
-				background-color:bg5;
-				border-radius:0;
-				&:focus{
-					outline:none;
-					box-shadow:none;
-					outline-offset:0;
-				}
-				&:hover{
-					background-color:bg6;
-				}
-				&.checked{
-					background-color:btn;
-					&>.icon{
-						color:htxt;
-					}
+			border-radius:0;
+			&:focus{
+				outline:none;
+				box-shadow:none;
+				outline-offset:0;
+			}
+			&:hover{
+				background-color:bg6;
+			}
+			&.checked{
+				background-color:btn;
+				&>.icon{
+					color:htxt;
 				}
 			}
 		}
