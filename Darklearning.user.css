@@ -995,6 +995,33 @@ rbarshape(name,mod){
 			color:txt;
 		}
 	}
+	.yui3-datatable{
+		& .yui3-datatable-header{
+			background-color:bg3 !important;
+			text-shadow:none;
+			color:txt !important;
+			border-bottom:solid 1px brd;
+		}
+		& .yui3-datatable-cell,
+		& .yui3-datatable-header{
+			border-left-color:brd;
+		}
+		& .yui3-datatable-sort-liner{
+			display:flex;
+			align-items:space-between;
+			padding-right:1em;
+			& .yui3-datatable-sort-indicator{
+				background-image:url(svg_select_arrs);
+				background-position:center right;
+				background-size:100%;
+				width:0.8em;
+				height:0.8em;
+			}
+		}
+		& .yui3-datatable-data>tr>td{
+			background-color:bg3 !important;
+		}
+	}
 	.preferences-container .preference-table{
 		border-color:brd;
 		color:txt;
@@ -1222,17 +1249,17 @@ rbarshape(name,mod){
 			background-color:bg3;
 			border-radius: 0 0 0.5em 0.5em;
 			border:none !important;
-			& .yui3-datatable-header{
-				background-color:bg3 !important;
-				text-shadow:none;
-				color:txt !important;
+		}
+		& .yui3-datatable{
+			&-header{
 				border-bottom-color:brd !important;
 			}
-			& .yui3-datatable-sort-indicator{
-				filter:invert(1);
-			}
-			& .yui3-datatable-data>tr>td{
-				background-color:bg3 !important;
+			&-even,
+			&-odd{
+				& .yui3-datatable-cell{
+					background-color:bg2 !important;
+					border-left-color:bg2 !important;
+				}
 			}
 		}
 		& .btn{
@@ -1255,69 +1282,109 @@ rbarshape(name,mod){
 		& .fp-content:focus{
 			outline:none;
 		}
-		& .fp-iconview .fp-file{
-			& .fp-thumbnail{
-				border:none;
-				min-width:112px;
-				background-color:#0000;
-				border-bottom:none;
+		& .fp-treeview .fp-folder>tbody>tr>td{
+			background-color:bg3;
+		}
+		& .fp-pathbar .fp-path-folder{
+			background:none;
+			&::before{
+				display:inline-block;
+				width:0;
+				content:"";
+				font:normal normal normal 14px/1 FontAwesome;
 			}
+		}
+	}
+	.filepicker{
+		& .fp-navbar{
+			border:solid 1px brd;
+			border-bottom:none;
+			border-bottom-left-radius:0;
+			border-bottom-right-radius:0;
+			padding-bottom:0;
+		}
+		& .fp-content{
+			background-color:#0000;
+			border:solid 1px brd;
+			border-top:none;
+			border-top-left-radius:0;
+			border-top-right-radius:0;
+			height:initial;
+			padding-bottom:1em;
+		}
+		& .moodle-dialogue-bd{
+			min-height:20vh;
+			max-height:80vh;
+			padding-bottom:1em;
+			overflow-y:auto;
+			& .file-picker{
+				margin-bottom:1em;
+			}
+		}
+	}
+	.filepicker,
+	.file-picker,
+	.filemanager{
+		& .fp-viewbar{
+			background-color:bg5;
+			border-radius:0.2em;
+			overflow:hidden;
+			&>.btn{
+				background-color:bg5;
+				border-radius:0;
+				&:focus{
+					outline:none;
+					box-shadow:none;
+					outline-offset:0;
+				}
+				&:hover{
+					background-color:bg6;
+				}
+				&.checked{
+					background-color:btn;
+					&>.icon{
+						color:htxt;
+					}
+				}
+			}
+		}
+		& .fp-info .fp-thumbnail{
+			border-radius:0.5em;
+			box-shadow:0 0 0.5em bg0;
+		}
+		& .fp-thumbnail{
+			border:none;
+			min-width:112px;
+			background-color:#0000;
+			border-bottom:none;
+			&>img{
+				border:none;
+			}
+		}
+		& .fp-iconview .fp-file{
+			box-shadow:0 0 0.5em bg0;
+			border-radius:0.5em 0.5em 0 0;
 			&name{
 				background-color:bg3;
 				border-top:none;
 				border-radius: 0 0 0.5em 0.5em;
 				padding:0 0.1em 0.1em 0.1em;
 				box-shadow:0 0 0.5em bg0;
+				margin-bottom:0.5em;
+				&-field{
+					padding-left:1em;
+					margin-left:-1em;
+					padding-right:1em;
+					margin-top:-3px;
+					margin-right:-1em;
+				}
 			}
 			&:hover .fp-filename-field{
 				overflow:hidden;
-			}
-		}
-		& .fp-file{
-			box-shadow:0 0 0.5em bg0;
-			border-radius:0.5em 0.5em 0 0;
-		}
-		& .fp-thumbnail img{
-			border:none;
-		}
-		& .fp-info .fp-thumbnail{
-			border-radius:0.5em;
-			box-shadow:0 0 0.5em bg0;
-		}
-		& .fp-treeview .fp-folder>tbody>tr>td{
-			background-color:bg3;
-		}
-	}
-	.filepicker .fp-viewbar,
-	.filemanager .fp-viewbar{
-		background-color:bg5;
-		border-radius:0.2em;
-		overflow:hidden;
-		&>.btn{
-			background-color:bg5;
-			border-radius:0;
-			&:focus{
-				outline:none;
-				box-shadow:none;
-				outline-offset:0;
-			}
-			&:hover{
-				background-color:bg6;
-			}
-			&.checked{
-				background-color:btn;
-				&>.icon{
-					color:htxt;
-				}
+				height:auto;
 			}
 		}
 	}
-	.fp-iconview .fp-filename-field{
-		padding-left:1em;
-		margin-left:-1em;
-		padding-right:1em;
-		margin-top:-3px;
-		margin-right:-1em;}
 	.dndupload-target{
 		background-color:bg3 !important;}
 	/*ace editor*/
@@ -1366,11 +1433,6 @@ rbarshape(name,mod){
 			background-color:tru;
 		}
 	}
-	/*Filepicker*/
-	.file-picker .card{
-		background-color:bg3;
-		border:solid 1px brd;
-		padding-bottom:0.4em;}
 	/*Calendar*/
 	.calendar_event,
 	.path-calendar .maincalendar .calendarmonth ul li .badge.badge-circle.calendar_event{
