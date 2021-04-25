@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Dark Arch
 @namespace      https://github.com/RiedleroD/userstyles-riedler/
-@version        0.1.0
+@version        0.1.1
 @description    Dark mode for archlinux.org (except for the wiki)
 @author         Riedler
 @preprocessor	uso
@@ -22,6 +22,7 @@
 @var	color	hlnk	"Hovered Link"		#58C
 @var	color	vlnk	"Visited Link"		#86A
 @var	color	slc		"Selections"		#000
+@var	color	rd		"Red"				#922
 ==/UserStyle== */
 
 @-moz-document regexp("https?:\\/\\/(?:(?!wiki)[^\\/])*archlinux.org(/.*)?"){
@@ -81,6 +82,9 @@
 		border-color:/*[[brd]]*/;
 		border-radius:/*[[brdr]]*/;
 		color:/*[[txt]]*/;}
+	div#taskclosed{
+		background-color:/*[[bg2]]*/;
+		border-color:/*[[rd]]*/}
 	.pun .blockpost h2,
 	.pun .quotebox{
 		background-color:/*[[bg4]]*/;
@@ -150,6 +154,8 @@
 		background-color:/*[[bg0]]*/;
 		color:/*[[txt]]*/;
 		outline:solid 1px #000;}
+	pre>code{
+		outline:none;}
 	/*various input elements*/
 	select{
 		background-color:/*[[bg3]]*/;
