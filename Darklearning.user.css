@@ -1229,6 +1229,21 @@ rbarshape(name,mod){
 				background-color:bg2;
 			}
 		}
+		&_notification .atto_{
+			&info,
+			&warning{
+				border-radius:0.5em;
+				border-top-right-radius:0;
+				border:solid 1px brd;
+				margin-top:-1px;
+			}
+			&warning{
+				background-color:fals;
+			}
+			&info{
+				background-color:bg3;
+			}
+		}
 	}
 	.atto_group{
 		background-color:bg3 !important;
