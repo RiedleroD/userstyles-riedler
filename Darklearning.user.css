@@ -1463,7 +1463,7 @@ rbarshape(name,mod){
 	}
 	.ui_wrapper[style*="border: 1px solid darkgrey"]{
 		border-color:brd !important;}
-	/*Coderunner*/
+	/*Coderunner - TODO: check if this still applies or if it's been completely replaced by VPL*/
 	coderunner{
 		#page-question-type-& div.ui_wrapper,
 		.que.& div.ui_wrapper{
@@ -1479,6 +1479,105 @@ rbarshape(name,mod){
 		.que.& div.&-test-results.good,
 		#page-question-type-& tr.&-failed-test.fixed{
 			background-color:tru;
+		}
+	}
+	/*VPL IDE*/
+	#vpl_menu{
+		border-radius:0.25em 0.25em 0 0;
+	}
+	#vpl_tabs{
+		border-radius:0 0 0.25em 0.25em;
+	}
+	.ui-state-default,
+	.ui-widget-content .ui-state-default,
+	.ui-widget-header .ui-state-default{
+		border:none;
+		background:bg4;
+	}
+	.ui-state-active,
+	.ui-widget-content .ui-state-active,
+	.ui-widget-header .ui-state-active,
+	a.ui-button:active,
+	.ui-button:active,
+	.ui-button.ui-state-active:hover{
+		border:none;
+		background:bg4;
+		border-top:inset 1px brd;
+		&>a{
+			color:hlnk !important;
+		}
+	}
+	.ui-corner-all{
+		border-radius:0.25em;
+	}
+	.vpl_ide_tr{
+		height:auto !important;
+		border-radius:0 0 0.25em 0.25em;
+		background:bg3;
+	}
+	.ui-widget-header{
+		display:flex;
+		border:none;
+		background:bg3;
+	}
+	.ui-button{
+		border:none;
+		background:bg4;
+		margin:1px;
+		margin-right:calc(0.1em + 1px);
+		&:hover{
+			background:bg5;
+		}
+	}
+	.ui-controlgroup-horizontal{
+		margin:0 calc(0.1em + 1px) 0 1px;
+		& .ui-button{
+			margin-left:0;
+			margin-right:0;
+		}
+	}
+	.ui-widget.ui-widget-content{
+		border:solid 1px #0000;
+		background:bg3;
+	}
+	.ui-widget-content{
+		color:txt;
+		background:bg4;
+	}
+	.vpl_ide_file{
+		margin-top:0;
+	}
+	.vpl_ide_closeicon{
+		text-shadow:none;
+	}
+	//TODO: replace with custom icons
+	.ui-state-active .ui-icon,
+	.ui-button:active .ui-icon{
+		filter:brightness(2);
+	}
+	.ui-icon,
+	.ui-widget-content .ui-icon{
+		filter:brightness(4);
+	}
+	.ui-state-hover .ui-icon,
+	.ui-state-focus .ui-icon,
+	.ui-button:hover .ui-icon,
+	.ui-button:focus .ui-icon{
+		filter:brightness(2);
+	}
+	.ui-dialog{
+		& .ui-dialog-buttonpane button{
+			color:txt;
+			border:solid 1px #0000;
+			border-color:#0000;//because of a css technicality
+			background:bg4;
+			&:hover{
+				border-color:brd;
+			}
+		}
+		& .ui-dialog-titlebar-close:hover{
+			border:none;
+			background:#0000;
 		}
 	}
 	/*Calendar*/
