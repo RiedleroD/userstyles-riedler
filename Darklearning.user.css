@@ -708,6 +708,9 @@ rbarshape(name,mod){
 		border:none;
 		box-shadow:0 0 0.2rem 1px bg0;
 		transform:translate(-50%,-100%);
+		&:hover{
+			background-color:bg4;
+		}
 		&:focus{
 			outline:none;
 			box-shadow:0 0 0.2rem 1px lnk;
