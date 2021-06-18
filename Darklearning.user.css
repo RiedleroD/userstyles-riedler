@@ -75,6 +75,10 @@
 	"Debug":"invert(1) hue-rotate(180deg) saturate(100)",
 	"Off":"none"}
 @var	checkbox	anon	"Anonymity (for screenshots)" 0
+@var	select	sidebar	"Navigation Sidebar"{
+	"Grow on hover":"Goh",
+	"Slide on hover":"Soh",
+	"Static":"S"}
 @var	text	ntip	"Navigation Tree initial padding"	"0"
 @var	text	ntmp	"Navigation Tree max padding"		"0.5rem"
 @var	color	bg0		"Background 0"				#000
@@ -490,17 +494,6 @@ rbarshape(name,mod){
 			}
 		}
 		&_navigation{
-			&:hover .block_tree{
-				& .tree_item{
-					white-space:nowrap;
-					overflow:hidden;
-					max-width:25vw;
-					padding-right:0.25em;
-				}
-				& .contains_branch>ul{
-					padding-left:ntmp;
-				}
-			}
 			& .block_tree{
 				& .tree_item{
 					max-width:100%;
@@ -513,7 +506,26 @@ rbarshape(name,mod){
 				}	
 				& .contains_branch>ul{
 					transition: padding-left 0.2s;
-					padding-left:ntip;
+					if sidebar=="S"{
+						padding-left:ntmp;
+					}else{
+						padding-left:ntip;
+					}
+				}
+			}
+			&:hover .block_tree{
+				if sidebar=="Goh"{
+					& .tree_item{
+						white-space:nowrap;
+						overflow:hidden;
+						max-width:25vw;
+						padding-right:0.25em;
+					}
+				}
+				if sidebar!="S"{
+					& .contains_branch>ul{
+						padding-left:ntmp;
+					}
 				}
 			}
 		}
