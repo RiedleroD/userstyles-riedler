@@ -775,17 +775,27 @@ rbarshape(name,mod){
 			background-color:tru;}
 		& .course-content{
 			& ul.tiles .tile{
-				&,
+				box-shadow:2px 4px 5px 0 #000A;
+				transform:translateY(0);//this is needed for compatibility
+				border-top:none;
+				border-radius:0.3rem;
+				&:hover{
+					box-shadow:2px 10px 8px -3px #000A;
+					transition:all 0.25s ease-in-out;
+					transform:translateY(-6px);
+				}
 				&_bar{
-					border-top-color:tru;
+					border-top:none;
+					border-radius:0.3rem;
 				}
 				&.phototile{
 					background-color:#444 !important;/*darkening the background image*/
 					background-blend-mode:overlay;
-					&.photo-tile-text h3{
-						color:dtxt !important;
-						font-weight:bold;
+					& .photo-tile-text h3{
+						color:htxt !important;
+						font-weight:500;
 						font-size:1.25rem;
+						background-color:lnk;
 					}
 				}
 			}
