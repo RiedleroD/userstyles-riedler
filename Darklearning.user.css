@@ -9,6 +9,14 @@
 	"Grow on hover":"Goh",
 	"Slide on hover":"Soh",
 	"Static":"S"}
+@var	select CPB		"Card Progressbar"{
+	"Compact":"C",
+	"Compact Borderless":"CBL",
+	"Normal Sized":"NS",
+	"Round":"R",
+	"Round Borderless":"RBL",
+	"Round Compact":"RC"
+}
 @var	select	LSI		"Link Selection Indicator"{
 	"Clamps":"C",
 	"Braces":"B",
@@ -1738,10 +1746,24 @@ rbarshape(name,mod){
 	.progress{
 		background-color:bg1 !important;
 		border-color:bg1 !important;
-		margin-bottom: 0.5rem; /* added by Philip Damianik */
-		height: .35rem!important; /* added by Philip Damianik */
+		margin-bottom: 0.5rem; // added by Philip Damianik
 		&-bar{
 			background-color:btn;
+		}
+		if CPB=="C"{
+			height:0.35rem !important; // added by Philip Damianik
+		}else if CPB=="CBL"{
+			border:none !important;
+			height:0.35rem !important;
+		}else if CPB=="R"{
+			border-radius:100vh;//to make sure it's perfectly round
+		}else if CPB=="RBL"{
+			border:none !important;
+			border-radius:100vh;
+		}else if CPB=="RC"{
+			border:none !important;
+			border-radius:0.35rem;
+			height:0.35rem !important;
 		}
 	}
 	.block-myoverview>.container-fluid.p-0{
