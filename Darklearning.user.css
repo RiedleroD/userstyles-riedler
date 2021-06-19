@@ -5,6 +5,10 @@
 @description	Darker version of Elearning
 @author			Riedler
 @preprocessor	stylus
+@var	select	sidebar	"Navigation Sidebar"{
+	"Grow on hover":"Goh",
+	"Slide on hover":"Soh",
+	"Static":"S"}
 @var	select	PBCS	"ProgressBarCell Shape"{
 	"Pronounced":"pron",
 	"Teardrop":"tear",
@@ -35,7 +39,7 @@
 	"Rectangle":"rect",
 	"Modifier debug":"debug_mod"
 }
-@var	select	NBCSm "ProgressBarCell Modifier"{
+@var	select	NBCSm "Course Navbar Cell Modifier"{
 	"Normal":"normal",
 	"Horizontal flip":"hflip",
 	"Vertical flip":"vflip",
@@ -56,7 +60,7 @@
 	"Rectangle":"rect",
 	"Modifier debug":"debug_mod"
 }
-@var	select	NBSm "ProgressBarCell Modifier"{
+@var	select	NBSm "Course Navbar Modifier"{
 	"Normal":"normal",
 	"Horizontal flip":"hflip",
 	"Vertical flip":"vflip",
@@ -68,54 +72,52 @@
 	"Rotate 180°":"r180",
 	"Rotate 270°":"r270"
 }
+@var	checkbox	anon	"Anonymity (for screenshots)" 0
 @var	select	EICC	"Embedded Image Color Correction"{
 	"Recommended":"invert(0.86) hue-rotate(180deg)",
 	"Full":"invert(1) hue-rotate(180deg)",
 	"Dim":"brightness(0.8)",
 	"Debug":"invert(1) hue-rotate(180deg) saturate(100)",
 	"Off":"none"}
-@var	checkbox	anon	"Anonymity (for screenshots)" 0
-@var	select	sidebar	"Navigation Sidebar"{
-	"Grow on hover":"Goh",
-	"Slide on hover":"Soh",
-	"Static":"S"}
 @var	text	ntip	"Navigation Tree initial padding"	"0"
 @var	text	ntmp	"Navigation Tree max padding"		"0.5rem"
-@var	color	bg0		"Background 0"				#000
-@var	color	bg1		"Background 1"				#151515
-@var	color	bg2		"Background 2"				#222
-@var	color	bg2_5	"Background 2.5"			#252525
-@var	color	bg3		"Background 3"				#333
-@var	color	bg3_5	"Background 3.5"			#383838
-@var	color	bg4		"Background 4"				#444
-@var	color	bg5		"Background 5"				#555
-@var	color	bg6		"Background 6"				#666
-@var	color	slc		"Marked Text"				#000
-@var	color	brd		"Border"					#888
-@var	color	hbrd	"Bright Border"				#AAA
-@var	color	dtxt	"Dark Text"					#151515
-@var	color	txt		"Text"						#AAA
-@var	color	htxt	"Bright Text"				#CCC
-@var	color	hhtxt	"Very bright text"			#FFF
-@var	color	mtxt	"codeblock Text"			#8AA
-@var	color	lnk		"Links"						#418BA4
-@var	color	hlnk	"Hovered Links"				#6AC
-@var	color	btn		"Blue Background"			#418BA4
-@var	color	hbtn	"Bright Blue Background"	#6AC
-@var	color	tru		"Correct"					#262
-@var	color	fals	"Incorrect"					#922
-@var	color	idk 	"Maybe?"					#B60
-@var	color	cal0	"Calendar 0"				#533
-@var	color	cal1	"Calendar 1"				#535
-@var	color	cal2	"Calendar 2"				#553
-@var	color	cal3	"Calendar 3"				#555
-@var	color	cal4	"Calendar 4"				#353
-@var	color	pb		"Pale Blue"					#669
-@var	color	c0		"Codeblock 0"				#66A
-@var	color	c1		"Codeblock 1"				#3C3
-@var	color	c2		"Codeblock 2"				#CC3
-@var	color	c3		"Codeblock 3"				#C33
 ==/UserStyle== */
+
+//color variables
+bg0  = #000
+bg1	 = #151515
+bg2	 = #222
+bg2_5= #252525
+bg3	 = #333
+bg3_5= #383838
+bg4	 = #444
+bg5	 = #555
+bg6	 = #666
+slc	 = #000
+brd	 = #888
+hbrd = #AAA
+dtxt = #151515
+txt	 = #AAA
+htxt = #CCC
+hhtxt= #FFF
+mtxt = #8AA
+lnk	 = #418BA4
+hlnk = #6AC
+btn	 = #418BA4
+hbtn = #6AC
+tru	 = #262
+fals = #922
+idk  = #B60
+cal0 = #533
+cal1 = #535
+cal2 = #553
+cal3 = #555
+cal4 = #353
+pb	 = #669
+c0	 = #66A
+c1	 = #3C3
+c2	 = #CC3
+c3	 = #C33
 
 svg_select_arrs="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' version='1'%3E%3Cpath fill='"+rgba(txt,0.999)+"' stroke='"+rgba(txt,0.999)+"' d='M8 1 2 6h12zM2 10H14L8 15Z'/%3E%3C/svg%3E"
 
