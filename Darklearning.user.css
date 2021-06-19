@@ -662,9 +662,11 @@ rbarshape(name,mod){
 				border-color:brd;}
 			&:focus,
 			&.focus{
-				box-shadow:inset 0 0.1em 0 0 brd;
+				box-shadow:inset 0 0.1em 0 0 hbrd;
 				outline:solid 1px brd;
-				outline-offset:1px;}
+				outline-offset:1px;
+				background-color:brd;
+				color:dtxt;}
 			&.disabled,
 			&:disabled{
 				background-color:bg5;
