@@ -1280,14 +1280,10 @@ rbarshape(name,mod){
 			}
 		}
 	}
-	#qrcode{
-		position:relative;
-		width:10em;
-		&>img{
-			filter:none;
-			background-color:#FFF;
-			padding:4px;
-		}
+	#qrcode>img{
+		filter:none;
+		background-color:#FFF;
+		padding:4px;
 	}
 	/*Editor Atto*/
 	.editor_atto{
