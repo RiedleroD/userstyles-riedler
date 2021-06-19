@@ -1,10 +1,30 @@
 /* ==UserStyle==
 @name			Darklearning
 @namespace		https://github.com/RiedleroD/userstyles-riedler
-@version		1.2.1
+@version		1.2.2
 @description	Darker version of Elearning
 @author			Riedler
 @preprocessor	stylus
+@var	select	sidebar	"Navigation Sidebar"{
+	"Grow on hover":"Goh",
+	"Slide on hover":"Soh",
+	"Static":"S"}
+@var	select CPB		"Card Progressbar"{
+	"Compact":"C",
+	"Compact Borderless":"CBL",
+	"Normal Sized":"NS",
+	"Round":"R",
+	"Round Borderless":"RBL",
+	"Round Compact":"RC"
+}
+@var	select	LSI		"Link Selection Indicator"{
+	"Clamps":"C",
+	"Braces":"B",
+	"Underbelly":"U",
+	"Flat":"F",
+	"Round":"R",
+	"Encased":"E"
+}
 @var	select	PBCS	"ProgressBarCell Shape"{
 	"Pronounced":"pron",
 	"Teardrop":"tear",
@@ -35,7 +55,7 @@
 	"Rectangle":"rect",
 	"Modifier debug":"debug_mod"
 }
-@var	select	NBCSm "ProgressBarCell Modifier"{
+@var	select	NBCSm "Course Navbar Cell Modifier"{
 	"Normal":"normal",
 	"Horizontal flip":"hflip",
 	"Vertical flip":"vflip",
@@ -56,7 +76,7 @@
 	"Rectangle":"rect",
 	"Modifier debug":"debug_mod"
 }
-@var	select	NBSm "ProgressBarCell Modifier"{
+@var	select	NBSm "Course Navbar Modifier"{
 	"Normal":"normal",
 	"Horizontal flip":"hflip",
 	"Vertical flip":"vflip",
@@ -68,50 +88,52 @@
 	"Rotate 180°":"r180",
 	"Rotate 270°":"r270"
 }
+@var	checkbox	anon	"Anonymity (for screenshots)" 0
 @var	select	EICC	"Embedded Image Color Correction"{
 	"Recommended":"invert(0.86) hue-rotate(180deg)",
 	"Full":"invert(1) hue-rotate(180deg)",
 	"Dim":"brightness(0.8)",
 	"Debug":"invert(1) hue-rotate(180deg) saturate(100)",
 	"Off":"none"}
-@var	checkbox	anon	"Anonymity (for screenshots)" 0
 @var	text	ntip	"Navigation Tree initial padding"	"0"
 @var	text	ntmp	"Navigation Tree max padding"		"0.5rem"
-@var	color	bg0		"Background 0"				#000
-@var	color	bg1		"Background 1"				#151515
-@var	color	bg2		"Background 2"				#222
-@var	color	bg2_5	"Background 2.5"			#252525
-@var	color	bg3		"Background 3"				#333
-@var	color	bg3_5	"Background 3.5"			#383838
-@var	color	bg4		"Background 4"				#444
-@var	color	bg5		"Background 5"				#555
-@var	color	bg6		"Background 6"				#666
-@var	color	slc		"Marked Text"				#000
-@var	color	brd		"Border"					#888
-@var	color	hbrd	"Bright Border"				#AAA
-@var	color	dtxt	"Dark Text"					#151515
-@var	color	txt		"Text"						#AAA
-@var	color	htxt	"Bright Text"				#CCC
-@var	color	hhtxt	"Very bright text"			#FFF
-@var	color	mtxt	"codeblock Text"			#8AA
-@var	color	lnk		"Links"						#418BA4
-@var	color	hlnk	"Hovered Links"				#6AC
-@var	color	btn		"Blue Background"			#418BA4
-@var	color	hbtn	"Bright Blue Background"	#6AC
-@var	color	tru		"Correct"					#262
-@var	color	fals	"Incorrect"					#922
-@var	color	idk 	"Maybe?"					#B60
-@var	color	cal0	"Calendar 0"				#533
-@var	color	cal1	"Calendar 1"				#535
-@var	color	cal2	"Calendar 2"				#553
-@var	color	cal3	"Calendar 3"				#555
-@var	color	cal4	"Calendar 4"				#353
-@var	color	pb		"Pale Blue"					#669
-@var	color	c0		"Codeblock 0"				#66A
-@var	color	c1		"Codeblock 1"				#3C3
-@var	color	c2		"Codeblock 2"				#CC3
-@var	color	c3		"Codeblock 3"				#C33
 ==/UserStyle== */
+
+//color variables
+bg0  = #000
+bg1	 = #151515
+bg2	 = #222
+bg2_5= #252525
+bg3	 = #333
+bg3_5= #383838
+bg4	 = #444
+bg5	 = #555
+bg6	 = #666
+slc	 = #000
+brd	 = #888
+hbrd = #AAA
+dtxt = #151515
+txt	 = #AAA
+htxt = #CCC
+hhtxt= #FFF
+mtxt = #8AA
+lnk	 = #418BA4
+hlnk = #6AC
+btn	 = #418BA4
+hbtn = #6AC
+tru	 = #262
+fals = #922
+idk  = #B60
+cal0 = #533
+cal1 = #535
+cal2 = #553
+cal3 = #555
+cal4 = #353
+pb	 = #669
+c0	 = #66A
+c1	 = #3C3
+c2	 = #CC3
+c3	 = #C33
 
 svg_select_arrs="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' version='1'%3E%3Cpath fill='"+rgba(txt,0.999)+"' stroke='"+rgba(txt,0.999)+"' d='M8 1 2 6h12zM2 10H14L8 15Z'/%3E%3C/svg%3E"
 
@@ -438,7 +460,9 @@ rbarshape(name,mod){
 				background-color:bg3;
 			}
 		}
+		&:hover,
 		&:focus{
+			background-color:bg4;
 			color:txt;
 		}
 	}
@@ -490,17 +514,6 @@ rbarshape(name,mod){
 			}
 		}
 		&_navigation{
-			&:hover .block_tree{
-				& .tree_item{
-					white-space:nowrap;
-					overflow:hidden;
-					max-width:25vw;
-					padding-right:0.25em;
-				}
-				& .contains_branch>ul{
-					padding-left:ntmp;
-				}
-			}
 			& .block_tree{
 				& .tree_item{
 					max-width:100%;
@@ -510,10 +523,29 @@ rbarshape(name,mod){
 					z-index:2;
 					border-radius:0 0.25em 0.25em 0;
 					transition:0.2s max-width;
-				}
+				}	
 				& .contains_branch>ul{
 					transition: padding-left 0.2s;
-					padding-left:ntip;
+					if sidebar=="S"{
+						padding-left:ntmp;
+					}else{
+						padding-left:ntip;
+					}
+				}
+			}
+			&:hover .block_tree{
+				if sidebar=="Goh"{
+					& .tree_item{
+						white-space:nowrap;
+						overflow:hidden;
+						max-width:25vw;
+						padding-right:0.25em;
+					}
+				}
+				if sidebar!="S"{
+					& .contains_branch>ul{
+						padding-left:ntmp;
+					}
 				}
 			}
 		}
@@ -559,6 +591,24 @@ rbarshape(name,mod){
 			background-color:bg0 !important;
 		}
 	}
+	/*VPL badge*/
+	div[style="float:right; right:10px; padding:8px; background-color: white;text-align:center;"]{
+		background-color:bg3 !important;
+		border-radius:0.25rem;
+		box-shadow:0 0 0.2rem 1px #000;
+		transition:background-color 0.1s;
+		cursor:pointer;
+		&:hover{
+			background-color:bg4 !important;
+			& a{
+				color:hlnk !important;
+			}
+		}
+		& a:hover{
+			text-decoration:none;
+		}
+	}
+	/*random shit again*/
 	.logo>img{
 		filter:invert(1) hue-rotate(180deg);}
 	.fa{
@@ -622,9 +672,11 @@ rbarshape(name,mod){
 				border-color:brd;}
 			&:focus,
 			&.focus{
-				box-shadow:inset 0 0.1em 0 0 brd;
+				box-shadow:inset 0 0.1em 0 0 hbrd;
 				outline:solid 1px brd;
-				outline-offset:1px;}
+				outline-offset:1px;
+				background-color:brd;
+				color:dtxt;}
 			&.disabled,
 			&:disabled{
 				background-color:bg5;
@@ -678,6 +730,9 @@ rbarshape(name,mod){
 		border:none;
 		box-shadow:0 0 0.2rem 1px bg0;
 		transform:translate(-50%,-100%);
+		&:hover{
+			background-color:bg4;
+		}
 		&:focus{
 			outline:none;
 			box-shadow:0 0 0.2rem 1px lnk;
@@ -730,17 +785,27 @@ rbarshape(name,mod){
 			background-color:tru;}
 		& .course-content{
 			& ul.tiles .tile{
-				&,
+				box-shadow:2px 4px 5px 0 #000A;
+				transform:translateY(0);//this is needed for compatibility
+				border-top:none;
+				border-radius:0.3rem;
+				&:hover{
+					box-shadow:2px 10px 8px -3px #000A;
+					transition:all 0.25s ease-in-out;
+					transform:translateY(-6px);
+				}
 				&_bar{
-					border-top-color:tru;
+					border-top:none;
+					border-radius:0.3rem;
 				}
 				&.phototile{
 					background-color:#444 !important;/*darkening the background image*/
 					background-blend-mode:overlay;
-					&.photo-tile-text h3{
-						color:dtxt !important;
-						font-weight:bold;
+					& .photo-tile-text h3{
+						color:htxt !important;
+						font-weight:500;
 						font-size:1.25rem;
+						background-color:lnk;
 					}
 				}
 			}
@@ -995,6 +1060,33 @@ rbarshape(name,mod){
 			color:txt;
 		}
 	}
+	.yui3-datatable{
+		& .yui3-datatable-header{
+			background-color:bg3 !important;
+			text-shadow:none;
+			color:txt !important;
+			border-bottom:solid 1px brd;
+		}
+		& .yui3-datatable-cell,
+		& .yui3-datatable-header{
+			border-left-color:brd;
+		}
+		& .yui3-datatable-sort-liner{
+			display:flex;
+			align-items:space-between;
+			padding-right:1em;
+			& .yui3-datatable-sort-indicator{
+				background-image:url(svg_select_arrs);
+				background-position:center right;
+				background-size:100%;
+				width:0.8em;
+				height:0.8em;
+			}
+		}
+		& .yui3-datatable-data>tr>td{
+			background-color:bg3 !important;
+		}
+	}
 	.preferences-container .preference-table{
 		border-color:brd;
 		color:txt;
@@ -1022,7 +1114,7 @@ rbarshape(name,mod){
 	}
 	#id_comments{
 		color:txt;}
-
+	
 	input[type="checkbox"]{
 		appearance:none;
 		min-width:1em;
@@ -1084,21 +1176,20 @@ rbarshape(name,mod){
 	}
 	.form-control{
 		border-radius:0.5em;
-		background-color:bg4;
+		background-color:bg3;
 		border-color:brd;
 		color:txt;
 		&:disabled,
 		&[readonly]{
+			background-color:bg6;
+			cursor:not-allowed;
 			&:hover{
-				background-color:bg5;
-			cursor:default;
+				background-color:bg6;
 			}
 		}
-		&:hover{
-			background-color:bg4;
-		}
+		&:hover,
 		&:focus{
-			background-color:bg5;
+			background-color:bg4;
 			color:txt;
 		}
 		select&{
@@ -1112,7 +1203,7 @@ rbarshape(name,mod){
 		}
 	}
 	.input-group{
-		.input-group>.form-control{
+		&>.form-control{
 			&,
 			&.border-right-0{
 				border-radius:0.25rem 0 0 0.25rem;
@@ -1165,11 +1256,39 @@ rbarshape(name,mod){
 	.activityinstance>a,
 	#page-footer a:not([class]){
 		&.focus,
-		&:focus{
-			background-color:#0000;
-			box-shadow:0 -0.2rem brd,0 0.2rem brd;
-			border-radius:0.3em;
+		&:focus{//janky box-shadow offsets; a better solution is desired
+			if LSI=="C"{
+				background-color:#0000;
+				box-shadow:0 -0.2rem brd,0 0.2rem brd;
+				border-radius:0.3em;
+			}else if LSI="B"{
+				background-color:#0000;
+				box-shadow:0 0.4rem 0 -0.1rem bg2,0 -0.4rem 0 -0.1rem bg2,0 0 0 0.1rem bg2,0 0 0 0.3rem brd;
+			}else if LSI=="U"{
+				background-color:#0000;
+				box-shadow:0 0 0 2px bg2,0 0.2rem 0 1px brd;
+				border-radius:0.3em;
+			}else if LSI=="F"{
+				background-color:bg4;
+				box-shadow:0 -.2rem bg4,0 .2rem brd;
+			}else if LSI=="R"{
+				background-color:#0000;
+				box-shadow:0 0 0 2px bg2,0 0 0 3px brd;
+				border-radius:0.3em;
+			}else if LSI=="E"{
+				background-color:#0000;
+				box-shadow:0 0 0 2px bg2,0 0 0 3px brd;
+			}
 		}
+	}
+	#qrcode>img{
+		filter:none;
+		background-color:#FFF;
+		padding:4px;
+	}
+	.forumpost{
+		border-color:brd;
+		border-radius:0.3rem;
 	}
 	/*Editor Atto*/
 	.editor_atto{
@@ -1202,6 +1321,21 @@ rbarshape(name,mod){
 				background-color:bg2;
 			}
 		}
+		&_notification .atto_{
+			&info,
+			&warning{
+				border-radius:0.5em;
+				border-top-right-radius:0;
+				border:solid 1px brd;
+				margin-top:-1px;
+			}
+			&warning{
+				background-color:fals;
+			}
+			&info{
+				background-color:bg3;
+			}
+		}
 	}
 	.atto_group{
 		background-color:bg3 !important;
@@ -1222,17 +1356,17 @@ rbarshape(name,mod){
 			background-color:bg3;
 			border-radius: 0 0 0.5em 0.5em;
 			border:none !important;
-			& .yui3-datatable-header{
-				background-color:bg3 !important;
-				text-shadow:none;
-				color:txt !important;
+		}
+		& .yui3-datatable{
+			&-header{
 				border-bottom-color:brd !important;
 			}
-			& .yui3-datatable-sort-indicator{
-				filter:invert(1);
-			}
-			& .yui3-datatable-data>tr>td{
-				background-color:bg3 !important;
+			&-even,
+			&-odd{
+				& .yui3-datatable-cell{
+					background-color:bg2 !important;
+					border-left-color:bg2 !important;
+				}
 			}
 		}
 		& .btn{
@@ -1255,38 +1389,49 @@ rbarshape(name,mod){
 		& .fp-content:focus{
 			outline:none;
 		}
-		& .fp-iconview .fp-file{
-			& .fp-thumbnail{
-				border:none;
-				min-width:112px;
-				background-color:#0000;
-				border-bottom:none;
-			}
-			&name{
-				background-color:bg3;
-				border-top:none;
-				border-radius: 0 0 0.5em 0.5em;
-				padding:0 0.1em 0.1em 0.1em;
-				box-shadow:0 0 0.5em bg0;
-			}
-			&:hover .fp-filename-field{
-				overflow:hidden;
-			}
-		}
-		& .fp-file{
-			box-shadow:0 0 0.5em bg0;
-			border-radius:0.5em 0.5em 0 0;
-		}
-		& .fp-thumbnail img{
-			border:none;
-		}
-		& .fp-info .fp-thumbnail{
-			border-radius:0.5em;
-			box-shadow:0 0 0.5em bg0;
-		}
 		& .fp-treeview .fp-folder>tbody>tr>td{
 			background-color:bg3;
 		}
+		& .fp-pathbar .fp-path-folder{
+			background:none;
+			&::before{
+				display:inline-block;
+				width:0;
+				content:"";
+				font:normal normal normal 14px/1 FontAwesome;
+			}
+		}
+	}
+	.filepicker{
+		& .fp-navbar{
+			border:solid 1px brd;
+			border-bottom:none;
+			border-bottom-left-radius:0;
+			border-bottom-right-radius:0;
+			padding-bottom:0;
+		}
+		& .fp-content{
+			background-color:#0000;
+			border:solid 1px brd;
+			border-top:none;
+			border-top-left-radius:0;
+			border-top-right-radius:0;
+			height:initial;
+			padding-bottom:1em;
+		}
+		& .moodle-dialogue-bd{
+			min-height:20vh;
+			max-height:80vh;
+			padding-bottom:1em;
+			overflow-y:auto;
+			& .file-picker{
+				margin-bottom:1em;
+			}
+		}
+	}
+	.filepicker,
+	.file-picker,
+	.filemanager{
 		& .fp-viewbar{
 			background-color:bg5;
 			border-radius:0.2em;
@@ -1310,13 +1455,43 @@ rbarshape(name,mod){
 				}
 			}
 		}
+		& .fp-info .fp-thumbnail{
+			border-radius:0.5em;
+			box-shadow:0 0 0.5em bg0;
+		}
+		& .fp-thumbnail{
+			border:none;
+			min-width:112px;
+			background-color:#0000;
+			border-bottom:none;
+			&>img{
+				border:none;
+			}
+		}
+		& .fp-iconview .fp-file{
+			box-shadow:0 0 0.5em bg0;
+			border-radius:0.5em 0.5em 0 0;
+			&name{
+				background-color:bg3;
+				border-top:none;
+				border-radius: 0 0 0.5em 0.5em;
+				padding:0 0.1em 0.1em 0.1em;
+				box-shadow:0 0 0.5em bg0;
+				margin-bottom:0.5em;
+				&-field{
+					padding-left:1em;
+					margin-left:-1em;
+					padding-right:1em;
+					margin-top:-3px;
+					margin-right:-1em;
+				}
+			}
+			&:hover .fp-filename-field{
+				overflow:hidden;
+				height:auto;
+			}
+		}
 	}
-	.fp-iconview .fp-filename-field{
-		padding-left:1em;
-		margin-left:-1em;
-		padding-right:1em;
-		margin-top:-3px;
-		margin-right:-1em;}
 	.dndupload-target{
 		background-color:bg3 !important;}
 	/*ace editor*/
@@ -1347,7 +1522,7 @@ rbarshape(name,mod){
 	}
 	.ui_wrapper[style*="border: 1px solid darkgrey"]{
 		border-color:brd !important;}
-	/*Coderunner*/
+	/*Coderunner - TODO: check if this still applies or if it's been completely replaced by VPL*/
 	coderunner{
 		#page-question-type-& div.ui_wrapper,
 		.que.& div.ui_wrapper{
@@ -1365,11 +1540,105 @@ rbarshape(name,mod){
 			background-color:tru;
 		}
 	}
-	/*Filepicker*/
-	.file-picker .card{
-		background-color:bg3;
-		border:solid 1px brd;
-		padding-bottom:0.4em;}
+	/*VPL IDE*/
+	#vpl_menu{
+		border-radius:0.25em 0.25em 0 0;
+	}
+	#vpl_tabs{
+		border-radius:0 0 0.25em 0.25em;
+	}
+	.ui-state-default,
+	.ui-widget-content .ui-state-default,
+	.ui-widget-header .ui-state-default{
+		border:none;
+		background:bg4;
+	}
+	.ui-state-active,
+	.ui-widget-content .ui-state-active,
+	.ui-widget-header .ui-state-active,
+	a.ui-button:active,
+	.ui-button:active,
+	.ui-button.ui-state-active:hover{
+		border:none;
+		background:bg4;
+		border-top:inset 1px brd;
+		&>a{
+			color:hlnk !important;
+		}
+	}
+	.ui-corner-all{
+		border-radius:0.25em;
+	}
+	.vpl_ide_tr{
+		height:auto !important;
+		border-radius:0 0 0.25em 0.25em;
+		background:bg3;
+	}
+	.ui-widget-header{
+		display:flex;
+		border:none;
+		background:bg3;
+	}
+	.ui-button{
+		border:none;
+		background:bg4;
+		margin:1px;
+		margin-right:calc(0.1em + 1px);
+		&:hover{
+			background:bg5;
+		}
+	}
+	.ui-controlgroup-horizontal{
+		margin:0 calc(0.1em + 1px) 0 1px;
+		& .ui-button{
+			margin-left:0;
+			margin-right:0;
+		}
+	}
+	.ui-widget.ui-widget-content{
+		border:solid 1px #0000;
+		background:bg3;
+	}
+	.ui-widget-content{
+		color:txt;
+		background:bg4;
+	}
+	.vpl_ide_file{
+		margin-top:0;
+	}
+	.vpl_ide_closeicon{
+		text-shadow:none;
+	}
+	//TODO: replace with custom icons
+	.ui-state-active .ui-icon,
+	.ui-button:active .ui-icon{
+		filter:brightness(2);
+	}
+	.ui-icon,
+	.ui-widget-content .ui-icon{
+		filter:brightness(4);
+	}
+	.ui-state-hover .ui-icon,
+	.ui-state-focus .ui-icon,
+	.ui-button:hover .ui-icon,
+	.ui-button:focus .ui-icon{
+		filter:brightness(2);
+	}
+	.ui-dialog{
+		& .ui-dialog-buttonpane button{
+			color:txt;
+			border:solid 1px #0000;
+			border-color:#0000;//because of a css technicality
+			background:bg4;
+			&:hover{
+				border-color:brd;
+			}
+		}
+		& .ui-dialog-titlebar-close:hover{
+			border:none;
+			background:#0000;
+		}
+	}
 	/*Calendar*/
 	.calendar_event,
 	.path-calendar .maincalendar .calendarmonth ul li .badge.badge-circle.calendar_event{
@@ -1487,10 +1756,24 @@ rbarshape(name,mod){
 	.progress{
 		background-color:bg1 !important;
 		border-color:bg1 !important;
-		margin-bottom: 0.5rem; /* added by Philip Damianik */
-		height: .35rem!important; /* added by Philip Damianik */
+		margin-bottom: 0.5rem; // added by Philip Damianik
 		&-bar{
 			background-color:btn;
+		}
+		if CPB=="C"{
+			height:0.35rem !important; // added by Philip Damianik
+		}else if CPB=="CBL"{
+			border:none !important;
+			height:0.35rem !important;
+		}else if CPB=="R"{
+			border-radius:100vh;//to make sure it's perfectly round
+		}else if CPB=="RBL"{
+			border:none !important;
+			border-radius:100vh;
+		}else if CPB=="RC"{
+			border:none !important;
+			border-radius:0.35rem;
+			height:0.35rem !important;
 		}
 	}
 	.block-myoverview>.container-fluid.p-0{
@@ -1607,7 +1890,7 @@ rbarshape(name,mod){
 			background-color:tru !important;
 			color:htxt;
 		}
-
+		
 		& table tr.past_due td{
 			background-color:bg4 !important;
 		}
@@ -1711,10 +1994,10 @@ rbarshape(name,mod){
 		background-color:bg3;
 		color:txt;
 		border-radius:0.5em;}
-	.que .info{
-		background-color:bg3;
-		border-radius:0.5em;
-		border:none;}
+	.que .info{	
+		background-color:bg3;	
+		border-radius:0.5em;	
+		border:none;}	
 	.que.essay .qtype_essay{
 		&_response.readonly{
 			background-color:bg4;
@@ -1760,7 +2043,7 @@ rbarshape(name,mod){
 			background-color:fals;
 		}
 	}
-	.que.correct .answer>input[type="text"]{
+	.que.correct .answer>input[type="text"]{	
 		background-color:tru;}
 	.que .answer{
 		&>.correct,
@@ -1833,12 +2116,12 @@ rbarshape(name,mod){
 	.quizattemptsummary>thead>tr>th{
 		border-bottom:none;}
 	.path-mod-quiz #mod_quiz_navblock{
-		& .qnbutton.notyetanswered>.trafficlight{
+		& .qnbutton.notyetanswered>.trafficlight{	
 			background-color:bg4;
 		}
 		& .qnbutton.answersaved,
 		& .qnbutton.invalidanswer{
-			&>.trafficlight{
+			&>.trafficlight{	
 				background-color:brd;
 			}
 		}
@@ -1846,35 +2129,35 @@ rbarshape(name,mod){
 			box-shadow:0 0 0.2em #FFF;
 		}
 	}
-	.answer>input[type="text"]{
+	.answer>input[type="text"]{	
 		background-color:bg4;}
 	.answer>.form-control{
 		border-color:brd;
 		color:txt;
 		border-radius:0.5em;}
-	.subquestion input[type="text"]{
-		background-color:bg4;
-		border-color:brd;
-		border-radius:0.5em;
-		color:txt;}
+	.subquestion input[type="text"]{	
+		background-color:bg4;	
+		border-color:brd;	
+		border-radius:0.5em;	
+		color:txt;}	
 	.submitbtns{
-		& button[type="submit"].btn,
-		& input[type="submit"].btn{
-			background-color:bg3;
+		& button[type="submit"].btn,	
+		& input[type="submit"].btn{	
+			background-color:bg3;	
 			border-radius:0.5em;
-			&.mod_quiz-next-nav{
-				background-color:btn;
+			&.mod_quiz-next-nav{	
+				background-color:btn;	
 				border-color:btn;
 			}
-			&.btn.mod_quiz-next-nav:hover{
-				background-color:hbtn;
+			&.btn.mod_quiz-next-nav:hover{	
+				background-color:hbtn;	
 				border-color:hbtn;
 			}
 		}
 	}
-	input[type="text"].correct{
-		background-color:tru;}
-	input[type="text"].incorrect{
+	input[type="text"].correct{	
+		background-color:tru;}	
+	input[type="text"].incorrect{	
 		background-color:fals;}
 }
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/calendar/view\\.php.*?") {
