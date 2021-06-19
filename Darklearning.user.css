@@ -460,7 +460,9 @@ rbarshape(name,mod){
 				background-color:bg3;
 			}
 		}
+		&:hover,
 		&:focus{
+			background-color:bg4;
 			color:txt;
 		}
 	}
@@ -1174,7 +1176,7 @@ rbarshape(name,mod){
 	}
 	.form-control{
 		border-radius:0.5em;
-		background-color:bg4;
+		background-color:bg3;
 		border-color:brd;
 		color:txt;
 		&:disabled,
@@ -1185,11 +1187,9 @@ rbarshape(name,mod){
 				background-color:bg6;
 			}
 		}
-		&:hover{
-			background-color:bg4;
-		}
+		&:hover,
 		&:focus{
-			background-color:bg5;
+			background-color:bg4;
 			color:txt;
 		}
 		select&{
