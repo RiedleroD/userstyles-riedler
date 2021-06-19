@@ -9,6 +9,14 @@
 	"Grow on hover":"Goh",
 	"Slide on hover":"Soh",
 	"Static":"S"}
+@var	select	LSI		"Link Selection Indicator"{
+	"Clamps":"C",
+	"Braces":"B",
+	"Underbelly":"U",
+	"Flat":"F",
+	"Round":"R",
+	"Encased":"E"
+}
 @var	select	PBCS	"ProgressBarCell Shape"{
 	"Pronounced":"pron",
 	"Teardrop":"tear",
@@ -1227,10 +1235,29 @@ rbarshape(name,mod){
 	.activityinstance>a,
 	#page-footer a:not([class]){
 		&.focus,
-		&:focus{
-			background-color:#0000;
-			box-shadow:0 -0.2rem brd,0 0.2rem brd;
-			border-radius:0.3em;
+		&:focus{//janky box-shadow offsets; a better solution is desired
+			if LSI=="C"{
+				background-color:#0000;
+				box-shadow:0 -0.2rem brd,0 0.2rem brd;
+				border-radius:0.3em;
+			}else if LSI="B"{
+				background-color:#0000;
+				box-shadow:0 0.4rem 0 -0.1rem bg2,0 -0.4rem 0 -0.1rem bg2,0 0 0 0.1rem bg2,0 0 0 0.3rem brd;
+			}else if LSI=="U"{
+				background-color:#0000;
+				box-shadow:0 0 0 2px bg2,0 0.2rem 0 1px brd;
+				border-radius:0.3em;
+			}else if LSI=="F"{
+				background-color:bg4;
+				box-shadow:0 -.2rem bg4,0 .2rem brd;
+			}else if LSI=="R"{
+				background-color:#0000;
+				box-shadow:0 0 0 2px bg2,0 0 0 3px brd;
+				border-radius:0.3em;
+			}else if LSI=="E"{
+				background-color:#0000;
+				box-shadow:0 0 0 2px bg2,0 0 0 3px brd;
+			}
 		}
 	}
 	/*Editor Atto*/
