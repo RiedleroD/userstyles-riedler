@@ -1286,6 +1286,10 @@ rbarshape(name,mod){
 		background-color:#FFF;
 		padding:4px;
 	}
+	.forumpost{
+		border-color:brd;
+		border-radius:0.3rem;
+	}
 	/*Editor Atto*/
 	.editor_atto{
 		& .icon{
