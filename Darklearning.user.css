@@ -1437,11 +1437,14 @@ rbarshape(name,mod){
 		}
 		& .btn{
 			background-color:bg5;
+			color:lnk;
 			&:hover{
 				background-color:bg6;
+				color:hlnk;
 			}
 			&:active{
 				background-color:brd !important;
+				color:hlnk;
 			}
 			&>.icon{
 				vertical-align:middle;
@@ -1505,20 +1508,26 @@ rbarshape(name,mod){
 			&>.btn{
 				background-color:bg5;
 				border-radius:0;
+				color:lnk;
 				&:focus{
 					outline:none;
 					box-shadow:none;
 					outline-offset:0;
+					color:hlnk;
 				}
 				&:hover{
+					color:hlnk;
 					background-color:bg6;
 				}
 				&.checked{
 					background-color:btn;
 					&>.icon{
-						color:htxt;
+						color:hlnk;
 					}
 				}
+			}
+			&:not(.disabled) a.checked{
+				color:hlnk;
 			}
 		}
 		& .fp-info .fp-thumbnail{
