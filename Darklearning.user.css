@@ -575,6 +575,28 @@ rbarshape(name,mod){
 				}
 			}
 		}
+		& .block-cards{
+			& a.coursename{
+				color:lnk;
+				&:hover,
+				&:focus{
+					color:hlnk;
+				}
+			}
+			& span.categoryname{
+				color:txt;
+			}
+			& .btn-link{
+				color:txt;
+				
+			}
+			& .btn.btn-link.btn-icon{
+				&:hover,
+				&:focus{
+					background-color:bg4;
+				}
+			}
+		}
 	}
 	/*text*/
 	span,p,pre,
@@ -590,6 +612,9 @@ rbarshape(name,mod){
 		background-color:bg5 !important;
 		border:solid brd 1px;
 		border-radius:0.25em;}
+	.text-muted{
+		color:mtxt !important;
+	}
 	/*links*/
 	a{
 		&,
