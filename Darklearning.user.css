@@ -759,16 +759,19 @@ rbarshape(name,mod){
 			background-color:bg3;
 			border-color:bg2;}
 		&.disabled>a{
-			filter:grayscale(1);
 			background-color:bg4;
-			border-color:bg2;}
+			border-color:bg2;
+			&>span{
+				color:brd;
+			}
+		}
 		&:not(.active)>a:hover{
-			background-color:bg5;}
+			background-color:bg4;}
 		&.active>a{
-			color:htxt !important;
+			color:htxt;
 			&:hover{
 				background-color:hbtn;
-				color:hhtxt !important;
+				color:hhtxt;
 			}
 		}
 	}
