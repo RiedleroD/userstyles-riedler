@@ -219,6 +219,22 @@ rbarshape(name,mod){
 	.breadcrumb:not(:empty){
 		border-color:brd;
 		border-width:1px;}
+	.navbar-light, 
+	.navbar-bootswatch,{
+		& .navbar-nav{
+			& .nav-link{
+				color:lnk;
+				&:hover,
+				&:focus{
+					color:hlnk;
+				}
+			}
+			& .active,
+			& .show{
+				&>.nav-link{color:hlnk}
+			}
+		}
+	}
 	/*dropdown-menu*/
 	.dropdown{
 		&-menu{
@@ -231,9 +247,11 @@ rbarshape(name,mod){
 			&,
 			&:focus{
 				background-color:#0000;
+				color:lnk;
 			}
 			&:hover{
 				background-color:bg4;
+				color:hlnk;
 			}
 		}
 	}
@@ -488,7 +506,15 @@ rbarshape(name,mod){
 	#page-footer{
 		background-color:bg2 !important;
 		border-top-left-radius:0.5em;
-		border-top-right-radius:0.5em;}
+		border-top-right-radius:0.5em;
+		& a{
+			color:lnk;
+			&:hover,
+			&:focus{
+				color:hlnk;
+			}
+		}
+	}
 	/*sideblocks*/
 	.block{
 		&.card{
@@ -557,19 +583,21 @@ rbarshape(name,mod){
 	h1,h2,h3,h4,h5,h6,
 	body,:root,
 	ul,ol{
-		color:txt !important;}
+		color:txt;}
 	.generaltable tbody tr:hover{
 		color:htxt !important;}
 	textarea.form-control{
 		background-color:bg5 !important;
 		border:solid brd 1px;
 		border-radius:0.25em;}
+	/*links*/
 	a{
 		&,
 		&>span{
-			color:lnk !important;
-			&:hover{
-				color:hlnk !important;
+			color:lnk;
+			&:hover,
+			&:focus{
+				color:hlnk;
 			}
 		}
 	}
@@ -611,22 +639,6 @@ rbarshape(name,mod){
 	/*random shit again*/
 	.logo>img{
 		filter:invert(1) hue-rotate(180deg);}
-	.fa{
-		&-bell{
-			color:lnk;
-			&:hover,
-			.popover-region:hover>.nav-link>&{
-				color:hlnk;
-			}
-		}
-		&-question-circle{
-			color:lnk !important;
-			&:hover,
-			&:active{
-				color:hlnk !important;
-			}
-		}
-	}
 	.empty-placeholder-image-lg{
 		filter:invert(1);
 	}
@@ -691,6 +703,29 @@ rbarshape(name,mod){
 			&:focus,
 			&.focus{
 				outline:none;}
+		}
+		&-light{
+			color:txt;
+			&:hover{
+				color:lnk;
+			}
+			&.focus,
+			&:focus{
+				color:hlnk;
+			}
+			&:not(:disabled):not(.disabled):active,
+			&:not(:disabled):not(.disabled).active,
+			.show > &.dropdown-toggle{
+				color:hlnk;
+			}
+		}
+	}
+	& .btn-link{
+		color:lnk;
+		transition:none;
+		&:hover,
+		&:focus{
+			color:hlnk;
 		}
 	}
 	.pagination>.page-item{
@@ -907,7 +942,8 @@ rbarshape(name,mod){
 			margin-right:0.25rem;
 			color:lnk;
 		}
-		#action-menu-toggle-0:hover .userbutton::before{
+		#action-menu-toggle-0:hover .userbutton::before,
+		#action-menu-toggle-0:focus .userbutton::before{
 			color:hlnk;
 		}
 		#page-footer .logininfo>a:first-child{
@@ -1257,6 +1293,7 @@ rbarshape(name,mod){
 	#page-footer a:not([class]){
 		&.focus,
 		&:focus{//janky box-shadow offsets; a better solution is desired
+			color:hlnk;
 			if LSI=="C"{
 				background-color:#0000;
 				box-shadow:0 -0.2rem brd,0 0.2rem brd;
