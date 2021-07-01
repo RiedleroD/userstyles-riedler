@@ -616,14 +616,15 @@ rbarshape(name,mod){
 		color:mtxt !important;
 	}
 	/*links*/
-	a{
+	a,
+	a>span{
+		color:lnk
+	}
+	a:hover,
+	a:focus{
 		&,
 		&>span{
-			color:lnk;
-			&:hover,
-			&:focus{
-				color:hlnk;
-			}
+			color:hlnk;
 		}
 	}
 	/*Text with inline background coloring*/
