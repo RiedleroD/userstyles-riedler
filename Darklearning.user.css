@@ -597,6 +597,11 @@ rbarshape(name,mod){
 				}
 			}
 		}
+		& .block-controls{
+			& .dropdown-toggle{
+				color:txt;
+			}
+		}
 	}
 	/*text*/
 	span,p,pre,
