@@ -1296,11 +1296,12 @@ rbarshape(name,mod){
 			border-radius:0.25rem 0 0 0.25rem;
 		}
 		&-append{
-			border-top:solid 1px brd;
-			border-right:solid 1px brd;
-			border-bottom:solid 1px brd;
 			border-radius:0 0.5em 0.5em 0;
 			overflow:hidden;
+			&>.btn-primary{
+				border:none;
+				border-radius:0;
+			}
 		}
 	}
 	#searchwiki{
