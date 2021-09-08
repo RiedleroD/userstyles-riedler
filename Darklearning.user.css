@@ -1820,6 +1820,12 @@ rbarshape(name,mod){
 			.progressBarCell{
 				border:none;
 				margin-left:1px;
+				&.completed{
+					background-color:tru;
+				}
+				&.notCompleted{
+					background-color:fals;
+				}
 				&:first-of-type{
 					border-radius:lbarshape(PBCS,PBCSm);
 					margin-left:0;
@@ -1827,6 +1833,9 @@ rbarshape(name,mod){
 				&:last-of-type{
 					border-radius:rbarshape(PBCS,PBCSm);
 					border-right:none;
+				}
+				&:only-of-type{
+					border-radius:barshape(PBCS,PBCSm);
 				}
 			}
 		}
