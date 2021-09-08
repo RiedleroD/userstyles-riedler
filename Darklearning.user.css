@@ -1806,6 +1806,24 @@ rbarshape(name,mod){
 			border-radius:rbarshape(PBCS,PBCSm) !important;
 		}
 	}
+	 // don't ask
+	.block_completion_progress{
+		& .barModeScroll,
+		& .barModeSqueeze{
+			.progressBarCell{
+				border:none;
+				margin-left:1px;
+				&:first-of-type{
+					border-radius:lbarshape(PBCS,PBCSm);
+					margin-left:0;
+				}
+				&:last-of-type{
+					border-radius:rbarshape(PBCS,PBCSm);
+					border-right:none;
+				}
+			}
+		}
+	}
 	/*flexitour*/
 	span[data-flexitour="container"]{
 		&[x-placement="top"],
