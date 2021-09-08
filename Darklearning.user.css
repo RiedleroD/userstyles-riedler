@@ -1827,20 +1827,20 @@ rbarshape(name,mod){
 	.badge{
 		background-color:bg4;
 		color:txt;
-		padding:0.25em 0.5em;
+		padding:0 0.5em;
 		border-radius:0.25em;
 		&-secondary>strong{
-			margin-left:-0.5em;
 			background-color:brd;
 			color:dtxt;
 		}
 		&-success>strong{
-			margin-left:-0.5em;
 			background-color:tru;
 			color:htru;
 		}
 		&>strong{
-			padding:0 0.25em 0 0.5em;
+			display:inline-block;
+			margin-left:-0.5em;
+			padding:0.25em 0.25em 0.25em 0.5em;
 			border-radius:0.25em 0 0 0.25em;
 		}
 	}
