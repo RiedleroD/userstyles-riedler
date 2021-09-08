@@ -971,6 +971,10 @@ rbarshape(name,mod){
 		background-color:idk !important;
 	}
 	/*Misc*/
+	.resourcelinkdetails{
+		color:txt;
+		filter:brightness(0.8);
+	}
 	.usertext{
 		color:lnk !important;
 	}
