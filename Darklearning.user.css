@@ -1763,19 +1763,6 @@ rbarshape(name,mod){
 	img[src*="mod_page"],/*images with mod_page in the source url, most of the images in courses have this*/
 	.region-main-content img:not([class]):not([src^="https://elearning.tgm.ac.at/theme/"]){/*images without class - a last resort, really*/
 		filter:EICC;}
-	.progressBarCell>.nowDiv{
-		&>.icon{
-			display:none;}
-		&.lastHalfNow{
-			background:url('data:image/svg+xml;utf-8,<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1"><path d="M0 0 16 16V0Z" fill="rgb(127,127,127)"/></svg>') no-repeat;
-			background-position:5.5em 5px;
-			padding-right:1.3em;}
-		&.firstNow{
-			background:url("data:image/svg+xml;utf-8,<svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1'><path d='M0 0V16L16 0Z' fill='rgb(127,127,127)'/></svg>") no-repeat;
-			background-position:0em 5px;
-			padding-left:1.3em;
-		}
-	}
 	img[src$="elearning.tgm.ac.at/theme/image.php/classic/core/"][src$="/i/loading_small"]{
 		filter:invert(1);
 	}
@@ -1790,6 +1777,20 @@ rbarshape(name,mod){
 	}
 	img[src="https://elearning.tgm.ac.at/theme/image.php/classic/core/1604966287/u/f1"]{
 		filter:brightness(0.39) contrast(2)}
+	/*progress bar time descriptor*/
+	.progressBarCell>.nowDiv{
+		&>.icon{
+			display:none;}
+		&.lastHalfNow{
+			background:url("data:image/svg+xml;utf-8,<svg xmlns='http://www.w3.org/2000/svg'><path d='M0 0H16V16Z' fill='rgb(127,127,127)'/></svg>") no-repeat;
+			background-position:5.5em 5px;
+			padding-right:1.3em;}
+		&.firstNow{
+			background:url("data:image/svg+xml;utf-8,<svg xmlns='http://www.w3.org/2000/svg'><path d='M16 0H0V16Z' fill='rgb(127,127,127)'/></svg>") no-repeat;
+			background-position:0em 5px;
+			padding-left:1.3em;
+		}
+	}
 	/*row where it displays what you've done and what you didn't. Normally only in course/view.php, but also in other places*/
 	.barRow{
 		& .progressBarCell{
