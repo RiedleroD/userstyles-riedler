@@ -971,6 +971,10 @@ rbarshape(name,mod){
 		background-color:idk !important;
 	}
 	/*Misc*/
+	.otherstudent.highlight{
+		outline:none;
+		color:htxt;
+	}
 	.resourcelinkdetails{
 		color:txt;
 		filter:brightness(0.8);
