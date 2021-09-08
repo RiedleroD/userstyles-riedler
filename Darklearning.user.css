@@ -1946,7 +1946,11 @@ rbarshape(name,mod){
 	#region-main{
 		background-color:bg2;}
 	.section{
-		border-bottom-color:brd !important;}
+		border-bottom-color:brd !important;
+		& li.activity.hasinfo{
+			border-bottom-color:brd;
+		}
+	}
 	.progressEventInfo .iconInInfo{ /*Fixes a specific icon being distorted because someone forgot that width was set to 12px*/
 		width:1.2em;
 		height:1.2em;}
