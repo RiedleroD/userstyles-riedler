@@ -1016,8 +1016,11 @@ rbarshape(name,mod){
 		& .nav-link{
 			background-color:#0000;
 			border:none;
-			border-bottom:none;
 			padding:0.5em 1em;
+			&.active{
+				color:txt;
+				max-height:100%;
+			}
 			&.active:not(:disabled):not(.disabled){
 				&.active,
 				&:active{
@@ -1029,6 +1032,10 @@ rbarshape(name,mod){
 		}
 		& .nav-item{
 			margin-bottom:0;
+			&.show .nav-link.active{
+				color:txt;
+				max-height:100%;
+			}
 		}
 	}
 	.wiki-toc{//TODO what's this
