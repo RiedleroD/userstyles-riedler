@@ -122,6 +122,7 @@ hlnk = #6AC
 btn	 = #418BA4
 hbtn = #6AC
 tru	 = #262
+htru = #6C6
 fals = #922
 idk  = #B60
 cal0 = #533
@@ -1821,6 +1822,24 @@ rbarshape(name,mod){
 				border-bottom-color:bg4;
 				box-shadow:0 0.5em bg4;
 			}
+		}
+	}
+	/*badges*/
+	.badge{
+		background-color:bg4;
+		color:txt;
+		padding:0.25em 0.5em 0.25em 0;
+		&-secondary>strong{
+			background-color:brd;
+			color:dtxt;
+		}
+		&-success>strong{
+			background-color:tru;
+			color:htru;
+		}
+		&>strong{
+			padding:0 0.25em 0 0.5em;
+			border-radius:0.25em 0 0 0.25em;
 		}
 	}
 }
