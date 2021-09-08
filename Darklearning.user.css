@@ -1982,6 +1982,9 @@ rbarshape(name,mod){
 		& li.activity.hasinfo{
 			border-bottom-color:brd;
 		}
+		&.current::before{
+			border-color:btn;
+		}
 	}
 	.progressEventInfo .iconInInfo{ /*Fixes a specific icon being distorted because someone forgot that width was set to 12px*/
 		width:1.2em;
