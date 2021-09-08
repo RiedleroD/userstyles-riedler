@@ -731,6 +731,8 @@ rbarshape(name,mod){
 			&:hover{
 				color:hhtxt !important;
 				background-color:hbtn;}
+			&.close:hover>span{
+				color:hhtxt !important;}
 			&:focus,
 			&.focus{
 				outline:none;}
@@ -1803,6 +1805,23 @@ rbarshape(name,mod){
 	}
 	.badge-info{
 		background-color:bg4;
+	}
+	/*flexitour*/
+	span[data-flexitour="container"]{
+		&[x-placement="top"],
+		&[x-placement="top-start"]{
+			& div[data-role="arrow"]::after{
+				border-top-color:bg4;
+				box-shadow:0 -0.5em bg4;
+			}
+		}
+		&[x-placement="bottom"],
+		&[x-placement="bottom-start"]{
+			& div[data-role="arrow"]::after{
+				border-bottom-color:bg4;
+				box-shadow:0 0.5em bg4;
+			}
+		}
 	}
 }
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/my/.*?") {
