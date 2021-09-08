@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name			Darklearning
 @namespace		https://github.com/RiedleroD/userstyles-riedler
-@version		1.2.2
+@version		1.2.3
 @description	Darker version of Elearning
 @author			Riedler
 @preprocessor	stylus
@@ -122,7 +122,9 @@ hlnk = #6AC
 btn	 = #418BA4
 hbtn = #6AC
 tru	 = #262
+htru = #6C6
 fals = #922
+hfals= #C66
 idk  = #B60
 cal0 = #533
 cal1 = #535
@@ -219,6 +221,22 @@ rbarshape(name,mod){
 	.breadcrumb:not(:empty){
 		border-color:brd;
 		border-width:1px;}
+	.navbar-light, 
+	.navbar-bootswatch,{
+		& .navbar-nav{
+			& .nav-link{
+				color:lnk;
+				&:hover,
+				&:focus{
+					color:hlnk;
+				}
+			}
+			& .active,
+			& .show{
+				&>.nav-link{color:hlnk}
+			}
+		}
+	}
 	/*dropdown-menu*/
 	.dropdown{
 		&-menu{
@@ -231,9 +249,11 @@ rbarshape(name,mod){
 			&,
 			&:focus{
 				background-color:#0000;
+				color:lnk;
 			}
 			&:hover{
 				background-color:bg4;
+				color:hlnk;
 			}
 		}
 	}
@@ -488,7 +508,15 @@ rbarshape(name,mod){
 	#page-footer{
 		background-color:bg2 !important;
 		border-top-left-radius:0.5em;
-		border-top-right-radius:0.5em;}
+		border-top-right-radius:0.5em;
+		& a{
+			color:lnk;
+			&:hover,
+			&:focus{
+				color:hlnk;
+			}
+		}
+	}
 	/*sideblocks*/
 	.block{
 		&.card{
@@ -549,6 +577,33 @@ rbarshape(name,mod){
 				}
 			}
 		}
+		& .block-cards{
+			& a.coursename{
+				color:lnk;
+				&:hover,
+				&:focus{
+					color:hlnk;
+				}
+			}
+			& span.categoryname{
+				color:txt;
+			}
+			& .btn-link{
+				color:txt;
+				
+			}
+			& .btn.btn-link.btn-icon{
+				&:hover,
+				&:focus{
+					background-color:bg4;
+				}
+			}
+		}
+		& .block-controls{
+			& .dropdown-toggle{
+				color:txt;
+			}
+		}
 	}
 	/*text*/
 	span,p,pre,
@@ -557,20 +612,26 @@ rbarshape(name,mod){
 	h1,h2,h3,h4,h5,h6,
 	body,:root,
 	ul,ol{
-		color:txt !important;}
+		color:txt;}
 	.generaltable tbody tr:hover{
 		color:htxt !important;}
 	textarea.form-control{
 		background-color:bg5 !important;
 		border:solid brd 1px;
 		border-radius:0.25em;}
-	a{
+	.text-muted{
+		color:mtxt !important;
+	}
+	/*links*/
+	a,
+	a>span{
+		color:lnk
+	}
+	a:hover,
+	a:focus{
 		&,
 		&>span{
-			color:lnk !important;
-			&:hover{
-				color:hlnk !important;
-			}
+			color:hlnk;
 		}
 	}
 	/*Text with inline background coloring*/
@@ -586,7 +647,7 @@ rbarshape(name,mod){
 	span[style*="background-color: rgb(239\, 69\, 64);"]{
 		background-color:fals !important;}
 	span[style*="color: rgb(239\, 69\, 64)"]{
-		color:c3 !important;
+		color:hfals !important;
 		&[style*="background-color: rgb(255\, 255\, 255)"]{
 			background-color:bg0 !important;
 		}
@@ -611,22 +672,6 @@ rbarshape(name,mod){
 	/*random shit again*/
 	.logo>img{
 		filter:invert(1) hue-rotate(180deg);}
-	.fa{
-		&-bell{
-			color:lnk;
-			&:hover,
-			.popover-region:hover>.nav-link>&{
-				color:hlnk;
-			}
-		}
-		&-question-circle{
-			color:lnk !important;
-			&:hover,
-			&:active{
-				color:hlnk !important;
-			}
-		}
-	}
 	.empty-placeholder-image-lg{
 		filter:invert(1);
 	}
@@ -688,9 +733,34 @@ rbarshape(name,mod){
 			&:hover{
 				color:hhtxt !important;
 				background-color:hbtn;}
+			&.close:hover>span{
+				color:hhtxt !important;}
 			&:focus,
 			&.focus{
 				outline:none;}
+		}
+		&-light{
+			color:txt;
+			&:hover{
+				color:lnk;
+			}
+			&.focus,
+			&:focus{
+				color:hlnk;
+			}
+			&:not(:disabled):not(.disabled):active,
+			&:not(:disabled):not(.disabled).active,
+			.show > &.dropdown-toggle{
+				color:hlnk;
+			}
+		}
+	}
+	& .btn-link{
+		color:lnk;
+		transition:none;
+		&:hover,
+		&:focus{
+			color:hlnk;
 		}
 	}
 	.pagination>.page-item{
@@ -698,16 +768,19 @@ rbarshape(name,mod){
 			background-color:bg3;
 			border-color:bg2;}
 		&.disabled>a{
-			filter:grayscale(1);
 			background-color:bg4;
-			border-color:bg2;}
+			border-color:bg2;
+			&>span{
+				color:brd;
+			}
+		}
 		&:not(.active)>a:hover{
-			background-color:bg5;}
+			background-color:bg4;}
 		&.active>a{
-			color:htxt !important;
+			color:htxt;
 			&:hover{
 				background-color:hbtn;
-				color:hhtxt !important;
+				color:hhtxt;
 			}
 		}
 	}
@@ -907,7 +980,8 @@ rbarshape(name,mod){
 			margin-right:0.25rem;
 			color:lnk;
 		}
-		#action-menu-toggle-0:hover .userbutton::before{
+		#action-menu-toggle-0:hover .userbutton::before,
+		#action-menu-toggle-0:focus .userbutton::before{
 			color:hlnk;
 		}
 		#page-footer .logininfo>a:first-child{
@@ -1015,6 +1089,9 @@ rbarshape(name,mod){
 	.moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd,
 	.path-mod-assign [data-region="grade-panel"] .popout>.col-md-3{
 		border-color:brd;}
+	.path-mod div.activity-information{
+		border-bottom-color:brd;
+	}
 	.format-tiles ul.tiles .headerabovetiles button.selected,
 	.headerabovetiles button:active,
 	.headerabovetiles button:focus,
@@ -1236,8 +1313,6 @@ rbarshape(name,mod){
 			background-color:bg4;
 		}
 	}
-	.badge{
-		border-radius:0.25em;}
 	.border-bottom{
 		border-bottom-color:brd !important;}
 	code{
@@ -1257,6 +1332,7 @@ rbarshape(name,mod){
 	#page-footer a:not([class]){
 		&.focus,
 		&:focus{//janky box-shadow offsets; a better solution is desired
+			color:hlnk;
 			if LSI=="C"{
 				background-color:#0000;
 				box-shadow:0 -0.2rem brd,0 0.2rem brd;
@@ -1371,11 +1447,14 @@ rbarshape(name,mod){
 		}
 		& .btn{
 			background-color:bg5;
+			color:lnk;
 			&:hover{
 				background-color:bg6;
+				color:hlnk;
 			}
 			&:active{
 				background-color:brd !important;
+				color:hlnk;
 			}
 			&>.icon{
 				vertical-align:middle;
@@ -1439,20 +1518,26 @@ rbarshape(name,mod){
 			&>.btn{
 				background-color:bg5;
 				border-radius:0;
+				color:lnk;
 				&:focus{
 					outline:none;
 					box-shadow:none;
 					outline-offset:0;
+					color:hlnk;
 				}
 				&:hover{
+					color:hlnk;
 					background-color:bg6;
 				}
 				&.checked{
 					background-color:btn;
 					&>.icon{
-						color:htxt;
+						color:hlnk;
 					}
 				}
+			}
+			&:not(.disabled) a.checked{
+				color:hlnk;
 			}
 		}
 		& .fp-info .fp-thumbnail{
@@ -1721,8 +1806,64 @@ rbarshape(name,mod){
 			border-radius:rbarshape(PBCS,PBCSm) !important;
 		}
 	}
-	.badge-info{
+	 // don't ask
+	.block_completion_progress{
+		& .barModeScroll,
+		& .barModeSqueeze{
+			.progressBarCell{
+				border:none;
+				margin-left:1px;
+				&:first-of-type{
+					border-radius:lbarshape(PBCS,PBCSm);
+					margin-left:0;
+				}
+				&:last-of-type{
+					border-radius:rbarshape(PBCS,PBCSm);
+					border-right:none;
+				}
+			}
+		}
+	}
+	/*flexitour*/
+	span[data-flexitour="container"]{
+		&[x-placement="top"],
+		&[x-placement="top-start"]{
+			& div[data-role="arrow"]::after{
+				border-top-color:bg4;
+				box-shadow:0 -0.5em bg4;
+			}
+		}
+		&[x-placement="bottom"],
+		&[x-placement="bottom-start"]{
+			& div[data-role="arrow"]::after{
+				border-bottom-color:bg4;
+				box-shadow:0 0.5em bg4;
+			}
+		}
+	}
+	/*badges*/
+	.badge{
 		background-color:bg4;
+		color:txt;
+		padding:0 0.5em;
+		border-radius:0.25em;
+		&-info{
+			padding:0.25em 0.5em;
+		}
+		&-secondary>strong{
+			background-color:brd;
+			color:dtxt;
+		}
+		&-success>strong{
+			background-color:tru;
+			color:htru;
+		}
+		&>strong{
+			display:inline-block;
+			margin-left:-0.5em;
+			padding:0.25em 0.25em 0.25em 0.5em;
+			border-radius:0.25em 0 0 0.25em;
+		}
 	}
 }
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/my/.*?") {
@@ -1805,7 +1946,11 @@ rbarshape(name,mod){
 	#region-main{
 		background-color:bg2;}
 	.section{
-		border-bottom-color:brd !important;}
+		border-bottom-color:brd !important;
+		& li.activity.hasinfo{
+			border-bottom-color:brd;
+		}
+	}
 	.progressEventInfo .iconInInfo{ /*Fixes a specific icon being distorted because someone forgot that width was set to 12px*/
 		width:1.2em;
 		height:1.2em;}
