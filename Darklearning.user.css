@@ -1088,6 +1088,9 @@ rbarshape(name,mod){
 	.moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd,
 	.path-mod-assign [data-region="grade-panel"] .popout>.col-md-3{
 		border-color:brd;}
+	.path-mod div.activity-information{
+		border-bottom-color:brd;
+	}
 	.format-tiles ul.tiles .headerabovetiles button.selected,
 	.headerabovetiles button:active,
 	.headerabovetiles button:focus,
