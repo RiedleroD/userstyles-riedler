@@ -1313,8 +1313,6 @@ rbarshape(name,mod){
 			background-color:bg4;
 		}
 	}
-	.badge{
-		border-radius:0.25em;}
 	.border-bottom{
 		border-bottom-color:brd !important;}
 	code{
@@ -1808,9 +1806,6 @@ rbarshape(name,mod){
 			border-radius:rbarshape(PBCS,PBCSm) !important;
 		}
 	}
-	.badge-info{
-		background-color:bg4;
-	}
 	/*flexitour*/
 	span[data-flexitour="container"]{
 		&[x-placement="top"],
@@ -1832,12 +1827,15 @@ rbarshape(name,mod){
 	.badge{
 		background-color:bg4;
 		color:txt;
-		padding:0.25em 0.5em 0.25em 0;
+		padding:0.25em 0.5em;
+		border-radius:0.25em;
 		&-secondary>strong{
+			margin-left:-0.5em;
 			background-color:brd;
 			color:dtxt;
 		}
 		&-success>strong{
+			margin-left:-0.5em;
 			background-color:tru;
 			color:htru;
 		}
