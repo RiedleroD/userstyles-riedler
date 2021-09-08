@@ -711,6 +711,20 @@ rbarshape(name,mod){
 				background-color:bg4;
 			}
 		}
+		&-outline-success{
+			border-color:tru;
+			color:txt;
+			&:hover{
+				background-color:tru;
+				border-color:tru;
+				color:htru;
+			}
+			&:not(:disabled):not(.disabled):active{
+				background-color:htru;
+				border-color:htru;
+				color:dtxt;
+			}
+		}
 		&-secondary{
 			background-color:#FFF2;
 			color:txt;
