@@ -124,6 +124,7 @@ hbtn = #6AC
 tru	 = #262
 htru = #6C6
 fals = #922
+hfals= #C66
 idk  = #B60
 cal0 = #533
 cal1 = #535
@@ -646,7 +647,7 @@ rbarshape(name,mod){
 	span[style*="background-color: rgb(239\, 69\, 64);"]{
 		background-color:fals !important;}
 	span[style*="color: rgb(239\, 69\, 64)"]{
-		color:c3 !important;
+		color:hfals !important;
 		&[style*="background-color: rgb(255\, 255\, 255)"]{
 			background-color:bg0 !important;
 		}
