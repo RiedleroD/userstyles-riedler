@@ -642,8 +642,7 @@ rbarshape(name,mod){
 	span[style*="background-color: rgb(125\, 159\, 211);"]{
 		background-color:btn !important;
 		color:dtxt !important;}
-	span[style*="background-color: rgb(255\, 207\, 53);"]{
-		color:#000 !important;}
+	span[style*="background-color: rgb(255\, 207\, 53);"],
 	span[style*="background-color: rgb(152\, 202\, 62);"]{
 		color:#000 !important;}
 	span[style*="background-color: white;"]:not([class]){
