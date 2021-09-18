@@ -2004,7 +2004,14 @@ rbarshape(name,mod){
 	}
 	.progressEventInfo .iconInInfo{ /*Fixes a specific icon being distorted because someone forgot that width was set to 12px*/
 		width:1.2em;
-		height:1.2em;}
+		height:1.2em;
+	}
+	.region-main h4,
+	.region-main h5{
+		background-color:pb;
+		color:dtxt !important;//fuuck whyy
+		border-radius:crad crad 0 0;
+	}
 }
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/user/files\\.php.*?") {
 	.filemanager-container,
