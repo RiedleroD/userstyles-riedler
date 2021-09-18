@@ -873,6 +873,9 @@ rbarshape(name,mod){
 				color:fals !important;
 			}
 		}
+		& .sectiontitle h2{
+			color:txt;
+		}
 		& .sectiontitle::after,
 		& .tag-info{
 			background-color:tru;}
