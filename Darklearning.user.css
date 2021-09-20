@@ -2030,6 +2030,7 @@ rbarshape(name,mod){
 		background-color:pb;
 		color:dtxt !important;//fuuck whyy
 		border-radius:crad crad 0 0;
+		& .fa{color:dtxt}
 	}
 }
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/user/files\\.php.*?") {
