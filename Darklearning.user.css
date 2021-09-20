@@ -858,6 +858,22 @@ rbarshape(name,mod){
 				background:linear-gradient(to bottom,bg4 85%,#0000);
 			}
 		}
+		& li.activity button[data-action="change-completion-status"]{
+			&>.completion-icon{
+				outline:solid 3px #0000;
+				transition:outline-color 300ms ease-in-out;
+				border-radius:100%;
+			}
+			&:hover{
+				border-color:#0000;
+				&>.completion-icon-y{
+					outline-color:rgba(htru,0.6);
+				}
+				&>.completion-icon-n{
+					outline-color:txt;
+				}
+			}
+		}
 		& #buttonhidesec0{
 			background-color:#0000;
 			&:hover{
