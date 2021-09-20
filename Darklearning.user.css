@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name			Darklearning
 @namespace		https://github.com/RiedleroD/userstyles-riedler
-@version		1.2.3
+@version		1.2.4
 @description	Darker version of Elearning
 @author			Riedler
 @preprocessor	stylus
@@ -137,6 +137,10 @@ c1	 = #3C3
 c2	 = #CC3
 c3	 = #C33
 
+irad = 0.3rem //input border radius
+crad = 0.5rem //card border radius
+
+
 svg_select_arrs="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' version='1'%3E%3Cpath fill='"+rgba(txt,0.999)+"' stroke='"+rgba(txt,0.999)+"' d='M8 1 2 6h12zM2 10H14L8 15Z'/%3E%3C/svg%3E"
 
 barshape_base(name){
@@ -262,7 +266,7 @@ rbarshape(name,mod){
 		&-container{
 			background-color:bg3;
 			border-color:brd;
-			border-radius:0.25rem;}
+			border-radius:irad;}
 		&-toggle{
 			&::after{
 				border-bottom-color:bg3;
@@ -277,7 +281,7 @@ rbarshape(name,mod){
 		&-footer-container{
 			background-color:bg3;
 			border-top-color:brd;
-			border-radius:0 0 0.25rem 0.25rem;
+			border-radius:0 0 irad irad;
 		}
 	}
 	.content-item-container{
@@ -399,7 +403,7 @@ rbarshape(name,mod){
 			background-color:bg3 !important;
 			&>.mt-4>.mb-4>.mx-auto{
 				background-color:bg5 !important;
-				border-radius:0.25rem;
+				border-radius:0.25rem;//TODO: no idea what this style is for
 			}
 			&>.mt-4>.d-flex.flex-column.p-2.rounded.mb-2{
 				background-color:bg5 !important;
@@ -408,7 +412,7 @@ rbarshape(name,mod){
 		& div[data-region="confirm-dialogue"]{
 			background-color:bg3 !important;
 			border:solid 1px brd;
-			border-radius:0.25rem;
+			border-radius:crad;
 			& .btn-primary{
 				&>span{
 					color:htxt !important;
@@ -466,7 +470,7 @@ rbarshape(name,mod){
 	.custom-select{
 		color:txt;
 		border-color:brd;
-		border-radius:0.5em;
+		border-radius:irad;
 		background-color:bg3;
 		background-image:url(svg_select_arrs);
 		background-repeat:no-repeat;
@@ -498,7 +502,7 @@ rbarshape(name,mod){
 	:root,body,#page{
 		background-color:bg1 !important;}
 	#region-main{
-		border-radius:0.5em;
+		border-radius:crad;
 		overflow:visible;
 		margin-bottom:1.5em;
 		background-color:bg2;}
@@ -549,7 +553,7 @@ rbarshape(name,mod){
 					position:relative;
 					background-color:bg2;
 					z-index:2;
-					border-radius:0 0.25em 0.25em 0;
+					border-radius:0 irad irad 0;
 					transition:0.2s max-width;
 				}	
 				& .contains_branch>ul{
@@ -618,7 +622,7 @@ rbarshape(name,mod){
 	textarea.form-control{
 		background-color:bg5 !important;
 		border:solid brd 1px;
-		border-radius:0.25em;}
+		border-radius:irad;}
 	.text-muted{
 		color:mtxt !important;
 	}
@@ -638,8 +642,7 @@ rbarshape(name,mod){
 	span[style*="background-color: rgb(125\, 159\, 211);"]{
 		background-color:btn !important;
 		color:dtxt !important;}
-	span[style*="background-color: rgb(255\, 207\, 53);"]{
-		color:#000 !important;}
+	span[style*="background-color: rgb(255\, 207\, 53);"],
 	span[style*="background-color: rgb(152\, 202\, 62);"]{
 		color:#000 !important;}
 	span[style*="background-color: white;"]:not([class]){
@@ -652,10 +655,13 @@ rbarshape(name,mod){
 			background-color:bg0 !important;
 		}
 	}
+	span>span[style*="background-color: rgb(255\, 255\, 255)"]{
+		background-color:bg2 !important;
+	}
 	/*VPL badge*/
 	div[style="float:right; right:10px; padding:8px; background-color: white;text-align:center;"]{
 		background-color:bg3 !important;
-		border-radius:0.25rem;
+		border-radius:irad;
 		box-shadow:0 0 0.2rem 1px #000;
 		transition:background-color 0.1s;
 		cursor:pointer;
@@ -689,10 +695,10 @@ rbarshape(name,mod){
 	}
 	.moodle-dialogue-base .moodle-dialogue-wrap{
 		border:solid 1px brd;
-		border-radius:0.25em;
+		border-radius:0.25em;//TODO what's this
 	}
 	.btn{
-		border-radius:0.25em;
+		border-radius:irad;
 		&-outline-secondary{
 			border-color:brd !important;
 			&:hover{
@@ -705,6 +711,20 @@ rbarshape(name,mod){
 			&:not(:disabled):not(.disabled).active,
 			&.dropdown-toggle:focus{
 				background-color:bg4;
+			}
+		}
+		&-outline-success{
+			border-color:tru;
+			color:txt;
+			&:hover{
+				background-color:tru;
+				border-color:tru;
+				color:htru;
+			}
+			&:not(:disabled):not(.disabled):active{
+				background-color:htru;
+				border-color:htru;
+				color:dtxt;
 			}
 		}
 		&-secondary{
@@ -838,11 +858,27 @@ rbarshape(name,mod){
 				background:linear-gradient(to bottom,bg4 85%,#0000);
 			}
 		}
+		& li.activity button[data-action="change-completion-status"]{
+			&>.completion-icon{
+				outline:solid 3px #0000;
+				transition:outline-color 300ms ease-in-out;
+				border-radius:100%;
+			}
+			&:hover{
+				border-color:#0000;
+				&>.completion-icon-y{
+					outline-color:rgba(htru,0.6);
+				}
+				&>.completion-icon-n{
+					outline-color:txt;
+				}
+			}
+		}
 		& #buttonhidesec0{
 			background-color:#0000;
 			&:hover{
 				background-color:bg4;
-				border-radius:0.2em;
+				border-radius:irad;
 			}
 		}
 		& .modal-header .close{
@@ -853,6 +889,9 @@ rbarshape(name,mod){
 				color:fals !important;
 			}
 		}
+		& .sectiontitle h2{
+			color:txt;
+		}
 		& .sectiontitle::after,
 		& .tag-info{
 			background-color:tru;}
@@ -861,15 +900,16 @@ rbarshape(name,mod){
 				box-shadow:2px 4px 5px 0 #000A;
 				transform:translateY(0);//this is needed for compatibility
 				border-top:none;
-				border-radius:0.3rem;
+				border-radius:irad;
 				&:hover{
 					box-shadow:2px 10px 8px -3px #000A;
 					transition:all 0.25s ease-in-out;
 					transform:translateY(-6px);
 				}
-				&_bar{
+				&_bar{//TODO what's this
 					border-top:none;
 					border-radius:0.3rem;
+					background-color:#F00;
 				}
 				&.phototile{
 					background-color:#444 !important;/*darkening the background image*/
@@ -913,39 +953,60 @@ rbarshape(name,mod){
 	.tooltip>*{
 		background-color:bg3 !important;
 		color:txt !important;}
+	/*popovers: the same, but with more complex content and a very annoying arrow*/
 	.popover{
 		background-color:bg1;
 		color:txt;
 		border:none;
-		border-radius:0.5em;
-		box-shadow:0 0 0.1em 0 brd;}
-		/*TODO: this is janky, a better solution is desireable.*/
+		border-radius:irad;
+		box-shadow:0 0 0.1em 0 brd}
 	.bs-popover{
-		&-top,
-		&-auto[x-placement^="top"],
-		&-bottom,
-		&-auto[x-placement^="bottom"]{
-			&>.arrow{
-				&::before{
-					border-top-color:brd;
-					border-bottom-color:brd;
-					opacity:0.8;
-				}
-				&::after{
-					border-top-color:bg1;
-					border-bottom-color:bg1;
-				}
+		//see https://elearning.tgm.ac.at/calendar/view.php?view=month
+		&-top>.arrow,
+		&-auto[x-placement^="top"]>.arrow{
+			&::after{
+				border-top-color:bg1;
+			}
+			&::before{
+				border-top-color:rgba(brd,0.5);
 			}
 		}
+		//see above link
 		&-bottom,
 		&-auto[x-placement^="bottom"]{
 			& .popover-header::before{
 				border-bottom:solid 0.1em bg2;
 			}
+			&>.arrow::after{
+				border-bottom-color:bg2;
+			}
+			&>.arrow::before{
+				border-bottom-color:rgba(brd,0.5);
+			}
+		}
+		//see https://elearning.tgm.ac.at/course/view.php?id=5454&section=1
+		&-left>.arrow,
+		&-auto[x-placement^="left"]>.arrow{
+			&::after{
+				border-left-color:bg1;
+			}
+			&::before{
+				border-left-color:rgba(brd,0.5);
+			}
+		}
+		//TODO: find out where this is used
+		&-right>.arrow,
+		&-auto[x-placement^="right"]>.arrow{
+			&::after{
+				border-right-color:bg1;
+			}
+			&::before{
+				border-right-color:rgba(brd,0.5);
+			}
 		}
 	}
 	.popover{
-		&-header{
+		&-header{//TODO what's this
 			background-color:bg2;
 			border-bottom-color:#0000;
 			border-radius:0.5em 0.5em 0 0;
@@ -965,6 +1026,14 @@ rbarshape(name,mod){
 		background-color:idk !important;
 	}
 	/*Misc*/
+	.otherstudent.highlight{
+		outline:none;
+		color:htxt;
+	}
+	.resourcelinkdetails{
+		color:txt;
+		filter:brightness(0.8);
+	}
 	.usertext{
 		color:lnk !important;
 	}
@@ -1006,8 +1075,11 @@ rbarshape(name,mod){
 		& .nav-link{
 			background-color:#0000;
 			border:none;
-			border-bottom:none;
 			padding:0.5em 1em;
+			&.active{
+				color:txt;
+				max-height:100%;
+			}
 			&.active:not(:disabled):not(.disabled){
 				&.active,
 				&:active{
@@ -1019,9 +1091,13 @@ rbarshape(name,mod){
 		}
 		& .nav-item{
 			margin-bottom:0;
+			&.show .nav-link.active{
+				color:txt;
+				max-height:100%;
+			}
 		}
 	}
-	.wiki-toc{
+	.wiki-toc{//TODO what's this
 		background-color:bg3;
 		border-color:brd;
 		border-radius:0.4em;
@@ -1038,18 +1114,18 @@ rbarshape(name,mod){
 		background-color:hbtn !important;
 		color:bg3 !important;}
 	.card{
-		border-radius:0.5em;
+		border-radius:crad;
 		background-color:bg3;
 		&-img{
-			border-radius:0.5em 0.5em 0 0;
+			border-radius:crad crad 0 0;
 			overflow:hidden;
 		}
 		&-body{
-			border-radius:0 0 0.5em 0.5em;
+			border-radius:0 0 crad crad;
 		}
 	}
 	.alert{
-		border-radius:0.5em;
+		border-radius:crad;
 		&-danger{
 			background-color:fals;
 			color:txt;
@@ -1101,13 +1177,13 @@ rbarshape(name,mod){
 	div.comment-area textarea{
 		background-color:bg3;
 		border:solid 1px brd;
-		border-radius:0.25rem;
+		border-radius:irad;
 		padding:0.25em;
 		line-height:100%;
 		color:txt !important;}
 	ul.comment-list>li{
 		background-color:bg3 !important;
-		border-radius:0.25rem;
+		border-radius:irad;
 		& .text_to_html{
 			color:txt;
 		}
@@ -1173,7 +1249,7 @@ rbarshape(name,mod){
 			background-color:bg2_5;
 		}
 	}
-	.modal{
+	.modal{//TODO what's this
 		&-dialog>&-content{
 			background-color:bg4;
 			border-radius:0.5em;}
@@ -1199,7 +1275,7 @@ rbarshape(name,mod){
 		min-height:1em;
 		max-height:1em;
 		border:0.12em solid hbrd;
-		border-radius:0.25em;
+		border-radius:irad;
 		color:txt;
 		&:checked:after{
 			content:"";
@@ -1225,7 +1301,7 @@ rbarshape(name,mod){
 			background-color:bg4;
 			color:txt;
 			border:none;
-			border-radius:0.5em;
+			border-radius:irad;
 			cursor:pointer;
 			&:hover{
 				background-color:bg5;
@@ -1238,7 +1314,7 @@ rbarshape(name,mod){
 			color:dtxt;
 			filter:invert(0.8);}
 	}
-	input.organizer_filtertable{
+	input.organizer_filtertable{//TODO what's this
 		background-color:bg2;
 		color:txt;
 		border:solid 1px brd;
@@ -1252,7 +1328,7 @@ rbarshape(name,mod){
 		}
 	}
 	.form-control{
-		border-radius:0.5em;
+		border-radius:irad;
 		background-color:bg3;
 		border-color:brd;
 		color:txt;
@@ -1283,27 +1359,28 @@ rbarshape(name,mod){
 		&>.form-control{
 			&,
 			&.border-right-0{
-				border-radius:0.25rem 0 0 0.25rem;
+				border-radius:irad 0 0 irad;
 			}
 			&.border-left-0{
-				border-radius:0 0.25rem 0.25rem 0;
+				border-radius:0 irad irad 0;
 				&.border-right-0{
 					border-radius:0;
 				}
 			}
 		}
 		&-prepend>span{
-			border-radius:0.25rem 0 0 0.25rem;
+			border-radius:irad 0 0 irad;
 		}
 		&-append{
-			border-top:solid 1px brd;
-			border-right:solid 1px brd;
-			border-bottom:solid 1px brd;
-			border-radius:0 0.5em 0.5em 0;
+			border-radius:0 irad irad 0;
 			overflow:hidden;
+			&>.btn-primary{
+				border:none;
+				border-radius:0;
+			}
 		}
 	}
-	#searchwiki{
+	#searchwiki{//TODO what's this
 		background-color:bg3;
 		border:solid 1px brd;
 		border-radius:0.25em;
@@ -1364,7 +1441,7 @@ rbarshape(name,mod){
 	}
 	.forumpost{
 		border-color:brd;
-		border-radius:0.3rem;
+		border-radius:crad;
 	}
 	/*Editor Atto*/
 	.editor_atto{
@@ -1400,7 +1477,7 @@ rbarshape(name,mod){
 		&_notification .atto_{
 			&info,
 			&warning{
-				border-radius:0.5em;
+				border-radius:0.5em;//TODO what's this
 				border-top-right-radius:0;
 				border:solid 1px brd;
 				margin-top:-1px;
@@ -1424,13 +1501,13 @@ rbarshape(name,mod){
 	.filemanager{
 		& .fp-navbar{
 			background-color:bg3;
-			border-radius: 0.5em 0.5em 0 0;
+			border-radius:crad crad 0 0;
 			border:none;
 			border-bottom:solid 1px brd;
 		}
 		& &-container{
 			background-color:bg3;
-			border-radius: 0 0 0.5em 0.5em;
+			border-radius: 0 0 crad crad;
 			border:none !important;
 		}
 		& .yui3-datatable{
@@ -1513,7 +1590,7 @@ rbarshape(name,mod){
 	.filemanager{
 		& .fp-viewbar{
 			background-color:bg5;
-			border-radius:0.2em;
+			border-radius:irad;
 			overflow:hidden;
 			&>.btn{
 				background-color:bg5;
@@ -1541,7 +1618,7 @@ rbarshape(name,mod){
 			}
 		}
 		& .fp-info .fp-thumbnail{
-			border-radius:0.5em;
+			border-radius:irad;
 			box-shadow:0 0 0.5em bg0;
 		}
 		& .fp-thumbnail{
@@ -1555,11 +1632,11 @@ rbarshape(name,mod){
 		}
 		& .fp-iconview .fp-file{
 			box-shadow:0 0 0.5em bg0;
-			border-radius:0.5em 0.5em 0 0;
+			border-radius:irad irad 0 0;
 			&name{
 				background-color:bg3;
 				border-top:none;
-				border-radius: 0 0 0.5em 0.5em;
+				border-radius: 0 0 irad irad;
 				padding:0 0.1em 0.1em 0.1em;
 				box-shadow:0 0 0.5em bg0;
 				margin-bottom:0.5em;
@@ -1625,7 +1702,7 @@ rbarshape(name,mod){
 			background-color:tru;
 		}
 	}
-	/*VPL IDE*/
+	/*VPL IDE*/ //TODO: border radii
 	#vpl_menu{
 		border-radius:0.25em 0.25em 0 0;
 	}
@@ -1756,19 +1833,6 @@ rbarshape(name,mod){
 	img[src*="mod_page"],/*images with mod_page in the source url, most of the images in courses have this*/
 	.region-main-content img:not([class]):not([src^="https://elearning.tgm.ac.at/theme/"]){/*images without class - a last resort, really*/
 		filter:EICC;}
-	.progressBarCell>.nowDiv{
-		&>.icon{
-			display:none;}
-		&.lastHalfNow{
-			background:url('data:image/svg+xml;utf-8,<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1"><path d="M0 0 16 16V0Z" fill="rgb(127,127,127)"/></svg>') no-repeat;
-			background-position:5.5em 5px;
-			padding-right:1.3em;}
-		&.firstNow{
-			background:url("data:image/svg+xml;utf-8,<svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1'><path d='M0 0V16L16 0Z' fill='rgb(127,127,127)'/></svg>") no-repeat;
-			background-position:0em 5px;
-			padding-left:1.3em;
-		}
-	}
 	img[src$="elearning.tgm.ac.at/theme/image.php/classic/core/"][src$="/i/loading_small"]{
 		filter:invert(1);
 	}
@@ -1783,6 +1847,20 @@ rbarshape(name,mod){
 	}
 	img[src="https://elearning.tgm.ac.at/theme/image.php/classic/core/1604966287/u/f1"]{
 		filter:brightness(0.39) contrast(2)}
+	/*progress bar time descriptor*/
+	.progressBarCell>.nowDiv{
+		&>.icon{
+			display:none;}
+		&.lastHalfNow{
+			background:url("data:image/svg+xml;utf-8,<svg xmlns='http://www.w3.org/2000/svg'><path d='M0 0H16V16Z' fill='rgb(127,127,127)'/></svg>") no-repeat;
+			background-position:5.5em 5px;
+			padding-right:1.3em;}
+		&.firstNow{
+			background:url("data:image/svg+xml;utf-8,<svg xmlns='http://www.w3.org/2000/svg'><path d='M16 0H0V16Z' fill='rgb(127,127,127)'/></svg>") no-repeat;
+			background-position:0em 5px;
+			padding-left:1.3em;
+		}
+	}
 	/*row where it displays what you've done and what you didn't. Normally only in course/view.php, but also in other places*/
 	.barRow{
 		& .progressBarCell{
@@ -1813,6 +1891,12 @@ rbarshape(name,mod){
 			.progressBarCell{
 				border:none;
 				margin-left:1px;
+				&.completed{
+					background-color:tru;
+				}
+				&.notCompleted{
+					background-color:fals;
+				}
 				&:first-of-type{
 					border-radius:lbarshape(PBCS,PBCSm);
 					margin-left:0;
@@ -1820,6 +1904,9 @@ rbarshape(name,mod){
 				&:last-of-type{
 					border-radius:rbarshape(PBCS,PBCSm);
 					border-right:none;
+				}
+				&:only-of-type{
+					border-radius:barshape(PBCS,PBCSm);
 				}
 			}
 		}
@@ -1846,7 +1933,7 @@ rbarshape(name,mod){
 		background-color:bg4;
 		color:txt;
 		padding:0 0.5em;
-		border-radius:0.25em;
+		border-radius:irad;
 		&-info{
 			padding:0.25em 0.5em;
 		}
@@ -1862,7 +1949,7 @@ rbarshape(name,mod){
 			display:inline-block;
 			margin-left:-0.5em;
 			padding:0.25em 0.25em 0.25em 0.5em;
-			border-radius:0.25em 0 0 0.25em;
+			border-radius:irad 0 0 irad;
 		}
 	}
 }
@@ -1929,7 +2016,7 @@ rbarshape(name,mod){
 		color:txt !important;}
 	.forumpost{
 		border-color:brd !important;
-		border-radius:0.5em;}
+		border-radius:crad;}
 }
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/login/index\\.php.*?") {
 	.mt-3{
@@ -1950,10 +2037,21 @@ rbarshape(name,mod){
 		& li.activity.hasinfo{
 			border-bottom-color:brd;
 		}
+		&.current::before{
+			border-color:btn;
+		}
 	}
 	.progressEventInfo .iconInInfo{ /*Fixes a specific icon being distorted because someone forgot that width was set to 12px*/
 		width:1.2em;
-		height:1.2em;}
+		height:1.2em;
+	}
+	.region-main h4,
+	.region-main h5{
+		background-color:pb;
+		color:dtxt !important;//fuuck whyy
+		border-radius:crad crad 0 0;
+		& .fa{color:dtxt}
+	}
 }
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/user/files\\.php.*?") {
 	.filemanager-container,
@@ -2015,7 +2113,7 @@ rbarshape(name,mod){
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/user/(profile|view)\\.php.*?") {
 	#region-main .profile_tree>.node_category{
 		background-color:bg3;
-		border-radius:0.5em;}
+		border-radius:crad;}
 }
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/mod/organizer/view\\.php.*") {
 	#organizer_main_cointainer{
@@ -2075,20 +2173,56 @@ rbarshape(name,mod){
 		background-color:bg3;
 		border-color:brd;
 		color:txt;}
-	.criteria .criterion{/*TODO: find out where the fuck this is used*/
-		border:none;
-		outline:solid 1px brd;
-		/.feedback &.even,
-		/.gradingform_guide &.even{
-			background-color:bg3;
+	/*Grading criteria in full assignment view*/
+	//see -> https://elearning.tgm.ac.at/mod/assign/view.php?id=206006
+	#rubric-criteria>tbody{
+		border-radius:crad;
+		margin:1px;
+		box-shadow:0 0 0 1px brd;
+	}
+	.gradingform_rubric .criterion{
+		border-color:brd;
+		border-right:none;
+		border-left:none;
+		&:first-of-type>td:first-of-type{
+			border-top-left-radius:crad;
 		}
-		/.earlysubmission &.even{
-			background-color:tru;
-			filter:brightness(0.85);
+		&:first-of-type>td:last-of-type{
+			border-top-right-radius:crad;
 		}
-		/.latesubmission &.even{
-			background-color:fals;
-			filter:brightness(0.85);
+		&:last-of-type>td:first-of-type{
+			border-bottom-left-radius:crad;
+		}
+		&:last-of-type>td:last-of-type{
+			border-bottom-right-radius:crad;
+		}
+		&.even{
+			border:none;
+			background:#0000;
+			&>td{
+				background:bg4;
+				&:first-of-type{
+					background:bg5;
+				}
+			}
+		}
+		&.odd{
+			&>td{
+				background:bg3;
+				&:first-of-type{
+					background:bg4;
+				}
+			}
+		}
+		&:last-of-type{
+			border-bottom:none;
+		}
+		& .levels .level{
+			border-left-color:brd;
+			&.last{
+				border-right:none;
+				border-radius:0 crad 0 0;
+			}
 		}
 	}
 }
@@ -2106,7 +2240,7 @@ rbarshape(name,mod){
 	.que.multichoice .answer{
 		& div.r0,
 		& div.r1{
-			border-radius:0.25rem;
+			border-radius:irad;
 			& .icon.fa{
 				align-self:center;
 			}
@@ -2121,7 +2255,7 @@ rbarshape(name,mod){
 	.que .formulation{
 		background-color:bg3;
 		color:txt;
-		border-radius:0.5em;}
+		border-radius:crad;}
 	.que .correct .custom-select{
 		background-color:tru;}
 	.que .incorrect .custom-select{
@@ -2138,21 +2272,21 @@ rbarshape(name,mod){
 	.que .outcome{
 		background-color:bg3;
 		color:txt;
-		border-radius:0.5em;}
+		border-radius:crad;}
 	.que .info{	
 		background-color:bg3;	
-		border-radius:0.5em;	
+		border-radius:crad;	
 		border:none;}	
 	.que.essay .qtype_essay{
 		&_response.readonly{
 			background-color:bg4;
 			padding-left:0.2em;
-			border-radius:0.5rem;
+			border-radius:irad;
 		}
 		&_monospaced{
 			background-color:bg2;
 			padding:0.25em;
-			border-radius:0.5rem;
+			border-radius:irad;
 			color:txt;
 			border-color:brd;
 		}
@@ -2163,7 +2297,7 @@ rbarshape(name,mod){
 		}
 		& .draghome,
 		& .drop{
-			border-radius:0.25rem;
+			border-radius:irad;
 			border-color:brd;
 		}
 		& .draghome.placed:not(.beingdragged),
@@ -2195,7 +2329,7 @@ rbarshape(name,mod){
 		&>.incorrect{
 			&>.specificfeedback{
 				border: solid 1px brd;
-				border-radius:0.25em;
+				border-radius:irad;
 			}
 		}
 		&>.correct>.specificfeedback{
@@ -2241,7 +2375,7 @@ rbarshape(name,mod){
 		}
 	}
 	.quizreviewsummary{
-		border-radius:0.5em;
+		border-radius:crad;
 		overflow:hidden;
 		&>tbody>tr{
 			&:first-child>.cell{
@@ -2276,20 +2410,20 @@ rbarshape(name,mod){
 	}
 	.answer>input[type="text"]{	
 		background-color:bg4;}
-	.answer>.form-control{
+	.answer>.form-control{//TODO what's this
 		border-color:brd;
 		color:txt;
 		border-radius:0.5em;}
 	.subquestion input[type="text"]{	
 		background-color:bg4;	
 		border-color:brd;	
-		border-radius:0.5em;	
+		border-radius:irad;	
 		color:txt;}	
 	.submitbtns{
 		& button[type="submit"].btn,	
 		& input[type="submit"].btn{	
 			background-color:bg3;	
-			border-radius:0.5em;
+			border-radius:irad;
 			&.mod_quiz-next-nav{	
 				background-color:btn;	
 				border-color:btn;
@@ -2308,7 +2442,7 @@ rbarshape(name,mod){
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/calendar/view\\.php.*?") {
 	.eventlist .event .card{
 		background-color:bg3;
-		border-radius:0.5em !important;
+		border-radius:crad !important;
 		overflow:hidden;
 	}
 	.path-calendar .maincalendar{
