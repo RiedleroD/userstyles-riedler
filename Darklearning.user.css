@@ -953,35 +953,55 @@ rbarshape(name,mod){
 	.tooltip>*{
 		background-color:bg3 !important;
 		color:txt !important;}
-	.popover{//click on the questionmark at the bottom of https://elearning.tgm.ac.at/course/view.php?id=3239&section=1
+	/*popovers: the same, but with more complex content and a very annoying arrow*/
+	.popover{
 		background-color:bg1;
 		color:txt;
 		border:none;
 		border-radius:irad;
-		box-shadow:0 0 0.1em 0 brd;}
-		/*TODO: this is janky, a better solution is desireable.*/
-		//TODO: it seems the popup arrow isn't styled
+		box-shadow:0 0 0.1em 0 brd}
 	.bs-popover{
-		&-top,
-		&-auto[x-placement^="top"],
-		&-bottom,
-		&-auto[x-placement^="bottom"]{
-			&>.arrow{
-				&::before{
-					border-top-color:brd;
-					border-bottom-color:brd;
-					opacity:0.8;
-				}
-				&::after{
-					border-top-color:bg1;
-					border-bottom-color:bg1;
-				}
+		//see https://elearning.tgm.ac.at/calendar/view.php?view=month
+		&-top>.arrow,
+		&-auto[x-placement^="top"]>.arrow{
+			&::after{
+				border-top-color:bg1;
+			}
+			&::before{
+				border-top-color:rgba(brd,0.5);
 			}
 		}
+		//see above link
 		&-bottom,
 		&-auto[x-placement^="bottom"]{
 			& .popover-header::before{
 				border-bottom:solid 0.1em bg2;
+			}
+			&>.arrow::after{
+				border-bottom-color:bg2;
+			}
+			&>.arrow::before{
+				border-bottom-color:rgba(brd,0.5);
+			}
+		}
+		//see https://elearning.tgm.ac.at/course/view.php?id=5454&section=1
+		&-left>.arrow,
+		&-auto[x-placement^="left"]>.arrow{
+			&::after{
+				border-left-color:bg1;
+			}
+			&::before{
+				border-left-color:rgba(brd,0.5);
+			}
+		}
+		//TODO: find out where this is used
+		&-right>.arrow,
+		&-auto[x-placement^="right"]>.arrow{
+			&::after{
+				border-right-color:bg1;
+			}
+			&::before{
+				border-right-color:rgba(brd,0.5);
 			}
 		}
 	}
