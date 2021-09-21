@@ -2228,6 +2228,35 @@ rbarshape(name,mod){
 			}
 		}
 	}
+	/*Another grading criteria form*/
+	//see -> https://elearning.tgm.ac.at/mod/assign/view.php?id=208163
+	.gradingform_guide .criterion{
+		border:none;
+		&.even{
+			background-color:#0000;
+			&>td{background-color:bg3}
+		}
+		&.odd{background-color:bg4}
+		&.first>td{
+			border-radius:irad irad 0 0;
+		}
+		&.last>td{
+			border-radius:0 0 irad irad;
+		}
+		& .criteriondescriptionscore{
+			background-color:bg6;
+			color:dtxt;
+			border-radius:50%;
+			display:inline-block;
+			width:1.5em;
+			height:1.5em;
+			vertical-align:baseline;
+			text-align:center;
+			padding:0.25em 0;
+			line-height:1em;
+			font-weight:bold;
+		}
+	}
 }
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/user/preferences\\.php.*?") {
 	#region-main .card.mb-3{
