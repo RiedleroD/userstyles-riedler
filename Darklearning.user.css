@@ -950,7 +950,6 @@ rbarshape(name,mod){
 				background-color:bg3;
 			}
 		}
-		& .course-content li.activity.label,
 		& .editor_atto_content_wrap{
 			& h1,& h2,& h3,& h4{
 				border-left-color:tru;
@@ -2068,10 +2067,11 @@ rbarshape(name,mod){
 	}
 	.region-main h4,
 	.region-main h5{
-		background-color:pb;
-		color:dtxt !important;//fuuck whyy
-		border-radius:crad crad 0 0;
-		& .fa{color:dtxt}
+		background-color:#0000;
+		background-image:linear-gradient(to bottom,pb 0,pb irad,#0000 irad);
+		color:txt !important;//fuuck whyy
+		border-radius:irad irad 0 0;
+		& .fa{color:txt}
 	}
 }
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/user/files\\.php.*?") {
