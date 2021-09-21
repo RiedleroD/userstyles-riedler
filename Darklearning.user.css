@@ -809,23 +809,22 @@ rbarshape(name,mod){
 		}
 	}
 	.pagination>.page-item{
-		&>a{
-			background-color:bg3;
-			border-color:bg2;}
-		&.disabled>a{
+		& .page-link{
+			color:lnk;
 			background-color:bg4;
-			border-color:bg2;
-			&>span{
-				color:brd;
+			border-color:#0000;
+			&:hover{
+				color:hlnk;
+				background-color:bg5;
+				border-color:brd;
 			}
 		}
-		&:not(.active)>a:hover{
-			background-color:bg4;}
-		&.active>a{
-			color:htxt;
-			&:hover{
-				background-color:hbtn;
-				color:hhtxt;
+		&.active{
+			cursor:not-allowed;
+			& .page-link{
+				color:htxt;
+				background-color:btn;
+				border-color:btn;
 			}
 		}
 	}
