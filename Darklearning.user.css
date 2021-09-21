@@ -493,6 +493,28 @@ rbarshape(name,mod){
 			color:txt;
 		}
 	}
+	//see -> https://elearning.tgm.ac.at/user/index.php?id=5503
+	.form-autocomplete-suggestions{
+		background-color:bg1;
+		border-color:brd;
+		& li{
+			color:txt;
+			&:hover,&:focus,
+			&[aria-selected="true"]{
+				background-color:btn;
+				color:htxt;
+			}
+			&[aria-selected="true"]{
+				box-shadow:0 0 0 0.2rem rgba(btn,0.33);
+			}
+		}
+	}
+	.form-autocomplete-downarrow{
+		color:txt;
+		.form-control:hover+&{
+			color:htxt;
+		}
+	}
 	.switch input{
 		&+label::before{
 			background-color:brd;
@@ -1104,11 +1126,6 @@ rbarshape(name,mod){
 		background-color:bg3;
 		border-color:brd;
 		border-radius:0.4em;
-	}
-	.form-autocomplete-suggestions{
-		background-color:bg3;
-		border-color:brd;
-		border-width:1px;
 	}
 	.mform fieldset{
 		border-bottom-color:brd;
