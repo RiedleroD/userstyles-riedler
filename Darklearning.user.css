@@ -1145,20 +1145,22 @@ rbarshape(name,mod){
 	}
 	.alert{
 		border-radius:crad;
+		color:txt;
+		&>a{
+			color:lnk;
+			&:hover{color:hlnk}
+		}
 		&-danger{
-			background-color:fals;
-			color:txt;
+			border:solid 1px fals;
+			background-color:rgba(fals,0.25);
 		}
 		&-info{
-			background-color:pb;
-			color:bg1 !important;
-			&>a{
-				filter:brightness(1.3);
-			}
+			border:solid 1px pb;
+			background-color:rgba(pb,0.25);
 		}
 		&-success{
-			background-color:tru;
-			color:txt;
+			border:solid 1px tru;
+			background-color:rgba(tru,0.25);
 		}
 	}
 	#page-mod-quiz-attempt #connection{
