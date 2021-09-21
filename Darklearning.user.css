@@ -725,17 +725,18 @@ rbarshape(name,mod){
 	.btn{
 		border-radius:irad;
 		&-outline-secondary{
-			border-color:brd !important;
-			&:hover{
-				background-color:bg3 !important;
-			}
+			border-color:brd;
+			&:hover,
 			&:focus{
-				background-color:bg4 !important;
+				background-color:bg4;
+				border-color:bg6;
+				color:htxt;
 			}
 			&:not(:disabled):not(.disabled):active,
 			&:not(:disabled):not(.disabled).active,
 			&.dropdown-toggle:focus{
-				background-color:bg4;
+				background-color:brd;
+				color:dtxt;
 			}
 		}
 		&-outline-success{
