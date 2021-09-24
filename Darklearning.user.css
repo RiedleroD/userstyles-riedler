@@ -872,7 +872,10 @@ rbarshape(name,mod){
 	.format-tiles{
 		& #header-overlay,
 		& #window-overlay{
-			opacity:0;}
+			background-color:#888;
+			mix-blend-mode:multiply;
+			opacity:1;
+		}
 		& #page .course-content ul li.section.main{
 			background-color:bg2;
 		}
