@@ -922,7 +922,8 @@ rbarshape(name,mod){
 		}
 		& .sectiontitle::after,
 		& .tag-info{
-			background-color:tru;}
+			background-color:tru;
+		}
 		& .course-content{
 			& ul.tiles .tile{
 				box-shadow:2px 4px 5px 0 #000A;
@@ -958,6 +959,14 @@ rbarshape(name,mod){
 			& h1,& h2,& h3,& h4{
 				border-left-color:tru;
 			}
+		}
+		/*some small fixes for https://elearning.tgm.ac.at/course/view.php?id=5836*/
+		& .badge-info{
+			background-color:bg4;
+		}
+		& .tile a .availabilityinfo,
+		& .availabilityinfo .badge{
+			color:txt;
 		}
 	}
 	/*php-generated code block with colors without classes*/
