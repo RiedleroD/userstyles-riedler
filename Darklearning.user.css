@@ -2184,17 +2184,18 @@ rbarshape(name,mod){
 	/*Abgabestatus*/
 	.submissionsummarytable td{
 		&.submission{
-			&graded{
+			&graded,
+			&statussubmitted{
 				background-color:tru;
-				color:txt;
+				color:htru;
 			}
 			&notgraded{
 				background-color:#0000;
 				color:txt;
 			}
-			&statussubmitted{
-				background-color:tru;
-				color:txt;
+			&statusdraft{
+				background-color:idk;
+				color:hidk;
 			}
 		}
 		&.latesubmission,
