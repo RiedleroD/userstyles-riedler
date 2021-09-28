@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name			Darklearning
 @namespace		https://github.com/RiedleroD/userstyles-riedler
-@version		1.2.4
+@version		1.2.5
 @description	Darker version of Elearning
 @author			Riedler
 @license		MPL-2.0
@@ -128,7 +128,8 @@ tru	 = #262
 htru = #6C6
 fals = #922
 hfals= #C66
-idk  = #B60
+idk  = #A50
+hidk = #FA0
 cal0 = #533
 cal1 = #535
 cal2 = #553
@@ -493,6 +494,28 @@ rbarshape(name,mod){
 			color:txt;
 		}
 	}
+	//see -> https://elearning.tgm.ac.at/user/index.php?id=5503
+	.form-autocomplete-suggestions{
+		background-color:bg1;
+		border-color:brd;
+		& li{
+			color:txt;
+			&:hover,&:focus,
+			&[aria-selected="true"]{
+				background-color:btn;
+				color:htxt;
+			}
+			&[aria-selected="true"]{
+				box-shadow:0 0 0 0.2rem rgba(btn,0.33);
+			}
+		}
+	}
+	.form-autocomplete-downarrow{
+		color:txt;
+		.form-control:hover+&{
+			color:htxt;
+		}
+	}
 	.switch input{
 		&+label::before{
 			background-color:brd;
@@ -658,7 +681,8 @@ rbarshape(name,mod){
 			background-color:bg0 !important;
 		}
 	}
-	span>span[style*="background-color: rgb(255\, 255\, 255)"]{
+	span>span[style*="background-color: rgb(255\, 255\, 255)"],
+    a[style*="background-color: rgb(255\, 255\, 255)"]{
 		background-color:bg2 !important;
 	}
 	/*VPL badge*/
@@ -703,17 +727,18 @@ rbarshape(name,mod){
 	.btn{
 		border-radius:irad;
 		&-outline-secondary{
-			border-color:brd !important;
-			&:hover{
-				background-color:bg3 !important;
-			}
+			border-color:brd;
+			&:hover,
 			&:focus{
-				background-color:bg4 !important;
+				background-color:bg4;
+				border-color:bg6;
+				color:htxt;
 			}
 			&:not(:disabled):not(.disabled):active,
 			&:not(:disabled):not(.disabled).active,
 			&.dropdown-toggle:focus{
-				background-color:bg4;
+				background-color:brd;
+				color:dtxt;
 			}
 		}
 		&-outline-success{
@@ -787,23 +812,22 @@ rbarshape(name,mod){
 		}
 	}
 	.pagination>.page-item{
-		&>a{
-			background-color:bg3;
-			border-color:bg2;}
-		&.disabled>a{
+		& .page-link{
+			color:lnk;
 			background-color:bg4;
-			border-color:bg2;
-			&>span{
-				color:brd;
+			border-color:#0000;
+			&:hover{
+				color:hlnk;
+				background-color:bg5;
+				border-color:brd;
 			}
 		}
-		&:not(.active)>a:hover{
-			background-color:bg4;}
-		&.active>a{
-			color:htxt;
-			&:hover{
-				background-color:hbtn;
-				color:hhtxt;
+		&.active{
+			cursor:not-allowed;
+			& .page-link{
+				color:htxt;
+				background-color:btn;
+				border-color:btn;
 			}
 		}
 	}
@@ -850,7 +874,10 @@ rbarshape(name,mod){
 	.format-tiles{
 		& #header-overlay,
 		& #window-overlay{
-			opacity:0;}
+			background-color:#888;
+			mix-blend-mode:multiply;
+			opacity:1;
+		}
 		& #page .course-content ul li.section.main{
 			background-color:bg2;
 		}
@@ -897,7 +924,8 @@ rbarshape(name,mod){
 		}
 		& .sectiontitle::after,
 		& .tag-info{
-			background-color:tru;}
+			background-color:tru;
+		}
 		& .course-content{
 			& ul.tiles .tile{
 				box-shadow:2px 4px 5px 0 #000A;
@@ -929,11 +957,18 @@ rbarshape(name,mod){
 				background-color:bg3;
 			}
 		}
-		& .course-content li.activity.label,
 		& .editor_atto_content_wrap{
 			& h1,& h2,& h3,& h4{
 				border-left-color:tru;
 			}
+		}
+		/*some small fixes for https://elearning.tgm.ac.at/course/view.php?id=5836*/
+		& .badge-info{
+			background-color:bg4;
+		}
+		& .tile a .availabilityinfo,
+		& .availabilityinfo .badge{
+			color:txt;
 		}
 	}
 	/*php-generated code block with colors without classes*/
@@ -1105,11 +1140,6 @@ rbarshape(name,mod){
 		border-color:brd;
 		border-radius:0.4em;
 	}
-	.form-autocomplete-suggestions{
-		background-color:bg3;
-		border-color:brd;
-		border-width:1px;
-	}
 	.mform fieldset{
 		border-bottom-color:brd;
 	}
@@ -1129,20 +1159,22 @@ rbarshape(name,mod){
 	}
 	.alert{
 		border-radius:crad;
+		color:txt;
+		&>a{
+			color:lnk;
+			&:hover{color:hlnk}
+		}
 		&-danger{
-			background-color:fals;
-			color:txt;
+			border:solid 1px fals;
+			background-color:rgba(fals,0.25);
 		}
 		&-info{
-			background-color:pb;
-			color:bg1 !important;
-			&>a{
-				filter:brightness(1.3);
-			}
+			border:solid 1px pb;
+			background-color:rgba(pb,0.25);
 		}
 		&-success{
-			background-color:tru;
-			color:txt;
+			border:solid 1px tru;
+			background-color:rgba(tru,0.25);
 		}
 	}
 	#page-mod-quiz-attempt #connection{
@@ -2050,10 +2082,16 @@ rbarshape(name,mod){
 	}
 	.region-main h4,
 	.region-main h5{
-		background-color:pb;
-		color:dtxt !important;//fuuck whyy
-		border-radius:crad crad 0 0;
-		& .fa{color:dtxt}
+		background-color:#0000;
+		background-image:linear-gradient(to bottom,pb 0,pb irad,#0000 irad);
+		color:txt !important;//fuuck whyy
+		border-radius:irad irad 0 0;
+		& .fa::before{
+			color:txt;
+			padding:0.25em 0;
+			vertical-align:baseline;
+			line-height:initial;
+		}
 	}
 }
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/user/files\\.php.*?") {
@@ -2146,17 +2184,18 @@ rbarshape(name,mod){
 	/*Abgabestatus*/
 	.submissionsummarytable td{
 		&.submission{
-			&graded{
+			&graded,
+			&statussubmitted{
 				background-color:tru;
-				color:txt;
+				color:htru;
 			}
 			&notgraded{
 				background-color:#0000;
 				color:txt;
 			}
-			&statussubmitted{
-				background-color:tru;
-				color:txt;
+			&statusdraft{
+				background-color:idk;
+				color:hidk;
 			}
 		}
 		&.latesubmission,
@@ -2226,6 +2265,35 @@ rbarshape(name,mod){
 				border-right:none;
 				border-radius:0 crad 0 0;
 			}
+		}
+	}
+	/*Another grading criteria form*/
+	//see -> https://elearning.tgm.ac.at/mod/assign/view.php?id=208163
+	.gradingform_guide .criterion{
+		border:none;
+		&.even{
+			background-color:#0000;
+			&>td{background-color:bg3}
+		}
+		&.odd{background-color:bg4}
+		&.first>td{
+			border-radius:irad irad 0 0;
+		}
+		&.last>td{
+			border-radius:0 0 irad irad;
+		}
+		& .criteriondescriptionscore{
+			background-color:bg6;
+			color:dtxt;
+			border-radius:50%;
+			display:inline-block;
+			width:1.5em;
+			height:1.5em;
+			vertical-align:baseline;
+			text-align:center;
+			padding:0.25em 0;
+			line-height:1em;
+			font-weight:bold;
 		}
 	}
 }
@@ -2464,6 +2532,17 @@ rbarshape(name,mod){
 					right:-3.5em;
 				}
 			}
+		}
+	}
+}
+@-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/user/index\\.php.*?") {
+	.filter-group{
+		border:none !important;
+		border-radius:irad;
+		background-color:bg3 !important;
+		& .bg-white.border{
+			border:none !important;
+			background-color:bg3 !important;
 		}
 	}
 }
