@@ -2080,19 +2080,6 @@ rbarshape(name,mod){
 		width:1.2em;
 		height:1.2em;
 	}
-	.region-main h4,
-	.region-main h5{
-		background-color:#0000;
-		background-image:linear-gradient(to bottom,pb 0,pb irad,#0000 irad);
-		color:txt !important;//fuuck whyy
-		border-radius:irad irad 0 0;
-		& .fa::before{
-			color:txt;
-			padding:0.25em 0;
-			vertical-align:baseline;
-			line-height:initial;
-		}
-	}
 }
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/user/files\\.php.*?") {
 	.filemanager-container,
