@@ -2217,27 +2217,15 @@ rbarshape(name,mod){
 		color:txt;}
 	/*Grading criteria in full assignment view*/
 	//see -> https://elearning.tgm.ac.at/mod/assign/view.php?id=206006
-	#rubric-criteria>tbody{
+	.gradingform_rubric .criteria>tbody{
 		border-radius:crad;
-		margin:1px;
-		box-shadow:0 0 0 1px brd;
+		overflow:hidden;
+		border:solid 1px brd;
 	}
 	.gradingform_rubric .criterion{
 		border-color:brd;
 		border-right:none;
 		border-left:none;
-		&:first-of-type>td:first-of-type{
-			border-top-left-radius:crad;
-		}
-		&:first-of-type>td:last-of-type{
-			border-top-right-radius:crad;
-		}
-		&:last-of-type>td:first-of-type{
-			border-bottom-left-radius:crad;
-		}
-		&:last-of-type>td:last-of-type{
-			border-bottom-right-radius:crad;
-		}
 		&.even{
 			border:none;
 			background:#0000;
@@ -2263,8 +2251,23 @@ rbarshape(name,mod){
 			border-left-color:brd;
 			&.last{
 				border-right:none;
-				border-radius:0 crad 0 0;
 			}
+			&.checked{
+				background:tru;
+				border:none;
+				border-left:solid 1px brd;
+				& .score,
+				& .score>span{
+					color:htru;
+				}
+			}
+			& .score{
+				color:txt;
+			}
+			
+		}
+		& .remark{
+			border-left:solid 1px brd;
 		}
 	}
 	/*Another grading criteria form*/
