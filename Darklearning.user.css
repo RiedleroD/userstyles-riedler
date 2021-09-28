@@ -1987,6 +1987,41 @@ rbarshape(name,mod){
 			border-radius:irad 0 0 irad;
 		}
 	}
+	/*highlightjs*/
+	.hljs{
+		background-color:bg1;
+		color:txt;
+		box-shadow:inset 0 0 0 2px bg0;
+		&-doctag,
+		&-keyword,
+		&-formula{
+			color:c0;
+		}
+		&-string,
+		&-regexp,
+		&-addition,
+		&-attribute,
+		&-meta-string{
+			color:c1;
+		}
+		&-attr,
+		&-variable,
+		&-template-variable,
+		&-type,
+		&-selector-class,
+		&-selector-attr,
+		&-selector-pseudo,
+		&-number{
+		 color:c2;
+		}
+		&-section,
+		&-name,
+		&-selector-tag,
+		&-deletion,
+		&-subst{
+			color:c3;
+		}
+	}
 }
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/my/.*?") {
 	.dashboard-card{
