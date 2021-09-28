@@ -680,7 +680,7 @@ rbarshape(name,mod){
 			background-color:bg0 !important;
 		}
 	}
-	span>span,
+	span>span[style*="background-color: rgb(255\, 255\, 255)"],
     a[style*="background-color: rgb(255\, 255\, 255)"]{
 		background-color:bg2 !important;
 	}
