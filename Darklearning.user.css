@@ -140,6 +140,7 @@ c0	 = #66A
 c1	 = #3C3
 c2	 = #CC3
 c3	 = #C33
+c4   = #C73
 
 irad = 0.3rem //input border radius
 crad = 0.5rem //card border radius
@@ -2020,6 +2021,10 @@ rbarshape(name,mod){
 		&-deletion,
 		&-subst{
 			color:c3;
+		}
+		&-built_in,
+		&-class &-title{
+			color:c4;
 		}
 	}
 }
