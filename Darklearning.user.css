@@ -2535,6 +2535,14 @@ rbarshape(name,mod){
 			}
 		}
 	}
+	#quiz-timer-wrapper #quiz-timer{
+		border-color:hfals;
+		background-color:fals;
+		color:hfals;
+		& #quiz-time-left{
+			color:hfals;
+		}
+	}
 	input[type="text"].correct{	
 		background-color:tru;}	
 	input[type="text"].incorrect{	
