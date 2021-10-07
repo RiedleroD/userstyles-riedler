@@ -2351,9 +2351,19 @@ rbarshape(name,mod){
 		}
 		& .incorrect{
 			background-color:fals;
+			border:solid 1px hfals;
+			&, & p, & span,
+			& .answernumber{
+				color:hfals;
+			}
 		}
 		& .correct{
 			background-color:tru;
+			border:solid 1px htru;
+			&, & p, & span,
+			& .answernumber{
+				color:htru;
+			}
 		}
 	}
 	.que .formulation{
@@ -2420,27 +2430,16 @@ rbarshape(name,mod){
 			filter:EICC;
 		}
 	}
-	.que.incorrect,
-	.que.notanswered{
-		& .answer>input[type="text"]{
-			background-color:fals;
-		}
-	}
-	.que.correct .answer>input[type="text"]{	
-		background-color:tru;}
 	.que .answer{
-		&>.correct,
-		&>.incorrect{
-			&>.specificfeedback{
-				border: solid 1px brd;
-				border-radius:irad;
-			}
-		}
 		&>.correct>.specificfeedback{
 			background-color:tru;
+			border: solid 1px brd;
+			border-radius:irad;
 		}
 		&>.incorrect>.specificfeedback{
 			background-color:fals;
+			border: solid 1px brd;
+			border-radius:irad;
 		}
 	}
 	.que.multianswer .feedbackspan{
@@ -2554,10 +2553,64 @@ rbarshape(name,mod){
 			color:hfals;
 		}
 	}
-	input[type="text"].correct{	
-		background-color:tru;}	
-	input[type="text"].incorrect{	
-		background-color:fals;}
+	input[type="text"],
+	input[type="checkbox"],
+	.custom-select{
+		&.incorrect,
+		&.notanswered,
+		.incorrect>&,
+		.notanswered>&{
+			&,
+			&:hover{
+				background-color:fals;
+				color:hfals;
+				border-color:hfals;
+				transition:none
+			}
+		}
+		&.partiallycorrect,
+		.partiallycorrect>&{
+			&,
+			&:hover{
+				background-color:idk;
+				color:hidk;
+				border-color:hidk;
+				transition:none
+			}
+		}
+		&.correct,
+		.correct>&{
+			&,
+			&:hover{
+				background-color:tru;
+				color:htru;
+				border-color:htru;
+				transition:none
+			}
+		}
+	}
+	input[type="radio"]{
+		&.incorrect,
+		&.notanswered,
+		.incorrect>&,
+		.notanswered>&{
+			background-image: radial-gradient(hfals 30%,#0000 40%,#0000 50%, hfals 60%,#0000 70%);
+		}
+		&.partiallycorrect,
+		.partiallycorrect>&{
+			background-image: radial-gradient(hidk 30%,#0000 40%,#0000 50%, hidk 60%,#0000 70%);
+		}
+		&.correct,
+		.correct>&{
+			background-image: radial-gradient(htru 30%,#0000 40%,#0000 50%, htru 60%,#0000 70%);
+		}
+	}
+	input,select{
+		&:disabled,
+		&[readonly]{
+			cursor:not-allowed;
+		}
+	}
 }
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/calendar/view\\.php.*?") {
 	.eventlist .event .card{
