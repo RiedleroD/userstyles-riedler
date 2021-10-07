@@ -1930,6 +1930,9 @@ rbarshape(name,mod){
 				&.completed{
 					background-color:tru;
 				}
+				&.submittedNotComplete{
+					background-color:idk;
+				}
 				&.notCompleted{
 					background-color:fals;
 				}
