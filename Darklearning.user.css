@@ -404,16 +404,6 @@ rbarshape(name,mod){
 				background-color:bg5;
 			}
 		}
-		& div[data-region="content-placeholder"] div.px-2.pb-2.pt-0.h-100{
-			background-color:bg3 !important;
-			&>.mt-4>.mb-4>.mx-auto{
-				background-color:bg5 !important;
-				border-radius:0.25rem;//TODO: no idea what this style is for
-			}
-			&>.mt-4>.d-flex.flex-column.p-2.rounded.mb-2{
-				background-color:bg5 !important;
-			}
-		}
 		& div[data-region="confirm-dialogue"]{
 			background-color:bg3 !important;
 			border:solid 1px brd;
@@ -721,10 +711,6 @@ rbarshape(name,mod){
 			opacity:1;
 		}
 	}
-	.moodle-dialogue-base .moodle-dialogue-wrap{
-		border:solid 1px brd;
-		border-radius:0.25em;//TODO what's this
-	}
 	.btn{
 		border-radius:irad;
 		&-outline-secondary{
@@ -938,7 +924,7 @@ rbarshape(name,mod){
 		}
 	}
 	.popover{
-		&-header{//TODO what's this
+		&-header{//TODO restructure
 			background-color:bg2;
 			border-bottom-color:#0000;
 			border-radius:0.5em 0.5em 0 0;
@@ -1028,11 +1014,6 @@ rbarshape(name,mod){
 				max-height:100%;
 			}
 		}
-	}
-	.wiki-toc{//TODO what's this
-		background-color:bg3;
-		border-color:brd;
-		border-radius:0.4em;
 	}
 	.mform fieldset{
 		border-bottom-color:brd;
@@ -1172,22 +1153,6 @@ rbarshape(name,mod){
 			background-color:bg2_5;
 		}
 	}
-	.modal{//TODO what's this
-		&-dialog>&-content{
-			background-color:bg4;
-			border-radius:0.5em;}
-		&-header{
-			border-color:brd;
-			border-radius:0.5em 0.5em 0 0;}
-		&-body .form-control{
-			color:txt;
-		}
-		&-footer{
-			border-color:brd;}
-		&-title{
-			color:htxt !important;
-		}
-	}
 	#id_comments{
 		color:txt;}
 	
@@ -1236,19 +1201,6 @@ rbarshape(name,mod){
 		input[type="file"]{
 			color:dtxt;
 			filter:invert(0.8);}
-	}
-	input.organizer_filtertable{//TODO what's this
-		background-color:bg2;
-		color:txt;
-		border:solid 1px brd;
-		border-radius:0.25em;
-		padding-left:0.25em;
-		padding-right:0.25em;
-		&:focus{
-			background-color:bg3;
-			border-color:hbrd;
-			color:htxt;
-		}
 	}
 	.form-control{
 		border-radius:irad;
@@ -1301,16 +1253,6 @@ rbarshape(name,mod){
 				border:none;
 				border-radius:0;
 			}
-		}
-	}
-	#searchwiki{//TODO what's this
-		background-color:bg3;
-		border:solid 1px brd;
-		border-radius:0.25em;
-		height:2rem;
-		color:txt;
-		&:hover{
-			background-color:bg4;
 		}
 	}
 	.border-bottom{
@@ -1397,10 +1339,10 @@ rbarshape(name,mod){
 				background-color:bg2;
 			}
 		}
-		&_notification .atto_{
+		&_notification .atto_{//TODO get url for this
 			&info,
 			&warning{
-				border-radius:0.5em;//TODO what's this
+				border-radius:0.5em;
 				border-top-right-radius:0;
 				border:solid 1px brd;
 				margin-top:-1px;
@@ -2083,11 +2025,6 @@ rbarshape(name,mod){
 					transition:all 0.25s ease-in-out;
 					transform:translateY(-6px);
 				}
-				&_bar{//TODO what's this
-					border-top:none;
-					border-radius:0.3rem;
-					background-color:#F00;
-				}
 				&.phototile{
 					background-color:#444 !important;/*darkening the background image*/
 					background-blend-mode:overlay;
@@ -2522,10 +2459,6 @@ rbarshape(name,mod){
 	}
 	.answer>input[type="text"]{	
 		background-color:bg4;}
-	.answer>.form-control{//TODO what's this
-		border-color:brd;
-		color:txt;
-		border-radius:0.5em;}
 	.subquestion input[type="text"]{	
 		background-color:bg4;	
 		border-color:brd;	
