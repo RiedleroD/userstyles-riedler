@@ -2440,6 +2440,14 @@ rbarshape(name,mod){
 			background-color:fals;
 		}
 	}
+	.que.multianswer .feedbackspan{
+		border-radius:0 0 crad crad;
+		background:linear-gradient(to top,rgba(idk,0.9) 70%,rgba(idk,0.7) 80%,rgba(idk,0.3) 90%,rgba(idk,0) 100%);
+		color:hidk;
+		border:solid 1px hidk;
+		border-top:none;
+		box-shadow:0 0.2em 0.5em bg0,0 0.2em 0.2em idk;
+	}
 	.path-mod-quiz #mod_quiz_navblock{
 		& .qnbutton{
 			&.correct>.trafficlight{
