@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name			Darklearning
 @namespace		https://github.com/RiedleroD/userstyles-riedler
-@version		1.2.5
+@version		1.2.6
 @description	Darker version of Elearning
 @author			Riedler
 @license		MPL-2.0
@@ -140,6 +140,7 @@ c0	 = #66A
 c1	 = #3C3
 c2	 = #CC3
 c3	 = #C33
+c4   = #C73
 
 irad = 0.3rem //input border radius
 crad = 0.5rem //card border radius
@@ -401,16 +402,6 @@ rbarshape(name,mod){
 			border-top: solid 1px brd;
 			&:hover{
 				background-color:bg5;
-			}
-		}
-		& div[data-region="content-placeholder"] div.px-2.pb-2.pt-0.h-100{
-			background-color:bg3 !important;
-			&>.mt-4>.mb-4>.mx-auto{
-				background-color:bg5 !important;
-				border-radius:0.25rem;//TODO: no idea what this style is for
-			}
-			&>.mt-4>.d-flex.flex-column.p-2.rounded.mb-2{
-				background-color:bg5 !important;
 			}
 		}
 		& div[data-region="confirm-dialogue"]{
@@ -720,10 +711,6 @@ rbarshape(name,mod){
 			opacity:1;
 		}
 	}
-	.moodle-dialogue-base .moodle-dialogue-wrap{
-		border:solid 1px brd;
-		border-radius:0.25em;//TODO what's this
-	}
 	.btn{
 		border-radius:irad;
 		&-outline-secondary{
@@ -864,113 +851,6 @@ rbarshape(name,mod){
 	/*Dropdown menus*/
 	.dropdown-item:active,.dropdown-item.active{
 		background-color:bg4;}
-	/*These new tiles, ykwim*/
-	.tiles{
-		&>.tile,
-		&>.section{
-			background-color:bg2 !important;
-		}
-	}
-	.format-tiles{
-		& #header-overlay,
-		& #window-overlay{
-			background-color:#888;
-			mix-blend-mode:multiply;
-			opacity:1;
-		}
-		& #page .course-content ul li.section.main{
-			background-color:bg2;
-		}
-		& li.activity.subtile{
-			background-color:bg2;
-			border-color:brd;
-			& .activitytitle a{
-				background:linear-gradient(to bottom,bg4 85%,#0000);
-			}
-		}
-		& li.activity button[data-action="change-completion-status"]{
-			&>.completion-icon{
-				outline:solid 3px #0000;
-				transition:outline-color 300ms ease-in-out;
-				border-radius:100%;
-			}
-			&:hover{
-				border-color:#0000;
-				&>.completion-icon-y{
-					outline-color:rgba(htru,0.6);
-				}
-				&>.completion-icon-n{
-					outline-color:txt;
-				}
-			}
-		}
-		& #buttonhidesec0{
-			background-color:#0000;
-			&:hover{
-				background-color:bg4;
-				border-radius:irad;
-			}
-		}
-		& .modal-header .close{
-			&>span{
-				color:htxt !important;
-			}
-			&:hover>span{
-				color:fals !important;
-			}
-		}
-		& .sectiontitle h2{
-			color:txt;
-		}
-		& .sectiontitle::after,
-		& .tag-info{
-			background-color:tru;
-		}
-		& .course-content{
-			& ul.tiles .tile{
-				box-shadow:2px 4px 5px 0 #000A;
-				transform:translateY(0);//this is needed for compatibility
-				border-top:none;
-				border-radius:irad;
-				&:hover{
-					box-shadow:2px 10px 8px -3px #000A;
-					transition:all 0.25s ease-in-out;
-					transform:translateY(-6px);
-				}
-				&_bar{//TODO what's this
-					border-top:none;
-					border-radius:0.3rem;
-					background-color:#F00;
-				}
-				&.phototile{
-					background-color:#444 !important;/*darkening the background image*/
-					background-blend-mode:overlay;
-					& .photo-tile-text h3{
-						color:htxt !important;
-						font-weight:500;
-						font-size:1.25rem;
-						background-color:lnk;
-					}
-				}
-			}
-			& .section .activity:hover{
-				background-color:bg3;
-			}
-		}
-		& .editor_atto_content_wrap{
-			& h1,& h2,& h3,& h4{
-				border-left-color:tru;
-			}
-		}
-		/*some small fixes for https://elearning.tgm.ac.at/course/view.php?id=5836*/
-		& .badge-info{
-			background-color:bg4;
-		}
-		& .tile a .availabilityinfo,
-		& .availabilityinfo .badge{
-			color:txt;
-		}
-	}
 	/*php-generated code block with colors without classes*/
 	div[style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"]{
 		background-color:bg0 !important;
@@ -1044,7 +924,7 @@ rbarshape(name,mod){
 		}
 	}
 	.popover{
-		&-header{//TODO what's this
+		&-header{//TODO restructure
 			background-color:bg2;
 			border-bottom-color:#0000;
 			border-radius:0.5em 0.5em 0 0;
@@ -1135,11 +1015,6 @@ rbarshape(name,mod){
 			}
 		}
 	}
-	.wiki-toc{//TODO what's this
-		background-color:bg3;
-		border-color:brd;
-		border-radius:0.4em;
-	}
 	.mform fieldset{
 		border-bottom-color:brd;
 	}
@@ -1203,12 +1078,6 @@ rbarshape(name,mod){
 	.path-mod div.activity-information{
 		border-bottom-color:brd;
 	}
-	.format-tiles ul.tiles .headerabovetiles button.selected,
-	.headerabovetiles button:active,
-	.headerabovetiles button:focus,
-	.format-tiles .modal-header{
-		background-color:btn;
-		color:htxt;}
 	div.comment-area textarea{
 		background-color:bg3;
 		border:solid 1px brd;
@@ -1284,22 +1153,6 @@ rbarshape(name,mod){
 			background-color:bg2_5;
 		}
 	}
-	.modal{//TODO what's this
-		&-dialog>&-content{
-			background-color:bg4;
-			border-radius:0.5em;}
-		&-header{
-			border-color:brd;
-			border-radius:0.5em 0.5em 0 0;}
-		&-body .form-control{
-			color:txt;
-		}
-		&-footer{
-			border-color:brd;}
-		&-title{
-			color:htxt !important;
-		}
-	}
 	#id_comments{
 		color:txt;}
 	
@@ -1348,19 +1201,6 @@ rbarshape(name,mod){
 		input[type="file"]{
 			color:dtxt;
 			filter:invert(0.8);}
-	}
-	input.organizer_filtertable{//TODO what's this
-		background-color:bg2;
-		color:txt;
-		border:solid 1px brd;
-		border-radius:0.25em;
-		padding-left:0.25em;
-		padding-right:0.25em;
-		&:focus{
-			background-color:bg3;
-			border-color:hbrd;
-			color:htxt;
-		}
 	}
 	.form-control{
 		border-radius:irad;
@@ -1413,16 +1253,6 @@ rbarshape(name,mod){
 				border:none;
 				border-radius:0;
 			}
-		}
-	}
-	#searchwiki{//TODO what's this
-		background-color:bg3;
-		border:solid 1px brd;
-		border-radius:0.25em;
-		height:2rem;
-		color:txt;
-		&:hover{
-			background-color:bg4;
 		}
 	}
 	.border-bottom{
@@ -1509,10 +1339,10 @@ rbarshape(name,mod){
 				background-color:bg2;
 			}
 		}
-		&_notification .atto_{
+		&_notification .atto_{//TODO get url for this
 			&info,
 			&warning{
-				border-radius:0.5em;//TODO what's this
+				border-radius:0.5em;
 				border-top-right-radius:0;
 				border:solid 1px brd;
 				margin-top:-1px;
@@ -1882,20 +1712,6 @@ rbarshape(name,mod){
 	}
 	img[src="https://elearning.tgm.ac.at/theme/image.php/classic/core/1604966287/u/f1"]{
 		filter:brightness(0.39) contrast(2)}
-	/*progress bar time descriptor*/
-	.progressBarCell>.nowDiv{
-		&>.icon{
-			display:none;}
-		&.lastHalfNow{
-			background:url("data:image/svg+xml;utf-8,<svg xmlns='http://www.w3.org/2000/svg'><path d='M0 0H16V16Z' fill='rgb(127,127,127)'/></svg>") no-repeat;
-			background-position:5.5em 5px;
-			padding-right:1.3em;}
-		&.firstNow{
-			background:url("data:image/svg+xml;utf-8,<svg xmlns='http://www.w3.org/2000/svg'><path d='M16 0H0V16Z' fill='rgb(127,127,127)'/></svg>") no-repeat;
-			background-position:0em 5px;
-			padding-left:1.3em;
-		}
-	}
 	/*row where it displays what you've done and what you didn't. Normally only in course/view.php, but also in other places*/
 	.barRow{
 		& .progressBarCell{
@@ -1928,6 +1744,9 @@ rbarshape(name,mod){
 				margin-left:1px;
 				&.completed{
 					background-color:tru;
+				}
+				&.submittedNotComplete{
+					background-color:idk;
 				}
 				&.notCompleted{
 					background-color:fals;
@@ -1985,6 +1804,45 @@ rbarshape(name,mod){
 			margin-left:-0.5em;
 			padding:0.25em 0.25em 0.25em 0.5em;
 			border-radius:irad 0 0 irad;
+		}
+	}
+	/*highlightjs*/
+	.hljs{
+		background-color:bg1;
+		color:txt;
+		box-shadow:inset 0 0 0 2px bg0;
+		&-doctag,
+		&-keyword,
+		&-formula{
+			color:c0;
+		}
+		&-string,
+		&-regexp,
+		&-addition,
+		&-attribute,
+		&-meta-string{
+			color:c1;
+		}
+		&-attr,
+		&-variable,
+		&-template-variable,
+		&-type,
+		&-selector-class,
+		&-selector-attr,
+		&-selector-pseudo,
+		&-number{
+		 color:c2;
+		}
+		&-section,
+		&-name,
+		&-selector-tag,
+		&-deletion,
+		&-subst{
+			color:c3;
+		}
+		&-built_in,
+		&-class &-title{
+			color:c4;
 		}
 	}
 }
@@ -2080,17 +1938,127 @@ rbarshape(name,mod){
 		width:1.2em;
 		height:1.2em;
 	}
-	.region-main h4,
-	.region-main h5{
-		background-color:#0000;
-		background-image:linear-gradient(to bottom,pb 0,pb irad,#0000 irad);
-		color:txt !important;//fuuck whyy
-		border-radius:irad irad 0 0;
-		& .fa::before{
+	/*These new tiles, ykwim*/
+	.tiles{
+		&>.tile,
+		&>.section{
+			background-color:bg2 !important;
+		}
+	}
+	.format-tiles{
+		& #header-overlay,
+		& #window-overlay{
+			background-color:#888;
+			mix-blend-mode:multiply;
+			opacity:1;
+		}
+		& #page .course-content ul li.section.main{
+			background-color:bg2;
+		}
+		& li.activity.subtile{
+			background-color:bg2;
+			border-color:brd;
+			& .activitytitle a{
+				background:linear-gradient(to bottom,bg4 85%,#0000);
+			}
+		}
+		& li.activity button[data-action="change-completion-status"]{
+			&>.completion-icon{
+				outline:solid 3px #0000;
+				transition:outline-color 300ms ease-in-out;
+				border-radius:100%;
+			}
+			&:hover{
+				border-color:#0000;
+				&>.completion-icon-y{
+					outline-color:rgba(htru,0.6);
+				}
+				&>.completion-icon-n{
+					outline-color:txt;
+				}
+			}
+		}
+		& #buttonhidesec0{
+			background-color:#0000;
+			&:hover{
+				background-color:bg4;
+				border-radius:irad;
+			}
+		}
+		& .modal-header .close{
+			&>span{
+				color:htxt !important;
+			}
+			&:hover>span{
+				color:fals !important;
+			}
+		}
+		& .sectiontitle h2{
 			color:txt;
-			padding:0.25em 0;
-			vertical-align:baseline;
-			line-height:initial;
+		}
+		& .sectiontitle::after,
+		& .tag-info{
+			background-color:tru;
+		}
+		& .course-content{
+			& ul.tiles .tile{
+				box-shadow:2px 4px 5px 0 #000A;
+				transform:translateY(0);//this is needed for compatibility
+				border-top:none;
+				border-radius:irad;
+				&:hover{
+					box-shadow:2px 10px 8px -3px #000A;
+					transition:all 0.25s ease-in-out;
+					transform:translateY(-6px);
+				}
+				&.phototile{
+					background-color:#444 !important;/*darkening the background image*/
+					background-blend-mode:overlay;
+					& .photo-tile-text h3{
+						color:htxt !important;
+						font-weight:500;
+						font-size:1.25rem;
+						background-color:lnk;
+					}
+				}
+			}
+			& .section .activity:hover{
+				background-color:bg3;
+			}
+		}
+		& .editor_atto_content_wrap{
+			& h1,& h2,& h3,& h4{
+				border-left-color:tru;
+			}
+		}
+		/*some small fixes for https://elearning.tgm.ac.at/course/view.php?id=5836*/
+		& .badge-info{
+			background-color:bg4;
+		}
+		& .tile a .availabilityinfo,
+		& .availabilityinfo .badge{
+			color:txt;
+		}
+	}
+	.format-tiles ul.tiles .headerabovetiles button.selected,
+	.headerabovetiles button:active,
+	.headerabovetiles button:focus,
+	.format-tiles .modal-header{
+		background-color:btn;
+		color:htxt;
+	}
+	/*progress bar time descriptor*/
+	.progressBarCell>.nowDiv{
+		&>.icon{
+			display:none;}
+		&.lastHalfNow{
+			background:url("data:image/svg+xml;utf-8,<svg xmlns='http://www.w3.org/2000/svg'><path d='M0 0H16V16Z' fill='rgb(127,127,127)'/></svg>") no-repeat;
+			background-position:5.5em 5px;
+			padding-right:1.3em;}
+		&.firstNow{
+			background:url("data:image/svg+xml;utf-8,<svg xmlns='http://www.w3.org/2000/svg'><path d='M16 0H0V16Z' fill='rgb(127,127,127)'/></svg>") no-repeat;
+			background-position:0em 5px;
+			padding-left:1.3em;
 		}
 	}
 }
@@ -2217,27 +2185,15 @@ rbarshape(name,mod){
 		color:txt;}
 	/*Grading criteria in full assignment view*/
 	//see -> https://elearning.tgm.ac.at/mod/assign/view.php?id=206006
-	#rubric-criteria>tbody{
+	.gradingform_rubric .criteria>tbody{
 		border-radius:crad;
-		margin:1px;
-		box-shadow:0 0 0 1px brd;
+		overflow:hidden;
+		border:solid 1px brd;
 	}
 	.gradingform_rubric .criterion{
 		border-color:brd;
 		border-right:none;
 		border-left:none;
-		&:first-of-type>td:first-of-type{
-			border-top-left-radius:crad;
-		}
-		&:first-of-type>td:last-of-type{
-			border-top-right-radius:crad;
-		}
-		&:last-of-type>td:first-of-type{
-			border-bottom-left-radius:crad;
-		}
-		&:last-of-type>td:last-of-type{
-			border-bottom-right-radius:crad;
-		}
 		&.even{
 			border:none;
 			background:#0000;
@@ -2263,8 +2219,23 @@ rbarshape(name,mod){
 			border-left-color:brd;
 			&.last{
 				border-right:none;
-				border-radius:0 crad 0 0;
 			}
+			&.checked{
+				background:tru;
+				border:none;
+				border-left:solid 1px brd;
+				& .score,
+				& .score>span{
+					color:htru;
+				}
+			}
+			& .score{
+				color:txt;
+			}
+			
+		}
+		& .remark{
+			border-left:solid 1px brd;
 		}
 	}
 	/*Another grading criteria form*/
@@ -2318,9 +2289,19 @@ rbarshape(name,mod){
 		}
 		& .incorrect{
 			background-color:fals;
+			border:solid 1px hfals;
+			&, & p, & span,
+			& .answernumber{
+				color:hfals;
+			}
 		}
 		& .correct{
 			background-color:tru;
+			border:solid 1px htru;
+			&, & p, & span,
+			& .answernumber{
+				color:htru;
+			}
 		}
 	}
 	.que .formulation{
@@ -2387,28 +2368,25 @@ rbarshape(name,mod){
 			filter:EICC;
 		}
 	}
-	.que.incorrect,
-	.que.notanswered{
-		& .answer>input[type="text"]{
-			background-color:fals;
-		}
-	}
-	.que.correct .answer>input[type="text"]{	
-		background-color:tru;}
 	.que .answer{
-		&>.correct,
-		&>.incorrect{
-			&>.specificfeedback{
-				border: solid 1px brd;
-				border-radius:irad;
-			}
-		}
 		&>.correct>.specificfeedback{
 			background-color:tru;
+			border: solid 1px brd;
+			border-radius:irad;
 		}
 		&>.incorrect>.specificfeedback{
 			background-color:fals;
+			border: solid 1px brd;
+			border-radius:irad;
 		}
+	}
+	.que.multianswer .feedbackspan{
+		border-radius:0 0 crad crad;
+		background:linear-gradient(to top,rgba(idk,0.9) 70%,rgba(idk,0.7) 80%,rgba(idk,0.3) 90%,rgba(idk,0) 100%);
+		color:hidk;
+		border:solid 1px hidk;
+		border-top:none;
+		box-shadow:0 0.2em 0.5em bg0,0 0.2em 0.2em idk;
 	}
 	.path-mod-quiz #mod_quiz_navblock{
 		& .qnbutton{
@@ -2481,10 +2459,6 @@ rbarshape(name,mod){
 	}
 	.answer>input[type="text"]{	
 		background-color:bg4;}
-	.answer>.form-control{//TODO what's this
-		border-color:brd;
-		color:txt;
-		border-radius:0.5em;}
 	.subquestion input[type="text"]{	
 		background-color:bg4;	
 		border-color:brd;	
@@ -2505,10 +2479,72 @@ rbarshape(name,mod){
 			}
 		}
 	}
-	input[type="text"].correct{	
-		background-color:tru;}	
-	input[type="text"].incorrect{	
-		background-color:fals;}
+	#quiz-timer-wrapper #quiz-timer{
+		border-color:hfals;
+		background-color:fals;
+		color:hfals;
+		& #quiz-time-left{
+			color:hfals;
+		}
+	}
+	input[type="text"],
+	input[type="checkbox"],
+	.custom-select{
+		&.incorrect,
+		&.notanswered,
+		.incorrect>&,
+		.notanswered>&{
+			&,
+			&:hover{
+				background-color:fals;
+				color:hfals;
+				border-color:hfals;
+				transition:none
+			}
+		}
+		&.partiallycorrect,
+		.partiallycorrect>&{
+			&,
+			&:hover{
+				background-color:idk;
+				color:hidk;
+				border-color:hidk;
+				transition:none
+			}
+		}
+		&.correct,
+		.correct>&{
+			&,
+			&:hover{
+				background-color:tru;
+				color:htru;
+				border-color:htru;
+				transition:none
+			}
+		}
+	}
+	input[type="radio"]{
+		&.incorrect,
+		&.notanswered,
+		.incorrect>&,
+		.notanswered>&{
+			background-image: radial-gradient(hfals 30%,#0000 40%,#0000 50%, hfals 60%,#0000 70%);
+		}
+		&.partiallycorrect,
+		.partiallycorrect>&{
+			background-image: radial-gradient(hidk 30%,#0000 40%,#0000 50%, hidk 60%,#0000 70%);
+		}
+		&.correct,
+		.correct>&{
+			background-image: radial-gradient(htru 30%,#0000 40%,#0000 50%, htru 60%,#0000 70%);
+		}
+	}
+	input,select{
+		&:disabled,
+		&[readonly]{
+			cursor:not-allowed;
+		}
+	}
 }
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/calendar/view\\.php.*?") {
 	.eventlist .event .card{
@@ -2544,5 +2580,11 @@ rbarshape(name,mod){
 			border:none !important;
 			background-color:bg3 !important;
 		}
+	}
+}
+@-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/mod/lesson/view\\.php.*?") {
+	.no-overflow>img[role="presentation"]{
+		width:100%;
+		margin:0;
 	}
 }
