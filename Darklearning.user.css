@@ -1712,20 +1712,6 @@ rbarshape(name,mod){
 	}
 	img[src="https://elearning.tgm.ac.at/theme/image.php/classic/core/1604966287/u/f1"]{
 		filter:brightness(0.39) contrast(2)}
-	/*progress bar time descriptor*/
-	.progressBarCell>.nowDiv{
-		&>.icon{
-			display:none;}
-		&.lastHalfNow{
-			background:url("data:image/svg+xml;utf-8,<svg xmlns='http://www.w3.org/2000/svg'><path d='M0 0H16V16Z' fill='rgb(127,127,127)'/></svg>") no-repeat;
-			background-position:5.5em 5px;
-			padding-right:1.3em;}
-		&.firstNow{
-			background:url("data:image/svg+xml;utf-8,<svg xmlns='http://www.w3.org/2000/svg'><path d='M16 0H0V16Z' fill='rgb(127,127,127)'/></svg>") no-repeat;
-			background-position:0em 5px;
-			padding-left:1.3em;
-		}
-	}
 	/*row where it displays what you've done and what you didn't. Normally only in course/view.php, but also in other places*/
 	.barRow{
 		& .progressBarCell{
@@ -2060,6 +2046,20 @@ rbarshape(name,mod){
 	.format-tiles .modal-header{
 		background-color:btn;
 		color:htxt;
+	}
+	/*progress bar time descriptor*/
+	.progressBarCell>.nowDiv{
+		&>.icon{
+			display:none;}
+		&.lastHalfNow{
+			background:url("data:image/svg+xml;utf-8,<svg xmlns='http://www.w3.org/2000/svg'><path d='M0 0H16V16Z' fill='rgb(127,127,127)'/></svg>") no-repeat;
+			background-position:5.5em 5px;
+			padding-right:1.3em;}
+		&.firstNow{
+			background:url("data:image/svg+xml;utf-8,<svg xmlns='http://www.w3.org/2000/svg'><path d='M16 0H0V16Z' fill='rgb(127,127,127)'/></svg>") no-repeat;
+			background-position:0em 5px;
+			padding-left:1.3em;
+		}
 	}
 }
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/user/files\\.php.*?") {
