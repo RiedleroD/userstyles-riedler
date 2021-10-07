@@ -865,113 +865,6 @@ rbarshape(name,mod){
 	/*Dropdown menus*/
 	.dropdown-item:active,.dropdown-item.active{
 		background-color:bg4;}
-	/*These new tiles, ykwim*/
-	.tiles{
-		&>.tile,
-		&>.section{
-			background-color:bg2 !important;
-		}
-	}
-	.format-tiles{
-		& #header-overlay,
-		& #window-overlay{
-			background-color:#888;
-			mix-blend-mode:multiply;
-			opacity:1;
-		}
-		& #page .course-content ul li.section.main{
-			background-color:bg2;
-		}
-		& li.activity.subtile{
-			background-color:bg2;
-			border-color:brd;
-			& .activitytitle a{
-				background:linear-gradient(to bottom,bg4 85%,#0000);
-			}
-		}
-		& li.activity button[data-action="change-completion-status"]{
-			&>.completion-icon{
-				outline:solid 3px #0000;
-				transition:outline-color 300ms ease-in-out;
-				border-radius:100%;
-			}
-			&:hover{
-				border-color:#0000;
-				&>.completion-icon-y{
-					outline-color:rgba(htru,0.6);
-				}
-				&>.completion-icon-n{
-					outline-color:txt;
-				}
-			}
-		}
-		& #buttonhidesec0{
-			background-color:#0000;
-			&:hover{
-				background-color:bg4;
-				border-radius:irad;
-			}
-		}
-		& .modal-header .close{
-			&>span{
-				color:htxt !important;
-			}
-			&:hover>span{
-				color:fals !important;
-			}
-		}
-		& .sectiontitle h2{
-			color:txt;
-		}
-		& .sectiontitle::after,
-		& .tag-info{
-			background-color:tru;
-		}
-		& .course-content{
-			& ul.tiles .tile{
-				box-shadow:2px 4px 5px 0 #000A;
-				transform:translateY(0);//this is needed for compatibility
-				border-top:none;
-				border-radius:irad;
-				&:hover{
-					box-shadow:2px 10px 8px -3px #000A;
-					transition:all 0.25s ease-in-out;
-					transform:translateY(-6px);
-				}
-				&_bar{//TODO what's this
-					border-top:none;
-					border-radius:0.3rem;
-					background-color:#F00;
-				}
-				&.phototile{
-					background-color:#444 !important;/*darkening the background image*/
-					background-blend-mode:overlay;
-					& .photo-tile-text h3{
-						color:htxt !important;
-						font-weight:500;
-						font-size:1.25rem;
-						background-color:lnk;
-					}
-				}
-			}
-			& .section .activity:hover{
-				background-color:bg3;
-			}
-		}
-		& .editor_atto_content_wrap{
-			& h1,& h2,& h3,& h4{
-				border-left-color:tru;
-			}
-		}
-		/*some small fixes for https://elearning.tgm.ac.at/course/view.php?id=5836*/
-		& .badge-info{
-			background-color:bg4;
-		}
-		& .tile a .availabilityinfo,
-		& .availabilityinfo .badge{
-			color:txt;
-		}
-	}
 	/*php-generated code block with colors without classes*/
 	div[style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"]{
 		background-color:bg0 !important;
@@ -1204,12 +1097,6 @@ rbarshape(name,mod){
 	.path-mod div.activity-information{
 		border-bottom-color:brd;
 	}
-	.format-tiles ul.tiles .headerabovetiles button.selected,
-	.headerabovetiles button:active,
-	.headerabovetiles button:focus,
-	.format-tiles .modal-header{
-		background-color:btn;
-		color:htxt;}
 	div.comment-area textarea{
 		background-color:bg3;
 		border:solid 1px brd;
@@ -2122,6 +2009,120 @@ rbarshape(name,mod){
 	.progressEventInfo .iconInInfo{ /*Fixes a specific icon being distorted because someone forgot that width was set to 12px*/
 		width:1.2em;
 		height:1.2em;
+	}
+	/*These new tiles, ykwim*/
+	.tiles{
+		&>.tile,
+		&>.section{
+			background-color:bg2 !important;
+		}
+	}
+	.format-tiles{
+		& #header-overlay,
+		& #window-overlay{
+			background-color:#888;
+			mix-blend-mode:multiply;
+			opacity:1;
+		}
+		& #page .course-content ul li.section.main{
+			background-color:bg2;
+		}
+		& li.activity.subtile{
+			background-color:bg2;
+			border-color:brd;
+			& .activitytitle a{
+				background:linear-gradient(to bottom,bg4 85%,#0000);
+			}
+		}
+		& li.activity button[data-action="change-completion-status"]{
+			&>.completion-icon{
+				outline:solid 3px #0000;
+				transition:outline-color 300ms ease-in-out;
+				border-radius:100%;
+			}
+			&:hover{
+				border-color:#0000;
+				&>.completion-icon-y{
+					outline-color:rgba(htru,0.6);
+				}
+				&>.completion-icon-n{
+					outline-color:txt;
+				}
+			}
+		}
+		& #buttonhidesec0{
+			background-color:#0000;
+			&:hover{
+				background-color:bg4;
+				border-radius:irad;
+			}
+		}
+		& .modal-header .close{
+			&>span{
+				color:htxt !important;
+			}
+			&:hover>span{
+				color:fals !important;
+			}
+		}
+		& .sectiontitle h2{
+			color:txt;
+		}
+		& .sectiontitle::after,
+		& .tag-info{
+			background-color:tru;
+		}
+		& .course-content{
+			& ul.tiles .tile{
+				box-shadow:2px 4px 5px 0 #000A;
+				transform:translateY(0);//this is needed for compatibility
+				border-top:none;
+				border-radius:irad;
+				&:hover{
+					box-shadow:2px 10px 8px -3px #000A;
+					transition:all 0.25s ease-in-out;
+					transform:translateY(-6px);
+				}
+				&_bar{//TODO what's this
+					border-top:none;
+					border-radius:0.3rem;
+					background-color:#F00;
+				}
+				&.phototile{
+					background-color:#444 !important;/*darkening the background image*/
+					background-blend-mode:overlay;
+					& .photo-tile-text h3{
+						color:htxt !important;
+						font-weight:500;
+						font-size:1.25rem;
+						background-color:lnk;
+					}
+				}
+			}
+			& .section .activity:hover{
+				background-color:bg3;
+			}
+		}
+		& .editor_atto_content_wrap{
+			& h1,& h2,& h3,& h4{
+				border-left-color:tru;
+			}
+		}
+		/*some small fixes for https://elearning.tgm.ac.at/course/view.php?id=5836*/
+		& .badge-info{
+			background-color:bg4;
+		}
+		& .tile a .availabilityinfo,
+		& .availabilityinfo .badge{
+			color:txt;
+		}
+	}
+	.format-tiles ul.tiles .headerabovetiles button.selected,
+	.headerabovetiles button:active,
+	.headerabovetiles button:focus,
+	.format-tiles .modal-header{
+		background-color:btn;
+		color:htxt;
 	}
 }
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/user/files\\.php.*?") {
