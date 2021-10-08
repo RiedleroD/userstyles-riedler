@@ -1071,10 +1071,6 @@ rbarshape(name,mod){
 		color:txt;}
 	.yui3-button{
 		background-image:none;}
-	.modal-header,
-	.moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd,
-	.path-mod-assign [data-region="grade-panel"] .popout>.col-md-3{
-		border-color:brd;}
 	.path-mod div.activity-information{
 		border-bottom-color:brd;
 	}
@@ -1844,6 +1840,26 @@ rbarshape(name,mod){
 		&-class &-title{
 			color:c4;
 		}
+	}
+	/* popup dialogue windows, e.g. when the session runs out and elearning tells you to login again */
+	.modal{
+		&-header{
+			background-color:bg3;
+		}
+		&-footer{
+			background-color:bg3;
+			border-color:brd;
+		}
+		&-content{
+			background-color:bg3;
+			border:none;
+			border-radius:crad;
+		}
+	}
+	.modal-header,
+	.moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd,
+	.path-mod-assign [data-region="grade-panel"] .popout>.col-md-3{
+		border-color:brd;
 	}
 }
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/my/.*?") {
