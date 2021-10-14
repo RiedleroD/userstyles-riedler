@@ -1755,6 +1755,9 @@ rbarshape(name,mod){
 	}
 	img[src="https://elearning.tgm.ac.at/theme/image.php/classic/core/1604966287/u/f1"]{
 		filter:brightness(0.39) contrast(2)}
+	#spinning_wheel{
+		filter:invert(1) brightness(1.5);
+	}
 	/*row where it displays what you've done and what you didn't. Normally only in course/view.php, but also in other places*/
 	.barRow{
 		& .progressBarCell{
