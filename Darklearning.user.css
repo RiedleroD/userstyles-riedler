@@ -1711,7 +1711,8 @@ rbarshape(name,mod){
 	/*row where it displays what you've done and what you didn't. Normally only in course/view.php, but also in other places*/
 	.barRow{
 		& .progressBarCell{
-			border-color:bg2;
+			border:none;
+			border-left:solid 1px bg2;
 			border-radius:0;
 			&[style*="background-color:#73A839"]{
 				background-color:tru !important;
@@ -1722,6 +1723,7 @@ rbarshape(name,mod){
 		}
 		& .firstProgressBarCell{
 			border-right:none !important;
+			border-left:none;
 			border-radius:lbarshape(PBCS,PBCSm) !important;
 			&.lastProgressBarCell{
 				border-radius:barshape(PBCS,PBCSm) !important;
