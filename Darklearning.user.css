@@ -1720,6 +1720,9 @@ rbarshape(name,mod){
 			&[style*="background-color:#C71C22"]{
 				background-color:fals !important;
 			}
+			&[style*="background-color:#FFCC00"]{
+				background-color:idk !important;
+			}
 		}
 		& .firstProgressBarCell{
 			border-right:none !important;
