@@ -265,6 +265,9 @@ rbarshape(name,mod){
 				color:hlnk;
 			}
 		}
+		&-header{
+			color:txt;
+		}
 	}
 	/*notification drawer*/
 	.popover-region{
