@@ -2190,14 +2190,14 @@ rbarshape(name,mod){
 		&.latesubmission,
 		&.overdue{
 			background-color:fals;
-			color:txt;
+			color:hfals;
 			&>font{
-				color:txt;
+				color:hfals;
 			}
 		}
 		&.earlysubmission{
 			background-color:tru;
-			color:txt;
+			color:htru;
 		}
 	}
 	#jump-to-activity{
