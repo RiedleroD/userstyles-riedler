@@ -570,6 +570,9 @@ rbarshape(name,mod){
 			& [data-region="event-list-content"]>[data-region="paged-content-container"]>[data-region="page-container"]>[data-region="paged-content-page"]>.border-bottom{
 				border-bottom:none !important;
 			}
+			& [data-region="event-list-container"]>div>img{
+				filter:invert(1) brightness(1.3);
+			}
 		}
 		&_navigation,
 		&_settings{
