@@ -2178,15 +2178,23 @@ rbarshape(name,mod){
 }
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/mod/assign/view\\.php.*?") {
 	/*Abgabestatus*/
-	.submissionsummarytable td{
-		&.submission{
+	.submissionsummarytable>table>tbody>tr{
+		&>td,
+		&>th{
+			background-color:bg3;
+			&:first-child{
+				background-color:bg4;
+				color:htxt;
+			}
+		}
+		&>td.submission{
 			&graded,
 			&statussubmitted{
 				background-color:tru;
 				color:htru;
 			}
 			&notgraded{
-				background-color:#0000;
+				background-color:bg3;
 				color:txt;
 			}
 			&statusdraft{
@@ -2194,17 +2202,40 @@ rbarshape(name,mod){
 				color:hidk;
 			}
 		}
-		&.latesubmission,
-		&.overdue{
+		&>td.latesubmission,
+		&>td.overdue{
 			background-color:fals;
 			color:hfals;
 			&>font{
 				color:hfals;
 			}
 		}
-		&.earlysubmission{
+		&>td.earlysubmission{
 			background-color:tru;
 			color:htru;
+		}
+		&:first-of-type{
+			&>td,
+			&>th{
+				border-top:none;
+				&:first-child{
+					border-top-left-radius:crad;
+				}
+				&:last-child{
+					border-top-right-radius:crad;
+				}
+			}
+		}
+		&:last-of-type{
+			&>td,
+			&>th{
+				&:first-child{
+					border-bottom-left-radius:crad;
+				}
+				&:last-child{
+					border-bottom-right-radius:crad;
+				}
+			}
 		}
 	}
 	#jump-to-activity{
