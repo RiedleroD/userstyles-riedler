@@ -761,16 +761,33 @@ rbarshape(name,mod){
 				color:txt;}
 		}
 		&-primary{
-			color:htxt !important;
+			color:dtxt !important;
 			background-color:btn;
-			&:hover{
+			border:none;
+			&:hover,
+			&:not(:disabled):not(.disabled):active,
+			&:not(:disabled):not(.disabled).active,
+ 			.show>&.dropdown-toggle{
+				color:dtxt;
+				background-color:hbtn;
+			}
+			&.close:hover>span{//TODO: find out where this is used
 				color:hhtxt !important;
-				background-color:hbtn;}
-			&.close:hover>span{
-				color:hhtxt !important;}
+			}
 			&:focus,
 			&.focus{
-				outline:none;}
+				outline:none;
+				box-shadow:0 0 1em hbtn;
+				background-color:hbtn;
+				color:dtxt;
+			}
+			&:focus-visible{
+				outline:solid 1px hbtn;
+				box-shadow:inset 0 0 0 1px dtxt;
+				&:focus{
+					box-shadow:inset 0 0 0 1px dtxt,0 0 1em hbtn;
+				}
+			}
 		}
 		&-light{
 			color:txt;
