@@ -544,11 +544,28 @@ rbarshape(name,mod){
 			background-color:bg2;
 		}
 		&-timeline{
-			& .paged-content-page-container .list-group-flush>.list-group-item{
-				background-color:bg2;
+			& .list-group-item{
+				background-color:#0000;
+				&-action{
+					color:txt;
+					&:hover,
+					&:focus,
+					&:active{
+						color:htxt;
+						background-color:#0000;
+					}
+				}
 			}
-			& .tab-content img{
-				filter:none;
+			& .event-name{
+				color:lnk;
+				font-weight:500;
+				&:hover{
+					color:hlnk;
+				}
+			}
+			&>.border-bottom,
+			& [data-region="event-list-content"]>[data-region="paged-content-container"]>[data-region="page-container"]>[data-region="paged-content-page"]>.border-bottom{
+				border-bottom:none !important;
 			}
 		}
 		&_navigation,
@@ -639,7 +656,7 @@ rbarshape(name,mod){
 		border:solid brd 1px;
 		border-radius:irad;}
 	.text-muted{
-		color:mtxt !important;
+		color:mtxt;
 	}
 	/*links*/
 	a,
