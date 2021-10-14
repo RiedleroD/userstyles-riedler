@@ -634,8 +634,6 @@ rbarshape(name,mod){
 	body,:root,
 	ul,ol{
 		color:txt;}
-	.generaltable tbody tr:hover{
-		color:htxt !important;}
 	textarea.form-control{
 		background-color:bg5 !important;
 		border:solid brd 1px;
@@ -1111,6 +1109,15 @@ rbarshape(name,mod){
 		& thead th{
 			border-color:brd;
 			color:txt;
+		}
+	}
+	.generaltable tbody tr{
+		&:hover{
+			color:txt;
+			background-color:#0000;
+		}
+		&:nth-of-type(2n+1){
+			background-color:#0000;
 		}
 	}
 	.yui3-datatable{
