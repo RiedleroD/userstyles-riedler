@@ -1100,8 +1100,6 @@ rbarshape(name,mod){
 			color:txt;
 		}
 	}
-	.moodle-dialogue>.moodle-dialogue-content{
-		background-color:bg3 !important;}
 	.close,
 	.moodle-dialogue-base .closebutton{
 		text-shadow:none;
@@ -1911,6 +1909,11 @@ rbarshape(name,mod){
 			border:none;
 			border-radius:crad;
 		}
+	}
+	.moodle-dialogue-base .moodle-dialogue-wrap{//popup before starting a time-limited online test
+		background-color:bg3;
+		border-color:brd;
+		border-radius:crad;
 	}
 	.modal-header,
 	.moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd,
