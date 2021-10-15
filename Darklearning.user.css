@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name			Darklearning
 @namespace		https://github.com/RiedleroD/userstyles-riedler
-@version		1.2.6
+@version		1.2.7
 @description	Darker version of Elearning
 @author			Riedler
 @license		MPL-2.0
@@ -264,6 +264,9 @@ rbarshape(name,mod){
 				background-color:bg4;
 				color:hlnk;
 			}
+		}
+		&-header{
+			color:txt;
 		}
 	}
 	/*notification drawer*/
@@ -544,11 +547,31 @@ rbarshape(name,mod){
 			background-color:bg2;
 		}
 		&-timeline{
-			& .paged-content-page-container .list-group-flush>.list-group-item{
-				background-color:bg2;
+			& .list-group-item{
+				background-color:#0000;
+				&-action{
+					color:txt;
+					&:hover,
+					&:focus,
+					&:active{
+						color:htxt;
+						background-color:#0000;
+					}
+				}
 			}
-			& .tab-content img{
-				filter:none;
+			& .event-name{
+				color:lnk;
+				font-weight:500;
+				&:hover{
+					color:hlnk;
+				}
+			}
+			&>.border-bottom,
+			& [data-region="event-list-content"]>[data-region="paged-content-container"]>[data-region="page-container"]>[data-region="paged-content-page"]>.border-bottom{
+				border-bottom:none !important;
+			}
+			& [data-region="event-list-container"]>div>img{
+				filter:invert(1) brightness(1.3);
 			}
 		}
 		&_navigation,
@@ -634,14 +657,12 @@ rbarshape(name,mod){
 	body,:root,
 	ul,ol{
 		color:txt;}
-	.generaltable tbody tr:hover{
-		color:htxt !important;}
 	textarea.form-control{
 		background-color:bg5 !important;
 		border:solid brd 1px;
 		border-radius:irad;}
 	.text-muted{
-		color:mtxt !important;
+		color:mtxt;
 	}
 	/*links*/
 	a,
@@ -763,16 +784,33 @@ rbarshape(name,mod){
 				color:txt;}
 		}
 		&-primary{
-			color:htxt !important;
+			color:dtxt !important;
 			background-color:btn;
-			&:hover{
+			border:none;
+			&:hover,
+			&:not(:disabled):not(.disabled):active,
+			&:not(:disabled):not(.disabled).active,
+ 			.show>&.dropdown-toggle{
+				color:dtxt;
+				background-color:hbtn;
+			}
+			&.close:hover>span{//TODO: find out where this is used
 				color:hhtxt !important;
-				background-color:hbtn;}
-			&.close:hover>span{
-				color:hhtxt !important;}
+			}
 			&:focus,
 			&.focus{
-				outline:none;}
+				outline:none;
+				box-shadow:0 0 1em hbtn;
+				background-color:hbtn;
+				color:dtxt;
+			}
+			&:focus-visible{
+				outline:solid 1px hbtn;
+				box-shadow:inset 0 0 0 1px dtxt;
+				&:focus{
+					box-shadow:inset 0 0 0 1px dtxt,0 0 1em hbtn;
+				}
+			}
 		}
 		&-light{
 			color:txt;
@@ -1071,10 +1109,6 @@ rbarshape(name,mod){
 		color:txt;}
 	.yui3-button{
 		background-image:none;}
-	.modal-header,
-	.moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd,
-	.path-mod-assign [data-region="grade-panel"] .popout>.col-md-3{
-		border-color:brd;}
 	.path-mod div.activity-information{
 		border-bottom-color:brd;
 	}
@@ -1115,6 +1149,15 @@ rbarshape(name,mod){
 		& thead th{
 			border-color:brd;
 			color:txt;
+		}
+	}
+	.generaltable tbody tr{
+		&:hover{
+			color:txt;
+			background-color:#0000;
+		}
+		&:nth-of-type(2n+1){
+			background-color:#0000;
 		}
 	}
 	.yui3-datatable{
@@ -1712,10 +1755,14 @@ rbarshape(name,mod){
 	}
 	img[src="https://elearning.tgm.ac.at/theme/image.php/classic/core/1604966287/u/f1"]{
 		filter:brightness(0.39) contrast(2)}
+	#spinning_wheel{
+		filter:invert(1) brightness(1.5);
+	}
 	/*row where it displays what you've done and what you didn't. Normally only in course/view.php, but also in other places*/
 	.barRow{
 		& .progressBarCell{
-			border-color:bg2;
+			border:none;
+			border-left:solid 1px bg2;
 			border-radius:0;
 			&[style*="background-color:#73A839"]{
 				background-color:tru !important;
@@ -1723,9 +1770,13 @@ rbarshape(name,mod){
 			&[style*="background-color:#C71C22"]{
 				background-color:fals !important;
 			}
+			&[style*="background-color:#FFCC00"]{
+				background-color:idk !important;
+			}
 		}
 		& .firstProgressBarCell{
 			border-right:none !important;
+			border-left:none;
 			border-radius:lbarshape(PBCS,PBCSm) !important;
 			&.lastProgressBarCell{
 				border-radius:barshape(PBCS,PBCSm) !important;
@@ -1843,6 +1894,39 @@ rbarshape(name,mod){
 		&-built_in,
 		&-class &-title{
 			color:c4;
+		}
+	}
+	/* popup dialogue windows, e.g. when the session runs out and elearning tells you to login again */
+	.modal{
+		&-header{
+			background-color:bg3;
+		}
+		&-footer{
+			background-color:bg3;
+			border-color:brd;
+		}
+		&-content{
+			background-color:bg3;
+			border:none;
+			border-radius:crad;
+		}
+	}
+	.modal-header,
+	.moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd,
+	.path-mod-assign [data-region="grade-panel"] .popout>.col-md-3{
+		border-color:brd;
+	}
+	/* search bars */
+	.simplesearchform{
+		& .btn-submit{
+			background-color:bg3;
+			border-color:brd;
+			border-left:none;
+			border-radius:0 irad irad 0;
+			transition:none;
+		}
+		&:hover .btn-submit{
+			background-color:bg4;
 		}
 	}
 }
@@ -2150,15 +2234,23 @@ rbarshape(name,mod){
 }
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/mod/assign/view\\.php.*?") {
 	/*Abgabestatus*/
-	.submissionsummarytable td{
-		&.submission{
+	.submissionsummarytable>table>tbody>tr{
+		&>td,
+		&>th{
+			background-color:bg3;
+			&:first-child{
+				background-color:bg4;
+				color:htxt;
+			}
+		}
+		&>td.submission{
 			&graded,
 			&statussubmitted{
 				background-color:tru;
 				color:htru;
 			}
 			&notgraded{
-				background-color:#0000;
+				background-color:bg3;
 				color:txt;
 			}
 			&statusdraft{
@@ -2166,17 +2258,40 @@ rbarshape(name,mod){
 				color:hidk;
 			}
 		}
-		&.latesubmission,
-		&.overdue{
+		&>td.latesubmission,
+		&>td.overdue{
 			background-color:fals;
-			color:txt;
+			color:hfals;
 			&>font{
-				color:txt;
+				color:hfals;
 			}
 		}
-		&.earlysubmission{
+		&>td.earlysubmission{
 			background-color:tru;
-			color:txt;
+			color:htru;
+		}
+		&:first-of-type{
+			&>td,
+			&>th{
+				border-top:none;
+				&:first-child{
+					border-top-left-radius:crad;
+				}
+				&:last-child{
+					border-top-right-radius:crad;
+				}
+			}
+		}
+		&:last-of-type{
+			&>td,
+			&>th{
+				&:first-child{
+					border-bottom-left-radius:crad;
+				}
+				&:last-child{
+					border-bottom-right-radius:crad;
+				}
+			}
 		}
 	}
 	#jump-to-activity{
