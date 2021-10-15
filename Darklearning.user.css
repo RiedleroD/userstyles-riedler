@@ -1916,6 +1916,19 @@ rbarshape(name,mod){
 	.path-mod-assign [data-region="grade-panel"] .popout>.col-md-3{
 		border-color:brd;
 	}
+	/* search bars */
+	.simplesearchform{
+		& .btn-submit{
+			background-color:bg3;
+			border-color:brd;
+			border-left:none;
+			border-radius:0 irad irad 0;
+			transition:none;
+		}
+		&:hover .btn-submit{
+			background-color:bg4;
+		}
+	}
 }
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/my/.*?") {
 	.dashboard-card{
