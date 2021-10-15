@@ -1212,6 +1212,7 @@ rbarshape(name,mod){
 			content:"";
 			position:absolute;
 			font:normal normal normal 14px/1 FontAwesome;
+			font-size:85%;
 		}
 	}
 	input[type="radio"]{
