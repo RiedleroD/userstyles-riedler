@@ -2490,13 +2490,15 @@ rbarshape(name,mod){
 	.que .answer{
 		&>.correct>.specificfeedback{
 			background-color:tru;
-			border: solid 1px brd;
-			border-radius:irad;
+			border: solid 1px htru;
 		}
 		&>.incorrect>.specificfeedback{
 			background-color:fals;
-			border: solid 1px brd;
+			border: solid 1px htru;
+		}
+		&>div>.specificfeedback{
 			border-radius:irad;
+			margin:-1px -1px -1px 0;
 		}
 	}
 	.que.multianswer .feedbackspan{
