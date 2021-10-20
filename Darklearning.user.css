@@ -2601,11 +2601,42 @@ rbarshape(name,mod){
 		}
 	}
 	#quiz-timer-wrapper #quiz-timer{
-		border-color:hfals;
-		background-color:fals;
-		color:hfals;
+		border-color:hidk;
+		background-color:idk;
+		color:hidk;
 		& #quiz-time-left{
-			color:hfals;
+			color:inherit;
+		}
+		&.timeleft{
+			&14,&15,&16{
+				background-color:idk;
+				color:hidk;
+				border-color:hidk;
+			}
+			&9,&10,&11,&12,&13{
+				background-color:fals;
+				color:hfals;
+				border-color:hfals
+			}
+			&4,&5,&6,&7,&8{
+				background-color:hfals;
+				color:fals;
+				border-color:fals;
+			}
+			&0,&1,&2,&3{
+				background-color:#000;
+				color:#F00;
+				border-color:#F00;
+				box-shadow:0 0 0 1px #000;
+			}
+			&0{
+				font-size:0;
+				&::after{
+					font-size:1rem;
+					color:#F00;
+					content:"Game Over";
+				}
+			}
 		}
 	}
 	input[type="text"],
