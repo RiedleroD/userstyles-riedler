@@ -1954,6 +1954,11 @@ rbarshape(name,mod){
 			background-color:bg4;
 		}
 	}
+	/* genericocss, whatever that is */
+	.filter_generico_warning{
+		color:hidk;
+		background-color:idk;
+	}
 }
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/my/.*?") {
 	.dashboard-card{
