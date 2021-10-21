@@ -1591,22 +1591,43 @@ rbarshape(name,mod){
 	}
 	.ui_wrapper[style*="border: 1px solid darkgrey"]{
 		border-color:brd !important;}
-	/*Coderunner - TODO: check if this still applies or if it's been completely replaced by VPL*/
-	coderunner{
-		#page-question-type-& div.ui_wrapper,
-		.que.& div.ui_wrapper{
-			background-color:bg1;
-		}
+	/*Coderunner*/
+	coderunner{//TODO - seems to only partially work
 		.que.& div{
-			.^[0]-test-results.bad,
-			.pre_syntax_error,
-			.pre_question_error{
+			&.^[0]-test-results.bad,
+			&.pre_syntax_error,
+			&.pre_question_error{
 				background-color:fals;
 			}
+			&.^[0]-test-results{
+				color:txt;
+			}
 		}
-		.que.& div.&-test-results.good,
-		#page-question-type-& tr.&-failed-test.fixed{
-			background-color:tru;
+		.que.& tr{
+			&.r0 td,
+			&.r1 td{
+				background-color:bg3;
+			}
+		}
+		#page-question-type-&,
+		.que.&{
+			& table.^[0]-test-results,
+			& table.^[0]examples{
+				& th,
+				& td{
+					border-color:brd;
+				}
+				& .header{
+					background-color:bg4;
+				}
+			}
+			& div.^[0]-test-results.good,
+			& tr.^[0]-failed-test.fixed{
+				background-color:tru;
+			}
+			& div.ui_wrapper{
+				background-color:bg1;
+			}
 		}
 	}
 	/*VPL IDE*/ //TODO: border radii
