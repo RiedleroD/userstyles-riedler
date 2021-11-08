@@ -2520,7 +2520,7 @@ rbarshape(name,mod){
 		}
 		&>.incorrect>.specificfeedback{
 			background-color:fals;
-			border: solid 1px htru;
+			border: solid 1px hfals;
 		}
 		&>div>.specificfeedback{
 			border-radius:irad;
