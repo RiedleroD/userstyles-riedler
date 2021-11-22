@@ -2781,7 +2781,7 @@ rbarshape(name,mod){
 	}
 }
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/mod/lesson/view\\.php.*?") {
-	.no-overflow>img[role="presentation"]{
+	.no-overflow img[role="presentation"]{
 		width:100%;
 		margin:0;
 	}
