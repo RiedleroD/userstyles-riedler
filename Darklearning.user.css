@@ -2508,7 +2508,9 @@ rbarshape(name,mod){
 			border-color:brd;
 		}
 	}
-	.que.ddwtos {
+	.que.ddwtos,
+	.que.ddimageortext,
+	form.mform fieldset#id_previewareaheader{
 		& .group1{
 			background-color:bg3;
 		}
@@ -2517,17 +2519,16 @@ rbarshape(name,mod){
 			border-radius:irad;
 			border-color:brd;
 		}
-		& .draghome.placed:not(.beingdragged),
-		& .drop{
+		& .drop,
+		& .dropzone,
+		& .droparea .draghome,
+		& .draghome.placed:not(.beingdragged){
 			&:focus,
 			&.valid-drag-over-drop{
 				border-color:btn;
 				box-shadow:0 0 5px 3px btn,inset 0 0 2px 0 btn;
 			}
 		}
-	}
-	.que.ddimageortext,
-	form.mform fieldset#id_previewareaheader{
 		& img.dropbackground,
 		& img.group1{
 			filter:EICC;
