@@ -1071,23 +1071,31 @@ rbarshape(name,mod){
 		}
 	}
 	.alert{
-		border-radius:crad;
 		color:txt;
-		&>a{
-			color:lnk;
-			&:hover{color:hlnk}
+		&,//I hate moodle sometimes
+		&-danger,
+		&-info,
+		&-success{
+			border-radius:crad;
+			& a:link,
+			& a:visited{
+				color:lnk;
+				&:hover{color:hlnk}
+			}
 		}
 		&-danger{
-			border:solid 1px fals;
-			background-color:rgba(fals,0.25);
+			border:solid 1px hfals;
+			background-color:rgba(fals,0.5);
+			color:hfals;
 		}
 		&-info{
 			border:solid 1px pb;
-			background-color:rgba(pb,0.25);
+			background-color:rgba(pb,0.5);
 		}
 		&-success{
-			border:solid 1px tru;
-			background-color:rgba(tru,0.25);
+			border:solid 1px htru;
+			background-color:rgba(tru,0.5);
+			color:htru;
 		}
 	}
 	#page-mod-quiz-attempt #connection{
