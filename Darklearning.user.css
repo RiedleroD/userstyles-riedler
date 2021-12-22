@@ -1062,12 +1062,11 @@ rbarshape(name,mod){
 	.card{
 		border-radius:crad;
 		background-color:bg3;
+		overflow:hidden;
 		&-img{
-			border-radius:crad crad 0 0;
-			overflow:hidden;
-		}
-		&-body{
-			border-radius:0 0 crad crad;
+			filter:EICC;}
+		&-footer{
+			background-color:bg3 !important;
 		}
 	}
 	.alert{
@@ -2012,10 +2011,6 @@ rbarshape(name,mod){
 			border:none !important;
 		}
 	}
-	.card-img{
-		filter:EICC;}
-	.card-footer{
-		background-color:bg3 !important;}
 	.progress{
 		background-color:bg1 !important;
 		border-color:bg1 !important;
