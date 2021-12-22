@@ -13,12 +13,14 @@
 	"Slide on hover":"Soh",
 	"Static":"S"}
 @var	select CPB		"Card Progressbar"{
+	"Default":"D",
 	"Compact":"C",
+	"Borderless":"BL",
 	"Compact Borderless":"CBL",
-	"Normal Sized":"NS",
 	"Round":"R",
 	"Round Borderless":"RBL",
-	"Round Compact":"RC"
+	"Round Compact":"RC",
+	"Round Compact Borderless":"RCBL"
 }
 @var	select	LSI		"Link Selection Indicator"{
 	"Clamps":"C",
@@ -2014,24 +2016,30 @@ rbarshape(name,mod){
 	.progress{
 		background-color:bg1 !important;
 		border-color:bg1 !important;
-		margin-bottom: 0.5rem; // added by Philip Damianik
+		margin-bottom: 0.5rem;
+		height:0.4rem !important;
 		&-bar{
 			background-color:btn;
 		}
 		if CPB=="C"{
-			height:0.35rem !important; // added by Philip Damianik
+			height:0.3rem !important;
+		}else if CPB=="BL"{
+			border:none !important;
 		}else if CPB=="CBL"{
 			border:none !important;
-			height:0.35rem !important;
+			height:0.3rem !important;
 		}else if CPB=="R"{
-			border-radius:100vh;//to make sure it's perfectly round
+			border-radius:0.2rem;
 		}else if CPB=="RBL"{
 			border:none !important;
-			border-radius:100vh;
+			border-radius:0.2rem;
 		}else if CPB=="RC"{
+			border-radius:0.15rem;
+			height:0.3rem !important;
+		}else if CPB=="RCBL"{
 			border:none !important;
-			border-radius:0.35rem;
-			height:0.35rem !important;
+			border-radius:0.15rem;
+			height:0.3rem !important;
 		}
 	}
 	.block-myoverview>.container-fluid.p-0{
