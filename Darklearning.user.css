@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name			Darklearning
 @namespace		https://github.com/RiedleroD/userstyles-riedler
-@version		1.2.8
+@version		1.2.9
 @description	Darker version of Elearning
 @author			Riedler
 @license		MPL-2.0
@@ -13,12 +13,14 @@
 	"Slide on hover":"Soh",
 	"Static":"S"}
 @var	select CPB		"Card Progressbar"{
+	"Default":"D",
 	"Compact":"C",
+	"Borderless":"BL",
 	"Compact Borderless":"CBL",
-	"Normal Sized":"NS",
 	"Round":"R",
 	"Round Borderless":"RBL",
-	"Round Compact":"RC"
+	"Round Compact":"RC",
+	"Round Compact Borderless":"RCBL"
 }
 @var	select	LSI		"Link Selection Indicator"{
 	"Clamps":"C",
@@ -1062,32 +1064,39 @@ rbarshape(name,mod){
 	.card{
 		border-radius:crad;
 		background-color:bg3;
+		overflow:hidden;
 		&-img{
-			border-radius:crad crad 0 0;
-			overflow:hidden;
-		}
-		&-body{
-			border-radius:0 0 crad crad;
+			filter:EICC;}
+		&-footer{
+			background-color:bg3 !important;
 		}
 	}
 	.alert{
-		border-radius:crad;
 		color:txt;
-		&>a{
-			color:lnk;
-			&:hover{color:hlnk}
+		&,//I hate moodle sometimes
+		&-danger,
+		&-info,
+		&-success{
+			border-radius:crad;
+			& a:link,
+			& a:visited{
+				color:lnk;
+				&:hover{color:hlnk}
+			}
 		}
 		&-danger{
-			border:solid 1px fals;
-			background-color:rgba(fals,0.25);
+			border:solid 1px hfals;
+			background-color:rgba(fals,0.5);
+			color:hfals;
 		}
 		&-info{
 			border:solid 1px pb;
-			background-color:rgba(pb,0.25);
+			background-color:rgba(pb,0.5);
 		}
 		&-success{
-			border:solid 1px tru;
-			background-color:rgba(tru,0.25);
+			border:solid 1px htru;
+			background-color:rgba(tru,0.5);
+			color:htru;
 		}
 	}
 	#page-mod-quiz-attempt #connection{
@@ -2004,31 +2013,33 @@ rbarshape(name,mod){
 			border:none !important;
 		}
 	}
-	.card-img{
-		filter:EICC;}
-	.card-footer{
-		background-color:bg3 !important;}
 	.progress{
 		background-color:bg1 !important;
 		border-color:bg1 !important;
-		margin-bottom: 0.5rem; // added by Philip Damianik
+		margin-bottom: 0.5rem;
+		height:0.4rem !important;
 		&-bar{
 			background-color:btn;
 		}
 		if CPB=="C"{
-			height:0.35rem !important; // added by Philip Damianik
+			height:0.3rem !important;
+		}else if CPB=="BL"{
+			border:none !important;
 		}else if CPB=="CBL"{
 			border:none !important;
-			height:0.35rem !important;
+			height:0.3rem !important;
 		}else if CPB=="R"{
-			border-radius:100vh;//to make sure it's perfectly round
+			border-radius:0.2rem;
 		}else if CPB=="RBL"{
 			border:none !important;
-			border-radius:100vh;
+			border-radius:0.2rem;
 		}else if CPB=="RC"{
+			border-radius:0.15rem;
+			height:0.3rem !important;
+		}else if CPB=="RCBL"{
 			border:none !important;
-			border-radius:0.35rem;
-			height:0.35rem !important;
+			border-radius:0.15rem;
+			height:0.3rem !important;
 		}
 	}
 	.block-myoverview>.container-fluid.p-0{
@@ -2508,7 +2519,9 @@ rbarshape(name,mod){
 			border-color:brd;
 		}
 	}
-	.que.ddwtos {
+	.que.ddwtos,
+	.que.ddimageortext,
+	form.mform fieldset#id_previewareaheader{
 		& .group1{
 			background-color:bg3;
 		}
@@ -2517,17 +2530,16 @@ rbarshape(name,mod){
 			border-radius:irad;
 			border-color:brd;
 		}
-		& .draghome.placed:not(.beingdragged),
-		& .drop{
+		& .drop,
+		& .dropzone,
+		& .droparea .draghome,
+		& .draghome.placed:not(.beingdragged){
 			&:focus,
 			&.valid-drag-over-drop{
 				border-color:btn;
 				box-shadow:0 0 5px 3px btn,inset 0 0 2px 0 btn;
 			}
 		}
-	}
-	.que.ddimageortext,
-	form.mform fieldset#id_previewareaheader{
 		& img.dropbackground,
 		& img.group1{
 			filter:EICC;
