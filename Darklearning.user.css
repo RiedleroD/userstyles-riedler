@@ -813,6 +813,10 @@ rbarshape(name,mod){
 					box-shadow:inset 0 0 0 1px dtxt,0 0 1em hbtn;
 				}
 			}
+			&:disabled,
+			&.disabled{
+				background-color:btn;
+			}
 		}
 		&-light{
 			color:txt;
@@ -828,6 +832,11 @@ rbarshape(name,mod){
 			.show > &.dropdown-toggle{
 				color:hlnk;
 			}
+		}
+		&:disabled,
+		&.disabled{
+			opacity:1;
+			filter:grayscale(0.25) brightness(0.75) contrast(0.75);
 		}
 	}
 	& .btn-link{
