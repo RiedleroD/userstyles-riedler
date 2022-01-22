@@ -2461,7 +2461,7 @@ rbarshape(name,mod){
 	div[data-region="datarequests"]>.mt-1.mb-1>.btn.btn-primary{
 		color:txt !important;}
 }
-@-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/mod/quiz.*?"), regexp(".*userstyle_testing/darklearning.*") {
+@-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/mod/(student)?quiz.*?"), regexp(".*userstyle_testing/darklearning.*") {
 	.moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd.yui3-widget-hd{
 		color:txt;}
 	.que.multichoice .answer{
@@ -2805,5 +2805,224 @@ rbarshape(name,mod){
 	.no-overflow img[role="presentation"]{
 		width:100%;
 		margin:0;
+	}
+}
+@-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/mod/studentquiz/view\\.php.*?") {
+	#categoryquestions{
+		//table head
+		& thead,
+		&>tbody>tr.r1{
+			background-color:bg3;
+		}
+		//various icons, mostly denoting the type of quiz
+		& img.icon{
+			&[title="CodeRunner"]{
+				border-radius:irad;
+				filter:saturate(0.6);
+			}
+			&[title="Multiple-Choice"],
+			&[title="Zuordnung"],
+			&[title="Wahr/Falsch"],
+			&[src$="/state_new"]{
+				filter:invert(0.75);
+			}
+		}
+		//difficulty and rating bars
+		& .difficultylevel svg,
+		& .mod_studentquiz_ratingbar svg{
+			& rect[fill="#fff"]{
+				fill:bg0;
+				stroke:bg0;
+			}
+			& rect[fill="#007bff"]{
+				fill:btn;
+				stroke:bg0;
+				stroke-width:1px;
+			}
+			& path{
+				fill:btn;
+				stroke:bg0;
+			}
+		}
+	}
+	//question filters - basically toggle buttons
+	.path-mod-studentquiz input[type="checkbox"].toggle{
+		& + a,
+		& + label a{
+			border:solid 1px btn;
+			background-color:bg3;
+			color:btn;
+		}
+		&:checked + a,
+		&:checked + label a{
+			border:solid 1px hbtn;
+			background-color:hbtn;
+			color:dtxt;
+		}
+	}
+	//weird thing which functions as a label and submit button at the same time - for the page count
+	.btn[value="Seitengröße:"]{
+		background-color:bg3;
+		color:txt;
+		border:solid 1px brd;
+		border-right:none;
+		border-radius:irad 0 0 irad;
+		&:hover{
+			background-color:bg4;
+			color:htxt;
+			border-color:hbrd;
+		}
+		&:focus{
+			background-color:bg5;
+			border-color:hbtn;
+			color:hhtxt;
+		}
+		& + .form-control{
+			border-radius:0 irad irad 0;
+			border-left:none;
+		}
+	}
+	//statistics sideblock with horrible progressbars and even worse colored spans
+	#mod_studentquiz_statblock{
+		& svg{
+			//the feeling when you have to fix the style of a large buisness :'I
+			overflow:visible; //otherwise the borders get clipped
+		}
+		& rect{
+			stroke-width:1px !important;
+			rx: irad !important;
+			ry: irad !important;
+		}
+		& rect:last-of-type{
+			fill:tru !important;
+			stroke:htru !important;
+		}
+		& rect:nth-of-type(2){
+			fill: fals !important;
+			stroke: hfals !important;
+		}
+		& rect:first-of-type{
+			fill:idk !important;
+			stroke:hidk !important;
+		}
+		& span[style*="color:#f0ad4e"]{
+			color:hidk !important;
+		}
+		& span[style*="color:#d9534f"]{
+			color:hfals !important;
+		}
+		& span[style*="color:#5cb85c"]{
+			color:htru !important;
+		}
+	}
+}
+@-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/mod/studentquiz/(attempt|commenthistory)\\.php.*?"){
+	svg[width="100%"] rect{
+		&:first-of-type{
+			fill:bg3 !important;
+		}
+		&:nth-of-type(2){
+			fill:btn !important;
+		}
+	}
+	svg[width="100%"] text{
+		fill:txt;
+	}
+	.btn[value="Abbrechen"]{
+		color:hfals;
+		background-color:fals;
+		border:solid 1px hfals;
+		&:hover{
+			color:dtxt;
+			background-color:hfals;
+		}
+		&:focus,
+		&.focus{
+			outline:none;
+			box-shadow:0 0 1em hfals;
+		}
+		&:focus-visible{
+			outline:none;
+			box-shadow:inset 0 0 0 1px dtxt;
+			&:focus{
+				box-shadow:inset 0 0 0 1px dtxt,0 0 1em hfals;
+			}
+		}
+	}
+	.path-mod-studentquiz{
+		& .studentquiz_behaviour{
+			& .comment_list>div.studentquiz-comment-container{
+				border-color:brd;
+			}
+			& .star,
+			& .rate .rating .rateable.star-empty,
+			& .rate .rating:hover .rateable.star-empty{
+				filter:contrast(0.1) saturate(10) brightness(1) hue-rotate(-30deg);
+			}
+		}
+		& .studentquiz-comment-container{
+			& .no-comment{
+				border-top-color:brd;
+			}
+			& .filter-desc.current,
+			& .filter-asc.current{
+				& .studentquiz-comment-filter-type i::before{
+					filter:contrast(0.1) saturate(10) brightness(0.8) hue-rotate(-30deg);
+				}
+			}
+			& .studentquiz-comment{
+				&-item{
+					border-top-color:brd;
+				}
+				&-author{
+					color:txt;
+				}
+				&-expand,
+				&-collapse{
+					color:txt;
+					background-color:bg3;
+					border-color:brd;
+					border-bottom:none;
+					&[disabled],
+					&[disabled]:hover{
+						background-color:brd;
+						border-color:brd;
+						color:htxt
+						&::after{
+							filter:contrast(0) brightness(1.5);
+						}
+					}
+					&:hover,
+					&:focus,
+					&:active{
+						color:htxt;
+						background-color:bg4;
+						border-color:hbrd;
+						border-bottom:none;
+						&::after{
+							filter:contrast(0) brightness(1.4);
+						}
+					}
+					&::after {
+						filter:contrast(0) brightness(1.15);
+					}
+				}
+				&-text,
+				&-text-deleted{
+					background-color:bg3;
+					border:solid 1px brd;
+					border-radius:irad;
+					color:txt;
+				}
+				&-postfragmentform{
+					background-color:#0000;
+					color:txt;
+				}
+			}
+		}
+	}
+	img[src$="/switch_plus"],
+	img[src$="/switch_minus"]{
+		filter:contrast(0.1) saturate(10) brightness(0.8) hue-rotate(-30deg);
 	}
 }
