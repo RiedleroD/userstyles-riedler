@@ -209,8 +209,8 @@ rbarshape(name,mod){
 		background:slc;}
 	::selection{/*for most other browsers that support this*/
 		background:slc;}
-	/*scrollbar*/
-	::-webkit-scrollbar{
+	/*scrollbars*/
+	::-webkit-scrollbar{//scrollbars in chrome and safari
 		&,
 		&-track-piece{
 			background-color:bg1 !important;
@@ -221,9 +221,19 @@ rbarshape(name,mod){
 			border-radius:0.4em;
 		}
 	}
-	:root{/*Because Firefox doesn't have the ::-moz-scrollbar selectors*/
+	:root{//actual standardized way, but ofc only Firefox implements it
 		scrollbar-width:thin;
 		scrollbar-color:bg3 bg1;}
+	.visual-scroll-x,//so far only found in the quiz, but there's no telling if it's used in other places as well, so-
+	.visual-scroll-y,{
+		scrollbar-color:bg3 bg1 !important;
+		&::-webkit-scrollbar-thumb{
+			border:solid 1px bg0;
+		}
+		&::-webkit-scrollbar-track{
+			border:none;
+		}
+	}
 	/*navbar*/
 	.navbar{
 		background-color:bg2;
