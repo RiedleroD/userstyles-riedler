@@ -25,7 +25,7 @@
 @var	color	rd		"Red"				#922
 ==/UserStyle== */
 
-@-moz-document regexp("https?:\\/\\/(?:(?!wiki)[^\\/])*archlinux.org(/.*)?"){
+@-moz-document regexp("https?:\\/\\/(?:(?!wiki)(?!gitlab)[^\\/])*archlinux.org(/.*)?"){
 	/*scrollbars (yes you can style those)*/
 	::-webkit-scrollbar,::-webkit-scrollbar-track-piece{
 		background-color:/*[[bg1]]*/ !important;}
