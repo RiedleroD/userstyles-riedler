@@ -15,7 +15,6 @@
 @var	color	txt		"Text"			"#CCC"
 @var	color	htxt	"Bright Text"	"#EEE"
 @var	color	dtxt	"Dark Text"		"#AAA"
-@var	color	bgo		"Orange bg"		"#C70"
 @var	color	lnk		"Links"			"#418BA4"
 @var	color	hlnk	"Hovered links"	"#6AC"
 @var	color	fals	"False/Error"	"#922"
@@ -23,14 +22,12 @@
 ==/UserStyle== */
 
 @didk: darken(@idk,20%);
+@midk: darken(@idk,10%);
 @hidk: lighten(@idk,10%);
+@hhidk: lighten(@idk,20%);
 
 @dfals: darken(@fals,20%);
 @hfals: lighten(@fals,20%);
-
-@bgod: darken(@bgo,10%);
-@bgoh: lighten(@bgo,20%);
-@bgohh: lighten(@bgo,30%);
 
 @-moz-document regexp("^https?://docs\\.oracle\\.com/javase/7/docs/api/.*"){
 	//Java 7
@@ -61,10 +58,10 @@
 	}
 	ul.navList li.navBarCell1Rev{
 		background-image:none;
-		background-color:@bgod;
-		outline:solid 1px @bgo;
+		background-color:@didk;
+		outline:solid 1px @idk;
 		border:none;
-		color:@bgoh;
+		color:@hidk;
 		border-radius:0 0 0.25em 0.25em;
 		margin:-0.75rem 0 0 0;
 		padding-top:calc(0.75rem + 3px);
@@ -152,9 +149,9 @@
 		& caption span{
 			padding:0.5em 1em;
 			background-image:none;
-			color:@bgoh;
-			background-color:@bgod;
-			border:solid 1px @bgo;
+			color:@hidk;
+			background-color:@didk;
+			border:solid 1px @idk;
 			border-bottom:none;
 			border-radius:0.25em 0.25em 0 0;
 		}
@@ -168,8 +165,8 @@
 		&:hover,
 		&:active,
 		&:visited{
-			color:@bgoh;
-			border-bottom:solid 1px @bgoh;
+			color:@hidk;
+			border-bottom:solid 1px @hidk;
 		}
 	}
 	.tabEnd{
@@ -232,10 +229,10 @@
 	}
 	ul.navList li.navBarCell1Rev{
 		background-image:none;
-		background-color:@bgod;
-		outline:solid 1px @bgo;
+		background-color:@didk;
+		outline:solid 1px @idk;
 		border:none;
-		color:@bgoh;
+		color:@hidk;
 		border-radius:0 0 0.25em 0.25em;
 		margin:-0.75rem 0 0 0;
 		padding-top:calc(0.75rem + 3px);
@@ -264,9 +261,9 @@
 		&Summary{
 			border:solid 1px @brd;
 			& caption span{
-				background-color:@bgod;
-				color:@bgoh;
-				outline:solid 1px @bgo;
+				background-color:@didk;
+				color:@hidk;
+				outline:solid 1px @idk;
 				border-radius:0.25em 0.25em 0 0;
 				&.activeTableTab,
 				&.tableTab{
@@ -277,12 +274,12 @@
 					}
 				}
 				&.activeTableTab span{
-					background-color:@bgo;
-					outline-color:@bgoh;
-					color:@bgohh;
+					background-color:@midk;
+					outline-color:@idk;
+					color:@hhidk;
 				}
 				&.tableTab span{
-					background-color:@bgod;
+					background-color:@didk;
 				}
 			}
 			& caption a{
@@ -290,10 +287,10 @@
 				&:hover,
 				&:active,
 				&:visited{
-					color:@bgoh;
+					color:@hidk;
 					//not underlining those javascript tabs
 					&:not([href*="javascript:show"]){
-						border-bottom:solid 1px @bgoh;
+						border-bottom:solid 1px @hidk;
 					}
 				}
 			}
@@ -365,9 +362,9 @@
 		}
 	}
 	.bar{
-		background-color:@bgod;
-		color:@bgoh;
-		border-bottom:solid 1px @bgo;
+		background-color:@didk;
+		color:@hidk;
+		border-bottom:solid 1px @idk;
 	}
 }
 
@@ -422,10 +419,10 @@
 	}
 	ul.navList li.navBarCell1Rev{
 		background-image:none;
-		background-color:@bgod;
-		outline:solid 1px @bgo;
+		background-color:@didk;
+		outline:solid 1px @idk;
 		border:none;
-		color:@bgoh;
+		color:@hidk;
 		border-radius:0 0 0.25em 0.25em;
 		margin:-0.75rem 0 0 0;
 		padding-top:calc(0.75rem + 3px);
@@ -461,10 +458,10 @@
 	.ui-autocomplete{
 		overflow-x:auto;
 		&-category{
-			background-color:@bgod;
-			color:@bgoh;
-			border-bottom:solid 1px @bgo;
-			border-top:solid 1px @bgo;
+			background-color:@didk;
+			color:@hidk;
+			border-bottom:solid 1px @idk;
+			border-top:solid 1px @idk;
 			border-right:solid 1px @brd;
 			position:relative;
 			z-index:1;
@@ -504,14 +501,14 @@
 	.typeSummary,
 	.packagesSummary{
 		[role="tablist"] .tableTab{
-			background-color:@bgod;
-			color:@bgoh;
-			border:solid 1px @bgo;
+			background-color:@didk;
+			color:@hidk;
+			border:solid 1px @idk;
 		}
 		[role="tablist"] .activeTableTab{
-			background-color:@bgo;
-			color:@bgohh;
-			border:solid 1px @bgoh;
+			background-color:@midk;
+			color:@hhidk;
+			border:solid 1px @idk;
 		}
 		[role="tablist"] :is(.tableTab,.activeTableTab){
 			border-bottom:none;
@@ -533,9 +530,9 @@
 			margin:0 0 -1px 0;
 			padding-left:0;
 			span{
-				background-color:@bgod;
-				color:@bgoh;
-				border:solid 1px @bgo;
+				background-color:@didk;
+				color:@hidk;
+				border:solid 1px @idk;
 				border-bottom:none;
 				border-radius:0.25em 0.25em 0 0;
 			}
@@ -598,8 +595,8 @@
 	.provides,
 	.uses{
 		&Summary caption a:is(:link,:visited,:hover,:active){
-			color:@bgoh;
-			border-bottom:solid 1px @bgoh;
+			color:@hidk;
+			border-bottom:solid 1px @hidk;
 		}
 	}
 	.deprecationBlock{
@@ -627,7 +624,7 @@
 			color:@hlnk;
 			.topNav &,
 			.bottomNav &{
-				color:@bgo;
+				color:@idk;
 			}
 		}
 	}
