@@ -374,18 +374,9 @@ regexp("https?://docs\\.oracle\\.com/javase/\\d/docs/api/.*") {
 		color:@bgoh;
 		border-bottom:solid 1px @bgo;
 	}
-	a[name]{
-		&,
-		&:hover,
-		&:active,
-		&:focus,
-		&:visited{
-			color:@txt;
-		}
-	}
 }
 @-moz-document regexp("^https?://docs\\.oracle\\.com/javase/(7|8)/docs/api/.*"){
-a:link,
+	a:link,
 	a:active,
 	a:visited{
 		color:@lnk;
@@ -414,6 +405,15 @@ a:link,
 				outline:none;
 				padding:0;
 			}
+		}
+	}
+	a[name]{
+		&,
+		&:hover,
+		&:active,
+		&:focus,
+		&:visited{
+			color:@txt;
 		}
 	}
 }
