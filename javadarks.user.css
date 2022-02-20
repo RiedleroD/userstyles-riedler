@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name			JavaDarks
 @namespace		https://github.com/RiedleroD/userstyles-riedler/
-@version		2.0.0-a2
+@version		2.0.0-a3
 @license		CC-BY-SA-4.0
 @description	Dark mode for the online javadocs
 @author			Riedler
@@ -145,14 +145,17 @@
 	.summary,
 	.classUseContainer,
 	.constantValuesContainer{
-		& caption span{
-			padding:0.5em 1em;
-			background-image:none;
-			color:@hidk;
-			background-color:@didk;
-			border:solid 1px @idk;
-			border-bottom:none;
-			border-radius:0.25em 0.25em 0 0;
+		& caption{
+			margin-bottom:-1px;
+			& span{
+				padding:0.5em 1em;
+				background-image:none;
+				color:@hidk;
+				background-color:@didk;
+				border:solid 1px @idk;
+				border-bottom:none;
+				border-radius:0.25em 0.25em 0 0;
+			}
 		}
 	}
 	.summary,
@@ -259,37 +262,40 @@
 	.deprecated{
 		&Summary{
 			border:solid 1px @brd;
-			& caption span{
-				background-color:@didk;
-				color:@hidk;
-				outline:solid 1px @idk;
-				border-radius:0.25em 0.25em 0 0;
-				&.activeTableTab,
-				&.tableTab{
-					outline:none;
-					margin:0;
-					& span{
-						margin-right:0.5em;
+			& caption{
+				margin-bottom:-1px;
+				& span{
+					background-color:@didk;
+					color:@hidk;
+					outline:solid 1px @idk;
+					border-radius:0.25em 0.25em 0 0;
+					&.activeTableTab,
+					&.tableTab{
+						outline:none;
+						margin:0;
+						& span{
+							margin-right:0.5em;
+						}
+					}
+					&.activeTableTab span{
+						background-color:@midk;
+						outline-color:@idk;
+						color:@hhidk;
+					}
+					&.tableTab span{
+						background-color:@didk;
 					}
 				}
-				&.activeTableTab span{
-					background-color:@midk;
-					outline-color:@idk;
-					color:@hhidk;
-				}
-				&.tableTab span{
-					background-color:@didk;
-				}
-			}
-			& caption a{
-				&:link,
-				&:hover,
-				&:active,
-				&:visited{
-					color:@hidk;
-					//not underlining those javascript tabs
-					&:not([href*="javascript:show"]){
-						border-bottom:solid 1px @hidk;
+				& a{
+					&:link,
+					&:hover,
+					&:active,
+					&:visited{
+						color:@hidk;
+						//not underlining those javascript tabs
+						&:not([href*="javascript:show"]){
+							border-bottom:solid 1px @hidk;
+						}
 					}
 				}
 			}
