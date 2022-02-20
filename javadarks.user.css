@@ -24,27 +24,8 @@
 @bgoh: lighten(@bgo,20%);
 @bgohh: lighten(@bgo,30%);
 
-@-moz-document
-regexp("https?://docs\\.oracle\\.com/[^/(java)]*/java/javase/\\d\\d/docs/api/.*"),
-regexp("https?://docs\\.oracle\\.com/javase/\\d/docs/api/.*") {
-	::-webkit-scrollbar,::-webkit-scrollbar-track-piece{
-		background-color:@bg0 !important;
-	}
-	::-webkit-scrollbar-corner,::-webkit-scrollbar-thumb{
-		background-color:@bg3 !important;
-		border-radius:0.4em;
-	}
-	:root{
-		scrollbar-width:thin;
-		scrollbar-color:@bg3 @bg0;
-	}
-	hr{
-		border: none;
-		border-top: solid 1px @brd;
-	}
-}
-
 @-moz-document regexp("^https?://docs\\.oracle\\.com/javase/7/docs/api/.*"){
+	//Java 7
 	//WARNING: EXTREMELY FINICKY! Always test everything after touching anything here
 	body{
 		background-color:@bg0;
@@ -208,6 +189,7 @@ regexp("https?://docs\\.oracle\\.com/javase/\\d/docs/api/.*") {
 	}
 }
 @-moz-document regexp("^https?://docs\\.oracle\\.com/javase/8/docs/api/.*"){
+	//Java 8
 	//WARNING: EXTREMELY FINICKY! Always test everything after touching anything here
 	body{
 		background-color:@bg0;
@@ -377,6 +359,7 @@ regexp("https?://docs\\.oracle\\.com/javase/\\d/docs/api/.*") {
 }
 
 @-moz-document regexp("^https?://docs\\.oracle\\.com/\\w+/java/javase/13/docs/api/.*"){
+	//Java 13
 	//WARNING: EXTREMELY FINICKY! Always test everything after touching anything here
 	body{
 		background-color:@bg0;
@@ -608,6 +591,7 @@ regexp("https?://docs\\.oracle\\.com/javase/\\d/docs/api/.*") {
 	}
 }
 @-moz-document regexp("^https?://docs\\.oracle\\.com/(\\w+/java/)?javase/(7|8|13)/docs/api/.*"){
+	//Java 7, 8, 13
 	//WARNING: EXTREMELY FINICKY *SQUARED*! Always test everything after touching anything here
 	a:link,
 	a:active,
@@ -629,6 +613,15 @@ regexp("https?://docs\\.oracle\\.com/javase/\\d/docs/api/.*") {
 			}
 		}
 	}
+	a[name]{
+		&,
+		&:hover,
+		&:active,
+		&:focus,
+		&:visited{
+			color:@txt;
+		}
+	}
 	blockquote{
 		pre,
 		code{
@@ -643,13 +636,19 @@ regexp("https?://docs\\.oracle\\.com/javase/\\d/docs/api/.*") {
 			}
 		}
 	}
-	a[name]{
-		&,
-		&:hover,
-		&:active,
-		&:focus,
-		&:visited{
-			color:@txt;
-		}
+	hr{
+		border: none;
+		border-top: solid 1px @brd;
+	}
+	::-webkit-scrollbar,::-webkit-scrollbar-track-piece{
+		background-color:@bg0 !important;
+	}
+	::-webkit-scrollbar-corner,::-webkit-scrollbar-thumb{
+		background-color:@bg3 !important;
+		border-radius:0.4em;
+	}
+	:root{
+		scrollbar-width:thin;
+		scrollbar-color:@bg3 @bg0;
 	}
 }
