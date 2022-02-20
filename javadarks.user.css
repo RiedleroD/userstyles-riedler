@@ -228,7 +228,7 @@ regexp("https?://docs\\.oracle\\.com/javase/\\d/docs/api/.*") {
 	}
 	.subNav{
 		background-color:@bg1;
-		border-color:@brd;
+		border-bottom:solid 1px @brd;
 	}
 	.legalCopy{
 		float:left;
@@ -375,7 +375,240 @@ regexp("https?://docs\\.oracle\\.com/javase/\\d/docs/api/.*") {
 		border-bottom:solid 1px @bgo;
 	}
 }
-@-moz-document regexp("^https?://docs\\.oracle\\.com/javase/(7|8)/docs/api/.*"){
+
+@-moz-document regexp("^https?://docs\\.oracle\\.com/\\w+/java/javase/13/docs/api/.*"){
+	//WARNING: EXTREMELY FINICKY! Always test everything after touching anything here
+	body{
+		background-color:@bg0;
+		color:@txt;
+	}
+	.fixedNav{
+		height:0;
+		background-color:@bg1;
+		position:unset;
+		&::after{
+			content:"";
+			border-bottom:solid 1px @brd;
+			display:block;
+			position:fixed;
+			top:calc(2.8em + 0.75rem + 2.5em);
+			width:100%;
+			z-index:1;
+			font-size:12px;//don't ask…
+		}
+	}
+	.topNav{
+		background:linear-gradient(to bottom,@bg2,@bg1);
+		padding-top:0.75rem;
+		color:@dtxt;
+		position:fixed;
+		z-index:999;
+	}
+	.bottomNav{
+		background:linear-gradient(to bottom,@bg2,@bg1);
+		border-top:solid 1px @brd;
+		color:@dtxt;
+	}
+	.subNav{
+		background-color:@bg1;
+		position:fixed;
+		top:calc(2.8em + 0.75rem);
+		z-index:999;
+		height:2.5em;
+		box-sizing:border-box;
+	}
+	.legalCopy{
+		float:left;
+		width:calc(100% - 1em);
+		margin:0;
+		padding:0.5em;
+		background:linear-gradient(to bottom,@bg1,@bg0);
+	}
+	ul.navList li.navBarCell1Rev{
+		background-image:none;
+		background-color:@bgod;
+		outline:solid 1px @bgo;
+		border:none;
+		color:@bgoh;
+		border-radius:0 0 0.25em 0.25em;
+		margin:-0.75rem 0 0 0;
+		padding-top:calc(0.75rem + 3px);
+	}
+	.navPadding{
+		font-size:12px;
+		padding-top:calc(2.8em + 0.75rem + 2.5em) !important;
+		height:0;
+	}
+	.header{
+		padding:0.2em 1em;
+		border:solid 1px @brd;
+		border-top:none;
+		background-color:@bg1;
+		position:relative;
+		z-index:2;
+	}
+	#search{
+		filter:invert(1);
+		border:solid 1px @brd;
+		border-radius:0.25em;
+	}
+	#reset{
+		background-color:#0000;
+	}
+	.ui-widget-content{
+		background-color:@bg1;
+		color:@txt;
+		.ui-widget&{
+			border-color:@brd;
+		}
+	}
+	.ui-autocomplete{
+		overflow-x:auto;
+		&-category{
+			background-color:@bgod;
+			color:@bgoh;
+			border-bottom:solid 1px @bgo;
+			border-top:solid 1px @bgo;
+			border-right:solid 1px @brd;
+			position:relative;
+			z-index:1;
+			&:first-of-type{
+				border-top:none;
+			}
+		}
+		ul& li{
+			box-sizing:border-box;
+		}
+	}
+	.ui-menu{
+		.ui-menu-item{
+			list-style-image:none;
+			border-right:solid 1px @brd;
+		}
+		.ui-state-focus,
+		.ui-state-active{
+			margin:0;
+		}
+	}
+	.ui-state-active,
+	:is(.ui-widget-content,.ui-widget-header) .ui-state-active,
+	:is(a,*).ui-button:is(:active,.ui-state-active:hover){
+		border:none;//why do you have to make it so difficult?
+		outline:solid 1px @brd;
+		background-image:none;
+		background-color:@bg1;
+		color:@txt;
+	}
+	.title,
+	.block{
+		color:@txt;
+	}
+	.overviewSummary,
+	.memberSummary,
+	.typeSummary,
+	.packagesSummary{
+		[role="tablist"] .tableTab{
+			background-color:@bgod;
+			color:@bgoh;
+			border:solid 1px @bgo;
+		}
+		[role="tablist"] .activeTableTab{
+			background-color:@bgo;
+			color:@bgohh;
+			border:solid 1px @bgoh;
+		}
+		[role="tablist"] :is(.tableTab,.activeTableTab){
+			border-bottom:none;
+			border-radius:0.25em 0.25em 0 0;
+			margin-bottom:-1px;
+		}
+	}
+	.overview,
+	.member,
+	.type,
+	.use,
+	.constants,
+	.deprecated,
+	.requires,
+	.packages,
+	.provides,
+	.uses{
+		&Summary caption{
+			margin:0 0 -1px 0;
+			padding-left:0;
+			span{
+				background-color:@bgod;
+				color:@bgoh;
+				border:solid 1px @bgo;
+				border-bottom:none;
+				border-radius:0.25em 0.25em 0 0;
+			}
+		}
+		&Summary table{
+			border:solid 1px @brd;
+		}
+	}
+	th.colFirst,
+	th.colSecond,
+	th.colLast,
+	th.colConstructorName,
+	th.colDeprecatedItemName,
+	.constantsSummary th,
+	.packagesSummary th{
+		background-color:@bg2;
+	}
+	.altColor,
+	.altColor th{
+		background-color:@bg1;
+	}
+	.rowColor,
+	.rowColor th{
+		background-color:@bg2;
+	}
+	.moduleGraph{
+		filter:invert(1) hue-rotate(180deg);
+	}
+	.summary section[class$="Summary"],
+	.details section[class$="Details"],
+	.classUses .detail,
+	.serializedClassDetails{
+		background-color:#0000;
+		border:none;
+	}
+	.inheritedList,
+	section[class$="Details"] .detail{
+		background-color:@bg1;
+		border:solid 1px @brd;
+		border-radius:0.25em 0.25em 0 0;
+		overflow:hidden;
+	}
+	body.class-declaration :is(.summary,.details) :is(h3,.inheritedList h2){
+		background-color:@bg2;
+		border:none;
+		border-bottom:solid 1px @brd;
+	}
+	.contentContainer :is(.description,.details) dl dt,
+	.serializedFormContainer dl dt{
+		color:@txt;
+	}
+	.overview,
+	.member,
+	.type,
+	.use,
+	.constants,
+	.deprecated,
+	.requires,
+	.packages,
+	.provides,
+	.uses{
+		&Summary caption a:is(:link,:visited,:hover,:active){
+			color:@bgoh;
+			border-bottom:solid 1px @bgoh;
+		}
+	}
+}
+@-moz-document regexp("^https?://docs\\.oracle\\.com/(\\w+/java/)?javase/(7|8|13)/docs/api/.*"){
+	//WARNING: EXTREMELY FINICKY *SQUARED*! Always test everything after touching anything here
 	a:link,
 	a:active,
 	a:visited{
@@ -385,12 +618,15 @@ regexp("https?://docs\\.oracle\\.com/javase/\\d/docs/api/.*") {
 			color:@txt;
 		}
 	}
-	a:hover,
-	a:focus{
-		color:@hlnk;
-		.topNav &,
-		.bottomNav &{
-			color:@bgo;
+	a,
+	a[href]{
+		&:hover,
+		&:focus{
+			color:@hlnk;
+			.topNav &,
+			.bottomNav &{
+				color:@bgo;
+			}
 		}
 	}
 	blockquote{
