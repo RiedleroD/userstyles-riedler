@@ -70,6 +70,9 @@
 		padding:0.2em 1em;
 		border:solid 1px @brd;
 		border-top:none;
+		background-color:@bg1;
+		//why not margin? ask clearfix
+		transform: translateY(-1px);
 		&+&{
 			margin-top:-1em;
 		}
@@ -234,6 +237,8 @@
 		padding:0.2em 1em;
 		border:solid 1px @brd;
 		border-top:none;
+		background-color:@bg1;
+		position:relative;
 		&+&{
 			margin-top:-1em;
 		}
