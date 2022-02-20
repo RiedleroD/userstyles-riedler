@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name			JavaDarks
 @namespace		https://github.com/RiedleroD/userstyles-riedler/
-@version		2.0.0-a1
+@version		2.0.0-a2
 @license		CC-BY-SA-4.0
 @description	Dark mode for the online javadocs
 @author			Riedler
@@ -15,7 +15,6 @@
 @var	color	txt		"Text"			"#CCC"
 @var	color	htxt	"Bright Text"	"#EEE"
 @var	color	dtxt	"Dark Text"		"#AAA"
-@var	color	bgb		"Blue bg"		"#147"
 @var	color	bgo		"Orange bg"		"#C70"
 @var	color	lnk		"Links"			"#418BA4"
 @var	color	hlnk	"Hovered links"	"#6AC"
@@ -23,6 +22,7 @@
 
 @bgod: darken(@bgo,10%);
 @bgoh: lighten(@bgo,20%);
+@bgohh: lighten(@bgo,30%);
 
 @-moz-document
 regexp("https?://docs\\.oracle\\.com/[^/(java)]*/java/javase/\\d\\d/docs/api/.*"),
@@ -37,6 +37,10 @@ regexp("https?://docs\\.oracle\\.com/javase/\\d/docs/api/.*") {
 	:root{
 		scrollbar-width:thin;
 		scrollbar-color:@bg3 @bg0;
+	}
+	hr{
+		border: none;
+		border-top: solid 1px @brd;
 	}
 }
 
@@ -109,28 +113,8 @@ regexp("https?://docs\\.oracle\\.com/javase/\\d/docs/api/.*") {
 	.serializedFormContainer dl dt{
 		color:@txt;
 	}
-	a:link,
-	a:active,
-	a:visited{
-		color:@lnk;
-		.topNav &,
-		.bottomNav &{
-			color:@txt;
-		}
-	}
-	a:hover,
-	a:focus{
-		color:@hlnk;
-		.topNav &,
-		.bottomNav &{
-			color:@bgo;
-		}
-	}
 	hr{
-		color:@brd;
 		margin: 0 -1em;
-		border: none;
-		border-top: solid 1px @brd;
 	}
 	ul.blockList{
 		& & li.blockList,
@@ -218,18 +202,218 @@ regexp("https?://docs\\.oracle\\.com/javase/\\d/docs/api/.*") {
 	tr.altColor td{
 		background-color:@bg2;
 	}
+	table[border]:not([border="0"]){
+		border:none;
+		border-collapse:collapse;
+	}
+}
+@-moz-document regexp("^https?://docs\\.oracle\\.com/javase/8/docs/api/.*"){
+	//WARNING: EXTREMELY FINICKY! Always test everything after touching anything here
+	body{
+		background-color:@bg0;
+		color:@txt;
+	}
+	.topNav{
+		background:linear-gradient(to bottom,@bg2,@bg1);
+		padding-top:0.75rem;
+		color:@dtxt;
+	}
+	.bottomNav{
+		background:linear-gradient(to bottom,@bg2,@bg1);
+		border-top:solid 1px @brd;
+		color:@dtxt;
+		&+.subNav{
+			border-bottom:none;
+		}
+	}
+	.subNav{
+		background-color:@bg1;
+		border-color:@brd;
+	}
+	.legalCopy{
+		float:left;
+		width:calc(100% - 1em);
+		margin:0;
+		padding:0.5em;
+		background:linear-gradient(to bottom,@bg1,@bg0);
+	}
+	ul.navList li.navBarCell1Rev{
+		background-image:none;
+		background-color:@bgod;
+		outline:solid 1px @bgo;
+		border:none;
+		color:@bgoh;
+		border-radius:0 0 0.25em 0.25em;
+		margin:-0.75rem 0 0 0;
+		padding-top:calc(0.75rem + 3px);
+	}
+	.header{
+		margin:0 1em 1em 1em;
+		padding:0.2em 1em;
+		border:solid 1px @brd;
+		border-top:none;
+		&+&{
+			margin-top:-1em;
+		}
+	}
+	.block,
+	.title{
+		color:@txt;
+	}
+	.overview,
+	.member,
+	.type,
+	.use,
+	.constants,
+	.deprecated{
+		&Summary{
+			border:solid 1px @brd;
+			& caption span{
+				background-color:@bgod;
+				color:@bgoh;
+				outline:solid 1px @bgo;
+				border-radius:0.25em 0.25em 0 0;
+				&.activeTableTab,
+				&.tableTab{
+					outline:none;
+					margin:0;
+					& span{
+						margin-right:0.5em;
+					}
+				}
+				&.activeTableTab span{
+					background-color:@bgo;
+					outline-color:@bgoh;
+					color:@bgohh;
+				}
+				&.tableTab span{
+					background-color:@bgod;
+				}
+			}
+			& caption a{
+				&:link,
+				&:hover,
+				&:active,
+				&:visited{
+					color:@bgoh;
+					//not underlining those javascript tabs
+					&:not([href*="javascript:show"]){
+						border-bottom:solid 1px @bgoh;
+					}
+				}
+			}
+		}
+	}
+	th.colFirst,
+	th.colLast,
+	th.colOne,
+	.constantsSummary th{
+		background-color:@bg1;
+		border-bottom:solid 1px @brd;
+	}
+	.altColor{
+		background-color:@bg2;
+	}
+	.rowColor{
+		background-color:@bg1;
+	}
+	ul.blockList{
+		//compensating for lack of indent
+		&>li.blockList>table[class*="Summary"]{
+			margin:0 1em;
+		}
+		& & li.blockList,
+		& &Last li.blockList{
+			background-color:#0000;
+			border:none;
+			padding:0 1em;
+			ul.blockList &{
+				border-radius:0.25em 0.25em 0 0;
+				background-color:@bg1;
+				border:solid 1px @brd;
+				div.details & h4,
+				& h3{
+					border-radius:0.25em 0.25em 0 0;
+					background-color:@bg2;
+					border:none;
+					border-bottom:solid 1px @brd;
+				}
+			}
+			& h3{
+				border-radius:0.25em 0.25em 0 0;
+				border-bottom:solid 1px @brd;
+				margin:0 -1em;
+				padding:0 1em 0.5em 1em;
+			}
+			& table{
+				margin:0;
+			}
+		}
+	}
+	hr{
+		margin:0 -0.5em;
+	}
+	.contentContainer .description dl dt,
+	.contentContainer .details dl dt,
+	.serializedFormContainer dl dt{
+		color:@txt;
+	}
+	#footer-banner{
+		background-color:@bg0 !important;
+		border-top-color:@brd;
+		&,& a{
+			color:@lnk;
+			&:hover,
+			&:focus{
+				color:@hlnk;
+			}
+		}
+	}
+	.bar{
+		background-color:@bgod;
+		color:@bgoh;
+		border-bottom:solid 1px @bgo;
+	}
+	a[name]{
+		&,
+		&:hover,
+		&:active,
+		&:focus,
+		&:visited{
+			color:@txt;
+		}
+	}
+}
+@-moz-document regexp("^https?://docs\\.oracle\\.com/javase/(7|8)/docs/api/.*"){
+a:link,
+	a:active,
+	a:visited{
+		color:@lnk;
+		.topNav &,
+		.bottomNav &{
+			color:@txt;
+		}
+	}
+	a:hover,
+	a:focus{
+		color:@hlnk;
+		.topNav &,
+		.bottomNav &{
+			color:@bgo;
+		}
+	}
 	blockquote{
 		pre,
 		code{
 			background-color: #000;
 			border-radius: 0.25em;
-			padding: 0 0.25em;
-			outline: solid 1px #333;
 			padding:0.5em;
+			outline: solid 1px #333;
+			pre,
+			code{
+				outline:none;
+				padding:0;
+			}
 		}
-	}
-	table[border]:not([border="0"]){
-		border:none;
-		border-collapse:collapse;
 	}
 }
