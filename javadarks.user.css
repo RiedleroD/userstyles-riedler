@@ -1,9 +1,9 @@
 /* ==UserStyle==
 @name			JavaDarks
 @namespace		https://github.com/RiedleroD/userstyles-riedler/
-@version		2.0.0-a3
+@version		2.0.0
 @license		CC-BY-SA-4.0
-@description	Dark mode for the online javadocs
+@description	Dark mode for the online javadocs - currently only supports java 7,8 and 13!
 @author			Riedler
 @preprocessor	less
 @var	color	bg0		"Background 0"	"#000"
