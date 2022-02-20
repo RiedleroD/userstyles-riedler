@@ -18,7 +18,15 @@
 @var	color	bgo		"Orange bg"		"#C70"
 @var	color	lnk		"Links"			"#418BA4"
 @var	color	hlnk	"Hovered links"	"#6AC"
+@var	color	fals	"False/Error"	"#922"
+@var	color	idk		"Unknown/Warning"	"#A60"
 ==/UserStyle== */
+
+@didk: darken(@idk,20%);
+@hidk: lighten(@idk,10%);
+
+@dfals: darken(@fals,20%);
+@hfals: lighten(@fals,20%);
 
 @bgod: darken(@bgo,10%);
 @bgoh: lighten(@bgo,20%);
@@ -593,6 +601,11 @@
 			color:@bgoh;
 			border-bottom:solid 1px @bgoh;
 		}
+	}
+	.deprecationBlock{
+		border:solid 1px @idk;
+		background-color:@didk;
+		color:@hidk;
 	}
 }
 @-moz-document regexp("^https?://docs\\.oracle\\.com/(\\w+/java/)?javase/(7|8|13)/docs/api/.*"){
