@@ -764,9 +764,11 @@ rbarshape(name,mod){
 			}
 			&:not(:disabled):not(.disabled):active,
 			&:not(:disabled):not(.disabled).active,
-			&.dropdown-toggle:focus{
+			.show > &.dropdown-toggle{
 				background-color:brd;
-				color:dtxt;
+				&,&>span{
+					color:dtxt;
+				}
 			}
 		}
 		&-outline-success{
