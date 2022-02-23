@@ -5,8 +5,8 @@
 @description    Dark mode for reCAPTCHA by Google
 @author         Riedler
 @preprocessor	uso
-@var	color	cl1		"Theme Color 1"			#418BA4
-@var	color	hcl1	"Light Theme Color 1"	#6AC
+@var	color	cl1		"Theme Color"			#418BA4
+@var	color	hcl1	"Light Theme Color"		#6AC
 @var	color	err		"Error color"			#C00
 @var	color	bg0		"Background 0"			#111
 @var	color	bg1		"Background 1"			#222
