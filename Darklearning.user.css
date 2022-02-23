@@ -1877,16 +1877,22 @@ rbarshape(name,mod){
 		&[x-placement="top"],
 		&[x-placement="top-start"]{
 			& div[data-role="arrow"]::after{
-				border-top-color:bg4;
-				box-shadow:0 -0.5em bg4;
+				border-top-color:currentColor;
+				box-shadow:0 -0.5em currentColor;
 			}
 		}
 		&[x-placement="bottom"],
 		&[x-placement="bottom-start"]{
 			& div[data-role="arrow"]::after{
-				border-bottom-color:bg4;
-				box-shadow:0 0.5em bg4;
+				border-bottom-color:currentColor;
+				box-shadow:0 0.5em currentColor;
+				.format-tiles &{
+					color:lnk;
+				}
 			}
+		}
+		& div[data-role="arrow"]::after{
+			color:bg3;
 		}
 	}
 	/*badges*/
@@ -2157,14 +2163,6 @@ rbarshape(name,mod){
 				border-radius:irad;
 			}
 		}
-		& .modal-header .close{
-			&>span{
-				color:htxt !important;
-			}
-			&:hover>span{
-				color:fals !important;
-			}
-		}
 		& .sectiontitle h2{
 			color:txt;
 		}
@@ -2217,7 +2215,9 @@ rbarshape(name,mod){
 	.headerabovetiles button:focus,
 	.format-tiles .modal-header{
 		background-color:btn;
-		color:htxt;
+		&,& h5{
+			color:htxt;
+		}
 	}
 	/*progress bar time descriptor*/
 	.progressBarCell>.nowDiv{
