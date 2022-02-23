@@ -27,74 +27,98 @@
 @-moz-document regexp("https?://(www\\.)?google\\.com/recaptcha/api2/anchor\\?.*") {
 	.rc-anchor-light{
 		background-color:@bg0;
-		color:@txt}
+		color:@txt;
+	}
 	.rc-anchor-light.rc-anchor-normal{
-		border-color:@brd;}
+		border-color:@brd;
+	}
 	.recaptcha-checkbox-border{
 		background-color:@bg2;
-		border-color:@brd;}
+		border-color:@brd;
+	}
 	.recaptcha-checkbox-active .recaptcha-checkbox-border,
 	.recaptcha-checkbox-active .recaptcha-checkbox-spinner-gif{
-		background-color:@bg3;}
+		background-color:@bg3;
+	}
 	.recaptcha-checkbox-hover .recaptcha-checkbox-border,
 	.recaptcha-checkbox-hover .recaptcha-checkbox-spinner-gif{
-		border-color:@hbrd;}
+		border-color:@hbrd;
+	}
 	.rc-anchor-light .rc-anchor-logo-text,
 	.rc-anchor-light div a:link,
 	.rc-anchor-light div a:visited{
-		color:@dtxt;}
+		color:@dtxt;
+	}
 	.recaptcha-checkbox-spinner-overlay{
-		background-color:@bg2;}
+		background-color:@bg2;
+	}
 	.recaptcha-checkbox-spinner{
 		background-color:@bg2;
-		border-color:@cl1 @cl1 @bg2 @bg2;}
+		border-color:@cl1 @cl1 @bg2 @bg2;
+	}
 	.recaptcha-checkbox-borderAnimation{
 		filter:invert(0.8) hue-rotate(180deg);}
 	.recaptcha-checkbox-disabled .recaptcha-checkbox-border,
 	.recaptcha-checkbox-disabled .recaptcha-checkbox-spinner-gif{
-		background-color:@dbrd;}
+		background-color:@dbrd;
+	}
 	.recaptcha-checkbox-checkmark{
-		filter:hue-rotate(10deg);}/*I think it looks better with more blue in the green*/
+		filter:hue-rotate(10deg);//I think it looks better with more blue in the green
+	}
 	.recaptcha-checkbox-expired .recaptcha-checkbox-border,
 	.recaptcha-checkbox-expired .recaptcha-checkbox-spinner-gif{
-		border-color:@err;}
+		border-color:@err;
+	}
 	.rc-anchor-error-msg-container{
-		color:@err;}
+		color:@err;
+	}
 }
 @-moz-document regexp("https?://(www\\.)?google\\.com/recaptcha/api2/bframe\\?.*"){
 	:root{
-		color:@txt;}
+		color:@txt;
+	}
 	#rc-imageselect,
 	html{
-		background-color:@bg0;}
+		background-color:@bg0;
+	}
 	.rc-buttons,
 	.rc-audiochallenge-tdownload-link{
-		filter:invert(0.8) hue-rotate(180deg);}
+		filter:invert(0.8) hue-rotate(180deg);
+	}
 	.rc-separator{
-		border-top-color:@brd;}
+		border-top-color:@brd;
+	}
 	.rc-audiochallenge-play-button .rc-button-default{
 		background-color:@cl1;
-		color:@htxt;}
+		color:@htxt;
+	}
 	.rc-response-input-field{
 		border-color:@brd;
 		background-color:@bg2;
-		color:@txt;}
+		color:@txt;
+	}
 	.rc-imageselect-desc-wrapper{
 		background-color:@cl1;
-		color:@htxt;}
+		color:@htxt;
+	}
 	.rc-imageselect-incorrect-response{
 		background-color:@bg1;
-		color:@err}
+		color:@err;
+	}
 	.rc-button-default{
 		background-color:@cl1;
-		color:@htxt;}
+		color:@htxt;
+	}
 	.rc-button-default:hover{
 		background-color:@hcl1;
-		color:@hhtxt;}
+		color:@hhtxt;
+	}
 }
 @-moz-document regexp(".*"){
 	.g-recaptcha-bubble-arrow{
-		border-right-color:@brd !important;}
+		border-right-color:@brd !important;
+	}
 	iframe[src^="https://www.google.com/recaptcha/api2/bframe"]{
-		outline:solid 1px @brd;}
+		outline:solid 1px @brd;
+	}
 }
