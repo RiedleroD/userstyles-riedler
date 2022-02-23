@@ -626,7 +626,6 @@ rbarshape(name,mod){
 				if sidebar=="Goh"{
 					& .tree_item{
 						white-space:nowrap;
-						overflow:hidden;
 						max-width:100vw;
 						padding-right:0.25em;
 						& .item-content-wrap{
