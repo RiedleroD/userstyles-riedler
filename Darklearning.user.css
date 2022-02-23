@@ -1127,6 +1127,9 @@ rbarshape(name,mod){
 			background-color:rgba(tru,0.5);
 			color:htru;
 		}
+		&>.close{
+			color:inherit;
+		}
 	}
 	#page-mod-quiz-attempt #connection{
 		&-error{
