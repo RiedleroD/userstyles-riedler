@@ -557,6 +557,11 @@ rbarshape(name,mod){
 	.block{
 		&.card{
 			background-color:bg2;
+			if sidebar=="Goh"{
+				&[role="navigation"]{
+					overflow:visible;
+				}
+			}
 		}
 		&-timeline{
 			& .list-group-item{
@@ -622,8 +627,12 @@ rbarshape(name,mod){
 					& .tree_item{
 						white-space:nowrap;
 						overflow:hidden;
-						max-width:25vw;
+						max-width:100vw;
 						padding-right:0.25em;
+						& .item-content-wrap{
+							max-width:25vw;
+							text-overflow: ellipsis;
+						}
 					}
 				}
 				if sidebar!="S"{
