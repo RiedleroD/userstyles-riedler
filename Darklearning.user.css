@@ -1145,7 +1145,15 @@ rbarshape(name,mod){
 	.moodle-dialogue-base .closebutton{
 		text-shadow:none;
 		opacity:1;
-		color:txt;}
+		color:txt;
+		filter:none;
+		transition:filter 0.2s;
+		&:not(:disabled):not(.disabled):hover,
+		&:not(:disabled):not(.disabled):focus{
+			opacity:1;
+			filter:drop-shadow(0 0 0.1em #000);
+		}
+	}
 	.yui3-button{
 		background-image:none;}
 	.path-mod div.activity-information{
