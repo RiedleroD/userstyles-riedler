@@ -28,49 +28,53 @@
 	.rc-anchor-light{
 		background-color:@bg0;
 		color:@txt;
+		&.rc-anchor-normal{
+			border-color:@brd;
+		}
 	}
-	.rc-anchor-light.rc-anchor-normal{
-		border-color:@brd;
+	.recaptcha-checkbox-{
+		&border{
+			background-color:@bg2;
+			border-color:@brd;
+		}
+		&border,
+		&spinner-gif{
+			.recaptcha-checkbox-active &{
+				background-color:@bg3;
+			}
+			.recaptcha-checkbox-hover &{
+				border-color:@hbrd;
+			}
+			.recaptcha-checkbox-disabled &{
+				background-color:@dbrd;
+			}
+			.recaptcha-checkbox-expired &{
+				border-color:@err;
+			}
+		}
+		&spinner{
+			background-color:@bg2;
+			border-color:@cl1 @cl1 @bg2 @bg2;
+			&-overlay{
+				background-color:@bg2;
+			}
+		}
+		&borderAnimation{
+			filter:invert(0.8) hue-rotate(180deg);
+		}
+		&checkmark{
+			filter:hue-rotate(10deg);//I think it looks better with more blue in the green
+		}
 	}
-	.recaptcha-checkbox-border{
-		background-color:@bg2;
-		border-color:@brd;
-	}
-	.recaptcha-checkbox-active .recaptcha-checkbox-border,
-	.recaptcha-checkbox-active .recaptcha-checkbox-spinner-gif{
-		background-color:@bg3;
-	}
-	.recaptcha-checkbox-hover .recaptcha-checkbox-border,
-	.recaptcha-checkbox-hover .recaptcha-checkbox-spinner-gif{
-		border-color:@hbrd;
-	}
-	.rc-anchor-light .rc-anchor-logo-text,
-	.rc-anchor-light div a:link,
-	.rc-anchor-light div a:visited{
-		color:@dtxt;
-	}
-	.recaptcha-checkbox-spinner-overlay{
-		background-color:@bg2;
-	}
-	.recaptcha-checkbox-spinner{
-		background-color:@bg2;
-		border-color:@cl1 @cl1 @bg2 @bg2;
-	}
-	.recaptcha-checkbox-borderAnimation{
-		filter:invert(0.8) hue-rotate(180deg);}
-	.recaptcha-checkbox-disabled .recaptcha-checkbox-border,
-	.recaptcha-checkbox-disabled .recaptcha-checkbox-spinner-gif{
-		background-color:@dbrd;
-	}
-	.recaptcha-checkbox-checkmark{
-		filter:hue-rotate(10deg);//I think it looks better with more blue in the green
-	}
-	.recaptcha-checkbox-expired .recaptcha-checkbox-border,
-	.recaptcha-checkbox-expired .recaptcha-checkbox-spinner-gif{
-		border-color:@err;
-	}
-	.rc-anchor-error-msg-container{
-		color:@err;
+	.rc-anchor-{
+		&light &logo-text,
+		&light div a:link,
+		&light div a:visited{
+			color:@dtxt;
+		}
+		&error-msg-container{
+			color:@err;
+		}
 	}
 }
 @-moz-document regexp("https?://(www\\.)?google\\.com/recaptcha/api2/bframe\\?.*"){
@@ -88,30 +92,32 @@
 	.rc-separator{
 		border-top-color:@brd;
 	}
-	.rc-audiochallenge-play-button .rc-button-default{
-		background-color:@cl1;
-		color:@htxt;
-	}
 	.rc-response-input-field{
 		border-color:@brd;
 		background-color:@bg2;
 		color:@txt;
 	}
-	.rc-imageselect-desc-wrapper{
-		background-color:@cl1;
-		color:@htxt;
-	}
-	.rc-imageselect-incorrect-response{
-		background-color:@bg1;
-		color:@err;
+	.rc-imageselect-{
+		&desc-wrapper{
+			background-color:@cl1;
+			color:@htxt;
+		}
+		&incorrect-response{
+			background-color:@bg1;
+			color:@err;
+		}
 	}
 	.rc-button-default{
 		background-color:@cl1;
 		color:@htxt;
-	}
-	.rc-button-default:hover{
-		background-color:@hcl1;
-		color:@hhtxt;
+		&:hover{
+			background-color:@hcl1;
+			color:@hhtxt;
+		}
+		.rc-audiochallenge-play-button &{
+			background-color:@cl1;
+			color:@htxt;
+		}
 	}
 }
 @-moz-document regexp(".*"){
