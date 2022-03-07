@@ -244,7 +244,7 @@
 		background-color:/*[[bg0]]*/;
 		border:solid 1px /*[[brd]]*/;
 		color:/*[[txt]]*/;
-		border-radius:0.25em;
+		border-radius:/*[[brdr]]*/;
 	}
 	/*various tables*/
 	table.styled-table tr td{
@@ -425,7 +425,7 @@
 	#pundelete .blockform h2{
 		background-color:/*[[bg3]]*/;
 		color:/*[[txt]]*/;
-		border-top-left-radius:0.25em;
+		border-top-left-radius:/*[[brdr]]*/;
 	}
 	.pun .infldset,
 	#adintro .inbox,
@@ -462,7 +462,7 @@
 	.pun .checklist{
 		background-color:/*[[bg2]]*/;
 		border-color:/*[[brd]]*/;
-		border-radius:0.25em;
+		border-radius:/*[[brdr]]*/;
 	}
 	/*topics*/
 	.pun .inew .icon{
