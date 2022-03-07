@@ -444,4 +444,10 @@
 	.pun .blockmenu a:focus{
 		background-color:/*[[bg4]]*/;
 	}
+	/*rulebox*/
+	#punmisc #rules .box,
+	#punhelp .box{
+		border-color:/*[[brd]]*/;
+		background-color:/*[[bg3]]*/;
+	}
 }
