@@ -116,17 +116,19 @@
 		border-color:/*[[hbrd]]*/;}
 	#brdmenu{
 		background:none;}
-	#brdmenu a,
-	#brdmenu a:link,
-	#brdmenu a:visited{
-		background:none;
-		border-color:#0000;}
 	/*text related stuff*/
 	a:link,
 	.pun a,
 	.pun a:link,
 	.pun a:visited{
 		color:/*[[lnk]]*/;}
+	#brdmenu a,
+	#brdmenu a:link,
+	#brdmenu a:visited{
+		background:none;
+		border-color:#0000;
+		color:/*[[lnk]]*/;
+	}
 	a:link:hover{
 		color:/*[[hlnk]]*/;}
 	.pun a:hover,
@@ -135,6 +137,10 @@
 	a:visited,
 	#brdmain a:visited{
 		color:/*[[vlnk]]*/;}
+	.pun a:active,
+	#brdmain a:active{
+		color:/*[[hlnk]]*/ !important;
+	}
 	.pun .codebox{
 		background-color:/*[[bg0]]*/;
 		color:/*[[htxt]]*/;
