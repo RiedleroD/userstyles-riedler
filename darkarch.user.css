@@ -234,6 +234,12 @@
 	input[type="radio"]:checked{
 		box-shadow:inset 0 0 0 0.2em /*[[bg3]]*/;
 		background-color:/*[[txt]]*/;}
+	textarea{
+		background-color:/*[[bg0]]*/;
+		border:solid 1px /*[[brd]]*/;
+		color:/*[[txt]]*/;
+		border-radius:0.25em;
+	}
 	/*various tables*/
 	table.styled-table tr td{
 		background-color:/*[[bg2]]*/;
@@ -420,12 +426,6 @@
 	#adstats .inbox{
 		background-color:/*[[bg3]]*/;
 		border:none;
-	}
-	textarea[name="req_message"]{
-		background-color:/*[[bg0]]*/;
-		border:solid 1px /*[[brd]]*/;
-		color:/*[[txt]]*/;
-		border-radius:0.25em;
 	}
 	.pun .inform > fieldset{
 		background-color:/*[[bg3]]*/;
