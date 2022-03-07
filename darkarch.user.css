@@ -100,6 +100,9 @@
 	/*navbars & menus*/
 	#archnavbar{
 		border-bottom-color:/*[[cl1]]*/ !important;}
+	#archnavbarlogo{
+		filter:hue-rotate(354deg) saturate(50%) brightness(115%);
+	}
 	#submenu a{
 		background-color:/*[[bg2]]*/;
 		border-color:/*[[brd]]*/;
