@@ -478,4 +478,8 @@
 	.pun .inew .icon{
 		border-color:/*[[lnk]]*/;
 	}
+	/*hr before signatures*/
+	.pun .postmsg hr{
+		background-color:/*[[brd]]*/;
+	}
 }
