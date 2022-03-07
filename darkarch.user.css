@@ -450,4 +450,8 @@
 		border-color:/*[[brd]]*/;
 		background-color:/*[[bg3]]*/;
 	}
+	/*userlist table*/
+	.pun #users1 h2{
+		background-color:#0000;
+	}
 }
