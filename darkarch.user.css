@@ -397,6 +397,7 @@
 		color:/*[[htxt]]*/;}
 }
 @-moz-document domain("bbs.archlinux.org"){
+	/*new message*/
 	.pun .blockform .box,
 	#adstats,
 	#adintro,
@@ -428,5 +429,17 @@
 	}
 	.pun .inform > fieldset{
 		background-color:/*[[bg3]]*/;
+	}
+	/*menu*/
+	.pun .blockmenu ul,
+	.pun .blockmenu li{
+		border-color:/*[[brd]]*/;
+	}
+	.pun .blockmenu .isactive a:link,
+	.pun .blockmenu .isactive a:visited,
+	.pun .blockmenu a:hover,
+	.pun .blockmenu a:active,
+	.pun .blockmenu a:focus{
+		background-color:/*[[bg4]]*/;
 	}
 }
