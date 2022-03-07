@@ -169,8 +169,9 @@
 		background-image:url("https://riedler.wien/sfto/darklearning/double_triangles_top_bottom_AAA.svg");
 		background-repeat:no-repeat;
 		background-size:0.75em;
-		background-position:center right;
-		cursor:pointer;}
+		background-position:center right 0.125em;
+		cursor:pointer;
+		padding-right:1em;}
 	select:not([multiple]):hover{
 		background-color:/*[[bg4]]*/;
 		color:/*[[htxt]]*/;}
