@@ -396,3 +396,37 @@
 	font[color="#000000"]{
 		color:/*[[htxt]]*/;}
 }
+@-moz-document domain("bbs.archlinux.org"){
+	.pun .blockform .box,
+	#adstats,
+	#adintro,
+	#postpreview,
+	#posterror{
+		border-color:/*[[brd]]*/;
+		background-color:/*[[bg3]]*/;
+	}
+	.pun #quickpost h2,
+	#punpost .blockform h2,
+	#punedit .blockform h2,
+	#posterror h2,
+	#pundelete .blockform h2{
+		background-color:/*[[bg3]]*/;
+		color:/*[[txt]]*/;
+		border-top-left-radius:0.25em;
+	}
+	.pun .infldset,
+	#adintro .inbox,
+	#adstats .inbox{
+		background-color:/*[[bg3]]*/;
+		border:none;
+	}
+	textarea[name="req_message"]{
+		background-color:/*[[bg0]]*/;
+		border:solid 1px /*[[brd]]*/;
+		color:/*[[txt]]*/;
+		border-radius:0.25em;
+	}
+	.pun .inform > fieldset{
+		background-color:/*[[bg3]]*/;
+	}
+}
