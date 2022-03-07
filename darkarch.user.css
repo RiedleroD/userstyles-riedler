@@ -10,7 +10,7 @@
 @var	color	bg2		"Background 2"		#222
 @var	color	bg3		"Background 3"		#282828
 @var	color	bg4		"Background 4"		#333
-@var	color	cl1		"Main Color"		#068
+@var	color	cl1		"Main Color"		#418BA4
 @var	color	brd		"Border"			#888
 @var	color	hbrd	"Light Border"		#AAA
 @var	text	brdr	"Border Radius"		0.25em
@@ -18,8 +18,8 @@
 @var	color	txt		"Text"				#AAA
 @var	color	htxt	"Bright Text"		#CCC
 @var	color	hhtxt	"White Text"		#FFF
-@var	color	lnk		"Link"				#06A
-@var	color	hlnk	"Hovered Link"		#58C
+@var	color	lnk		"Link"				#418BA4
+@var	color	hlnk	"Hovered Link"		#6AC
 @var	color	vlnk	"Visited Link"		#86A
 @var	color	slc		"Selections"		#000
 @var	color	rd		"Red"				#922
@@ -460,5 +460,9 @@
 		background-color:/*[[bg2]]*/;
 		border-color:/*[[brd]]*/;
 		border-radius:0.25em;
+	}
+	/*topics*/
+	.pun .inew .icon{
+		border-color:/*[[lnk]]*/;
 	}
 }
