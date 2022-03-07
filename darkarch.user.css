@@ -135,11 +135,15 @@
 	a:visited,
 	#brdmain a:visited{
 		color:/*[[vlnk]]*/;}
-	pre{
+	.pun .codebox{
 		background-color:/*[[bg0]]*/;
 		color:/*[[htxt]]*/;
 		border-color:/*[[brd]]*/;
-		border-radius:/*[[brdr]]*/;}
+		border-radius:/*[[brdr]]*/;
+	}
+	pre{
+		border-radius:/*[[brdr]]*/
+	}
 	span#searchstate a,
 	.pun .postmsg,
 	#punhelp code,
