@@ -234,6 +234,13 @@ rbarshape(name,mod){
 			border:none;
 		}
 	}
+	/*animations*/
+	@keyframes bg-pulse-grey{
+		0%{background-color:brd}
+		50%{background-color:hbrd}
+		80%{background-color:hhbrd}
+		100%{background-color:brd}
+	}
 	/*navbar*/
 	.navbar{
 		background-color:bg2;
