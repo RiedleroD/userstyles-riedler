@@ -34,7 +34,9 @@
 		border-radius:/*[[brdr]]*/;}
 	:root{/*for firefox*/
 		scrollbar-width:thin;
-		scrollbar-color:/*[[cl1]]*/ /*[[bg0]]*/;}
+		scrollbar-color:/*[[cl1]]*/ /*[[bg0]]*/;
+		color-scheme:dark;
+	}
 	/*text selctions (yes you can style those too)*/
 	::selection{
 		background-color:/*[[slc]]*/;
