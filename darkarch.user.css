@@ -450,6 +450,7 @@
 	div#cgit table.list tr.nohover:hover{
 		background-color:/*[[bg0]]*/;
 	}
+	div#cgit table.list tr.logheader,
 	div#cgit table.list tr:hover{
 		background-color:/*[[bg2]]*/;
 	}
