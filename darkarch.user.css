@@ -388,7 +388,7 @@
 	.attachments>a>img[src$="text.png"]{
 		filter:brightness(0.6) contrast(3);}
 }
-@-moz-document regexp("https?:\\/\\/(www|aur)\\.archlinux\\.org\\/?(\\?.*)?"){
+@-moz-document domain("www.archlinux.org"), domain("aur.archlinux.org"){
 	/*home*/
 	dl dt{
 		color:/*[[dtxt]]*/;}
