@@ -22,7 +22,8 @@
 @var	color	hlnk	"Hovered Link"		#6AC
 @var	color	vlnk	"Visited Link"		#86A
 @var	color	slc		"Selections"		#000
-@var	color	rd		"Red"				#922
+@var	color	fals	"False/Red"			#922
+@var	color	tru		"True/Green"		#262
 ==/UserStyle== */
 
 @-moz-document regexp("https?:\\/\\/(?:(?!wiki)(?!gitlab)[^\\/])*archlinux.org(/.*)?"){
@@ -86,7 +87,7 @@
 		color:/*[[txt]]*/;}
 	div#taskclosed{
 		background-color:/*[[bg2]]*/;
-		border-color:/*[[rd]]*/}
+		border-color:/*[[fals]]*/}
 	.pun .blockpost h2,
 	.pun .quotebox{
 		background-color:/*[[bg4]]*/;
@@ -434,9 +435,21 @@
 		outline:none;
 	}
 	div#cgit table{
-		/*fix problem with border-radius*/
+		/*fixes problem with border-radius*/
 		border-collapse:separate;
 		border-spacing:0;
+	}
+	div#cgit table.diff td div.head{
+		color:/*[[txt]]*/;
+	}
+	div#cgit table.diff td div.hunk{
+		color:/*[[cl1]]*/;
+	}
+	div#cgit table.diff td div.del{
+		color:/*[[fals]]*/;
+	}
+	div#cgit table.diff td div.add{
+		color:/*[[tru]]*/;
 	}
 }
 @-moz-document domain("security.archlinux.org"){
