@@ -445,6 +445,20 @@
 		border-collapse:separate;
 		border-spacing:0;
 	}
+	/*table lists*/
+	div#cgit table.list tr,
+	div#cgit table.list tr.nohover:hover{
+		background-color:/*[[bg0]]*/;
+	}
+	div#cgit table.list tr:hover{
+		background-color:/*[[bg2]]*/;
+	}
+	div#cgit table.list td a{
+		color:/*[[txt]]*/;
+	}
+	div#cgit table.list td a:hover{
+		color:/*[[hlnk]]*/;
+	}
 	/*diff codeblock - unified mode*/
 	div#cgit table.diff td div.head{
 		color:/*[[txt]]*/;
