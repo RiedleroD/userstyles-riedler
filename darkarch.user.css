@@ -467,6 +467,12 @@
 	div#cgit table.diffstat td.graph td.rem{
 		background-color:/*[[fals]]*/;
 	}
+	/*diff options sideblock*/
+	div#cgit div.cgit-panel table{
+		background-color:/*[[bg3]]*/;
+		border-radius:/*[[brdr]]*/;
+		border-collapse:separate;
+	}
 }
 @-moz-document domain("security.archlinux.org"){
 	table th{
