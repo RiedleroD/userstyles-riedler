@@ -23,7 +23,11 @@
 @var	color	vlnk	"Visited Link"		#86A
 @var	color	slc		"Selections"		#000
 @var	color	fals	"False/Red"			#922
+@var	color	hfals	"Light False/Red"	#E55
+@var	color	idk		"Maybe/Yellow"		#A50
+@var	color	hidk	"Light Maybe/Yellow"#FA0
 @var	color	tru		"True/Green"		#262
+@var	color	htru	"Light True/Green"	#6C6
 ==/UserStyle== */
 
 @-moz-document regexp("https?:\\/\\/(?:(?!wiki)(?!gitlab)[^\\/])*archlinux.org(/.*)?"){
