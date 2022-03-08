@@ -445,7 +445,7 @@
 		border-collapse:separate;
 		border-spacing:0;
 	}
-	/*diff codeblock*/
+	/*diff codeblock - unified mode*/
 	div#cgit table.diff td div.head{
 		color:/*[[txt]]*/;
 	}
@@ -457,6 +457,42 @@
 	}
 	div#cgit table.diff td div.add{
 		color:/*[[tru]]*/;
+	}
+	/*diff codeblock - ssdiff mode*/
+	div#cgit table.ssdiff td.head div.head{
+		color:/*[[txt]]*/;
+	}
+	div#cgit table.ssdiff td.hunk{
+		background-color:/*[[bg3]]*/;
+		color:/*[[htxt]]*/;
+		border-top:none;
+	}
+	div#cgit table.ssdiff td.lineno{
+		color:/*[[txt]]*/;
+		background-color:/*[[bg1]]*/;
+		border-right:none;
+	}
+	div#cgit table.ssdiff td.lineno ~ td.lineno{
+		border-left:none;
+	}
+	div#cgit table.ssdiff td.changed{
+		color:/*[[hidk]]*/;
+		background-color:/*[[idk]]*/;
+	}
+	div#cgit table.ssdiff td.del,
+	div#cgit table.ssdiff span.del{
+		background-color:/*[[fals]]*/;
+		color:/*[[hfals]]*/;
+	}
+	div#cgit table.ssdiff td.add,
+	div#cgit table.ssdiff span.add{
+		color:/*[[htru]]*/;
+		background-color:/*[[tru]]*/;
+	}
+	div#cgit table.ssdiff td.changed_dark,
+	div#cgit table.ssdiff td.add_dark,
+	div#cgit table.ssdiff td.del_dark{
+		background-color:#0000;
 	}
 	/*diff statistics table*/
 	div#cgit table.diffstat{
