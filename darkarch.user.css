@@ -141,15 +141,6 @@
 	#brdmain a:active{
 		color:/*[[hlnk]]*/ !important;
 	}
-	.pun .codebox{
-		background-color:/*[[bg0]]*/;
-		color:/*[[htxt]]*/;
-		border-color:/*[[brd]]*/;
-		border-radius:/*[[brdr]]*/;
-	}
-	pre{
-		border-radius:/*[[brdr]]*/
-	}
 	span#searchstate a,
 	.pun .postmsg,
 	#punhelp code,
@@ -165,12 +156,37 @@
 	.pun .postsignature,
 	.pun .postmsg .postedit{
 		color:/*[[dtxt]]*/;}
+	/*codeblocks*/
+	/*
+		testing URLs:	https://bbs.archlinux.org/viewtopic.php?id=274693
+						https://archlinux.org/news/libxml22912-6-update-may-require-manual-intervention/
+						https://aur.archlinux.org/cgit/aur.git/tree/PKGBUILD?h=nosefart
+	*/
+	.pun .codebox{
+		background-color:/*[[bg0]]*/;
+		color:/*[[htxt]]*/;
+		border-color:/*[[brd]]*/;
+		border-radius:/*[[brdr]]*/;
+	}
+	pre{
+		border:none;
+		border-radius:/*[[brdr]]*/;
+		background-color:/*[[bg0]]*/;
+		color:/*[[txt]]*/;
+		outline:solid 1px /*[[brd]]*/;
+	}
 	code{
 		background-color:/*[[bg0]]*/;
 		color:/*[[txt]]*/;
-		outline:solid 1px #000;}
-	pre>code{
-		outline:none;}
+		outline:solid 1px #000;
+	}
+	.pun .codebox pre,
+	.pun .codebox code{
+		outline:none;
+	}
+	pre code{
+		outline:none;
+	}
 	/*various input elements*/
 	select{
 		background-color:/*[[bg3]]*/;
