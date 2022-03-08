@@ -416,6 +416,28 @@
 	div#cgit a:hover{
 		color:/*[[hlnk]]*/;
 	}
+	div#cgit table.blob td.linenumbers{
+		border:solid 1px /*[[brd]]*/;
+		border-right:none;
+		border-radius:0.25em 0 0 0.25em;
+		padding:calc(0.25em + 1px) 0.5em;
+	}
+	div#cgit table.blob td.linenumbers pre{
+		outline:none;
+	}
+	div#cgit table.blob td.lines{
+		border:solid 1px /*[[brd]]*/;
+		padding:0.25em 0.5em;
+		border-radius:0 /*[[brdr]]*/ /*[[brdr]]*/ 0;
+	}
+	div#cgit table.blob td.lines pre{
+		outline:none;
+	}
+	div#cgit table{
+		/*fix problem with border-radius*/
+		border-collapse:separate;
+		border-spacing:0;
+	}
 }
 @-moz-document domain("security.archlinux.org"){
 	table th{
