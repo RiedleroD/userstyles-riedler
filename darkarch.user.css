@@ -411,10 +411,12 @@
 		background-color:/*[[bg3]]*/;
 		color:/*[[txt]]*/;
 	}
-	div#cgit a{
+	div#cgit a,
+	div#cgit table.diffstat td.upd a{
 		color:/*[[lnk]]*/;
 	}
-	div#cgit a:hover{
+	div#cgit a:hover,
+	div#cgit table.diffstat td.upd a:hover{
 		color:/*[[hlnk]]*/;
 	}
 	div#cgit table.blob td.linenumbers{
@@ -439,6 +441,7 @@
 		border-collapse:separate;
 		border-spacing:0;
 	}
+	/*diff codeblock*/
 	div#cgit table.diff td div.head{
 		color:/*[[txt]]*/;
 	}
@@ -450,6 +453,19 @@
 	}
 	div#cgit table.diff td div.add{
 		color:/*[[tru]]*/;
+	}
+	/*diff statistics table*/
+	div#cgit table.diffstat{
+		background-color:/*[[bg3]]*/;
+		border-color:/*[[brd]]*/;
+		border-radius:/*[[brdr]]*/;
+		border-collapse:separate;
+	}
+	div#cgit table.diffstat td.graph td.add{
+		background-color:/*[[tru]]*/;
+	}
+	div#cgit table.diffstat td.graph td.rem{
+		background-color:/*[[fals]]*/;
 	}
 }
 @-moz-document domain("security.archlinux.org"){
