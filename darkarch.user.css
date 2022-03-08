@@ -513,6 +513,27 @@
 		border-radius:/*[[brdr]]*/;
 		border-collapse:separate;
 	}
+	/*package stats*/
+	div#cgit table.stats td{
+		border-color:/*[[brd]]*/;
+	}
+	div#cgit table.stats th{
+		background-color:/*[[bg3]]*/;
+		border-color:/*[[brd]]*/;
+		color:/*[[htxt]]*/;
+	}
+	div#cgit table.stats td.total{
+		background-color:/*[[bg3]]*/;
+		color:/*[[htxt]]*/;
+	}
+	div#cgit table.stats td.sum{
+		background-color:/*[[bg1]]*/;
+		color:/*[[txt]]*/;
+	}
+	div#cgit table.stats td.sum:last-child{
+		background-color:/*[[bg2]]*/;
+		color:/*[[htxt]]*/;
+	}
 }
 @-moz-document domain("security.archlinux.org"){
 	table th{
