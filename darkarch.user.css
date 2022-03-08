@@ -397,6 +397,26 @@
 	h3 span.arrow{
 		border-top-color:/*[[cl1]]*/;}
 }
+@-moz-document domain("aur.archlinux.org"){
+	div#cgit table.tabs,
+	div#cgit div.content{
+		border-bottom-color:/*[[bg3]]*/;
+	}
+	div#cgit table.tabs td a.active{
+		background-color:/*[[bg3]]*/;
+		color:/*[[txt]]*/;
+	}
+	div#cgit div.path{
+		background-color:/*[[bg3]]*/;
+		color:/*[[txt]]*/;
+	}
+	div#cgit a{
+		color:/*[[lnk]]*/;
+	}
+	div#cgit a:hover{
+		color:/*[[hlnk]]*/;
+	}
+}
 @-moz-document domain("security.archlinux.org"){
 	table th{
 		background-color:/*[[bg4]]*/;
