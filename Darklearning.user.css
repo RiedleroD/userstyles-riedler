@@ -1815,6 +1815,7 @@ rbarshape(name,mod){
 	.atto_image_button_text-top.img-responsive,/*most likely embedded images in 	assignment descriptions*/
 	.qtext img,/*images in the question text, most of the time classless*/
 	img[src*="mod_page"],/*images with mod_page in the source url, most of the images in courses have this*/
+	.img-fluid,//probably mostly large images in modal lessons
 	.region-main-content img:not([class]):not([src^="https://elearning.tgm.ac.at/theme/"]){/*images without class - a last resort, really*/
 		filter:EICC;}
 	img[src$="elearning.tgm.ac.at/theme/image.php/classic/core/"][src$="/i/loading_small"]{
