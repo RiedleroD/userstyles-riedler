@@ -245,7 +245,10 @@ rbarshape(name,mod){
 	.navbar{
 		background-color:bg2;
 		border-bottom-right-radius:0.5em;
-		border-bottom-left-radius:0.5em;}
+		border-bottom-left-radius:0.5em;
+		border-bottom:solid 1px bg1;
+		box-shadow:none;
+	}
 	.breadcrumb:not(:empty){
 		border-color:brd;
 		border-width:1px;}
