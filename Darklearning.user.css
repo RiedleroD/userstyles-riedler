@@ -2226,6 +2226,43 @@ rbarshape(name,mod){
 				background-color:bg3;
 			}
 		}
+		/* the arrows in format tile thingies */
+		/* possibly also applicable to .embed_cm_modal .embed_file_button */
+		& .course-content .single-section .navigation-arrows{
+			display:inline-flex;
+			& .navigation-arrow{
+				transition:none;
+				opacity:1;
+				margin:0 0.25em;
+				border-radius:irad;
+				display:inline-flex;
+				justify-content:center;
+				align-items:center;
+				&>.dir-rtl-hide{
+					display:flex;
+					align-items:center;
+					height:100%;/*jesus, why?*/
+				}
+				&:not(.dimmed){
+					background-color:bg3;
+					&:hover{
+						background-color:bg4;
+						& .icon{
+							filter:brightness(1.2);
+						}
+					}
+				}
+				&.dimmed:hover{
+					background-color:#0000;
+				}
+				&:hover{
+					transform:none;
+				}
+				& .icon{
+					height:60%;
+				}
+			}
+		}
 		& .editor_atto_content_wrap{
 			& h1,& h2,& h3,& h4{
 				border-left-color:tru;
