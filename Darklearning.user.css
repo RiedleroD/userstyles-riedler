@@ -1654,6 +1654,9 @@ rbarshape(name,mod){
 			&.pre_syntax_error,
 			&.pre_question_error{
 				background-color:fals;
+				&.precheck{
+					background:repeating-linear-gradient(0deg,rgba(hfals,0.5),rgba(fals,0.5) 8px,rgba(fals,0.5) 8px,rgba(hfals,0.5) 16px)
+				}
 			}
 			&.^[0]-test-results{
 				color:txt;
@@ -1680,6 +1683,9 @@ rbarshape(name,mod){
 			& div.^[0]-test-results.good,
 			& tr.^[0]-failed-test.fixed{
 				background-color:tru;
+				&.precheck{
+					background:repeating-linear-gradient(0deg,rgba(htru,0.5),rgba(tru,0.5) 8px,rgba(tru,0.5) 8px,rgba(htru,0.5) 16px)
+				}
 			}
 			& div.ui_wrapper{
 				background-color:bg1;
