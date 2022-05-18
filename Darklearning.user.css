@@ -1429,8 +1429,9 @@ rbarshape(name,mod){
 		border-radius:crad;
 	}
 	/*Editor Atto*/
-	.editor_atto{
+	div.editor_atto{
 		& .icon{
+			//TODO: check if this is even used outside the toolbar
 			filter:invert(1) hue-rotate(180deg);
 		}
 		&_content{
@@ -1454,9 +1455,39 @@ rbarshape(name,mod){
 			border-color:brd !important;
 			border-top-left-radius:0.5em;
 			border-top-right-radius:0.5em;
-			& button:hover{
-				background:radial-gradient(ellipse at center,bg3 60%,bg2 100%);
-				background-color:bg2;
+			& div.atto_group{
+				overflow:clip;
+			}
+			& button{
+				&:active,
+				&.highlight{
+					background-image:none;
+					background-color:bg4;
+					& .icon::before{
+						color:htxt;
+					}
+				}
+				&:hover{
+					background-image:none;
+					background-color:bg4;
+					& .icon::before{
+						color:htxt;
+					}
+				}
+				&[disabled]{
+					opacity:1;
+					background-color:brd;
+					& .icon::before{
+						color:dtxt;
+					}
+				}
+				& .icon{
+					filter:none;
+					color:txt;
+				}
+				& + button{
+					border-left-color:brd;
+				}
 			}
 		}
 		&_notification .atto_{//TODO get url for this
