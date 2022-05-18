@@ -2016,6 +2016,9 @@ rbarshape(name,mod){
 		border-radius:crad;
 		overflow:hidden;
 	}
+	.moodle-dialogue-hd{//fixes titles that would otherwise extend outside the card
+		word-break:break-word;
+	}
 	.modal-header,
 	.moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd,
 	.path-mod-assign [data-region="grade-panel"] .popout>.col-md-3{
