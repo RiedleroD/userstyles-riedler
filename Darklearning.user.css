@@ -2010,10 +2010,11 @@ rbarshape(name,mod){
 			border-radius:crad;
 		}
 	}
-	.moodle-dialogue-base .moodle-dialogue-wrap{//popup before starting a time-limited online test
+	.moodle-dialogue-base .moodle-dialogue-wrap{
 		background-color:bg3;
 		border-color:brd;
 		border-radius:crad;
+		overflow:hidden;
 	}
 	.modal-header,
 	.moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd,
