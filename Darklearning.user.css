@@ -499,6 +499,7 @@ rbarshape(name,mod){
 		background-image:url(svg_select_arrs);
 		background-repeat:no-repeat;
 		background-size:0.75em;
+		cursor:pointer;
 		&:disabled{
 			color:txt;
 			background-color:bg3;
@@ -510,8 +511,12 @@ rbarshape(name,mod){
 		}
 		&:hover,
 		&:focus{
-			background-color:bg4;
+			background-color:bg3;
 			color:txt;
+		}
+		&:focus{
+			border-color:btn;
+			box-shadow:0 0 0 .2rem rgba(btn,.25);
 		}
 	}
 	//see -> https://elearning.tgm.ac.at/user/index.php?id=5503
