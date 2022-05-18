@@ -1,0 +1,31 @@
+/* ==UserStyle==
+@name           Spacious Mastodon
+@namespace      github.com/RiedleroD/userstyles-riedler
+@version        0.1.0
+@description    Helps you see more
+@author         Riedler
+@preprocessor   less
+@var	checkbox	expandcols  "Expand Columns in Home"	1
+@var	checkbox	fieldresize	"Auto-resize Bio Fields"	1
+==/UserStyle== */
+
+@-moz-document domain("mas.to"), domain("mastodon.social") {
+	/* makes the columns expand to the full width of the screen */
+	.drawer,
+	.column{
+		flex:if((@expandcols=1),auto,auto 0 0);
+	}
+	/* converts the bio fields to a grid layout with automatically resizing columns */
+	.account__header__fields{
+		display:if((@fieldresize=1),grid,block);
+		grid-template-columns:auto auto;
+		& dl{
+			display:if((@fieldresize=1),contents,flex);
+		}
+		& dt,
+		& dd{
+			width:if((@fieldresize=1),auto,);
+			border-bottom:if((@fieldresize=1),inherit,none);
+		}
+	}
+}
