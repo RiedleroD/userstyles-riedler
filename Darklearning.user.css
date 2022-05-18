@@ -757,6 +757,10 @@ rbarshape(name,mod){
 	.dndupload-arrow{
 		filter:invert(0.9) hue-rotate(180deg);
 	}
+	/*seems like a footer in some dialog boxes?*/
+	.yui3-skin-sam .yui3-panel .yui3-widget-ft{
+		background-color:#0000;
+	}
 	/*Buttons*/
 	.close,
 	.moodle-dialogue-base .closebutton{
@@ -2555,6 +2559,58 @@ rbarshape(name,mod){
 		&:hover{
 			color:hlnk;
 			text-decoration:underline;
+		}
+	}
+	.assignfeedback_editpdf_widget .pageheader{
+		background-color:bg3;
+		border-color:brd;
+		& .toolbar,
+		& .navigation-search,
+		& .navigation-expcol,
+		& .navigation{
+			border-color:brd;
+			overflow:hidden;
+			background-color:#0000;
+		}
+		& .navigation button,
+		& .navigation select + button{
+			border-color:brd;
+		}
+		& button:hover{
+			background-image:none;
+			background-color:bg4;
+			& img{
+				filter:brightness(1.2);
+			}
+		}
+		select{
+			background-color:#0000;
+			color:txt;
+			&:hover{
+				background-color:bg4;
+				color:htxt;
+			}
+		}
+	}
+	.assignfeedback_editpdf_widget .drawingregion{
+		background-color:bg3;
+		border:none;
+	}
+	.assignfeedback_editpdf_commentsearch input[placeholder="Kommentare filtern..."]{
+		//style is copied from login text inputs
+		//TODO: deduplicate
+		background-color:bg3;
+		color:txt;
+		border:solid 1px brd;
+		border-radius:irad;
+		padding:.375rem .75rem;
+		font-size:.9375rem;
+		line-height:1.5;
+		transition: border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out;
+		&:focus{
+			border-color:btn;
+			box-shadow: 0 0 0 .2rem rgba(btn,.25);
+			outline:none;
 		}
 	}
 }
