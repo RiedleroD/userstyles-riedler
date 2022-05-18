@@ -1325,12 +1325,11 @@ rbarshape(name,mod){
 		border-color:brd;
 		color:txt;
 		&:disabled,
-		&[readonly]{
-			background-color:bg6;
+		&[readonly],
+		&[readonly]:hover{
+			background-color:brd;
+			color:dtxt;
 			cursor:not-allowed;
-			&:hover{
-				background-color:bg6;
-			}
 		}
 		&:hover,
 		&:focus{
