@@ -2544,6 +2544,15 @@ rbarshape(name,mod){
 			font-weight:bold;
 		}
 	}
+	//annotated PDFs in assignments
+	input[name="assignfeedback_editpdf_haschanges"]+.visibleifjs>a{
+		color:lnk;
+		transition:none;
+		&:hover{
+			color:hlnk;
+			text-decoration:underline;
+		}
+	}
 }
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/user/preferences\\.php.*?") {
 	#region-main .card.mb-3{
