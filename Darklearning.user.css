@@ -946,6 +946,9 @@ rbarshape(name,mod){
 			color:c3 !important;
 		}
 	}
+	div[style="background-color: #e6e6e6; font-size: 0.75em; padding: 4px;"]{
+		background-color:bg3 !important;
+	}
 	/*tooltips: popups that pop up when you hover over stuff with set tooltips*/
 	.tooltip>*{
 		background-color:bg3 !important;
