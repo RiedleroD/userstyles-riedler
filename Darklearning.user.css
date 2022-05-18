@@ -206,9 +206,13 @@ rbarshape(name,mod){
 @-moz-document domain("elearning.tgm.ac.at"), regexp(".*userstyle_testing/darklearning.*"){
 	/*text selections*/
 	::-moz-selection{/*for firefox and derivatives*/
-		background:slc;}
+		background:slc;
+		color:htxt;
+	}
 	::selection{/*for most other browsers that support this*/
-		background:slc;}
+		background:slc;
+		color:htxt;
+	}
 	/*scrollbars*/
 	::-webkit-scrollbar{//scrollbars in chrome and safari
 		&,
