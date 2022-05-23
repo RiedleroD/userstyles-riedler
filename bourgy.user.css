@@ -1,0 +1,153 @@
+/* ==UserStyle==
+@name			Dark BourgeyMan
+@namespace		https://github.com/RiedleroD/userstyles-riedler
+@version		0.1.0
+@description	Dark mode for bourgy.net
+@author			Riedler
+@preprocessor	uso
+@var	color	bg0		"Background 0"		#000
+@var	color	bg1		"Background 1"		#151515
+@var	color	bg2		"Background 2"		#222
+@var	color	bg3		"Background 3"		#333
+@var	color	brd		"Border"			#888
+@var	color	txt		"Text"				#CCC
+@var	color	htxt	"Light Text"		#EEE
+@var	color	clh		"Main Color Lighter"#E79
+@var	color	cl		"Main Color"		#C57
+@var	color	cld		"Main Color Darker"	#A34
+@var	select	EICC	"General Image filter"{
+	"Dim":"brightness(0.8)",
+	"Recommended Inversion":"invert(0.86) hue-rotate(180deg)",
+	"Hue-corrected Inversion":"invert(1) hue-rotate(180deg)",
+	"Inversion":"invert(1)",
+	"Debug":"invert(1) hue-rotate(180deg) saturate(100)",
+	"Off":"none"}
+@var	text	LPIF	"Landing Page Image Filter" "brightness(0.6) contrast(1.25) saturate(1.25)"
+==/UserStyle== */
+
+@-moz-document domain("bourgy.net"){
+	/*Webkit based browsers*/
+	::-webkit-scrollbar,
+	::-webkit-scrollbar-track-piece{
+		background-color:/*[[bg1]]*/ !important;}
+	::-webkit-scrollbar-corner,
+	::-webkit-scrollbar-thumb{
+		background-color:/*[[bg3]]*/ !important;
+		border-radius:0.4em;}
+	/*Firefox*/
+	:root{
+		scrollbar-width:thin;
+		scrollbar-color:/*[[bg3]]*/ /*[[bg1]]*/;}
+}
+@-moz-document url-prefix("http://bourgy.net"), url-prefix("https://bourgy.net"){
+	body{
+		background-color:/*[[bg0]]*/;
+		color:/*[[txt]]*/;}
+	#Yves\ Bourgelas,/*bruh an id with space*/
+	img[src="images/b_contact.jpg"],
+	img[name="Supercrash"],
+	img[name="The 3 Little Princesses"],
+	img[name="DJ Bourg"],
+	img[src="images/b_socials.jpg"]{
+		filter:/*[[LPIF]]*/;}
+	#photo{
+		filter:/*[[EICC]]*/;}
+	a:link{
+		color:/*[[cl]]*/;}
+	a:link:hover{
+		color:/*[[clh]]*/;}
+}
+@-moz-document regexp("https?\\:\\/\\/t3lp\\.bourgy\\.net\\/en\\/.*"){
+	body.custom-background{
+		background-color:/*[[bg0]]*/;
+		color:/*[[txt]]*/ !important;}
+	h1, h2, h3, h4, h5, h6, a:link{
+		color:/*[[cl]]*/;}
+	a:visited{
+		color:/*[[cld]]*/;}
+	#blogheader{
+		border-color:/*[[brd]]*/;}
+	/*main content*/
+	#comic{
+		filter:/*[[EICC]]*/;
+		/*no idea why I have to specify this, possibly a bug with the firefox renderer I use*/
+		position:relative;
+		z-index:-1;}
+	/*menu*/
+	.menu ul li ul li a{
+		background-color:/*[[bg0]]*/ !important;
+		color:/*[[cl]]*/ !important;}
+	.menu ul li a:hover,
+	.menu ul li a.selected{
+		background-color:/*[[bg0]]*/ !important;}
+	#menubar-wrapper a{
+		color:/*[[cl]]*/;}
+	#menubar-wrapper a:hover{
+		color:/*[[htxt]]*/ !important;}
+	/*various image corrections*/
+	#header,
+	.navi{
+		filter:invert(1) hue-rotate(180deg) brightness(0.8);}
+	.comment-avatar,
+	.archivecomicframe{
+		filter:/*[[EICC]]*/;}
+	/*a whole lot of shit I'm not gonna sort because what the hell
+	  input stuff I guess though*/
+	#comment:focus,
+	#comment:hover,
+	#author:hover,
+	#email:hover,
+	#url:hover,
+	#author:focus,
+	#email:focus,
+	#url:focus,
+	.comicpress_control_panel_widget #sname:focus,
+	.comicpress_control_panel_widget #sname:hover,
+	.comicpress_control_panel_widget #spassword:focus,
+	.comicpress_control_panel_widget #spassword:hover,
+	.s-search:focus{
+		background-color:/*[[bg0]]*/;}
+	#comment,
+	#author,
+	#email,
+	#url,
+	.s-search,
+	.comicpress_control_panel_widget input{
+		background-color:/*[[bg2]]*/;
+		border-color:/*[[brd]]*/;
+		color:/*[[txt]]*/;}
+	#submit,
+	.searchform button,
+	#comic button,
+	.comicpress_control_panel_widget .button-primary{
+		background:linear-gradient(to bottom,/*[[bg3]]*/ 0%,/*[[bg2]]*/ 50%,/*[[bg1]]*/ 100%);
+		border:solid 1px /*[[bg3]]*/;
+		cursor:pointer;}
+	#submit:hover,
+	.searchform button:hover{
+		color:/*[[htxt]]*/;}
+	#submit,
+	.searchform button,
+	#comic button,
+	.comicpress_control_panel_widget .button-primary{
+		color:/*[[txt]]*/;}
+}
+@-moz-document regexp("https?\\:\\/\\/t3lp\\.bourgy\\.net\\/fr\\/.*"){
+	body{
+		background-color:/*[[bg0]]*/;
+		color:/*[[txt]]*/;}
+	h1,h2,h3,h4{
+		color:/*[[cl]]*/;}
+	a:link{
+		color:/*[[cl]]*/;}
+	a:link:hover{
+		color:/*[[clh]]*/;}
+	a:visited{
+		color:/*[[cld]]*/;}
+	a:visited:hover{
+		color:/*[[cl]]*/;}
+	img[src*="https://t3lp.bourgy.net/fr/images/p."]{
+		filter:/*[[EICC]]*/;}
+}
+/*supercrash.net is a hellhole to style and technically not even on bourgy.net so fuck it*/
+/*dj.bourgy.net is already dark*/
