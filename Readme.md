@@ -15,6 +15,8 @@ Those will always be maintained with a pretty high standard because I'm using th
 Then, there are the mid-priority ones:
 
 - [Eutropia](https://raw.githubusercontent.com/RiedleroD/userstyles-riedler/master/eutropia.user.css) (dolphin-emu.org)
+- [Spacious Mastodon](https://github.com/RiedleroD/userstyles-riedler/raw/spacious-mastodon/spacious_mastodon.user.css) (fixes some spacing in mastodon)
+- [Elearning slot remover](https://github.com/RiedleroD/userstyles-riedler/raw/elearning-slot-remover/elearning_slot_remover.js) (removes expired time slots in my school's moodle server)
 - [DarkArch](https://raw.githubusercontent.com/RiedleroD/userstyles-riedler/master/darkarch.user.css) (archlinux.org except for gitlab and the wiki)
 - [Telegram Käfer](https://raw.githubusercontent.com/RiedleroD/userstyles-riedler/master/telegram_käfer.user.css) (telegram bug tracker)
 
@@ -33,6 +35,7 @@ Lastly, the broken styles:
 
 - [Black Tea](https://raw.githubusercontent.com/RiedleroD/userstyles-riedler/master/Black%20tea.user.css) (Gitea; I don't use it anymore and it isn't finished)
 - [Darkowa](https://raw.githubusercontent.com/RiedleroD/userstyles-riedler/master/darkowa.user.css) (Outlook web-app; The website is really complicated to style, so this style is very much shit. I pretty much just gave up.)
+- [DudenAwesome](https://github.com/RiedleroD/userstyles-riedler/raw/DudenAwesome/dudenawesome.user.css) (also a really complicated website, and not important enough for me personally)
 
 ### How to install
 
