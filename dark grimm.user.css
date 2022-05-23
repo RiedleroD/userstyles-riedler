@@ -1,0 +1,106 @@
+/* ==UserStyle==
+@name           dark grimm
+@namespace      https://www.grimmstories.com/
+@version        1.0.0
+@description    Dark mode for grimmstories.com
+@author         Riedler
+@preprocessor	uso
+@var	color	bg0		"Background 0"		#000
+@var	color	bg1		"Background 1"		#151515
+@var	color	bg2		"Background 2"		#222
+@var	color	txt		"Text"				#BBB
+@var	color	htxt	"Hovered Text"		#DDD
+@var	color	btn		"Buttons"			rgb(55, 100, 153)
+@var	color	hbtn	"Hovered buttons"	rgb(82,148,226)
+@var	color	brd		"Borders"			#888
+@var	color	inf		"Information Boxes"	rgba(55, 100, 153, .25)
+@var	color	lnk		"Links"				rgb(55, 100, 153)
+@var	color	hlnk	"Hovered links"		rgb(82,148,226)
+@var	color	pl0		"Game: Perfect"		rgb(55, 100, 153)
+@var	color	pl1		"Game: Playable"	#2A2
+@var	color	pl2		"Game: Starts"		#CA0
+@var	color	pl3		"Game: Broken"		#B33
+@var	color	lgt		"Highlight"			#FFFFFF15
+==/UserStyle== */
+
+@-moz-document domain("grimmstories.com") {
+	:root,
+	body{
+		background:/*[[bg0]]*/;}
+	body>.inbody{
+		background:/*[[bg1]]*/;}
+	:root,body,.inbody,
+	p,span,pre,a,
+	h1,h2,h3,h4,h5,h6,
+	h1.logo>a[href],
+	h2.headline,
+	.language>a[href],
+	h1.title>a[href],
+	.title,
+	div.index_tekst,
+	.headerunder,
+	.headerunder>a[href],
+	.menu>a[href],
+	#ad,
+	.allmenu,
+	.footertext,.footertext a[href]{
+		color:/*[[txt]]*/;}
+	span.kopjes{
+		color:/*[[txt]]*/ !important;}
+	a[href],
+	.list_url>a[href]{
+		color:/*[[lnk]]*/;}
+	a[href]:hover,
+	a[href]:focus{
+		color:/*[[hlnk]]*/;}
+	a{
+		background:none !important;
+		background-color:transparent !important;}
+	.logo,
+	h2.headline,
+	.result,
+	.headerunder{
+		background:/*[[bg1]]*/;}
+	.allmenu>ul>li,
+	.allmenu>.menu,
+	.ondertitel{
+		background:transparent;}
+	.language,
+	.allmenu,
+	.footer{
+		background:/*[[bg2]]*/;}
+	.language[style="background: #FF9900;"]{
+		background:/*[[btn]]*/ !important;}
+	.start_image,
+	.inbody,
+	.headerlanguage,
+	.header,
+	.list_titles>a[href],
+	.list_titles_two>a[href]{
+		border-color:/*[[brd]]*/;}
+	.list_image_small{
+		border:none;}
+	.list_image_small,
+	.list_titles>a[href],
+	.allmenu,
+	.list_titles_two>a[href]{
+		border-radius:0.5rem;
+		overflow:hidden;}
+	hr{
+		color:/*[[brd]]*/;
+		background-color:/*[[brd]]*/;}
+	.footerimage{
+		filter:invert(0.6);}
+	#cse-search-box{
+		filter:invert(0.8) hue-rotate(180deg);}
+	.indexlinks>.it td.itb{
+		background:/*[[bg2]]*/;}
+	.list_titles>a>span:not(.list_url){
+		color:/*[[txt]]*/ !important;}
+	.list_url{
+		color:/*[[lnk]]*/ !important;}
+	.list_url:hover{
+		color:/*[[hlnk]]*/ !important;}
+	.main>div[style="color: #993300;"]{
+		color:/*[[txt]]*/ !important;}
+}
