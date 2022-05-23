@@ -1,1330 +1,3228 @@
 /* ==UserStyle==
-@name           Darklearning
-@namespace      https://github.com/RiedleroD/userstyles-riedler
-@version        1.2.0
-@description    Darker version of Elearning
-@author         Riedler
-@preprocessor uso
-@var	select	PBCS	"ProgressBarCell Shape" {
-	"Pronounced":"0.5em 0.5em 1em 1em",
-	"Pronounced Reversed":"1em 1em 0.5em 0.5em",
-	"Round":"1em",
-	"Rounded":"0.5em",
-	"Soft Edges":"0.25em",
-	"Rectangle":"0"}
-@var	select	NBCS	"Course Navbar Cell Shape" {
-	"Pronounced":"0.5em 0.5em 1.5em 1.5em",
-	"Pronounced Reversed":"1.5em 1.5em 0.5em 0.5em",
-	"Round":"1.5em",
-	"Rounded":"0.75em",
-	"Soft Edges":"0.25em",
-	"Rectangle":"0"}
-@var	select	NBS		"Course Navbar Shape" {
-	"Pronounced":"0.5em 0.5em 1.5em 1.5em",
-	"Pronounced Reversed":"1.5em 1.5em 0.5em 0.5em",
-	"Round":"1.5em",
-	"Rounded":"0.75em",
-	"Soft Edges":"0.25em",
-	"Rectangle":"0"}
-@var	select	EICC	"Embedded Image Color Correction" {
+@name			Darklearning
+@namespace		https://github.com/RiedleroD/userstyles-riedler
+@version		1.2.13
+@description	Darker version of Elearning
+@author			Riedler
+@license		MPL-2.0
+@homepageURL	https://github.com/RiedleroD/userstyles-riedler
+@updateURL		https://github.com/RiedleroD/userstyles-riedler/raw/master/Darklearning.user.css
+@preprocessor	stylus
+@var	select	sidebar	"Navigation Sidebar"{
+	"Grow on hover":"Goh",
+	"Slide on hover":"Soh",
+	"Static":"S"}
+@var	select CPB		"Card Progressbar"{
+	"Default":"D",
+	"Compact":"C",
+	"Borderless":"BL",
+	"Compact Borderless":"CBL",
+	"Round":"R",
+	"Round Borderless":"RBL",
+	"Round Compact":"RC",
+	"Round Compact Borderless":"RCBL"
+}
+@var	select	LSI		"Link Selection Indicator"{
+	"Clamps":"C",
+	"Braces":"B",
+	"Underbelly":"U",
+	"Flat":"F",
+	"Round":"R",
+	"Encased":"E"
+}
+@var	select	PBCS	"ProgressBarCell Shape"{
+	"Pronounced":"pron",
+	"Teardrop":"tear",
+	"Round":"rnd",
+	"Rounded":"rndd",
+	"Soft Edges":"sft",
+	"Rectangle":"rect",
+	"Modifier debug":"debug_mod"
+}
+@var	select	PBCSm "ProgressBarCell Modifier"{
+	"Normal":"normal",
+	"Horizontal flip":"hflip",
+	"Vertical flip":"vflip",
+	"Flip right side":"rflip",
+	"Flip left side":"lflip",
+	"Flip top side":"tflip",
+	"Flip bottom side":"bflip",
+	"Rotate 90°":"r90",
+	"Rotate 180°":"r180",
+	"Rotate 270°":"r270"
+}
+@var	select	NBCS	"Course Navbar Cell Shape"{
+	"Pronounced":"pron",
+	"Teardrop":"tear",
+	"Round":"rnd",
+	"Rounded":"rndd",
+	"Soft Edges":"sft",
+	"Rectangle":"rect",
+	"Modifier debug":"debug_mod"
+}
+@var	select	NBCSm "Course Navbar Cell Modifier"{
+	"Normal":"normal",
+	"Horizontal flip":"hflip",
+	"Vertical flip":"vflip",
+	"Flip right side":"rflip",
+	"Flip left side":"lflip",
+	"Flip top side":"tflip",
+	"Flip bottom side":"bflip",
+	"Rotate 90°":"r90",
+	"Rotate 180°":"r180",
+	"Rotate 270°":"r270"
+}
+@var	select	NBS		"Course Navbar Shape"{
+	"Pronounced":"pron",
+	"Teardrop":"tear",
+	"Round":"rnd",
+	"Rounded":"rndd",
+	"Soft Edges":"sft",
+	"Rectangle":"rect",
+	"Modifier debug":"debug_mod"
+}
+@var	select	NBSm "Course Navbar Modifier"{
+	"Normal":"normal",
+	"Horizontal flip":"hflip",
+	"Vertical flip":"vflip",
+	"Flip right side":"rflip",
+	"Flip left side":"lflip",
+	"Flip top side":"tflip",
+	"Flip bottom side":"bflip",
+	"Rotate 90°":"r90",
+	"Rotate 180°":"r180",
+	"Rotate 270°":"r270"
+}
+@var	checkbox	anon	"Anonymity (for screenshots)" 0
+@var	select	EICC	"Embedded Image Color Correction"{
 	"Recommended":"invert(0.86) hue-rotate(180deg)",
 	"Full":"invert(1) hue-rotate(180deg)",
 	"Dim":"brightness(0.8)",
 	"Debug":"invert(1) hue-rotate(180deg) saturate(100)",
 	"Off":"none"}
-@var	select	anon	"Anonymity (for screenshots)" {
-	"Normal":"",
-	"Anonymous":".usertext{display:none;}.userbutton::before{content:\"Anonymous User\";margin-right:0.25rem;color:\/*[[txt]]*\/}"}
 @var	text	ntip	"Navigation Tree initial padding"	"0"
 @var	text	ntmp	"Navigation Tree max padding"		"0.5rem"
-@var	color	bg0		"Background 0"				#000
-@var	color	bg1		"Background 1"				#151515
-@var	color	bg2		"Background 2"				#222
-@var	color	bg2_5	"Background 2.5"			#252525
-@var	color	bg3		"Background 3"				#333
-@var	color	bg3_5	"Background 3.5"			#383838
-@var	color	bg4		"Background 4"				#444
-@var	color	bg5		"Background 5"				#555
-@var	color	bg6		"Background 6"				#666
-@var	color	slc		"Marked Text"				#000
-@var	color	brd		"Border"					#888
-@var	color	hbrd	"Bright Border"				#AAA
-@var	color	dtxt	"Dark Text"					#151515
-@var	color	txt		"Text"						#AAA
-@var	color	htxt	"Bright Text"				#CCC
-@var	color	hhtxt	"Very bright text"			#FFF
-@var	color	mtxt	"codeblock Text"			#8AA
-@var	color	lnk		"Links"						#418BA4
-@var	color	hlnk	"Hovered Links"				#6AC
-@var	color	btn		"Blue Background"			#418BA4
-@var	color	hbtn	"Bright Blue Background"	#6AC
-@var	color	true	"Correct"					#262
-@var	color	fals	"Incorrect"					#922
-@var	color	idfk	"Maybe?"					#D81
-@var	color	cal0	"Calendar 0"				#533
-@var	color	cal1	"Calendar 1"				#535
-@var	color	cal2	"Calendar 2"				#553
-@var	color	cal3	"Calendar 3"				#555
-@var	color	cal4	"Calendar 4"				#353
-@var	color	pb		"Pale Blue"					#669
-@var	color	c0		"Codeblock 0"				#66A
-@var	color	c1		"Codeblock 1"				#3C3
-@var	color	c2		"Codeblock 2"				#CC3
-@var	color	c3		"Codeblock 3"				#C33
 ==/UserStyle== */
 
-@-moz-document domain("elearning.tgm.ac.at") {
-/*Animations*/
+//color variables
+bg0  = #000
+bg1	 = #151515
+bg2	 = #222
+bg2_5= #252525
+bg3	 = #333
+bg3_5= #383838
+bg4	 = #444
+bg5	 = #555
+bg6	 = #666
+slc	 = #000
+brd	 = #888
+hbrd = #AAA
+dtxt = #151515
+txt	 = #AAA
+htxt = #CCC
+hhtxt= #FFF
+mtxt = #8AA
+lnk	 = #418BA4
+hlnk = #6AC
+btn	 = #418BA4
+hbtn = #6AC
+tru	 = #262
+htru = #6C6
+fals = #922
+hfals= #E55
+idk  = #A50
+hidk = #FA0
+cal0 = #533
+cal1 = #535
+cal2 = #553
+cal3 = #555
+cal4 = #353
+pb	 = #669
+c0	 = #66A
+c1	 = #3C3
+c2	 = #CC3
+c3	 = #C33
+c4   = #C73
 
-/* Animation by Philip Damianik */
-@keyframes bg-pulse-grey {
-    0% {background-color: /*[[bg3]]*/;}
-    50% {background-color: /*[[bg4]]*/;}
-    100% {background-color: /*[[bg3]]*/;}
+irad = 0.3rem //input border radius
+crad = 0.5rem //card border radius
+
+
+svg_select_arrs="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' version='1'%3E%3Cpath fill='"+rgba(txt,0.999)+"' stroke='"+rgba(txt,0.999)+"' d='M8 1 2 6h12zM2 10H14L8 15Z'/%3E%3C/svg%3E"
+
+barshape_base(name){
+	if name=="pron"{
+		return (0.5em) (0.5em) (1em) (1em)
+	}else if name=="tear"{
+		return (0) (0.5em) (0.5em) (0.5em)
+	}else if name=="rnd"{
+		return (1em) (1em) (1em) (1em)
+	}else if name=="rndd"{
+		return (0.5em) (0.5em) (0.5em) (0.5em)
+	}else if name=="sft"{
+		return (0.25em) (0.25em) (0.25em) (0.25em)
+	}else if name=="rect"{
+		return (0) (0) (0) (0)
+	}else if name=="debug_mod"{
+		return (0) (0.5em) (1em) (0.25em)
+	}else{
+		return (100%) (100%) (100%) (100%)
+	}
 }
-
-/*text selections*/
-::-moz-selection{/*for firefox and derivatives*/
-	background:/*[[slc]]*/;}
-
-::selection{/*for most other browsers that support this*/
-	background:/*[[slc]]*/;}
-
-/*scrollbar*/
-::-webkit-scrollbar,::-webkit-scrollbar-track-piece{
-    background-color:/*[[bg1]]*/ !important;}
-::-webkit-scrollbar-corner,::-webkit-scrollbar-thumb{
-    background-color:/*[[bg3]]*/ !important;
-    border-radius:0.4em;}
-:root{/*Because Firefox doesn't have the ::-moz-scrollbar selectors*/
-    scrollbar-width:thin;
-    scrollbar-color:/*[[bg3]]*/ /*[[bg1]]*/;
-	--svg-select-arrs:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' version='1'%3E%3Cpath fill='%23aaa' stroke='%23aaa' d='M8 1 2 6h12zM2 10H14L8 15Z' class='s0'/%3E%3C/svg%3E");}
-
-/*navbar*/
-.navbar{
-    background-color:/*[[bg2]]*/;
-    border-bottom-right-radius:0.5em;
-    border-bottom-left-radius:0.5em;}
-.breadcrumb:not(:empty){
-	border-color:/*[[brd]]*/;
-	border-width:1px;}
-    /*dropdown-menu*/
-    .dropdown-menu{
-        background-color:/*[[bg3]]*/;}
-    .dropdown-divider{
-        border-top-color:/*[[brd]]*/;}
-    .dropdown-item,.dropdown-item:focus{
-        background-color:#0000;}
-    .dropdown-item:hover{
-        background-color:/*[[bg4]]*/;}
-    /*notification drawer*/
-	.popover-region-container{
-		background-color:/*[[bg3]]*/;
-		border-color:/*[[brd]]*/;
-		border-radius:0.25rem;}
-	.popover-region-toggle::after{
-		border-bottom-color:/*[[bg3]]*/;}
-	.popover-region-toggle::before{
-		border-bottom-color:/*[[brd]]*/;}
-	.popover-region-header-container{
-		border-bottom-color:/*[[brd]]*/;}
-	.content-item-container:hover{
-		background-color:/*[[bg4]]*/;
-		color:/*[[htxt]]*/;}
+barshape(name,mod){
+	shape=barshape_base(name)
+	if mod=="normal"{
+		return (shape[0]) (shape[1]) (shape[2]) (shape[3])
+	}else if mod=="hflip"{
+		return (shape[3]) (shape[2]) (shape[1]) (shape[0])
+	}else if mod=="vflip"{
+		return (shape[1]) (shape[0]) (shape[3]) (shape[2])
+	}else if mod=="rflip"{
+		return (shape[0]) (shape[2]) (shape[1]) (shape[3])
+	}else if mod=="lflip"{
+		return (shape[3]) (shape[1]) (shape[2]) (shape[0])
+	}else if mod=="tflip"{
+		return (shape[1]) (shape[0]) (shape[2]) (shape[3])
+	}else if mod=="bflip"{
+		return (shape[0]) (shape[1]) (shape[3]) (shape[2])
+	}else if mod=="r90"{
+		return (shape[3]) (shape[0]) (shape[1]) (shape[2])
+	}else if mod=="r180"{
+		return (shape[2]) (shape[3]) (shape[0]) (shape[1])
+	}else if mod=="r270"{
+		return (shape[1]) (shape[2]) (shape[3]) (shape[0])
+	}else{
+		return (100%) (0) (100%) (0)
+	}
+}
+lbarshape(name,mod){
+	shape=barshape(name,mod)
+	return (shape[0]) (0) (0) (shape[3])
+}
+rbarshape(name,mod){
+	shape=barshape(name,mod)
+	return (0) (shape[1]) (shape[2]) (0)
+}
+@-moz-document domain("elearning.tgm.ac.at"), regexp(".*userstyle_testing/darklearning.*"){
+	/*text selections*/
+	::-moz-selection{/*for firefox and derivatives*/
+		background:slc;
+		color:htxt;
+	}
+	::selection{/*for most other browsers that support this*/
+		background:slc;
+		color:htxt;
+	}
+	/*scrollbars*/
+	::-webkit-scrollbar{//scrollbars in chrome and safari
+		&,
+		&-track-piece{
+			background-color:bg1 !important;
+		}
+		&-corner,
+		&-thumb{
+			background-color:bg3 !important;
+			border-radius:0.4em;
+		}
+	}
+	:root{//actual standardized way, but ofc only Firefox implements it
+		scrollbar-width:thin;
+		scrollbar-color:bg3 bg1;}
+	.visual-scroll-x,//so far only found in the quiz, but there's no telling if it's used in other places as well, so-
+	.visual-scroll-y,{
+		scrollbar-color:bg3 bg1 !important;
+		&::-webkit-scrollbar-thumb{
+			border:solid 1px bg0;
+		}
+		&::-webkit-scrollbar-track{
+			border:none;
+		}
+	}
+	/*animations*/
+	@keyframes bg-pulse-grey{
+		0%{background-color:brd}
+		50%{background-color:hbrd}
+		80%{background-color:hhbrd}
+		100%{background-color:brd}
+	}
+	/*navbar*/
+	.navbar{
+		background-color:bg2;
+		border-bottom-right-radius:0.5em;
+		border-bottom-left-radius:0.5em;
+		border-bottom:solid 1px bg1;
+		box-shadow:none;
+	}
+	.breadcrumb:not(:empty){
+		border-color:brd;
+		border-width:1px;}
+	.navbar-light, 
+	.navbar-bootswatch,{
+		& .navbar-nav{
+			& .nav-link{
+				color:lnk;
+				&:hover,
+				&:focus{
+					color:hlnk;
+				}
+			}
+			& .active,
+			& .show{
+				&>.nav-link{color:hlnk}
+			}
+		}
+	}
+	/*dropdown-menu*/
+	.dropdown{
+		&-menu{
+			background-color:bg3;
+		}
+		&-divider{
+			border-top-color:brd;
+		}
+		&-item{
+			&,
+			&:focus{
+				background-color:#0000;
+				color:lnk;
+			}
+			&:hover{
+				background-color:bg4;
+				color:hlnk;
+			}
+		}
+		&-header{
+			color:txt;
+		}
+	}
+	/*notification drawer*/
+	.popover-region{
+		&-container{
+			background-color:bg3;
+			border-color:brd;
+			border-radius:irad;}
+		&-toggle{
+			&::after{
+				border-bottom-color:bg3;
+			}
+			&::before{
+				border-bottom-color:brd;
+			}
+		}
+		&-header-container{
+			border-bottom-color:brd;
+		}
+		&-footer-container{
+			background-color:bg3;
+			border-top-color:brd;
+			border-radius:0 0 irad irad;
+		}
+	}
 	.content-item-container{
-		border-bottom-color:/*[[brd]]*/;
-		color:/*[[txt]]*/;}
-	.content-item-container.unread{
-		background-color:/*[[bg4]]*/;}
-	.content-item-container.unread:hover{
-		background-color:/*[[bg5]]*/;}
-	.content-item-container .content-item-footer .timestamp{
-		color:/*[[txt]]*/;}
-	.popover-region-footer-container{
-		background-color:/*[[bg3]]*/;
-		border-top-color:/*[[brd]]*/;
-		border-radius:0 0 0.25rem 0.25rem;}
-/*message drawer*/
-.message-app{
-    background-color:/*[[bg2]]*/ !important;}
-.message-app .input-group>input,.input-group-text{
-    background-color:/*[[bg3]]*/ !important;
-    border-color:/*[[brd]]*/;
-    color:/*[[brd]]*/;}
-.message-app .form-control:focus{
-    color:/*[[txt]]*/;}
-.message-app .card{
-    background-color:/*[[bg2]]*/;}
-.message-app .border-bottom{
-    border-color:/*[[brd]]*/ !important;}
-.message-app .input-group .btn{
-    border-color:/*[[brd]]*/;}
-.message-app .card.expanded .list-group .list-group-item{
-    background-color:/*[[bg3]]*/;}
-.message-app>.header-container>.bg-white{
-    background-color:/*[[bg3]]*/ !important;}
-.message-app .message.send{
-    background-color:/*[[bg5]]*/ !important;}
-.message-app .message.received{
-    background-color:/*[[bg4]]*/ !important;}
-.message-app .message.received .tail{
-    border-bottom-color:/*[[bg4]]*/;}
-.message-app .message.send .tail{
-    border-bottom-color:/*[[bg5]]*/;}
-.message-app .list-group .list-group-item{
-    background:/*[[bg3]]*/;}
-.message-app .nav-pills{
-    border:solid /*[[brd]]*/ 1px;}
-.message-app .nav-pills>.nav-item>a:not(.active){
-    background-color:/*[[bg3]]*/;}
-.message-app .nav-pills>.nav-item>a.active{
-    background-color:/*[[bg4]]*/;}
-.message-app>.footer-container>.bg-white{
-    background-color:/*[[bg2]]*/ !important;
-    border-color:/*[[brd]]*/ !important;}
-#conversation-actions-menu-button{
-    color:/*[[brd]]*/;}
-#conversation-actions-menu-button:hover{
-    background-color:/*[[bg5]]*/;}
-#conversation-actions-menu-button:focus{
-    background-color:/*[[bg6]]*/;}
-.message-app .no-gutters{
-    outline:solid 1px /*[[bg3]]*/;}
-.message-app .content-message-container>div[data-region="self-conversation-message-container"]{
-    background-color:/*[[bg4]]*/ !important;}
-.message-app .header-container>.bg-white{
-    background-color:/*[[bg3]]*/ !important;
-    border-color:/*[[bg3]]*/ !important;}
-.message-app>div>div>div{
-    outline:solid 1px /*[[bg3]]*/;}
-.message-app .col-8>.footer-container>.bg-white{
-    background-color:/*[[bg3]]*/ !important;
-    border:none !important;}
-.message-app button.btn-icon.btn-link:hover,
-.message-app button.btn-icon.btn-link:focus{
-    background-color:/*[[bg5]]*/ !important;}
-.message-app textarea.form-control{
-    background-color:/*[[bg4]]*/ !important;
-    border:none;}
-.message-app .body-container div[data-region="settings"]{
-    background-color:/*[[bg2]]*/;}
-.custom-control-label::before{
-    background-color:/*[[brd]]*/;}
-.custom-control-label{
-	cursor:pointer;}
-.custom-control-input:checked~.custom-control-label::before{
-    background-color:/*[[btn]]*/ !important;
-	border-color:/*[[btn]]*/ !important;
-	color:/*[[htxt]]*/;
-	cursor:pointer;}
-.custom-control-input:not(:checked)~.custom-control-label::before{
-    background-color:/*[[bg3]]*/ !important;
-	border-color:/*[[brd]]*/;
-	cursor:pointer;}
-.custom-switch .custom-control-input:checked~.custom-control-label::after{
-	background-color:/*[[htxt]]*/;
-	cursor:pointer;}
-.custom-switch .custom-control-input:not(:checked)~.custom-control-label::after{
-	background-color:/*[[brd]]*/;
-	cursor:pointer;}
-.custom-radio .custom-control-input:checked ~ .custom-control-label::after{
-	background-image:radial-gradient(ellipse at center,/*[[htxt]]*/ 0%,/*[[htxt]]*/ 75%,#0000 75%);
-	border-radius:100%;}
-.switch input+label::before{
-    background-color:/*[[brd]]*/;}
-.switch input:checked + label::before{
-    background-color:/*[[btn]]*/;}
-.message-app .body-container>div.h-100.bg-white{
-    background-color:/*[[bg2]]*/ !important;}
-.message-app [data-region="contacts-container"]{
-    background-color:/*[[bg3]]*/;}
-.message-app [data-region="non-contacts-container"]{
-    background-color:/*[[bg3]]*/;
-    border-top-color:/*[[brd]]*/ !important;}
-.message-app div[data-region="all-contacts-container"] .text-right{
-    background-color:/*[[bg3]]*/;
-    border-top: solid 1px /*[[brd]]*/;}
-.message-app div[data-region="all-contacts-container"] .text-right:hover{
-    background-color:/*[[bg5]]*/;}
-.message-app div[data-region="content-placeholder"] div.px-2.pb-2.pt-0.h-100{
-    background-color:/*[[bg3]]*/ !important;}
-.message-app div[data-region="content-placeholder"] div.px-2.pb-2.pt-0.h-100>.mt-4>.mb-4>.mx-auto{
-    background-color:/*[[bg5]]*/ !important;
-    border-radius:0.25rem;}
-.message-app div[data-region="content-placeholder"] div.px-2.pb-2.pt-0.h-100>.mt-4>.d-flex.flex-column.p-2.rounded.mb-2{
-    background-color:/*[[bg5]]*/ !important;}
-.message-app div[data-region="confirm-dialogue"]{
-	background-color:/*[[bg3]]*/ !important;
-	border:solid 1px /*[[brd]]*/;
-	border-radius:0.25rem;}
-.message-app div[data-region="confirm-dialogue"] .btn-primary>span{
-	color:/*[[htxt]]*/ !important;}
-.message-app div[data-region="confirm-dialogue"] .btn-primary:hover>span{
-	color:/*[[hhtxt]]*/ !important;}
-/*body*/
-:root,body,#page{
-    background-color:/*[[bg1]]*/ !important;}
-#region-main{
-    border-radius:0.5em;
-    overflow:visible;
-	margin-bottom:1.5em;}
-#page-header>div>div.card,#region-main{
-    background-color:/*[[bg2]]*/;}
-/*footer*/
-#page-footer{
-    background-color:/*[[bg2]]*/ !important;
-    border-top-left-radius:0.5em;
-    border-top-right-radius:0.5em;}
-/*sideblocks*/
-.block.card{
-    background-color:/*[[bg2]]*/;}
-.block-timeline .paged-content-page-container .list-group-flush>.list-group-item{
-    background-color:/*[[bg2]]*/;}
-.block_navigation .block_tree .tree_item.branch,
-.block_settings .block_tree .tree_item.branch,
-.block_navigation .block_tree ul,
-.block_settings .block_tree ul,
-.block_navigation .block_tree p.hasicon,
-.block_settings .block_tree p.hasicon{
-    padding-left:0;
-	margin-left:0;}
-.block_navigation .block_tree .tree_item{
-	max-width:100%;
-	width:max-content;
-	position:relative;
-	background-color:/*[[bg2]]*/;
-	z-index:2;
-	border-radius:0 0.25em 0.25em 0;
-	transition:0.2s max-width;}
-.block_navigation:hover .block_tree .tree_item{
-	white-space:nowrap;
-	overflow:hidden;
-	max-width:25vw;
-	padding-right:0.25em;}
-.block_navigation .block_tree .contains_branch>ul{
-	transition: padding-left 0.2s;
-	padding-left:/*[[ntip]]*/}
-.block_navigation:hover .block_tree .contains_branch>ul{
-	padding-left:/*[[ntmp]]*/;}
-/*text*/
-span,p,pre,
-.text-center,.text-right,
-.logininfo,.generaltable,
-h1,h2,h3,h4,h5,h6,
-body,:root,
-ul,ol{
-    color:/*[[txt]]*/ !important;}
-.generaltable tbody tr:hover{
-	color:/*[[htxt]]*/ !important;}
-textarea.form-control{
-    background-color:/*[[bg5]]*/ !important;
-    border:solid /*[[brd]]*/ 1px;
-    border-radius:0.25em;}
-a,a>span{
-    color:/*[[lnk]]*/ !important;}
-a:hover,a>span:hover{
-    color:/*[[hlnk]]*/ !important;}
-/*Text with inline background coloring*/
-span[style*="background-color: rgb(125, 159, 211);"]{
-	background-color:/*[[btn]]*/ !important;
-	color:/*[[dtxt]]*/ !important;}
-span[style*="background-color: rgb(255, 207, 53);"]{
-	color:#000 !important;}
-span[style*="background-color: rgb(152, 202, 62);"]{
-	color:#000 !important;}
-span[style*="background-color: white;"]:not([class]){
-	background-color:#0000 !important;}
-span[style*="background-color: rgb(239, 69, 64);"]{
-	background-color:/*[[fals]]*/ !important;}
-/*icons*/
-.logo>img{
-    filter:invert(1) hue-rotate(180deg);}
-.fa-bell{
-    color:/*[[lnk]]*/;}
-.popover-region:hover>.nav-link>.fa-bell,.fa-bell:hover{
-    color:/*[[hlnk]]*/;}
-.empty-placeholder-image-lg{
-    filter:invert(1);}
-.dndupload-arrow{
-    filter:invert(0.9) hue-rotate(180deg);}
-.fa-question-circle{
-    color:/*[[lnk]]*/ !important;}
-.fa-question-circle:hover,.fa-question-circle:active{
-    color:/*[[hlnk]]*/ !important;}
-.block-timeline .tab-content img{
-    filter:none;}
-/*Buttons*/
-.close:hover,
-.moodle-dialogue-base .closebutton:hover,
-.close:focus,
-.moodle-dialogue-base .closebutton:focus{
-    color:/*[[txt]]*/;
-    opacity:1;}
-.moodle-dialogue-base .moodle-dialogue-wrap{
-	border:solid 1px /*[[brd]]*/;
-	border-radius:0.25em;}
-.btn{
-    border-radius:0.25em;}
-.btn-outline-secondary{
-    border-color:/*[[brd]]*/ !important;}
-.btn-outline-secondary:hover{
-    background-color:/*[[bg3]]*/ !important;}
-.btn-outline-secondary:focus{
-    background-color:/*[[bg4]]*/ !important;}
-.btn-outline-secondary:not(:disabled):not(.disabled):active,
-.btn-outline-secondary:not(:disabled):not(.disabled).active,
-.btn-outline-secondary.dropdown-toggle:focus{
-    background-color:/*[[bg4]]*/;}
-.pagination>.page-item>a{
-    background-color:/*[[bg3]]*/;
-    border-color:/*[[bg2]]*/;}
-.pagination>.page-item.disabled>a{
-    filter:grayscale(1);
-	background-color:/*[[bg4]]*/;
-    border-color:/*[[bg2]]*/;}
-.pagination>.page-item:not(.active)>a:hover{
-    background-color:/*[[bg5]]*/;}
-.pagination>.page-item.active>a:hover{
-    background-color:/*[[hbtn]]*/;}
-.pagination>.page-item.active>a{
-	color:/*[[htxt]]*/ !important;}
-.pagination>.page-item.active>a:hover{
-	color:/*[[hhtxt]]*/ !important;}
-.btn-secondary{
-    background-color:#FFF2;
-    color:/*[[txt]]*/;
-    border:none;}
-.btn-secondary:hover{
-    background-color:#FFF4;
-    color:/*[[htxt]]*/;
-    border-color:/*[[brd]]*/;}
-.btn-secondary:focus,
-.btn-secondary.focus{
-	box-shadow:inset 0 0.1em 0 0 /*[[brd]]*/;
-	outline:solid 1px /*[[brd]]*/;
-	outline-offset:1px;}
-.btn-secondary.disabled,
-.btn-secondary:disabled{
-	background-color:/*[[bg5]]*/;
-	color:/*[[txt]]*/;}
-.btn-primary{
-    color:/*[[htxt]]*/ !important;
-    background-color:/*[[btn]]*/;}
-.btn-primary:hover{
-	color:/*[[hhtxt]]*/ !important;
-    background-color:/*[[hbtn]]*/;}
-.btn-primary:focus,
-.btn-primary.focus{
-	outline:none;}
-.preference-state-status-container>span.on-text,
-.preference-state-status-container>span.off-text{
-    color:/*[[bg1]]*/ !important;}
-.hover-tooltip{
-    background-color:/*[[bg3]]*/ !important;
-    border: solid 1px /*[[brd]]*/ !important;}
-.hover-tooltip::after{
-    border-top-color:/*[[bg3]]*/ !important;
-    filter:drop-shadow(0 1px 0 /*[[brd]]*/);}
-#goto-top-link>a.btn{
-	background-color:/*[[bg3]]*/;
-	border:none;}
-/*Dropdown menus*/
-.dropdown-item:active,.dropdown-item.active{
-    background-color:/*[[bg4]]*/;}
-/*These new tiles, ykwim*/
-.tiles>.tile{
-	background-color:/*[[bg2]]*/ !important;}
-.tiles>.section{
-	background-color:/*[[bg2]]*/ !important;}
-.format-tiles #header-overlay,
-.format-tiles #window-overlay{
-	opacity:0;}
-.format-tiles #page .course-content ul li.section.main{
-	background-color:/*[[bg2]]*/;}
-.format-tiles .course-content .section .activity:hover{
-	background-color:/*[[bg3]]*/;}
-.format-tiles li.activity.subtile{
-	background-color:/*[[bg2]]*/;
-	border-color:/*[[brd]]*/;}
-.format-tiles li.activity.subtile .activitytitle a{
-	background:linear-gradient(to bottom,/*[[bg4]]*/ 85%,#0000);}
-.format-tiles #buttonhidesec0{
-	background-color:#0000;}
-.format-tiles #buttonhidesec0:hover{
-	background-color:/*[[bg4]]*/;
-	border-radius:0.2em;}
-.format-tiles .sectiontitle::after,
-.format-tiles .tag-info{
-	background-color:/*[[true]]*/;}
-.format-tiles .course-content ul.tiles .tile,
-.format-tiles .course-content ul.tiles .tile_bar{
-	border-top-color:/*[[true]]*/;}
-.format-tiles .course-content ul.tiles .tile.phototile .photo-tile-text h3{
-	color:/*[[dtxt]]*/ !important;
-	font-weight:bold;
-	font-size:1.25rem;}
-.format-tiles .course-content ul.tiles .tile.phototile{
-	background-color:#444 !important;/*darkening the background image*/
-	background-blend-mode:overlay;}
-.format-tiles .course-content li.activity.label h1,
-.format-tiles .course-content .section li.activity.label h2,
-.format-tiles .course-content li.activity.label h3,
-.format-tiles .course-content li.activity.label h4,
-.format-tiles .editor_atto_content_wrap h1,
-.format-tiles .editor_atto_content_wrap h2,
-.format-tiles .editor_atto_content_wrap h3,
-.format-tiles .editor_atto_content_wrap h4{
-	border-left-color:/*[[true]]*/;}
-/*php-generated code block with colors without classes*/
-div[style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"]{
-	background-color:/*[[bg0]]*/ !important;}
-div[style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"] span[style*="color: #000080"]{
-	color:/*[[c0]]*/ !important;}
-div[style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"] span[style*="color: #008800"]{
-	color:/*[[c1]]*/ !important;}
-div[style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"] span[style*="color: #0000FF"]{
-	color:/*[[c2]]*/ !important;}
-div[style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"] span[style*="color: #FF0000"]{
-	color:/*[[c3]]*/ !important;}
-/*tooltips: popups that pop up when you hover over stuff with set tooltips*/
-.tooltip>*{
-	background-color:/*[[bg3]]*/ !important;
-	color:/*[[txt]]*/ !important;}
-.popover{
-	background-color:/*[[bg1]]*/;
-	color:/*[[txt]]*/;
-	border:none;
-	border-radius:0.5em;
-	box-shadow:0 0 0.1em 0 /*[[brd]]*/;}
-	/*TODO: this is janky, a better solution is desireable.*/
-.bs-popover-top>.arrow::after,
-.bs-popover-auto[x-placement^="top"]>.arrow::after,
-.bs-popover-bottom>.arrow::after,
-.bs-popover-auto[x-placement^="bottom"]>.arrow::after{
-	border-top-color:/*[[bg1]]*/;
-	border-bottom-color:/*[[bg1]]*/;}
-.bs-popover-top>.arrow::before,
-.bs-popover-auto[x-placement^="top"]>.arrow::before,
-.bs-popover-bottom>.arrow::before,
-.bs-popover-auto[x-placement^="bottom"]>.arrow::before{
-	border-top-color:/*[[brd]]*/;
-	border-bottom-color:/*[[brd]]*/;
-	opacity:0.8;}
-.bs-popover-bottom .popover-header::before,
-.bs-popover-auto[x-placement^="bottom"] .popover-header::before{
-	border-bottom:solid 0.1em /*[[bg2]]*/;}
-.popover-header{
-	background-color:/*[[bg2]]*/;
-	border-bottom-color:#0000;
-	border-radius:0.5em 0.5em 0 0;
-	color:/*[[htxt]]*/ !important;}
-.popover-body{
-	color:/*[[txt]]*/;
-	border-radius:0.5em;}
-/*Misc*/
-/*[[anon]]*/
-.card{
-    background-color:/*[[bg3]]*/;}
-.nav-tabs,
-.nav-pills{
-	background-color:/*[[bg3]]*/;
-	border-radius:/*[[NBS]]*/;
-	border-bottom:none;}
-.nav-tabs .nav-link.active:not(:disabled):not(.disabled):active,
-.nav-pills .nav-link.active:not(:disabled):not(.disabled):active,
-.nav-tabs .nav-link.active:not(:disabled):not(.disabled).active,
-.nav-pills .nav-link.active:not(:disabled):not(.disabled).active,
-.show>.nav-tabs .nav-link.active.dropdown-toggle,
-.show>.nav-pills .nav-link.active.dropdown-toggle{
-	background-color:/*[[bg4]]*/;
-	border-radius:/*[[NBCS]]*/;}
-.nav-tabs .nav-link,
-.nav-pills .nav-link{
-	background-color:#0000;
-	border:none;}
-.nav-tabs .nav-link:hover,
-.nav-tabs .nav-link:focus{
-	border-color:/*[[hbrd]]*/;}
-.wiki-toc{
-	background-color:/*[[bg3]]*/;
-	border-color:/*[[brd]]*/;
-	border-radius:0.4em;}
-.form-autocomplete-suggestions{
-	background-color:/*[[bg3]]*/;
-	border-color:/*[[brd]]*/;
-	border-width:1px;}
-.mform fieldset{
-	border-bottom-color:/*[[brd]]*/}
-.grade-navigation>.nav>.nav-item{
-    background-color:/*[[bg2]]*/;}
-.grade-navigation>.nav>.nav-item>.nav-link{
-    border:none;
-    border-bottom:solid 1px /*[[brd]]*/;}
-.grade-navigation>.nav>.nav-item>.nav-link.active{
-    background-color:/*[[bg3]]*/;
-    border-bottom:solid 1px /*[[txt]]*/;}
-.nav-tabs{
-    border-bottom-color:/*[[brd]]*/;}
-.matchtext{
-    background-color:/*[[hbtn]]*/ !important;
-    color:/*[[bg3]]*/ !important;}
-.card{
-    border-radius:0.5em;}
-.card-img{
-    border-radius:0.5em 0.5em 0 0;
-    overflow:hidden;}
-.card-body{
-    border-radius:0 0 0.5em 0.5em;}
-.alert{
-    border-radius:0.5em;}
-.alert-danger,
-#page-mod-quiz-attempt #connection-error{
-    background-color:/*[[fals]]*/;
-    color:/*[[txt]]*/;}
-.alert-info{
-    background-color:/*[[pb]]*/;
-    color:/*[[bg1]]*/ !important;}
-.alert-info>a{
-	filter:brightness(1.3);}
-.alert-success,
-#page-mod-quiz-attempt #connection-ok{
-	background-color:/*[[true]]*/;
-	color:/*[[txt]]*/;}
-.moodle-dialogue>.moodle-dialogue-content{
-    background-color:/*[[bg3]]*/ !important;}
-.close, .moodle-dialogue-base .closebutton{
-    text-shadow:none;
-    opacity:1;
-    color:/*[[txt]]*/;}
-.yui3-button{
-    background-image:none;}
-.modal-header,
-.moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd,
-.path-mod-assign [data-region="grade-panel"] .popout>.col-md-3{
-    border-color:/*[[brd]]*/;}
-.format-tiles ul.tiles .headerabovetiles button.selected,
-.headerabovetiles button:active,
-.headerabovetiles button:focus,
-.format-tiles .modal-header{
-	background-color:/*[[btn]]*/;
-	color:/*[[htxt]]*/;}
-div.comment-area textarea{
-    background-color:/*[[bg3]]*/;
-    border:solid 1px /*[[brd]]*/;
-    border-radius:0.25rem;
-	padding:0.25em;
-	line-height:100%;
-    color:/*[[txt]]*/ !important;}
-ul.comment-list>li{
-	background-color:/*[[bg3]]*/ !important;
-	border-radius:0.25rem;}
-ul.comment-list>li .text_to_html{
-	color:/*[[txt]]*/;}
-.comment-delete>a>i{
-	color:/*[[fals]]*/;
-	filter:brightness(1.5);}
-.comment-delete>a:hover>i{
-	color:/*[[fals]]*/;
-	filter:brightness(2);}
-#coursesearchbox{
-    background-color:/*[[bg3]]*/;
-    border-color:/*[[brd]]*/;
-    color:/*[[txt]]*/;}
-.table th,
-table.collection th,
-table.flexible th,
-.generaltable th,
-.table td,
-table.collection td,
-table.flexible td,
-.generaltable td,
-.table thead th,
-table.collection thead th,
-table.flexible thead th,
-.generaltable thead th,
-.preferences-container .preference-table{
-    border-color:/*[[brd]]*/;
-	color:/*[[txt]]*/;}
-.preferences-container .preference-table tr td:nth-child(even),
-.preferences-container .preference-table tr th:nth-child(even){
-    border-color:/*[[brd]]*/;
-    background-color:/*[[bg2_5]]*/;}
-.modal-dialog>.modal-content{
-    background-color:/*[[bg4]]*/;
-    border-radius:0.5em;}
-.modal-header{
-    border-color:/*[[brd]]*/;
-	border-radius:0.5em 0.5em 0 0;}
-.modal-footer{
-    border-color:/*[[brd]]*/;}
-.modal-title,
-.format-tiles .modal-header .close>span{
-	color:/*[[htxt]]*/ !important;}
-.format-tiles .modal-header .close:hover>span{
-	color:/*[[fals]]*/ !important;}
-.modal-body .form-control{
-    color:/*[[txt]]*/;}
-#id_comments{
-    color:/*[[txt]]*/;}
-.custom-select{
-    color:/*[[txt]]*/;
-    border-color:/*[[brd]]*/;
-    border-radius:0.5em;
-    background-color:/*[[bg3]]*/;
-    background-image:var(--svg-select-arrs);
-    background-repeat:no-repeat;
-    background-size:0.75em;}
-.custom-select:disabled{
-    color:/*[[txt]]*/;
-    background-color:/*[[bg3]]*/;
-    background-image:none;}
-.custom-select:disabled:hover{
-    color:/*[[txt]]*/;
-    background-color:/*[[bg3]]*/;}
-.custom-select:focus{
-    color:/*[[txt]]*/;}
-input[type="checkbox"]{
-    -webkit-appearance:none;
-    -moz-appearance: none;
-    -o-appearance: none;
-    appearance:none;
-    width:1em;
-    height:1em;
-    border:0.12em solid /*[[hbrd]]*/;
-    border-radius:0.25em;
-	color:/*[[txt]]*/;}
-input[type="checkbox"]:checked:after{
-	content:"";
-	position:absolute;
-	font:normal normal normal 14px/1 FontAwesome;}
-input[type="radio"]{
-    -webkit-appearance:none;
-    -moz-appearance: none;
-    -o-appearance: none;
-    appearance:none;
-    width:1em;
-    height:1em;
-    border:0.12em solid /*[[hbrd]]*/;
-    border-radius:100%;}
-input[type="radio"]:checked{
-	background:radial-gradient(/*[[hbrd]]*/ 40%, #0000 45%);}
-input[type="file"]{
-	cursor:pointer;}/*not default for some reason?*/
-input[type="file"]::-webkit-file-upload-button{
-	background-color:/*[[bg4]]*/;
-	color:/*[[txt]]*/;
-	border:none;
-	border-radius:0.5em;
-	cursor:pointer;}
-input[type="file"]::-webkit-file-upload-button:hover{
-	background-color:/*[[bg5]]*/;
-	color:/*[[txt]]*/;}
-@supports (-moz-appearance:none){/*firefox-specific hack*/
+		border-bottom-color:brd;
+		color:txt;
+		&:hover{
+			background-color:bg4;
+			color:htxt;}
+		&.unread{
+			background-color:bg4;}
+		&.unread:hover{
+			background-color:bg5;}
+		& .content-item-footer .timestamp{
+			color:txt;}
+	}
+	/*message drawer*/
+	.message-app{
+		background-color:bg2 !important;
+		& .input-group{
+			&>input,
+			&-text{
+				background-color:bg3 !important;
+				border-color:brd;
+				color:brd;
+			}
+			& .btn{
+				border-color:brd;
+			}
+		}
+		& .form-control:focus{
+			color:txt;}
+		& .card{
+			background-color:bg2;}
+		& .border-bottom{
+			border-color:brd !important;}
+		& .card.expanded .list-group .list-group-item{
+			background-color:bg3;}
+		&>.header-container>.bg-white{
+			background-color:bg3 !important;}
+		& .message{
+			&.send{
+				background-color:bg5 !important;
+			}
+			&.received{
+				background-color:bg4 !important;
+				& .tail{
+					border-bottom-color:bg4;
+				}
+			}
+			&.send .tail{
+				border-bottom-color:bg5;
+			}
+		}
+		& .list-group .list-group-item{
+			background:bg3;}
+		& .nav-pills{
+			border:solid brd 1px;
+			&>.nav-item>a{
+				&:not(.active){
+					background-color:bg3;}
+				&.active{
+					background-color:bg4;}
+			}
+		}
+		& .no-gutters{
+		outline:solid 1px bg3;}
+		& .content-message-container>div[data-region="self-conversation-message-container"]{
+			background-color:bg4 !important;}
+		&>div>div>div{
+			outline:solid 1px bg3;}
+		& .col-8>.footer-container>.bg-white{
+			background-color:bg3 !important;
+			border:none !important;}
+		& button.btn-icon.btn-link{
+			&:hover,
+			&:focus{
+				background-color:bg5 !important;
+			}
+		}
+		& textarea.form-control{
+			background-color:bg4 !important;
+			border:none;
+		}
+		& .header-container>.bg-white{
+			background-color:bg3 !important;
+			border-color:bg3 !important;
+		}
+		& .body-container{
+			& div[data-region="settings"]{
+				background-color:bg2;
+			}
+			&>div.h-100.bg-white{
+				background-color:bg2 !important;
+			}
+		}
+		&>.footer-container>.bg-white{
+			background-color:bg2 !important;
+			border-color:brd !important;
+		}
+		&>.closewidget{
+			background-color:bg3 !important;
+			&>a{
+				color:txt !important;
+			}
+		}
+		& [data-region="contacts-container"]{
+			background-color:bg3;}
+		& [data-region="non-contacts-container"]{
+			background-color:bg3;
+			border-top-color:brd !important;}
+		& div[data-region="all-contacts-container"] .text-right{
+			background-color:bg3;
+			border-top: solid 1px brd;
+			&:hover{
+				background-color:bg5;
+			}
+		}
+		& div[data-region="confirm-dialogue"]{
+			background-color:bg3 !important;
+			border:solid 1px brd;
+			border-radius:crad;
+			& .btn-primary{
+				&>span{
+					color:htxt !important;
+				}
+				&:hover>span{
+					color:hhtxt !important;
+				}
+			}
+		}
+	}
+	#conversation-actions-menu-button{
+		color:brd;
+		&:hover{
+			background-color:bg5;
+		}
+		&:focus{
+			background-color:bg6;
+		}
+	}
+	.custom-control{
+		&-label{
+			cursor:pointer;
+			&::before{
+				background-color:brd;
+			}
+		}
+		&-input{
+			&:checked~^[0]-label::before{
+				background-color:btn !important;
+				border-color:btn !important;
+				color:htxt;
+				cursor:pointer;
+			}
+			&:not(:checked)~^[0]-label::before{
+				background-color:bg3 !important;
+				border-color:brd;
+				cursor:pointer;
+			}
+		}
+		.custom-switch &-input{
+			&:checked~^[0]-label::after{
+				background-color:htxt;
+				cursor:pointer;
+			}
+			&:not(:checked)~^[0]-label::after{
+				background-color:brd;
+				cursor:pointer;
+			}
+		}
+		.custom-radio &-input:checked~&-label::after{
+			background-image:radial-gradient(ellipse at center,htxt 0%,htxt 75%,#0000 75%);
+			border-radius:100%;
+		}
+	}
+	.custom-select{
+		color:txt;
+		border-color:brd;
+		border-radius:irad;
+		background-color:bg3;
+		background-image:url(svg_select_arrs);
+		background-repeat:no-repeat;
+		background-size:0.75em;
+		cursor:pointer;
+		&:disabled{
+			color:txt;
+			background-color:bg3;
+			background-image:none;
+			&:hover{
+				color:txt;
+				background-color:bg3;
+			}
+		}
+		&:hover,
+		&:focus{
+			background-color:bg3;
+			color:txt;
+		}
+		&:focus{
+			border-color:btn;
+			box-shadow:0 0 0 .2rem rgba(btn,.25);
+		}
+	}
+	//see -> https://elearning.tgm.ac.at/user/index.php?id=5503
+	.form-autocomplete-suggestions{
+		background-color:bg1;
+		border-color:brd;
+		& li{
+			color:txt;
+			&:hover,&:focus,
+			&[aria-selected="true"]{
+				background-color:btn;
+				color:htxt;
+			}
+			&[aria-selected="true"]{
+				box-shadow:0 0 0 0.2rem rgba(btn,0.33);
+			}
+		}
+	}
+	.form-autocomplete-downarrow{
+		color:txt;
+		.form-control:hover+&{
+			color:htxt;
+		}
+	}
+	.switch input{
+		&+label::before{
+			background-color:brd;
+		}
+		&:checked + label::before{
+			background-color:btn;
+		}
+	}
+	/*body*/
+	:root,body,#page{
+		background-color:bg1 !important;}
+	#region-main{
+		border-radius:crad;
+		overflow:visible;
+		margin-bottom:1.5em;
+		background-color:bg2;}
+	#page-header>div>div.card{
+		background-color:bg2;}
+	/*footer*/
+	#page-footer{
+		background-color:bg2 !important;
+		border-top-left-radius:0.5em;
+		border-top-right-radius:0.5em;
+		& a{
+			color:lnk;
+			&:hover,
+			&:focus{
+				color:hlnk;
+			}
+		}
+	}
+	/*sideblocks*/
+	.block{
+		&.card{
+			background-color:bg2;
+			if sidebar=="Goh"{
+				&[role="navigation"]{
+					overflow:visible;
+				}
+			}
+		}
+		&-timeline{
+			& .list-group-item{
+				background-color:#0000;
+				&-action{
+					color:txt;
+					&:hover,
+					&:focus,
+					&:active{
+						color:htxt;
+						background-color:#0000;
+					}
+				}
+			}
+			& .event-name{
+				color:lnk;
+				font-weight:500;
+				&:hover{
+					color:hlnk;
+				}
+			}
+			&>.border-bottom,
+			& [data-region="event-list-content"]>[data-region="paged-content-container"]>[data-region="page-container"]>[data-region="paged-content-page"]>.border-bottom{
+				border-bottom:none !important;
+			}
+			& [data-region="event-list-container"]>div>img{
+				filter:invert(1) brightness(1.3);
+			}
+		}
+		&_navigation,
+		&_settings{
+			& .block_tree{
+				& .tree_item.branch,
+				& ul,
+				& p.hasicon{
+					padding-left:0;
+					margin-left:0;
+				}
+			}
+		}
+		&_navigation{
+			& .block_tree{
+				& .tree_item{
+					max-width:100%;
+					width:max-content;
+					position:relative;
+					background-color:bg2;
+					z-index:2;
+					border-radius:0 irad irad 0;
+					transition:0.2s max-width;
+				}	
+				& .contains_branch>ul{
+					transition: padding-left 0.2s;
+					if sidebar=="S"{
+						padding-left:ntmp;
+					}else{
+						padding-left:ntip;
+					}
+				}
+			}
+			&:hover .block_tree{
+				if sidebar=="Goh"{
+					& .tree_item{
+						white-space:nowrap;
+						max-width:100vw;
+						padding-right:0.25em;
+						& .item-content-wrap{
+							max-width:25vw;
+							text-overflow: ellipsis;
+						}
+					}
+				}
+				if sidebar!="S"{
+					& .contains_branch>ul{
+						padding-left:ntmp;
+					}
+				}
+			}
+		}
+		& .block-cards{
+			& a.coursename{
+				color:lnk;
+				&:hover,
+				&:focus{
+					color:hlnk;
+				}
+			}
+			& span.categoryname{
+				color:txt;
+			}
+			& .btn-link{
+				color:txt;
+				
+			}
+			& .btn.btn-link.btn-icon{
+				&:hover,
+				&:focus{
+					background-color:bg4;
+				}
+			}
+		}
+		& .block-controls{
+			& .dropdown-toggle{
+				color:txt;
+			}
+		}
+	}
+	/*text*/
+	span,p,pre,
+	.text-center,.text-right,
+	.logininfo,.generaltable,
+	h1,h2,h3,h4,h5,h6,
+	body,:root,
+	ul,ol{
+		color:txt;}
+	textarea.form-control{
+		background-color:bg5 !important;
+		border:solid brd 1px;
+		border-radius:irad;}
+	.text-muted{
+		color:mtxt;
+	}
+	/*links*/
+	a,
+	a>span{
+		color:lnk
+	}
+	a:hover,
+	a:focus{
+		&,
+		&>span{
+			color:hlnk;
+		}
+	}
+	/*Text with inline background coloring*/
+	span[style*="background-color: rgb(125\, 159\, 211);"]{
+		background-color:btn !important;
+		color:dtxt !important;}
+	span[style*="background-color: rgb(255\, 207\, 53);"],
+	span[style*="background-color: rgb(152\, 202\, 62);"]{
+		color:#000 !important;}
+	span[style*="background-color: white;"]:not([class]){
+		background-color:#0000 !important;}
+	span[style*="background-color: rgb(239\, 69\, 64);"]{
+		background-color:fals !important;}
+	span[style*="color: rgb(239\, 69\, 64)"]{
+		color:hfals !important;
+		&[style*="background-color: rgb(255\, 255\, 255)"]{
+			background-color:bg0 !important;
+		}
+	}
+	span>span[style*="background-color: rgb(255\, 255\, 255)"],
+    a[style*="background-color: rgb(255\, 255\, 255)"]{
+		background-color:bg2 !important;
+	}
+	/*VPL badge*/
+	div[style="float:right; right:10px; padding:8px; background-color: white;text-align:center;"]{
+		background-color:bg3 !important;
+		border-radius:irad;
+		box-shadow:0 0 0.2rem 1px #000;
+		transition:background-color 0.1s;
+		cursor:pointer;
+		&:hover{
+			background-color:bg4 !important;
+			& a{
+				color:hlnk !important;
+			}
+		}
+		& a:hover{
+			text-decoration:none;
+		}
+	}
+	/*random shit again*/
+	.logo>img{
+		filter:invert(1) hue-rotate(180deg);}
+	.empty-placeholder-image-lg{
+		filter:invert(1);
+	}
+	.dndupload-arrow{
+		filter:invert(0.9) hue-rotate(180deg);
+	}
+	/*seems like a footer in some dialog boxes?*/
+	.yui3-skin-sam .yui3-panel .yui3-widget-ft{
+		background-color:#0000;
+	}
+	/*Buttons*/
+	.close,
+	.moodle-dialogue-base .closebutton{
+		&:hover,
+		&:focus{
+			color:txt;
+			opacity:1;
+		}
+	}
+	.btn{
+		border-radius:irad;
+		&-outline-secondary{
+			border-color:brd;
+			&:hover,
+			&:focus{
+				background-color:bg4;
+				border-color:bg6;
+				color:htxt;
+			}
+			&:not(:disabled):not(.disabled):active,
+			&:not(:disabled):not(.disabled).active,
+			.show > &.dropdown-toggle{
+				background-color:brd;
+				&,&>span{
+					color:dtxt;
+				}
+			}
+		}
+		&-outline-success{
+			border-color:tru;
+			color:txt;
+			&:hover{
+				background-color:tru;
+				border-color:tru;
+				color:htru;
+			}
+			&:not(:disabled):not(.disabled):active{
+				background-color:htru;
+				border-color:htru;
+				color:dtxt;
+			}
+		}
+		&-secondary{
+			background-color:#FFF2;
+			color:txt;
+			border:none;
+			&:hover{
+				background-color:#FFF4;
+				color:htxt;
+				border-color:brd;}
+			&:focus,
+			&.focus{
+				box-shadow:inset 0 0.1em 0 0 hbrd;
+				outline:solid 1px brd;
+				outline-offset:1px;
+				background-color:brd;
+				color:dtxt;}
+			&.disabled,
+			&:disabled{
+				background-color:bg5;
+				color:txt;}
+		}
+		&-primary{
+			color:dtxt !important;
+			background-color:btn;
+			border:none;
+			&:hover,
+			&:not(:disabled):not(.disabled):active,
+			&:not(:disabled):not(.disabled).active,
+ 			.show>&.dropdown-toggle{
+				color:dtxt;
+				background-color:hbtn;
+			}
+			&.close:hover>span{//TODO: find out where this is used
+				color:hhtxt !important;
+			}
+			&:focus,
+			&.focus{
+				outline:none;
+				box-shadow:0 0 1em hbtn;
+				background-color:hbtn;
+				color:dtxt;
+			}
+			&:focus-visible{
+				outline:solid 1px hbtn;
+				box-shadow:inset 0 0 0 1px dtxt;
+				&:focus{
+					box-shadow:inset 0 0 0 1px dtxt,0 0 1em hbtn;
+				}
+			}
+			&:disabled,
+			&.disabled{
+				background-color:btn;
+			}
+		}
+		&-light{
+			color:txt;
+			&:hover{
+				color:lnk;
+			}
+			&.focus,
+			&:focus{
+				color:hlnk;
+			}
+			&:not(:disabled):not(.disabled):active,
+			&:not(:disabled):not(.disabled).active,
+			.show > &.dropdown-toggle{
+				color:hlnk;
+			}
+		}
+		&:disabled,
+		&.disabled{
+			opacity:1;
+			filter:grayscale(0.25) brightness(0.75) contrast(0.75);
+		}
+	}
+	& .btn-link{
+		color:lnk;
+		transition:none;
+		&:hover,
+		&:focus{
+			color:hlnk;
+		}
+	}
+	.pagination>.page-item{
+		& .page-link{
+			color:lnk;
+			background-color:bg4;
+			border-color:#0000;
+			&:hover{
+				color:hlnk;
+				background-color:bg5;
+				border-color:brd;
+			}
+		}
+		&.active{
+			cursor:not-allowed;
+			& .page-link{
+				color:htxt;
+				background-color:btn;
+				border-color:btn;
+			}
+		}
+	}
+	.preference-state-status-container>span{
+		&.on-text,
+		&.off-text{
+			color:bg1 !important;
+		}
+	}
+	.hover-tooltip{
+		background-color:bg3 !important;
+		border: solid 1px brd !important;
+		&::after{
+			border-top-color:bg3 !important;
+			filter:drop-shadow(0 1px 0 brd);
+		}
+	}
+	#goto-top-link>a.btn{
+		background-color:bg3;
+		border:none;
+		box-shadow:0 0 0.2rem 1px bg0;
+		transform:translate(-50%,-100%);
+		&:hover{
+			background-color:bg4;
+		}
+		&:focus{
+			outline:none;
+			box-shadow:0 0 0.2rem 1px lnk;
+		}
+		&>.icon{
+			margin-right:0;
+		}
+	}
+	/*Dropdown menus*/
+	.dropdown-item:active,.dropdown-item.active{
+		background-color:bg4;}
+	/*php-generated code block with colors without classes*/
+	div[style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"]{
+		background-color:bg0 !important;
+		& span[style*="color: #000080"]{
+			color:c0 !important;
+		}
+		& span[style*="color: #008800"]{
+			color:c1 !important;
+		}
+		& span[style*="color: #0000FF"]{
+			color:c2 !important;
+		}
+		& span[style*="color: #FF0000"]{
+			color:c3 !important;
+		}
+	}
+	div[style="background-color: #e6e6e6; font-size: 0.75em; padding: 4px;"]{
+		background-color:bg3 !important;
+	}
+	/*tooltips: popups that pop up when you hover over stuff with set tooltips*/
+	.tooltip>*{
+		background-color:bg3 !important;
+		color:txt !important;}
+	/*popovers: the same, but with more complex content and a very annoying arrow*/
+	.popover{
+		background-color:bg1;
+		color:txt;
+		border:none;
+		border-radius:irad;
+		box-shadow:0 0 0.1em 0 brd}
+	.bs-popover{
+		//see https://elearning.tgm.ac.at/calendar/view.php?view=month
+		&-top>.arrow,
+		&-auto[x-placement^="top"]>.arrow{
+			&::after{
+				border-top-color:bg1;
+			}
+			&::before{
+				border-top-color:rgba(brd,0.5);
+			}
+		}
+		//see above link
+		&-bottom,
+		&-auto[x-placement^="bottom"]{
+			& .popover-header::before{
+				border-bottom:solid 0.1em bg2;
+			}
+			&>.arrow::after{
+				border-bottom-color:bg2;
+			}
+			&>.arrow::before{
+				border-bottom-color:rgba(brd,0.5);
+			}
+		}
+		//see https://elearning.tgm.ac.at/course/view.php?id=5454&section=1
+		&-left>.arrow,
+		&-auto[x-placement^="left"]>.arrow{
+			&::after{
+				border-left-color:bg1;
+			}
+			&::before{
+				border-left-color:rgba(brd,0.5);
+			}
+		}
+		//TODO: find out where this is used
+		&-right>.arrow,
+		&-auto[x-placement^="right"]>.arrow{
+			&::after{
+				border-right-color:bg1;
+			}
+			&::before{
+				border-right-color:rgba(brd,0.5);
+			}
+		}
+	}
+	.popover{
+		&-header{//TODO restructure
+			background-color:bg2;
+			border-bottom-color:#0000;
+			border-radius:0.5em 0.5em 0 0;
+			color:htxt !important;}
+		&-body{
+			color:txt;
+			border-radius:0.5em;}
+	}
+	/*Manually colored tables*/
+	table[bgcolor="grey"]{
+		background-color:bg4;
+	}
+	th[style*="background-color: rgb(146\, 208\, 80)"]{
+		background-color:tru !important;
+	}
+	th[style*="background-color: #fef65b"]{
+		background-color:idk !important;
+	}
+	/*Misc*/
+	.otherstudent.highlight{
+		outline:none;
+		color:htxt;
+	}
+	.resourcelinkdetails{
+		color:txt;
+		filter:brightness(0.8);
+	}
+	.usertext{
+		color:lnk !important;
+	}
+	#action-menu-toggle-0:hover .usertext{
+		color:hlnk !important;//TODO: fix this mess by removing the catch-all text colorator
+	}
+	if(anon==1){
+		.usertext{
+			display:none;
+		}
+		.userbutton::before{
+			content:"Anonymous User";
+			margin-right:0.25rem;
+			color:lnk;
+		}
+		#action-menu-toggle-0:hover .userbutton::before,
+		#action-menu-toggle-0:focus .userbutton::before{
+			color:hlnk;
+		}
+		#page-footer .logininfo>a:first-child{
+			font-size:0;
+			text-decoration:none;//produces visual glitches when left on
+			&::after{
+				font-size:0.9375rem;//that's the usual font size in elearning
+				content:"Anonymous"
+				text-decoration:underline;
+			}
+		}
+	}
+	.nav-tabs,
+	.nav-pills{
+		background-color:bg3;
+		border-radius:barshape(NBS,NBSm);
+		border-bottom:none;
+		.show>& .nav-link.active.dropdown-toggle{
+			background-color:bg4;
+			border-radius:barshape(NBCS,NBCSm);
+		}
+		& .nav-link{
+			background-color:#0000;
+			border:none;
+			padding:0.5em 1em;
+			&.active{
+				color:txt;
+				max-height:100%;
+			}
+			&.active:not(:disabled):not(.disabled){
+				&.active,
+				&:active{
+					background-color:bg4;
+					border-radius:barshape(NBCS,NBCSm);
+					border-bottom:none;
+				}
+			}
+		}
+		& .nav-item{
+			margin-bottom:0;
+			&.show .nav-link.active{
+				color:txt;
+				max-height:100%;
+			}
+		}
+	}
+	.mform fieldset{
+		border-bottom-color:brd;
+	}
+	.matchtext{
+		background-color:hbtn !important;
+		color:bg3 !important;}
+	.card{
+		border-radius:crad;
+		background-color:bg3;
+		overflow:hidden;
+		&-img{
+			filter:EICC;}
+		&-footer{
+			background-color:bg3 !important;
+		}
+	}
+	.alert{
+		color:txt;
+		&,//I hate moodle sometimes
+		&-danger,
+		&-info,
+		&-success{
+			border-radius:crad;
+			& a:link,
+			& a:visited{
+				color:lnk;
+				&:hover{color:hlnk}
+			}
+		}
+		&-danger{
+			border:solid 1px hfals;
+			background-color:rgba(fals,0.5);
+			color:hfals;
+		}
+		&-info{
+			border:solid 1px pb;
+			background-color:rgba(pb,0.5);
+		}
+		&-success{
+			border:solid 1px htru;
+			background-color:rgba(tru,0.5);
+			color:htru;
+		}
+		&>.close{
+			color:inherit;
+		}
+	}
+	#page-mod-quiz-attempt #connection{
+		&-error{
+			background-color:fals;
+			color:txt;
+		}
+		&-ok{
+			background-color:tru;
+			color:txt;
+		}
+	}
+	.close,
+	.moodle-dialogue-base .closebutton{
+		text-shadow:none;
+		opacity:1;
+		color:txt;
+		filter:none;
+		transition:filter 0.2s;
+		&:not(:disabled):not(.disabled):hover,
+		&:not(:disabled):not(.disabled):focus{
+			opacity:1;
+			filter:drop-shadow(0 0 0.1em #000);
+		}
+	}
+	.yui3-button{
+		background-image:none;}
+	.path-mod div.activity-information{
+		border-bottom-color:brd;
+	}
+	div.comment-area textarea{
+		background-color:bg3;
+		border:solid 1px brd;
+		border-radius:irad;
+		padding:0.25em;
+		line-height:100%;
+		color:txt !important;}
+	ul.comment-list>li{
+		background-color:bg3 !important;
+		border-radius:irad;
+		& .text_to_html{
+			color:txt;
+		}
+	}
+	.comment-delete>a{
+		&>i{
+			color:fals;
+			filter:brightness(1.5);
+		}
+		&:hover>i{
+			color:fals;
+			filter:brightness(2);}
+	}
+	#coursesearchbox{
+		background-color:bg3;
+		border-color:brd;
+		color:txt;
+	}
+	.table,
+	table.collection,
+	table.flexible,
+	.generaltable{
+		& th,
+		& td,
+		& thead th{
+			border-color:brd;
+			color:txt;
+		}
+	}
+	.generaltable tbody tr{
+		&:hover{
+			color:txt;
+			background-color:#0000;
+		}
+		&:nth-of-type(2n+1){
+			background-color:#0000;
+		}
+	}
+	.yui3-datatable{
+		& .yui3-datatable-header{
+			background-color:bg3 !important;
+			text-shadow:none;
+			color:txt !important;
+			border-bottom:solid 1px brd;
+		}
+		& .yui3-datatable-cell,
+		& .yui3-datatable-header{
+			border-left-color:brd;
+		}
+		& .yui3-datatable-sort-liner{
+			display:flex;
+			align-items:space-between;
+			padding-right:1em;
+			& .yui3-datatable-sort-indicator{
+				background-image:url(svg_select_arrs);
+				background-position:center right;
+				background-size:100%;
+				width:0.8em;
+				height:0.8em;
+			}
+		}
+		& .yui3-datatable-data>tr>td{
+			background-color:bg3 !important;
+		}
+	}
+	.preferences-container .preference-table{
+		border-color:brd;
+		color:txt;
+		& tr td:nth-child(even),
+		& tr th:nth-child(even){
+			border-color:brd;
+			background-color:bg2_5;
+		}
+	}
+	#id_comments{
+		color:txt;}
+	
+	input[type="checkbox"]{
+		appearance:none;
+		min-width:1em;
+		max-width:1em;
+		min-height:1em;
+		max-height:1em;
+		border:0.12em solid hbrd;
+		border-radius:irad;
+		color:txt;
+		&:checked:after{
+			content:"";
+			position:absolute;
+			font:normal normal normal 14px/1 FontAwesome;
+			font-size:85%;
+		}
+	}
+	input[type="radio"]{
+		appearance:none;
+		min-width:1em;
+		max-width:1em;
+		min-height:1em;
+		max-height:1em;
+		background-image:radial-gradient(#0000 50%,hbrd 60%,#0000 70%);
+		background-size:1em 1em;
+		&:checked{
+			background-image:radial-gradient(hbrd 30%, #0000 40%,#0000 50%,hbrd 60%,#0000 70%);
+		}
+	}
 	input[type="file"]{
-		color:/*[[dtxt]]*/;
-		filter:invert(0.8);}
-}
-input.organizer_filtertable{
-	background-color:/*[[bg2]]*/;
-	color:/*[[txt]]*/;
-	border:solid 1px /*[[brd]]*/;
-	border-radius:0.25em;
-	padding-left:0.25em;
-	padding-right:0.25em;}
-input.organizer_filtertable:focus{
-	background-color:/*[[bg3]]*/;
-	border-color:/*[[hbrd]]*/;
-	color:/*[[htxt]]*/;}
-.form-control{
-    border-radius:0.5em;
-    background-color:/*[[bg4]]*/;
-    border-color:/*[[brd]]*/;
-    color:/*[[txt]]*/;}
-.form-control:disabled,
-.form-control[readonly],
-.form-control:disabled:hover,
-.form-control[readonly]:hover{
-	background-color:/*[[bg5]]*/;
-	cursor:default;}
-.input-group>.form-control,
-.input-group>.form-control.border-right-0{
-    border-radius:0.25rem 0 0 0.25rem;}
-.input-group>.form-control.border-left-0{
-    border-radius:0 0.25rem 0.25rem 0;}
-.input-group>.form-control.border-left-0.border-right-0{
-    border-radius:0;}
-.input-group-prepend>span{
-	border-radius:0.25rem 0 0 0.25rem;}
-.form-control:hover{
-    background-color:/*[[bg4]]*/;}
-.form-control:focus{
-    background-color:/*[[bg5]]*/;
-    color:/*[[txt]]*/;}
-.input-group-append{
-    border-top:solid 1px /*[[brd]]*/;
-    border-right:solid 1px /*[[brd]]*/;
-    border-bottom:solid 1px /*[[brd]]*/;
-    border-radius:0 0.5em 0.5em 0;
-    overflow:hidden;}
-select.form-control{
-	appearance:none;
-	background-image:var(--svg-select-arrs);
-	background-repeat:no-repeat;
-	background-position:right center;
-	background-origin:content-box;
-	background-size:0.75rem;
-	padding-right:0.25rem;}
-#searchwiki{
-	background-color:/*[[bg3]]*/;
-	border:solid 1px /*[[brd]]*/;
-	border-radius:0.25em;
-	height:2rem;
-	color:/*[[txt]]*/;}
-#searchwiki:hover{
-	background-color:/*[[bg4]]*/;}
-.badge{
-    border-radius:0.25em;}
-.border-bottom{
-    border-bottom-color:/*[[brd]]*/ !important;}
-code{
-    color:/*[[mtxt]]*/;
-    background-color:/*[[bg1]]*/;
-    outline:solid 2px /*[[bg0]]*/;
-    font-family:Monospace;
-    font-size:1.08em;}
-.highlight{
-	outline:solid 1px /*[[hlnk]]*/;}
-.aalink.focus,/*I basically overwrote an entire css rule from the original stylesheet because that thing was ugly as hell*/
-.aalink:focus,
-.arrow_link.focus,
-.arrow_link:focus,
-a:not([class]).focus,
-a:not([class]):focus,
-.activityinstance>a.focus,
-.activityinstance>a:focus,
-#page-footer a:not([class]).focus,
-#page-footer a:not([class]):focus{
-	background-color:#0000;
-	box-shadow:0 -0.2rem /*[[brd]]*/,0 0.2rem /*[[brd]]*/;
-	border-radius:0.3em;}
-/*Editor Atto*/
-.editor_atto .icon{
-    filter:invert(1) hue-rotate(180deg);}
-.editor_atto_content_wrap{
-    border-color:/*[[brd]]*/ !important;
-	border:solid 1px;
-	border-top:none;
-	color:/*[[txt]]*/;}
-.editor_atto_content{
-    background-color:/*[[bg2]]*/ !important;
-    border:none !important;
-    border-bottom-left-radius:0.5em;
-    border-bottom-right-radius:0.5em;
-    resize:none;}
-.editor_atto_toolbar{
-    background-color:/*[[bg2]]*/ !important;
-    border-color:/*[[brd]]*/ !important;
-    border-top-left-radius:0.5em;
-    border-top-right-radius:0.5em;}
-.atto_group{
-    background-color:/*[[bg3]]*/ !important;
-    border:none !important;}
-.atto_group>button{
-    border-color:/*[[brd]]*/ !important;}
-.editor_atto_toolbar button:hover{
-	background:radial-gradient(ellipse at center,/*[[bg3]]*/ 60%,/*[[bg2]]*/ 100%);
-	background-color:/*[[bg2]]*/;}
-.editor_atto_content_wrap{
-    background-color:/*[[bg3]]*/;
-    border-bottom-left-radius:0.5em;
-    border-bottom-right-radius:0.5em;}
-/*Filemanager*/
-.filemanager .fp-navbar{
-    background-color:/*[[bg3]]*/;
-    border-radius: 0.5em 0.5em 0 0;
-    border:none;
-    border-bottom:solid 1px /*[[brd]]*/;}
-.filemanager .filemanager-container{
-    background-color:/*[[bg3]]*/;
-    border-radius: 0 0 0.5em 0.5em;
-    border:none !important;}
-.filemanager>.filemanager-container .yui3-datatable-header{
-    background-color:/*[[bg3]]*/ !important;
-    text-shadow:none;
-    color:/*[[txt]]*/ !important;
-    border-bottom-color:/*[[brd]]*/ !important;}
-.filemanager>.filemanager-container .yui3-datatable-sort-indicator{
-    filter:invert(1);}
-.filemanager>.filemanager-container .yui3-datatable-data>tr>td{
-    background-color:/*[[bg3]]*/ !important;}
-.filemanager .btn{
-    background-color:/*[[bg5]]*/;}
-.filemanager .btn:hover{
-    background-color:/*[[bg6]]*/;}
-.filemanager .btn:active{
-    background-color:/*[[brd]]*/ !important;}
-.filemanager .fp-content:focus{
-    outline:none;}
-.filemanager .fp-iconview .fp-file .fp-thumbnail,
-.moodle-dialogue .filemanager .fp-thumbnail{
-    border:none;
-    min-width:112px;
-    background-color:#0000;}
-.filemanager .fp-iconview .fp-file .fp-thumbnail{
-    border-bottom:none;}
-.filemanager .fp-file{
-    box-shadow:0 0 0.5em /*[[bg0]]*/;
-    border-radius:0.5em 0.5em 0 0;}
-.filemanager .fp-thumbnail img{
-    border:none;}
-.filemanager .fp-iconview .fp-filename{
-    background-color:/*[[bg3]]*/;
-    border-top:none;
-    border-radius: 0 0 0.5em 0.5em;
-    padding:0 0.1em 0.1em 0.1em;
-    box-shadow:0 0 0.5em /*[[bg0]]*/;}
-.fp-iconview .fp-filename-field{
-    padding-left:1em;
-    margin-left:-1em;
-    padding-right:1em;
-	margin-top:-3px;
-    margin-right:-1em;}
-.filemanager .fp-info .fp-thumbnail{
-    border-radius:0.5em;
-    box-shadow:0 0 0.5em /*[[bg0]]*/;}
-.filemanager .fp-iconview .fp-file:hover .fp-filename-field{
-    overflow:hidden;}
-.dndupload-target{
-    background-color:/*[[bg3]]*/ !important;}
-.filemanager .fp-treeview .fp-folder>tbody>tr>td{
-    background-color:/*[[bg3]]*/;}
-/*ace editor*/
-.ace-tm{
-	background-color:/*[[bg0]]*/;
-	color:/*[[txt]]*/;}
-.ace-tm .ace_gutter{
-	background-color:/*[[bg2]]*/;
-	color:/*[[txt]]*/;}
-.ace-tm .ace_gutter-active-line{
-	background-color:/*[[bg3]]*/;
-	color:/*[[htxt]]*/;}
-.ace-tm .ace_marker-layer .ace_active-line{
-	background-color:#FFF1;}
-.ace-tm .ace_print-margin{
-	background-color:/*[[brd]]*/;}
-.ace-tm .ace_cursor{
-	color:/*[[htxt]]*/;}
-.ace-tm .ace_indent-guide{
-	background-image:none;
-	border-right:solid 1px /*[[brd]]*/;}
-.ui_wrapper[style*="border: 1px solid darkgrey"]{
-	border-color:/*[[brd]]*/ !important;}
-/*Coderunner*/
-#page-question-type-coderunner div.ui_wrapper,
-.que.coderunner div.ui_wrapper{
-	background-color:/*[[bg1]]*/;}
-.que.coderunner div.coderunner-test-results.bad,
-.que.coderunner div.pre_syntax_error,
-.que.coderunner div.pre_question_error{
-	background-color:/*[[fals]]*/;}
-.que.coderunner div.coderunner-test-results.good,
-#page-question-type-coderunner tr.coderunner-failed-test.fixed{
-	background-color:/*[[true]]*/;}
-/*Filepicker*/
-.file-picker .card{
-    background-color:/*[[bg3]]*/;
-    border:solid 1px /*[[brd]]*/;
-    padding-bottom:0.4em;}
-/*Calendar*/
-.calendar_event_course,
-.path-calendar .maincalendar .calendarmonth ul li .badge.badge-circle.calendar_event_course{
-    background-color:/*[[cal0]]*/;}
-.calendar_event_category,
-.path-calendar .maincalendar .calendarmonth ul li .badge.badge-circle.calendar_event_category{
-    background-color:/*[[cal1]]*/;}
-.calendar_event_group,
-.path-calendar .maincalendar .calendarmonth ul li .badge.badge-circle.calendar_event_group{
-    background-color:/*[[cal2]]*/;}
-.calendar_event_user,
-.path-calendar .maincalendar .calendarmonth ul li .badge.badge-circle.calendar_event_user{
-    background-color:/*[[cal3]]*/;}
-.calendar_event_site,
-.path-calendar .maincalendar .calendarmonth ul li .badge.badge-circle.calendar_event_site{
-    background-color:/*[[cal4]]*/;}
-.qtext>div{
-    background-color:/*[[bg1]]*/ !important;}
-.qtext>div>table>tbody>tr>td>pre{
-    color:/*[[txt]]*/;}
-/*Replacement images + image manipulation*/
-.atto_image_button_text-bottom.img-responsive,
-.atto_image_button_text-top.img-responsive,/*most likely embedded images in 	assignment descriptions*/
-.qtext img,/*images in the question text, most of the time classless*/
-img[src*="mod_page"],/*images with mod_page in the source url, most of the images in courses have this*/
-.region-main-content img:not([class]):not([src^="https://elearning.tgm.ac.at/theme/"]){/*images without class - a last resort, really*/
-	filter:/*[[EICC]]*/;}
-.progressBarCell>.nowDiv>.icon{
-    display:none;}
-.progressBarCell>.nowDiv.lastHalfNow{
-    background:url('data:image/svg+xml;utf-8,<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1"><path d="M0 0 16 16V0Z" fill="rgb(127,127,127)"/></svg>') no-repeat;
-    background-position:5.5em 5px;
-    padding-right:1.3em;}
-.progressBarCell>.nowDiv.firstNow{
-    background:url("data:image/svg+xml;utf-8,<svg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1'><path d='M0 0V16L16 0Z' fill='rgb(127,127,127)'/></svg>") no-repeat;
-    background-position:0em 5px;
-    padding-left:1.3em;}
-img[src$="elearning.tgm.ac.at/theme/image.php/classic/core/"][src$="/i/loading_small"]{
-    filter:invert(1);}
-.loading{
-    background-image:none !important;}
-.loading:before,
-.loading:before{
-    content:"\00a0";
-    background-image:url("https://elearning.tgm.ac.at/theme/image.php/classic/core/123456/i/loading_small");
-    background-repeat:no-repeat;
-    filter:invert(1);}
-img[src="https://elearning.tgm.ac.at/theme/image.php/classic/core/1604966287/u/f1"]{
-	filter:brightness(0.39) contrast(2)}
-/*row where it displays what you've done and what you didn't. Normally only in course/view.php, but also in other places*/
-.barRow .progressBarCell[style*="background-color:#73A839"]{
-    background-color:/*[[true]]*/ !important;}
-.barRow .progressBarCell[style*="background-color:#C71C22"]{
-    background-color:/*[[fals]]*/ !important;}
-/*.barRow .progressBarCell[style*="background-color:#025187"]{} This color is pretty good, I'll let it be there.*/
-.barRow .progressBarCell{
-    border-color:/*[[bg2]]*/;
-    border-radius:0;}
-.barRow .firstProgressBarCell{
-    border-right:none !important;
-    border-radius:/*[[PBCS]]*/ !important;
-	border-top-right-radius:0 !important;
-	border-bottom-right-radius:0 !important;}
-.barRow .lastProgressBarCell{
-    border-radius:/*[[PBCS]]*/ !important;
-	border-top-left-radius:0 !important;
-	border-bottom-left-radius:0 !important;}
-.barRow .firstProgressBarCell.lastProgressBarCell{
-    border-radius:/*[[PBCS]]*/ !important;}
-.badge-info{
-    background-color:/*[[bg4]]*/;}
+		cursor:pointer;/*not default for some reason?*/
+		&::-webkit-file-upload-button{
+			background-color:bg4;
+			color:txt;
+			border:none;
+			border-radius:irad;
+			cursor:pointer;
+			&:hover{
+				background-color:bg5;
+				color:txt;
+			}
+		}
+	}
+	@supports (-moz-appearance:none){/*firefox-specific hack*/
+		input[type="file"]{
+			color:dtxt;
+			filter:invert(0.8);}
+	}
+	.form-control{
+		border-radius:irad;
+		background-color:bg3;
+		border-color:brd;
+		color:txt;
+		&:disabled,
+		&[readonly],
+		&[readonly]:hover{
+			background-color:brd;
+			color:dtxt;
+			cursor:not-allowed;
+		}
+		&:hover,
+		&:focus{
+			background-color:bg4;
+			color:txt;
+		}
+		&:focus{
+			border-color:btn;
+			box-shadow:0 0 0 .2rem rgba(btn,.25);
+		}
+		select&{
+			appearance:none;
+			background-image:url(svg_select_arrs);
+			background-repeat:no-repeat;
+			background-position:right center;
+			background-origin:content-box;
+			background-size:0.75rem;
+			padding-right:0.25rem;
+		}
+	}
+	.input-group{
+		&>.form-control{
+			&,
+			&.border-right-0{
+				border-radius:irad 0 0 irad;
+			}
+			&.border-left-0{
+				border-radius:0 irad irad 0;
+				&.border-right-0{
+					border-radius:0;
+				}
+			}
+		}
+		&-prepend>span{
+			border-radius:irad 0 0 irad;
+		}
+		&-append{
+			border-radius:0 irad irad 0;
+			overflow:hidden;
+			&>.btn-primary{
+				border:none;
+				border-radius:0;
+			}
+		}
+	}
+	.border-bottom{
+		border-bottom-color:brd !important;}
+	code{
+		color:mtxt;
+		background-color:bg1;
+		outline:solid 2px bg0;
+		font-family:Monospace;
+		font-size:1.08em;
+		padding:0 0.1em;
+	}
+	.highlight{
+		outline:solid 1px hlnk;}
+	.aalink,
+	.arrow_link,
+	a:not([class]),
+	.activityinstance>a,
+	#page-footer a:not([class]){
+		&.focus,
+		&:focus{//janky box-shadow offsets; a better solution is desired
+			color:hlnk;
+			if LSI=="C"{
+				background-color:#0000;
+				box-shadow:0 -0.2rem brd,0 0.2rem brd;
+				border-radius:0.3em;
+			}else if LSI="B"{
+				background-color:#0000;
+				box-shadow:0 0.4rem 0 -0.1rem bg2,0 -0.4rem 0 -0.1rem bg2,0 0 0 0.1rem bg2,0 0 0 0.3rem brd;
+			}else if LSI=="U"{
+				background-color:#0000;
+				box-shadow:0 0 0 2px bg2,0 0.2rem 0 1px brd;
+				border-radius:0.3em;
+			}else if LSI=="F"{
+				background-color:bg4;
+				box-shadow:0 -.2rem bg4,0 .2rem brd;
+			}else if LSI=="R"{
+				background-color:#0000;
+				box-shadow:0 0 0 2px bg2,0 0 0 3px brd;
+				border-radius:0.3em;
+			}else if LSI=="E"{
+				background-color:#0000;
+				box-shadow:0 0 0 2px bg2,0 0 0 3px brd;
+			}
+		}
+	}
+	#qrcode>img{
+		filter:none;
+		background-color:#FFF;
+		padding:4px;
+	}
+	.forumpost{
+		border-color:brd;
+		border-radius:crad;
+	}
+	/*Editor Atto*/
+	div.editor_atto{
+		& .icon{
+			//TODO: check if this is even used outside the toolbar
+			filter:invert(1) hue-rotate(180deg);
+		}
+		&_content{
+			background-color:bg2 !important;
+			border:none !important;
+			border-bottom-left-radius:0.5em;
+			border-bottom-right-radius:0.5em;
+			resize:none;
+			&_wrap{
+				border-color:brd !important;
+				border:solid 1px;
+				border-top:none;
+				color:txt;
+				background-color:bg3;
+				border-bottom-left-radius:0.5em;
+				border-bottom-right-radius:0.5em;
+			}
+		}
+		&_toolbar{
+			background-color:bg2 !important;
+			border-color:brd !important;
+			border-top-left-radius:0.5em;
+			border-top-right-radius:0.5em;
+			& div.atto_group{
+				overflow:clip;
+			}
+			& button{
+				&:active,
+				&.highlight{
+					background-image:none;
+					background-color:bg4;
+					& .icon::before{
+						color:htxt;
+					}
+				}
+				&:hover{
+					background-image:none;
+					background-color:bg4;
+					& .icon::before{
+						color:htxt;
+					}
+				}
+				&[disabled]{
+					opacity:1;
+					background-color:brd;
+					& .icon::before{
+						color:dtxt;
+					}
+				}
+				& .icon{
+					filter:none;
+					color:txt;
+				}
+				& + button{
+					border-left-color:brd;
+				}
+			}
+		}
+		&_notification .atto_{//TODO get url for this
+			&info,
+			&warning{
+				border-radius:0.5em;
+				border-top-right-radius:0;
+				border:solid 1px brd;
+				margin-top:-1px;
+			}
+			&warning{
+				background-color:fals;
+			}
+			&info{
+				background-color:bg3;
+			}
+		}
+	}
+	.atto_group{
+		background-color:bg3 !important;
+		border:none !important;
+		&>button{
+			border-color:brd !important;
+		}
+	}
+	/*Filemanager*/
+	.filemanager{
+		& .fp-navbar{
+			background-color:bg3;
+			border-radius:crad crad 0 0;
+			border:none;
+			border-bottom:solid 1px brd;
+		}
+		& &-container{
+			background-color:bg3;
+			border-radius: 0 0 crad crad;
+			border:none !important;
+		}
+		& .yui3-datatable{
+			&-header{
+				border-bottom-color:brd !important;
+			}
+			&-even,
+			&-odd{
+				& .yui3-datatable-cell{
+					background-color:bg2 !important;
+					border-left-color:bg2 !important;
+				}
+			}
+		}
+		& .btn{
+			background-color:bg5;
+			color:lnk;
+			&:hover{
+				background-color:bg6;
+				color:hlnk;
+			}
+			&:active{
+				background-color:brd !important;
+				color:hlnk;
+			}
+			&>.icon{
+				vertical-align:middle;
+			}
+		}
+		.moodle-dialogue & .fp-thumbnail{
+			border:none;
+			min-width:112px;
+			background-color:#0000;
+		}
+		& .fp-content:focus{
+			outline:none;
+		}
+		& .fp-treeview .fp-folder>tbody>tr>td{
+			background-color:bg3;
+		}
+		& .fp-pathbar .fp-path-folder{
+			background:none;
+			&::before{
+				display:inline-block;
+				width:0;
+				content:"";
+				font:normal normal normal 14px/1 FontAwesome;
+			}
+		}
+	}
+	.filepicker{
+		& .fp-navbar{
+			border:solid 1px brd;
+			border-bottom:none;
+			border-bottom-left-radius:0;
+			border-bottom-right-radius:0;
+			padding-bottom:0;
+		}
+		& .fp-content{
+			background-color:#0000;
+			border:solid 1px brd;
+			border-top:none;
+			border-top-left-radius:0;
+			border-top-right-radius:0;
+			height:initial;
+			padding-bottom:1em;
+		}
+		& .moodle-dialogue-bd{
+			min-height:20vh;
+			max-height:80vh;
+			padding-bottom:1em;
+			overflow-y:auto;
+			& .file-picker{
+				margin-bottom:1em;
+			}
+		}
+	}
+	.filepicker,
+	.file-picker,
+	.filemanager{
+		& .fp-viewbar{
+			background-color:bg5;
+			border-radius:irad;
+			overflow:hidden;
+			&>.btn{
+				background-color:bg5;
+				border-radius:0;
+				color:lnk;
+				&:focus{
+					outline:none;
+					box-shadow:none;
+					outline-offset:0;
+					color:hlnk;
+				}
+				&:hover{
+					color:hlnk;
+					background-color:bg6;
+				}
+				&.checked{
+					background-color:btn;
+					&>.icon{
+						color:hlnk;
+					}
+				}
+			}
+			&:not(.disabled) a.checked{
+				color:hlnk;
+			}
+		}
+		& .fp-info .fp-thumbnail{
+			border-radius:irad;
+			box-shadow:0 0 0.5em bg0;
+		}
+		& .fp-thumbnail{
+			border:none;
+			min-width:112px;
+			background-color:#0000;
+			border-bottom:none;
+			&>img{
+				border:none;
+			}
+		}
+		& .fp-iconview .fp-file{
+			box-shadow:0 0 0.5em bg0;
+			border-radius:irad irad 0 0;
+			&name{
+				background-color:bg3;
+				border-top:none;
+				border-radius: 0 0 irad irad;
+				padding:0 0.1em 0.1em 0.1em;
+				box-shadow:0 0 0.5em bg0;
+				margin-bottom:0.5em;
+				&-field{
+					padding-left:1em;
+					margin-left:-1em;
+					padding-right:1em;
+					margin-top:-3px;
+					margin-right:-1em;
+				}
+			}
+			&:hover .fp-filename-field{
+				overflow:hidden;
+				height:auto;
+			}
+		}
+	}
+	.dndupload-target{
+		background-color:bg3 !important;}
+	/*ace editor*/
+	.ace-tm{
+		background-color:bg0;
+		color:txt;
+		& .ace_gutter{
+			background-color:bg2;
+			color:txt;
+			&-active-line{
+				background-color:bg3;
+				color:htxt;
+			}
+		}
+		& .ace_marker-layer .ace_active-line{
+			background-color:#FFF1;
+		}
+		& .ace_print-margin{
+			background-color:brd;
+		}
+		& .ace_cursor{
+			color:htxt;
+		}
+		& .ace_indent-guide{
+			background-image:none;
+			border-right:solid 1px brd;
+		}
+	}
+	.ui_wrapper[style*="border: 1px solid darkgrey"]{
+		border-color:brd !important;}
+	/*Coderunner*/
+	coderunner{//TODO - seems to only partially work
+		.que.& div{
+			&.^[0]-test-results.bad,
+			&.pre_syntax_error,
+			&.pre_question_error{
+				background-color:fals;
+				&.precheck{
+					background:repeating-linear-gradient(0deg,rgba(hfals,0.5),rgba(fals,0.5) 8px,rgba(fals,0.5) 8px,rgba(hfals,0.5) 16px)
+				}
+			}
+			&.^[0]-test-results{
+				color:txt;
+			}
+		}
+		.que.& tr{
+			&.r0 td,
+			&.r1 td{
+				background-color:bg3;
+			}
+		}
+		#page-question-type-&,
+		.que.&{
+			& table.^[0]-test-results,
+			& table.^[0]examples{
+				& th,
+				& td{
+					border-color:brd;
+				}
+				& .header{
+					background-color:bg4;
+				}
+			}
+			& div.^[0]-test-results.good,
+			& tr.^[0]-failed-test.fixed{
+				background-color:tru;
+				&.precheck{
+					background:repeating-linear-gradient(0deg,rgba(htru,0.5),rgba(tru,0.5) 8px,rgba(tru,0.5) 8px,rgba(htru,0.5) 16px)
+				}
+			}
+			& div.ui_wrapper{
+				background-color:bg1;
+			}
+		}
+	}
+	/*VPL IDE*/ //TODO: border radii
+	#vpl_menu{
+		border-radius:0.25em 0.25em 0 0;
+	}
+	#vpl_tabs{
+		border-radius:0 0 0.25em 0.25em;
+	}
+	.ui-state-default,
+	.ui-widget-content .ui-state-default,
+	.ui-widget-header .ui-state-default{
+		border:none;
+		background:bg4;
+	}
+	.ui-state-active,
+	.ui-widget-content .ui-state-active,
+	.ui-widget-header .ui-state-active,
+	a.ui-button:active,
+	.ui-button:active,
+	.ui-button.ui-state-active:hover{
+		border:none;
+		background:bg4;
+		border-top:inset 1px brd;
+		&>a{
+			color:hlnk !important;
+		}
+	}
+	.ui-corner-all{
+		border-radius:0.25em;
+	}
+	.vpl_ide_tr{
+		height:auto !important;
+		border-radius:0 0 0.25em 0.25em;
+		background:bg3;
+	}
+	.ui-widget-header{
+		display:flex;
+		border:none;
+		background:bg3;
+	}
+	.ui-button{
+		border:none;
+		background:bg4;
+		margin:1px;
+		margin-right:calc(0.1em + 1px);
+		&:hover{
+			background:bg5;
+		}
+	}
+	.ui-controlgroup-horizontal{
+		margin:0 calc(0.1em + 1px) 0 1px;
+		& .ui-button{
+			margin-left:0;
+			margin-right:0;
+		}
+	}
+	.ui-widget.ui-widget-content{
+		border:solid 1px #0000;
+		background:bg3;
+	}
+	.ui-widget-content{
+		color:txt;
+		background:bg4;
+	}
+	.vpl_ide_file{
+		margin-top:0;
+	}
+	.vpl_ide_closeicon{
+		text-shadow:none;
+	}
+	//TODO: replace with custom icons
+	.ui-state-active .ui-icon,
+	.ui-button:active .ui-icon{
+		filter:brightness(2);
+	}
+	.ui-icon,
+	.ui-widget-content .ui-icon{
+		filter:brightness(4);
+	}
+	.ui-state-hover .ui-icon,
+	.ui-state-focus .ui-icon,
+	.ui-button:hover .ui-icon,
+	.ui-button:focus .ui-icon{
+		filter:brightness(2);
+	}
+	.ui-dialog{
+		& .ui-dialog-buttonpane button{
+			color:txt;
+			border:solid 1px #0000;
+			border-color:#0000;//because of a css technicality
+			background:bg4;
+			&:hover{
+				border-color:brd;
+			}
+		}
+		& .ui-dialog-titlebar-close:hover{
+			border:none;
+			background:#0000;
+		}
+	}
+	/*Calendar*/
+	.calendar_event,
+	.path-calendar .maincalendar .calendarmonth ul li .badge.badge-circle.calendar_event{
+		&_course{
+			background-color:cal0;
+		}
+		&_category{
+			background-color:cal1;
+		}
+		&_group{
+			background-color:cal2;
+		}
+		&_user{
+			background-color:cal3;
+		}
+		&_site{
+			background-color:cal4;
+		}
+	}
+	.qtext>div{
+		background-color:bg1 !important;
+		&>table>tbody>tr>td>pre{
+			color:txt;
+		}
+	}
+	/*Replacement images + image manipulation*/
+	.atto_image_button_text-bottom.img-responsive,
+	.atto_image_button_text-top.img-responsive,/*most likely embedded images in 	assignment descriptions*/
+	.qtext img,/*images in the question text, most of the time classless*/
+	img[src*="mod_page"],/*images with mod_page in the source url, most of the images in courses have this*/
+	.img-fluid,//probably mostly large images in modal lessons
+	.region-main-content img:not([class]):not([src^="https://elearning.tgm.ac.at/theme/"]){/*images without class - a last resort, really*/
+		filter:EICC;}
+	img[src$="elearning.tgm.ac.at/theme/image.php/classic/core/"][src$="/i/loading_small"]{
+		filter:invert(1);
+	}
+	.loading{
+		background-image:none !important;
+		&:before{
+			content:"\00a0";
+			background-image:url("https://elearning.tgm.ac.at/theme/image.php/classic/core/123456/i/loading_small");
+			background-repeat:no-repeat;
+			filter:invert(1);
+		}
+	}
+	img[src="https://elearning.tgm.ac.at/theme/image.php/classic/core/1604966287/u/f1"]{
+		filter:brightness(0.39) contrast(2)}
+	#spinning_wheel{
+		filter:invert(1) brightness(1.5);
+	}
+	/*row where it displays what you've done and what you didn't. Normally only in course/view.php, but also in other places*/
+	.barRow{
+		& .progressBarCell{
+			border:none;
+			border-left:solid 1px bg2;
+			border-radius:0;
+			&[style*="background-color:#73A839"]{
+				background-color:tru !important;
+			}
+			&[style*="background-color:#C71C22"]{
+				background-color:fals !important;
+			}
+			&[style*="background-color:#FFCC00"]{
+				background-color:idk !important;
+			}
+		}
+		& .firstProgressBarCell{
+			border-right:none !important;
+			border-left:none;
+			border-radius:lbarshape(PBCS,PBCSm) !important;
+			&.lastProgressBarCell{
+				border-radius:barshape(PBCS,PBCSm) !important;
+			}
+		}
+		& .lastProgressBarCell{
+			border-radius:rbarshape(PBCS,PBCSm) !important;
+		}
+	}
+	 // don't ask
+	.block_completion_progress{
+		& .barModeScroll,
+		& .barModeSqueeze{
+			.progressBarCell{
+				border:none;
+				margin-left:1px;
+				&.completed{
+					background-color:tru;
+				}
+				&.submittedNotComplete{
+					background-color:idk;
+				}
+				&.notCompleted{
+					background-color:fals;
+				}
+				&:first-of-type{
+					border-radius:lbarshape(PBCS,PBCSm);
+					margin-left:0;
+				}
+				&:last-of-type{
+					border-radius:rbarshape(PBCS,PBCSm);
+					border-right:none;
+				}
+				&:only-of-type{
+					border-radius:barshape(PBCS,PBCSm);
+				}
+			}
+		}
+	}
+	/*flexitour*/
+	span[data-flexitour="container"]{
+		&[x-placement="top"],
+		&[x-placement="top-start"]{
+			& div[data-role="arrow"]::after{
+				border-top-color:currentColor;
+				box-shadow:0 -0.5em currentColor;
+			}
+		}
+		&[x-placement="bottom"],
+		&[x-placement="bottom-start"]{
+			& div[data-role="arrow"]::after{
+				border-bottom-color:currentColor;
+				box-shadow:0 0.5em currentColor;
+				.format-tiles &{
+					color:lnk;
+				}
+			}
+		}
+		& div[data-role="arrow"]::after{
+			color:bg3;
+		}
+	}
+	/*badges*/
+	.badge{
+		background-color:bg4;
+		color:txt;
+		padding:0 0.5em;
+		border-radius:irad;
+		&-info{
+			padding:0.25em 0.5em;
+		}
+		&-secondary>strong{
+			background-color:brd;
+			color:dtxt;
+		}
+		&-success>strong{
+			background-color:tru;
+			color:htru;
+		}
+		&>strong{
+			display:inline-block;
+			margin-left:-0.5em;
+			padding:0.25em 0.25em 0.25em 0.5em;
+			border-radius:irad 0 0 irad;
+		}
+	}
+	/*highlightjs*/
+	.hljs{
+		background-color:bg1;
+		color:txt;
+		box-shadow:inset 0 0 0 2px bg0;
+		&-doctag,
+		&-keyword,
+		&-formula{
+			color:c0;
+		}
+		&-string,
+		&-regexp,
+		&-addition,
+		&-attribute,
+		&-meta-string{
+			color:c1;
+		}
+		&-attr,
+		&-variable,
+		&-template-variable,
+		&-type,
+		&-selector-class,
+		&-selector-attr,
+		&-selector-pseudo,
+		&-number{
+		 color:c2;
+		}
+		&-section,
+		&-name,
+		&-selector-tag,
+		&-deletion,
+		&-subst{
+			color:c3;
+		}
+		&-built_in,
+		&-class &-title{
+			color:c4;
+		}
+	}
+	/* popup dialogue windows, e.g. when the session runs out and elearning tells you to login again */
+	.modal{
+		&-header{
+			background-color:bg3;
+		}
+		&-footer{
+			background-color:bg3;
+			border-color:brd;
+		}
+		&-content{
+			background-color:bg3;
+			border:none;
+			border-radius:crad;
+		}
+	}
+	.moodle-dialogue-base .moodle-dialogue-wrap{
+		background-color:bg3;
+		border-color:brd;
+		border-radius:crad;
+		overflow:hidden;
+	}
+	.moodle-dialogue-hd{//fixes titles that would otherwise extend outside the card
+		word-break:break-word;
+	}
+	.modal-header,
+	.moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd,
+	.path-mod-assign [data-region="grade-panel"] .popout>.col-md-3{
+		border-color:brd;
+	}
+	/* search bars */
+	.simplesearchform{
+		& .btn-submit{
+			background-color:bg3;
+			border-color:brd;
+			border-left:none;
+			border-radius:0 irad irad 0;
+			transition:none;
+		}
+		&:hover .btn-submit{
+			background-color:bg4;
+		}
+	}
+	/* genericocss, whatever that is */
+	.filter_generico_warning{
+		color:hidk;
+		background-color:idk;
+	}
+	/* raw html codeblock generated by hilite.me */
+	div[style*="background: #ffffff"][style*="border: solid gray"][style*="border-width: .1em .1em .1em .8em"][style*="padding: .2em .6em"]{
+		background-color:bg0 !important;
+		border-color:brd !important;
+		border-radius:0 crad crad 0;
+		& span{
+			&[style*="color: #000080"]{
+				color:c0 !important;
+			}
+			&[style*="color: #008000"]{
+				color:c1 !important;
+			}
+			&[style*="color: #ff0000"]{
+				color:c3 !important;
+			}
+			&[style*="color: #0000ff"]{
+				color:hbtn !important;
+			}
+		}
+	}
 }
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/my/.*?") {
-/*Kurse*/
-.dashboard-card{
-    border-width:0;
-    background-color:/*[[bg3]]*/;}
-.course-info-container{
-    background-color:/*[[bg3]]*/;}
-.card-img{
-    filter:/*[[EICC]]*/;}
-.card-footer{
-    background-color:/*[[bg3]]*/ !important;}
-.progress{
-    background-color:/*[[bg1]]*/ !important;
-    border-color:/*[[bg1]]*/ !important;
-    margin-bottom: 0.5rem; /* added by Philip Damianik */
-    height: .35rem!important; /* added by Philip Damianik */}
-.progress-bar{
-    background-color:/*[[btn]]*/;}
-.coursemenubtn:hover,.coursemenubtn:focus{
-    background-color:/*[[bg4]]*/ !important;}
-.course-listitem{
-    background-color:/*[[bg2]]*/;
-    border-color:#0000;
-    border-top-color:/*[[brd]]*/;
-    border-bottom-color:/*[[brd]]*/;}
-.block-myoverview>.container-fluid.p-0{
-    margin-top:1.5em;}
-.course-summaryitem{
-    background-color:/*[[bg3]]*/ !important;
-    border:none !important;}
+	.dashboard-card{
+		border-width:0;
+		background-color:bg3;}
+	.course{
+		&-info-container{
+			background-color:bg3;
+		}
+		&-menubtn{
+			&:hover,&:focus{
+				background-color:bg4 !important;
+			}
+		}
+		&listitem{
+			background-color:bg2;
+			border-color:#0000;
+			border-top-color:brd;
+			border-bottom-color:brd;
+		}
+		&-summaryitem{
+			background-color:bg3 !important;
+			border:none !important;
+		}
+	}
+	.progress{
+		background-color:bg1 !important;
+		border-color:bg1 !important;
+		margin-bottom: 0.5rem;
+		height:0.4rem !important;
+		&-bar{
+			background-color:btn;
+		}
+		if CPB=="C"{
+			height:0.3rem !important;
+		}else if CPB=="BL"{
+			border:none !important;
+		}else if CPB=="CBL"{
+			border:none !important;
+			height:0.3rem !important;
+		}else if CPB=="R"{
+			border-radius:0.2rem;
+		}else if CPB=="RBL"{
+			border:none !important;
+			border-radius:0.2rem;
+		}else if CPB=="RC"{
+			border-radius:0.15rem;
+			height:0.3rem !important;
+		}else if CPB=="RCBL"{
+			border:none !important;
+			border-radius:0.15rem;
+			height:0.3rem !important;
+		}
+	}
+	.block-myoverview>.container-fluid.p-0{
+		margin-top:1.5em;}
 }
-
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/(\\?.*)?") {
-.sitelink{
-    filter:invert(1) hue-rotate(180deg);}
-#login_username,#login_password{
-    background-color:/*[[bg3]]*/ !important;
-    color:/*[[txt]]*/ !important;}
-.forumpost{
-    border-color:/*[[brd]]*/ !important;
-    border-radius:0.5em;}
+	.sitelink{
+		filter:invert(1) hue-rotate(180deg);}
+	#login_username,
+	#login_password{
+		background-color:bg3 !important;
+		color:txt !important;}
+	.forumpost{
+		border-color:brd !important;
+		border-radius:crad;}
 }
-
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/login/index\\.php.*?") {
-.mt-3{
-    color:/*[[txt]]*/;}
-img.img-fluid{
-    filter:invert(1) hue-rotate(180deg) brightness(0.9);}
-
-#modal-content{background-color:/*[[bg2]]*/;}
-#modal-header{border-bottom:none;}
-#modal-footer{border-top:none;}
+	.mt-3{
+		color:txt;}
+	img.img-fluid{
+		filter:invert(1) hue-rotate(180deg) brightness(0.9);}
+	#modal{
+		&-content{background-color:bg2;}
+		&-header{border-bottom:none;}
+		&-footer{border-top:none;}
+	}
 }
-
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/course/view\\.php.*?") {
-/*Main box*/
-#region-main{
-    background-color:/*[[bg2]]*/;}
-/*Misc*/
-.section{
-    border-bottom-color:/*[[brd]]*/ !important;}
-.progressEventInfo .iconInInfo{ /*Fixes a specific icon being distorted because someone forgot that width was set to 12px*/
-    width:1.2em;
-    height:1.2em;}
+	#region-main{
+		background-color:bg2;}
+	.section{
+		border-bottom-color:brd !important;
+		& li.activity.hasinfo{
+			border-bottom-color:brd;
+		}
+		&.current::before{
+			border-color:btn;
+		}
+	}
+	.progressEventInfo .iconInInfo{ /*Fixes a specific icon being distorted because someone forgot that width was set to 12px*/
+		width:1.2em;
+		height:1.2em;
+	}
+	/*These new tiles, ykwim*/
+	.tiles{
+		&>.tile,
+		&>.section{
+			background-color:bg2 !important;
+		}
+	}
+	.format-tiles{
+		& #header-overlay,
+		& #window-overlay{
+			background-color:#888;
+			mix-blend-mode:multiply;
+			opacity:1;
+		}
+		& #page .course-content ul li.section.main{
+			background-color:bg2;
+		}
+		& li.activity.subtile{
+			background-color:bg2;
+			border-color:brd;
+			& .activitytitle a{
+				background:linear-gradient(to bottom,bg4 85%,#0000);
+			}
+		}
+		& li.activity button[data-action="change-completion-status"]{
+			&>.completion-icon{
+				outline:solid 3px #0000;
+				transition:outline-color 300ms ease-in-out;
+				border-radius:100%;
+			}
+			&:hover{
+				border-color:#0000;
+				&>.completion-icon-y{
+					outline-color:rgba(htru,0.6);
+				}
+				&>.completion-icon-n{
+					outline-color:txt;
+				}
+			}
+		}
+		& #buttonhidesec0{
+			background-color:#0000;
+			&:hover{
+				background-color:bg4;
+				border-radius:irad;
+			}
+		}
+		& .sectiontitle h2{
+			color:txt;
+		}
+		& .sectiontitle::after,
+		& .tag-info{
+			background-color:tru;
+		}
+		& .course-content{
+			& ul.tiles .tile{
+				box-shadow:2px 4px 5px 0 #000A;
+				transform:translateY(0);//this is needed for compatibility
+				border-top:none;
+				border-radius:irad;
+				&:hover{
+					box-shadow:2px 10px 8px -3px #000A;
+					transition:all 0.25s ease-in-out;
+					transform:translateY(-6px);
+				}
+				&.phototile{
+					background-color:#444 !important;/*darkening the background image*/
+					background-blend-mode:overlay;
+					& .photo-tile-text h3{
+						color:htxt !important;
+						font-weight:500;
+						font-size:1.25rem;
+						background-color:lnk;
+					}
+				}
+			}
+			& .section .activity:hover{
+				background-color:bg3;
+			}
+		}
+		/* the arrows in format tile thingies */
+		/* possibly also applicable to .embed_cm_modal .embed_file_button */
+		& .course-content .single-section .navigation-arrows{
+			display:inline-flex;
+			& .navigation-arrow{
+				transition:none;
+				opacity:1;
+				margin:0 0.25em;
+				border-radius:irad;
+				display:inline-flex;
+				justify-content:center;
+				align-items:center;
+				&>.dir-rtl-hide{
+					display:flex;
+					align-items:center;
+					height:100%;/*jesus, why?*/
+				}
+				&:not(.dimmed){
+					background-color:bg3;
+					&:hover{
+						background-color:bg4;
+						& .icon{
+							filter:brightness(1.2);
+						}
+					}
+				}
+				&.dimmed:hover{
+					background-color:#0000;
+				}
+				&:hover{
+					transform:none;
+				}
+				& .icon{
+					height:60%;
+				}
+			}
+		}
+		& .editor_atto_content_wrap{
+			& h1,& h2,& h3,& h4{
+				border-left-color:tru;
+			}
+		}
+		/*some small fixes for https://elearning.tgm.ac.at/course/view.php?id=5836*/
+		& .badge-info{
+			background-color:bg4;
+		}
+		& .tile a .availabilityinfo,
+		& .availabilityinfo .badge{
+			color:txt;
+		}
+	}
+	.format-tiles ul.tiles .headerabovetiles button.selected,
+	.headerabovetiles button:active,
+	.headerabovetiles button:focus,
+	.format-tiles .modal-header{
+		background-color:btn;
+		&,& h5{
+			color:htxt;
+		}
+	}
+	/*progress bar time descriptor*/
+	.progressBarCell>.nowDiv{
+		&>.icon{
+			display:none;}
+		&.lastHalfNow{
+			background:url("data:image/svg+xml;utf-8,<svg xmlns='http://www.w3.org/2000/svg'><path d='M0 0H16V16Z' fill='rgb(127,127,127)'/></svg>") no-repeat;
+			background-position:5.5em 5px;
+			padding-right:1.3em;}
+		&.firstNow{
+			background:url("data:image/svg+xml;utf-8,<svg xmlns='http://www.w3.org/2000/svg'><path d='M16 0H0V16Z' fill='rgb(127,127,127)'/></svg>") no-repeat;
+			background-position:0em 5px;
+			padding-left:1.3em;
+		}
+	}
 }
-
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/user/files\\.php.*?") {
-.filemanager-container,.fp-navbar{
-    background-color:/*[[bg3]]*/;
-    border:none !important;}
-a.btn-sm{
-    background-color:/*[[bg4]]*/;}
-a.btn-sm:active, a.btn-sm.active, a.btn-sm:focus, a.btn-sm.checked{
-    background-color:/*[[bg6]]*/ !important;}
+	.filemanager-container,
+	.fp-navbar{
+		background-color:bg3;
+		border:none !important;}
+	a.btn-sm{
+		background-color:bg4;
+		&:active,
+		&.active,
+		&:focus,
+		&.checked{
+			background-color:bg6 !important;
+		}
+	}
 }
-
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/grade/report/overview/index\\.php.*?") {
-thead>tr>th{
-    border-bottom:none !important;}
-table td,table th{
-    border-color:/*[[brd]]*/ !important;}
+	thead>tr>th{
+		border-bottom:none !important;}
+	table td,
+	table th{
+		border-color:brd !important;}
 }
-
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/message/output/popup/notifications.php.*?") {
-	.content-item-container:first-child{
-		border-top-left-radius:0.25rem;}
 	.content-item-container{
-		background-color:/*[[bg2]]*/;
-		color:/*[[txt]]*/;
-		border-color:/*[[brd]]*/;}
-	.content-item-container.selected{
-		background-color:/*[[bg3]]*/;
-		border-color:/*[[hbrd]]*/;
-		color:/*[[htxt]]*/;}
-	.notification-area .control-area{
-		border-right-color:/*[[brd]]*/;}
+		background-color:bg2;
+		color:txt;
+		border-color:brd;
+		&:first-child{
+			border-top-left-radius:0.25rem;
+		}
+		&.selected{
+			background-color:bg3;
+			border-color:hbrd;
+			color:htxt;
+		}
+		&.selector,
+		&:hover{
+			&.content-item-footer .timestamp{
+				color:txt;
+			}
+		}
+	}
 	.notification-area{
-		border-color:/*[[brd]]*/;}
-	.notification-area .content-area .header{
-		border-bottom-color:/*[[brd]]*/;}
-	.content-item-container.selected .content-item-footer .timestamp,
-	.content-item-container:hover .content-item-footer .timestamp{
-		color:/*[[txt]]*/;}
+		border-color:brd;
+		& .control-area{
+			border-right-color:brd;
+		}
+		& .content-area .header{
+			border-bottom-color:brd;
+		}
+	}
 }
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/message/index\\.php.*?") {
-#region-main .border-right.h-100{
-    border-color:/*[[bg3]]*/ !important;}
+	#region-main .border-right.h-100{
+		border-color:bg3 !important;}
 }
 
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/user/(profile|view)\\.php.*?") {
-#region-main .profile_tree>.node_category{
-    background-color:/*[[bg3]]*/;
-    border-radius:0.5em;}
+	#region-main .profile_tree>.node_category{
+		background-color:bg3;
+		border-radius:crad;}
 }
-
-
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/mod/organizer/view\\.php.*") {
-	#organizer_main_cointainer span.countdown_normal{
-		background-color:/*[[true]]*/;
-		color:/*[[htxt]]*/;}
-	#organizer_main_cointainer tr.registered_slot td{
-		background-color:/*[[true]]*/ !important;
-		color:/*[[htxt]]*/;}
-	#organizer_main_cointainer span.countdown_passed{
-		background-color:/*[[bg4]]*/;}
-	#organizer_main_cointainer table tr.past_due td{
-		background-color:/*[[bg4]]*/ !important;}
-	#organizer_main_cointainer span.countdown_critical{
-		background-color:/*[[fals]]*/;}
+	#organizer_main_cointainer{
+		& span.countdown{
+			&_normal{
+				background-color:tru;
+				color:htxt;
+			}
+			&_passed{
+				background-color:bg4;
+			}
+			&_critical{
+				background-color:fals;
+			}
+		}
+		& tr.registered_slot td{
+			background-color:tru !important;
+			color:htxt;
+		}
+		
+		& table tr.past_due td{
+			background-color:bg4 !important;
+		}
+	}
 }
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/mod/assign/view\\.php.*?") {
-/*Abgabestatus*/
-.submissionsummarytable td.submissiongraded{
-    background-color:/*[[true]]*/;
-    color:/*[[txt]]*/;}
-.submissionsummarytable td.submissionnotgraded{
-	background-color:#0000;
-	color:/*[[txt]]*/;}
-.submissionsummarytable td.latesubmission,
-.submissionsummarytable	td.overdue{
-    background-color:/*[[fals]]*/;
-    color:/*[[txt]]*/;}
-.submissionsummarytable	td.overdue>font{
-	color:/*[[txt]]*/;}
-.submissionsummarytable td.earlysubmission{
-    background-color:/*[[true]]*/;
-    color:/*[[txt]]*/;}
-#jump-to-activity{
-    background-color:/*[[bg3]]*/;
-    border-color:/*[[brd]]*/;
-    color:/*[[txt]]*/;}
-.submissionsummarytable td.submissionstatussubmitted{
-    background-color:/*[[true]]*/;
-    color:/*[[txt]]*/;}
-.feedback .criteria .criterion.even,
-.gradingform_guide .criteria .criterion.even{
-	background-color:/*[[bg3]]*/;}
-.earlysubmission .criteria .criterion.even{
-	background-color:/*[[true]]*/;
-	filter:brightness(0.85);}
-.latesubmission .criteria .criterion.even{
-	background-color:/*[[fals]]*/;
-	filter:brightness(0.85);}
-.criteria .criterion{
-	border:none;
-	outline:solid 1px /*[[brd]]*/;}
+	/*Abgabestatus*/
+	.submissionsummarytable>table>tbody>tr{
+		&>td,
+		&>th{
+			background-color:bg3;
+			&:first-child{
+				background-color:bg4;
+				color:htxt;
+			}
+		}
+		&>td.submission{
+			&graded,
+			&statussubmitted{
+				background-color:tru;
+				color:htru;
+			}
+			&notgraded{
+				background-color:bg3;
+				color:txt;
+			}
+			&statusdraft{
+				background-color:idk;
+				color:hidk;
+			}
+		}
+		&>td.latesubmission,
+		&>td.overdue{
+			background-color:fals;
+			color:hfals;
+			&>font{
+				color:hfals;
+			}
+		}
+		&>td.earlysubmission{
+			background-color:tru;
+			color:htru;
+		}
+		&:first-of-type{
+			&>td,
+			&>th{
+				border-top:none;
+				&:first-child{
+					border-top-left-radius:crad;
+				}
+				&:last-child{
+					border-top-right-radius:crad;
+				}
+			}
+		}
+		&:last-of-type{
+			&>td,
+			&>th{
+				&:first-child{
+					border-bottom-left-radius:crad;
+				}
+				&:last-child{
+					border-bottom-right-radius:crad;
+				}
+			}
+		}
+	}
+	#jump-to-activity{
+		background-color:bg3;
+		border-color:brd;
+		color:txt;}
+	/*Grading criteria in full assignment view*/
+	//see -> https://elearning.tgm.ac.at/mod/assign/view.php?id=206006
+	.gradingform_rubric .criteria>tbody{
+		border-radius:crad;
+		overflow:hidden;
+		border:solid 1px brd;
+	}
+	.gradingform_rubric .criterion{
+		border-color:brd;
+		border-right:none;
+		border-left:none;
+		&.even{
+			border:none;
+			background:#0000;
+			&>td{
+				background:bg4;
+				&:first-of-type{
+					background:bg5;
+				}
+			}
+		}
+		&.odd{
+			&>td{
+				background:bg3;
+				&:first-of-type{
+					background:bg4;
+				}
+			}
+		}
+		&:last-of-type{
+			border-bottom:none;
+		}
+		& .levels .level{
+			border-left-color:brd;
+			&.last{
+				border-right:none;
+			}
+			&.checked{
+				background:tru;
+				border:none;
+				border-left:solid 1px brd;
+				& .score,
+				& .score>span{
+					color:htru;
+				}
+			}
+			& .score{
+				color:txt;
+			}
+			
+		}
+		& .remark{
+			border-left:solid 1px brd;
+		}
+	}
+	/*Another grading criteria form*/
+	//see -> https://elearning.tgm.ac.at/mod/assign/view.php?id=208163
+	.gradingform_guide .criterion{
+		border:none;
+		&.even{
+			background-color:#0000;
+			&>td{background-color:bg3}
+		}
+		&.odd{background-color:bg4}
+		&.first>td{
+			border-radius:irad irad 0 0;
+		}
+		&.last>td{
+			border-radius:0 0 irad irad;
+		}
+		& .criteriondescriptionscore{
+			background-color:bg6;
+			color:dtxt;
+			border-radius:50%;
+			display:inline-block;
+			width:1.5em;
+			height:1.5em;
+			vertical-align:baseline;
+			text-align:center;
+			padding:0.25em 0;
+			line-height:1em;
+			font-weight:bold;
+		}
+	}
+	//annotated PDFs in assignments
+	input[name="assignfeedback_editpdf_haschanges"]+.visibleifjs>a{
+		color:lnk;
+		transition:none;
+		&:hover{
+			color:hlnk;
+			text-decoration:underline;
+		}
+	}
+	.assignfeedback_editpdf_widget .pageheader{
+		background-color:bg3;
+		border-color:brd;
+		& .toolbar,
+		& .navigation-search,
+		& .navigation-expcol,
+		& .navigation{
+			border-color:brd;
+			overflow:hidden;
+			background-color:#0000;
+		}
+		& .navigation button,
+		& .navigation select + button{
+			border-color:brd;
+		}
+		& button:hover{
+			background-image:none;
+			background-color:bg4;
+			& img{
+				filter:brightness(1.2);
+			}
+		}
+		select{
+			background-color:#0000;
+			color:txt;
+			&:hover{
+				background-color:bg4;
+				color:htxt;
+			}
+		}
+	}
+	.assignfeedback_editpdf_widget .drawingregion{
+		background-color:bg3;
+		border:none;
+	}
+	.assignfeedback_editpdf_commentsearch input[placeholder="Kommentare filtern..."]{
+		//style is copied from login text inputs
+		//TODO: deduplicate
+		background-color:bg3;
+		color:txt;
+		border:solid 1px brd;
+		border-radius:irad;
+		padding:.375rem .75rem;
+		font-size:.9375rem;
+		line-height:1.5;
+		transition: border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out;
+		&:focus{
+			border-color:btn;
+			box-shadow: 0 0 0 .2rem rgba(btn,.25);
+			outline:none;
+		}
+	}
 }
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/user/preferences\\.php.*?") {
-#region-main .card.mb-3{
-    background-color:/*[[bg3]]*/;}
+	#region-main .card.mb-3{
+		background-color:bg3;}
 }
-
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/admin/tool/dataprivacy/mydatarequests\\.php.*?") {
-div[data-region="datarequests"]>.mt-1.mb-1>.btn.btn-primary{
-	color:/*[[txt]]*/ !important;}
+	div[data-region="datarequests"]>.mt-1.mb-1>.btn.btn-primary{
+		color:txt !important;}
 }
-
-@-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/mod/quiz.*?") {
-.moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd.yui3-widget-hd{
-	color:/*[[txt]]*/;}
-.que.multichoice .answer div.r0 input,
-.que.multichoice .answer div.r1 input{
-	width:1em;}
-.que .formulation{
-    background-color:/*[[bg3]]*/;
-    color:/*[[txt]]*/;
-    border-radius:0.5em;}
-.que.multichoice .answer .incorrect{
-    background-color:/*[[fals]]*/;}
-.que.multichoice .answer .correct{
-    background-color:/*[[true]]*/;}
-.que.multichoice .answer div.r0,
-.que.multichoice .answer div.r1{
-	border-radius:0.25rem;}
-.que.multichoice .answer div.r0 .icon.fa,
-.que.multichoice .answer div.r1 .icon.fa{
-	align-self:center;}
-.que .correct .custom-select{
-	background-color:/*[[true]]*/;}
-.que .incorrect .custom-select{
-    background-color:/*[[fals]]*/;}
-.que .correctness.notanswered,
-.que .correctness.incorrect{
-	background-color:/*[[fals]]*/;}
-.que .correctness.correct{
-	background-color:/*[[true]]*/;}
-.answer>.form-control{
-     border-color:/*[[brd]]*/;
-    color:/*[[txt]]*/;
-    border-radius:0.5em;}
-.que .outcome{
-    background-color:/*[[bg3]]*/;
-    color:/*[[txt]]*/;
-    border-radius:0.5em;}
-.que .info{	
-    background-color:/*[[bg3]]*/;	
-    border-radius:0.5em;	
-    border:none;}	
-.que.essay .qtype_essay_response.readonly{
-	background-color:/*[[bg4]]*/;
-	padding-left:0.2em;
-	border-radius:0.5rem;}
-.que.essay .qtype_essay_monospaced{
-	background-color:/*[[bg2]]*/;
-	padding:0.25em;
-	border-radius:0.5rem;
-	color:/*[[txt]]*/;
-	border-color:/*[[brd]]*/;}
-.path-mod-quiz #mod_quiz_navblock .qnbutton.correct>.trafficlight{
-    background-color:/*[[true]]*/;
-    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23CCC' d='M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z'/%3E%3C/svg%3E%0A");}
-.path-mod-quiz #mod_quiz_navblock .qnbutton.partiallycorrect>.trafficlight{
-    background-color:/*[[idfk]]*/;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='-12 -12 24 24'%3E%3Ccircle fill='%23CCC' r='12'/%3E%3C/svg%3E%0A");}
-.path-mod-quiz #mod_quiz_navblock .qnbutton.incorrect>.trafficlight{
-    background-color:/*[[fals]]*/;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23CCC' d='M 4.828125 2.5 L 2 5.328125 L 9.0703125 12.398438 L 2 19.470703 L 4.828125 22.298828 L 11.898438 15.226562 L 18.970703 22.298828 L 21.798828 19.470703 L 14.726562 12.398438 L 21.798828 5.328125 L 18.970703 2.5 L 11.898438 9.5703125 L 4.828125 2.5 z '/%3E%3C/svg%3E");}
-.path-mod-quiz #mod_quiz_navblock span.qnbutton,
-.path-mod-quiz #mod_quiz_navblock a.qnbutton{
-    color:/*[[txt]]*/ !important;
-    background-color:/*[[bg4]]*/;}
-#mod_quiz_navblock .qnbutton>.thispageholder{
-    border:none !important;}
-#mod_quiz_navblock .qn_buttons:not(.allquestionsononepage) .qnbutton.thispage>.thispageholder{
-	box-shadow:0 0 1px 1px /*[[brd]]*/;}
-.quizreviewsummary{
-	border-radius:0.5em;
-	overflow:hidden;}
-.quizreviewsummary>tbody>tr:first-child>.cell{
-	border-top:none;}
-.quizreviewsummary>tbody>tr>.cell:first-child{
-	background-color:/*[[bg3_5]]*/;}
-.quizreviewsummary>tbody>tr>.cell:last-child{
-	background-color:/*[[bg3]]*/;}
-#page-mod-quiz-view table.quizattemptsummary tr.bestrow td{
-    border-color:/*[[brd]]*/;
-	background-color:/*[[bg2]]*/;}
-.quizattemptsummary>thead>tr>th{
-	border-bottom:none;}
-.path-mod-quiz #mod_quiz_navblock .qnbutton.notyetanswered>.trafficlight{	
-    background-color:/*[[bg4]]*/;}	
-.path-mod-quiz #mod_quiz_navblock .qnbutton.answersaved>.trafficlight,	
-.path-mod-quiz #mod_quiz_navblock .qnbutton.invalidanswer>.trafficlight{	
-    background-color:/*[[brd]]*/;}
-.path-mod-quiz #mod_quiz_navblock span.qnbutton.thispage{
-    box-shadow:0 0 0.2em #FFF}
-.answer>input[type="text"]{	
-    background-color:/*[[bg4]]*/;}
-.subquestion input[type="text"]{	
-    background-color:/*[[bg4]]*/;	
-    border-color:/*[[brd]]*/;	
-    border-radius:0.5em;	
-    color:/*[[txt]]*/;}	
-.submitbtns button[type="submit"].btn,	
-.submitbtns input[type="submit"].btn{	
-    background-color:/*[[bg3]]*/;	
-    border-radius:0.5em;}
-.submitbtns input[type="submit"].btn.mod_quiz-next-nav{	
-   background-color:/*[[btn]]*/;	
-   border-color:/*[[btn]]*/;}	
-.submitbtns input[type="submit"].btn.mod_quiz-next-nav:hover{	
-   background-color:/*[[hbtn]]*/;	
-   border-color:/*[[hbtn]]*/;}
-.que.incorrect .answer>input[type="text"]{	
-    background-color:/*[[fals]]*/;}	
-.que.correct .answer>input[type="text"]{	
-    background-color:/*[[true]]*/;}	
-input[type="text"].correct{	
-    background-color:/*[[true]]*/;}	
-input[type="text"].incorrect{	
-    background-color:/*[[fals]]*/;}
-.que .answer>.correct>.specificfeedback{
-    background-color:/*[[true]]*/;
-    border: solid 1px /*[[brd]]*/;
-    border-radius:0.25em;}
-.que .answer>.incorrect>.specificfeedback{
-    background-color:/*[[fals]]*/;
-    border: solid 1px /*[[brd]]*/;
-    border-radius:0.25em;}
+@-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/mod/(student)?quiz.*?"), regexp(".*userstyle_testing/darklearning.*") {
+	.moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd.yui3-widget-hd{
+		color:txt;}
+	.que.multichoice .answer{
+		& div.r0,
+		& div.r1{
+			border-radius:irad;
+			& .icon.fa{
+				align-self:center;
+			}
+		}
+		& .incorrect{
+			background-color:fals;
+			border:solid 1px hfals;
+			&, & p, & span,
+			& .answernumber{
+				color:hfals;
+			}
+		}
+		& .correct{
+			background-color:tru;
+			border:solid 1px htru;
+			&, & p, & span,
+			& .answernumber{
+				color:htru;
+			}
+		}
+	}
+	.que .formulation{
+		background-color:bg3;
+		color:txt;
+		border-radius:crad;}
+	.que .correct .custom-select{
+		background-color:tru;}
+	.que .incorrect .custom-select{
+		background-color:fals;}
+	.que .correctness{
+		&.notanswered,
+		&.incorrect{
+			background-color:fals;
+		}
+		&.correct{
+			background-color:tru;
+		}
+	}
+	.que .outcome{
+		background-color:bg3;
+		color:txt;
+		border-radius:crad;}
+	.que .info{	
+		background-color:bg3;	
+		border-radius:crad;	
+		border:none;}	
+	.que.essay .qtype_essay{
+		&_response.readonly{
+			background-color:bg4;
+			padding-left:0.2em;
+			border-radius:irad;
+		}
+		&_monospaced{
+			background-color:bg2;
+			padding:0.25em;
+			border-radius:irad;
+			color:txt;
+			border-color:brd;
+		}
+	}
+	.que.ddwtos,
+	.que.ddimageortext,
+	form.mform fieldset#id_previewareaheader{
+		& .group1{
+			background-color:bg3;
+		}
+		& .draghome,
+		& .drop{
+			border-radius:irad;
+			border-color:brd;
+		}
+		& .drop,
+		& .dropzone,
+		& .droparea .draghome,
+		& .draghome.placed:not(.beingdragged){
+			&:focus,
+			&.valid-drag-over-drop{
+				border-color:btn;
+				box-shadow:0 0 5px 3px btn,inset 0 0 2px 0 btn;
+			}
+		}
+		& img.dropbackground,
+		& img.group1{
+			filter:EICC;
+		}
+	}
+	.que .answer{
+		&>.correct>.specificfeedback{
+			background-color:tru;
+			border: solid 1px htru;
+		}
+		&>.incorrect>.specificfeedback{
+			background-color:fals;
+			border: solid 1px hfals;
+		}
+		&>div>.specificfeedback{
+			border-radius:irad;
+			margin:-1px -1px -1px 0;
+		}
+	}
+	.que.multianswer .feedbackspan{
+		border-radius:0 0 crad crad;
+		background:linear-gradient(to top,rgba(idk,0.9) 70%,rgba(idk,0.7) 80%,rgba(idk,0.3) 90%,rgba(idk,0) 100%);
+		color:hidk;
+		border:solid 1px hidk;
+		border-top:none;
+		box-shadow:0 0.2em 0.5em bg0,0 0.2em 0.2em idk;
+	}
+	.path-mod-quiz #mod_quiz_navblock{
+		& .qnbutton{
+			&.correct>.trafficlight{
+				background-color:tru;
+				background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23CCC' d='M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z'/%3E%3C/svg%3E%0A");
+			}
+			&.partiallycorrect>.trafficlight{
+				background-color:idk;
+				background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='-12 -12 24 24'%3E%3Ccircle fill='%23CCC' r='12'/%3E%3C/svg%3E%0A");
+			}
+			&.incorrect
+			&.notanswered{
+				&>.trafficlight{
+					background-color:fals;
+					background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23CCC' d='M 4.828125 2.5 L 2 5.328125 L 9.0703125 12.398438 L 2 19.470703 L 4.828125 22.298828 L 11.898438 15.226562 L 18.970703 22.298828 L 21.798828 19.470703 L 14.726562 12.398438 L 21.798828 5.328125 L 18.970703 2.5 L 11.898438 9.5703125 L 4.828125 2.5 z '/%3E%3C/svg%3E");
+				}
+			}
+			&.flagged .thispageholder{
+				background-position:top right;
+			}
+		}
+		& a.qnbutton,
+		& span.qnbutton{
+			color:txt !important;
+			background-color:bg4;
+		}
+	}
+	#mod_quiz_navblock{
+		& .qnbutton>.thispageholder{
+			border:none !important;
+		}
+		& .qn_buttons:not(.allquestionsononepage) .qnbutton.thispage>.thispageholder{
+			box-shadow:0 0 1px 1px brd;
+		}
+	}
+	.quizreviewsummary{
+		border-radius:crad;
+		overflow:hidden;
+		&>tbody>tr{
+			&:first-child>.cell{
+				border-top:none;
+			}
+			&>.cell:first-child{
+				background-color:bg3_5;
+			}
+			&>.cell:last-child{
+				background-color:bg3;
+			}
+		}
+	}
+	#page-mod-quiz-view table.quizattemptsummary tr.bestrow td{
+		border-color:brd;
+		background-color:bg2;}
+	.quizattemptsummary>thead>tr>th{
+		border-bottom:none;}
+	.path-mod-quiz #mod_quiz_navblock{
+		& .qnbutton.notyetanswered>.trafficlight{	
+			background-color:bg4;
+		}
+		& .qnbutton.answersaved,
+		& .qnbutton.invalidanswer{
+			&>.trafficlight{	
+				background-color:brd;
+			}
+		}
+		& span.qnbutton.thispage{
+			box-shadow:0 0 0.2em #FFF;
+		}
+	}
+	.answer>input[type="text"]{	
+		background-color:bg4;}
+	.subquestion input[type="text"]{	
+		background-color:bg4;	
+		border-color:brd;	
+		border-radius:irad;	
+		color:txt;}	
+	.submitbtns{
+		& button[type="submit"].btn,	
+		& input[type="submit"].btn{	
+			background-color:bg3;	
+			border-radius:irad;
+			&.mod_quiz-next-nav{	
+				background-color:btn;	
+				border-color:btn;
+			}
+			&.btn.mod_quiz-next-nav:hover{	
+				background-color:hbtn;	
+				border-color:hbtn;
+			}
+		}
+	}
+	#quiz-timer-wrapper #quiz-timer{
+		border-color:hidk;
+		background-color:idk;
+		color:hidk;
+		& #quiz-time-left{
+			color:inherit;
+		}
+		&.timeleft{
+			&14,&15,&16{
+				background-color:idk;
+				color:hidk;
+				border-color:hidk;
+			}
+			&9,&10,&11,&12,&13{
+				background-color:fals;
+				color:hfals;
+				border-color:hfals
+			}
+			&4,&5,&6,&7,&8{
+				background-color:hfals;
+				color:fals;
+				border-color:fals;
+			}
+			&0,&1,&2,&3{
+				background-color:#000;
+				color:#F00;
+				border-color:#F00;
+				box-shadow:0 0 0 1px #000;
+			}
+			&0{
+				font-size:0;
+				&::after{
+					font-size:1rem;
+					color:#F00;
+					content:"Game Over";
+				}
+			}
+		}
+	}
+	input[type="text"],
+	input[type="checkbox"],
+	.custom-select{
+		&.incorrect,
+		&.notanswered,
+		.incorrect>&,
+		.notanswered>&{
+			&,
+			&:hover{
+				background-color:fals;
+				color:hfals;
+				border-color:hfals;
+				transition:none
+			}
+		}
+		&.partiallycorrect,
+		.partiallycorrect>&{
+			&,
+			&:hover{
+				background-color:idk;
+				color:hidk;
+				border-color:hidk;
+				transition:none
+			}
+		}
+		&.correct,
+		.correct>&{
+			&,
+			&:hover{
+				background-color:tru;
+				color:htru;
+				border-color:htru;
+				transition:none
+			}
+		}
+	}
+	input[type="radio"]{
+		&.incorrect,
+		&.notanswered,
+		.incorrect>&,
+		.notanswered>&{
+			background-image: radial-gradient(hfals 30%,#0000 40%,#0000 50%, hfals 60%,#0000 70%);
+		}
+		&.partiallycorrect,
+		.partiallycorrect>&{
+			background-image: radial-gradient(hidk 30%,#0000 40%,#0000 50%, hidk 60%,#0000 70%);
+		}
+		&.correct,
+		.correct>&{
+			background-image: radial-gradient(htru 30%,#0000 40%,#0000 50%, htru 60%,#0000 70%);
+		}
+	}
+	input,select{
+		&:disabled,
+		&[readonly]{
+			cursor:not-allowed;
+		}
+	}
 }
-
 @-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/calendar/view\\.php.*?") {
-.eventlist .event .card{
-    background-color:/*[[bg3]]*/;
-    border-radius:0.5em !important;
-    overflow:hidden;}
-.path-calendar .maincalendar .calendar_event_course{
-    border:none;}
-.path-calendar .maincalendar .calendarmonth ul li>a:hover{
-    overflow:visible;
-    transform:translate(0,0);
-    margin-bottom:0.45em;}
-.path-calendar .maincalendar .calendarmonth ul li>a:hover .eventname{
-    background-color:/*[[bg3]]*/;
-    position:absolute;
-    right:-3.5em;}
-.path-calendar .maincalendar .calendarmonth ul li>a{
-    text-overflow:clip;}
+	.eventlist .event .card{
+		background-color:bg3;
+		border-radius:crad !important;
+		overflow:hidden;
+	}
+	.path-calendar .maincalendar{
+		& .calendar_event_course{
+			border:none;
+		}
+		& .calendarmonth ul li>a{
+			text-overflow:clip;
+			&:hover{
+				overflow:visible;
+				transform:translate(0,0);
+				margin-bottom:0.45em;
+				&.eventname{
+					background-color:bg3;
+					position:absolute;
+					right:-3.5em;
+				}
+			}
+		}
+	}
 }
-
+@-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/user/index\\.php.*?") {
+	.filter-group{
+		border:none !important;
+		border-radius:irad;
+		background-color:bg3 !important;
+		& .bg-white.border{
+			border:none !important;
+			background-color:bg3 !important;
+		}
+	}
+}
+@-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/mod/lesson/view\\.php.*?") {
+	.no-overflow img[role="presentation"]{
+		width:100%;
+		margin:0;
+	}
+}
+@-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/mod/studentquiz/view\\.php.*?") {
+	#categoryquestions{
+		//table head
+		& thead,
+		&>tbody>tr.r1{
+			background-color:bg3;
+		}
+		//various icons, mostly denoting the type of quiz
+		& img.icon{
+			&[title="CodeRunner"]{
+				border-radius:irad;
+				filter:saturate(0.6);
+			}
+			&[title="Multiple-Choice"],
+			&[title="Zuordnung"],
+			&[title="Wahr/Falsch"],
+			&[src$="/state_new"]{
+				filter:invert(0.75);
+			}
+		}
+		//difficulty and rating bars
+		& .difficultylevel svg,
+		& .mod_studentquiz_ratingbar svg{
+			& rect[fill="#fff"]{
+				fill:bg0;
+				stroke:bg0;
+			}
+			& rect[fill="#007bff"]{
+				fill:btn;
+				stroke:bg0;
+				stroke-width:1px;
+			}
+			& path{
+				fill:btn;
+				stroke:bg0;
+			}
+		}
+	}
+	//question filters - basically toggle buttons
+	.path-mod-studentquiz input[type="checkbox"].toggle{
+		& + a,
+		& + label a{
+			border:solid 1px btn;
+			background-color:bg3;
+			color:btn;
+		}
+		&:checked + a,
+		&:checked + label a{
+			border:solid 1px hbtn;
+			background-color:hbtn;
+			color:dtxt;
+		}
+	}
+	//weird thing which functions as a label and submit button at the same time - for the page count
+	.btn[value="Seitengröße:"]{
+		background-color:bg3;
+		color:txt;
+		border:solid 1px brd;
+		border-right:none;
+		border-radius:irad 0 0 irad;
+		&:hover{
+			background-color:bg4;
+			color:htxt;
+			border-color:hbrd;
+		}
+		&:focus{
+			background-color:bg5;
+			border-color:hbtn;
+			color:hhtxt;
+		}
+		& + .form-control{
+			border-radius:0 irad irad 0;
+			border-left:none;
+		}
+	}
+	//statistics sideblock with horrible progressbars and even worse colored spans
+	#mod_studentquiz_statblock{
+		& svg{
+			//the feeling when you have to fix the style of a large buisness :'I
+			overflow:visible; //otherwise the borders get clipped
+		}
+		& rect{
+			stroke-width:1px !important;
+			rx: irad !important;
+			ry: irad !important;
+		}
+		& rect:last-of-type{
+			fill:tru !important;
+			stroke:htru !important;
+		}
+		& rect:nth-of-type(2){
+			fill: fals !important;
+			stroke: hfals !important;
+		}
+		& rect:first-of-type{
+			fill:idk !important;
+			stroke:hidk !important;
+		}
+		& span[style*="color:#f0ad4e"]{
+			color:hidk !important;
+		}
+		& span[style*="color:#d9534f"]{
+			color:hfals !important;
+		}
+		& span[style*="color:#5cb85c"]{
+			color:htru !important;
+		}
+	}
+}
+@-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/mod/studentquiz/(attempt|commenthistory)\\.php.*?"){
+	svg[width="100%"] rect{
+		&:first-of-type{
+			fill:bg3 !important;
+		}
+		&:nth-of-type(2){
+			fill:btn !important;
+		}
+	}
+	svg[width="100%"] text{
+		fill:txt;
+	}
+	.btn[value="Abbrechen"]{
+		color:hfals;
+		background-color:fals;
+		border:solid 1px hfals;
+		&:hover{
+			color:dtxt;
+			background-color:hfals;
+		}
+		&:focus,
+		&.focus{
+			outline:none;
+			box-shadow:0 0 1em hfals;
+		}
+		&:focus-visible{
+			outline:none;
+			box-shadow:inset 0 0 0 1px dtxt;
+			&:focus{
+				box-shadow:inset 0 0 0 1px dtxt,0 0 1em hfals;
+			}
+		}
+	}
+	.path-mod-studentquiz{
+		& .studentquiz_behaviour{
+			& .comment_list>div.studentquiz-comment-container{
+				border-color:brd;
+			}
+			& .star,
+			& .rate .rating .rateable.star-empty,
+			& .rate .rating:hover .rateable.star-empty{
+				filter:contrast(0.1) saturate(10) brightness(1) hue-rotate(-30deg);
+			}
+		}
+		& .studentquiz-comment-container{
+			& .no-comment{
+				border-top-color:brd;
+			}
+			& .filter-desc.current,
+			& .filter-asc.current{
+				& .studentquiz-comment-filter-type i::before{
+					filter:contrast(0.1) saturate(10) brightness(0.8) hue-rotate(-30deg);
+				}
+			}
+			& .studentquiz-comment{
+				&-item{
+					border-top-color:brd;
+				}
+				&-author{
+					color:txt;
+				}
+				&-expand,
+				&-collapse{
+					color:txt;
+					background-color:bg3;
+					border-color:brd;
+					border-bottom:none;
+					&[disabled],
+					&[disabled]:hover{
+						background-color:brd;
+						border-color:brd;
+						color:htxt
+						&::after{
+							filter:contrast(0) brightness(1.5);
+						}
+					}
+					&:hover,
+					&:focus,
+					&:active{
+						color:htxt;
+						background-color:bg4;
+						border-color:hbrd;
+						border-bottom:none;
+						&::after{
+							filter:contrast(0) brightness(1.4);
+						}
+					}
+					&::after {
+						filter:contrast(0) brightness(1.15);
+					}
+				}
+				&-text,
+				&-text-deleted{
+					background-color:bg3;
+					border:solid 1px brd;
+					border-radius:irad;
+					color:txt;
+				}
+				&-postfragmentform{
+					background-color:#0000;
+					color:txt;
+				}
+			}
+		}
+	}
+	img[src$="/switch_plus"],
+	img[src$="/switch_minus"]{
+		filter:contrast(0.1) saturate(10) brightness(0.8) hue-rotate(-30deg);
+	}
+}
