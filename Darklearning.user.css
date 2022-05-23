@@ -1119,7 +1119,6 @@ rbarshape(name,mod){
 	.card{
 		border-radius:crad;
 		background-color:bg3;
-		overflow:hidden;
 		&-img{
 			filter:EICC;}
 		&-footer{
