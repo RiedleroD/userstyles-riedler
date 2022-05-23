@@ -1,332 +1,674 @@
 /* ==UserStyle==
 @name			JavaDarks
 @namespace		https://github.com/RiedleroD/userstyles-riedler/
-@version		1.0.0
+@version		2.0.0
 @license		CC-BY-SA-4.0
-@description	Dark mode for docs.oracle.com, specifically the javadocs API part of that.
+@description	Dark mode for the online javadocs - currently only supports java 7,8 and 13!
 @author			Riedler
-@preprocessor	uso
+@preprocessor	less
 @var	color	bg0		"Background 0"	"#000"
 @var	color	bg1		"Background 1"	"#151515"
 @var	color	bg2		"Background 2"	"#222"
 @var	color	bg3		"Background 3"	"#333"
 @var	color	brd		"Border"		"#888"
-@var	color	hbrd	"Light border"	"#AAA"
 @var	color	txt		"Text"			"#CCC"
 @var	color	htxt	"Bright Text"	"#EEE"
 @var	color	dtxt	"Dark Text"		"#AAA"
-@var	color	bgb		"Blue bg"		"#147"
-@var	color	bgo		"Orange bg"		"#C70"
-@var	color	lnk		"Links"			"#369"
+@var	color	lnk		"Links"			"#418BA4"
 @var	color	hlnk	"Hovered links"	"#6AC"
-@var	select	brds	"Border Style"	{
-	"solid":"solid",
-	"hidden":"hidden",
-	"dotted":"dotted",
-	"dashed":"dashed",
-	"inset":"inset",
-	"outset":"outset"}
+@var	color	fals	"False/Error"	"#922"
+@var	color	idk		"Unknown/Warning"	"#A60"
 ==/UserStyle== */
 
-@-moz-document
-regexp("https:\\/\\/docs\\.oracle\\.com\\/[^\\/(java)]*\\/java\\/javase\\/\\d\\d\\/docs\\/api\\/.*"),
-regexp("https?:\\/\\/docs\\.oracle\\.com\\/javase\\/\\d\\/docs\\/api\\/.*") {
-	::-webkit-scrollbar,::-webkit-scrollbar-track-piece{
-		background-color:/*[[bg0]]*/ !important;}
-	::-webkit-scrollbar-corner,::-webkit-scrollbar-thumb{
-		background-color:/*[[bg3]]*/ !important;
-		border-radius:0.4em;}
-	:root{
-		scrollbar-width:thin;
-		scrollbar-color:/*[[bg3]]*/ /*[[bg0]]*/;}
-	main,
-	header,
-	:root,
+@didk: darken(@idk,20%);
+@midk: darken(@idk,10%);
+@hidk: lighten(@idk,10%);
+@hhidk: lighten(@idk,20%);
+
+@dfals: darken(@fals,20%);
+@hfals: lighten(@fals,20%);
+
+@-moz-document regexp("^https?://docs\\.oracle\\.com/javase/7/docs/api/.*"){
+	//Java 7
+	//WARNING: EXTREMELY FINICKY! Always test everything after touching anything here
 	body{
-		background-color:/*[[bg0]]*/;}
-	:root{
-		font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;}
-	:root,body,
-	span,pre,label,
-	.inheritance, .block, .title,
+		background-color:@bg0;
+		color:@txt;
+	}
+	.topNav{
+		background:linear-gradient(to bottom,@bg2,@bg1);
+		padding-top:0.75rem;
+		color:@dtxt;
+	}
+	.bottomNav{
+		background:linear-gradient(to bottom,@bg2,@bg1);
+		border-top:solid 1px @brd;
+		color:@dtxt;
+		&+.subNav{
+			border-bottom:none;
+		}
+	}
+	.legalCopy{
+		float:left;
+		width:calc(100% - 1em);
+		margin:0;
+		padding:0.5em;
+		background:linear-gradient(to bottom,@bg1,@bg0);
+	}
+	ul.navList li.navBarCell1Rev{
+		background-image:none;
+		background-color:@didk;
+		outline:solid 1px @idk;
+		border:none;
+		color:@hidk;
+		border-radius:0 0 0.25em 0.25em;
+		margin:-0.75rem 0 0 0;
+		padding-top:calc(0.75rem + 3px);
+	}
+	.subNav{
+		background-color:@bg1;
+		border-color:@brd;
+	}
+	.header{
+		margin:0 1em 1em 1em;
+		padding:0.2em 1em;
+		border:solid 1px @brd;
+		border-top:none;
+		background-color:@bg1;
+		//why not margin? ask clearfix
+		transform: translateY(-1px);
+		&+&{
+			margin-top:-1em;
+		}
+	}
+	.title{
+		color:@txt;
+	}
+	.contentContainer,
+	.sourceContainer,
+	.classUseContainer,
+	.serializedFormContainer,
+	.constantValuesContainer{
+		margin:1em;
+		padding:0;
+	}
+	.description,
+	.details{
+		.contentContainer & dl dt{
+			&:extend(.serializedFormContainer dl dt);
+		}
+	}
+	.serializedFormContainer dl dt{
+		color:@txt;
+	}
+	hr{
+		margin: 0 -1em;
+	}
+	ul.blockList{
+		& & li.blockList,
+		& &Last li.blockList{
+			border:solid 1px @brd;
+			background-color:@bg1;
+			border-left:none;
+			border-right:none;
+			ul.blockList &{
+				border:solid 1px @brd;
+				background-color:@bg2;
+				border-radius:0.25em 0.25em 0 0;
+				div.details & h4{
+					background-color:@bg3;
+					border-color:@brd;
+					border-top:none;
+					border-radius:0.25em 0.25em 0 0;
+				}
+			}
+		}
+		& & li.blockList{
+			ul.blockList & h3{
+				background-color:@bg3;
+				border-color:@brd;
+				border-top:none;
+				border-radius:0.25em 0.25em 0 0;
+			}
+			& table{
+				margin:0.75em;
+				width:calc(100% - 1.5em);
+			}
+		}
+		.classUseContainer & &{
+			margin:0 -1em;
+		}
+	}
+	.overviewSummary,
+	.packageSummary,
+	.contentContainer ul.blockList li.blockList,
+	.summary,
+	.classUseContainer,
+	.constantValuesContainer{
+		& caption{
+			margin-bottom:-1px;
+			& span{
+				padding:0.5em 1em;
+				background-image:none;
+				color:@hidk;
+				background-color:@didk;
+				border:solid 1px @idk;
+				border-bottom:none;
+				border-radius:0.25em 0.25em 0 0;
+			}
+		}
+	}
+	.summary,
+	.details{
+		margin:0 -1em;
+	}
+	caption a{
+		&:link,
+		&:hover,
+		&:active,
+		&:visited{
+			color:@hidk;
+			border-bottom:solid 1px @hidk;
+		}
+	}
+	.tabEnd{
+		display:none !important;
+	}
+	.contentContainer,
+	.classUseContainer,
+	.constantValuesContainer{
+		& table{
+			border-bottom-color:@brd;
+		}
+	}
+	td,th{
+		&.colFirst,
+		&.colLast,
+		&.colOne,
+		.constantValuesContainer &{
+			background-color:@bg1;
+			border-color:@brd;
+		}
+	}
+	tr.altColor td{
+		background-color:@bg2;
+	}
+	table[border]:not([border="0"]){
+		border:none;
+		border-collapse:collapse;
+	}
+}
+@-moz-document regexp("^https?://docs\\.oracle\\.com/javase/8/docs/api/.*"){
+	//Java 8
+	//WARNING: EXTREMELY FINICKY! Always test everything after touching anything here
+	body{
+		background-color:@bg0;
+		color:@txt;
+	}
+	.topNav{
+		background:linear-gradient(to bottom,@bg2,@bg1);
+		padding-top:0.75rem;
+		color:@dtxt;
+	}
+	.bottomNav{
+		background:linear-gradient(to bottom,@bg2,@bg1);
+		border-top:solid 1px @brd;
+		color:@dtxt;
+		&+.subNav{
+			border-bottom:none;
+		}
+	}
+	.subNav{
+		background-color:@bg1;
+		border-bottom:solid 1px @brd;
+	}
+	.legalCopy{
+		float:left;
+		width:calc(100% - 1em);
+		margin:0;
+		padding:0.5em;
+		background:linear-gradient(to bottom,@bg1,@bg0);
+	}
+	ul.navList li.navBarCell1Rev{
+		background-image:none;
+		background-color:@didk;
+		outline:solid 1px @idk;
+		border:none;
+		color:@hidk;
+		border-radius:0 0 0.25em 0.25em;
+		margin:-0.75rem 0 0 0;
+		padding-top:calc(0.75rem + 3px);
+	}
+	.header{
+		margin:0 1em 1em 1em;
+		padding:0.2em 1em;
+		border:solid 1px @brd;
+		border-top:none;
+		background-color:@bg1;
+		position:relative;
+		&+&{
+			margin-top:-1em;
+		}
+	}
+	.block,
+	.title{
+		color:@txt;
+	}
+	.overview,
+	.member,
+	.type,
+	.use,
+	.constants,
+	.deprecated{
+		&Summary{
+			border:solid 1px @brd;
+			& caption{
+				margin-bottom:-1px;
+				& span{
+					background-color:@didk;
+					color:@hidk;
+					outline:solid 1px @idk;
+					border-radius:0.25em 0.25em 0 0;
+					&.activeTableTab,
+					&.tableTab{
+						outline:none;
+						margin:0;
+						& span{
+							margin-right:0.5em;
+						}
+					}
+					&.activeTableTab span{
+						background-color:@midk;
+						outline-color:@idk;
+						color:@hhidk;
+					}
+					&.tableTab span{
+						background-color:@didk;
+					}
+				}
+				& a{
+					&:link,
+					&:hover,
+					&:active,
+					&:visited{
+						color:@hidk;
+						//not underlining those javascript tabs
+						&:not([href*="javascript:show"]){
+							border-bottom:solid 1px @hidk;
+						}
+					}
+				}
+			}
+		}
+	}
+	th.colFirst,
+	th.colLast,
+	th.colOne,
+	.constantsSummary th{
+		background-color:@bg1;
+		border-bottom:solid 1px @brd;
+	}
+	.altColor{
+		background-color:@bg2;
+	}
+	.rowColor{
+		background-color:@bg1;
+	}
+	ul.blockList{
+		//compensating for lack of indent
+		&>li.blockList>table[class*="Summary"]{
+			margin:0 1em;
+		}
+		& & li.blockList,
+		& &Last li.blockList{
+			background-color:#0000;
+			border:none;
+			padding:0 1em;
+			ul.blockList &{
+				border-radius:0.25em 0.25em 0 0;
+				background-color:@bg1;
+				border:solid 1px @brd;
+				div.details & h4,
+				& h3{
+					border-radius:0.25em 0.25em 0 0;
+					background-color:@bg2;
+					border:none;
+					border-bottom:solid 1px @brd;
+				}
+			}
+			& h3{
+				border-radius:0.25em 0.25em 0 0;
+				border-bottom:solid 1px @brd;
+				margin:0 -1em;
+				padding:0 1em 0.5em 1em;
+			}
+			& table{
+				margin:0;
+			}
+		}
+	}
+	hr{
+		margin:0 -0.5em;
+	}
 	.contentContainer .description dl dt,
 	.contentContainer .details dl dt,
-	.serializedFormContainer dl dt,
-	.overviewSummary caption a:link,
-	.memberSummary caption a:link,
-	.typeSummary caption a:link,
-	.useSummary caption a:link,
-	.constantsSummary caption a:link,
-	.deprecatedSummary caption a:link,
-	.overviewSummary caption a:hover,
-	.memberSummary caption a:hover,
-	.typeSummary caption a:hover,
-	.useSummary caption a:hover,
-	.constantsSummary caption a:hover,
-	.deprecatedSummary caption a:hover,
-	.overviewSummary caption a:active,
-	.memberSummary caption a:active,
-	.typeSummary caption a:active,
-	.useSummary caption a:active,
-	.constantsSummary caption a:active,
-	.deprecatedSummary caption a:active,
-	.overviewSummary caption a:visited,
-	.memberSummary caption a:visited,
-	.typeSummary caption a:visited,
-	.useSummary caption a:visited,
-	.constantsSummary caption a:visited,
-	.deprecatedSummary caption a:visited{
-		color:/*[[txt]]*/;}
-	a[name],
-	a[name]:hover{
-		color:/*[[dtxt]]*/;}
-	label,
-	.navBarCell1Rev{
-		user-select: none;
-		-ms-user-select: none;
-		-moz-user-select: none;
-		-khtml-user-select: none;
-		-webkit-user-select: none;
-		-webkit-touch-callout: none;}
+	.serializedFormContainer dl dt{
+		color:@txt;
+	}
+	#footer-banner{
+		background-color:@bg0 !important;
+		border-top-color:@brd;
+		&,& a{
+			color:@lnk;
+			&:hover,
+			&:focus{
+				color:@hlnk;
+			}
+		}
+	}
+	.bar{
+		background-color:@didk;
+		color:@hidk;
+		border-bottom:solid 1px @idk;
+	}
+}
+
+@-moz-document regexp("^https?://docs\\.oracle\\.com/\\w+/java/javase/13/docs/api/.*"){
+	//Java 13
+	//WARNING: EXTREMELY FINICKY! Always test everything after touching anything here
+	body{
+		background-color:@bg0;
+		color:@txt;
+	}
+	.fixedNav{
+		height:0;
+		background-color:@bg1;
+		position:unset;
+		&::after{
+			content:"";
+			border-bottom:solid 1px @brd;
+			display:block;
+			position:fixed;
+			top:calc(2.8em + 0.75rem + 2.5em);
+			width:100%;
+			z-index:1;
+			font-size:12px;//don't ask…
+		}
+	}
 	.topNav{
-		background-color:/*[[bgb]]*/;}
+		background:linear-gradient(to bottom,@bg2,@bg1);
+		padding-top:0.75rem;
+		color:@dtxt;
+		position:fixed;
+		z-index:999;
+	}
+	.bottomNav{
+		background:linear-gradient(to bottom,@bg2,@bg1);
+		border-top:solid 1px @brd;
+		color:@dtxt;
+	}
 	.subNav{
-		background-color:/*[[bg2]]*/;}
-	.subNavList>li,
-	.topNav{
-		color:/*[[htxt]]*/}
-	a:link,
-	a:visited,
-	a:link>code,
-	a:visited>code{
-		color:/*[[lnk]]*/;
-		text-decoration:none;}
-	a:link:hover,
-	a:visited:hover,
-	a:link:hover>code,
-	a:visited:hover>code{
-		color:/*[[hlnk]]*/;}
-	table>thead,
-	table.striped > thead,
-	table.striped>tbody>tr:nth-child(2n){
-		background-color:/*[[bg1]]*/;}
-	table:not(.striped)>tbody>tr,
-	table:not(.striped)>tbody>tr>th,
-	table.striped>tbody>tr:nth-child(2n+1),
-	thead>tr>th.colFirst,
-	thead>tr>th.colSecond,
-	thead>tr>th.colLast,
-	thead>tr>th.colConstructorName,
-	thead>tr>th.colDeprecatedItemName,
+		background-color:@bg1;
+		position:fixed;
+		top:calc(2.8em + 0.75rem);
+		z-index:999;
+		height:2.5em;
+		box-sizing:border-box;
+	}
+	.legalCopy{
+		float:left;
+		width:calc(100% - 1em);
+		margin:0;
+		padding:0.5em;
+		background:linear-gradient(to bottom,@bg1,@bg0);
+	}
+	ul.navList li.navBarCell1Rev{
+		background-image:none;
+		background-color:@didk;
+		outline:solid 1px @idk;
+		border:none;
+		color:@hidk;
+		border-radius:0 0 0.25em 0.25em;
+		margin:-0.75rem 0 0 0;
+		padding-top:calc(0.75rem + 3px);
+	}
+	.navPadding{
+		font-size:12px;
+		padding-top:calc(2.8em + 0.75rem + 2.5em) !important;
+		height:0;
+	}
+	.header{
+		padding:0.2em 1em;
+		border:solid 1px @brd;
+		border-top:none;
+		background-color:@bg1;
+		position:relative;
+		z-index:2;
+	}
+	#search{
+		filter:invert(1);
+		border:solid 1px @brd;
+		border-radius:0.25em;
+	}
+	#reset{
+		background-color:#0000;
+	}
+	.ui-widget-content{
+		background-color:@bg1;
+		color:@txt;
+		.ui-widget&{
+			border-color:@brd;
+		}
+	}
+	.ui-autocomplete{
+		overflow-x:auto;
+		&-category{
+			background-color:@didk;
+			color:@hidk;
+			border-bottom:solid 1px @idk;
+			border-top:solid 1px @idk;
+			border-right:solid 1px @brd;
+			position:relative;
+			z-index:1;
+			&:first-of-type{
+				border-top:none;
+			}
+		}
+		ul& li{
+			box-sizing:border-box;
+		}
+	}
+	.ui-menu{
+		.ui-menu-item{
+			list-style-image:none;
+			border-right:solid 1px @brd;
+		}
+		.ui-state-focus,
+		.ui-state-active{
+			margin:0;
+		}
+	}
+	.ui-state-active,
+	:is(.ui-widget-content,.ui-widget-header) .ui-state-active,
+	:is(a,*).ui-button:is(:active,.ui-state-active:hover){
+		border:none;//why do you have to make it so difficult?
+		outline:solid 1px @brd;
+		background-image:none;
+		background-color:@bg1;
+		color:@txt;
+	}
+	.title,
+	.block{
+		color:@txt;
+	}
+	.overviewSummary,
+	.memberSummary,
+	.typeSummary,
+	.packagesSummary{
+		[role="tablist"] .tableTab{
+			background-color:@didk;
+			color:@hidk;
+			border:solid 1px @idk;
+		}
+		[role="tablist"] .activeTableTab{
+			background-color:@midk;
+			color:@hhidk;
+			border:solid 1px @idk;
+		}
+		[role="tablist"] :is(.tableTab,.activeTableTab){
+			border-bottom:none;
+			border-radius:0.25em 0.25em 0 0;
+			margin-bottom:-1px;
+		}
+	}
+	.overview,
+	.member,
+	.type,
+	.use,
+	.constants,
+	.deprecated,
+	.requires,
+	.packages,
+	.provides,
+	.uses{
+		&Summary caption{
+			margin:0 0 -1px 0;
+			padding-left:0;
+			span{
+				background-color:@didk;
+				color:@hidk;
+				border:solid 1px @idk;
+				border-bottom:none;
+				border-radius:0.25em 0.25em 0 0;
+			}
+		}
+		&Summary table{
+			border:solid 1px @brd;
+		}
+	}
+	th.colFirst,
+	th.colSecond,
+	th.colLast,
+	th.colConstructorName,
+	th.colDeprecatedItemName,
 	.constantsSummary th,
 	.packagesSummary th{
-		background-color:/*[[bg2]]*/;}
-	table.striped > thead > tr > th,
-	table.striped > thead > tr > td{
-		border:/*[[brds]]*/ 1px /*[[brd]]*/;}
-	table.striped > tbody > tr > th,
-	table.striped > tbody > tr > td{
-		border-left:/*[[brds]]*/ 1px /*[[brd]]*/;
-		border-right:/*[[brds]]*/ 1px /*[[brd]]*/;}
-	table.striped{
-		border:/*[[brds]]*/ 1px /*[[brd]]*/;}
-	.overviewSummary table,
-	.memberSummary table,
-	.typeSummary table,
-	.useSummary table,
-	.constantsSummary table,
-	.deprecatedSummary table,
-	.requiresSummary table,
-	.packagesSummary table,
-	.providesSummary table,
-	.usesSummary table{
-		border:none;}
-	.overviewSummary caption,
-	.memberSummary caption,
-	.typeSummary caption,
-	.useSummary caption,
-	.constantsSummary caption,
-	.deprecatedSummary caption,
-	.requiresSummary caption,
-	.packagesSummary caption,
-	.providesSummary caption,
-	.usesSummary caption{
-		border-bottom:/*[[brds]]*/ 1px /*[[brd]]*/;}
-	table>tbody>tr>td[style="background-color:#FFe0d0"]{
-		background-color:/*[[bgb]]*/ !important;}
-	tbody>tr>*{
-		border-top:/*[[brds]]*/ 1px /*[[brd]]*/;}
-	caption+tbody>tr:first-child>*{
-		border-top:none;}
-	.inheritedList,
-	section[class$="Details"] .detail{
-		background-color:/*[[bg1]]*/;}
-	body.class-declaration .summary h3,
-	body.class-declaration .details h3,
-	body.class-declaration .summary .inheritedList h2{
-		background-color:/*[[bg2]]*/;
-		border:none;
-		border-bottom:/*[[brds]]*/ 1px /*[[brd]]*/;}
-	code{
-		font-family:monospace;
-		border-radius:0.5em;
-		color:/*[[htxt]]*/;}
-	input[type="text"]{
-		background-color:/*[[bg3]]*/;
-		color:/*[[txt]]*/;
-		border:solid 1px /*[[brd]]*/;}
-	input#reset{
-		background-color:#0000;}
-	.ui-autocomplete-category{
-		background-color:/*[[bgb]]*/;}
-	.ui-menu{
-		overflow-x:hidden;}
-	.ui-menu>.ui-menu-item{
-		background-color:/*[[bg1]]*/;}
-	.ui-menu>.ui-menu-item>.ui-menu-item-wrapper{
-		background-image:none !important;
-		background-color:/*[[bg1]]*/;
-		border-color:#0000;
-		color:/*[[txt]]*/;}
-	.ui-menu>.ui-menu-item:hover>.ui-menu-item-wrapper{
-		background-color:/*[[bg2]]*/ !important;}
+		background-color:@bg2;
+	}
+	.altColor,
+	.altColor th{
+		background-color:@bg1;
+	}
+	.rowColor,
+	.rowColor th{
+		background-color:@bg2;
+	}
+	.moduleGraph{
+		filter:invert(1) hue-rotate(180deg);
+	}
 	.summary section[class$="Summary"],
 	.details section[class$="Details"],
 	.classUses .detail,
 	.serializedClassDetails{
-		background-color:/*[[bg1]]*/;
-		border:/*[[brds]]*/ 1px /*[[brd]]*/;}
-	.description{
-		background-color:/*[[bg1]]*/;
-		padding:1px 20px 5px 10px;
-		margin-top:1em;
-		border:/*[[brds]]*/ 1px /*[[brd]]*/;}
-	.contentContainer>.inheritance{
-		background-color:/*[[bg1]]*/;
-		padding:10px 20px 10px 10px;
-		margin-top:0;
-		border:/*[[brds]]*/ 1px /*[[brd]]*/;}
-	.contentContainer{
-		margin-top:1em;
-		padding-top:0;}
-	.header{
-		background-color:/*[[bg1]]*/;
-		padding:1px 20px 1px 10px;
-		border:/*[[brds]]*/ 1px /*[[brd]]*/;}
-	.overviewSummary,
-	.memberSummary,
-	.typeSummary,
-	.useSummary,
-	.constantsSummary,
-	.deprecatedSummary{
-		border:/*[[brds]]*/ 1px /*[[brd]]*/;}
-	table.overviewSummary,
-	table.memberSummary,
-	table.typeSummary,
-	table.useSummary,
-	table.constantsSummary,
-	table.deprecatedSummary{
-		border-top:none;}
+		background-color:#0000;
+		border:none;
+	}
 	.inheritedList,
 	section[class$="Details"] .detail{
-		border:/*[[brds]]*/ 1px /*[[brd]]*/}
-	.memberSummary caption span.tableTab span{
-		background-color:/*[[bgb]]*/;
-		border:/*[[brds]]*/ 1px /*[[brd]]*/;
-		border-bottom:none;}
-	.memberSummary caption span.activeTableTab span{
-		background-color:/*[[bgo]]*/;
-		color:/*[[htxt]]*/;
-		border:/*[[brds]]*/ 1px /*[[hbrd]]*/;
-		border-bottom:none;}
-	ul.blockList ul.blockList li.blockList,
-	ul.blockList ul.blockListLast li.blockList{
-		background-color:/*[[bg1]]*/;
-		/*no border here please, only the contents*/}
-	ul.blockList ul.blockList ul.blockList li.blockList,
-	ul.blockList ul.blockList ul.blockListLast li.blockList{
-		background-color:/*[[bg2]]*/;
-		border:/*[[brds]]*/ 1px /*[[brd]]*/;}
-	ul.blockList ul.blockList ul.blockList li.blockList h3{
-		background-color:/*[[bg3]]*/;
+		background-color:@bg1;
+		border:solid 1px @brd;
+		border-radius:0.25em 0.25em 0 0;
+		overflow:hidden;
+	}
+	body.class-declaration :is(.summary,.details) :is(h3,.inheritedList h2){
+		background-color:@bg2;
 		border:none;
-		border-bottom:/*[[brds]]*/ 1px /*[[brd]]*/;}
-	div.details ul.blockList ul.blockList ul.blockList li.blockList h4,
-	div.details ul.blockList ul.blockList ul.blockListLast li.blockList h4{
-		background-color:/*[[bg3]]*/;
-		border:none;
-		border-bottom:/*[[brds]]*/ 1px /*[[brd]]*/;}
-	hr{
-		border-style:/*[[brds]]*/;}
-	.overviewSummary caption span,
-	.memberSummary caption span,
-	.typeSummary caption span,
-	.useSummary caption span,
-	.constantsSummary caption span,
-	.deprecatedSummary caption span,
-	.requiresSummary caption span,
-	.packagesSummary caption span,
-	.providesSummary caption span,
-	.usesSummary caption span{
-		background-color:/*[[bgb]]*/;}
-	caption>span:not([class]){
-		border:/*[[brds]]*/ 1px /*[[brd]]*/;
-		border-bottom:none;}
-	.overviewSummary [role="tablist"] .tableTab,
-	.memberSummary [role="tablist"] .tableTab,
-	.typeSummary [role="tablist"] .tableTab,
-	.packagesSummary [role="tablist"] .tableTab{
-		background-color:/*[[bgb]]*/;
-		color:/*[[txt]]*/;
-		border:/*[[brds]]*/ 1px /*[[brd]]*/;
-		border-top:none;}
-	.overviewSummary [role="tablist"] .tableTab:hover,
-	.memberSummary [role="tablist"] .tableTab:hover,
-	.typeSummary [role="tablist"] .tableTab:hover,
-	.packagesSummary [role="tablist"] .tableTab:hover{
-		background-color:/*[[bgb]]*/;
-		color:/*[[htxt]]*/;}
-	.overviewSummary [role="tablist"] .activeTableTab,
-	.memberSummary [role="tablist"] .activeTableTab,
-	.typeSummary [role="tablist"] .activeTableTab,
-	.packagesSummary [role="tablist"] .activeTableTab{
-		background-color:/*[[bgo]]*/;
-		color:/*[[htxt]]*/;
-		border:/*[[brds]]*/ 1px /*[[hbrd]]*/;
-		border-top:none;}
-	.navBarCell1Rev{
-		background-color:/*[[bgo]]*/;
-		color:/*[[htxt]]*/;
-		font-weight:bold;}
-	footer{
-		background-color:/*[[bg1]]*/;}
-	.bottomNav{
-		margin-top:0;
-		background-color:/*[[bgb]]*/;}
-	.topNav a:link,
-	.topNav a:active,
-	.topNav a:visited,
-	.bottomNav a:link,
-	.bottomNav a:active,
-	.bottomNav a:visited{
-		color:/*[[txt]]*/;}
-	.topNav a:link:hover,
-	.topNav a:active:hover,
-	.topNav a:visited:hover,
-	.bottomNav a:link:hover,
-	.bottomNav a:active:hover,
-	.bottomNav a:visited:hover{
-		color:/*[[hlnk]]*/;}
-	footer>p.legalCopy{
-		margin-bottom:0;
-		padding-bottom:1em;}
+		border-bottom:solid 1px @brd;
+	}
+	.contentContainer :is(.description,.details) dl dt,
+	.serializedFormContainer dl dt{
+		color:@txt;
+	}
+	.overview,
+	.member,
+	.type,
+	.use,
+	.constants,
+	.deprecated,
+	.requires,
+	.packages,
+	.provides,
+	.uses{
+		&Summary caption a:is(:link,:visited,:hover,:active){
+			color:@hidk;
+			border-bottom:solid 1px @hidk;
+		}
+	}
+	.deprecationBlock{
+		border:solid 1px @idk;
+		background-color:@didk;
+		color:@hidk;
+	}
 }
-@-moz-document
-regexp("https?:\\/\\/docs\\.oracle\\.com\\/javase\\/8\\/docs\\/api\\/.*"){
-	/*specific javase 8 fixes*/
-	.subNav{
-		margin-bottom:1em;}
-	ul.blockList ul.blockList li.blockList,
-	ul.blockList ul.blockListLast li.blockList{
-		border:/*[[brds]]*/ 1px /*[[brd]]*/;}
+@-moz-document regexp("^https?://docs\\.oracle\\.com/(\\w+/java/)?javase/(7|8|13)/docs/api/.*"){
+	//Java 7, 8, 13
+	//WARNING: EXTREMELY FINICKY *SQUARED*! Always test everything after touching anything here
+	a:link,
+	a:active,
+	a:visited{
+		color:@lnk;
+		.topNav &,
+		.bottomNav &{
+			color:@txt;
+		}
+	}
+	a,
+	a[href]{
+		&:hover,
+		&:focus{
+			color:@hlnk;
+			.topNav &,
+			.bottomNav &{
+				color:@idk;
+			}
+		}
+	}
+	a[name]{
+		&,
+		&:hover,
+		&:active,
+		&:focus,
+		&:visited{
+			color:@txt;
+		}
+	}
+	blockquote{
+		pre,
+		code{
+			background-color: #000;
+			border-radius: 0.25em;
+			padding:0.5em;
+			outline: solid 1px #333;
+			pre,
+			code{
+				outline:none;
+				padding:0;
+			}
+		}
+	}
+	hr{
+		border: none;
+		border-top: solid 1px @brd;
+	}
+	::-webkit-scrollbar,::-webkit-scrollbar-track-piece{
+		background-color:@bg0 !important;
+	}
+	::-webkit-scrollbar-corner,::-webkit-scrollbar-thumb{
+		background-color:@bg3 !important;
+		border-radius:0.4em;
+	}
+	:root{
+		scrollbar-width:thin;
+		scrollbar-color:@bg3 @bg0;
+	}
 }
