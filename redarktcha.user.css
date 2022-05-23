@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           reDARKTCHA
 @namespace      https://github.com/RiedleroD/userstyles-riedler/
-@version        1.0.0
+@version        1.0.2
 @description    Dark mode for reCAPTCHA by Google
 @author         Riedler
 @preprocessor	less
@@ -24,7 +24,9 @@
 	Use https://google.com/recaptcha/api2/demo for testing.
 	Please don't go on random sites to test this site.
 */
-@-moz-document regexp("https?://(www\\.)?google\\.com/recaptcha/api2/anchor\\?.*") {
+
+@-moz-document regexp("https?://(www\\.)?google\\.com/recaptcha/api2/anchor\\?.*"),
+	regexp("https?://(www\\.)?recaptcha\\.net/recaptcha/enterprise/anchor.*"), regexp("https?://(www\\.)?recaptcha\\.net/recaptcha/api2/anchor.*"){
 	.rc-anchor-light{
 		background-color:@bg0;
 		color:@txt;
@@ -77,7 +79,8 @@
 		}
 	}
 }
-@-moz-document regexp("https?://(www\\.)?google\\.com/recaptcha/api2/bframe\\?.*"){
+@-moz-document regexp("https?://(www\\.)?google\\.com/recaptcha/api2/bframe\\?.*"),
+	regexp("https?://(www\\.)?recaptcha\\.net/recaptcha/enterprise/bframe\\?.*"), regexp("https?://(www\\.)?recaptcha\\.net/recaptcha/api2/bframe.*"){
 	:root{
 		color:@txt;
 	}
