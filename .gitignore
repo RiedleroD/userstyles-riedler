@@ -1,0 +1,6 @@
+*
+!*.css
+!.gitignore
+!Readme.md
+!screenshots/
+!screenshots/*
