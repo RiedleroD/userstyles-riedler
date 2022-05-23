@@ -1,8 +1,8 @@
 /* ==UserStyle==
 @name           Dark Arch
 @namespace      https://github.com/RiedleroD/userstyles-riedler/
-@version        0.1.0
-@description    Dark mode for archlinux.org (except for the wiki)
+@version        0.1.4
+@description    Dark mode for archlinux.org (except for gitlab and the wiki)
 @author         Riedler
 @preprocessor	uso
 @var	color	bg0		"Background 0"		#111
@@ -10,7 +10,7 @@
 @var	color	bg2		"Background 2"		#222
 @var	color	bg3		"Background 3"		#282828
 @var	color	bg4		"Background 4"		#333
-@var	color	cl1		"Main Color"		#068
+@var	color	cl1		"Main Color"		#418BA4
 @var	color	brd		"Border"			#888
 @var	color	hbrd	"Light Border"		#AAA
 @var	text	brdr	"Border Radius"		0.25em
@@ -18,13 +18,19 @@
 @var	color	txt		"Text"				#AAA
 @var	color	htxt	"Bright Text"		#CCC
 @var	color	hhtxt	"White Text"		#FFF
-@var	color	lnk		"Link"				#06A
-@var	color	hlnk	"Hovered Link"		#58C
+@var	color	lnk		"Link"				#418BA4
+@var	color	hlnk	"Hovered Link"		#6AC
 @var	color	vlnk	"Visited Link"		#86A
 @var	color	slc		"Selections"		#000
+@var	color	fals	"False/Red"			#922
+@var	color	hfals	"Light False/Red"	#E55
+@var	color	idk		"Maybe/Yellow"		#A50
+@var	color	hidk	"Light Maybe/Yellow"#FA0
+@var	color	tru		"True/Green"		#262
+@var	color	htru	"Light True/Green"	#6C6
 ==/UserStyle== */
 
-@-moz-document regexp("https?:\\/\\/(?:(?!wiki)[^\\/])*archlinux.org(/.*)?"){
+@-moz-document regexp("https?:\\/\\/(?:(?!wiki)(?!gitlab)[^\\/])*archlinux.org(/.*)?"){
 	/*scrollbars (yes you can style those)*/
 	::-webkit-scrollbar,::-webkit-scrollbar-track-piece{
 		background-color:/*[[bg1]]*/ !important;}
@@ -33,7 +39,9 @@
 		border-radius:/*[[brdr]]*/;}
 	:root{/*for firefox*/
 		scrollbar-width:thin;
-		scrollbar-color:/*[[cl1]]*/ /*[[bg0]]*/;}
+		scrollbar-color:/*[[cl1]]*/ /*[[bg0]]*/;
+		color-scheme:dark;
+	}
 	/*text selctions (yes you can style those too)*/
 	::selection{
 		background-color:/*[[slc]]*/;
@@ -81,6 +89,9 @@
 		border-color:/*[[brd]]*/;
 		border-radius:/*[[brdr]]*/;
 		color:/*[[txt]]*/;}
+	div#taskclosed{
+		background-color:/*[[bg2]]*/;
+		border-color:/*[[fals]]*/}
 	.pun .blockpost h2,
 	.pun .quotebox{
 		background-color:/*[[bg4]]*/;
@@ -94,6 +105,9 @@
 	/*navbars & menus*/
 	#archnavbar{
 		border-bottom-color:/*[[cl1]]*/ !important;}
+	#archnavbarlogo{
+		filter:hue-rotate(354deg) saturate(50%) brightness(115%);
+	}
 	#submenu a{
 		background-color:/*[[bg2]]*/;
 		border-color:/*[[brd]]*/;
@@ -107,17 +121,19 @@
 		border-color:/*[[hbrd]]*/;}
 	#brdmenu{
 		background:none;}
-	#brdmenu a,
-	#brdmenu a:link,
-	#brdmenu a:visited{
-		background:none;
-		border-color:#0000;}
 	/*text related stuff*/
 	a:link,
 	.pun a,
 	.pun a:link,
 	.pun a:visited{
 		color:/*[[lnk]]*/;}
+	#brdmenu a,
+	#brdmenu a:link,
+	#brdmenu a:visited{
+		background:none;
+		border-color:#0000;
+		color:/*[[lnk]]*/;
+	}
 	a:link:hover{
 		color:/*[[hlnk]]*/;}
 	.pun a:hover,
@@ -126,11 +142,10 @@
 	a:visited,
 	#brdmain a:visited{
 		color:/*[[vlnk]]*/;}
-	pre{
-		background-color:/*[[bg0]]*/;
-		color:/*[[htxt]]*/;
-		border-color:/*[[brd]]*/;
-		border-radius:/*[[brdr]]*/;}
+	.pun a:active,
+	#brdmain a:active{
+		color:/*[[hlnk]]*/ !important;
+	}
 	span#searchstate a,
 	.pun .postmsg,
 	#punhelp code,
@@ -146,10 +161,37 @@
 	.pun .postsignature,
 	.pun .postmsg .postedit{
 		color:/*[[dtxt]]*/;}
+	/*codeblocks*/
+	/*
+		testing URLs:	https://bbs.archlinux.org/viewtopic.php?id=274693
+						https://archlinux.org/news/libxml22912-6-update-may-require-manual-intervention/
+						https://aur.archlinux.org/cgit/aur.git/tree/PKGBUILD?h=nosefart
+	*/
+	.pun .codebox{
+		background-color:/*[[bg0]]*/;
+		color:/*[[htxt]]*/;
+		border-color:/*[[brd]]*/;
+		border-radius:/*[[brdr]]*/;
+	}
+	pre{
+		border:none;
+		border-radius:/*[[brdr]]*/;
+		background-color:/*[[bg0]]*/;
+		color:/*[[txt]]*/;
+		outline:solid 1px /*[[brd]]*/;
+	}
 	code{
 		background-color:/*[[bg0]]*/;
 		color:/*[[txt]]*/;
-		outline:solid 1px #000;}
+		outline:solid 1px #000;
+	}
+	.pun .codebox pre,
+	.pun .codebox code{
+		outline:none;
+	}
+	pre code{
+		outline:none;
+	}
 	/*various input elements*/
 	select{
 		background-color:/*[[bg3]]*/;
@@ -161,8 +203,9 @@
 		background-image:url("https://riedler.wien/sfto/darklearning/double_triangles_top_bottom_AAA.svg");
 		background-repeat:no-repeat;
 		background-size:0.75em;
-		background-position:center right;
-		cursor:pointer;}
+		background-position:center right 0.125em;
+		cursor:pointer;
+		padding-right:1em;}
 	select:not([multiple]):hover{
 		background-color:/*[[bg4]]*/;
 		color:/*[[htxt]]*/;}
@@ -228,6 +271,12 @@
 	input[type="radio"]:checked{
 		box-shadow:inset 0 0 0 0.2em /*[[bg3]]*/;
 		background-color:/*[[txt]]*/;}
+	textarea{
+		background-color:/*[[bg0]]*/;
+		border:solid 1px /*[[brd]]*/;
+		color:/*[[txt]]*/;
+		border-radius:/*[[brdr]]*/;
+	}
 	/*various tables*/
 	table.styled-table tr td{
 		background-color:/*[[bg2]]*/;
@@ -344,7 +393,7 @@
 	.attachments>a>img[src$="text.png"]{
 		filter:brightness(0.6) contrast(3);}
 }
-@-moz-document regexp("https?:\\/\\/(www|aur)\\.archlinux\\.org\\/?(\\?.*)?"){
+@-moz-document domain("www.archlinux.org"), domain("aur.archlinux.org"){
 	/*home*/
 	dl dt{
 		color:/*[[dtxt]]*/;}
@@ -352,6 +401,154 @@
 		background-color:/*[[cl1]]*/;}
 	h3 span.arrow{
 		border-top-color:/*[[cl1]]*/;}
+}
+@-moz-document domain("aur.archlinux.org"){
+	div#cgit table.tabs,
+	div#cgit div.content{
+		border-bottom-color:/*[[bg3]]*/;
+	}
+	div#cgit table.tabs td a.active{
+		background-color:/*[[bg3]]*/;
+		color:/*[[txt]]*/;
+	}
+	div#cgit div.path{
+		background-color:/*[[bg3]]*/;
+		color:/*[[txt]]*/;
+	}
+	div#cgit a,
+	div#cgit table.diffstat td.upd a{
+		color:/*[[lnk]]*/;
+	}
+	div#cgit a:hover,
+	div#cgit table.diffstat td.upd a:hover{
+		color:/*[[hlnk]]*/;
+	}
+	div#cgit table.blob td.linenumbers{
+		border:solid 1px /*[[brd]]*/;
+		border-right:none;
+		border-radius:0.25em 0 0 0.25em;
+		padding:calc(0.25em + 1px) 0.5em;
+	}
+	div#cgit table.blob td.linenumbers pre{
+		outline:none;
+	}
+	div#cgit table.blob td.lines{
+		border:solid 1px /*[[brd]]*/;
+		padding:0.25em 0.5em;
+		border-radius:0 /*[[brdr]]*/ /*[[brdr]]*/ 0;
+	}
+	div#cgit table.blob td.lines pre{
+		outline:none;
+	}
+	div#cgit table{
+		/*fixes problem with border-radius*/
+		border-collapse:separate;
+		border-spacing:0;
+	}
+	/*table lists*/
+	div#cgit table.list tr,
+	div#cgit table.list tr.nohover:hover{
+		background-color:/*[[bg0]]*/;
+	}
+	div#cgit table.list tr.logheader,
+	div#cgit table.list tr:hover{
+		background-color:/*[[bg2]]*/;
+	}
+	div#cgit table.list td a{
+		color:/*[[txt]]*/;
+	}
+	div#cgit table.list td a:hover{
+		color:/*[[hlnk]]*/;
+	}
+	/*diff codeblock - unified mode*/
+	div#cgit table.diff td div.head{
+		color:/*[[txt]]*/;
+	}
+	div#cgit table.diff td div.hunk{
+		color:/*[[cl1]]*/;
+	}
+	div#cgit table.diff td div.del{
+		color:/*[[fals]]*/;
+	}
+	div#cgit table.diff td div.add{
+		color:/*[[tru]]*/;
+	}
+	/*diff codeblock - ssdiff mode*/
+	div#cgit table.ssdiff td.head div.head{
+		color:/*[[txt]]*/;
+	}
+	div#cgit table.ssdiff td.hunk{
+		background-color:/*[[bg3]]*/;
+		color:/*[[htxt]]*/;
+		border-top:none;
+	}
+	div#cgit table.ssdiff td.lineno{
+		color:/*[[txt]]*/;
+		background-color:/*[[bg1]]*/;
+		border-right:none;
+	}
+	div#cgit table.ssdiff td.lineno ~ td.lineno{
+		border-left:none;
+	}
+	div#cgit table.ssdiff td.changed{
+		color:/*[[hidk]]*/;
+		background-color:/*[[idk]]*/;
+	}
+	div#cgit table.ssdiff td.del,
+	div#cgit table.ssdiff span.del{
+		background-color:/*[[fals]]*/;
+		color:/*[[hfals]]*/;
+	}
+	div#cgit table.ssdiff td.add,
+	div#cgit table.ssdiff span.add{
+		color:/*[[htru]]*/;
+		background-color:/*[[tru]]*/;
+	}
+	div#cgit table.ssdiff td.changed_dark,
+	div#cgit table.ssdiff td.add_dark,
+	div#cgit table.ssdiff td.del_dark{
+		background-color:#0000;
+	}
+	/*diff statistics table*/
+	div#cgit table.diffstat{
+		background-color:/*[[bg3]]*/;
+		border-color:/*[[brd]]*/;
+		border-radius:/*[[brdr]]*/;
+		border-collapse:separate;
+	}
+	div#cgit table.diffstat td.graph td.add{
+		background-color:/*[[tru]]*/;
+	}
+	div#cgit table.diffstat td.graph td.rem{
+		background-color:/*[[fals]]*/;
+	}
+	/*diff options sideblock*/
+	div#cgit div.cgit-panel table{
+		background-color:/*[[bg3]]*/;
+		border-radius:/*[[brdr]]*/;
+		border-collapse:separate;
+	}
+	/*package stats*/
+	div#cgit table.stats td{
+		border-color:/*[[brd]]*/;
+	}
+	div#cgit table.stats th{
+		background-color:/*[[bg3]]*/;
+		border-color:/*[[brd]]*/;
+		color:/*[[htxt]]*/;
+	}
+	div#cgit table.stats td.total{
+		background-color:/*[[bg3]]*/;
+		color:/*[[htxt]]*/;
+	}
+	div#cgit table.stats td.sum{
+		background-color:/*[[bg1]]*/;
+		color:/*[[txt]]*/;
+	}
+	div#cgit table.stats td.sum:last-child{
+		background-color:/*[[bg2]]*/;
+		color:/*[[htxt]]*/;
+	}
 }
 @-moz-document domain("security.archlinux.org"){
 	table th{
@@ -389,4 +586,69 @@
 		background-color:/*[[bg3]]*/;}
 	font[color="#000000"]{
 		color:/*[[htxt]]*/;}
+}
+@-moz-document domain("bbs.archlinux.org"){
+	/*new message*/
+	.pun .blockform .box,
+	#adstats,
+	#adintro,
+	#postpreview,
+	#posterror{
+		border-color:/*[[brd]]*/;
+		background-color:/*[[bg3]]*/;
+	}
+	.pun #quickpost h2,
+	#punpost .blockform h2,
+	#punedit .blockform h2,
+	#posterror h2,
+	#pundelete .blockform h2{
+		background-color:/*[[bg3]]*/;
+		color:/*[[txt]]*/;
+		border-top-left-radius:/*[[brdr]]*/;
+	}
+	.pun .infldset,
+	#adintro .inbox,
+	#adstats .inbox{
+		background-color:/*[[bg3]]*/;
+		border:none;
+	}
+	.pun .inform > fieldset{
+		background-color:/*[[bg3]]*/;
+	}
+	/*menu*/
+	.pun .blockmenu ul,
+	.pun .blockmenu li{
+		border-color:/*[[brd]]*/;
+	}
+	.pun .blockmenu .isactive a:link,
+	.pun .blockmenu .isactive a:visited,
+	.pun .blockmenu a:hover,
+	.pun .blockmenu a:active,
+	.pun .blockmenu a:focus{
+		background-color:/*[[bg4]]*/;
+	}
+	/*rulebox*/
+	#punmisc #rules .box,
+	#punhelp .box{
+		border-color:/*[[brd]]*/;
+		background-color:/*[[bg3]]*/;
+	}
+	/*userlist table*/
+	.pun #users1 h2{
+		background-color:#0000;
+	}
+	/*a checklist*/
+	.pun .checklist{
+		background-color:/*[[bg2]]*/;
+		border-color:/*[[brd]]*/;
+		border-radius:/*[[brdr]]*/;
+	}
+	/*topics*/
+	.pun .inew .icon{
+		border-color:/*[[lnk]]*/;
+	}
+	/*hr before signatures*/
+	.pun .postmsg hr{
+		background-color:/*[[brd]]*/;
+	}
 }
