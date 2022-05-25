@@ -2664,6 +2664,9 @@ rbarshape(name,mod){
 			& .icon.fa{
 				align-self:center;
 			}
+			& div[data-region="answer-label"]{
+				cursor:pointer;
+			}
 		}
 		& .incorrect{
 			background-color:fals;
