@@ -561,6 +561,7 @@ rbarshape(name,mod){
 		background-color:bg2;}
 	/*footer*/
 	#page-footer{
+		color:txt !important;
 		background-color:bg2 !important;
 		border-top-left-radius:0.5em;
 		border-top-right-radius:0.5em;
@@ -569,6 +570,9 @@ rbarshape(name,mod){
 			&:hover,
 			&:focus{
 				color:hlnk;
+			}
+			& .icon{
+				color:txt;
 			}
 		}
 	}
