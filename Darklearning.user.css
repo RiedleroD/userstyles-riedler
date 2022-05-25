@@ -2671,6 +2671,9 @@ rbarshape(name,mod){
 			& div[data-region="answer-label"]{
 				cursor:pointer;
 			}
+			& input[disabled]+div[data-region="answer-label"]{
+				cursor:not-allowed;
+			}
 		}
 		& .incorrect{
 			background-color:fals;
