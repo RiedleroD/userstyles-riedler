@@ -909,23 +909,35 @@ urlenc(x){
 			color:hlnk;
 		}
 	}
+	//pagination used in recentlyaccessedcourses on dashboard
 	.pagination>.page-item{
 		& .page-link{
-			color:lnk;
 			background-color:bg4;
 			border-color:#0000;
+			&:focus{
+				box-shadow:none;
+				z-index:0;
+				&>span{
+					color:lnk;
+				}
+			}
 			&:hover{
-				color:hlnk;
 				background-color:bg5;
 				border-color:brd;
+				z-index:3;
+				&>span{
+					color:hlnk;
+				}
 			}
 		}
-		&.active{
-			cursor:not-allowed;
+		&.active,
+		&.disabled{
 			& .page-link{
-				color:htxt;
-				background-color:btn;
-				border-color:btn;
+				cursor:default;
+				background-color:brd;
+				&>span{
+					color:txt;
+				}
 			}
 		}
 	}
