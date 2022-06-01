@@ -2771,6 +2771,9 @@ urlenc(x){
 		& .drop{
 			border-radius:irad;
 			border-color:brd;
+			&.active{
+				border-color:brd;
+			}
 		}
 		& .drop,
 		& .dropzone,
