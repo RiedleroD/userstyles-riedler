@@ -2813,15 +2813,11 @@ urlenc(x){
 		box-shadow:0 0.2em 0.5em bg0,0 0.2em 0.2em idk;
 	}
 	.path-mod-quiz #mod_quiz_navblock{
-		& a.qnbutton{
-			transition:transform 0.1s;
+		& :is(a,span).qnbutton{
 			color:txt !important;
 			background-color:bg4;
 			&:hover{
 				text-decoration:none;
-				&:not(.thispage){
-					transform:scale(1.2);
-				}
 			}
 			&:focus-visible,
 			&:focus,
@@ -2865,13 +2861,21 @@ urlenc(x){
 				background-position:top right;
 			}
 		}
+		& a.qnbutton{
+			transition:transform 0.1s;
+			&:hover:not(.thispage){
+				transform:scale(1.2);
+			}
+		}
+		& .allquestionsononepage :is(span,a).qnbutton.thispage{
+			&>.thispageholder{
+				outline:none;
+			}
+		}
 		& .allquestionsononepage a.qnbutton.thispage{
 			cursor:pointer;
 			&:hover{
 				transform:scale(1.2);
-			}
-			&>.thispageholder{
-				outline:none;
 			}
 		}
 	}
