@@ -2827,7 +2827,6 @@ urlenc(x){
 				box-shadow:none;
 			}
 			&.thispage{
-				cursor:default;
 				&>.thispageholder{
 					outline:solid 1px brd;
 				}
@@ -2867,15 +2866,22 @@ urlenc(x){
 				transform:scale(1.2);
 			}
 		}
-		& .allquestionsononepage :is(span,a).qnbutton.thispage{
-			&>.thispageholder{
-				outline:none;
+		& .qnbuttons:not(.allquestionsononepage){
+			.qnbutton.thispage{
+				cursor:default;
 			}
 		}
-		& .allquestionsononepage a.qnbutton.thispage{
-			cursor:pointer;
-			&:hover{
-				transform:scale(1.2);
+		& .allquestionsononepage{
+			& :is(span,a).qnbutton.thispage{
+				&>.thispageholder{
+					outline:none;
+				}
+			}
+			& a.qnbutton.thispage{
+				cursor:pointer;
+				&:hover{
+					transform:scale(1.2);
+				}
 			}
 		}
 	}
