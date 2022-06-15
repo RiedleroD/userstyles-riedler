@@ -2875,6 +2875,7 @@ urlenc(x){
 			& :is(span,a).qnbutton.thispage{
 				&>.thispageholder{
 					outline:none;
+					border:none;
 				}
 			}
 			& a.qnbutton.thispage{
