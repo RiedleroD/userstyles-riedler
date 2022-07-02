@@ -12,6 +12,7 @@
 what the fuck why do I need to double-quote this?
 @var	number		colspace	"Column Spacing"			[10,1,null,1,'px']
 @var	checkbox	colspace_	"Column Spacing?"			1
+on/off switch instead of 0 width because stylus likes to replace 0 with the default for some reason >:(
 ==/UserStyle== */
 
 @accent-txt: lighten(@accent,5%);
@@ -23,7 +24,7 @@ what the fuck why do I need to double-quote this?
 @retoot_img: %(@retoot_svg,#606984,@accent);
 @retoot_img_h: %(@retoot_svg,#707B97,@accent);
 
-@-moz-document domain("mas.to"), domain("mastodon.social") {
+@-moz-document domain("mas.to"), domain("mastodon.social"), domain("mastodon.coffee"), domain("mstdn.social"), domain("mastodon.art"), domain("mastodon.online"), domain("mastodon.lol") {
 	/* makes the columns expand to the full width of the screen */
 	.drawer,
 	.column{
