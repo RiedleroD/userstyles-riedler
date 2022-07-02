@@ -141,8 +141,12 @@ what the fuck why do I need to double-quote this?
 	}
 	//back button in headers of columns
 	.column-header__back-button,
-	.column-back-button{
-		color:@accent;
+	.column-back-button,
+	.column-header > .column-header__back-button{
+		color:@accent-txt;
+		&:hover{
+			color:@accent-htxt;
+		}
 	}
 	//loading bar at the top of the screen
 	.loading-bar{
