@@ -10,6 +10,8 @@
 @var	color		accent		"Accent Color"				#6364ff
 @var	text		logo		"Logo replacement"			""https://raw.githubusercontent.com/mastodon/mastodon/main/app/javascript/images/logo.svg""
 what the fuck why do I need to double-quote this?
+@var	number		colspace	"Column Spacing"			[10,1,null,1,'px']
+@var	checkbox	colspace_	"Column Spacing?"			1
 ==/UserStyle== */
 
 @accent-txt: lighten(@accent,5%);
@@ -254,5 +256,16 @@ what the fuck why do I need to double-quote this?
 			width:100%;
 			background-position:center;
 		}
+	}
+	/* column spacing */
+	.column,
+	.drawer{
+		&,&:first-child,&:last-child{
+			padding:0;
+		}
+	}
+	.columns-area when(@colspace_=1){
+		grid-gap:@colspace;
+		margin:@colspace;
 	}
 }
