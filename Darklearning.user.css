@@ -100,8 +100,6 @@
 	"Dim":"brightness(0.8)",
 	"Debug":"invert(1) hue-rotate(180deg) saturate(100)",
 	"Off":"none"}
-@var	text	ntip	"Navigation Tree initial padding"	"0"
-@var	text	ntmp	"Navigation Tree max padding"		"0.5rem"
 ==/UserStyle== */
 
 //color variables
@@ -673,45 +671,6 @@ urlenc(x){
 				}
 			}
 		}
-		&_navigation{
-			& .block_tree{
-				& .tree_item{
-					max-width:100%;
-					width:max-content;
-					position:relative;
-					background-color:bg2;
-					z-index:2;
-					border-radius:0 irad irad 0;
-					transition:0.2s max-width;
-				}	
-				& .contains_branch>ul{
-					transition: padding-left 0.2s;
-					if sidebar=="S"{
-						padding-left:ntmp;
-					}else{
-						padding-left:ntip;
-					}
-				}
-			}
-			&:hover .block_tree{
-				if sidebar=="Goh"{
-					& .tree_item{
-						white-space:nowrap;
-						max-width:100vw;
-						padding-right:0.25em;
-						& .item-content-wrap{
-							max-width:25vw;
-							text-overflow: ellipsis;
-						}
-					}
-				}
-				if sidebar!="S"{
-					& .contains_branch>ul{
-						padding-left:ntmp;
-					}
-				}
-			}
-		}
 		& .block-cards{
 			& a.coursename{
 				color:lnk;
@@ -1106,6 +1065,32 @@ urlenc(x){
 	}
 	th[style*="background-color: #fef65b"]{
 		background-color:idk !important;
+	}
+	/*sidedrawer*/
+	.drawer{
+		background-color:bg2;
+	}
+	.courseindex .courseindex-item{
+		&:is(:hover,/:focus) .courseindex-link{
+			color:txt;
+		}
+		.courseindex-chevron span,
+		.courseindex-link{
+			color:txt;
+			&:hover{
+				color:htxt;
+			}
+		}
+		&.pageitem{
+			background-color:btn;
+			&>.courseindex-link,
+			&>.courseindex-chevron span{color:dtxt}
+			&:hover,&:focus{
+				background-color:hbtn;
+				&>.courseindex-link,
+				&>.courseindex-chevron span{color:dtxt}
+			}
+		}
 	}
 	/*Misc*/
 	.otherstudent.highlight{
