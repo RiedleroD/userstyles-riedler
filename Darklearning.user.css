@@ -1959,6 +1959,36 @@ urlenc(x){
 			}
 		}
 	}
+	section:not(#region-main) .block.block_calendar_month .maincalendar .calendartable.calendarmonth td.clickable:not(.today):hover .day-number-circle{
+		//wtf
+		background-color:bg3;
+	}
+	.block .calendar_filters li span.calendar_event{
+		&_course{
+			background-color:cal0;
+			& i{color:lighten(cal0,30)}
+		}
+		&_category{
+			background-color:cal1;
+			& i{color:lighten(cal1,30)}
+		}
+		&_group{
+			background-color:cal2;
+			& i{color:lighten(cal2,30)}
+		}
+		&_user{
+			background-color:cal3;
+			& i{color:lighten(cal3,30)}
+		}
+		&_site{
+			background-color:cal4;
+			& i{color:lighten(cal4,30)}
+		}
+		&_other{
+			background-color:bg3;
+			& i{color:lighten(bg3,30)}
+		}
+	}
 	/*Replacement images + image manipulation*/
 	.atto_image_button_text-bottom.img-responsive,
 	.atto_image_button_text-top.img-responsive,/*most likely embedded images in 	assignment descriptions*/
