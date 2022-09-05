@@ -1197,6 +1197,7 @@ urlenc(x){
 	.card{
 		border-radius:crad;
 		background-color:bg3;
+		border:none;
 		&-img{
 			filter:EICC;}
 		&-footer{
