@@ -262,28 +262,39 @@ urlenc(x){
 	}
 	/*navbar*/
 	.navbar{
-		background-color:bg2;
-		border-bottom-right-radius:0.5em;
-		border-bottom-left-radius:0.5em;
-		border-bottom:solid 1px bg1;
-		box-shadow:none;
+		background-color:bg2 !important;
+		border-radius:0 0 0.5em 0.5em;
 	}
-	.breadcrumb:not(:empty){
-		border-color:brd;
-		border-width:1px;}
-	.navbar-light, 
-	.navbar-bootswatch,{
-		& .navbar-nav{
-			& .nav-link{
-				color:lnk;
-				&:hover,
-				&:focus{
-					color:hlnk;
-				}
+	.navbar.fixed-top{
+		border-bottom:solid 1px bg1;
+		& .navbar-brand .logo{
+			filter:invert(0.86) hue-rotate(180deg);
+		}
+	}
+	.primary-navigation .navigation .nav-link{
+		color:lnk;
+	}
+	.navbar-light .navbar-nav{
+		& .nav-link{
+			color:lnk;
+			&:hover,&:focus{
+				color:hlnk;
 			}
-			& .active,
-			& .show{
-				&>.nav-link{color:hlnk}
+		}
+		&:is(.show,.active) > .nav-link,
+		& .nav-link:is(.show,.active){
+			color:dtxt;
+		}
+	}
+	.moremenu .nav-link{
+		&:hover,&:focus{
+			background-color:bg3;
+		}
+		&.active{
+			background-color:btn;
+			border-bottom:none;
+			&:hover,&:focus{
+				background-color:hlnk;
 			}
 		}
 	}
