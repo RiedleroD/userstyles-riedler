@@ -1133,6 +1133,9 @@ urlenc(x){
 		}
 	}
 	/*Misc*/
+	.activity-item:not(.activityinline){
+		border:none;
+	}
 	.otherstudent.highlight{
 		outline:none;
 		color:htxt;
