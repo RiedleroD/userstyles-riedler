@@ -270,6 +270,10 @@ urlenc(x){
 		& .navbar-brand .logo{
 			filter:invert(0.86) hue-rotate(180deg);
 		}
+		& .divider{
+			background-color:brd;
+			border-left-color:brd !important;
+		}
 	}
 	.primary-navigation .navigation .nav-link{
 		color:lnk;
