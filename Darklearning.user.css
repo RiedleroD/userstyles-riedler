@@ -1157,7 +1157,7 @@ urlenc(x){
 			--f:invert(.85);
 			--mbm:overlay;
 		}
-		&>img:is(.activityicon,/.activityicon){
+		&>img:is(.activityicon,/.icon){
 			mix-blend-mode:var(--mbm);
 			filter:var(--f) !important;
 		}
