@@ -1127,6 +1127,14 @@ urlenc(x){
 			}
 		}
 	}
+	/* Activites */
+	.activity-item:not(.activityinline){
+		border:none;
+	}
+	.path-mod .activity-header:not(:empty){
+		background-color:bg3;
+		border-radius:0.5em;
+	}
 	/*Activity icon button thingies*/
 	.activityiconcontainer{
 		&.content{
@@ -1155,9 +1163,6 @@ urlenc(x){
 		}
 	}
 	/*Misc*/
-	.activity-item:not(.activityinline){
-		border:none;
-	}
 	.otherstudent.highlight{
 		outline:none;
 		color:htxt;
