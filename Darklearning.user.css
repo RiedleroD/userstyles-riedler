@@ -965,6 +965,11 @@ urlenc(x){
 			margin-right:0;
 		}
 	}
+	/*drawer handle buttons*/
+	.drawer-toggles .drawer-toggler .btn{
+		background-color:bg3;
+		&:hover{color:txt}
+	}
 	/*Dropdown menus*/
 	.dropdown-item:active,.dropdown-item.active{
 		background-color:bg4;}
