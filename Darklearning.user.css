@@ -988,9 +988,19 @@ urlenc(x){
 		background-color:bg3 !important;
 	}
 	/*tooltips: popups that pop up when you hover over stuff with set tooltips*/
-	.tooltip>*{
-		background-color:bg3 !important;
-		color:txt !important;}
+	.tooltip{
+		&>&-inner{
+			background-color:bg3;
+			color:txt;
+			border:solid 1px bg0;
+			border-radius:0.25em;
+			margin-left:-1px;
+		}
+		&>.arrow::before{
+			border-right-color:bg3;
+			filter:drop-shadow(-1px 0 0 bg0);
+		}
+	}
 	/*popovers: the same, but with more complex content and a very annoying arrow*/
 	.popover{
 		background-color:bg1;
