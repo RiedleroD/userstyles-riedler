@@ -1902,22 +1902,50 @@ urlenc(x){
 		}
 	}
 	/*Calendar*/
-	.calendar_event,
-	.path-calendar .maincalendar .calendarmonth ul li .badge.badge-circle.calendar_event{
-		&_course{
-			background-color:cal0;
-		}
-		&_category{
-			background-color:cal1;
-		}
-		&_group{
-			background-color:cal2;
-		}
-		&_user{
-			background-color:cal3;
-		}
-		&_site{
-			background-color:cal4;
+	.maincalendar{
+		& .calendarmonth{
+			border-radius:0.5em;
+			border-collapse:separate;
+			td,th{
+				border:solid 1px brd;
+				border-left:none;
+				border-top:none;
+			}
+			& :not(thead+tbody)>tr:first-of-type>:is(th,td){
+				border-top:solid 1px brd;
+				&:first-of-type{
+					border-top-left-radius:0.25em;
+				}
+				&:last-of-type{
+					border-top-right-radius:0.25em;
+				}
+			}
+			& tr>:is(th,td):first-of-type{
+				border-left:solid 1px brd;
+			}
+			& tbody>tr:last-of-type>:is(td,th){
+				&:first-of-type{
+					border-bottom-left-radius:0.25em;
+				}
+				&:last-of-type{
+					border-bottom-right-radius:0.25em;
+				}
+			}
+			& .clickable:hover{
+				background-color:bg3;
+			}
+			& td.dayblank{
+				background-color:bg4;
+			}
+			& th{
+				background-color:btn;
+				border-color:btn !important;
+				&>span{color:dtxt}
+			}
+			& td.today .day-number-circle{
+				background-color:bg3;
+				color:txt;
+			}
 		}
 	}
 	/*Replacement images + image manipulation*/
@@ -3050,31 +3078,6 @@ urlenc(x){
 		&:disabled,
 		&[readonly]{
 			cursor:not-allowed;
-		}
-	}
-}
-@-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/calendar/view\\.php.*?") {
-	.eventlist .event .card{
-		background-color:bg3;
-		border-radius:crad !important;
-		overflow:hidden;
-	}
-	.path-calendar .maincalendar{
-		& .calendar_event_course{
-			border:none;
-		}
-		& .calendarmonth ul li>a{
-			text-overflow:clip;
-			&:hover{
-				overflow:visible;
-				transform:translate(0,0);
-				margin-bottom:0.45em;
-				&.eventname{
-					background-color:bg3;
-					position:absolute;
-					right:-3.5em;
-				}
-			}
 		}
 	}
 }
