@@ -914,18 +914,13 @@ urlenc(x){
 				color:hlnk;
 			}
 		}
+		&.btn-icon:is(:hover,/:focus){
+			background-color:bg3;
+		}
 		&:disabled,
 		&.disabled{
 			opacity:1;
 			filter:grayscale(0.25) brightness(0.75) contrast(0.75);
-		}
-	}
-	& .btn-link{
-		color:lnk;
-		transition:none;
-		&:hover,
-		&:focus{
-			color:hlnk;
 		}
 	}
 	//pagination used in recentlyaccessedcourses on dashboard
