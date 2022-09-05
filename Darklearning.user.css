@@ -1984,6 +1984,9 @@ urlenc(x){
 	#spinning_wheel{
 		filter:invert(1) brightness(1.5);
 	}
+	img[src^="https://elearning.tgm.ac.at/theme/image.php/boost"][src$="monologo"]{
+		filter:invert(0.8);
+	}
 	/*row where it displays what you've done and what you didn't. Normally only in course/view.php, but also in other places*/
 	.barRow{
 		& .progressBarCell{
