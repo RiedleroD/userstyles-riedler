@@ -578,13 +578,18 @@ urlenc(x){
 	/*body*/
 	:root,body,#page{
 		background-color:bg1 !important;}
-	#region-main{
+	#region-main{//TODO: still exists or replaced by main-inner?
 		border-radius:crad;
 		overflow:visible;
 		margin-bottom:1.5em;
 		background-color:bg2;}
 	#page-header>div>div.card{
 		background-color:bg2;}
+	#page.drawers .main-inner{
+		border-radius:crad;
+		overflow:visible;
+		background-color:bg2;
+	}
 	/*footer*/
 	#page-footer{
 		color:txt !important;
