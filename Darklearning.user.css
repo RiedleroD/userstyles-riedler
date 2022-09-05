@@ -477,6 +477,14 @@ urlenc(x){
 			}
 		}
 	}
+	/* generic color stuff */
+	.bg-secondary{
+		background-color:bg3 !important;
+		/:is(a,button)&:is(:hover,/:focus){
+			background-color:bg4 !important;
+		}
+	}
+	/* other stuff */
 	#conversation-actions-menu-button{
 		color:brd;
 		&:hover{
@@ -1028,9 +1036,22 @@ urlenc(x){
 	.popover{
 		background-color:bg1;
 		color:txt;
-		border:none;
+		border:solid 1px bg4;
 		border-radius:irad;
-		box-shadow:0 0 0.1em 0 brd}
+		&-header{
+			background-color:bg2;
+			border-bottom-color:#0000;
+			border-radius:0.5em 0.5em 0 0;
+			color:htxt !important;
+		}
+		&-body{
+			color:txt;
+			border-radius:0.5em;
+		}
+		& .border-bottom{
+			border-bottom-color:bg4 !important;
+		}
+	}
 	.bs-popover{
 		//see https://elearning.tgm.ac.at/calendar/view.php?view=month
 		&-top>.arrow,
@@ -1039,7 +1060,7 @@ urlenc(x){
 				border-top-color:bg1;
 			}
 			&::before{
-				border-top-color:rgba(brd,0.5);
+				border-top-color:bg4;
 			}
 		}
 		//see above link
@@ -1052,7 +1073,7 @@ urlenc(x){
 				border-bottom-color:bg2;
 			}
 			&>.arrow::before{
-				border-bottom-color:rgba(brd,0.5);
+				border-bottom-color:bg4;
 			}
 		}
 		//see https://elearning.tgm.ac.at/course/view.php?id=5454&section=1
@@ -1062,7 +1083,7 @@ urlenc(x){
 				border-left-color:bg1;
 			}
 			&::before{
-				border-left-color:rgba(brd,0.5);
+				border-left-color:bg4;
 			}
 		}
 		//TODO: find out where this is used
@@ -1072,19 +1093,9 @@ urlenc(x){
 				border-right-color:bg1;
 			}
 			&::before{
-				border-right-color:rgba(brd,0.5);
+				border-right-color:bg4;
 			}
 		}
-	}
-	.popover{
-		&-header{//TODO restructure
-			background-color:bg2;
-			border-bottom-color:#0000;
-			border-radius:0.5em 0.5em 0 0;
-			color:htxt !important;}
-		&-body{
-			color:txt;
-			border-radius:0.5em;}
 	}
 	/*Manually colored tables*/
 	table[bgcolor="grey"]{
