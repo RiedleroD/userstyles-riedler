@@ -611,15 +611,9 @@ urlenc(x){
 		}
 	}
 	/*body*/
-	:root,body,#page{
-		background-color:bg1 !important;}
-	#region-main{//TODO: still exists or replaced by main-inner?
-		border-radius:crad;
-		overflow:visible;
-		margin-bottom:1.5em;
-		background-color:bg2;}
-	#page-header>div>div.card{
-		background-color:bg2;}
+	:root,body,#page,#page.drawers{
+		background-color:bg1 !important;
+	}
 	#page.drawers .main-inner{
 		border-radius:crad;
 		overflow:visible;
