@@ -1127,6 +1127,33 @@ urlenc(x){
 			}
 		}
 	}
+	/*Activity icon button thingies*/
+	.activityiconcontainer{
+		&.content{
+			background-color:c0;
+			--f:invert(.9);
+			--mbm:overlay;
+		}
+		&.communication{
+			background-color:c1;
+			--f:invert(.5);
+			--mbm:multiply;
+		}
+		&.collaboration{
+			background-color:c3;
+			--f:invert(0.4);
+			--mbm:multiply;
+		}
+		&.assessment{
+			background-color:c4;
+			--f:invert(.85);
+			--mbm:overlay;
+		}
+		&>img:is(.activityicon,/.activityicon){
+			mix-blend-mode:var(--mbm);
+			filter:var(--f) !important;
+		}
+	}
 	/*Misc*/
 	.activity-item:not(.activityinline){
 		border:none;
