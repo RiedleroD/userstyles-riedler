@@ -805,6 +805,10 @@ urlenc(x){
 	}
 	.btn{
 		border-radius:irad;
+		color:txt;
+		&:hover{
+			color:htxt;
+		}
 		&-outline-secondary{
 			border-color:brd;
 			&:hover,
