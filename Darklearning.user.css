@@ -1171,32 +1171,20 @@ urlenc(x){
 		color:txt;
 		filter:brightness(0.8);
 	}
-	.usertext{
-		color:lnk !important;
-	}
 	#action-menu-toggle-0:hover .usertext{
 		color:hlnk !important;//TODO: fix this mess by removing the catch-all text colorator
 	}
+	.userinitials{
+		background-color:txt;
+		color:dtxt;
+		/#user-menu-toggle:hover &{background-color:htxt}
+	}
 	if(anon==1){
-		.usertext{
-			display:none;
-		}
-		.userbutton::before{
-			content:"Anonymous User";
-			margin-right:0.25rem;
-			color:lnk;
-		}
-		#action-menu-toggle-0:hover .userbutton::before,
-		#action-menu-toggle-0:focus .userbutton::before{
-			color:hlnk;
-		}
-		#page-footer .logininfo>a:first-child{
+		.userinitials{
 			font-size:0;
-			text-decoration:none;//produces visual glitches when left on
 			&::after{
-				font-size:0.9375rem;//that's the usual font size in elearning
-				content:"Anonymous"
-				text-decoration:underline;
+				font-size:1rem;
+				content:"AN";
 			}
 		}
 	}
