@@ -2258,7 +2258,7 @@ urlenc(x){
 	.block-myoverview>.container-fluid.p-0{
 		margin-top:1.5em;}
 }
-@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/?(\\?.*)?$") {
+@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/?(\\?.*)?$"), regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/mod\\/forum\\/discuss\\.php.*") {
 	.sitelink{
 		filter:invert(1) hue-rotate(180deg);}
 	#login_username,
