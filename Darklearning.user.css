@@ -52,12 +52,12 @@
 	"Rotate 270°":"r270"
 }
 @var	select	NBCS	"Course Navbar Cell Shape"{
-	"Pronounced":"pron",
-	"Teardrop":"tear",
-	"Round":"rnd",
+	"Rectangle":"rect",
 	"Rounded":"rndd",
 	"Soft Edges":"sft",
-	"Rectangle":"rect",
+	"Round":"rnd",
+	"Teardrop":"tear",
+	"Pronounced":"pron",
 	"Modifier debug":"debug_mod"
 }
 @var	select	NBCSm "Course Navbar Cell Modifier"{
@@ -73,12 +73,12 @@
 	"Rotate 270°":"r270"
 }
 @var	select	NBS		"Course Navbar Shape"{
-	"Pronounced":"pron",
-	"Teardrop":"tear",
-	"Round":"rnd",
-	"Rounded":"rndd",
-	"Soft Edges":"sft",
 	"Rectangle":"rect",
+	"Soft Edges":"sft",
+	"Rounded":"rndd",
+	"Round":"rnd",
+	"Teardrop":"tear",
+	"Pronounced":"pron",
 	"Modifier debug":"debug_mod"
 }
 @var	select	NBSm "Course Navbar Modifier"{
@@ -294,9 +294,34 @@ urlenc(x){
 		}
 		&.active{
 			background-color:btn;
+			color:dtxt;
 			border-bottom:none;
 			&:hover,&:focus{
 				background-color:hlnk;
+			}
+		}
+	}
+	.moremenu .nav-tabs{
+		background-color:#0000;
+	}
+	/*secondary navbar*/
+	.secondary-navigation .navigation{
+		border-top:none;
+		border-bottom:none;
+		height:auto;
+		background-color:bg3;
+		border-radius:barshape(NBS,NBSm);
+		overflow:clip;
+		padding:0.25em;
+		& .nav-tabs .nav-link{
+			border-radius:barshape(NBCS,NBCSm);
+		}
+		&.moremenu .nav-link{
+			height:100%;
+			padding:.33rem .75rem
+			&.active{
+				cursor:default;
+				pointer-events:none;
 			}
 		}
 	}
@@ -1142,40 +1167,6 @@ urlenc(x){
 				font-size:0.9375rem;//that's the usual font size in elearning
 				content:"Anonymous"
 				text-decoration:underline;
-			}
-		}
-	}
-	.nav-tabs,
-	.nav-pills{
-		background-color:bg3;
-		border-radius:barshape(NBS,NBSm);
-		border-bottom:none;
-		.show>& .nav-link.active.dropdown-toggle{
-			background-color:bg4;
-			border-radius:barshape(NBCS,NBCSm);
-		}
-		& .nav-link{
-			background-color:#0000;
-			border:none;
-			padding:0.5em 1em;
-			&.active{
-				color:txt;
-				max-height:100%;
-			}
-			&.active:not(:disabled):not(.disabled){
-				&.active,
-				&:active{
-					background-color:bg4;
-					border-radius:barshape(NBCS,NBCSm);
-					border-bottom:none;
-				}
-			}
-		}
-		& .nav-item{
-			margin-bottom:0;
-			&.show .nav-link.active{
-				color:txt;
-				max-height:100%;
 			}
 		}
 	}
