@@ -784,8 +784,6 @@ urlenc(x){
 		}
 	}
 	/*random shit again*/
-	.logo>img{
-		filter:invert(1) hue-rotate(180deg);}
 	.empty-placeholder-image-lg{
 		filter:invert(1);
 	}
