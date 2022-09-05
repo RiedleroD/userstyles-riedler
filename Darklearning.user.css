@@ -227,7 +227,8 @@ urlenc(x){
 		color:htxt;
 	}
 	/*scrollbars*/
-	::-webkit-scrollbar{//scrollbars in chrome and safari
+	::-webkit-scrollbar,
+	#page.drawers::-webkit-scrollbar{//scrollbars in chrome and safari
 		&,
 		&-track-piece{
 			background-color:bg1 !important;
@@ -238,8 +239,9 @@ urlenc(x){
 			border-radius:0.4em;
 		}
 	}
-	:root{//actual standardized way, but ofc only Firefox implements it
-		scrollbar-width:thin;
+	:root,
+	#page.drawers{//actual standardized way, but ofc only Firefox implements it
+		scrollbar-width:auto;
 		scrollbar-color:bg3 bg1;}
 	.visual-scroll-x,//so far only found in the quiz, but there's no telling if it's used in other places as well, so-
 	.visual-scroll-y,{
@@ -611,7 +613,7 @@ urlenc(x){
 		}
 	}
 	/*body*/
-	:root,body,#page,#page.drawers{
+	:root,body,#page{
 		background-color:bg1 !important;
 	}
 	#page.drawers .main-inner{
