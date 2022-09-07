@@ -733,7 +733,7 @@ urlenc(x){
 		border-radius:irad;
 	}
 	.text-muted{
-		color:mtxt;
+		color:mtxt !important;
 	}
 	/*links*/
 	a,
