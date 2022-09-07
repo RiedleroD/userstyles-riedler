@@ -2116,6 +2116,14 @@ urlenc(x){
 		& div[data-role="arrow"]::after{
 			color:bg3;
 		}
+		& .modal-dialog .modal-content{
+			& .modal-header{
+				border-radius:crad crad 0 0;
+			}
+			& .modal-footer{
+				border-radius:0 0 crad crad;
+			}
+		}
 	}
 	/*badges*/
 	.badge{
