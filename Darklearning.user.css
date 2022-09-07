@@ -526,6 +526,9 @@ urlenc(x){
 		}
 	}
 	/* other stuff */
+	.border{
+		border-color:brd !important;
+	}
 	#conversation-actions-menu-button{
 		color:brd;
 		&:hover{
