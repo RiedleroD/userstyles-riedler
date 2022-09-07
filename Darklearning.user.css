@@ -753,6 +753,9 @@ urlenc(x){
 	.text-muted{
 		color:mtxt !important;
 	}
+	.text-primary{
+		color:btn !important;
+	}
 	/*links*/
 	a,
 	a>span{
