@@ -3366,3 +3366,19 @@ urlenc(x){
 		filter:contrast(0.1) saturate(10) brightness(0.8) hue-rotate(-30deg);
 	}
 }
+@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/login\\/index\\.php.*"){
+	.pagelayout-login #page{
+		background-image:none;
+	}
+	.login-container{
+		background-color:bg3;
+		border-radius:0.5em;
+		& .login-divider{
+			border-top-color:brd;
+		}
+		& .divider{
+			background-color:brd;
+			border-left-color:brd !important;
+		}
+	}
+}
