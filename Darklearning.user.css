@@ -428,9 +428,11 @@ urlenc(x){
 			background-color:bg3 !important;}
 		& .message{
 			&.send{
+				color:txt;
 				background-color:bg5 !important;
 			}
 			&.received{
+				color:txt;
 				background-color:bg4 !important;
 				& .tail{
 					border-bottom-color:bg4;
@@ -438,6 +440,9 @@ urlenc(x){
 			}
 			&.send .tail{
 				border-bottom-color:bg5;
+			}
+			&:is(.send,/.received) .time{
+				color:mtxt;
 			}
 		}
 		& .nav-pills{
