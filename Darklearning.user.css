@@ -3007,27 +3007,31 @@ urlenc(x){
 	}
 	#page-mod-quiz-view table.quizattemptsummary tr.bestrow td{
 		border-color:brd;
-		background-color:bg2;}
+		background-color:bg2;
+	}
 	.quizattemptsummary>thead>tr>th{
-		border-bottom:none;}
+		border-bottom:none;
+	}
 	.answer>input[type="text"]{	
-		background-color:bg4;}
-	.subquestion input[type="text"]{	
-		background-color:bg4;	
-		border-color:brd;	
-		border-radius:irad;	
-		color:txt;}	
+		background-color:bg4;
+	}
+	.subquestion input[type="text"]{
+		background-color:bg4;
+		border-color:brd;
+		border-radius:irad;
+		color:txt;
+	}
 	.submitbtns{
-		& button[type="submit"].btn,	
-		& input[type="submit"].btn{	
-			background-color:bg3;	
+		& button[type="submit"].btn,
+		& input[type="submit"].btn{
+			background-color:bg3;
 			border-radius:irad;
-			&.mod_quiz-next-nav{	
-				background-color:btn;	
+			&.mod_quiz-next-nav{
+				background-color:btn;
 				border-color:btn;
 			}
-			&.btn.mod_quiz-next-nav:hover{	
-				background-color:hbtn;	
+			&.btn.mod_quiz-next-nav:hover{
+				background-color:hbtn;
 				border-color:hbtn;
 			}
 		}
@@ -3048,7 +3052,7 @@ urlenc(x){
 			&9,&10,&11,&12,&13{
 				background-color:fals;
 				color:hfals;
-				border-color:hfals
+				border-color:hfals;
 			}
 			&4,&5,&6,&7,&8{
 				background-color:hfals;
