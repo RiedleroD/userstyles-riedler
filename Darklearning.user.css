@@ -261,6 +261,20 @@ urlenc(x){
 		80%{background-color:hhbrd}
 		100%{background-color:brd}
 	}
+	/*body*/
+	:root,body,#page{
+		background-color:bg1 !important;
+		color-scheme:dark;
+		color:txt;
+	}
+	#page.drawers .main-inner{
+		border-radius:crad;
+		overflow:visible;
+		background-color:bg2;
+	}
+	#region-main{
+		background-color:#0000;//nothing to see here
+	}
 	/*navbar*/
 	.navbar{
 		background-color:bg2 !important;
@@ -613,19 +627,6 @@ urlenc(x){
 			background-color:btn;
 		}
 	}
-	/*body*/
-	:root,body,#page{
-		background-color:bg1 !important;
-		color-scheme:dark;
-	}
-	#page.drawers .main-inner{
-		border-radius:crad;
-		overflow:visible;
-		background-color:bg2;
-	}
-	#region-main{
-		background-color:#0000;//nothing to see here
-	}
 	/*footer*/
 	#page-footer{
 		color:txt !important;
@@ -726,17 +727,11 @@ urlenc(x){
 		}
 	}
 	/*text*/
-	span,p,pre,
-	.text-center,.text-right,
-	.logininfo,.generaltable,
-	h1,h2,h3,h4,h5,h6,
-	body,:root,
-	ul,ol{
-		color:txt;}
 	textarea.form-control{
 		background-color:bg5 !important;
 		border:solid brd 1px;
-		border-radius:irad;}
+		border-radius:irad;
+	}
 	.text-muted{
 		color:mtxt;
 	}
@@ -917,6 +912,12 @@ urlenc(x){
 		}
 		&.btn-icon:is(:hover,/:focus){
 			background-color:bg3;
+		}
+		&-link{
+			color:lnk;
+			&:hover{
+				color:hlnk;
+			}
 		}
 		&:disabled,
 		&.disabled{
