@@ -623,6 +623,9 @@ urlenc(x){
 		overflow:visible;
 		background-color:bg2;
 	}
+	#region-main{
+		background-color:#0000;//nothing to see here
+	}
 	/*footer*/
 	#page-footer{
 		color:txt !important;
