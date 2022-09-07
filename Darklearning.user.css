@@ -2107,6 +2107,12 @@ urlenc(x){
 				}
 			}
 		}
+		&[x-placement="right"],
+		&[x-placement="right-start"]{
+			& div[data-role="arrow"]::after{
+				border-right-color:currentColor;
+			}
+		}
 		& div[data-role="arrow"]::after{
 			color:bg3;
 		}
