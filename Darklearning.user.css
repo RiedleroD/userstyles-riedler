@@ -440,8 +440,6 @@ urlenc(x){
 				border-bottom-color:bg5;
 			}
 		}
-		& .list-group .list-group-item{
-			background:bg3;}
 		& .nav-pills{
 			border:solid brd 1px;
 			&>.nav-item>a{
@@ -528,6 +526,17 @@ urlenc(x){
 	/* other stuff */
 	.border{
 		border-color:brd !important;
+	}
+	.list-group-item{
+		background:bg3;
+		border-color:brd;
+		&-action{
+			color:txt;
+			&:hover,&:focus{
+				background-color:bg4;
+				color:htxt;
+			}
+		}
 	}
 	#conversation-actions-menu-button{
 		color:brd;
@@ -927,6 +936,17 @@ urlenc(x){
 		&.disabled{
 			opacity:1;
 			filter:grayscale(0.25) brightness(0.75) contrast(0.75);
+		}
+	}
+	.activity-add,
+	.block-add{
+		background-color:btn;
+		color:dtxt;
+		border:none;
+		&:hover,&:focus{
+			color:dtxt;
+			background-color:hbtn;
+			text-decoration:none;
 		}
 	}
 	//pagination used in recentlyaccessedcourses on dashboard
