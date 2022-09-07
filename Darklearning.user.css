@@ -934,17 +934,13 @@ urlenc(x){
 			&:focus{
 				box-shadow:none;
 				z-index:0;
-				&>span{
-					color:lnk;
-				}
+				color:lnk;
 			}
 			&:hover{
 				background-color:bg5;
 				border-color:brd;
+				color:hlnk;
 				z-index:3;
-				&>span{
-					color:hlnk;
-				}
 			}
 		}
 		&.active,
