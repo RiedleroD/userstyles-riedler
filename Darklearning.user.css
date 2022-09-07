@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name			Darklearning
 @namespace		https://github.com/RiedleroD/userstyles-riedler
-@version		1.2.14
+@version		1.3.0
 @description	Darker version of Elearning
 @author			Riedler
 @license		MPL-2.0
@@ -52,12 +52,12 @@
 	"Rotate 270°":"r270"
 }
 @var	select	NBCS	"Course Navbar Cell Shape"{
-	"Pronounced":"pron",
-	"Teardrop":"tear",
-	"Round":"rnd",
+	"Rectangle":"rect",
 	"Rounded":"rndd",
 	"Soft Edges":"sft",
-	"Rectangle":"rect",
+	"Round":"rnd",
+	"Teardrop":"tear",
+	"Pronounced":"pron",
 	"Modifier debug":"debug_mod"
 }
 @var	select	NBCSm "Course Navbar Cell Modifier"{
@@ -73,12 +73,12 @@
 	"Rotate 270°":"r270"
 }
 @var	select	NBS		"Course Navbar Shape"{
-	"Pronounced":"pron",
-	"Teardrop":"tear",
-	"Round":"rnd",
-	"Rounded":"rndd",
-	"Soft Edges":"sft",
 	"Rectangle":"rect",
+	"Soft Edges":"sft",
+	"Rounded":"rndd",
+	"Round":"rnd",
+	"Teardrop":"tear",
+	"Pronounced":"pron",
 	"Modifier debug":"debug_mod"
 }
 @var	select	NBSm "Course Navbar Modifier"{
@@ -100,8 +100,6 @@
 	"Dim":"brightness(0.8)",
 	"Debug":"invert(1) hue-rotate(180deg) saturate(100)",
 	"Off":"none"}
-@var	text	ntip	"Navigation Tree initial padding"	"0"
-@var	text	ntmp	"Navigation Tree max padding"		"0.5rem"
 ==/UserStyle== */
 
 //color variables
@@ -121,7 +119,7 @@ dtxt = #151515
 txt	 = #AAA
 htxt = #CCC
 hhtxt= #FFF
-mtxt = #8AA
+mtxt = #899
 lnk	 = #418BA4
 hlnk = #6AC
 btn	 = #418BA4
@@ -218,7 +216,7 @@ urlenc(x){
 	x=replace('=','%3F',x)
 	return x
 }
-@-moz-document domain("elearning.tgm.ac.at"), regexp(".*userstyle_testing/darklearning.*"){
+@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at(?!\\/archiv).*"){
 	/*text selections*/
 	::-moz-selection{/*for firefox and derivatives*/
 		background:slc;
@@ -229,7 +227,8 @@ urlenc(x){
 		color:htxt;
 	}
 	/*scrollbars*/
-	::-webkit-scrollbar{//scrollbars in chrome and safari
+	::-webkit-scrollbar,
+	#page.drawers::-webkit-scrollbar{//scrollbars in chrome and safari
 		&,
 		&-track-piece{
 			background-color:bg1 !important;
@@ -240,9 +239,11 @@ urlenc(x){
 			border-radius:0.4em;
 		}
 	}
-	:root{//actual standardized way, but ofc only Firefox implements it
-		scrollbar-width:thin;
-		scrollbar-color:bg3 bg1;}
+	:root,
+	#page.drawers{//actual standardized way, but ofc only Firefox implements it
+		scrollbar-width:auto;
+		scrollbar-color:bg3 bg1;
+	}
 	.visual-scroll-x,//so far only found in the quiz, but there's no telling if it's used in other places as well, so-
 	.visual-scroll-y,{
 		scrollbar-color:bg3 bg1 !important;
@@ -260,30 +261,84 @@ urlenc(x){
 		80%{background-color:hhbrd}
 		100%{background-color:brd}
 	}
+	/*body*/
+	:root,body,#page{
+		background-color:bg1 !important;
+		color-scheme:dark;
+		color:txt;
+	}
+	#page.drawers .main-inner{
+		border-radius:crad;
+		overflow:visible;
+		background-color:bg2;
+	}
+	#region-main{
+		background-color:#0000;//nothing to see here
+	}
 	/*navbar*/
 	.navbar{
-		background-color:bg2;
-		border-bottom-right-radius:0.5em;
-		border-bottom-left-radius:0.5em;
-		border-bottom:solid 1px bg1;
-		box-shadow:none;
+		background-color:bg2 !important;
+		border-radius:0 0 0.5em 0.5em;
 	}
-	.breadcrumb:not(:empty){
-		border-color:brd;
-		border-width:1px;}
-	.navbar-light, 
-	.navbar-bootswatch,{
-		& .navbar-nav{
-			& .nav-link{
-				color:lnk;
-				&:hover,
-				&:focus{
-					color:hlnk;
-				}
+	.navbar.fixed-top{
+		border-bottom:solid 1px bg1;
+		& .navbar-brand .logo{
+			filter:invert(0.86) hue-rotate(180deg);
+		}
+		& .divider{
+			background-color:brd;
+			border-left-color:brd !important;
+		}
+	}
+	.primary-navigation .navigation .nav-link{
+		color:lnk;
+	}
+	.navbar-light .navbar-nav{
+		& .nav-link{
+			color:lnk;
+			&:hover,&:focus{
+				color:hlnk;
 			}
-			& .active,
-			& .show{
-				&>.nav-link{color:hlnk}
+		}
+		&:is(.show,.active) > .nav-link,
+		& .nav-link:is(.show,.active){
+			color:dtxt;
+		}
+	}
+	.moremenu .nav-link{
+		&:hover,&:focus{
+			background-color:bg3;
+		}
+		&.active{
+			background-color:btn;
+			color:dtxt;
+			border-bottom:none;
+			&:hover,&:focus{
+				background-color:hlnk;
+			}
+		}
+	}
+	.moremenu .nav-tabs{
+		background-color:#0000;
+	}
+	/*secondary navbar*/
+	.secondary-navigation .navigation{
+		border-top:none;
+		border-bottom:none;
+		height:auto;
+		background-color:bg3;
+		border-radius:barshape(NBS,NBSm);
+		overflow:clip;
+		padding:0.25em;
+		& .nav-tabs .nav-link{
+			border-radius:barshape(NBCS,NBCSm);
+		}
+		&.moremenu .nav-link{
+			height:100%;
+			padding:.33rem .75rem
+			&.active{
+				cursor:default;
+				pointer-events:none;
 			}
 		}
 	}
@@ -291,6 +346,7 @@ urlenc(x){
 	.dropdown{
 		&-menu{
 			background-color:bg3;
+			color:txt;
 		}
 		&-divider{
 			border-top-color:brd;
@@ -372,9 +428,11 @@ urlenc(x){
 			background-color:bg3 !important;}
 		& .message{
 			&.send{
+				color:txt;
 				background-color:bg5 !important;
 			}
 			&.received{
+				color:txt;
 				background-color:bg4 !important;
 				& .tail{
 					border-bottom-color:bg4;
@@ -383,9 +441,10 @@ urlenc(x){
 			&.send .tail{
 				border-bottom-color:bg5;
 			}
+			&:is(.send,/.received) .time{
+				color:mtxt;
+			}
 		}
-		& .list-group .list-group-item{
-			background:bg3;}
 		& .nav-pills{
 			border:solid brd 1px;
 			&>.nav-item>a{
@@ -459,6 +518,28 @@ urlenc(x){
 				&:hover>span{
 					color:hhtxt !important;
 				}
+			}
+		}
+	}
+	/* generic color stuff */
+	.bg-secondary{
+		background-color:bg3 !important;
+		/:is(a,button)&:is(:hover,/:focus){
+			background-color:bg4 !important;
+		}
+	}
+	/* other stuff */
+	.border{
+		border-color:brd !important;
+	}
+	.list-group-item{
+		background:bg3;
+		border-color:brd;
+		&-action{
+			color:txt;
+			&:hover,&:focus{
+				background-color:bg4;
+				color:htxt;
 			}
 		}
 	}
@@ -564,16 +645,6 @@ urlenc(x){
 			background-color:btn;
 		}
 	}
-	/*body*/
-	:root,body,#page{
-		background-color:bg1 !important;}
-	#region-main{
-		border-radius:crad;
-		overflow:visible;
-		margin-bottom:1.5em;
-		background-color:bg2;}
-	#page-header>div>div.card{
-		background-color:bg2;}
 	/*footer*/
 	#page-footer{
 		color:txt !important;
@@ -629,6 +700,11 @@ urlenc(x){
 				filter:invert(1) brightness(1.3);
 			}
 		}
+		&_recentlyaccesseditems{
+			& [data-region="recentlyaccesseditems-view-content"]>div>img{
+				filter:invert(1) brightness(1.3);
+			}
+		}
 		&_navigation,
 		&_settings{
 			& .block_tree{
@@ -637,45 +713,6 @@ urlenc(x){
 				& p.hasicon{
 					padding-left:0;
 					margin-left:0;
-				}
-			}
-		}
-		&_navigation{
-			& .block_tree{
-				& .tree_item{
-					max-width:100%;
-					width:max-content;
-					position:relative;
-					background-color:bg2;
-					z-index:2;
-					border-radius:0 irad irad 0;
-					transition:0.2s max-width;
-				}	
-				& .contains_branch>ul{
-					transition: padding-left 0.2s;
-					if sidebar=="S"{
-						padding-left:ntmp;
-					}else{
-						padding-left:ntip;
-					}
-				}
-			}
-			&:hover .block_tree{
-				if sidebar=="Goh"{
-					& .tree_item{
-						white-space:nowrap;
-						max-width:100vw;
-						padding-right:0.25em;
-						& .item-content-wrap{
-							max-width:25vw;
-							text-overflow: ellipsis;
-						}
-					}
-				}
-				if sidebar!="S"{
-					& .contains_branch>ul{
-						padding-left:ntmp;
-					}
 				}
 			}
 		}
@@ -708,19 +745,16 @@ urlenc(x){
 		}
 	}
 	/*text*/
-	span,p,pre,
-	.text-center,.text-right,
-	.logininfo,.generaltable,
-	h1,h2,h3,h4,h5,h6,
-	body,:root,
-	ul,ol{
-		color:txt;}
 	textarea.form-control{
 		background-color:bg5 !important;
 		border:solid brd 1px;
-		border-radius:irad;}
+		border-radius:irad;
+	}
 	.text-muted{
-		color:mtxt;
+		color:mtxt !important;
+	}
+	.text-primary{
+		color:btn !important;
 	}
 	/*links*/
 	a,
@@ -773,8 +807,6 @@ urlenc(x){
 		}
 	}
 	/*random shit again*/
-	.logo>img{
-		filter:invert(1) hue-rotate(180deg);}
 	.empty-placeholder-image-lg{
 		filter:invert(1);
 	}
@@ -796,6 +828,10 @@ urlenc(x){
 	}
 	.btn{
 		border-radius:irad;
+		color:txt;
+		&:hover{
+			color:htxt;
+		}
 		&-outline-secondary{
 			border-color:brd;
 			&:hover,
@@ -895,37 +931,57 @@ urlenc(x){
 				color:hlnk;
 			}
 		}
+		&.btn-icon:is(:hover,/:focus){
+			background-color:bg3;
+		}
+		&-link{
+			color:lnk;
+			&:hover{
+				color:hlnk;
+			}
+		}
 		&:disabled,
 		&.disabled{
 			opacity:1;
 			filter:grayscale(0.25) brightness(0.75) contrast(0.75);
 		}
 	}
-	& .btn-link{
-		color:lnk;
-		transition:none;
-		&:hover,
-		&:focus{
-			color:hlnk;
+	.activity-add,
+	.block-add{
+		background-color:btn;
+		color:dtxt;
+		border:none;
+		&:hover,&:focus{
+			color:dtxt;
+			background-color:hbtn;
+			text-decoration:none;
 		}
 	}
+	//pagination used in recentlyaccessedcourses on dashboard
 	.pagination>.page-item{
 		& .page-link{
-			color:lnk;
 			background-color:bg4;
 			border-color:#0000;
+			&:focus{
+				box-shadow:none;
+				z-index:0;
+				color:lnk;
+			}
 			&:hover{
-				color:hlnk;
 				background-color:bg5;
 				border-color:brd;
+				color:hlnk;
+				z-index:3;
 			}
 		}
-		&.active{
-			cursor:not-allowed;
+		&.active,
+		&.disabled{
 			& .page-link{
-				color:htxt;
-				background-color:btn;
-				border-color:btn;
+				cursor:default;
+				background-color:brd;
+				&>span{
+					color:txt;
+				}
 			}
 		}
 	}
@@ -959,6 +1015,11 @@ urlenc(x){
 			margin-right:0;
 		}
 	}
+	/*drawer handle buttons*/
+	.drawer-toggles .drawer-toggler .btn{
+		background-color:bg3;
+		&:hover{color:txt}
+	}
 	/*Dropdown menus*/
 	.dropdown-item:active,.dropdown-item.active{
 		background-color:bg4;}
@@ -982,16 +1043,39 @@ urlenc(x){
 		background-color:bg3 !important;
 	}
 	/*tooltips: popups that pop up when you hover over stuff with set tooltips*/
-	.tooltip>*{
-		background-color:bg3 !important;
-		color:txt !important;}
+	.tooltip{
+		&>&-inner{
+			background-color:bg3;
+			color:txt;
+			border:solid 1px bg0;
+			border-radius:0.25em;
+			margin-left:-1px;
+		}
+		&>.arrow::before{
+			border-right-color:bg3;
+			filter:drop-shadow(-1px 0 0 bg0);
+		}
+	}
 	/*popovers: the same, but with more complex content and a very annoying arrow*/
 	.popover{
 		background-color:bg1;
 		color:txt;
-		border:none;
+		border:solid 1px bg4;
 		border-radius:irad;
-		box-shadow:0 0 0.1em 0 brd}
+		&-header{
+			background-color:bg2;
+			border-bottom-color:#0000;
+			border-radius:0.5em 0.5em 0 0;
+			color:htxt !important;
+		}
+		&-body{
+			color:txt;
+			border-radius:0.5em;
+		}
+		& .border-bottom{
+			border-bottom-color:bg4 !important;
+		}
+	}
 	.bs-popover{
 		//see https://elearning.tgm.ac.at/calendar/view.php?view=month
 		&-top>.arrow,
@@ -1000,7 +1084,7 @@ urlenc(x){
 				border-top-color:bg1;
 			}
 			&::before{
-				border-top-color:rgba(brd,0.5);
+				border-top-color:bg4;
 			}
 		}
 		//see above link
@@ -1013,7 +1097,7 @@ urlenc(x){
 				border-bottom-color:bg2;
 			}
 			&>.arrow::before{
-				border-bottom-color:rgba(brd,0.5);
+				border-bottom-color:bg4;
 			}
 		}
 		//see https://elearning.tgm.ac.at/course/view.php?id=5454&section=1
@@ -1023,7 +1107,7 @@ urlenc(x){
 				border-left-color:bg1;
 			}
 			&::before{
-				border-left-color:rgba(brd,0.5);
+				border-left-color:bg4;
 			}
 		}
 		//TODO: find out where this is used
@@ -1033,19 +1117,9 @@ urlenc(x){
 				border-right-color:bg1;
 			}
 			&::before{
-				border-right-color:rgba(brd,0.5);
+				border-right-color:bg4;
 			}
 		}
-	}
-	.popover{
-		&-header{//TODO restructure
-			background-color:bg2;
-			border-bottom-color:#0000;
-			border-radius:0.5em 0.5em 0 0;
-			color:htxt !important;}
-		&-body{
-			color:txt;
-			border-radius:0.5em;}
 	}
 	/*Manually colored tables*/
 	table[bgcolor="grey"]{
@@ -1057,6 +1131,67 @@ urlenc(x){
 	th[style*="background-color: #fef65b"]{
 		background-color:idk !important;
 	}
+	/*sidedrawer*/
+	.drawer{
+		background-color:bg2;
+	}
+	.courseindex .courseindex-item{
+		&:is(:hover,/:focus) .courseindex-link{
+			color:txt;
+		}
+		.courseindex-chevron span,
+		.courseindex-link{
+			color:txt;
+			&:hover{
+				color:htxt;
+			}
+		}
+		&.pageitem{
+			background-color:btn;
+			&>.courseindex-link,
+			&>.courseindex-chevron span{color:dtxt}
+			&:hover,&:focus{
+				background-color:hbtn;
+				&>.courseindex-link,
+				&>.courseindex-chevron span{color:dtxt}
+			}
+		}
+	}
+	/* Activites */
+	.activity-item:not(.activityinline){
+		border:none;
+	}
+	.path-mod .activity-header:not(:empty){
+		background-color:bg3;
+		border-radius:0.5em;
+	}
+	/*Activity icon button thingies*/
+	.activityiconcontainer{
+		&.content{
+			background-color:c0;
+			--f:invert(.9);
+			--mbm:overlay;
+		}
+		&.communication{
+			background-color:c1;
+			--f:invert(.5);
+			--mbm:multiply;
+		}
+		&.collaboration{
+			background-color:c3;
+			--f:invert(0.4);
+			--mbm:multiply;
+		}
+		&.assessment{
+			background-color:c4;
+			--f:invert(.85);
+			--mbm:overlay;
+		}
+		&>img:is(.activityicon,/.icon){
+			mix-blend-mode:var(--mbm);
+			filter:var(--f) !important;
+		}
+	}
 	/*Misc*/
 	.otherstudent.highlight{
 		outline:none;
@@ -1066,66 +1201,20 @@ urlenc(x){
 		color:txt;
 		filter:brightness(0.8);
 	}
-	.usertext{
-		color:lnk !important;
-	}
 	#action-menu-toggle-0:hover .usertext{
 		color:hlnk !important;//TODO: fix this mess by removing the catch-all text colorator
 	}
-	if(anon==1){
-		.usertext{
-			display:none;
-		}
-		.userbutton::before{
-			content:"Anonymous User";
-			margin-right:0.25rem;
-			color:lnk;
-		}
-		#action-menu-toggle-0:hover .userbutton::before,
-		#action-menu-toggle-0:focus .userbutton::before{
-			color:hlnk;
-		}
-		#page-footer .logininfo>a:first-child{
-			font-size:0;
-			text-decoration:none;//produces visual glitches when left on
-			&::after{
-				font-size:0.9375rem;//that's the usual font size in elearning
-				content:"Anonymous"
-				text-decoration:underline;
-			}
-		}
+	.userinitials{
+		background-color:txt;
+		color:dtxt;
+		/#user-menu-toggle:hover &{background-color:htxt}
 	}
-	.nav-tabs,
-	.nav-pills{
-		background-color:bg3;
-		border-radius:barshape(NBS,NBSm);
-		border-bottom:none;
-		.show>& .nav-link.active.dropdown-toggle{
-			background-color:bg4;
-			border-radius:barshape(NBCS,NBCSm);
-		}
-		& .nav-link{
-			background-color:#0000;
-			border:none;
-			padding:0.5em 1em;
-			&.active{
-				color:txt;
-				max-height:100%;
-			}
-			&.active:not(:disabled):not(.disabled){
-				&.active,
-				&:active{
-					background-color:bg4;
-					border-radius:barshape(NBCS,NBCSm);
-					border-bottom:none;
-				}
-			}
-		}
-		& .nav-item{
-			margin-bottom:0;
-			&.show .nav-link.active{
-				color:txt;
-				max-height:100%;
+	if(anon==1){
+		.userinitials{
+			font-size:0;
+			&::after{
+				font-size:1rem;
+				content:"AN";
 			}
 		}
 	}
@@ -1138,6 +1227,7 @@ urlenc(x){
 	.card{
 		border-radius:crad;
 		background-color:bg3;
+		border:none;
 		&-img{
 			filter:EICC;}
 		&-footer{
@@ -1863,22 +1953,80 @@ urlenc(x){
 		}
 	}
 	/*Calendar*/
-	.calendar_event,
-	.path-calendar .maincalendar .calendarmonth ul li .badge.badge-circle.calendar_event{
+	.maincalendar{
+		& .calendarmonth{
+			border-radius:0.5em;
+			border-collapse:separate;
+			td,th{
+				border:solid 1px brd;
+				border-left:none;
+				border-top:none;
+			}
+			& :not(thead+tbody)>tr:first-of-type>:is(th,td){
+				border-top:solid 1px brd;
+				&:first-of-type{
+					border-top-left-radius:0.25em;
+				}
+				&:last-of-type{
+					border-top-right-radius:0.25em;
+				}
+			}
+			& tr>:is(th,td):first-of-type{
+				border-left:solid 1px brd;
+			}
+			& tbody>tr:last-of-type>:is(td,th){
+				&:first-of-type{
+					border-bottom-left-radius:0.25em;
+				}
+				&:last-of-type{
+					border-bottom-right-radius:0.25em;
+				}
+			}
+			& .clickable:hover{
+				background-color:bg3;
+			}
+			& td.dayblank{
+				background-color:bg4;
+			}
+			& th{
+				background-color:btn;
+				border-color:btn !important;
+				&>span{color:dtxt}
+			}
+			& td.today .day-number-circle{
+				background-color:bg3;
+				color:txt;
+			}
+		}
+	}
+	section:not(#region-main) .block.block_calendar_month .maincalendar .calendartable.calendarmonth td.clickable:not(.today):hover .day-number-circle{
+		//wtf
+		background-color:bg3;
+	}
+	.block .calendar_filters li span.calendar_event{
 		&_course{
 			background-color:cal0;
+			& i{color:lighten(cal0,30)}
 		}
 		&_category{
 			background-color:cal1;
+			& i{color:lighten(cal1,30)}
 		}
 		&_group{
 			background-color:cal2;
+			& i{color:lighten(cal2,30)}
 		}
 		&_user{
 			background-color:cal3;
+			& i{color:lighten(cal3,30)}
 		}
 		&_site{
 			background-color:cal4;
+			& i{color:lighten(cal4,30)}
+		}
+		&_other{
+			background-color:bg3;
+			& i{color:lighten(bg3,30)}
 		}
 	}
 	/*Replacement images + image manipulation*/
@@ -1905,6 +2053,9 @@ urlenc(x){
 		filter:brightness(0.39) contrast(2)}
 	#spinning_wheel{
 		filter:invert(1) brightness(1.5);
+	}
+	img[src^="https://elearning.tgm.ac.at/theme/image.php/boost"]:is([src$="monologo"],/[src$="i/arrow-left"]){
+		filter:invert(0.8);
 	}
 	/*row where it displays what you've done and what you didn't. Normally only in course/view.php, but also in other places*/
 	.barRow{
@@ -1983,8 +2134,22 @@ urlenc(x){
 				}
 			}
 		}
+		&[x-placement="right"],
+		&[x-placement="right-start"]{
+			& div[data-role="arrow"]::after{
+				border-right-color:currentColor;
+			}
+		}
 		& div[data-role="arrow"]::after{
 			color:bg3;
+		}
+		& .modal-dialog .modal-content{
+			& .modal-header{
+				border-radius:crad crad 0 0;
+			}
+			& .modal-footer{
+				border-radius:0 0 crad crad;
+			}
 		}
 	}
 	/*badges*/
@@ -2097,6 +2262,21 @@ urlenc(x){
 		color:hidk;
 		background-color:idk;
 	}
+	/*progress bar time descriptor*/
+	//TODO: restyle
+	.progressBarCell>.nowDiv{
+		&>.icon{
+			display:none;}
+		&.lastHalfNow{
+			background:url("data:image/svg+xml;utf-8,<svg xmlns='http://www.w3.org/2000/svg'><path d='M0 0H16V16Z' fill='rgb(127,127,127)'/></svg>") no-repeat;
+			background-position:5.5em 5px;
+			padding-right:1.3em;}
+		&.firstNow{
+			background:url("data:image/svg+xml;utf-8,<svg xmlns='http://www.w3.org/2000/svg'><path d='M16 0H0V16Z' fill='rgb(127,127,127)'/></svg>") no-repeat;
+			background-position:0em 5px;
+			padding-left:1.3em;
+		}
+	}
 	/* raw html codeblock generated by hilite.me */
 	div[style*="background: #ffffff"][style*="border: solid gray"][style*="border-width: .1em .1em .1em .8em"][style*="padding: .2em .6em"]{
 		background-color:bg0 !important;
@@ -2118,10 +2298,12 @@ urlenc(x){
 		}
 	}
 }
-@-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/my/.*?") {
+@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at/my/.*") {
 	.dashboard-card{
 		border-width:0;
-		background-color:bg3;}
+		background-color:bg3;
+		overflow:hidden;
+	}
 	.course{
 		&-info-container{
 			background-color:bg3;
@@ -2174,7 +2356,7 @@ urlenc(x){
 	.block-myoverview>.container-fluid.p-0{
 		margin-top:1.5em;}
 }
-@-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/(\\?.*)?") {
+@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/?(\\?.*)?$"), regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/mod\\/forum\\/discuss\\.php.*") {
 	.sitelink{
 		filter:invert(1) hue-rotate(180deg);}
 	#login_username,
@@ -2185,7 +2367,7 @@ urlenc(x){
 		border-color:brd !important;
 		border-radius:crad;}
 }
-@-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/login/index\\.php.*?") {
+@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/login\\/index\\.php.*") {
 	.mt-3{
 		color:txt;}
 	img.img-fluid{
@@ -2196,7 +2378,7 @@ urlenc(x){
 		&-footer{border-top:none;}
 	}
 }
-@-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/course/view\\.php.*?") {
+@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/course\\/view\\.php.*") {
 	#region-main{
 		background-color:bg2;}
 	.section{
@@ -2211,6 +2393,9 @@ urlenc(x){
 	.progressEventInfo .iconInInfo{ /*Fixes a specific icon being distorted because someone forgot that width was set to 12px*/
 		width:1.2em;
 		height:1.2em;
+	}
+	.description .course-description-item{
+		background-color:bg4;
 	}
 	/*These new tiles, ykwim*/
 	.tiles{
@@ -2352,22 +2537,8 @@ urlenc(x){
 			color:htxt;
 		}
 	}
-	/*progress bar time descriptor*/
-	.progressBarCell>.nowDiv{
-		&>.icon{
-			display:none;}
-		&.lastHalfNow{
-			background:url("data:image/svg+xml;utf-8,<svg xmlns='http://www.w3.org/2000/svg'><path d='M0 0H16V16Z' fill='rgb(127,127,127)'/></svg>") no-repeat;
-			background-position:5.5em 5px;
-			padding-right:1.3em;}
-		&.firstNow{
-			background:url("data:image/svg+xml;utf-8,<svg xmlns='http://www.w3.org/2000/svg'><path d='M16 0H0V16Z' fill='rgb(127,127,127)'/></svg>") no-repeat;
-			background-position:0em 5px;
-			padding-left:1.3em;
-		}
-	}
 }
-@-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/user/files\\.php.*?") {
+@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/user\\/files\\.php.*") {
 	.filemanager-container,
 	.fp-navbar{
 		background-color:bg3;
@@ -2382,14 +2553,14 @@ urlenc(x){
 		}
 	}
 }
-@-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/grade/report/overview/index\\.php.*?") {
+@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/grade\\/report\\/overview\\/index\\.php.*") {
 	thead>tr>th{
 		border-bottom:none !important;}
 	table td,
 	table th{
 		border-color:brd !important;}
 }
-@-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/message/output/popup/notifications.php.*?") {
+@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/message\\/output\\/popup\\/notifications\\.php.*") {
 	.content-item-container{
 		background-color:bg2;
 		color:txt;
@@ -2419,17 +2590,14 @@ urlenc(x){
 		}
 	}
 }
-@-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/message/index\\.php.*?") {
+@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/message\\/index\\.php.*") {
 	#region-main .border-right.h-100{
 		border-color:bg3 !important;}
 }
-
-@-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/user/(profile|view)\\.php.*?") {
+@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/mod\\/organizer\\/view\\.php.*") {
 	#region-main .profile_tree>.node_category{
 		background-color:bg3;
 		border-radius:crad;}
-}
-@-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/mod/organizer/view\\.php.*") {
 	#organizer_main_cointainer{
 		& span.countdown{
 			&_normal{
@@ -2453,7 +2621,7 @@ urlenc(x){
 		}
 	}
 }
-@-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/mod/assign/view\\.php.*?") {
+@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/mod\\/assign\\/view\\.php.*") {
 	/*Abgabestatus*/
 	.submissionsummarytable>table>tbody>tr{
 		&>td,
@@ -2665,15 +2833,15 @@ urlenc(x){
 		}
 	}
 }
-@-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/user/preferences\\.php.*?") {
+@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/user\\/preferences\\.php.*") {
 	#region-main .card.mb-3{
 		background-color:bg3;}
 }
-@-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/admin/tool/dataprivacy/mydatarequests\\.php.*?") {
+@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/admin\\/tool\\/dataprivacy\\/mydatarequests\\.php.*") {
 	div[data-region="datarequests"]>.mt-1.mb-1>.btn.btn-primary{
 		color:txt !important;}
 }
-@-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/mod/(student)?quiz.*?"), regexp(".*userstyle_testing/darklearning.*") {
+@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/mod\\/(student)?quiz.*") {
 	.moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd.yui3-widget-hd{
 		color:txt;}
 	.que.multichoice .answer{
@@ -2756,6 +2924,9 @@ urlenc(x){
 		& .drop{
 			border-radius:irad;
 			border-color:brd;
+			&.active{
+				border-color:brd;
+			}
 		}
 		& .drop,
 		& .dropzone,
@@ -2795,15 +2966,11 @@ urlenc(x){
 		box-shadow:0 0.2em 0.5em bg0,0 0.2em 0.2em idk;
 	}
 	.path-mod-quiz #mod_quiz_navblock{
-		& a.qnbutton{
-			transition:transform 0.1s;
+		& :is(a,span).qnbutton{
 			color:txt !important;
 			background-color:bg4;
 			&:hover{
 				text-decoration:none;
-				&:not(.thispage){
-					transform:scale(1.2);
-				}
 			}
 			&:focus-visible,
 			&:focus,
@@ -2813,7 +2980,6 @@ urlenc(x){
 				box-shadow:none;
 			}
 			&.thispage{
-				cursor:default;
 				&>.thispageholder{
 					outline:solid 1px brd;
 				}
@@ -2847,13 +3013,29 @@ urlenc(x){
 				background-position:top right;
 			}
 		}
-		& .allquestionsononepage a.qnbutton.thispage{
-			cursor:pointer;
-			&:hover{
+		& a.qnbutton{
+			transition:transform 0.1s;
+			&:hover:not(.thispage){
 				transform:scale(1.2);
 			}
-			&>.thispageholder{
-				outline:none;
+		}
+		& .qnbuttons:not(.allquestionsononepage){
+			.qnbutton.thispage{
+				cursor:default;
+			}
+		}
+		& .allquestionsononepage{
+			& :is(span,a).qnbutton.thispage{
+				&>.thispageholder{
+					outline:none;
+					border:none;
+				}
+			}
+			& a.qnbutton.thispage{
+				cursor:pointer;
+				&:hover{
+					transform:scale(1.2);
+				}
 			}
 		}
 	}
@@ -2874,27 +3056,31 @@ urlenc(x){
 	}
 	#page-mod-quiz-view table.quizattemptsummary tr.bestrow td{
 		border-color:brd;
-		background-color:bg2;}
+		background-color:bg2;
+	}
 	.quizattemptsummary>thead>tr>th{
-		border-bottom:none;}
+		border-bottom:none;
+	}
 	.answer>input[type="text"]{	
-		background-color:bg4;}
-	.subquestion input[type="text"]{	
-		background-color:bg4;	
-		border-color:brd;	
-		border-radius:irad;	
-		color:txt;}	
+		background-color:bg4;
+	}
+	.subquestion input[type="text"]{
+		background-color:bg4;
+		border-color:brd;
+		border-radius:irad;
+		color:txt;
+	}
 	.submitbtns{
-		& button[type="submit"].btn,	
-		& input[type="submit"].btn{	
-			background-color:bg3;	
+		& button[type="submit"].btn,
+		& input[type="submit"].btn{
+			background-color:bg3;
 			border-radius:irad;
-			&.mod_quiz-next-nav{	
-				background-color:btn;	
+			&.mod_quiz-next-nav{
+				background-color:btn;
 				border-color:btn;
 			}
-			&.btn.mod_quiz-next-nav:hover{	
-				background-color:hbtn;	
+			&.btn.mod_quiz-next-nav:hover{
+				background-color:hbtn;
 				border-color:hbtn;
 			}
 		}
@@ -2915,7 +3101,7 @@ urlenc(x){
 			&9,&10,&11,&12,&13{
 				background-color:fals;
 				color:hfals;
-				border-color:hfals
+				border-color:hfals;
 			}
 			&4,&5,&6,&7,&8{
 				background-color:hfals;
@@ -2997,32 +3183,7 @@ urlenc(x){
 		}
 	}
 }
-@-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/calendar/view\\.php.*?") {
-	.eventlist .event .card{
-		background-color:bg3;
-		border-radius:crad !important;
-		overflow:hidden;
-	}
-	.path-calendar .maincalendar{
-		& .calendar_event_course{
-			border:none;
-		}
-		& .calendarmonth ul li>a{
-			text-overflow:clip;
-			&:hover{
-				overflow:visible;
-				transform:translate(0,0);
-				margin-bottom:0.45em;
-				&.eventname{
-					background-color:bg3;
-					position:absolute;
-					right:-3.5em;
-				}
-			}
-		}
-	}
-}
-@-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/user/index\\.php.*?") {
+@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/user\\/index\\.php.*") {
 	.filter-group{
 		border:none !important;
 		border-radius:irad;
@@ -3033,13 +3194,13 @@ urlenc(x){
 		}
 	}
 }
-@-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/mod/lesson/view\\.php.*?") {
+@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/mod\\/lesson\\/view\\.php.*") {
 	.no-overflow img[role="presentation"]{
 		width:100%;
 		margin:0;
 	}
 }
-@-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/mod/studentquiz/view\\.php.*?") {
+@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/mod\\/studentquiz\\/view\\.php.*") {
 	#categoryquestions{
 		//table head
 		& thead,
@@ -3148,7 +3309,7 @@ urlenc(x){
 		}
 	}
 }
-@-moz-document regexp("https?://elearning\\.tgm\\.ac\\.at/mod/studentquiz/(attempt|commenthistory)\\.php.*?"){
+@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/mod\\/studentquiz\\/(attempt|commenthistory)\\.php.*"){
 	svg[width="100%"] rect{
 		&:first-of-type{
 			fill:bg3 !important;
@@ -3256,5 +3417,21 @@ urlenc(x){
 	img[src$="/switch_plus"],
 	img[src$="/switch_minus"]{
 		filter:contrast(0.1) saturate(10) brightness(0.8) hue-rotate(-30deg);
+	}
+}
+@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/login\\/index\\.php.*"){
+	.pagelayout-login #page{
+		background-image:none;
+	}
+	.login-container{
+		background-color:bg3;
+		border-radius:0.5em;
+		& .login-divider{
+			border-top-color:brd;
+		}
+		& .divider{
+			background-color:brd;
+			border-left-color:brd !important;
+		}
 	}
 }
