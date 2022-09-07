@@ -2367,6 +2367,9 @@ urlenc(x){
 		width:1.2em;
 		height:1.2em;
 	}
+	.description .course-description-item{
+		background-color:bg4;
+	}
 	/*These new tiles, ykwim*/
 	.tiles{
 		&>.tile,
