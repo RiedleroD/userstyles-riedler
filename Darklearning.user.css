@@ -2170,11 +2170,14 @@ urlenc(x){
 		}
 	}
 	/*badges*/
-	.badge{
+	.badge,
+	.automatic-completion-conditions .badge,
+	.path-mod .automatic-completion-conditions .badge{
 		background-color:bg4;
 		color:txt;
 		padding:0 0.5em;
 		border-radius:irad;
+		mix-blend-mode:normal;//thanks
 		&-info{
 			padding:0.25em 0.5em;
 		}
@@ -2193,9 +2196,9 @@ urlenc(x){
 			padding:0.25em 0.25em 0.25em 0.5em;
 			border-radius:irad 0 0 irad;
 		}
-	}
-	.automatic-completion-conditions .badge{
-		padding:0 0.5em;
+		&.badge-light{
+			background-color:bg4 !important;
+		}
 	}
 	/*highlightjs*/
 	.hljs{
