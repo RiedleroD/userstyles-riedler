@@ -2178,7 +2178,8 @@ urlenc(x){
 		&-info{
 			padding:0.25em 0.5em;
 		}
-		&-secondary>strong{
+		&-secondary>strong,
+		&>strong{
 			background-color:brd;
 			color:dtxt;
 		}
@@ -2192,6 +2193,9 @@ urlenc(x){
 			padding:0.25em 0.25em 0.25em 0.5em;
 			border-radius:irad 0 0 irad;
 		}
+	}
+	.automatic-completion-conditions .badge{
+		padding:0 0.5em;
 	}
 	/*highlightjs*/
 	.hljs{
