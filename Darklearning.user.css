@@ -1181,6 +1181,9 @@ urlenc(x){
 		background-color:bg3;
 		border-radius:0.5em;
 	}
+	.path-mod .activity-information .completion-info{
+		border-bottom-color:brd;
+	}
 	/*Activity icon button thingies*/
 	.activityiconcontainer{
 		&.content{
@@ -1306,9 +1309,6 @@ urlenc(x){
 	}
 	.yui3-button{
 		background-image:none;}
-	.path-mod div.activity-information{
-		border-bottom-color:brd;
-	}
 	div.comment-area textarea{
 		background-color:bg3;
 		border:solid 1px brd;
