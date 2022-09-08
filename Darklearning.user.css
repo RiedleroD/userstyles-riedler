@@ -863,6 +863,22 @@ urlenc(x){
 				color:dtxt;
 			}
 		}
+		&-success{
+			background-color:tru;
+			border-color:tru;
+			color:htru;
+			&:focus,&.focus{
+				border-color:htru;
+				color:htru;
+				background-color:tru;
+				box-shadow:none;
+			}
+			&:hover{
+				background-color:htru;
+				color:tru;
+				border-color:htru;
+			}
+		}
 		&-secondary{
 			background-color:#FFF2;
 			color:txt;
