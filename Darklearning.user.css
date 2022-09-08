@@ -2535,6 +2535,11 @@ urlenc(x){
 			color:htxt;
 		}
 	}
+	/*assignment wrappers*/
+	.activity-wrapper.activity>.activity-item:not(.activityinline){
+		background-color:bg3;
+		border-radius:crad;
+	}
 }
 @-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/user\\/files\\.php.*") {
 	.filemanager-container,
