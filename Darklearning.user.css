@@ -2639,13 +2639,17 @@ urlenc(x){
 }
 @-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/mod\\/assign\\/view\\.php.*") {
 	/*Abgabestatus*/
-	.submissionsummarytable>table>tbody>tr{
+	.submissionsummarytable table>tbody>tr{
 		&>td,
 		&>th{
 			background-color:bg3;
 			&:first-child{
 				background-color:bg4;
 				color:htxt;
+				border-left:none;
+			}
+			&:last-child{
+				border-right:none;
 			}
 		}
 		&>td.submission{
@@ -2690,6 +2694,7 @@ urlenc(x){
 		&:last-of-type{
 			&>td,
 			&>th{
+				border-bottom:none;
 				&:first-child{
 					border-bottom-left-radius:crad;
 				}
