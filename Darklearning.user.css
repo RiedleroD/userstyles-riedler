@@ -12,16 +12,6 @@
 	"Grow on hover":"Goh",
 	"Slide on hover":"Soh",
 	"Static":"S"}
-@var	select CPB		"Card Progressbar"{
-	"Default":"D",
-	"Compact":"C",
-	"Borderless":"BL",
-	"Compact Borderless":"CBL",
-	"Round":"R",
-	"Round Borderless":"RBL",
-	"Round Compact":"RC",
-	"Round Compact Borderless":"RCBL"
-}
 @var	select	LSI		"Link Selection Indicator"{
 	"Clamps":"C",
 	"Braces":"B",
@@ -2346,35 +2336,6 @@ urlenc(x){
 		&-summaryitem{
 			background-color:bg3 !important;
 			border:none !important;
-		}
-	}
-	.progress{
-		background-color:bg1 !important;
-		border-color:bg1 !important;
-		margin-bottom: 0.5rem;
-		height:0.4rem !important;
-		&-bar{
-			background-color:btn;
-		}
-		if CPB=="C"{
-			height:0.3rem !important;
-		}else if CPB=="BL"{
-			border:none !important;
-		}else if CPB=="CBL"{
-			border:none !important;
-			height:0.3rem !important;
-		}else if CPB=="R"{
-			border-radius:0.2rem;
-		}else if CPB=="RBL"{
-			border:none !important;
-			border-radius:0.2rem;
-		}else if CPB=="RC"{
-			border-radius:0.15rem;
-			height:0.3rem !important;
-		}else if CPB=="RCBL"{
-			border:none !important;
-			border-radius:0.15rem;
-			height:0.3rem !important;
 		}
 	}
 	.block-myoverview>.container-fluid.p-0{
