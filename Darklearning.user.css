@@ -2168,23 +2168,36 @@ urlenc(x){
 		padding:0 0.5em;
 		border-radius:irad;
 		mix-blend-mode:normal;//thanks
+		&>i{
+			z-index:3;
+			position:relative;
+		}
 		&-info{
 			padding:0.25em 0.5em;
-		}
-		&-secondary>strong,
-		&>strong{
-			background-color:brd;
-			color:dtxt;
-		}
-		&-success>strong{
-			background-color:tru;
-			color:htru;
 		}
 		&>strong{
 			display:inline-block;
 			margin-left:-0.5em;
 			padding:0.25em 0.25em 0.25em 0.5em;
 			border-radius:irad 0 0 irad;
+			z-index:2;
+			position:relative;
+		}
+		&-secondary>strong,
+		&>strong{
+			background-color:brd;
+			color:dtxt;
+		}
+		&.alert-success{
+			background-image:linear-gradient(to right,tru 25%,#0000 25%);
+			border:none;
+			&>strong{
+				background-color:tru;
+				color:htru;
+			}
+			&>i{
+				color:htru;
+			}
 		}
 		&.badge-light{
 			background-color:bg4 !important;
