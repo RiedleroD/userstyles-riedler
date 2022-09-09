@@ -1175,6 +1175,8 @@ urlenc(x){
 		background-color:bg2;
 	}
 	.courseindex .courseindex-item{
+		&:hover,
+		&:focus,
 		&:is(:hover,/:focus) .courseindex-link{
 			color:txt;
 		}
@@ -1185,6 +1187,9 @@ urlenc(x){
 				color:htxt;
 			}
 		}
+		& .completioninfo.completion_complete{
+			color:tru;
+		}
 		&.pageitem{
 			background-color:btn;
 			&>.courseindex-link,
@@ -1193,6 +1198,9 @@ urlenc(x){
 				background-color:hbtn;
 				&>.courseindex-link,
 				&>.courseindex-chevron span{color:dtxt}
+			}
+			& .completioninfo{
+				color:dtxt;
 			}
 		}
 	}
