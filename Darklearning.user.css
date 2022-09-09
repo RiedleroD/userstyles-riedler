@@ -2270,6 +2270,9 @@ urlenc(x){
 		border-color:brd;
 		border-radius:crad;
 		overflow:hidden;
+		& .moodle-dialogue-hd.yui3-widget-hd{
+			color:txt;//resetting color:initial (fuck you)
+		}
 	}
 	.moodle-dialogue-hd{//fixes titles that would otherwise extend outside the card
 		word-break:break-word;
@@ -2858,8 +2861,6 @@ urlenc(x){
 		color:txt !important;}
 }
 @-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/mod\\/(student)?quiz.*") {
-	.moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd.yui3-widget-hd{
-		color:txt;}
 	.que.multichoice .answer{
 		& div.r0,
 		& div.r1{
