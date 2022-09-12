@@ -2556,7 +2556,6 @@ urlenc(x){
 				&>.dir-rtl-hide{
 					display:flex;
 					align-items:center;
-					height:100%;/*jesus, why?*/
 				}
 				&:not(.dimmed){
 					background-color:bg3;
@@ -2572,9 +2571,10 @@ urlenc(x){
 				}
 				&:hover{
 					transform:none;
+					text-decoration:none;
 				}
 				& .icon{
-					height:60%;
+					display:contents;
 				}
 			}
 		}
