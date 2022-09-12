@@ -227,6 +227,7 @@ urlenc(x){
 		&-thumb{
 			background-color:bg3 !important;
 			border-radius:0.4em;
+			border:none;
 		}
 	}
 	:root,
