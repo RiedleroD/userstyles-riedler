@@ -1312,6 +1312,11 @@ urlenc(x){
 			background-color:rgba(tru,0.5);
 			color:htru;
 		}
+		&-secondary{
+			border:solid 1px brd;
+			background-color:rgba(brd,0.5);
+			color:htxt;
+		}
 		&>.close{
 			color:inherit;
 		}
