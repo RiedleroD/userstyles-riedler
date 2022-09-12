@@ -2435,13 +2435,6 @@ urlenc(x){
 		& #page .course-content ul li.section.main{
 			background-color:bg2;
 		}
-		& li.activity.subtile{
-			background-color:bg2;
-			border-color:brd;
-			& .activitytitle a{
-				background:linear-gradient(to bottom,bg4 85%,#0000);
-			}
-		}
 		& li.activity button[data-action="change-completion-status"]{
 			&>.completion-icon{
 				outline:solid 3px #0000;
@@ -2474,28 +2467,73 @@ urlenc(x){
 		}
 		& .course-content{
 			& ul.tiles .tile{
-				box-shadow:2px 4px 5px 0 #000A;
-				transform:translateY(0);//this is needed for compatibility
-				border-top:none;
-				border-radius:irad;
+				transition:background-color 0.1s ease-in-out,all 0.1s ease-in-out;
+				cursor:pointer;
 				&:hover{
-					box-shadow:2px 10px 8px -3px #000A;
-					transition:all 0.25s ease-in-out;
-					transform:translateY(-6px);
-				}
-				&.phototile{
-					background-color:#444 !important;/*darkening the background image*/
-					background-blend-mode:overlay;
-					& .photo-tile-text h3{
-						color:htxt !important;
-						font-weight:500;
-						font-size:1.25rem;
-						background-color:lnk;
-					}
+					transition:transform 0.1s ease-in-out
 				}
 			}
 			& .section .activity:hover{
 				background-color:bg3;
+			}
+			& .tile-bg{
+				background-color:bg3;
+			}
+		}
+		& ul.tiles .tile h3{
+			color:txt;
+		}
+		& .tile-icon{
+			position:relative;//no idea why this is needed
+		}
+		& .course-content ul.tiles .tile,
+		& li.section:not(#section-0) .course-section-header{
+			border-top-color:btn;
+			border-top-width:0.25em;
+			box-shadow:0.1em 0.2em 0.5em 0 bg0;
+			&:hover{
+				border-top-color:hbtn;
+			}
+		}
+		/*activites in format tiles*/
+		& li.subtile.activity{
+			background-color:bg3;
+			border:none;
+			border-top:solid 0.25em;
+			cursor:pointer;
+			background-size:25% auto;
+			border-radius:crad;
+			&.page,
+			&.url,
+			&.resource{
+				border-top-color:c0;
+			}
+			&.modsecurestreaming,
+			&.resource.mp4,
+			&.url.video{
+				border-top-color:c1;
+			}
+			&.folder{
+				border-top-color:c2;
+			}
+			&.resource.pdf{
+				border-top-color:c3;
+			}
+			&.assign{
+				border-top-color:c4;
+			}
+			& .activitytype{
+				color:mtxt;
+			}
+			& a:not(.dropdown-item),
+			/^[0] #page-content li.subtile.activity a:not(.dropdown-item){
+				color:txt;
+			}
+			& .activitytitle a{
+				background:linear-gradient(to bottom,bg4 85%,#0000);
+			}
+			&:hover{
+				background-size:25% auto;
 			}
 		}
 		/* the arrows in format tile thingies */
@@ -2539,6 +2577,37 @@ urlenc(x){
 			& h1,& h2,& h3,& h4{
 				border-left-color:tru;
 			}
+		}
+		/*completion checkboxes*/
+		& .completioncheckbox{
+			display:flex;
+			border-color:brd;
+			justify-content:center;
+			align-items:center;
+			transition:none;
+			color:txt;
+			& .icon{//why
+				margin:0;
+				width:auto !important;
+				height:auto;
+				color:inherit !important;
+			}
+			&.complete{
+				background-color:tru;
+				border-color:tru;
+				color:htru;
+			}
+		}
+		& li.activity button[data-action="change-completion-status"]:hover{
+			border-color:brd;
+			background-color:brd;
+			transition:none;
+			color:htxt !important;
+		}
+		& li.activity button[data-action="change-completion-status"].complete:hover{
+			border-color:htru;
+			background-color:htru;
+			color:tru !important;
 		}
 		/*some small fixes for https://elearning.tgm.ac.at/course/view.php?id=5836*/
 		& .badge-info{
