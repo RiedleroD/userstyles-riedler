@@ -1002,6 +1002,7 @@ urlenc(x){
 		& .page-link{
 			background-color:bg4;
 			border-color:#0000;
+			color:htxt;
 			&:focus{
 				box-shadow:none;
 				z-index:0;
@@ -1010,7 +1011,7 @@ urlenc(x){
 			&:hover{
 				background-color:bg5;
 				border-color:brd;
-				color:hlnk;
+				color:htxt;
 				z-index:3;
 			}
 		}
