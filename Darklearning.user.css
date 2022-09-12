@@ -2451,7 +2451,7 @@ urlenc(x){
 				}
 			}
 		}
-		& #buttonhidesec0{
+		& button.tiles-top-button{
 			background-color:#0000;
 			&:hover{
 				background-color:bg4;
