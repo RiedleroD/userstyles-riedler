@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name			Darklearning
 @namespace		https://github.com/RiedleroD/userstyles-riedler
-@version		1.3.0
+@version		1.3.1
 @description	Darker version of Elearning
 @author			Riedler
 @license		MPL-2.0
@@ -12,16 +12,6 @@
 	"Grow on hover":"Goh",
 	"Slide on hover":"Soh",
 	"Static":"S"}
-@var	select CPB		"Card Progressbar"{
-	"Default":"D",
-	"Compact":"C",
-	"Borderless":"BL",
-	"Compact Borderless":"CBL",
-	"Round":"R",
-	"Round Borderless":"RBL",
-	"Round Compact":"RC",
-	"Round Compact Borderless":"RCBL"
-}
 @var	select	LSI		"Link Selection Indicator"{
 	"Clamps":"C",
 	"Braces":"B",
@@ -237,6 +227,7 @@ urlenc(x){
 		&-thumb{
 			background-color:bg3 !important;
 			border-radius:0.4em;
+			border:none;
 		}
 	}
 	:root,
@@ -756,6 +747,10 @@ urlenc(x){
 	.text-primary{
 		color:btn !important;
 	}
+	caption{
+		//the original style makes them look muted, but that just seems wrong
+		color:htxt;
+	}
 	/*links*/
 	a,
 	a>span{
@@ -766,6 +761,39 @@ urlenc(x){
 		&,
 		&>span{
 			color:hlnk;
+		}
+	}
+	.aalink,
+	a.autolink,
+	#page-footer a:not([class]),
+	.arrow_link,
+	a:not([class]),
+	.activityinstance > a{
+		&.focus,
+		&:focus{//janky box-shadow offsets; a better solution is desired
+			color:hlnk;
+			if LSI=="C"{
+				background-color:#0000;
+				box-shadow:0 -0.2rem brd,0 0.2rem brd;
+				border-radius:0.3em;
+			}else if LSI="B"{
+				background-color:#0000;
+				box-shadow:0 0.4rem 0 -0.1rem bg2,0 -0.4rem 0 -0.1rem bg2,0 0 0 0.1rem bg2,0 0 0 0.3rem brd;
+			}else if LSI=="U"{
+				background-color:#0000;
+				box-shadow:0 0 0 2px bg2,0 0.2rem 0 1px brd;
+				border-radius:0.3em;
+			}else if LSI=="F"{
+				background-color:bg4;
+				box-shadow:0 -.2rem bg4,0 .2rem brd;
+			}else if LSI=="R"{
+				background-color:#0000;
+				box-shadow:0 0 0 2px bg2,0 0 0 3px brd;
+				border-radius:0.3em;
+			}else if LSI=="E"{
+				background-color:#0000;
+				box-shadow:0 0 0 2px bg2,0 0 0 3px brd;
+			}
 		}
 	}
 	/*Text with inline background coloring*/
@@ -861,6 +889,22 @@ urlenc(x){
 				background-color:htru;
 				border-color:htru;
 				color:dtxt;
+			}
+		}
+		&-success{
+			background-color:tru;
+			border-color:tru;
+			color:htru;
+			&:focus,&.focus{
+				border-color:htru;
+				color:htru;
+				background-color:tru;
+				box-shadow:none;
+			}
+			&:hover{
+				background-color:htru;
+				color:tru;
+				border-color:htru;
 			}
 		}
 		&-secondary{
@@ -962,6 +1006,7 @@ urlenc(x){
 		& .page-link{
 			background-color:bg4;
 			border-color:#0000;
+			color:htxt;
 			&:focus{
 				box-shadow:none;
 				z-index:0;
@@ -970,7 +1015,7 @@ urlenc(x){
 			&:hover{
 				background-color:bg5;
 				border-color:brd;
-				color:hlnk;
+				color:htxt;
 				z-index:3;
 			}
 		}
@@ -1136,6 +1181,8 @@ urlenc(x){
 		background-color:bg2;
 	}
 	.courseindex .courseindex-item{
+		&:hover,
+		&:focus,
 		&:is(:hover,/:focus) .courseindex-link{
 			color:txt;
 		}
@@ -1146,6 +1193,9 @@ urlenc(x){
 				color:htxt;
 			}
 		}
+		& .completioninfo.completion_complete{
+			color:tru;
+		}
 		&.pageitem{
 			background-color:btn;
 			&>.courseindex-link,
@@ -1154,6 +1204,9 @@ urlenc(x){
 				background-color:hbtn;
 				&>.courseindex-link,
 				&>.courseindex-chevron span{color:dtxt}
+			}
+			& .completioninfo{
+				color:dtxt;
 			}
 		}
 	}
@@ -1165,8 +1218,12 @@ urlenc(x){
 		background-color:bg3;
 		border-radius:0.5em;
 	}
+	.path-mod .activity-information .completion-info{
+		border-bottom-color:brd;
+	}
 	/*Activity icon button thingies*/
 	.activityiconcontainer{
+		background-color:bg3;
 		&.content{
 			background-color:c0;
 			--f:invert(.9);
@@ -1191,6 +1248,10 @@ urlenc(x){
 			mix-blend-mode:var(--mbm);
 			filter:var(--f) !important;
 		}
+		&.modicon_studentquiz{
+			//the original image is kinda bad ngl
+			--f:invert(1) hue-rotate(180deg) saturate(1.5) brightness(0.85);
+		}
 	}
 	/*Misc*/
 	.otherstudent.highlight{
@@ -1211,10 +1272,13 @@ urlenc(x){
 	}
 	if(anon==1){
 		.userinitials{
-			font-size:0;
+			font-size:0 !important;
 			&::after{
 				font-size:1rem;
 				content:"AN";
+			}
+			&.size-100::after{
+				font-size:1.875rem;
 			}
 		}
 	}
@@ -1261,6 +1325,11 @@ urlenc(x){
 			background-color:rgba(tru,0.5);
 			color:htru;
 		}
+		&-secondary{
+			border:solid 1px brd;
+			background-color:rgba(brd,0.5);
+			color:htxt;
+		}
 		&>.close{
 			color:inherit;
 		}
@@ -1290,9 +1359,6 @@ urlenc(x){
 	}
 	.yui3-button{
 		background-image:none;}
-	.path-mod div.activity-information{
-		border-bottom-color:brd;
-	}
 	div.comment-area textarea{
 		background-color:bg3;
 		border:solid 1px brd;
@@ -1495,38 +1561,6 @@ urlenc(x){
 	}
 	.highlight{
 		outline:solid 1px hlnk;}
-	.aalink,
-	.arrow_link,
-	a:not([class]),
-	.activityinstance>a,
-	#page-footer a:not([class]){
-		&.focus,
-		&:focus{//janky box-shadow offsets; a better solution is desired
-			color:hlnk;
-			if LSI=="C"{
-				background-color:#0000;
-				box-shadow:0 -0.2rem brd,0 0.2rem brd;
-				border-radius:0.3em;
-			}else if LSI="B"{
-				background-color:#0000;
-				box-shadow:0 0.4rem 0 -0.1rem bg2,0 -0.4rem 0 -0.1rem bg2,0 0 0 0.1rem bg2,0 0 0 0.3rem brd;
-			}else if LSI=="U"{
-				background-color:#0000;
-				box-shadow:0 0 0 2px bg2,0 0.2rem 0 1px brd;
-				border-radius:0.3em;
-			}else if LSI=="F"{
-				background-color:bg4;
-				box-shadow:0 -.2rem bg4,0 .2rem brd;
-			}else if LSI=="R"{
-				background-color:#0000;
-				box-shadow:0 0 0 2px bg2,0 0 0 3px brd;
-				border-radius:0.3em;
-			}else if LSI=="E"{
-				background-color:#0000;
-				box-shadow:0 0 0 2px bg2,0 0 0 3px brd;
-			}
-		}
-	}
 	#qrcode>img{
 		filter:none;
 		background-color:#FFF;
@@ -2003,30 +2037,40 @@ urlenc(x){
 		//wtf
 		background-color:bg3;
 	}
-	.block .calendar_filters li span.calendar_event{
-		&_course{
-			background-color:cal0;
-			& i{color:lighten(cal0,30)}
-		}
-		&_category{
-			background-color:cal1;
-			& i{color:lighten(cal1,30)}
-		}
-		&_group{
-			background-color:cal2;
-			& i{color:lighten(cal2,30)}
-		}
-		&_user{
-			background-color:cal3;
-			& i{color:lighten(cal3,30)}
-		}
-		&_site{
-			background-color:cal4;
-			& i{color:lighten(cal4,30)}
-		}
-		&_other{
-			background-color:bg3;
-			& i{color:lighten(bg3,30)}
+	.calendar_event_course{
+		--c:cal0;
+		--cl:lighten(cal0,30);
+	}
+	.calendar_event_category{
+		--c:cal1;
+		--cl:lighten(cal1,30);
+	}
+	.calendar_event_group{
+		--c:cal2;
+		--cl:lighten(cal2,30);
+	}
+	.calendar_event_user{
+		--c:cal3;
+		--cl:lighten(cal3,30);
+	}
+	.calendar_event_site{
+		--c:cal4;
+		--cl:lighten(cal4,30);
+	}
+	.calendar_event_other{
+		--c:bg3;
+		--cl:lighten(bg3,30);
+	}
+	.maincalendar .calendarmonth ul li .calendar-circle{
+		//misaligned, but whatever
+		background-color:var(--c) !important;
+		border-color:var(--cl) !important;
+		border-width:1px !important;
+	}
+	.block .calendar_filters li span{
+		background-color:var(--c);
+		& i{
+			color:var(--cl) !important;
 		}
 	}
 	/*Replacement images + image manipulation*/
@@ -2056,6 +2100,9 @@ urlenc(x){
 	}
 	img[src^="https://elearning.tgm.ac.at/theme/image.php/boost"]:is([src$="monologo"],/[src$="i/arrow-left"]){
 		filter:invert(0.8);
+	}
+	img[src^="https://elearning.tgm.ac.at/theme/image.php/boost/block_completion_progress/"][src$="/cross"]{
+		filter:invert(1) hue-rotate(180deg) contrast(0.75) saturate(1.5) brightness(0.9);
 	}
 	/*row where it displays what you've done and what you didn't. Normally only in course/view.php, but also in other places*/
 	.barRow{
@@ -2153,27 +2200,47 @@ urlenc(x){
 		}
 	}
 	/*badges*/
-	.badge{
+	.badge,
+	.automatic-completion-conditions .badge,
+	.path-mod .automatic-completion-conditions .badge{
 		background-color:bg4;
 		color:txt;
 		padding:0 0.5em;
 		border-radius:irad;
+		mix-blend-mode:normal;//thanks
+		&>i{
+			z-index:3;
+			position:relative;
+		}
 		&-info{
 			padding:0.25em 0.5em;
-		}
-		&-secondary>strong{
-			background-color:brd;
-			color:dtxt;
-		}
-		&-success>strong{
-			background-color:tru;
-			color:htru;
 		}
 		&>strong{
 			display:inline-block;
 			margin-left:-0.5em;
 			padding:0.25em 0.25em 0.25em 0.5em;
 			border-radius:irad 0 0 irad;
+			z-index:2;
+			position:relative;
+		}
+		&-secondary>strong,
+		&>strong{
+			background-color:brd;
+			color:dtxt;
+		}
+		&.alert-success{
+			background-image:linear-gradient(to right,tru 25%,#0000 25%);
+			border:none;
+			&>strong{
+				background-color:tru;
+				color:htru;
+			}
+			&>i{
+				color:htru;
+			}
+		}
+		&.badge-light{
+			background-color:bg4 !important;
 		}
 	}
 	/*highlightjs*/
@@ -2235,6 +2302,9 @@ urlenc(x){
 		border-color:brd;
 		border-radius:crad;
 		overflow:hidden;
+		& .moodle-dialogue-hd.yui3-widget-hd{
+			color:txt;//resetting color:initial (fuck you)
+		}
 	}
 	.moodle-dialogue-hd{//fixes titles that would otherwise extend outside the card
 		word-break:break-word;
@@ -2324,37 +2394,19 @@ urlenc(x){
 			border:none !important;
 		}
 	}
-	.progress{
-		background-color:bg1 !important;
-		border-color:bg1 !important;
-		margin-bottom: 0.5rem;
-		height:0.4rem !important;
-		&-bar{
-			background-color:btn;
-		}
-		if CPB=="C"{
-			height:0.3rem !important;
-		}else if CPB=="BL"{
-			border:none !important;
-		}else if CPB=="CBL"{
-			border:none !important;
-			height:0.3rem !important;
-		}else if CPB=="R"{
-			border-radius:0.2rem;
-		}else if CPB=="RBL"{
-			border:none !important;
-			border-radius:0.2rem;
-		}else if CPB=="RC"{
-			border-radius:0.15rem;
-			height:0.3rem !important;
-		}else if CPB=="RCBL"{
-			border:none !important;
-			border-radius:0.15rem;
-			height:0.3rem !important;
+	.block-myoverview>.container-fluid.p-0{
+		margin-top:1.5em;
+	}
+	//welcoming heading which unfortunately contains the user's first name
+	if(anon){
+		#page-header>.w-100>.d-flex.align-items-center>h2.mb-3.mt-3{
+			font-size:0;
+			&:after{
+				content:"Welcome back, Anon! 👋";
+				font-size:1.875rem;
+			}
 		}
 	}
-	.block-myoverview>.container-fluid.p-0{
-		margin-top:1.5em;}
 }
 @-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/?(\\?.*)?$"), regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/mod\\/forum\\/discuss\\.php.*") {
 	.sitelink{
@@ -2414,13 +2466,6 @@ urlenc(x){
 		& #page .course-content ul li.section.main{
 			background-color:bg2;
 		}
-		& li.activity.subtile{
-			background-color:bg2;
-			border-color:brd;
-			& .activitytitle a{
-				background:linear-gradient(to bottom,bg4 85%,#0000);
-			}
-		}
 		& li.activity button[data-action="change-completion-status"]{
 			&>.completion-icon{
 				outline:solid 3px #0000;
@@ -2437,7 +2482,7 @@ urlenc(x){
 				}
 			}
 		}
-		& #buttonhidesec0{
+		& button.tiles-top-button{
 			background-color:#0000;
 			&:hover{
 				background-color:bg4;
@@ -2453,28 +2498,73 @@ urlenc(x){
 		}
 		& .course-content{
 			& ul.tiles .tile{
-				box-shadow:2px 4px 5px 0 #000A;
-				transform:translateY(0);//this is needed for compatibility
-				border-top:none;
-				border-radius:irad;
+				transition:background-color 0.1s ease-in-out,all 0.1s ease-in-out;
+				cursor:pointer;
 				&:hover{
-					box-shadow:2px 10px 8px -3px #000A;
-					transition:all 0.25s ease-in-out;
-					transform:translateY(-6px);
-				}
-				&.phototile{
-					background-color:#444 !important;/*darkening the background image*/
-					background-blend-mode:overlay;
-					& .photo-tile-text h3{
-						color:htxt !important;
-						font-weight:500;
-						font-size:1.25rem;
-						background-color:lnk;
-					}
+					transition:transform 0.1s ease-in-out
 				}
 			}
 			& .section .activity:hover{
 				background-color:bg3;
+			}
+			& .tile-bg{
+				background-color:bg3;
+			}
+		}
+		& ul.tiles .tile h3{
+			color:txt;
+		}
+		& .tile-icon{
+			position:relative;//no idea why this is needed
+		}
+		& .course-content ul.tiles .tile,
+		& li.section:not(#section-0) .course-section-header{
+			border-top-color:btn;
+			border-top-width:0.25em;
+			box-shadow:0.1em 0.2em 0.5em 0 bg0;
+			&:hover{
+				border-top-color:hbtn;
+			}
+		}
+		/*activites in format tiles*/
+		& li.subtile.activity{
+			background-color:bg3;
+			border:none;
+			border-top:solid 0.25em;
+			cursor:pointer;
+			background-size:25% auto;
+			border-radius:crad;
+			&.page,
+			&.url,
+			&.resource{
+				border-top-color:c0;
+			}
+			&.modsecurestreaming,
+			&.resource.mp4,
+			&.url.video{
+				border-top-color:c1;
+			}
+			&.folder{
+				border-top-color:c2;
+			}
+			&.resource.pdf{
+				border-top-color:c3;
+			}
+			&.assign{
+				border-top-color:c4;
+			}
+			& .activitytype{
+				color:mtxt;
+			}
+			& a:not(.dropdown-item),
+			/^[0] #page-content li.subtile.activity a:not(.dropdown-item){
+				color:txt;
+			}
+			& .activitytitle a{
+				background:linear-gradient(to bottom,bg4 85%,#0000);
+			}
+			&:hover{
+				background-size:25% auto;
 			}
 		}
 		/* the arrows in format tile thingies */
@@ -2492,7 +2582,6 @@ urlenc(x){
 				&>.dir-rtl-hide{
 					display:flex;
 					align-items:center;
-					height:100%;/*jesus, why?*/
 				}
 				&:not(.dimmed){
 					background-color:bg3;
@@ -2508,9 +2597,10 @@ urlenc(x){
 				}
 				&:hover{
 					transform:none;
+					text-decoration:none;
 				}
 				& .icon{
-					height:60%;
+					display:contents;
 				}
 			}
 		}
@@ -2518,6 +2608,37 @@ urlenc(x){
 			& h1,& h2,& h3,& h4{
 				border-left-color:tru;
 			}
+		}
+		/*completion checkboxes*/
+		& .completioncheckbox{
+			display:flex;
+			border-color:brd;
+			justify-content:center;
+			align-items:center;
+			transition:none;
+			color:txt;
+			& .icon{//why
+				margin:0;
+				width:auto !important;
+				height:auto;
+				color:inherit !important;
+			}
+			&.complete{
+				background-color:tru;
+				border-color:tru;
+				color:htru;
+			}
+		}
+		& li.activity button[data-action="change-completion-status"]:hover{
+			border-color:brd;
+			background-color:brd;
+			transition:none;
+			color:htxt !important;
+		}
+		& li.activity button[data-action="change-completion-status"].complete:hover{
+			border-color:htru;
+			background-color:htru;
+			color:tru !important;
 		}
 		/*some small fixes for https://elearning.tgm.ac.at/course/view.php?id=5836*/
 		& .badge-info{
@@ -2536,6 +2657,11 @@ urlenc(x){
 		&,& h5{
 			color:htxt;
 		}
+	}
+	/*assignment wrappers*/
+	.activity-wrapper.activity>.activity-item:not(.activityinline){
+		background-color:bg3;
+		border-radius:crad;
 	}
 }
 @-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/user\\/files\\.php.*") {
@@ -2623,13 +2749,17 @@ urlenc(x){
 }
 @-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/mod\\/assign\\/view\\.php.*") {
 	/*Abgabestatus*/
-	.submissionsummarytable>table>tbody>tr{
+	.submissionsummarytable table>tbody>tr{
 		&>td,
 		&>th{
 			background-color:bg3;
 			&:first-child{
 				background-color:bg4;
 				color:htxt;
+				border-left:none;
+			}
+			&:last-child{
+				border-right:none;
 			}
 		}
 		&>td.submission{
@@ -2674,6 +2804,7 @@ urlenc(x){
 		&:last-of-type{
 			&>td,
 			&>th{
+				border-bottom:none;
 				&:first-child{
 					border-bottom-left-radius:crad;
 				}
@@ -2842,8 +2973,6 @@ urlenc(x){
 		color:txt !important;}
 }
 @-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/mod\\/(student)?quiz.*") {
-	.moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd.yui3-widget-hd{
-		color:txt;}
 	.que.multichoice .answer{
 		& div.r0,
 		& div.r1{
@@ -3182,6 +3311,10 @@ urlenc(x){
 			cursor:not-allowed;
 		}
 	}
+	//highlighted row in student rankings
+	.path-mod-studentquiz .mod-studentquiz-summary-highlight{
+		background-color:bg3;
+	}
 }
 @-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/user\\/index\\.php.*") {
 	.filter-group{
@@ -3298,14 +3431,26 @@ urlenc(x){
 			fill:idk !important;
 			stroke:hidk !important;
 		}
-		& span[style*="color:#f0ad4e"]{
-			color:hidk !important;
+	}
+	.path-mod-studentquiz span.stat{
+		//why do I need to do this?
+		display:flex;
+		line-height:0;
+		align-items:center;
+		&.approvals,
+		&.last-attempt-correct{
+			background-color:tru;
+			color:htru;
 		}
-		& span[style*="color:#d9534f"]{
-			color:hfals !important;
+		&.disapprovals,
+		&.last-attempt-incorrect{
+			background-color:fals;
+			color:hfals;
 		}
-		& span[style*="color:#5cb85c"]{
-			color:htru !important;
+		&.changed,
+		&.never-answered{
+			background-color:idk;
+			color:hidk;
 		}
 	}
 }
