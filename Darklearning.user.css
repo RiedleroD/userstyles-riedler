@@ -747,6 +747,10 @@ urlenc(x){
 	.text-primary{
 		color:btn !important;
 	}
+	caption{
+		//the original style makes them look muted, but that just seems wrong
+		color:htxt;
+	}
 	/*links*/
 	a,
 	a>span{
