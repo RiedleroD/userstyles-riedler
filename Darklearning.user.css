@@ -2088,6 +2088,9 @@ urlenc(x){
 	img[src^="https://elearning.tgm.ac.at/theme/image.php/boost"]:is([src$="monologo"],/[src$="i/arrow-left"]){
 		filter:invert(0.8);
 	}
+	img[src^="https://elearning.tgm.ac.at/theme/image.php/boost/block_completion_progress/"][src$="/cross"]{
+		filter:invert(1) hue-rotate(180deg) contrast(0.75) saturate(1.5) brightness(0.9);
+	}
 	/*row where it displays what you've done and what you didn't. Normally only in course/view.php, but also in other places*/
 	.barRow{
 		& .progressBarCell{
