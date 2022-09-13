@@ -3402,14 +3402,26 @@ urlenc(x){
 			fill:idk !important;
 			stroke:hidk !important;
 		}
-		& span[style*="color:#f0ad4e"]{
-			color:hidk !important;
+	}
+	.path-mod-studentquiz span.stat{
+		//why do I need to do this?
+		display:flex;
+		line-height:0;
+		align-items:center;
+		&.approvals,
+		&.last-attempt-correct{
+			background-color:tru;
+			color:htru;
 		}
-		& span[style*="color:#d9534f"]{
-			color:hfals !important;
+		&.disapprovals,
+		&.last-attempt-incorrect{
+			background-color:fals;
+			color:hfals;
 		}
-		& span[style*="color:#5cb85c"]{
-			color:htru !important;
+		&.changed,
+		&.never-answered{
+			background-color:idk;
+			color:hidk;
 		}
 	}
 }
