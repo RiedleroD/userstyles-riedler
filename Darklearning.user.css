@@ -1223,6 +1223,7 @@ urlenc(x){
 	}
 	/*Activity icon button thingies*/
 	.activityiconcontainer{
+		background-color:bg3;
 		&.content{
 			background-color:c0;
 			--f:invert(.9);
@@ -1246,6 +1247,10 @@ urlenc(x){
 		&>img:is(.activityicon,/.icon){
 			mix-blend-mode:var(--mbm);
 			filter:var(--f) !important;
+		}
+		&.modicon_studentquiz{
+			//the original image is kinda bad ngl
+			--f:invert(1) hue-rotate(180deg) saturate(1.5) brightness(0.85);
 		}
 	}
 	/*Misc*/
