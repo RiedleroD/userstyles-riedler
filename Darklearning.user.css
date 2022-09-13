@@ -2034,30 +2034,40 @@ urlenc(x){
 		//wtf
 		background-color:bg3;
 	}
-	.block .calendar_filters li span.calendar_event{
-		&_course{
-			background-color:cal0;
-			& i{color:lighten(cal0,30)}
-		}
-		&_category{
-			background-color:cal1;
-			& i{color:lighten(cal1,30)}
-		}
-		&_group{
-			background-color:cal2;
-			& i{color:lighten(cal2,30)}
-		}
-		&_user{
-			background-color:cal3;
-			& i{color:lighten(cal3,30)}
-		}
-		&_site{
-			background-color:cal4;
-			& i{color:lighten(cal4,30)}
-		}
-		&_other{
-			background-color:bg3;
-			& i{color:lighten(bg3,30)}
+	.calendar_event_course{
+		--c:cal0;
+		--cl:lighten(cal0,30);
+	}
+	.calendar_event_category{
+		--c:cal1;
+		--cl:lighten(cal1,30);
+	}
+	.calendar_event_group{
+		--c:cal2;
+		--cl:lighten(cal2,30);
+	}
+	.calendar_event_user{
+		--c:cal3;
+		--cl:lighten(cal3,30);
+	}
+	.calendar_event_site{
+		--c:cal4;
+		--cl:lighten(cal4,30);
+	}
+	.calendar_event_other{
+		--c:bg3;
+		--cl:lighten(bg3,30);
+	}
+	.maincalendar .calendarmonth ul li .calendar-circle{
+		//misaligned, but whatever
+		background-color:var(--c) !important;
+		border-color:var(--cl) !important;
+		border-width:1px !important;
+	}
+	.block .calendar_filters li span{
+		background-color:var(--c);
+		& i{
+			color:var(--cl) !important;
 		}
 	}
 	/*Replacement images + image manipulation*/
