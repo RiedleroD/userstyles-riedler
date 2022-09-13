@@ -1272,10 +1272,13 @@ urlenc(x){
 	}
 	if(anon==1){
 		.userinitials{
-			font-size:0;
+			font-size:0 !important;
 			&::after{
 				font-size:1rem;
 				content:"AN";
+			}
+			&.size-100::after{
+				font-size:1.875rem;
 			}
 		}
 	}
