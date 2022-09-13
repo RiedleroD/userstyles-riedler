@@ -3286,6 +3286,10 @@ urlenc(x){
 			cursor:not-allowed;
 		}
 	}
+	//highlighted row in student rankings
+	.path-mod-studentquiz .mod-studentquiz-summary-highlight{
+		background-color:bg3;
+	}
 }
 @-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/user\\/index\\.php.*") {
 	.filter-group{
