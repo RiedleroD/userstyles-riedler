@@ -2073,6 +2073,13 @@ urlenc(x){
 			color:var(--cl) !important;
 		}
 	}
+	/*blockquotes*/
+	#page-content blockquote,
+	aside > section blockquote{
+		border-left-color:btn;
+		background-color:bg4;
+		border-radius:0 crad crad 0;
+	}
 	/*Replacement images + image manipulation*/
 	.atto_image_button_text-bottom.img-responsive,
 	.atto_image_button_text-top.img-responsive,/*most likely embedded images in 	assignment descriptions*/
