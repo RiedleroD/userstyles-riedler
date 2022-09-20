@@ -2246,6 +2246,17 @@ urlenc(x){
 				color:htru;
 			}
 		}
+		&.alert-danger{
+			background-image:linear-gradient(to right,fals 25%,#0000 25%);
+			border:none;
+			&>strong{
+				background-color:fals;
+				color:hfals;
+			}
+			&>i{
+				color:hfals;
+			}
+		}
 		&.badge-light{
 			background-color:bg4 !important;
 		}
