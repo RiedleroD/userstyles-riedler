@@ -2218,6 +2218,7 @@ urlenc(x){
 		&>i{
 			z-index:3;
 			position:relative;
+			text-shadow:0 0 1px #000;
 		}
 		&-info{
 			padding:0.25em 0.5em;
@@ -2229,6 +2230,7 @@ urlenc(x){
 			border-radius:irad 0 0 irad;
 			z-index:2;
 			position:relative;
+			text-shadow:0 0 1px #000;
 		}
 		&-secondary>strong,
 		&>strong{
