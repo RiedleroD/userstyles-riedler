@@ -1301,6 +1301,15 @@ urlenc(x){
 		&-footer{
 			background-color:bg3 !important;
 		}
+		&.rounded{
+			border-radius:crad !important;
+			& .card-header{
+				border-radius:crad crad 0 0;
+			}
+			& .card-footer{
+				border-radius:0 0 crad crad;
+			}
+		}
 	}
 	.alert{
 		color:txt;
