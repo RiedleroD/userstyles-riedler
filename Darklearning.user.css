@@ -1555,7 +1555,12 @@ urlenc(x){
 	}
 	.border-bottom{
 		border-bottom-color:brd !important;}
-	code{
+	.forumpost{
+		border-color:brd;
+		border-radius:crad;
+	}
+	/*codeblocks*/
+	:not(pre)>code{
 		color:mtxt;
 		background-color:bg1;
 		outline:solid 2px bg0;
@@ -1563,16 +1568,17 @@ urlenc(x){
 		font-size:1.08em;
 		padding:0 0.1em;
 	}
+	pre{
+		color:mtxt;
+		background-color:bg1;
+		border:solid 2px bg0;
+	}
 	.highlight{
 		outline:solid 1px hlnk;}
 	#qrcode>img{
 		filter:none;
 		background-color:#FFF;
 		padding:4px;
-	}
-	.forumpost{
-		border-color:brd;
-		border-radius:crad;
 	}
 	/*Editor Atto*/
 	div.editor_atto{
