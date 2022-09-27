@@ -2044,10 +2044,6 @@ urlenc(x){
 			/.path-mod-grouptool & .today,
 			/.path-my & .today{
 				background-color:#0000;
-				& .day-number-circle{
-					background-color:idk;
-					color:hidk;
-				}
 			}
 		}
 	}
@@ -2055,41 +2051,24 @@ urlenc(x){
 		//wtf
 		background-color:bg3;
 	}
-	.calendar_event_course{
-		--c:cal0;
-		--cl:lighten(cal0,30);
-	}
-	.calendar_event_category{
-		--c:cal1;
-		--cl:lighten(cal1,30);
-	}
-	.calendar_event_group{
-		--c:cal2;
-		--cl:lighten(cal2,30);
-	}
-	.calendar_event_user{
-		--c:cal3;
-		--cl:lighten(cal3,30);
-	}
-	.calendar_event_site{
-		--c:cal4;
-		--cl:lighten(cal4,30);
-	}
-	.calendar_event_other{
-		--c:bg3;
-		--cl:lighten(bg3,30);
-	}
-	.maincalendar .calendarmonth ul li .calendar-circle{
-		//misaligned, but whatever
-		background-color:var(--c) !important;
-		border-color:var(--cl) !important;
-		border-width:1px !important;
-	}
-	.block .calendar_filters li span{
-		background-color:var(--c);
-		& i{
-			color:var(--cl) !important;
+	calendarColors = {course:cal0,category:cal1,group:cal2,user:cal3,site:cal4,other:bg3}
+	for $name,$color in calendarColors {
+		.calendar_event_{$name}{
+			background-color:$color;
+			--cl:lighten($color,30);
+			/.maincalendar .calendarmonth ul li .calendar-circle&{
+				//misaligned, but whatever
+				background-color:$color !important;
+				border-color:var(--cl) !important;
+				border-width:1px;
+			}
+			/.maincalendar &{
+				border-color:$color;
+			}
 		}
+	}
+	.block .calendar_filters li span i{
+		color:var(--cl) !important;
 	}
 	/*blockquotes*/
 	#page-content blockquote,
