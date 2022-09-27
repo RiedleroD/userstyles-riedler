@@ -1221,7 +1221,8 @@ urlenc(x){
 		background-color:bg3;
 		border-radius:0.5em;
 	}
-	.path-mod .activity-information .completion-info{
+	.path-mod .activity-information .completion-info,
+	.path-mod .activity-information .activity-dates{
 		border-bottom-color:brd;
 	}
 	/*Activity icon button thingies*/
