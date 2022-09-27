@@ -2041,6 +2041,14 @@ urlenc(x){
 				background-color:bg3;
 				color:txt;
 			}
+			/.path-mod-grouptool & .today,
+			/.path-my & .today{
+				background-color:#0000;
+				& .day-number-circle{
+					background-color:idk;
+					color:hidk;
+				}
+			}
 		}
 	}
 	section:not(#region-main) .block.block_calendar_month .maincalendar .calendartable.calendarmonth td.clickable:not(.today):hover .day-number-circle{
