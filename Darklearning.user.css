@@ -8,10 +8,6 @@
 @homepageURL	https://github.com/RiedleroD/userstyles-riedler
 @updateURL		https://github.com/RiedleroD/userstyles-riedler/raw/master/Darklearning.user.css
 @preprocessor	stylus
-@var	select	sidebar	"Navigation Sidebar"{
-	"Grow on hover":"Goh",
-	"Slide on hover":"Soh",
-	"Static":"S"}
 @var	select	LSI		"Link Selection Indicator"{
 	"Clamps":"C",
 	"Braces":"B",
@@ -657,11 +653,6 @@ urlenc(x){
 	.block{
 		&.card{
 			background-color:bg2;
-			if sidebar=="Goh"{
-				&[role="navigation"]{
-					overflow:visible;
-				}
-			}
 		}
 		&-timeline{
 			& .list-group-item{
