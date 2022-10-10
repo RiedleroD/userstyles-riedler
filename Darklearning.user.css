@@ -1,17 +1,13 @@
 /* ==UserStyle==
 @name			Darklearning
 @namespace		https://github.com/RiedleroD/userstyles-riedler
-@version		1.3.1
+@version		1.3.2
 @description	Darker version of Elearning
 @author			Riedler
 @license		MPL-2.0
 @homepageURL	https://github.com/RiedleroD/userstyles-riedler
 @updateURL		https://github.com/RiedleroD/userstyles-riedler/raw/master/Darklearning.user.css
 @preprocessor	stylus
-@var	select	sidebar	"Navigation Sidebar"{
-	"Grow on hover":"Goh",
-	"Slide on hover":"Soh",
-	"Static":"S"}
 @var	select	LSI		"Link Selection Indicator"{
 	"Clamps":"C",
 	"Braces":"B",
@@ -657,11 +653,6 @@ urlenc(x){
 	.block{
 		&.card{
 			background-color:bg2;
-			if sidebar=="Goh"{
-				&[role="navigation"]{
-					overflow:visible;
-				}
-			}
 		}
 		&-timeline{
 			& .list-group-item{
@@ -816,6 +807,9 @@ urlenc(x){
 	span>span[style*="background-color: rgb(255\, 255\, 255)"],
     a[style*="background-color: rgb(255\, 255\, 255)"]{
 		background-color:bg2 !important;
+	}
+	span[style*="color: rgb(51\, 51\, 51)"]{
+		color:txt !important;
 	}
 	/*VPL badge*/
 	div[style="float:right; right:10px; padding:8px; background-color: white;text-align:center;"]{
@@ -1218,7 +1212,8 @@ urlenc(x){
 		background-color:bg3;
 		border-radius:0.5em;
 	}
-	.path-mod .activity-information .completion-info{
+	.path-mod .activity-information .completion-info,
+	.path-mod .activity-information .activity-dates{
 		border-bottom-color:brd;
 	}
 	/*Activity icon button thingies*/
@@ -1296,6 +1291,15 @@ urlenc(x){
 			filter:EICC;}
 		&-footer{
 			background-color:bg3 !important;
+		}
+		&.rounded{
+			border-radius:crad !important;
+			& .card-header{
+				border-radius:crad crad 0 0;
+			}
+			& .card-footer{
+				border-radius:0 0 crad crad;
+			}
 		}
 	}
 	.alert{
@@ -1551,7 +1555,12 @@ urlenc(x){
 	}
 	.border-bottom{
 		border-bottom-color:brd !important;}
-	code{
+	.forumpost{
+		border-color:brd;
+		border-radius:crad;
+	}
+	/*codeblocks*/
+	:not(pre)>code{
 		color:mtxt;
 		background-color:bg1;
 		outline:solid 2px bg0;
@@ -1559,16 +1568,17 @@ urlenc(x){
 		font-size:1.08em;
 		padding:0 0.1em;
 	}
+	pre{
+		color:mtxt;
+		background-color:bg1;
+		border:solid 2px bg0;
+	}
 	.highlight{
 		outline:solid 1px hlnk;}
 	#qrcode>img{
 		filter:none;
 		background-color:#FFF;
 		padding:4px;
-	}
-	.forumpost{
-		border-color:brd;
-		border-radius:crad;
 	}
 	/*Editor Atto*/
 	div.editor_atto{
@@ -2031,47 +2041,41 @@ urlenc(x){
 				background-color:bg3;
 				color:txt;
 			}
+			/.path-mod-grouptool & .today,
+			/.path-my & .today{
+				background-color:#0000;
+			}
 		}
 	}
 	section:not(#region-main) .block.block_calendar_month .maincalendar .calendartable.calendarmonth td.clickable:not(.today):hover .day-number-circle{
 		//wtf
 		background-color:bg3;
 	}
-	.calendar_event_course{
-		--c:cal0;
-		--cl:lighten(cal0,30);
-	}
-	.calendar_event_category{
-		--c:cal1;
-		--cl:lighten(cal1,30);
-	}
-	.calendar_event_group{
-		--c:cal2;
-		--cl:lighten(cal2,30);
-	}
-	.calendar_event_user{
-		--c:cal3;
-		--cl:lighten(cal3,30);
-	}
-	.calendar_event_site{
-		--c:cal4;
-		--cl:lighten(cal4,30);
-	}
-	.calendar_event_other{
-		--c:bg3;
-		--cl:lighten(bg3,30);
-	}
-	.maincalendar .calendarmonth ul li .calendar-circle{
-		//misaligned, but whatever
-		background-color:var(--c) !important;
-		border-color:var(--cl) !important;
-		border-width:1px !important;
-	}
-	.block .calendar_filters li span{
-		background-color:var(--c);
-		& i{
-			color:var(--cl) !important;
+	calendarColors = {course:cal0,category:cal1,group:cal2,user:cal3,site:cal4,other:bg3}
+	for $name,$color in calendarColors {
+		.calendar_event_{$name}{
+			background-color:$color;
+			--cl:lighten($color,30);
+			/.maincalendar .calendarmonth ul li .calendar-circle&{
+				//misaligned, but whatever
+				background-color:$color !important;
+				border-color:var(--cl) !important;
+				border-width:1px;
+			}
+			/.maincalendar &{
+				border-color:$color;
+			}
 		}
+	}
+	.block .calendar_filters li span i{
+		color:var(--cl) !important;
+	}
+	/*blockquotes*/
+	#page-content blockquote,
+	aside > section blockquote{
+		border-left-color:btn;
+		background-color:bg4;
+		border-radius:0 crad crad 0;
 	}
 	/*Replacement images + image manipulation*/
 	.atto_image_button_text-bottom.img-responsive,
@@ -2211,6 +2215,7 @@ urlenc(x){
 		&>i{
 			z-index:3;
 			position:relative;
+			text-shadow:0 0 1px #000;
 		}
 		&-info{
 			padding:0.25em 0.5em;
@@ -2222,6 +2227,7 @@ urlenc(x){
 			border-radius:irad 0 0 irad;
 			z-index:2;
 			position:relative;
+			text-shadow:0 0 1px #000;
 		}
 		&-secondary>strong,
 		&>strong{
@@ -2237,6 +2243,17 @@ urlenc(x){
 			}
 			&>i{
 				color:htru;
+			}
+		}
+		&.alert-danger{
+			background-image:linear-gradient(to right,fals 25%,#0000 25%);
+			border:none;
+			&>strong{
+				background-color:fals;
+				color:hfals;
+			}
+			&>i{
+				color:hfals;
 			}
 		}
 		&.badge-light{
