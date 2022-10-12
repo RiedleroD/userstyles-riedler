@@ -1062,6 +1062,60 @@ urlenc(x){
 	/*Dropdown menus*/
 	.dropdown-item:active,.dropdown-item.active{
 		background-color:bg4;}
+	/*Some Settings tables*/
+	.preferences-container .preference-table{//https://elearning.tgm.ac.at/message/notificationpreferences.php
+		display:grid;
+		width:90%;
+		margin:0 auto;
+		padding:1em 2em;
+		grid-template-columns:10fr 1fr 1fr;
+		//NOTE: I haven't found any preftables that aren't three columns wide, but they might exist
+		border:none;
+		background-color:bg3;
+		border-radius:crad;
+		overflow:clip;
+		& thead,
+		& tbody,
+		& tr{
+			display:contents;
+		}
+		& th,
+		& td,
+		& tr td:not(:first-child){
+			width:auto;
+			white-space:nowrap;
+			border:none;
+		}
+		& tr th{
+			border-left:none;
+		}
+		& thead th{
+			background-color:bg4;
+			margin:-1em -2em 0 -2em;
+			padding-top:1.5em;
+			border-bottom:solid 1px bg1;
+		}
+		& tbody th[colspan="3"]{
+			grid-column:1/4;
+			border-top:solid 1px brd;
+		}
+		& tbody tr:first-child th[colspan="3"]{
+			border-top:none;
+		}
+		& tr.loading::before{
+			display:none;
+		}
+		& .preference-state.loading{
+			&>.custom-control{
+				display:none;
+			}
+			&::before{
+				display:inline-block;
+				width:1em;
+				height:1em;
+			}
+		}
+	}
 	/*php-generated code block with colors without classes*/
 	div[style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"]{
 		background-color:bg0 !important;
@@ -1438,18 +1492,9 @@ urlenc(x){
 			background-color:bg3 !important;
 		}
 	}
-	.preferences-container .preference-table{
-		border-color:brd;
-		color:txt;
-		& tr td:nth-child(even),
-		& tr th:nth-child(even){
-			border-color:brd;
-			background-color:bg2_5;
-		}
-	}
 	#id_comments{
-		color:txt;}
-	
+		color:txt;
+	}
 	input[type="checkbox"]{
 		appearance:none;
 		min-width:1em;
