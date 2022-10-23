@@ -38,7 +38,14 @@
 	box-shadow:@sho[x] @sho[y] @size @h,
 		-@sho[y] -@sho[y] @size @d;
 }
-
+//selected button in navbar
+#anb-selected{
+	.shinner(@sha - 180deg,@shs * 1.5);
+	cursor:default;
+	& a{
+		color:@htxt !important;
+	}
+}
 @-moz-document domain("archlinux.org") {
 	/*general stuff*/
 	body{
@@ -66,7 +73,8 @@
 		border-radius:@rad;
 		.shouter(@sha,@shs,#FFF1,#0003);
 	}
-	#archnavbarlist{
+	#archnavbarlist,
+	#archnavbar ul{
 		display:flex !important;
 		& li{
 			.shinner(@sha,@shs);
@@ -78,7 +86,7 @@
 			pointer-events:none;
 			& a{
 				text-shadow:.shouter(@sha,1px)[box-shadow];
-				color:@txt;
+				color:@txt !important;
 				pointer-events:all;
 				&:hover{
 					color:@htxt !important;
@@ -96,14 +104,30 @@
 			border-radius:0 @rad @rad 0;
 		}
 	}
+	#archnavbar ul li.anb-selected{
+		#anb-selected();
+	}
 	@sites:home,packages,forums,wiki,bugs,security,aur,download;
 	each(@sites,{//currently selected button
 		#archnavbar.anb-@{value} ul li#anb-@{value}{
-			.shinner(@sha - 180deg,@shs * 1.5);
-			cursor:default;
-			& a{
-				color:@txt !important;
-			}
+			#anb-selected();
 		}
 	});
+}
+@-moz-document domain("security.archlinux.org") {
+	#logo{
+		margin-right:auto !important;
+	}
+	#archnavbarlist #anb-security{
+		#anb-selected();
+	}
+}
+@-moz-document domain("bugs.archlinux.org") {
+	//this domain has a bug where the navbar is incorrectly marked as having "home" selected
+	#archnavbar.anb-home ul li#anb-home{
+		.shinner(@sha,@shs);
+	}
+	#archnavbar ul li#anb-bugs{
+		#anb-selected();
+	}
 }
