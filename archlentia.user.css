@@ -42,15 +42,20 @@
 @-moz-document domain("archlinux.org") {
 	/*general stuff*/
 	body{
+		display:flex;
+		flex-direction:column;
 		background-color:@bd;
 		color:@txt;
 	}
 	/*navbar*/
 	#archnavbar{
+		position:sticky;
+		top:0;
 		display:flex;
 		background-color:@fg !important;
 		border-bottom:none !important;
 		box-shadow:0 0 @shs #0008;
+		margin-bottom:1em;
 	}
 	#archnavbarlogo{
 		margin-right:auto !important;
