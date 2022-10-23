@@ -1,0 +1,104 @@
+/* ==UserStyle==
+@name			Arch Lentia
+@namespace		userstyles-riedler
+@version		0.0.1
+@description	Dark and Neumorphic style for the AUR.
+@author			Riedler
+@preprocessor	less
+@var	text	shs		"shadow size"			"0.2em"
+@var	range	sha		"shadow angle"			[315,0,360,1,'deg']
+@var	text	rad		"border radius"			"0.2em"
+@var	color	acc		"Accent color"			#6AC
+@var	color	bd		"Body color"			#151515
+@var	color	fg		"Foreground color"		#333
+@var	color	txt		"Text color"			#DDD
+@var	color	htxt	"lighter Text color"	#FFF
+==/UserStyle== */
+
+//shadow offset calculated through angle and size
+.sho(@angle,@size){
+	x:sin(@angle) * @size;
+	y:cos(@angle - 180deg) * @size;
+}
+//convex/concave looking background image
+.bgconvex(@d:#0002,@h:#FFF2){
+	background-image:linear-gradient(@sha,@d,@h);
+}
+.bgconcave(@h:#FFF2,@d:#0002){
+	.bgconvex(@h,@d);
+}
+//inner/outer neumorphism shadows
+.shinner(@angle,@size,@h:#FFF8,@d:#000A){
+	@sho:.sho(@angle,@size);
+	box-shadow:inset -@sho[x] -@sho[y] @size -@size @h,
+		inset @sho[x] @sho[y] @size -@size @d;
+}
+.shouter(@angle,@size,@h:#FFF2,@d:#0003){
+	@sho:.sho(@angle,@size);
+	box-shadow:@sho[x] @sho[y] @size @h,
+		-@sho[y] -@sho[y] @size @d;
+}
+
+@-moz-document domain("archlinux.org") {
+	/*general stuff*/
+	body{
+		background-color:@bd;
+		color:@txt;
+	}
+	/*navbar*/
+	#archnavbar{
+		display:flex;
+		background-color:@fg !important;
+		border-bottom:none !important;
+		box-shadow:0 0 @shs #0008;
+	}
+	#archnavbarlogo{
+		margin-right:auto !important;
+		//TODO: custom logo?
+	}
+	#archnavbarmenu{
+		display:flex;
+		border-radius:@rad;
+		.shouter(@sha,@shs,#FFF1,#0003);
+	}
+	#archnavbarlist{
+		display:flex !important;
+		& li{
+			.shinner(@sha,@shs);
+			.bgconvex();
+			height:100%;
+			padding-top:0 !important;
+			display:flex !important;
+			align-items:center;
+			pointer-events:none;
+			& a{
+				text-shadow:.shouter(@sha,1px)[box-shadow];
+				color:@txt;
+				pointer-events:all;
+				&:hover{
+					color:@htxt !important;
+					text-decoration:none !important;
+				}
+			}
+			&:hover{
+				.bgconcave();
+			}
+		}
+		& li:first-child{
+			border-radius:@rad 0 0 @rad;
+		}
+		& li:last-child{
+			border-radius:0 @rad @rad 0;
+		}
+	}
+	@sites:home,packages,forums,wiki,bugs,security,aur,download;
+	each(@sites,{//currently selected button
+		#archnavbar.anb-@{value} ul li#anb-@{value}{
+			.shinner(@sha - 180deg,@shs * 1.5);
+			cursor:default;
+			& a{
+				color:@txt !important;
+			}
+		}
+	});
+}
