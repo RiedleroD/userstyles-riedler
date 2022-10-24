@@ -131,3 +131,52 @@
 		#anb-selected();
 	}
 }
+
+@-moz-document domain("aur.archlinux.org") {
+	#content{
+		display:grid;
+		grid-template-areas:
+			"a b"
+			"c c"
+			"d d";
+	}
+	#archdev-navbar{
+		display:contents;
+		& ul{
+			display:flex;
+			grid-area:a;
+			width:fit-content;
+			margin:1em 1em 1em 0;
+			align-self:stretch;
+			& li,
+			& form{
+				display:contents;
+				& a{
+					display:flex;
+					align-self:stretch;
+					align-items:center;
+				}
+			}
+		}
+	}
+	#lang_sub{
+		grid-area:b;
+		width:fit-content;
+		justify-self:end;
+		float:none;
+		align-self:stretch;
+		margin:1em 0 1em 1em;
+		display:flex;
+		& div,
+		& fieldset,
+		& form{
+			display:contents;
+		}
+	}
+	#pkglist-search{
+		grid-area:c;
+	}
+	#pkglist-results{
+		grid-area:d;
+	}
+}
