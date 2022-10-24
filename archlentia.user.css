@@ -194,4 +194,11 @@
 	#pkglist-results{
 		grid-area:d;
 	}
+	/*generic boxes*/
+	div.box{
+		border:none;
+		background-color:#0000;
+		border-radius:@rad;
+		box-shadow:.shouter(@sha,@shs)[box-shadow],.shinner(@sha,@shs)[box-shadow];
+	}
 }
