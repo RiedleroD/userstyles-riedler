@@ -151,10 +151,26 @@
 			& li,
 			& form{
 				display:contents;
-				& a{
+				& a,
+				& button{
 					display:flex;
 					align-self:stretch;
 					align-items:center;
+					margin:0 0.5em;
+					color:@txt;
+					border-radius:@rad;
+					box-shadow:.shouter(@sha,@shs)[box-shadow],.shinner(@sha - 180deg,0,#0000,#0000)[box-shadow];
+					transition:box-shadow 0.2s,transform 0.2s;
+					&:hover{
+						box-shadow:.shouter(@sha,0,#0000,#0000)[box-shadow],.shinner(@sha - 180deg,0,#0000,#0000)[box-shadow];
+						@sho:.sho(@sha,@shs * 0.25);
+						transform:scale(0.99);
+					}
+					&:focus{
+						box-shadow:.shouter(@sha,0,#0000,#0000)[box-shadow],.shinner(@sha - 180deg,@shs)[box-shadow];
+						@sho:.sho(@sha,@shs * 0.5);
+						transform:scale(0.98);
+					}
 				}
 			}
 		}
