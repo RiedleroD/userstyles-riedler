@@ -9,7 +9,7 @@
 @var	range	sha		"shadow angle"			[315,0,360,1,'deg']
 @var	text	rad		"border radius"			"0.2em"
 @var	color	acc		"Accent color"			#6AC
-@var	color	bd		"Body color"			#151515
+@var	color	bd		"Body color"			#252525
 @var	color	fg		"Foreground color"		#333
 @var	color	txt		"Text color"			#DDD
 @var	color	htxt	"lighter Text color"	#FFF
