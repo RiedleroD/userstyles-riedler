@@ -9,8 +9,7 @@
 @var	range	sha		"shadow angle"			[315,0,360,1,'deg']
 @var	text	rad		"border radius"			"0.2em"
 @var	color	acc		"Accent color"			#6AC
-@var	color	bd		"Body color"			#252525
-@var	color	fg		"Foreground color"		#333
+@var	color	bg		"Background color"		#333
 @var	color	txt		"Text color"			#DDD
 @var	color	htxt	"lighter Text color"	#FFF
 ==/UserStyle== */
@@ -51,7 +50,7 @@
 	body{
 		display:flex;
 		flex-direction:column;
-		background-color:@bd;
+		background-color:@bg;
 		color:@txt;
 	}
 	/*navbar*/
@@ -59,9 +58,9 @@
 		position:sticky;
 		top:0;
 		display:flex;
-		background-color:@fg !important;
+		background-color:@bg !important;
 		border-bottom:none !important;
-		box-shadow:0 0 @shs #0008;
+		box-shadow:.shouter(@sha,@shs)[box-shadow];
 		margin-bottom:1em;
 	}
 	#archnavbarlogo{
