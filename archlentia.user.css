@@ -45,6 +45,36 @@
 		color:@htxt !important;
 	}
 }
+//input stuff
+#buttonip(){
+	margin:0 0.5em;
+	color:@txt;
+	border-radius:@rad;
+	box-shadow:.shouter(@sha,@shs)[box-shadow],.shinner(@sha - 180deg,0,#0000,#0000)[box-shadow];
+	transition:box-shadow 0.2s,transform 0.2s;
+	cursor:pointer;
+	&:hover{
+		box-shadow:.shouter(@sha,0,#0000,#0000)[box-shadow],.shinner(@sha - 180deg,0,#0000,#0000)[box-shadow];
+		@sho:.sho(@sha,@shs * 0.25);
+		transform:scale(0.99);
+	}
+	&:focus{
+		box-shadow:.shouter(@sha,0,#0000,#0000)[box-shadow],.shinner(@sha - 180deg,@shs)[box-shadow];
+		@sho:.sho(@sha,@shs * 0.5);
+		transform:scale(0.98);
+	}
+}
+#selectip(){
+	cursor:pointer;
+	padding-right:1.25em;
+	background-size:0.75em;
+	background-position:right 0.25em bottom -0.25em;
+	background-repeat:no-repeat;
+	transition:background-image 0.2s,background-position 0.2s;
+	//this godawful website doesn't let me embed SVG in CSS
+	background-image:linear-gradient(to bottom,@bg 25%,#0000 25%),
+		conic-gradient(from -45deg,currentColor 90deg,#0000 90deg);
+}
 @-moz-document domain("archlinux.org") {
 	/*general stuff*/
 	body{
@@ -112,6 +142,27 @@
 			#anb-selected();
 		}
 	});
+	/*input stuff*/
+	select,input,button{
+		appearance:none;
+		background-color:#0000;
+		color:@txt;
+		border:none;
+		border-radius:@rad;
+		&:focus{
+			outline:none;
+		}
+	}
+	select,input:not([type="submit"]){
+		box-shadow:.shinner(@sha - 180deg,@shs)[box-shadow],.shouter(@sha,@shs*0.25,@d:#0005)[box-shadow];
+	}
+	select{
+		#selectip();
+	}
+	button,
+	input[type="submit"]{
+		#buttonip();
+	}
 }
 @-moz-document domain("security.archlinux.org") {
 	#logo{
@@ -155,21 +206,7 @@
 					display:flex;
 					align-self:stretch;
 					align-items:center;
-					margin:0 0.5em;
-					color:@txt;
-					border-radius:@rad;
-					box-shadow:.shouter(@sha,@shs)[box-shadow],.shinner(@sha - 180deg,0,#0000,#0000)[box-shadow];
-					transition:box-shadow 0.2s,transform 0.2s;
-					&:hover{
-						box-shadow:.shouter(@sha,0,#0000,#0000)[box-shadow],.shinner(@sha - 180deg,0,#0000,#0000)[box-shadow];
-						@sho:.sho(@sha,@shs * 0.25);
-						transform:scale(0.99);
-					}
-					&:focus{
-						box-shadow:.shouter(@sha,0,#0000,#0000)[box-shadow],.shinner(@sha - 180deg,@shs)[box-shadow];
-						@sho:.sho(@sha,@shs * 0.5);
-						transform:scale(0.98);
-					}
+					#buttonip();
 				}
 			}
 		}
