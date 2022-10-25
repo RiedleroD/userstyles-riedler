@@ -10,7 +10,7 @@
 @var	text	rad		"border radius"			"0.2em"
 @var	color	acc		"Accent color"			#6AC
 @var	color	bg		"Background color"		#333
-@var	color	txt		"Text color"			#DDD
+@var	color	txt		"Text color"			#BBB
 @var	color	htxt	"lighter Text color"	#FFF
 ==/UserStyle== */
 
@@ -38,7 +38,7 @@
 		-@sho[y] -@sho[y] @size @d;
 }
 //selected button in navbar
-#anb-selected{
+#anb-selected(){
 	.shinner(@sha - 180deg,@shs * 1.5);
 	cursor:default;
 	& a{
