@@ -14,6 +14,9 @@
 @var	color	htxt	"lighter Text color"	#FFF
 ==/UserStyle== */
 
+@fals: hsl(hue(#F00),100%,lightness(@txt));
+@falsd: hsl(hue(#F00),80%,lightness(@bg));
+
 //shadow offset calculated through angle and size
 .sho(@angle,@size){
 	x:sin(@angle) * @size;
@@ -230,6 +233,53 @@
 	}
 	#pkglist-results{
 		grid-area:d;
+		table.results{
+			display:grid;
+			border-top:none;
+			border-bottom:none;
+			box-shadow:.shouter(@sha,@shs)[box-shadow];
+			border-radius:@rad;
+			position:relative;
+			td,th{
+				display:flex;
+				align-items:center;
+				padding:0.5em 1em;
+			}
+			th{
+				background-color:#0000;
+				height:2rem;
+				box-sizing:border-box;
+				.bgconvex();
+				.shinner(@sha,@shs);
+				border-bottom:none;
+				&:first-child{
+					border-top-left-radius:@rad;
+				}
+				&:last-child{
+					border-top-right-radius:@rad;
+				}
+			}
+			thead>tr>th{
+				grid-row:1;
+			}
+			.flagged{
+				color:@fals;
+				text-shadow:0 0 0.5em @falsd;//gives a nice "corrupted" look to outdated versions
+			}
+			&:after{//a little ridge for the results
+				content:"";
+				position:absolute;
+				display:block;
+				width:100%;
+				height:calc(100% - 2rem);
+				pointer-events:none;
+				margin-top:2rem;
+				.shinner(@sha - 180deg,@shs);
+			}
+		}
+		thead,tbody,tr{
+			display:contents;
+		}
 	}
 	/*generic boxes*/
 	div.box{
