@@ -199,7 +199,8 @@
 		grid-template-areas:
 			"a b"
 			"c c"
-			"d d";
+			"d d"
+			"f f";
 	}
 	#archdev-navbar{
 		display:contents;
@@ -288,6 +289,9 @@
 		thead,tbody,tr{
 			display:contents;
 		}
+	}
+	#footer{
+		grid-area:f;
 	}
 	/*generic boxes*/
 	div.box{
