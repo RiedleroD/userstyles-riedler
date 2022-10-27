@@ -16,6 +16,7 @@
 
 @fals: hsl(hue(#F00),100%,lightness(@txt));
 @falsd: hsl(hue(#F00),80%,lightness(@bg));
+@acctxt: hsl(hue(@acc),saturation(@acc),lightness(@txt));
 
 //shadow offset calculated through angle and size
 .sho(@angle,@size){
@@ -145,6 +146,13 @@
 			#anb-selected();
 		}
 	});
+	/*text stuff*/
+	a:link{
+		color:@acctxt;
+	}
+	a:visited{
+		color:desaturate(@acctxt,20%);
+	}
 	/*input stuff*/
 	select,input,button{
 		appearance:none;
