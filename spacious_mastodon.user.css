@@ -340,7 +340,8 @@ on/off switch instead of 0 width because stylus likes to replace 0 with the defa
 		padding-bottom:0.5em;
 		gap:0;
 		line-height:normal;
-		&+div .status{
+		&+div .status,
+		&+.account{
 			padding-top:0;
 			.status__avatar{
 				top:0;
