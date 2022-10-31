@@ -30,6 +30,10 @@ on/off switch instead of 0 width because stylus likes to replace 0 with the defa
 	.column{
 		flex:if((@expandcols=1),auto,auto 0 0);
 	}
+	/* no border radius for columns >:( */
+	.column-header{
+		border-radius:0;
+	}
 	/* converts the bio fields to a grid layout with automatically resizing columns */
 	.account__header__fields{
 		display:if((@fieldresize=1),grid,block);
