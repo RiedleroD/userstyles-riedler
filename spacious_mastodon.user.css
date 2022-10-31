@@ -100,6 +100,8 @@ on/off switch instead of 0 width because stylus likes to replace 0 with the defa
 	.text-icon-button.active{
 		color:@accent-txt;
 	}
+	//link in about section I think?
+	.prose a,
 	//'read more' button
 	.status__content__read-more-button,
 	//links in user text
@@ -283,6 +285,13 @@ on/off switch instead of 0 width because stylus likes to replace 0 with the defa
 	}
 	.search__input{
 		border-radius:0;
+	}
+	/* about section */
+	.about__section__title{
+		color:@accent-txt;
+	}
+	.rules-list li::before{
+		background-color:@accent;
 	}
 	/* Logo replacement */
 	.admin-wrapper .sidebar{
