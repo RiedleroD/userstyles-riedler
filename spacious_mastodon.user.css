@@ -224,7 +224,10 @@ on/off switch instead of 0 width because stylus likes to replace 0 with the defa
 	}
 	//active column header
 	.column-header__wrapper.active{
-		box-shadow:0 1px 0 rgba(@accent,.3)
+		box-shadow:0 1px 0 rgba(@accent,.3);
+		&::before{
+			background-image:radial-gradient(ellipse,rgba(@accent,.23) 0,rgba(@accent,0) 60%);
+		}
 	}
 	//selected item in settings navigation sidebar
 	.admin-wrapper .sidebar ul .simple-navigation-active-leaf a{
