@@ -273,6 +273,14 @@ on/off switch instead of 0 width because stylus likes to replace 0 with the defa
 	button.icon-button:hover i.fa-retweet{
 		background-image:url(@retoot_img_h);
 	}
+	/* fixes for search bar */
+	.drawer__header,
+	.search{
+		margin-bottom:if(@colspace_=1,@colspace,0px);
+	}
+	.search__input{
+		border-radius:0;
+	}
 	/* Logo replacement */
 	.admin-wrapper .sidebar{
 		& .logo--icon{
