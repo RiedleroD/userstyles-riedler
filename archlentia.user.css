@@ -174,6 +174,31 @@
 	input[type="submit"]{
 		#buttonip();
 	}
+	input[type="checkbox"],
+	input[type="radio"]{
+		position:relative;
+		width:1.2em;
+		height:1.2em;
+		display:inline-flex;
+		vertical-align:middle;
+		cursor:pointer;
+		.bgconvex();
+		box-shadow:.shinner(@sha,@shs)[box-shadow],.shouter(@sha,@shs*0.25,@d:#0005)[box-shadow];
+		&:checked{
+			box-shadow:.shinner(@sha - 180deg,@shs)[box-shadow],.shouter(@sha,@shs*0.25,@d:#0005)[box-shadow];
+			.bgconcave();
+		}
+	}
+	input[type="checkbox"]:checked{
+		background-image:linear-gradient(to top right,#0000 15%,@txt 15%,@txt 25%,#0000 25%),
+						 linear-gradient(to top left,#0000 25%,@txt 25%,@txt 35%,#0000 35%);
+		background-size:0.75em 0.75em;
+		background-repeat:no-repeat;
+		background-position:center;
+	}
+	input[type="radio"]:checked{
+		border-radius:100%;
+	}
 }
 @-moz-document domain("security.archlinux.org") {
 	#logo{
@@ -244,6 +269,7 @@
 		grid-area:d;
 		table.results{
 			display:grid;
+			grid-template-columns:0fr;//only defining the first one because it's the checkboxes; the rest are auto
 			border-top:none;
 			border-bottom:none;
 			box-shadow:.shouter(@sha,@shs)[box-shadow];
