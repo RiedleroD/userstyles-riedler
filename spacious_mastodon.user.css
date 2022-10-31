@@ -13,6 +13,7 @@ what the fuck why do I need to double-quote this?
 @var	number		colspace	"Column Spacing"			[10,1,null,1,'px']
 @var	checkbox	colspace_	"Column Spacing?"			1
 on/off switch instead of 0 width because stylus likes to replace 0 with the default for some reason >:(
+@var	checkbox	compost		"Compact Post?"				1
 ==/UserStyle== */
 
 @accent-txt: lighten(@accent,5%);
@@ -317,5 +318,17 @@ on/off switch instead of 0 width because stylus likes to replace 0 with the defa
 	.columns-area when(@colspace_=1){
 		grid-gap:@colspace;
 		margin:@colspace;
+	}
+	/* compact posts */
+	.status__prepend when(@compost=1){
+		padding-top:0.5em;
+		padding-bottom:0.5em;
+		&+.status{
+			padding-top:0;
+		}
+	}
+	.status__action-bar when(@compost=1){
+		justify-content:flex-start;
+		margin-top:0.75em;
 	}
 }
