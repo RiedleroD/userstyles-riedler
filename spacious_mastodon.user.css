@@ -404,4 +404,17 @@ on/off switch instead of 0 width because stylus likes to replace 0 with the defa
 			}
 		}
 	}
+	/* video player */
+	.video-player__volume__handle{
+		background-color:@accent;
+	}
+	.video-player__volume__current{
+		background-color:@accent;
+	}
+	.video-player__seek__handle{
+		background-color:@accent;
+	}
+	.video-player__seek__progress{
+		background-color:@accent;
+	}
 }
