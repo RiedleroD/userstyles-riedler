@@ -417,4 +417,11 @@ on/off switch instead of 0 width because stylus likes to replace 0 with the defa
 	.video-player__seek__progress{
 		background-color:@accent;
 	}
+	/*polls*/
+	.poll__chart.leading{
+		background-color:@accent;
+	}
+	.muted .poll__chart.leading{
+		background-color:rgba(@accent,0.2);
+	}
 }
