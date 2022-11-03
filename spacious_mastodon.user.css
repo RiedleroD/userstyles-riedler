@@ -118,6 +118,7 @@ on/off switch instead of 0 width because stylus likes to replace 0 with the defa
 	.empty-column-indicator a,
 	.error-column a,
 	.follow_requests-unlocked_explanation a,
+	.column-link--transparent.active,
 	//'hints'
 	.simple_form .hint a,
 	.admin-wrapper .content .muted-hint a,
