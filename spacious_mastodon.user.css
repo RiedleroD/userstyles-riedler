@@ -101,6 +101,8 @@ on/off switch instead of 0 width because stylus likes to replace 0 with the defa
 	.text-icon-button.active{
 		color:@accent-txt;
 	}
+	//link to show a filtered post
+	.status__wrapper--filtered__button,
 	//link in about section I think?
 	.prose a,
 	//'read more' button
@@ -115,6 +117,7 @@ on/off switch instead of 0 width because stylus likes to replace 0 with the defa
 	.simple_form .hint a,
 	.admin-wrapper .content .muted-hint a,
 	body .muted-hint a,
+	.timeline-hint a,//someone should tell them that they can just color all links via a:link
 	//links in widgets
 	.notice-widget a,
 	.placeholder-widget a{
