@@ -318,15 +318,22 @@ on/off switch instead of 0 width because stylus likes to replace 0 with the defa
 		}
 	}
 	/* column spacing */
-	.column,
-	.drawer{
-		&,&:first-child,&:last-child{
-			padding:0;
+	.columns-area{
+		.column,
+		.drawer{
+			&,&:first-child,&:last-child{
+				padding:0;
+			}
+		}
+		.columns-area when(@colspace_=1){
+			grid-gap:@colspace;
+			margin:@colspace;
 		}
 	}
-	.columns-area when(@colspace_=1){
-		grid-gap:@colspace;
-		margin:@colspace;
+	.columns-area__panels{
+		.columns-area when(@colspace_=1){
+			margin-top:@colspace;
+		}
 	}
 	/* compact posts */
 	.status__prepend when(@compost=1){
