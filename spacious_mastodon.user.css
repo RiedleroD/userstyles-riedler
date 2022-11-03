@@ -322,20 +322,19 @@ on/off switch instead of 0 width because stylus likes to replace 0 with the defa
 		}
 	}
 	/* column spacing */
-	.columns-area{
+	.columns-area when(@colspace_=1){
+		grid-gap:@colspace;
+		margin:@colspace;
 		.column,
 		.drawer{
 			&,&:first-child,&:last-child{
 				padding:0;
 			}
 		}
-		.columns-area when(@colspace_=1){
-			grid-gap:@colspace;
-			margin:@colspace;
-		}
 	}
 	.columns-area__panels{
 		.columns-area when(@colspace_=1){
+			margin:0;
 			margin-top:@colspace;
 		}
 	}
