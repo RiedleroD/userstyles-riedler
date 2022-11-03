@@ -303,6 +303,10 @@ on/off switch instead of 0 width because stylus likes to replace 0 with the defa
 	.rules-list li::before{
 		background-color:@accent;
 	}
+	/* text input used in several places, not just settings */
+	.setting-text:is(:active,:focus){
+		border-bottom-color:@accent;
+	}
 	/* Logo replacement */
 	.admin-wrapper .sidebar{
 		& .logo--icon{
@@ -439,5 +443,10 @@ on/off switch instead of 0 width because stylus likes to replace 0 with the defa
 	}
 	.muted .poll__chart.leading{
 		background-color:rgba(@accent,0.2);
+	}
+	/*selected radio button*/
+	.radio-button__input.checked{
+		background-color:@accent;
+		border-color:@accent;
 	}
 }
