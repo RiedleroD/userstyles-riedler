@@ -8,13 +8,18 @@
 @var	checkbox	expandcols  "Expand Columns in Home"	1
 @var	checkbox	fieldresize	"Auto-resize Bio Fields"	1
 @var	color		accent		"Accent Color"				#6364ff
-@var	text		logo		"Logo replacement"			""https://raw.githubusercontent.com/mastodon/mastodon/main/app/javascript/images/logo.svg""
-what the fuck why do I need to double-quote this?
+@var	select		logobranch	"Logo replacements"			{
+	"Default":`"main"`,
+	"Old":`"0d1215e82f42cd5a7b7bb992e4423d69acb813ed"`
+}
 @var	number		colspace	"Column Spacing"			[10,1,null,1,'px']
 @var	checkbox	colspace_	"Column Spacing?"			1
 on/off switch instead of 0 width because stylus likes to replace 0 with the default for some reason >:(
 @var	checkbox	compost		"Compact Post?"				1
 ==/UserStyle== */
+
+//URL root for images from official github repo
+@imgurlroot: "https://raw.githubusercontent.com/mastodon/mastodon/@{logobranch}/app/javascript/images/";
 
 @accent-txt: lighten(@accent,5%);
 @accent-h:   lighten(@accent,15%);
@@ -33,6 +38,31 @@ on/off switch instead of 0 width because stylus likes to replace 0 with the defa
 @retoot_svg: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='22' height='209'><path fill='%S' d='M5.5 3.35a.48.48 0 00-.75-.01L.8 8.24a.48.48 0 00.4.8H3.6v5.58a.72.72 0 00.72.72h10.6l-2.35-2.9H7.27a.72.72 0 01-.72-.72v-2.7h2.5a.48.48 0 00.4-.77zM7.1 3.6l2.32 2.9h5.28a.72.72 0 01.72.72v2.7h-2.5a.48.48 0 00-.3.8l3.92 4.9a.48.48 0 00.78 0l3.94-4.9a.48.48 0 00-.37-.8H18.4v-5.6a.72.72 0 00-.72-.72z'/><path fill='%S' d='M8.16 19.77a.5.5 0 00-.82.39v2.46h-3a.7.7 0 00-.7.7v10.31a.7.7 0 00.7.7H8.5l-1.3-1.06a.5.5 0 010-.75l1.33-1.1h-1.25a.72.7 0 01-.72-.7v-4.48a.72.72 0 01.72-.72h.06v2.5a.5.5 0 00.82.38l4.9-3.93a.5.5 0 000-.78zm5.31 2.84 1.3 1.07a.5.5 0 010 .73l-1.33 1.1h1.28a.72.72 0 01.72.72v4.47a.72.72 0 01-.72.72h-.1v-2.47a.5.5 0 00-.8-.37l-4.9 3.93a.5.5 0 000 .78l4.9 3.92a.5.5 0 00.8-.38v-2.5h3.03a.72.72 0 00.72-.72V23.3a.72.72 0 00-.72-.72zM10.69 38.77a.5.5 0 00-.78.39v2.47h-5.54a.72.72 0 00-.72.72v10.3a.72.72 0 00.72.72h1.62l-1.34-1.1a.5.5 0 010-.75l1.96-1.6a.5.5 0 01-.04-.2v-4.48a.72.72 0 01.72-.72H9.9v2.5a.5.5 0 00.8.38l4.93-3.93a.5.5 0 000-.78zm5.28 2.82 1.34 1.1a.5.5 0 01.04.73l-1.96 1.6a.5.5 0 01.06.22v4.47a.72.72 0 01-.72.72h-2.66v-2.47a.48.48 0 00-.78-.37l-4.94 3.93a.48.48 0 000 .78l4.94 3.92a.48.48 0 00.78-.38v-2.5H17.66a.72.72 0 00.72-.72v-10.31a.72.72 0 00-.72-.72zM13.44 57.77a.48.48 0 00-.78.39v2.47H4.35a.72.72 0 00-.72.72v7.76l2.93-2.37v-2.5a.72.72 0 01.72-.72h5.38v2.5a.48.48 0 00.78.38l4.94-3.93a.48.48 0 000-.78zm4.92 6.04-2.92 2.4v2.52a.72.72 0 01-.72.72h-5.4v-2.47a.48.48 0 00-.8-.37L3.6 70.52a.48.48 0 000 .78l4.93 3.92a.48.48 0 00.78-.38v-2.5h8.35a.72.72 0 00.72-.72zM19.79 79.24a.48.48 0 00-.82-.27l-.9.9a.72.72 0 00-.55-.25h-13.17a.72.72 0 00-.72.72v3.6l2.93.3v-1a.72.72 0 01.72-.72h7.44a.72.72 0 01.5.2l-1.8 1.8a.48.48 0 00.27.8l6.27.7a.48.48 0 00.53-.53zM2.25 84.91a.48.48 0 00-.53.53l.7 6.25a.48.48 0 00.83.27l.8-.8a.72.72 0 00.48.17h13.11a.72.72 0 00.72-.72v-3.65l-2.93-.3v1.05a.72.72 0 01-.72.72H7.26a.72.72 0 01-.38-.1L8.8 86.4a.48.48 0 00-.27-.84zM4.3 98.6a.72.72 0 00-.72.72v1.58l1.14-1.37a.48.48 0 01.78 0l1.62 2.025a.72.72 0 01.16-.025H14.72a.72.72 0 01.65.5h-2.43a.4.46 0 00-.3.78l3.92 4.95a.48.48 0 00.78 0l3.94-4.94a.48.48 0 00-.37-.77H18.4v-2.73a.72.72 0 00-.72-.72zm1.2 2.66a.48.48 0 00-.75 0l-3.94 4.9a.48.48 0 00.4.78H3.6v2.68a.72.72 0 00.72.72h13.36a.72.72 0 00.72-.72v-1.53l-1.1 1.34a.48.48 0 01-.76 0l-1.62-2.03a.72.72 0 01-.2.04H7.28a.72.72 0 01-.66-.5h2.44a.48.48 0 00.4-.78zM4.3 117.6a.72.72 0 00-.72.72v.84l1.14-1.38a.48.4 0 01.78 0l2.22 2.75h7a.72.72 0 01.72.72v.53h-2.6a.48.48 0 00-.2.78l3.92 4.9A.48.48 0 0017.34 127.46l3.94-4.9a.48.48 0 00-.37-.78H18.4v-3.46a.72.72 0 00-.72-.72zm1.2 1.9a.48.48 0 00-.75 0l-3.95 4.94a.48.48 0 00.4.78H3.6v3.4a.72.72 0 00.72.72h13.36a.72.72 0 00.72-.72v-.81l-1.06 1.33a.48.48 0 01-.78 0l-2.17-2.71H7.28a.72.72 0 01-.72-.72v-.5h2.5a.48.48 0 00.4-.78zM5.94 136.6l2.37 2.93h6.42a.72.72 0 01.72.72v1.25h-2.6a.48.48 0 00-.2.78l3.92 4.9a.48.48 0 00.78 0l3.94-4.9a.48.48 0 00-.37-.78H18.4v-4.18a.72.7 0 00-.72-.72zm-1.72.06a.72.72 0 00-.6.75zm1.28 1.11a.48.48 0 00-.74 0l-3.95 4.9a.48.48 0 00.4.82H3.6v4.12a.72.72 0 00.72.72H16.1l-2.37-2.9H7.28a.72.72 0 01-.72-.72v-1.22h2.5a.48.48 0 00.4-.8zm12.28 10.55a.72.72 0 00.56-.7zm-11.25 7.31 2.38 2.9h5.82a.72.72 0 01.72.72V161.22H12.9a.48.48 0 00-.28.78l3.94 4.9a.48.48 0 00.78 0l3.94-4.9a.48.48 0 00-.37-.78H18.4v-4.91a.72.72 0 00-.72-.72zm-1.03.44a.48.48 0 00-.75-.01l-3.94 4.9a.48.48 0 00.4.8H3.6v4.86a.72.72 0 00.72.72H15.5l-2.36-2.9H7.28a.72.72 0 01-.72-.72v-1.97h2.5a.48.48 0 00.4-.78zM5.48 174.7a.48.48 0 00-.73 0l-3.95 4.9a.48.48 0 00.4.8H3.6v5.22a.72.72 0 00.72.72H15.2l-2.35-2.9h-5.6a.72.72 0 01-.7-.72v-2.3h2.5a.48.48 0 00.4-.83zm1.35-.07 2.35 2.9h5.52a.72.72 0 01.72.72v2.34h-2.6a.48.48 0 00-.2.78l3.92 4.9a.48.48 0 00.78 0l3.94-4.9a.48.48 0 00-.37-.78H18.4v-5.24a.72.72 0 00-.72-.72zM5.49 193.34a.48.48 0 00-.74 0l-3.94 4.9a.48.48 0 00.4.8H3.6v5.58a.72.72 0 00.72.72h10.6l-2.35-2.9h-5.3a.72.72 0 01-.72-.72v-2.7h2.5a.48.48 0 00.4-.77zM7.1 193.62l2.32 2.9h5.28a.72.72 0 01.72.72v2.7h-2.5a.48.48 0 00-.3.8l3.92 4.9a.48.48 0 00.78 0l3.94-4.9a.48.48 0 00-.37-.8H18.4v-5.6a.72.72 0 00-.72-.72z'/></svg>";
 @retoot_img: %(@retoot_svg,#606984,@accent);
 @retoot_img_h: %(@retoot_svg,#707B97,@accent);
+
+//helper functions
+.logoreplace(@name,@size,@position){
+	background-image:url("@{imgurlroot}@{name}.svg");
+	background-size:@size;
+	background-repeat:no-repeat;
+	background-position:@position;
+	display:inline-block;
+	position:relative;
+	width:100%;
+	&::after{
+		content:"";
+		position:absolute;
+		top:0;
+		left:0;
+		right:0;
+		bottom:0;
+		background-color:@accent;
+		mask-image:url("@{imgurlroot}@{name}.svg");
+		mask-size:@size;
+		mask-position:@position;
+		mask-repeat:no-repeat;
+		mix-blend-mode:color;
+	}
+}
 
 @-moz-document domain("mas.to"), domain("mastodon.social"), domain("mastodon.coffee"), domain("mstdn.social"), domain("mastodon.art"), domain("mastodon.online"), domain("mastodon.lol") {
 	/* makes the columns expand to the full width of the screen */
@@ -307,18 +337,20 @@ on/off switch instead of 0 width because stylus likes to replace 0 with the defa
 	.setting-text:is(:active,:focus){
 		border-bottom-color:@accent;
 	}
-	/* Logo replacement */
+	/* Logo replacements */
 	.admin-wrapper .sidebar{
-		& .logo--icon{
+		.logo--icon{
 			visibility:hidden;
 		}
 		&>a:first-child{
-			background-image:url(@logo);
-			background-size:80% 80%;
-			background-repeat:no-repeat;
-			display:inline-block;
-			width:100%;
-			background-position:center;
+			.logoreplace(logo,80% 80%,center);
+		}
+	}
+	.navigation-panel__logo .column-link--logo{
+		.logoreplace(logo-symbol-wordmark,auto 65%,0.5em 50%);
+		height:1.75em;
+		svg{
+			display:none;
 		}
 	}
 	/* column spacing */
