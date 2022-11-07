@@ -136,6 +136,10 @@ on/off switch instead of 0 width because stylus likes to replace 0 with the defa
 	.text-icon-button.active{
 		color:@accent-txt;
 	}
+	//badges with icons in em
+	.icon-with-badge__badge{
+		background-color:@accent;
+	}
 	//link to show a filtered post
 	.status__wrapper--filtered__button,
 	//link in about section I think?
