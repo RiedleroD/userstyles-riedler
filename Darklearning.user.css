@@ -8,7 +8,7 @@
 @homepageURL	https://github.com/RiedleroD/userstyles-riedler
 @updateURL		https://github.com/RiedleroD/userstyles-riedler/raw/master/Darklearning.user.css
 @preprocessor	stylus
-@var	select	LSI		"Link Selection Indicator"{
+@var	select	FI		"Focus Indicator"{
 	"Clamps":"C",
 	"Braces":"B",
 	"Underbelly":"U",
@@ -761,31 +761,46 @@ urlenc(x){
 	a:not([class]),
 	.activityinstance > a{
 		&.focus,
-		&:focus{//janky box-shadow offsets; a better solution is desired
+		&:focus{
 			color:hlnk;
-			if LSI=="C"{
+			if FI=="C"{
 				background-color:#0000;
 				box-shadow:0 -0.2rem brd,0 0.2rem brd;
 				border-radius:0.3em;
-			}else if LSI="B"{
+			}else if FI=="B"{
 				background-color:#0000;
-				box-shadow:0 0.4rem 0 -0.1rem bg2,0 -0.4rem 0 -0.1rem bg2,0 0 0 0.1rem bg2,0 0 0 0.3rem brd;
-			}else if LSI=="U"{
+				box-shadow:none
+				outline:solid .2rem brd;
+				outline-offset:1px;
+				clip-path:polygon(
+					-.2rem -.2rem,.2rem -.2rem,.2rem 0,calc(100% - .2rem) 0,
+					calc(100% - .2rem) -.2rem,calc(100% + .2rem) -.2rem,calc(100% + .2rem) calc(100% + .2rem),
+					calc(100% - .2rem) calc(100% + .2rem),calc(100% - .2rem) 100%,
+					.2rem 100%,.2rem calc(100% + .2rem),-.2rem calc(100% + .2rem));
+			}else if FI=="U"{
 				background-color:#0000;
-				box-shadow:0 0 0 2px bg2,0 0.2rem 0 1px brd;
+				box-shadow:0 0.2rem 0 brd;
 				border-radius:0.3em;
-			}else if LSI=="F"{
+			}else if FI=="F"{
 				background-color:bg4;
 				box-shadow:0 -.2rem bg4,0 .2rem brd;
-			}else if LSI=="R"{
+			}else if FI=="R"{
 				background-color:#0000;
-				box-shadow:0 0 0 2px bg2,0 0 0 3px brd;
+				box-shadow:none;
+				outline:solid 1px brd;
+				outline-offset:2px;
 				border-radius:0.3em;
-			}else if LSI=="E"{
+			}else if FI=="E"{
 				background-color:#0000;
-				box-shadow:0 0 0 2px bg2,0 0 0 3px brd;
+				box-shadow:none;
+				outline:solid 1px brd;
+				outline-offset:2px;
 			}
 		}
+	}
+	.stretched-link::after{
+		//I have zero idea what this is supposed to do, but it messes with my style, so it gotta go
+		display:none;
 	}
 	/*Text with inline background coloring*/
 	span[style*="background-color: rgb(125\, 159\, 211);"]{
