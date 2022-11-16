@@ -3176,7 +3176,9 @@ urlenc(x){
 		box-shadow:0 0.2em 0.5em bg0,0 0.2em 0.2em idk;
 	}
 	.path-mod-quiz #mod_quiz_navblock{
-		& :is(a,span).qnbutton{
+		& a.qnbutton,
+		& span.qnbutton,
+		& .qnbutton{
 			color:txt !important;
 			background-color:bg4;
 			&:hover{
@@ -3213,10 +3215,12 @@ urlenc(x){
 					background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 6 6'%3E%3Cpath fill='"+urlenc(hfals)+"' d='M0 1l1-1 2 2 2-2 1 1-2 2 2 2-1 1-2-2-2 2-1-1 2-2z'/%3E%3C/svg%3E");
 				}
 			}
-			&.notyetanswered>.trafficlight{	
+			&.notyetanswered>.trafficlight{
 				background-color:bg4;
 			}
-			&.answersaved>.trafficlight{	
+			&.answersaved>.trafficlight,
+			&.complete>.trafficlight,
+			&.requiresgrading>.trafficlight{
 				background-color:brd;
 			}
 			&.flagged>.thispageholder{
@@ -3235,7 +3239,9 @@ urlenc(x){
 			}
 		}
 		& .allquestionsononepage{
-			& :is(span,a).qnbutton.thispage{
+			& a.qnbutton.thispage,
+			& span.qnbutton.thispage,
+			& .qnbutton.thispage{
 				&>.thispageholder{
 					outline:none;
 					border:none;
