@@ -3263,10 +3263,13 @@ urlenc(x){
 				border-top:none;
 			}
 			&>.cell:first-child{
-				background-color:bg3_5;
+				background-color:bg4;
 			}
 			&>.cell:last-child{
 				background-color:bg3;
+			}
+			& p{
+				margin-bottom:0;
 			}
 		}
 	}
