@@ -2826,20 +2826,25 @@ urlenc(x){
 }
 @-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/mod\\/assign\\/view\\.php.*") {
 	/*Abgabestatus*/
-	.submissionsummarytable table>tbody>tr{
-		&>td,
-		&>th{
-			background-color:bg3;
-			&:first-child{
-				background-color:bg4;
-				color:htxt;
-				border-left:none;
-			}
-			&:last-child{
-				border-right:none;
-			}
+	.path-mod-assign .submissionsummarytable{
+		display:grid;
+		grid-template-columns:1fr 5fr;
+		tr,tbody,thead,table,
+		.table-responsive{
+			display:contents;
 		}
-		&>td.submission{
+		th,td{
+			border:none;
+			margin-bottom:1px;
+		}
+		.c0{
+			background-color:bg4;
+			width:auto;
+		}
+		.c1{
+			background-color:bg3;
+		}
+		td.submission{
 			&graded,
 			&statussubmitted{
 				background-color:tru;
@@ -2854,22 +2859,21 @@ urlenc(x){
 				color:hidk;
 			}
 		}
-		&>td.latesubmission,
-		&>td.overdue{
+		td.latesubmission,
+		td.overdue{
 			background-color:fals;
 			color:hfals;
 			&>font{
 				color:hfals;
 			}
 		}
-		&>td.earlysubmission{
+		td.earlysubmission{
 			background-color:tru;
 			color:htru;
 		}
-		&:first-of-type{
+		tr:first-of-type{
 			&>td,
 			&>th{
-				border-top:none;
 				&:first-child{
 					border-top-left-radius:crad;
 				}
@@ -2878,10 +2882,10 @@ urlenc(x){
 				}
 			}
 		}
-		&:last-of-type{
+		tr:last-of-type{
 			&>td,
 			&>th{
-				border-bottom:none;
+				margin-bottom:0;
 				&:first-child{
 					border-bottom-left-radius:crad;
 				}
