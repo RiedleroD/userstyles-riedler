@@ -3161,6 +3161,10 @@ urlenc(x){
 		&>div>.specificfeedback{
 			border-radius:irad;
 			margin:-1px -1px -1px 0;
+			align-self:center;
+			& p{
+				margin:0;
+			}
 		}
 	}
 	.que.multianswer .feedbackspan{
