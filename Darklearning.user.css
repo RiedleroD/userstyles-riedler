@@ -3293,7 +3293,7 @@ urlenc(x){
 			border-left:solid crad bg4;
 		}
 		tr.bestrow td{
-			border-color:tru;
+			border-color:btn;
 			background-color:bg3;
 		}
 	}
