@@ -2827,22 +2827,8 @@ urlenc(x){
 @-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/mod\\/assign\\/view\\.php.*") {
 	/*Abgabestatus*/
 	.path-mod-assign .submissionsummarytable{
-		display:grid;
-		grid-template-columns:1fr 5fr;
-		tr,tbody,thead,table,
-		.table-responsive{
-			display:contents;
-		}
-		th,td{
-			border:none;
-			margin-bottom:1px;
-		}
 		.c0{
-			background-color:bg4;
 			width:auto;
-		}
-		.c1{
-			background-color:bg3;
 		}
 		td.submission{
 			&graded,
@@ -2870,6 +2856,25 @@ urlenc(x){
 		td.earlysubmission{
 			background-color:tru;
 			color:htru;
+		}
+	}
+	.feedbacktable,
+	.submissionsummarytable{
+		display:grid;
+		grid-template-columns:1fr 5fr;
+		tr,tbody,thead,table,
+		.table-responsive{
+			display:contents;
+		}
+		th,td{
+			border:none;
+			margin-bottom:1px;
+		}
+		th{
+			background-color:bg4;
+		}
+		td{
+			background-color:bg3;
 		}
 		tr:first-of-type{
 			&>td,
