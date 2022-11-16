@@ -3270,33 +3270,6 @@ urlenc(x){
 			}
 		}
 	}
-	#page-mod-quiz-view table.quizattemptsummary{
-		display:grid;
-		grid-template-columns:0fr;
-		border-radius:crad;
-		overflow:clip;
-		thead,tbody,tr{
-			display:contents;
-		}
-		th{
-			grid-row:1;
-			background-color:bg4;
-			border:none;
-		}
-		td{
-			background-color:bg3;
-			border:none;
-			margin-top:1px;
-		}
-		td:first-child,
-		th:first-child{
-			border-left:solid crad bg4;
-		}
-		tr.bestrow td{
-			border-color:btn;
-			background-color:bg3;
-		}
-	}
 	.answer>input[type="text"]{	
 		background-color:bg4;
 	}
@@ -3421,6 +3394,34 @@ urlenc(x){
 	//highlighted row in student rankings
 	.path-mod-studentquiz .mod-studentquiz-summary-highlight{
 		background-color:bg3;
+	}
+	/*summary table of quiz attempts*/
+	#page-mod-quiz-view table.quizattemptsummary{
+		display:grid;
+		grid-template-columns:0fr;
+		border-radius:crad;
+		overflow:clip;
+		thead,tbody,tr{
+			display:contents;
+		}
+		th{
+			grid-row:1;
+			background-color:bg4;
+			border:none;
+		}
+		td{
+			background-color:bg3;
+			border:none;
+			margin-top:1px;
+		}
+		td:first-child,
+		th:first-child{
+			border-left:solid crad bg4;
+		}
+		tr.bestrow td{
+			border-color:btn;
+			background-color:bg3;
+		}
 	}
 }
 @-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/user\\/index\\.php.*") {
