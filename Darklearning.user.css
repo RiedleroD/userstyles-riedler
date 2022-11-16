@@ -3264,22 +3264,36 @@ urlenc(x){
 			}
 		}
 	}
-	.quizreviewsummary{
+	table.quizreviewsummary{
+		display:grid;
+		grid-template-columns:auto auto;
+		width:fit-content;
 		border-radius:crad;
 		overflow:hidden;
-		&>tbody>tr{
-			&:first-child>.cell{
-				border-top:none;
-			}
-			&>.cell:first-child{
-				background-color:bg4;
-			}
-			&>.cell:last-child{
-				background-color:bg3;
-			}
-			& p{
-				margin-bottom:0;
-			}
+		tbody,tr{
+			display:contents;
+		}
+		th.cell,
+		td.cell{
+			border:none;
+			margin-bottom:1px;
+			padding:0.25em 1em;
+			width:auto;
+			text-align:start;
+		}
+		.cell:first-child{
+			background-color:bg4;
+			padding-left:0.75em;
+		}
+		.cell:last-child{
+			background-color:bg3;
+			padding-right:0.75em;
+		}
+		tr:last-child .cell{
+			margin-bottom:0;
+		}
+		p{
+			margin-bottom:0;
 		}
 	}
 	.answer>input[type="text"]{	
