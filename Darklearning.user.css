@@ -3305,21 +3305,6 @@ urlenc(x){
 		border-radius:irad;
 		color:txt;
 	}
-	.submitbtns{
-		& button[type="submit"].btn,
-		& input[type="submit"].btn{
-			background-color:bg3;
-			border-radius:irad;
-			&.mod_quiz-next-nav{
-				background-color:btn;
-				border-color:btn;
-			}
-			&.btn.mod_quiz-next-nav:hover{
-				background-color:hbtn;
-				border-color:hbtn;
-			}
-		}
-	}
 	#quiz-timer-wrapper #quiz-timer{
 		border-color:hidk;
 		background-color:idk;
