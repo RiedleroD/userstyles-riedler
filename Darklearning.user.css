@@ -1621,7 +1621,7 @@ urlenc(x){
 	}
 	/*codeblocks*/
 	:not(pre)>code{
-		color:mtxt;
+		color:txt;
 		background-color:bg1;
 		outline:solid 2px bg0;
 		font-family:Monospace;
@@ -1629,7 +1629,7 @@ urlenc(x){
 		padding:0 0.1em;
 	}
 	pre{
-		color:mtxt;
+		color:txt;
 		background-color:bg1;
 		border:solid 2px bg0;
 	}
