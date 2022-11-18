@@ -91,15 +91,38 @@ on/off switch instead of 0 width because stylus likes to replace 0 with the defa
 			width:auto;
 			text-align:center;
 			padding:1em;
-			&:not(.verified){
-				border:inherit;
+			border:none;
+			border-top:solid 1px;
+			border-top-color:inherit;
+		}
+		dl:not(.verified){
+			dt,dd{
 				border-color:@default-brd3;
 			}
+			dt{
+				background-color:@default-bg1;
+				color:@default-tx1;
+				text-transform:none;
+			}
 		}
-		dt{
-			background-color:@default-bg1;
-			color:@default-tx1;
-			text-transform:none;
+		dl.verified{
+			dt,dd{
+				background-color:inherit;
+				border:solid 1px;
+				border-color:inherit;
+			}
+			dt{
+				border-right:none;
+			}
+			&+dl dt,
+			&+dl dd{
+				border-top:none;
+			}
+		}
+		dl:first-child{
+			dt,dd{
+				border-top:none;
+			}
 		}
 	}
 	/* accent colors! */
