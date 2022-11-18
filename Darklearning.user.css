@@ -3157,6 +3157,10 @@ urlenc(x){
 		& img.group1{
 			filter:EICC;
 		}
+		& .draghome{
+			width:fit-content !important;
+			padding:0 0.5em;
+		}
 	}
 	.que .answer{
 		&>.correct>.specificfeedback{
