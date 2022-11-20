@@ -330,6 +330,14 @@ on/off switch instead of 0 width because stylus likes to replace 0 with the defa
 			background-color:@accent-h;
 		}
 	}
+	//checkbox to mark media as sensitive
+	.compose-form__sensitive-button .checkbox{
+		border-color:@accent-txt;
+		&.active{
+			border-color:@accent-h;
+			background-color:@accent-h;
+		}
+	}
 	//selected filter (e.g. in ./relationships)
 	.filters .filter-subset a.selected{
 		color:@accent;
