@@ -1,0 +1,82 @@
+/* ==UserStyle==
+@name			Mastodon Nonesense
+@namespace		github.com/RiedleroD/userstyles-riedler
+@version        0.0.1
+@description    Replaces some strings with weird ones
+@author         Riedler
+@preprocessor	less
+==/UserStyle== */
+
+/*replace column link*/
+.rcl(@selector,@content){
+	&[title = @{selector}]{
+		&>span{
+			display:none;
+		}
+		&::after{
+			display:inline-block;
+			content:@content;
+		}
+	}
+}
+/*relace heading inside column*/
+.rhic(@nr,@content){
+	&:nth-of-type(@{nr}){
+		visibility:hidden;
+		overflow:clip;
+		&::before{
+			visibility:visible;
+			display:inline;
+			content:@content;
+		}
+	}
+}
+/*replace heading of column*/
+.rhoc(@selector,@content){
+	&[aria-label = @{selector}]{
+		.column-header{
+			&>button{
+				visibility:hidden;
+				&>.fa{
+					visibility:visible;
+					float:left;
+				}
+				&::before{
+					display:inline;
+					visibility:visible;
+					content:@content;
+				}
+			}
+		}
+	}
+}
+
+@-moz-document domain("mas.to"), domain("mastodon.social"), domain("mastodon.coffee"), domain("mstdn.social"), domain("mastodon.art"), domain("mastodon.online"), domain("mastodon.lol") {
+	.column-link{
+		.rcl("Explore","Guided Tour");
+		.rcl("Local timeline","Echo Chamber");
+		.rcl("Federated timeline","Chaos");
+		.rcl("Home","Depths of Hell");
+		.rcl("Direct messages","Inner Voices");
+		.rcl("Bookmarks","Guestbook");
+		.rcl("Favourites","Guilty Pleasures");
+		.rcl("Lists","Unused Fifth Option");
+		.rcl("Preferences","Special Treatment");
+	}
+	.getting-started__wrapper>.column-subheading{
+		.rhic(1,"Uncharted Territory");
+		.rhic(2,"Random Shit");
+		.rhic(3,"Why is there a subheading for this?");
+	}
+	.getting-started__trends>h4{
+		&>span{display:none}
+		&::after{
+			display:inline-block;
+			content:"Featured Tours";
+		}
+	}
+	.column{
+		.rhoc("Home","Depths of Hell");
+		.rhoc("Notifications","Summoning Circle");
+	}
+}
