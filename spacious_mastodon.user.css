@@ -68,7 +68,8 @@ on/off switch instead of 0 width because stylus likes to replace 0 with the defa
 	/* makes the columns expand to the full width of the screen */
 	.drawer,
 	.column{
-		flex:if((@expandcols=1),auto,auto 0 0);
+		--compat-flex:if((@expandcols=1),auto,auto 0 0);
+		flex:var(--compat-flex);
 	}
 	/* no border radius for columns >:( */
 	.column-header{
@@ -398,10 +399,16 @@ on/off switch instead of 0 width because stylus likes to replace 0 with the defa
 	.columns-area when(@colspace_=1){
 		grid-gap:@colspace;
 		margin:@colspace;
+		--compat-colspace:@colspace;
 		.column,
 		.drawer{
 			&,&:first-child,&:last-child{
 				padding:0;
+				--compat-padding-top:0;
+				padding-top:var(--compat-padding-top);
+			}
+			&:last-child{
+				--compat-margin:@colspace !important;
 			}
 		}
 	}
