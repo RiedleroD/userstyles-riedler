@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Spacious Mastodon
 @namespace      github.com/RiedleroD/userstyles-riedler
-@version        1.1.1
+@version        1.1.2
 @description    Helps you see more
 @author         Riedler
 @preprocessor   less
@@ -18,6 +18,14 @@ on/off switch instead of 0 width because stylus likes to replace 0 with the defa
 @var	checkbox	compost		"Compact Post?"				1
 ==/UserStyle== */
 
+///////////////////////////////////////////
+// !!! ADD YOUR INSTANCE TO THE LIST !!! //
+//                                       //
+//     go to the line where it says      //
+//  "targeted domains" and see if your   //
+// instance is listed there. If not, add //
+// it and open a pull request on github. //
+///////////////////////////////////////////
 //URL root for images from official github repo
 @imgurlroot: "https://raw.githubusercontent.com/mastodon/mastodon/@{logobranch}/app/javascript/images/";
 
@@ -64,11 +72,27 @@ on/off switch instead of 0 width because stylus likes to replace 0 with the defa
 	}
 }
 
-@-moz-document domain("mas.to"), domain("mastodon.social"), domain("mastodon.coffee"), domain("mstdn.social"), domain("mastodon.art"), domain("mastodon.online"), domain("mastodon.lol") {
+// targeted domains
+@-moz-document domain("mas.to"), domain("mastodon.social"), domain("mastodon.coffee"),
+domain("mstdn.social"), domain("mastodon.art"), domain("mastodon.online"), domain("mastodon.lol"),
+domain("social.pixie.town"), domain("todon.nl"), domain("botsin.space"), domain("mstd.jp"),
+domain("mastodon.cloud"), domain("mastodon.world"), domain("c.im"), domain("mastodon.uno"),
+domain("mastodonapp.uk"), domain("fosstodon.org"), domain("universeodon.com"), domain("mastodon.top"),
+domain("techhub.social"), domain("mamot.fr"), domain("mastodon.party"), domain("m.cmx.im"),
+domain("infosec.exchange"), domain("ohai.social"), domain("troet.cafe"), domain("masto.ai"),
+domain("sfba.social"), domain("mastodon.nl"), domain("mastodon.xyz"), domain("mindly.social"),
+domain("home.social"), domain("toot.community"), domain("kolektiva.social"), domain("hachyderm.io"),
+domain("nerdculture.de"), domain("tkz.one"), domain("social.tchncs.de"), domain("mstdn.ca"),
+domain("ioc.exchange"), domain("mastodon.gamedev.place"), domain("mstdn.io"), domain("abdl.link"),
+domain("mastodon.com.tr"), domain("o3o.ca"), domain("mastodontech.de"), domain("bitcoinhackers.org"),
+domain("det.social"), domain("nrw.social"), domain("octodon.social"), domain("awscommunity.social"),
+domain("glasgow.social"), domain("norden.social"), domain("masto.pt"), domain("chaos.social"),
+domain("twingyeo.kr"), domain("social.linux.pizza"), domain("eldritch.cafe"){
 	/* makes the columns expand to the full width of the screen */
 	.drawer,
 	.column{
-		flex:if((@expandcols=1),auto,auto 0 0);
+		--compat-flex:if((@expandcols=1),auto,auto 0 0);
+		flex:var(--compat-flex);
 	}
 	/* no border radius for columns >:( */
 	.column-header{
@@ -91,15 +115,38 @@ on/off switch instead of 0 width because stylus likes to replace 0 with the defa
 			width:auto;
 			text-align:center;
 			padding:1em;
-			&:not(.verified){
-				border:inherit;
+			border:none;
+			border-top:solid 1px;
+			border-top-color:inherit;
+		}
+		dl:not(.verified){
+			dt,dd{
 				border-color:@default-brd3;
 			}
+			dt{
+				background-color:@default-bg1;
+				color:@default-tx1;
+				text-transform:none;
+			}
 		}
-		dt{
-			background-color:@default-bg1;
-			color:@default-tx1;
-			text-transform:none;
+		dl.verified{
+			dt,dd{
+				background-color:inherit;
+				border:solid 1px;
+				border-color:inherit;
+			}
+			dt{
+				border-right:none;
+			}
+			&+dl dt,
+			&+dl dd{
+				border-top:none;
+			}
+		}
+		dl:first-child{
+			dt,dd{
+				border-top:none;
+			}
 		}
 	}
 	/* accent colors! */
@@ -136,6 +183,12 @@ on/off switch instead of 0 width because stylus likes to replace 0 with the defa
 	.text-icon-button.active{
 		color:@accent-txt;
 	}
+	//badges with icons in em
+	.icon-with-badge__badge{
+		background-color:@accent;
+	}
+	//another type of link
+	.link-button,
 	//link to show a filtered post
 	.status__wrapper--filtered__button,
 	//link in about section I think?
@@ -301,6 +354,14 @@ on/off switch instead of 0 width because stylus likes to replace 0 with the defa
 			background-color:@accent-h;
 		}
 	}
+	//checkbox to mark media as sensitive
+	.compose-form__sensitive-button .checkbox{
+		border-color:@accent-txt;
+		&.active{
+			border-color:@accent-h;
+			background-color:@accent-h;
+		}
+	}
 	//selected filter (e.g. in ./relationships)
 	.filters .filter-subset a.selected{
 		color:@accent;
@@ -308,6 +369,10 @@ on/off switch instead of 0 width because stylus likes to replace 0 with the defa
 	}
 	//unread marker
 	.conversation__unread{
+		background-color:@accent;
+	}
+	//unread announcement marker
+	.announcements__item__unread{
 		background-color:@accent;
 	}
 	//retoot button
@@ -357,10 +422,16 @@ on/off switch instead of 0 width because stylus likes to replace 0 with the defa
 	.columns-area when(@colspace_=1){
 		grid-gap:@colspace;
 		margin:@colspace;
+		--compat-colspace:@colspace;
 		.column,
 		.drawer{
 			&,&:first-child,&:last-child{
 				padding:0;
+				--compat-padding-top:0;
+				padding-top:var(--compat-padding-top);
+			}
+			&:last-child{
+				--compat-margin:@colspace !important;
 			}
 		}
 	}
