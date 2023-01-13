@@ -18,6 +18,15 @@ on/off switch instead of 0 width because stylus likes to replace 0 with the defa
 @var	checkbox	compost		"Compact Post?"				1
 ==/UserStyle== */
 
+///////////////////////////////////////////
+// !!! ADD YOUR INSTANCE TO THE LIST !!! //
+//                                       //
+//     go to the line where it says      //
+//  "targeted domains" and see if your   //
+// instance is listed there. If not, add //
+// it and open a pull request on github. //
+///////////////////////////////////////////
+
 //URL root for images from official github repo
 @imgurlroot: "https://raw.githubusercontent.com/mastodon/mastodon/@{logobranch}/app/javascript/images/";
 
@@ -64,6 +73,7 @@ on/off switch instead of 0 width because stylus likes to replace 0 with the defa
 	}
 }
 
+// targeted domains
 @-moz-document domain("mas.to"), domain("mastodon.social"), domain("mastodon.coffee"), domain("mstdn.social"), domain("mastodon.art"), domain("mastodon.online"), domain("mastodon.lol") {
 	/* makes the columns expand to the full width of the screen */
 	.drawer,
