@@ -74,7 +74,21 @@ on/off switch instead of 0 width because stylus likes to replace 0 with the defa
 }
 
 // targeted domains
-@-moz-document domain("mas.to"), domain("mastodon.social"), domain("mastodon.coffee"), domain("mstdn.social"), domain("mastodon.art"), domain("mastodon.online"), domain("mastodon.lol") {
+@-moz-document domain("mas.to"), domain("mastodon.social"), domain("mastodon.coffee"),
+domain("mstdn.social"), domain("mastodon.art"), domain("mastodon.online"), domain("mastodon.lol"),
+domain("social.pixie.town"), domain("todon.nl"), domain("botsin.space"), domain("mstd.jp"),
+domain("mastodon.cloud"), domain("mastodon.world"), domain("c.im"), domain("mastodon.uno"),
+domain("mastodonapp.uk"), domain("fosstodon.org"), domain("universeodon.com"), domain("mastodon.top"),
+domain("techhub.social"), domain("mamot.fr"), domain("mastodon.party"), domain("m.cmx.im"),
+domain("infosec.exchange"), domain("ohai.social"), domain("troet.cafe"), domain("masto.ai"),
+domain("sfba.social"), domain("mastodon.nl"), domain("mastodon.xyz"), domain("mindly.social"),
+domain("home.social"), domain("toot.community"), domain("kolektiva.social"), domain("hachyderm.io"),
+domain("nerdculture.de"), domain("tkz.one"), domain("social.tchncs.de"), domain("mstdn.ca"),
+domain("ioc.exchange"), domain("mastodon.gamedev.place"), domain("mstdn.io"), domain("abdl.link"),
+domain("mastodon.com.tr"), domain("o3o.ca"), domain("mastodontech.de"), domain("bitcoinhackers.org"),
+domain("det.social"), domain("nrw.social"), domain("octodon.social"), domain("awscommunity.social"),
+domain("glasgow.social"), domain("norden.social"), domain("masto.pt"), domain("chaos.social"),
+domain("twingyeo.kr"), domain("social.linux.pizza"), domain("eldritch.cafe"){
 	/* makes the columns expand to the full width of the screen */
 	.drawer,
 	.column{
