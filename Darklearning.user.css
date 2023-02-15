@@ -2135,6 +2135,7 @@ urlenc(x){
 	aside > section blockquote{
 		border-left-color:btn;
 		background-color:bg4;
+		color:txt;
 		border-radius:0 crad crad 0;
 	}
 	/*Replacement images + image manipulation*/
