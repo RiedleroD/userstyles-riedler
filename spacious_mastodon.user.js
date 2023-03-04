@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Spaceous Mastodon Helper
 // @namespace    github.com/RiedleroD/userstyles-riedler
-// @version      1.2.0
+// @version      1.2.1
 // @description  companion script for spaceous mastodon userstyle
 // @author       Riedler
 // @match        https://mas.to/*
