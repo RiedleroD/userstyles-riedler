@@ -547,7 +547,6 @@ domain("twingyeo.kr"), domain("social.linux.pizza"), domain("eldritch.cafe"){
 			}
 		}
 		.media-gallery,
-		.status-card,
 		.video-player{
 			grid-area:m;
 			align-self:end;
