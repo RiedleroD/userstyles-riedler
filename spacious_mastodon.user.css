@@ -16,6 +16,7 @@
 @var	checkbox	colspace_	"Column Spacing?"			1
 on/off switch instead of 0 width because stylus likes to replace 0 with the default for some reason >:(
 @var	checkbox	compost		"Compact Post?"				1
+@var	checkbox	sibar		"Move post buttons to left when appropriate?" 1
 ==/UserStyle== */
 
 ///////////////////////////////////////////
@@ -547,7 +548,7 @@ domain("twingyeo.kr"), domain("social.linux.pizza"), domain("eldritch.cafe"){
 		.video-player{
 			grid-area:m;
 			align-self:end;
-			&~.status__action-bar{
+			&~.status__action-bar when(@sibar=1){
 				grid-area:sb;
 				height:100%;
 				max-height:calc(19em + 3rem);
