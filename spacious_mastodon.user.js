@@ -19,10 +19,16 @@
         let content = post.getElementsByClassName('status__content')[0];
         //get minimum height by getting 15em in px
         let divisor = 12*parseFloat(getComputedStyle(post).fontSize);
+        let actionbar = post.getElementsByClassName('status__action-bar')[0];
         if(content.clientHeight>=divisor){
-            post.getElementsByClassName('status__action-bar')[0]
-                .classList.add('sm__force_sidebar');
+            actionbar.classList.add('sm__force_sidebar');
+        }else{
+            //if we previously added it and it changed in the meantime
+            actionbar.classList.remove('sm__force_sidebar');
         }
+    }
+    function isPost(element){
+        return element.classList!=undefined && element.classList.contains('status');
     }
 
     const target = document.getElementById('mastodon');
@@ -30,10 +36,19 @@
 
     const callback = (mutationList, observer) => {
         for(const mutation of mutationList){
-            for(const node of mutation.addedNodes){
-                if(node.classList.contains('status')){
+            for(let node of mutation.addedNodes){
+                if(isPost(node)){
                     checkSideBar(node);
                 }else{
+                    //checking parents for posts
+                    do{
+                        node=node.parentNode;
+                        if(isPost(node)){
+                            checkSideBar(node);
+                            return;
+                        }
+                    }while(node.parentNode!=undefined);
+                    //checking children for posts
                     for(const e of node.getElementsByClassName('status')){
                         checkSideBar(e);
                     }
