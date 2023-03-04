@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Spacious Mastodon
 @namespace      github.com/RiedleroD/userstyles-riedler
-@version        1.1.2
+@version        1.2.0
 @description    Helps you see more
 @author         Riedler
 @preprocessor   less
@@ -16,6 +16,7 @@
 @var	checkbox	colspace_	"Column Spacing?"			1
 on/off switch instead of 0 width because stylus likes to replace 0 with the default for some reason >:(
 @var	checkbox	compost		"Compact Post?"				1
+@var	checkbox	sibar		"Move post buttons to left when appropriate?" 1
 ==/UserStyle== */
 
 ///////////////////////////////////////////
@@ -450,11 +451,7 @@ domain("twingyeo.kr"), domain("social.linux.pizza"), domain("eldritch.cafe"){
 		line-height:normal;
 		&+.status{
 			padding-top:0;
-			.status__avatar{
-				top:0;
-			}
 		}
-		
 	}
 	.notification__message when(@compost=1){
 		padding-left:0;
@@ -465,9 +462,6 @@ domain("twingyeo.kr"), domain("social.linux.pizza"), domain("eldritch.cafe"){
 		&+div .status,
 		&+.account{
 			padding-top:0;
-			.status__avatar{
-				top:0;
-			}
 		}
 	}
 	.status__prepend-icon-wrapper,
@@ -483,14 +477,20 @@ domain("twingyeo.kr"), domain("social.linux.pizza"), domain("eldritch.cafe"){
 		}
 	}
 	.status when(@compost=1){
-		padding-left:4.5rem;
+		display:grid;
+		grid-template-areas:
+			"sb name t"
+			"sb c c"
+			"sb m m"
+			"sb m m"
+			"sb bb bb";
+		grid-template-columns:calc(4.5rem - 16px) 1fr min-content;
+		grid-template-rows:auto auto 1fr auto auto;
 		position:relative;
 		.status__avatar{
 			width:3rem;
 			height:3rem;
-			position:absolute;
-			left:1rem;
-			top:1rem;
+			grid-area:sb;
 			.account__avatar,
 			.account__avatar-overlay{
 				width:inherit !important;
@@ -506,17 +506,37 @@ domain("twingyeo.kr"), domain("social.linux.pizza"), domain("eldritch.cafe"){
 			}
 		}
 		.status__relative-time{
+			grid-area:t;
+			display:flex;
 			height:auto;
 			line-height:normal;
+			justify-content:end;
+			.status__prepend+&,
+			.notification &{
+				margin-top:-1.5em;
+				width:0;
+				justify-self:end;
+				time{
+					white-space:nowrap;
+				}
+			}
 		}
 		.status__action-bar{
-			justify-content:flex-start;
+			grid-area:bb;
+			justify-content:start;
 			margin-top:0.75em;
+			.disabled{
+				display:none;
+			}
 		}
 		.status__info{
-			margin-bottom:0;
+			display:contents;
 			.status__display-name{
+				display:contents;
 				line-height:normal;
+				.display-name{
+					grid-area:name;
+				}
 			}
 		}
 		.display-name:not(.detailed-status__display-name){
@@ -524,6 +544,38 @@ domain("twingyeo.kr"), domain("social.linux.pizza"), domain("eldritch.cafe"){
 			bdi{
 				padding-right:0.25em;
 			}
+		}
+		.media-gallery,
+		.status-card,
+		.video-player{
+			grid-area:m;
+			align-self:end;
+			&~.status__action-bar when(@sibar=1){
+				grid-area:sb;
+				height:100%;
+				max-height:calc(19em + 3rem);
+				justify-self:start;
+				align-self:safe end;
+				padding-top:calc(3rem + 0.5em);
+				margin-top:0;
+				margin-left:0.5em;
+				margin-bottom:-0.5em;
+				box-sizing:border-box;
+				gap:0.5em;
+				flex-direction:column;
+				align-items:start;
+				justify-content:space-around;
+				.icon-button--with-counter{
+					padding-left:0;
+				}
+			}
+		}
+		.attachment-list.compact,
+		.audio-player{
+			grid-area:m;
+		}
+		.status__content{
+			grid-area:c;
 		}
 	}
 	/* video player */
