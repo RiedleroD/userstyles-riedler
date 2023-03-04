@@ -517,6 +517,9 @@ domain("twingyeo.kr"), domain("social.linux.pizza"), domain("eldritch.cafe"){
 				margin-top:-1.5em;
 				width:0;
 				justify-self:end;
+				time{
+					white-space:nowrap;
+				}
 			}
 		}
 		.status__action-bar{
