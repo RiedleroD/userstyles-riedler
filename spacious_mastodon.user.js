@@ -5,6 +5,8 @@
 // @description  companion script for spaceous mastodon userstyle
 // @author       Riedler
 // @match        https://mas.to/*
+// @match        https://fosstodon.org/*
+// @match        https://mastodon.social/*
 // @icon         https://mas.to/favicon.ico
 // @grant        none
 // @run-at       document-idle
