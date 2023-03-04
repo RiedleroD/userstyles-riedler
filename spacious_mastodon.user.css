@@ -551,24 +551,8 @@ domain("twingyeo.kr"), domain("social.linux.pizza"), domain("eldritch.cafe"){
 		.video-player{
 			grid-area:m;
 			align-self:end;
-			&~.status__action-bar when(@sibar=1){
-				grid-area:sb;
-				height:100%;
-				max-height:calc(19em + 3rem);
-				justify-self:start;
-				align-self:safe end;
-				padding-top:calc(3rem + 0.5em);
-				margin-top:0;
-				margin-left:0.5em;
-				margin-bottom:-0.5em;
-				box-sizing:border-box;
-				gap:0.5em;
-				flex-direction:column;
-				align-items:start;
-				justify-content:space-around;
-				.icon-button--with-counter{
-					padding-left:0;
-				}
+			&~.status__action-bar{
+				&:extend(.status .sm__force_sidebar all);
 			}
 		}
 		.attachment-list.compact,
@@ -577,6 +561,25 @@ domain("twingyeo.kr"), domain("social.linux.pizza"), domain("eldritch.cafe"){
 		}
 		.status__content{
 			grid-area:c;
+		}
+		.sm__force_sidebar when(@sibar=1){
+			grid-area:sb;
+			height:100%;
+			max-height:calc(19em + 3rem);
+			justify-self:start;
+			align-self:safe end;
+			padding-top:calc(3rem + 0.5em);
+			margin-top:0;
+			margin-left:0.5em;
+			margin-bottom:-0.5em;
+			box-sizing:border-box;
+			gap:0.5em;
+			flex-direction:column;
+			align-items:start;
+			justify-content:space-around;
+			.icon-button--with-counter{
+				padding-left:0;
+			}
 		}
 	}
 	/* video player */
