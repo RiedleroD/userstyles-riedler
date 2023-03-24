@@ -2906,7 +2906,7 @@ urlenc(x){
 		border-color:brd;
 		color:txt;}
 	/*Grading criteria in full assignment view*/
-	//see -> https://elearning.tgm.ac.at/mod/assign/view.php?id=206006
+	//see -> https://elearning.tgm.ac.at/mod/assign/view.php?id=43871
 	.gradingform_rubric .criteria>tbody{
 		border-radius:crad;
 		overflow:hidden;
@@ -2919,17 +2919,17 @@ urlenc(x){
 		&.even{
 			border:none;
 			background:#0000;
-			&>td{
+			& td{
 				background:bg4;
-				&:first-of-type{
+				&.description{
 					background:bg5;
 				}
 			}
 		}
 		&.odd{
-			&>td{
+			& td{
 				background:bg3;
-				&:first-of-type{
+				&.description{
 					background:bg4;
 				}
 			}
