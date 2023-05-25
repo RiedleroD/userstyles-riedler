@@ -615,6 +615,7 @@ on/off switch instead of 0 width because stylus likes to replace 0 with the defa
 			"sb c    c "
 			"sb m    m "
 			"sb m    m "
+			"sb rb   rb"
 			"sb bb   bb";
 		.status__prepend,
 		.notification__message{
@@ -654,6 +655,10 @@ on/off switch instead of 0 width because stylus likes to replace 0 with the defa
 		}
 		.status__relative-time{
 			grid-area:none;
+		}
+		.reactions-bar{
+			grid-area:rb;
+			margin-top:0.5em;
 		}
 	}
 	.status when(@sibar=1){
