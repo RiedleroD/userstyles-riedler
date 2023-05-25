@@ -24,6 +24,16 @@
         return;
     }
 
+    var MINPOSTSIZEFORSIDEBAR;
+    switch(mode){
+        case 'vanilla':
+            MINPOSTSIZEFORSIDEBAR = 12;
+            break;
+        case 'glitch-soc':
+            MINPOSTSIZEFORSIDEBAR = 17;
+            break;
+    }
+
     console.log(`spacious mastodon helper running in ${mode} mode`);
 
     function checkSideBar(post){
@@ -32,8 +42,8 @@
             //TODO: check why glitch-soc does this sometimes, and vanilla doesn't
             return;
         }
-        //get minimum height by getting 15em in px
-        let divisor = 12*parseFloat(getComputedStyle(post).fontSize);
+        //get minimum height by getting the minimum post size in px
+        let divisor = MINPOSTSIZEFORSIDEBAR*parseFloat(getComputedStyle(post).fontSize);
         let actionbar = post.getElementsByClassName('status__action-bar')[0];
         if(content.clientHeight>=divisor){
             actionbar.classList.add('sm__force_sidebar');
