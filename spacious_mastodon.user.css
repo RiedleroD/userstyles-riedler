@@ -370,6 +370,10 @@ on/off switch instead of 0 width because stylus likes to replace 0 with the defa
 	.search__input{
 		border-radius:0;
 	}
+	/* more predictable post layouting */
+	.status{
+		padding:0.75em 1em
+	}
 	/* about section */
 	.about__section__title{
 		color:@accent-txt;
@@ -425,6 +429,7 @@ on/off switch instead of 0 width because stylus likes to replace 0 with the defa
 		padding-top:0.75em;
 		padding-bottom:0.5em;
 		padding-left:0;
+		padding-right:1em;
 		gap:0;
 		line-height:normal;
 		&+.status{
@@ -516,6 +521,11 @@ on/off switch instead of 0 width because stylus likes to replace 0 with the defa
 				line-height:normal;
 				.display-name{
 					grid-area:name;
+					& .display-name__account{
+						white-space: nowrap;
+						overflow: hidden;
+						text-overflow: ellipsis;
+					}
 				}
 			}
 		}
@@ -585,4 +595,81 @@ on/off switch instead of 0 width because stylus likes to replace 0 with the defa
 		background-color:@accent;
 		border-color:@accent;
 	}
+/*glitch-soc compat styling*/
+.flavour-glitch &{
+	.status{
+		.status__prepend{
+			display:flex;
+			margin-inline-start:0;
+			.status__prepend-icon-wrapper{
+				inset-inline-start: 0;
+				position:static;
+				margin:0 0.5em;
+			}
+		}
+	}
+	.status when(@compost=1){
+		grid-template-areas:
+			"ic pp   pp"
+			"sb name t "
+			"sb c    c "
+			"sb m    m "
+			"sb m    m "
+			"sb bb   bb";
+		.status__prepend{
+			display:contents;
+			>.status__prepend-icon-wrapper{
+				grid-area:ic;
+				margin:0;
+				width:auto;
+				margin-bottom:inherit;
+			}
+			>span{
+				grid-area:pp;
+				margin-bottom:inherit;
+			}
+			~.status__info>.status__info__icons{
+				position:absolute;
+				right:1em;
+				top:0.75em;
+				height:1em;
+				grid-area:none;
+			}
+		}
+		.status__info__account,
+		.status__info>span{
+			display:contents;
+		}
+		.media-gallery.full-width{
+			margin-left:0;
+			margin-right:0;
+		}
+		.status__info__icons{
+			grid-area:t;
+		}
+		.status__content{
+			margin:0;
+		}
+		.status__relative-time{
+			grid-area:none;
+		}
+	}
+	.status when(@sibar=1){
+		.sm__force_sidebar,
+		.media-gallery ~ .status__action-bar,
+		.video-player ~ .status__action-bar{
+			max-height:calc(25em + 3rem);
+			.status__action-bar-spacer{
+				display:none;
+			}
+			.status__relative-time{
+				width:1.65em;
+				height:1.65em;
+				display:flex;
+				justify-content:center;
+				align-items:start;
+			}
+		}
+	}
+}
 }}
