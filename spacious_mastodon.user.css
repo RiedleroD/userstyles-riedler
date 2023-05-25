@@ -510,8 +510,13 @@ on/off switch instead of 0 width because stylus likes to replace 0 with the defa
 			grid-area:bb;
 			justify-content:start;
 			margin-top:0.75em;
+			margin-inline-start:0;
+			gap:1em;
 			.disabled{
 				display:none;
+			}
+			.status__action-bar-button{
+				margin-inline-end: 0;
 			}
 		}
 		.status__info{
@@ -675,11 +680,34 @@ on/off switch instead of 0 width because stylus likes to replace 0 with the defa
 				display:none;
 			}
 			.status__relative-time{
-				width:1.65em;
-				height:1.65em;
+				min-width:1.65em;
+				min-height:1.65em;
 				display:flex;
 				justify-content:center;
 				align-items:start;
+			}
+			.icon-button__counter{
+				position:absolute;
+				right:0;
+				transform:translate(100%,0);
+			}
+		}
+		&.status--in-thread{
+			.sm__force_sidebar,
+			.media-gallery ~ .status__action-bar,
+			.video-player ~ .status__action-bar{
+				margin-left:0;
+				width:calc(100% - 0.5em);
+				align-items:center;
+				.status__action-bar-button,
+				.status__action-bar-dropdown,
+				.status__relative-time{
+					filter:
+						drop-shadow( 0.1em  0.1em 0.1em #282c37)
+						drop-shadow( 0.1em -0.1em 0.1em #282c37)
+						drop-shadow(-0.1em  0.1em 0.1em #282c37)
+						drop-shadow(-0.1em -0.1em 0.1em #282c37);
+				}
 			}
 		}
 	}
