@@ -37,11 +37,21 @@
     console.log(`spacious mastodon helper running in ${mode} mode`);
 
     function checkSideBar(post){
-        let content = post.getElementsByClassName('status__content')[0];
-        if(content === undefined){
-            //TODO: check why glitch-soc does this sometimes, and vanilla doesn't
+        //add to observer so future changes are
+        if(!post.attributes.isBeingObservedBySpacious){
+            post.attributes.isBeingObservedBySpacious="yes";
+            postObserver.observe(post,pobconf);
+        }
+
+        if(post.classList.contains('collapsed')){
             return;
         }
+
+        let content = post.getElementsByClassName('status__content')[0];
+        if(content == undefined){
+            return;
+        }
+
         //get minimum height by getting the minimum post size in px
         let divisor = MINPOSTSIZEFORSIDEBAR*parseFloat(getComputedStyle(post).fontSize);
         let actionbar = post.getElementsByClassName('status__action-bar')[0];
@@ -56,32 +66,36 @@
         return element.classList!=undefined && element.classList.contains('status');
     }
 
-    const target = document.getElementById('mastodon');
-    const obconf = { attributes: false, childList: true, subtree: true };
-
-    const callback = (mutationList, observer) => {
+    const observerCallback = (mutationList, observer) => {
         for(const mutation of mutationList){
-            for(let node of mutation.addedNodes){
-                if(isPost(node)){
-                    checkSideBar(node);
-                }else{
-                    //checking parents for posts
-                    do{
-                        node=node.parentNode;
-                        if(isPost(node)){
-                            checkSideBar(node);
-                            return;
-                        }
-                    }while(node.parentNode!=undefined);
-                    //checking children for posts
-                    for(const e of node.getElementsByClassName('status')){
-                        checkSideBar(e);
+            let node = mutation.target;
+            if(isPost(node)){
+                checkSideBar(node);
+            }else{
+                //checking parents for posts
+                do{
+                    node=node.parentNode;
+                    if(isPost(node)){
+                        checkSideBar(node);
+                        return;
                     }
+                }while(node.parentNode!=undefined);
+                //checking children for posts
+                for(const e of node.getElementsByClassName('status')){
+                    checkSideBar(e);
                 }
             }
         }
     };
+    const postserverCallback = (mutationList, observer) => {
+        for(const mutation of mutationList){
+            checkSideBar(mutation.target);
+        }
+    };
 
-    const observer = new MutationObserver(callback);
-    observer.observe(target, obconf);
+    const gobconf = { attributes: false, childList: true, subtree: true };
+    const pobconf = { attributes: true, childList: false, subtree: false };
+    const generalObserver = new MutationObserver(observerCallback);
+    const postObserver = new MutationObserver(postserverCallback);
+    generalObserver.observe(document.body, gobconf);
 })();
