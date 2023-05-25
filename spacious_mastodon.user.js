@@ -18,7 +18,7 @@
     if(document.getElementById('mastodon') !== null){
         mode = 'vanilla'
         if(document.body.classList.contains('flavour-glitch')){
-            mode = 'glitch-soc'
+            mode = 'glitch-soc';
         }
     }else{
         return;
