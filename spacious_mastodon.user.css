@@ -607,6 +607,11 @@ on/off switch instead of 0 width because stylus likes to replace 0 with the defa
 				margin:0 0.5em;
 			}
 		}
+		&.collapsed{
+			.status__action-bar{
+				display:none;
+			}
+		}
 	}
 	.status when(@compost=1){
 		grid-template-areas:
