@@ -436,7 +436,7 @@ on/off switch instead of 0 width because stylus likes to replace 0 with the defa
 			padding-top:0;
 		}
 	}
-	.notification__message when(@compost=1){
+	:not(.flavour-glitch)>&	.notification__message when(@compost=1){
 		padding-left:0;
 		padding-top:0.75em;
 		padding-bottom:0.5em;
@@ -448,7 +448,7 @@ on/off switch instead of 0 width because stylus likes to replace 0 with the defa
 		}
 	}
 	.status__prepend-icon-wrapper,
-	.notification__favourite-icon-wrapper{
+	:not(.flavour-glitch)>.notification__favourite-icon-wrapper{
 		& when(@compost=1){
 			width:4.5rem;
 			padding-right:0.5rem;
@@ -456,7 +456,7 @@ on/off switch instead of 0 width because stylus likes to replace 0 with the defa
 		box-sizing:border-box;
 		display:flex;
 		justify-content:end;
-		align-items:center;
+		align-self:center;
 		& .fa{
 			display:content;
 		}
