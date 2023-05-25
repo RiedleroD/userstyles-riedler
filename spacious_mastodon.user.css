@@ -616,12 +616,14 @@ on/off switch instead of 0 width because stylus likes to replace 0 with the defa
 			"sb m    m "
 			"sb m    m "
 			"sb bb   bb";
-		.status__prepend{
+		.status__prepend,
+		.notification__message{
 			display:contents;
-			>.status__prepend-icon-wrapper{
+			>.status__prepend-icon-wrapper,
+			>.notification__favourite-icon-wrapper{
 				grid-area:ic;
 				margin:0;
-				width:auto;
+				width:100%;
 				margin-bottom:inherit;
 			}
 			>span{
