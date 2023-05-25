@@ -444,10 +444,12 @@ on/off switch instead of 0 width because stylus likes to replace 0 with the defa
 	}
 	.status__prepend-icon-wrapper,
 	.notification__favourite-icon-wrapper{
-		width:4.5rem;
+		& when(@compost=1){
+			width:4.5rem;
+			padding-right:0.5rem;
+		}
 		box-sizing:border-box;
 		display:flex;
-		padding-right:0.5rem;
 		justify-content:end;
 		align-items:center;
 		& .fa{
