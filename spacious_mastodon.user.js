@@ -1,13 +1,12 @@
 // ==UserScript==
-// @name         Spaceous Mastodon Helper
+// @name         Spaceous Mastodon/glitch-soc Helper
 // @namespace    github.com/RiedleroD/userstyles-riedler
 // @version      1.2.1
 // @description  companion script for spaceous mastodon userstyle
 // @author       Riedler
-// @match        https://mas.to/*
-// @match        https://fosstodon.org/*
-// @match        https://mastodon.social/*
-// @icon         https://mas.to/favicon.ico
+// @match        http://*/*
+// @match        https://*/*
+// @icon         https://riedler.wien/resource/rwicons/mstdn.svg
 // @grant        none
 // @run-at       document-idle
 // ==/UserScript==
@@ -15,10 +14,24 @@
 (function() {
     'use strict';
 
-    console.log("me alive");
+    let mode = null;
+    if(document.getElementById('mastodon') !== null){
+        mode = 'vanilla'
+        if(document.body.classList.contains('flavour-glitch')){
+            mode = 'glitch-soc'
+        }
+    }else{
+        return;
+    }
+
+    console.log(`spacious mastodon helper running in ${mode} mode`);
 
     function checkSideBar(post){
         let content = post.getElementsByClassName('status__content')[0];
+        if(content === undefined){
+            //TODO: check why glitch-soc does this sometimes, and vanilla doesn't
+            return;
+        }
         //get minimum height by getting 15em in px
         let divisor = 12*parseFloat(getComputedStyle(post).fontSize);
         let actionbar = post.getElementsByClassName('status__action-bar')[0];
