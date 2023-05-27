@@ -387,22 +387,6 @@ on/off switch instead of 0 width because stylus likes to replace 0 with the defa
 	.setting-text:is(:active,:focus){
 		border-bottom-color:@accent;
 	}
-	/* Logo replacements */
-	.admin-wrapper .sidebar{
-		.logo--icon{
-			visibility:hidden;
-		}
-		&>a:first-child{
-			.logoreplace(logo,80% 80%,center);
-		}
-	}
-	.navigation-panel__logo .column-link--logo{
-		.logoreplace(logo-symbol-wordmark,auto 65%,0.5em 50%);
-		height:1.75em;
-		svg{
-			display:none;
-		}
-	}
 	/* column spacing */
 	.columns-area when(@colspace_=1){
 		grid-gap:@colspace;
@@ -713,5 +697,25 @@ on/off switch instead of 0 width because stylus likes to replace 0 with the defa
 			}
 		}
 	}
-}
 }}
+
+/* stuff that isn't in #mastodon, which sucks */
+
+/* Logo replacements */
+.admin-wrapper .sidebar{
+	.logo--icon{
+		visibility:hidden;
+	}
+	&>a:first-child{
+		.logoreplace(logo,80% 80%,center);
+	}
+}
+.navigation-panel__logo .column-link--logo{
+	.logoreplace(logo-symbol-wordmark,auto 65%,0.5em 50%);
+	height:1.75em;
+	svg{
+		display:none;
+	}
+}
+
+}
