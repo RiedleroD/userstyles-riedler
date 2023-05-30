@@ -656,6 +656,28 @@ on/off switch instead of 0 width because stylus likes to replace 0 with the defa
 			grid-area:rb;
 			margin-top:0.5em;
 		}
+		&.collapsed{
+			grid-template-areas:
+				"sb tb t"
+				"sb c  c";
+			.display-name,
+			.notification__message>span{
+				grid-area:tb;
+				align-self:start;
+			}
+			.notification__favourite-icon-wrapper{
+				grid-area:sb;
+				align-self:start;
+			}
+			.status__prepend ~ .status__info > .status__info__icons,
+			.notification__message ~ .status__info > .status__info__icons{
+				position:static;
+				grid-area:t;
+			}
+			.status__prepend{
+				display:none;
+			}
+		}
 	}
 	.status when(@sibar=1){
 		.sm__force_sidebar,
