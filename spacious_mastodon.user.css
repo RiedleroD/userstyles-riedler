@@ -309,6 +309,10 @@ on/off switch instead of 0 width because stylus likes to replace 0 with the defa
 			background-image:radial-gradient(ellipse,rgba(@accent,.23) 0,rgba(@accent,0) 60%);
 		}
 	}
+	//focused column header button
+	.column-header__button:focus{
+		text-shadow:0 0 4px @accent;
+	}
 	//selected item in settings navigation sidebar
 	.admin-wrapper .sidebar ul .simple-navigation-active-leaf a{
 		background-color:@accent;
