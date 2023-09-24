@@ -293,6 +293,10 @@ on/off switch instead of 0 width because stylus likes to replace 0 with the defa
 		border-left-color:@accent;
 		border-inline-color:@accent;
 	}
+	//bar in notifications where you choose between all/mentions
+	.notification__filter-bar>.active::before{
+		background-color:@accent;
+	}
 	//active column header icon
 	.column-header.active .column-header__icon{
 		color:@accent;
