@@ -723,6 +723,9 @@ on/off switch instead of 0 width because stylus likes to replace 0 with the defa
 			}
 		}
 	}
+	.notification__filter-bar>.active::before{
+		background-color:#0000;
+	}
 	.notification__favourite-icon-wrapper{
 		width:fit-content;
 	}
