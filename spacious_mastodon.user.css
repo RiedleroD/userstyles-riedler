@@ -282,6 +282,13 @@ on/off switch instead of 0 width because stylus likes to replace 0 with the defa
 			border-color:@accent;
 		}
 	}
+	.pillbar-button:not([disabled]).active{
+		background-color:@accent;
+		&:hover,
+		&:focus{
+			background-color:@accent-h;
+		}
+	}
 	//report popup
 	.report-dialog-modal .status__content a{
 		color:@accent;
