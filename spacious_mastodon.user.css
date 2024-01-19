@@ -637,7 +637,8 @@ on/off switch instead of 0 width because stylus likes to replace 0 with the defa
 			}
 		}
 		&.collapsed{
-			.status__action-bar{
+			.status__action-bar,
+			.reactions-bar{
 				display:none;
 			}
 		}
