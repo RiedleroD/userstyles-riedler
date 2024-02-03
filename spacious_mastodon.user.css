@@ -196,7 +196,7 @@ on/off switch instead of 0 width because stylus likes to replace 0 with the defa
 		}
 	}
 	//icon that represents the reason the message is in your notifications
-	.notification__message .fa{
+	.notification__message .icon{
 		color:@accent;
 	}
 	//(in mobile view) the selected column tab
