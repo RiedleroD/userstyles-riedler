@@ -17,6 +17,7 @@
 on/off switch instead of 0 width because stylus likes to replace 0 with the default for some reason >:(
 @var	checkbox	compost		"Compact Post?"				1
 @var	checkbox	sibar		"Move post buttons to left when appropriate?" 1
+@var	checkbox	fixtheme	"Improve the theme (opinionated)" 1
 ==/UserStyle== */
 
 //URL root for images from official github repo
@@ -73,6 +74,17 @@ on/off switch instead of 0 width because stylus likes to replace 0 with the defa
 	.column{
 		--compat-flex:if((@expandcols=1),auto,auto 0 0);
 		flex:var(--compat-flex);
+		& when (@fixtheme = 1){
+			background-color:@default-bg1;
+			
+			> .scrollable{
+				border:none;
+			}
+			> * > .column-header{
+				border:none;
+				border-bottom:1px solid var(--background-border-color);
+			}
+		}
 	}
 	/* no border radius for columns >:( */
 	.column-header{
