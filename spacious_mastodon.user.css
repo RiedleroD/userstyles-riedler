@@ -118,9 +118,7 @@ on/off switch instead of 0 width because stylus likes to replace 0 with the defa
 		grid-template-columns:auto auto;
 		border-radius:0;
 		background-color:#0000;
-		border:solid 1px @default-brd3;
-		border-left:none;
-		border-right:none;
+		border:none;
 		margin-left:-20px;
 		margin-right:-20px;
 		dl{display:contents}
@@ -136,11 +134,15 @@ on/off switch instead of 0 width because stylus likes to replace 0 with the defa
 		dl:not(.verified){
 			dt,dd{
 				border-color:@default-brd3;
+				border-bottom:none;
 			}
 			dt{
 				background-color:@default-bg1;
 				color:@default-tx1;
 				text-transform:none;
+			}
+			dd{
+				border-left:solid 1px @default-brd3;
 			}
 		}
 		dl.verified{
@@ -157,11 +159,10 @@ on/off switch instead of 0 width because stylus likes to replace 0 with the defa
 				border-top:none;
 			}
 		}
-		dl:first-child{
-			dt,dd{
-				border-top:none;
-			}
-		}
+	}
+	.account__header__bar when(@fieldresize=1){
+		padding-bottom: 0;
+		border-bottom: 0;
 	}
 	/* accent colors! */
 	//buttons
