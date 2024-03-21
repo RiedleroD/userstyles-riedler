@@ -74,16 +74,38 @@ on/off switch instead of 0 width because stylus likes to replace 0 with the defa
 	.column{
 		--compat-flex:if((@expandcols=1),auto,auto 0 0);
 		flex:var(--compat-flex);
-		& when (@fixtheme = 1){
-			background-color:@default-bg1;
-			
-			> .scrollable{
+	}
+	/* reverts column styling to something flatter */
+	& when (@fixtheme = 1){
+		.column {
+			background-color: @default-bg1;
+			> .scrollable { //columns themselves
 				border:none;
 			}
-			> * > .column-header{
+			> * > .column-header {
+				background-color: @default-bg2;
+				border:none;
+			}
+			> .notification__filter-bar {
+				background-color: @default-bg0;
 				border:none;
 				border-bottom:1px solid var(--background-border-color);
 			}
+		}
+
+		.drawer__pager,
+		.drawer__header {
+			border:none;
+		}
+		.column-link {
+			background-color: @default-bg2;
+			&:hover{
+				background-color: @default-bg3;
+			}
+		}
+		.search__input {
+			border:none;
+			background-color: @default-bg1;
 		}
 	}
 	/* no border radius for columns >:( */
