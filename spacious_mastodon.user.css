@@ -112,6 +112,23 @@ on/off switch instead of 0 width because stylus likes to replace 0 with the defa
 	.column-header{
 		border-radius:0;
 	}
+	/* various other fixes regarding new theme */
+	& when (@fixtheme = 1){
+		.account__header__tabs__name>h1>small{
+			gap:0;
+			.account__domain-pill{
+				display:inline;
+				background:none;
+				color:inherit;
+				padding-left:0;
+				font-size:inherit;
+
+				&::before{
+					content:'@';
+				}
+			}
+		}
+	}
 	/* converts the bio fields to a grid layout with automatically resizing columns */
 	.account__header__bio .account__header__fields when(@fieldresize=1){
 		display:grid;
