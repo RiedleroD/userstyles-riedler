@@ -28,7 +28,7 @@ on/off switch instead of 0 width because stylus likes to replace 0 with the defa
 @accent-htxt:lighten(@accent,20%);
 
 //default colors by mastodon
-@default-bg0:#191b22;
+@default-bg0:#17191f;
 @default-bg1:#1f232b;
 @default-bg2:#282c37;
 @default-bg3:#313543;
@@ -93,6 +93,9 @@ on/off switch instead of 0 width because stylus likes to replace 0 with the defa
 			}
 		}
 
+		.drawer__header{
+			background-color: @default-bg2;
+		}
 		.drawer__pager,
 		.drawer__header {
 			border:none;
@@ -109,8 +112,19 @@ on/off switch instead of 0 width because stylus likes to replace 0 with the defa
 		}
 	}
 	/* no border radius for columns >:( */
-	.column-header{
+	.column-header,
+	.drawer__header{
 		border-radius:0;
+	}
+	/* align column header with drawer header */
+	.column-header__wrapper{
+		border-bottom:solid @colspace @default-bg0;
+		
+		.column-header__title,
+		.column-header__back-button{
+			padding-top:0;
+			padding-bottom:0;
+		}
 	}
 	/* various other fixes regarding new theme */
 	& when (@fixtheme = 1){
