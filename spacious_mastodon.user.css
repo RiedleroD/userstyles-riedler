@@ -89,7 +89,7 @@ on/off switch instead of 0 width because stylus likes to replace 0 with the defa
 			> .notification__filter-bar {
 				background-color: @default-bg0;
 				border:none;
-				border-bottom:1px solid var(--background-border-color);
+				border-bottom:1px solid @default-bg0;
 			}
 		}
 
@@ -370,6 +370,7 @@ on/off switch instead of 0 width because stylus likes to replace 0 with the defa
 	//bar in notifications where you choose between all/mentions
 	.notification__filter-bar>.active::before{
 		background-color:@accent;
+		border-radius:0;
 	}
 	//active column header icon
 	.column-header.active .column-header__icon{
@@ -823,9 +824,6 @@ on/off switch instead of 0 width because stylus likes to replace 0 with the defa
 				}
 			}
 		}
-	}
-	.notification__filter-bar>.active::before{
-		background-color:#0000;
 	}
 	.notification__favourite-icon-wrapper{
 		width:fit-content;
