@@ -1,7 +1,7 @@
 ## Userstyles Riedler
 
 These are all pretty much unmaintained due to me just not having enough time anymore. Sorry!
-- [Darklearning](https://raw.githubusercontent.com/RiedleroD/userstyles-riedler/master/Darklearning.user.css) (my school's moodle server)
+- [Darklearning](https://raw.githubusercontent.com/RiedleroD/userstyles-riedler/master/Darklearning.user.css) (my former school's moodle server)
 - [JavaDarks](https://raw.githubusercontent.com/RiedleroD/userstyles-riedler/master/javadarks.user.css) (Javadocs, but just the reference sheets)
 - [reDARKTCHA](https://raw.githubusercontent.com/RiedleroD/userstyles-riedler/master/redarktcha.user.css) (dark reCAPTCHA)
 - [Eutropia](https://raw.githubusercontent.com/RiedleroD/userstyles-riedler/master/eutropia.user.css) (dolphin-emu.org)
