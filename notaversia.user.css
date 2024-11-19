@@ -156,6 +156,32 @@
 						}
 					}
 				}
+				
+				[aria-label="Display name"],
+				[aria-label="Username"],
+				[aria-label="Compose your message"] {
+					background-color: @inputbg;
+					box-shadow: @imprint-boxshad;
+				}
+			}
+			[id$="content-emojis"] {
+				[placeholder="Search"] {
+					background-color: @inputbg;
+					box-shadow: @imprint-boxshad;
+				}
+			}
+			[id$="content-appearance"] {
+				[aria-label="Start typing here..."] {
+					background-color: @inputbg;
+					box-shadow: @imprint-boxshad;
+					border: none;
+				}
+				
+				input:not([type]) {
+					/* background url */
+					background-color: @inputbg;
+					box-shadow: @imprint-boxshad;
+				}
 			}
 		}
 	}
