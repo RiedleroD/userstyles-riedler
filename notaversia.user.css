@@ -107,6 +107,37 @@
 				}
 			}
 		}
+		
+		[id^="tabs"] {
+			[id$="content-account"] {
+				form + div div.grid.xl\:grid-cols-2 {
+					/* linked account box, hopefully */
+					grid-template-columns: 1fr;
+					
+					button {
+						cursor: pointer;
+					}
+					
+					button:not(.\[--btn-bg\:theme\(colors\.primary\.600\)\]) {
+						border: none;
+						box-shadow: @sheen-boxshad;
+						background-color: @btnbg;
+						
+						&::after {
+							box-shadow: none;
+						}
+					}
+					>.bg-dark-700 {
+						background-color: #0000;
+						box-shadow: @sheen-boxshad;
+						
+						.bg-dark-700 {
+							background-color: #0000;
+						}
+					}
+				}
+			}
+		}
 	}
 	
 	[data-scope="dialog"] {
