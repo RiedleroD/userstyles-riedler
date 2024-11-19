@@ -20,6 +20,8 @@
 	0px  0px 0px 1px rgba(0, 0, 0, .3) inset;
 
 @inputbg: rgba(35, 38, 42, 0.5);
+//@btnbg: #27272a;
+@btnbg: var(--theme-dark-700);
 
 @-moz-document domain("beta.versia.social") {
 	:root { // some crude color replacements centered around dark-700
@@ -31,6 +33,34 @@
 	
 	aside[aria-label="Navigation"] {
 		/* navbar on the left side */
+		
+		[href="/home"], 
+		[href="/public"],
+		[href="/local"],
+		[href="/notifications"],
+		[href="/settings"] {
+			> button {
+				background-color: @btnbg;
+				box-shadow: @sheen-boxshad;
+				cursor: pointer;
+			}
+			
+			&.router-link-active > button {
+				box-shadow: @imprint-boxshad;
+			}
+		}
+		
+		[href="/settings"] {
+			/* settings button */
+			& > button {
+				border-color: #0000;
+				background-clip: padding-box;
+				
+				&::after {
+					display: none;
+				}
+			}
+		}
 	}
 	
 	main {
