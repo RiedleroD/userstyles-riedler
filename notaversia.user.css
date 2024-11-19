@@ -31,6 +31,22 @@
 		--theme-dark-900: rgb(15, 17, 18);
 	}
 	
+	button[type="button"],
+	button[type="submit"] {
+		cursor: pointer;
+	}
+	.\[--btn-bg\:theme\(colors\.zinc\.800\)\] {
+		--btn-bg: @btnbg;
+	}
+	.after\:shadow-\[shadow\:inset_0_1px_theme\(colors\.white\/15\%\)\] {
+		&.border {
+			border-color: #0000;
+		}
+		&::after{
+			box-shadow: @sheen-boxshad;
+		}
+	}
+	
 	aside[aria-label="Navigation"] {
 		/* navbar on the left side */
 		
@@ -42,11 +58,14 @@
 			> button {
 				background-color: @btnbg;
 				box-shadow: @sheen-boxshad;
-				cursor: pointer;
 			}
 			
-			&.router-link-active > button {
-				box-shadow: @imprint-boxshad;
+			&.router-link-active {
+				cursor: default;
+				> button {
+					box-shadow: @imprint-boxshad;
+					pointer-events: none;
+				}
 			}
 		}
 		
@@ -121,13 +140,14 @@
 					button:not(.\[--btn-bg\:theme\(colors\.primary\.600\)\]) {
 						border: none;
 						box-shadow: @sheen-boxshad;
-						background-color: @btnbg;
 						
 						&::after {
 							box-shadow: none;
 						}
 					}
 					>.bg-dark-700 {
+						/* subcontainers */
+						
 						background-color: #0000;
 						box-shadow: @sheen-boxshad;
 						
