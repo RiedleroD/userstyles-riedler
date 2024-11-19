@@ -1,0 +1,101 @@
+/* ==UserStyle==
+@name           Versia Arc-Dark
+@namespace      github.com/openstyles/stylus
+@version        0.0.0
+@description    Makes Versia look less modern
+@author         Riedler
+@preprocessor   less
+==/UserStyle== */
+
+@sheen-boxshad:
+	 0px -1px 0px  0px rgba(0, 0, 0, 0.3) inset,
+	 0px  1px 0px  0px rgba(255, 255, 255, 0.15) inset,
+	 2px  0px 0px -1px rgba(102, 102, 102, 0.1) inset,
+	-2px  0px 0px -1px rgba(136, 136, 136, 0.2) inset;
+@imprint-boxshad:
+	0px  1px 0px 0px rgba(0, 0, 0, 0.2) inset,
+	0px -1px 0px 0px rgba(255, 255, 255, 0.2) inset,
+	0px  0px 0px 1px rgba(0, 0, 0, .3) inset;
+
+@inputbg: rgba(35, 38, 42, 0.5);
+
+@-moz-document domain("beta.versia.social") {
+	:root { // some crude color replacements centered around dark-700
+		--theme-dark-600: rgb(57, 63, 68);
+		--theme-dark-700: rgb(51, 56, 61);
+		--theme-dark-800: rgb(42, 46, 50);
+		--theme-dark-900: rgb(15, 17, 18);
+	}
+	
+	aside[aria-label="Navigation"] {
+		/* navbar on the left side */
+	}
+	
+	main {
+		& + aside.absolute {
+			/* notif bar on the right side */
+			position: relative;
+			right: 0;
+			
+			& button[aria-label="Toggle sidebar"] {
+				display: none;
+			}
+		}
+		
+		div.mx-auto.max-w-2xl.w-full {
+			/* main scroller */
+			max-width: calc(100% - 2.5rem);
+			
+			&>:not(.timeline) {
+				border-radius: 0;
+				box-shadow: @sheen-boxshad;
+			}
+			
+			>.timeline {
+				border-radius: 0;
+				
+				>.timeline-items {
+					>article {
+						border-radius: 0;
+						box-shadow: @sheen-boxshad;
+						
+						>article {
+							background-color: none;
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	[data-scope="dialog"] {
+		[data-part="content"] {
+			.ring-1.rounded-lg {
+				/* main body */
+				box-shadow: @sheen-boxshad;
+				border-radius: 0;
+			}
+			
+			[aria-label="Compose your message"] {
+				/* textarea */
+				background-color: @inputbg;
+				margin-bottom: 0.5rem;
+				border-radius: 0.5rem;
+				padding: 0.25rem 0.5rem;
+				box-shadow: @imprint-boxshad !important;
+				
+				& + div.absolute {
+					/* char counter */
+					padding-bottom: 1rem;
+				}
+			}
+			
+			[title="Toggle Markdown"],
+			[title="Add content warning"] {
+				&[toggled="true"] {
+					box-shadow: @imprint-boxshad;
+				}
+			}
+		}
+	}
+}
