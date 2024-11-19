@@ -193,11 +193,14 @@
 				box-shadow: @sheen-boxshad;
 				border-radius: 0;
 			}
+			>div>div>.flex.flex-row.gap-1 {
+				/* container for button bar */
+				margin-top: 1rem;
+			}
 			
 			[aria-label="Compose your message"] {
 				/* textarea */
 				background-color: @inputbg;
-				margin-bottom: 0.5rem;
 				border-radius: 0.5rem;
 				padding: 0.25rem 0.5rem;
 				box-shadow: @imprint-boxshad !important;
@@ -213,6 +216,13 @@
 				&[toggled="true"] {
 					box-shadow: @imprint-boxshad;
 				}
+			}
+			
+			[aria-label="Content warning"] {
+				background-color: @inputbg;
+				box-shadow: @imprint-boxshad !important;
+				margin-top: 0;
+				border-radius: 0.5rem;
 			}
 		}
 	}
