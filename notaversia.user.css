@@ -1,10 +1,12 @@
 /* ==UserStyle==
-@name           Versia Arc-Dark
-@namespace      github.com/openstyles/stylus
-@version        0.0.0
-@description    Makes Versia look less modern
-@author         Riedler
-@preprocessor   less
+@name			Notaversia
+@namespace		https://github.com/RiedleroD/userstyles-riedler
+@version		0.0.0
+@description	Makes Versia look less modern
+@author			Riedler
+@homepageURL	https://github.com/RiedleroD/userstyles-riedler
+@updateURL		https://github.com/RiedleroD/userstyles-riedler/raw/master/Darklearning.user.css
+@preprocessor	less
 ==/UserStyle== */
 
 @sheen-boxshad:
