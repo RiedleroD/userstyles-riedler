@@ -187,6 +187,14 @@ rbarshape(name,mod){
 	shape=barshape(name,mod)
 	return (0) (shape[1]) (shape[2]) (0)
 }
+tbarshape(name,mod){
+	shape=barshape(name,mod)
+	return (shape[0]) (shape[1]) (0) (0)
+}
+bbarshape(name,mod){
+	shape=barshape(name,mod)
+	return (0) (0) (shape[2]) (shape[3])
+}
 
 urlenc(x){
 	x=''+x//in case it's not a string, it is now.
@@ -312,28 +320,49 @@ urlenc(x){
 		}
 	}
 	/*secondary navbar*/
+	.nav-tabs {
+		border: none;
+		background-color: bg3;
+		border-radius:barshape(NBS,NBSm);
+		padding:0.25em;
+		.nav-link {
+				border-radius: barshape(NBCS,NBCSm);
+				margin-right: 0.15em;
+				border: none;
+				height:100%;
+				padding:.33rem .75rem;
+		}
+		.nav-link:hover {
+			background-color: bg4;
+		}
+		.nav-link.active,
+		.nav-item.show .nav-link {
+			background-color: btn;
+			color: dtxt;
+			outline: none;
+		}
+	}
 	.secondary-navigation .navigation{
 		border-top:none;
 		border-bottom:none;
 		height:auto;
 		background-color:bg3;
 		border-radius:barshape(NBS,NBSm);
-		padding:0.25em;
 		& .nav-tabs {
 			& .nav-link {
 				border-radius: barshape(NBCS,NBCSm);
 			}
 			& .nav-link:active,
+			& .nav-link.active,
  			& .nav-item.show .nav-link {
-				background-color: bg4;
-				color: htxt;
+				background-color: btn;
+				color: dtxt;
 				border-color: btn;
 			}
 		}
 		&.moremenu .nav-link,
 		&.dropdownmoremenu .nav-link {
-			height:100%;
-			padding:.33rem .75rem
+			
 			&.active:not(.active_tree_node) {
 				cursor:default;
 				pointer-events:none;
