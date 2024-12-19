@@ -292,21 +292,24 @@ urlenc(x){
 			color:dtxt;
 		}
 	}
-	.moremenu .nav-link{
-		&:hover,&:focus{
-			background-color:bg3;
-		}
-		&.active{
-			background-color:btn;
-			color:dtxt;
-			border-bottom:none;
+	.moremenu,
+	.dropdownmoremenu {
+		& .nav-link{
 			&:hover,&:focus{
-				background-color:hlnk;
+				background-color:bg3;
+			}
+			&.active{
+				background-color:btn;
+				color:dtxt;
+				border-bottom:none;
+				&:hover,&:focus{
+					background-color:hlnk;
+				}
 			}
 		}
-	}
-	.moremenu .nav-tabs{
-		background-color:#0000;
+		& .nav-tabs{
+			background-color:#0000;
+		}
 	}
 	/*secondary navbar*/
 	.secondary-navigation .navigation{
@@ -315,12 +318,20 @@ urlenc(x){
 		height:auto;
 		background-color:bg3;
 		border-radius:barshape(NBS,NBSm);
-		overflow:clip;
 		padding:0.25em;
-		& .nav-tabs .nav-link{
-			border-radius:barshape(NBCS,NBCSm);
+		& .nav-tabs {
+			& .nav-link {
+				border-radius: barshape(NBCS,NBCSm);
+			}
+			& .nav-link:active,
+ 			& .nav-item.show .nav-link {
+				background-color: bg4;
+				color: htxt;
+				border-color: btn;
+			}
 		}
-		&.moremenu .nav-link{
+		&.moremenu .nav-link,
+		&.dropdownmoremenu .nav-link {
 			height:100%;
 			padding:.33rem .75rem
 			&.active{
