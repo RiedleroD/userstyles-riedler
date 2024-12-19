@@ -341,6 +341,10 @@ urlenc(x){
 			color: dtxt;
 			outline: none;
 		}
+		&.active:not(.active_tree_node) {
+			cursor:default;
+			pointer-events:none;
+		}
 	}
 	.secondary-navigation .navigation{
 		border-top:none;
@@ -358,14 +362,6 @@ urlenc(x){
 				background-color: btn;
 				color: dtxt;
 				border-color: btn;
-			}
-		}
-		&.moremenu .nav-link,
-		&.dropdownmoremenu .nav-link {
-			
-			&.active:not(.active_tree_node) {
-				cursor:default;
-				pointer-events:none;
 			}
 		}
 	}
