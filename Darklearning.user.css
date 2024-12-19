@@ -1414,6 +1414,10 @@ urlenc(x){
 			background-color:rgba(fals,0.5);
 			color:hfals;
 		}
+		&-warning{
+			border:solid 1px hidk;
+			background-color:rgba(idk,0.5);
+		}
 		&-info{
 			border:solid 1px pb;
 			background-color:rgba(pb,0.5);
