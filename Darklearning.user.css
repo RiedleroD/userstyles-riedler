@@ -334,7 +334,7 @@ urlenc(x){
 		&.dropdownmoremenu .nav-link {
 			height:100%;
 			padding:.33rem .75rem
-			&.active{
+			&.active:not(.active_tree_node) {
 				cursor:default;
 				pointer-events:none;
 			}
