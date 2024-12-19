@@ -1718,9 +1718,12 @@ urlenc(x){
 						color:dtxt;
 					}
 				}
-				& .icon{
+				& .icon {
 					filter:none;
 					color:txt;
+				}
+				&.atto_h5p_button>img {
+					filter: invert(.65);
 				}
 				& + button{
 					border-left-color:brd;
