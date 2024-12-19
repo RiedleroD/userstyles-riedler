@@ -1928,7 +1928,7 @@ urlenc(x){
 	.filepicker,
 	.file-picker,
 	.filemanager{
-		& .fp-viewbar{
+		& .fp-viewbar{ // TODO: was this just the sidebar?
 			background-color:bg5;
 			border-radius:irad;
 			overflow:hidden;
@@ -1957,6 +1957,7 @@ urlenc(x){
 				color:hlnk;
 			}
 		}
+		
 		& .fp-info .fp-thumbnail{
 			border-radius:irad;
 			box-shadow:0 0 0.5em bg0;
@@ -1992,6 +1993,12 @@ urlenc(x){
 				overflow:hidden;
 				height:auto;
 			}
+		}
+	}
+	.fp-repo.nav-item.active>.nav-link {
+		background-color: btn;
+		& > span {
+			color: dtxt;
 		}
 	}
 	.dndupload-target{
