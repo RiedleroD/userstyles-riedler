@@ -202,7 +202,7 @@ urlenc(x){
 	x=replace('=','%3F',x)
 	return x
 }
-@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at(?!\\/archiv).*"){
+@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at(?!\\/archiv).*"), regexp("https?:\\/\\/moodle\\.necode\\.it(?!\\/archiv).*"){
 	/*text selections*/
 	::-moz-selection{/*for firefox and derivatives*/
 		background:slc;
@@ -2446,7 +2446,7 @@ urlenc(x){
 		}
 	}
 }
-@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at/my/.*") {
+@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at/my/.*"), regexp("https?:\\/\\/moodle\\.necode\\.it/my/.*") {
 	.dashboard-card{
 		border-width:0;
 		background-color:bg3;
@@ -2486,7 +2486,7 @@ urlenc(x){
 		}
 	}
 }
-@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/?(\\?.*)?$"), regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/mod\\/forum\\/discuss\\.php.*") {
+@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/?(\\?.*)?$"), regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/mod\\/forum\\/discuss\\.php.*"), regexp("https?:\\/\\/moodle\\.necode\\.it\\/?(\\?.*)?$"), regexp("https?:\\/\\/moodle\\.necode\\.it\\/mod\\/forum\\/discuss\\.php.*") {
 	.sitelink{
 		filter:invert(1) hue-rotate(180deg);}
 	#login_username,
@@ -2497,7 +2497,7 @@ urlenc(x){
 		border-color:brd !important;
 		border-radius:crad;}
 }
-@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/login\\/index\\.php.*") {
+@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/login\\/index\\.php.*"), regexp("https?:\\/\\/moode\\.necode\\.it\\/login\\/index\\.php.*") {
 	.mt-3{
 		color:txt;}
 	img.img-fluid{
@@ -2508,7 +2508,7 @@ urlenc(x){
 		&-footer{border-top:none;}
 	}
 }
-@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/course\\/view\\.php.*") {
+@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/course\\/view\\.php.*"), regexp("https?:\\/\\/moodle\\.necode\\.it\\/course\\/view\\.php.*") {
 	#region-main{
 		background-color:bg2;}
 	.section{
@@ -2742,7 +2742,7 @@ urlenc(x){
 		border-radius:crad;
 	}
 }
-@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/user\\/files\\.php.*") {
+@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/user\\/files\\.php.*"), regexp("https?:\\/\\/moodle\\.necode\\.it\\/user\\/files\\.php.*") {
 	.filemanager-container,
 	.fp-navbar{
 		background-color:bg3;
@@ -2757,14 +2757,14 @@ urlenc(x){
 		}
 	}
 }
-@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/grade\\/report\\/overview\\/index\\.php.*") {
+@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/grade\\/report\\/overview\\/index\\.php.*"), regexp("https?:\\/\\/moodle\\.necode\\.it\\/grade\\/report\\/overview\\/index\\.php.*") {
 	thead>tr>th{
 		border-bottom:none !important;}
 	table td,
 	table th{
 		border-color:brd !important;}
 }
-@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/message\\/output\\/popup\\/notifications\\.php.*") {
+@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/message\\/output\\/popup\\/notifications\\.php.*"), regexp("https?:\\/\\/moodle\\.necode\\.it\\/message\\/output\\/popup\\/notifications\\.php.*") {
 	.content-item-container{
 		background-color:bg2;
 		color:txt;
@@ -2794,11 +2794,11 @@ urlenc(x){
 		}
 	}
 }
-@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/message\\/index\\.php.*") {
+@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/message\\/index\\.php.*"), regexp("https?:\\/\\/moodle\\.necode\\.it\\/message\\/index\\.php.*") {
 	#region-main .border-right.h-100{
 		border-color:bg3 !important;}
 }
-@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/mod\\/organizer\\/view\\.php.*") {
+@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/mod\\/organizer\\/view\\.php.*"), regexp("https?:\\/\\/moodle\\.necode\\.it\\/mod\\/organizer\\/view\\.php.*") {
 	#region-main .profile_tree>.node_category{
 		background-color:bg3;
 		border-radius:crad;}
@@ -2825,7 +2825,7 @@ urlenc(x){
 		}
 	}
 }
-@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/mod\\/assign\\/view\\.php.*") {
+@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/mod\\/assign\\/view\\.php.*"), regexp("https?:\\/\\/moodle\\.necode\\.it\\/mod\\/assign\\/view\\.php.*") {
 	/*Abgabestatus*/
 	.path-mod-assign .submissionsummarytable{
 		.c0{
@@ -3051,15 +3051,15 @@ urlenc(x){
 		}
 	}
 }
-@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/user\\/preferences\\.php.*") {
+@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/user\\/preferences\\.php.*"), regexp("https?:\\/\\/moodle\\.necode\\.it\\/user\\/preferences\\.php.*") {
 	#region-main .card.mb-3{
 		background-color:bg3;}
 }
-@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/admin\\/tool\\/dataprivacy\\/mydatarequests\\.php.*") {
+@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/admin\\/tool\\/dataprivacy\\/mydatarequests\\.php.*"), regexp("https?:\\/\\/moodle\\.necode\\.it\\/admin\\/tool\\/dataprivacy\\/mydatarequests\\.php.*") {
 	div[data-region="datarequests"]>.mt-1.mb-1>.btn.btn-primary{
 		color:txt !important;}
 }
-@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/mod\\/(student)?quiz.*") {
+@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/mod\\/(student)?quiz.*"), regexp("https?:\\/\\/moodle\\.necode\\.it\\/mod\\/(student)?quiz.*") {
 	.que.multichoice .answer{
 		& div.r0,
 		& div.r1{
@@ -3440,7 +3440,7 @@ urlenc(x){
 		}
 	}
 }
-@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/user\\/index\\.php.*") {
+@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/user\\/index\\.php.*"), regexp("https?:\\/\\/moodle\\.necode\\.it\\/user\\/index\\.php.*") {
 	.filter-group{
 		border:none !important;
 		border-radius:irad;
@@ -3451,13 +3451,13 @@ urlenc(x){
 		}
 	}
 }
-@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/mod\\/lesson\\/view\\.php.*") {
+@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/mod\\/lesson\\/view\\.php.*"), regexp("https?:\\/\\/moodle\\.necode\\.it\\/mod\\/lesson\\/view\\.php.*") {
 	.no-overflow img[role="presentation"]{
 		width:100%;
 		margin:0;
 	}
 }
-@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/mod\\/studentquiz\\/view\\.php.*") {
+@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/mod\\/studentquiz\\/view\\.php.*"), regexp("https?:\\/\\/moodle\\.necode\\.it\\/mod\\/studentquiz\\/view\\.php.*") {
 	#categoryquestions{
 		//table head
 		& thead,
@@ -3578,7 +3578,7 @@ urlenc(x){
 		}
 	}
 }
-@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/mod\\/studentquiz\\/(attempt|commenthistory)\\.php.*"){
+@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/mod\\/studentquiz\\/(attempt|commenthistory)\\.php.*"), regexp("https?:\\/\\/moodle\\.necode\\.it\\/mod\\/studentquiz\\/(attempt|commenthistory)\\.php.*"){
 	svg[width="100%"] rect{
 		&:first-of-type{
 			fill:bg3 !important;
@@ -3688,7 +3688,7 @@ urlenc(x){
 		filter:contrast(0.1) saturate(10) brightness(0.8) hue-rotate(-30deg);
 	}
 }
-@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/login\\/index\\.php.*"){
+@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/login\\/index\\.php.*"), regexp("https?:\\/\\/moodle\\.necode\\.it\\/login\\/index\\.php.*"){
 	.pagelayout-login #page{
 		background-image:none;
 	}
