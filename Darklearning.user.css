@@ -2280,6 +2280,12 @@ urlenc(x){
 				border-right-color:currentColor;
 			}
 		}
+		&[x-placement="left"],
+		&[x-placement="left-start"]{
+			& div[data-role="arrow"]::after{
+				border-left-color:currentColor;
+			}
+		}
 		& div[data-role="arrow"]::after{
 			color:bg3;
 		}
