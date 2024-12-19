@@ -984,8 +984,19 @@ urlenc(x){
 				color:hlnk;
 			}
 		}
-		&.btn-icon:is(:hover,/:focus){
-			background-color:bg3;
+		
+		&.btn-icon {
+			&.icons-collapse-expand {
+				background-color: bg2;
+				color: btn;
+				&:hover {
+					outline-color: btn;
+				}
+			}
+			&:hover,
+			&:focus{
+				background-color: bg3;
+			}
 		}
 		&-link{
 			color:lnk;
@@ -1274,6 +1285,9 @@ urlenc(x){
 		}
 	}
 	/* Activites */
+	.activity {
+		border-color: brd;
+	}
 	.activity-item:not(.activityinline){
 		border:none;
 	}
@@ -2518,6 +2532,14 @@ urlenc(x){
 		}
 		&.current::before{
 			border-color:btn;
+		}
+	}
+	.course-section {
+		.sectionname > a {
+			color: htxt;
+		}
+		.section-item {
+			border-color: brd;
 		}
 	}
 	.progressEventInfo .iconInInfo{ /*Fixes a specific icon being distorted because someone forgot that width was set to 12px*/
