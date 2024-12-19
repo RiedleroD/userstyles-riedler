@@ -526,6 +526,15 @@ urlenc(x){
 			background-color:bg4 !important;
 		}
 	}
+	.bg-danger {
+		background-color: rgba(fals,0.5) !important;
+	}
+	.bg-warning {
+		background-color: rgba(idk,0.5) !important;
+		&.text-dark {
+			color: txt !important;
+		}
+	}
 	/* other stuff */
 	.border{
 		border-color:brd !important;
@@ -657,6 +666,46 @@ urlenc(x){
 			}
 			& .icon{
 				color:txt;
+			}
+		}
+		
+		>.footer-content-debugging {
+			color: txt !important;
+			background-color: #0000 !important;
+			
+			.table-responsive {
+				width: fit-content;
+				
+				>table {
+					display: grid;
+					border: solid 1px brd;
+					gap: 1px;
+
+					tr,
+					thead,
+					tbody {
+						display: contents;
+					}
+					td, th {
+						border: none;
+						outline: solid 1px brd;
+					}
+					thead>tr:first-of-type,
+					>tr:first-of-type {
+						>td,
+						>th {
+							grid-row: 1;
+						}
+					}
+					.bg-danger {
+						outline-color: hfals;
+						z-index: 1;
+					}
+					.bg-warning {
+						outline-color: hidk;
+						z-index: 1;
+					}
+				}
 			}
 		}
 	}
@@ -1499,6 +1548,9 @@ urlenc(x){
 			border-color:brd;
 			color:txt;
 		}
+	}
+	.table-dark {
+		background-color: bg2;
 	}
 	.generaltable tbody tr{
 		&:hover{
