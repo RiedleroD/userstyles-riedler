@@ -1547,7 +1547,7 @@ urlenc(x){
 		&:checked:after{
 			content:"";
 			position:absolute;
-			font:normal normal normal 14px/1 FontAwesome;
+			font: var(--fa-font-solid);
 			font-size:85%;
 		}
 	}
