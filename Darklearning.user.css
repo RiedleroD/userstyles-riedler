@@ -1,14 +1,14 @@
 /* ==UserStyle==
 @name			Darklearning
 @namespace		https://github.com/RiedleroD/userstyles-riedler
-@version		1.3.2
+@version		1.4.0
 @description	Darker version of Elearning
 @author			Riedler
 @license		MPL-2.0
 @homepageURL	https://github.com/RiedleroD/userstyles-riedler
 @updateURL		https://github.com/RiedleroD/userstyles-riedler/raw/master/Darklearning.user.css
 @preprocessor	stylus
-@var	select	LSI		"Link Selection Indicator"{
+@var	select	FI		"Focus Indicator"{
 	"Clamps":"C",
 	"Braces":"B",
 	"Underbelly":"U",
@@ -187,6 +187,14 @@ rbarshape(name,mod){
 	shape=barshape(name,mod)
 	return (0) (shape[1]) (shape[2]) (0)
 }
+tbarshape(name,mod){
+	shape=barshape(name,mod)
+	return (shape[0]) (shape[1]) (0) (0)
+}
+bbarshape(name,mod){
+	shape=barshape(name,mod)
+	return (0) (0) (shape[2]) (shape[3])
+}
 
 urlenc(x){
 	x=''+x//in case it's not a string, it is now.
@@ -202,7 +210,7 @@ urlenc(x){
 	x=replace('=','%3F',x)
 	return x
 }
-@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at(?!\\/archiv).*"){
+@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at(?!\\/archiv).*"), regexp("https?:\\/\\/moodle\\.necode\\.it(?!\\/archiv).*"){
 	/*text selections*/
 	::-moz-selection{/*for firefox and derivatives*/
 		background:slc;
@@ -292,40 +300,68 @@ urlenc(x){
 			color:dtxt;
 		}
 	}
-	.moremenu .nav-link{
-		&:hover,&:focus{
-			background-color:bg3;
-		}
-		&.active{
-			background-color:btn;
-			color:dtxt;
-			border-bottom:none;
+	.moremenu,
+	.dropdownmoremenu {
+		& .nav-link{
 			&:hover,&:focus{
-				background-color:hlnk;
+				background-color:bg3;
+			}
+			&.active{
+				background-color:btn;
+				color:dtxt;
+				border-bottom:none;
+				&:hover,&:focus{
+					background-color:hlnk;
+				}
 			}
 		}
-	}
-	.moremenu .nav-tabs{
-		background-color:#0000;
+		& .nav-tabs{
+			background-color:#0000;
+		}
 	}
 	/*secondary navbar*/
+	.nav-tabs {
+		border: none;
+		background-color: bg3;
+		border-radius:barshape(NBS,NBSm);
+		padding:0.25em;
+		.nav-link {
+				border-radius: barshape(NBCS,NBCSm);
+				margin-right: 0.15em;
+				border: none;
+				height:100%;
+				padding:.33rem .75rem;
+		}
+		.nav-link:hover {
+			background-color: bg4;
+		}
+		.nav-link.active,
+		.nav-item.show .nav-link {
+			background-color: btn;
+			color: dtxt;
+			outline: none;
+		}
+		&.active:not(.active_tree_node) {
+			cursor:default;
+			pointer-events:none;
+		}
+	}
 	.secondary-navigation .navigation{
 		border-top:none;
 		border-bottom:none;
 		height:auto;
 		background-color:bg3;
 		border-radius:barshape(NBS,NBSm);
-		overflow:clip;
-		padding:0.25em;
-		& .nav-tabs .nav-link{
-			border-radius:barshape(NBCS,NBCSm);
-		}
-		&.moremenu .nav-link{
-			height:100%;
-			padding:.33rem .75rem
-			&.active{
-				cursor:default;
-				pointer-events:none;
+		& .nav-tabs {
+			& .nav-link {
+				border-radius: barshape(NBCS,NBCSm);
+			}
+			& .nav-link:active,
+			& .nav-link.active,
+ 			& .nav-item.show .nav-link {
+				background-color: btn;
+				color: dtxt;
+				border-color: btn;
 			}
 		}
 	}
@@ -515,6 +551,15 @@ urlenc(x){
 			background-color:bg4 !important;
 		}
 	}
+	.bg-danger {
+		background-color: rgba(fals,0.5) !important;
+	}
+	.bg-warning {
+		background-color: rgba(idk,0.5) !important;
+		&.text-dark {
+			color: txt !important;
+		}
+	}
 	/* other stuff */
 	.border{
 		border-color:brd !important;
@@ -648,6 +693,46 @@ urlenc(x){
 				color:txt;
 			}
 		}
+		
+		>.footer-content-debugging {
+			color: txt !important;
+			background-color: #0000 !important;
+			
+			.table-responsive {
+				width: fit-content;
+				
+				>table {
+					display: grid;
+					border: solid 1px brd;
+					gap: 1px;
+
+					tr,
+					thead,
+					tbody {
+						display: contents;
+					}
+					td, th {
+						border: none;
+						outline: solid 1px brd;
+					}
+					thead>tr:first-of-type,
+					>tr:first-of-type {
+						>td,
+						>th {
+							grid-row: 1;
+						}
+					}
+					.bg-danger {
+						outline-color: hfals;
+						z-index: 1;
+					}
+					.bg-warning {
+						outline-color: hidk;
+						z-index: 1;
+					}
+				}
+			}
+		}
 	}
 	/*sideblocks*/
 	.block{
@@ -761,31 +846,46 @@ urlenc(x){
 	a:not([class]),
 	.activityinstance > a{
 		&.focus,
-		&:focus{//janky box-shadow offsets; a better solution is desired
+		&:focus{
 			color:hlnk;
-			if LSI=="C"{
+			if FI=="C"{
 				background-color:#0000;
 				box-shadow:0 -0.2rem brd,0 0.2rem brd;
 				border-radius:0.3em;
-			}else if LSI="B"{
+			}else if FI=="B"{
 				background-color:#0000;
-				box-shadow:0 0.4rem 0 -0.1rem bg2,0 -0.4rem 0 -0.1rem bg2,0 0 0 0.1rem bg2,0 0 0 0.3rem brd;
-			}else if LSI=="U"{
+				box-shadow:none
+				outline:solid .2rem brd;
+				outline-offset:1px;
+				clip-path:polygon(
+					-.2rem -.2rem,.2rem -.2rem,.2rem 0,calc(100% - .2rem) 0,
+					calc(100% - .2rem) -.2rem,calc(100% + .2rem) -.2rem,calc(100% + .2rem) calc(100% + .2rem),
+					calc(100% - .2rem) calc(100% + .2rem),calc(100% - .2rem) 100%,
+					.2rem 100%,.2rem calc(100% + .2rem),-.2rem calc(100% + .2rem));
+			}else if FI=="U"{
 				background-color:#0000;
-				box-shadow:0 0 0 2px bg2,0 0.2rem 0 1px brd;
+				box-shadow:0 0.2rem 0 brd;
 				border-radius:0.3em;
-			}else if LSI=="F"{
+			}else if FI=="F"{
 				background-color:bg4;
 				box-shadow:0 -.2rem bg4,0 .2rem brd;
-			}else if LSI=="R"{
+			}else if FI=="R"{
 				background-color:#0000;
-				box-shadow:0 0 0 2px bg2,0 0 0 3px brd;
+				box-shadow:none;
+				outline:solid 1px brd;
+				outline-offset:2px;
 				border-radius:0.3em;
-			}else if LSI=="E"{
+			}else if FI=="E"{
 				background-color:#0000;
-				box-shadow:0 0 0 2px bg2,0 0 0 3px brd;
+				box-shadow:none;
+				outline:solid 1px brd;
+				outline-offset:2px;
 			}
 		}
+	}
+	.stretched-link::after{
+		//I have zero idea what this is supposed to do, but it messes with my style, so it gotta go
+		display:none;
 	}
 	/*Text with inline background coloring*/
 	span[style*="background-color: rgb(125\, 159\, 211);"]{
@@ -969,8 +1069,19 @@ urlenc(x){
 				color:hlnk;
 			}
 		}
-		&.btn-icon:is(:hover,/:focus){
-			background-color:bg3;
+		
+		&.btn-icon {
+			&.icons-collapse-expand {
+				background-color: bg2;
+				color: btn;
+				&:hover {
+					outline-color: btn;
+				}
+			}
+			&:hover,
+			&:focus{
+				background-color: bg3;
+			}
 		}
 		&-link{
 			color:lnk;
@@ -1062,6 +1173,60 @@ urlenc(x){
 	/*Dropdown menus*/
 	.dropdown-item:active,.dropdown-item.active{
 		background-color:bg4;}
+	/*Some Settings tables*/
+	.preferences-container .preference-table{//https://elearning.tgm.ac.at/message/notificationpreferences.php
+		display:grid;
+		width:90%;
+		margin:0 auto;
+		padding:1em 2em;
+		grid-template-columns:10fr 1fr 1fr;
+		//NOTE: I haven't found any preftables that aren't three columns wide, but they might exist
+		border:none;
+		background-color:bg3;
+		border-radius:crad;
+		overflow:clip;
+		& thead,
+		& tbody,
+		& tr{
+			display:contents;
+		}
+		& th,
+		& td,
+		& tr td:not(:first-child){
+			width:auto;
+			white-space:nowrap;
+			border:none;
+		}
+		& tr th{
+			border-left:none;
+		}
+		& thead th{
+			background-color:bg4;
+			margin:-1em -2em 0 -2em;
+			padding-top:1.5em;
+			border-bottom:solid 1px bg1;
+		}
+		& tbody th[colspan="3"]{
+			grid-column:1/4;
+			border-top:solid 1px brd;
+		}
+		& tbody tr:first-child th[colspan="3"]{
+			border-top:none;
+		}
+		& tr.loading::before{
+			display:none;
+		}
+		& .preference-state.loading{
+			&>.custom-control{
+				display:none;
+			}
+			&::before{
+				display:inline-block;
+				width:1em;
+				height:1em;
+			}
+		}
+	}
 	/*php-generated code block with colors without classes*/
 	div[style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"]{
 		background-color:bg0 !important;
@@ -1205,6 +1370,9 @@ urlenc(x){
 		}
 	}
 	/* Activites */
+	.activity {
+		border-color: brd;
+	}
 	.activity-item:not(.activityinline){
 		border:none;
 	}
@@ -1320,6 +1488,10 @@ urlenc(x){
 			background-color:rgba(fals,0.5);
 			color:hfals;
 		}
+		&-warning{
+			border:solid 1px hidk;
+			background-color:rgba(idk,0.5);
+		}
 		&-info{
 			border:solid 1px pb;
 			background-color:rgba(pb,0.5);
@@ -1402,6 +1574,9 @@ urlenc(x){
 			color:txt;
 		}
 	}
+	.table-dark {
+		background-color: bg2;
+	}
 	.generaltable tbody tr{
 		&:hover{
 			color:txt;
@@ -1409,6 +1584,9 @@ urlenc(x){
 		}
 		&:nth-of-type(2n+1){
 			background-color:#0000;
+		}
+		&:nth-of-type(2n){
+			background-color:rgba(#FFF, 0.02);
 		}
 	}
 	.yui3-datatable{
@@ -1438,18 +1616,9 @@ urlenc(x){
 			background-color:bg3 !important;
 		}
 	}
-	.preferences-container .preference-table{
-		border-color:brd;
-		color:txt;
-		& tr td:nth-child(even),
-		& tr th:nth-child(even){
-			border-color:brd;
-			background-color:bg2_5;
-		}
-	}
 	#id_comments{
-		color:txt;}
-	
+		color:txt;
+	}
 	input[type="checkbox"]{
 		appearance:none;
 		min-width:1em;
@@ -1462,7 +1631,7 @@ urlenc(x){
 		&:checked:after{
 			content:"";
 			position:absolute;
-			font:normal normal normal 14px/1 FontAwesome;
+			font: var(--fa-font-solid);
 			font-size:85%;
 		}
 	}
@@ -1561,7 +1730,7 @@ urlenc(x){
 	}
 	/*codeblocks*/
 	:not(pre)>code{
-		color:mtxt;
+		color:txt;
 		background-color:bg1;
 		outline:solid 2px bg0;
 		font-family:Monospace;
@@ -1569,7 +1738,7 @@ urlenc(x){
 		padding:0 0.1em;
 	}
 	pre{
-		color:mtxt;
+		color:txt;
 		background-color:bg1;
 		border:solid 2px bg0;
 	}
@@ -1633,9 +1802,12 @@ urlenc(x){
 						color:dtxt;
 					}
 				}
-				& .icon{
+				& .icon {
 					filter:none;
 					color:txt;
+				}
+				&.atto_h5p_button>img {
+					filter: invert(.65);
 				}
 				& + button{
 					border-left-color:brd;
@@ -1756,7 +1928,7 @@ urlenc(x){
 	.filepicker,
 	.file-picker,
 	.filemanager{
-		& .fp-viewbar{
+		& .fp-viewbar{ // TODO: was this just the sidebar?
 			background-color:bg5;
 			border-radius:irad;
 			overflow:hidden;
@@ -1785,6 +1957,7 @@ urlenc(x){
 				color:hlnk;
 			}
 		}
+		
 		& .fp-info .fp-thumbnail{
 			border-radius:irad;
 			box-shadow:0 0 0.5em bg0;
@@ -1820,6 +1993,12 @@ urlenc(x){
 				overflow:hidden;
 				height:auto;
 			}
+		}
+	}
+	.fp-repo.nav-item.active>.nav-link {
+		background-color: btn;
+		& > span {
+			color: dtxt;
 		}
 	}
 	.dndupload-target{
@@ -2075,6 +2254,7 @@ urlenc(x){
 	aside > section blockquote{
 		border-left-color:btn;
 		background-color:bg4;
+		color:txt;
 		border-radius:0 crad crad 0;
 	}
 	/*Replacement images + image manipulation*/
@@ -2189,6 +2369,12 @@ urlenc(x){
 		&[x-placement="right-start"]{
 			& div[data-role="arrow"]::after{
 				border-right-color:currentColor;
+			}
+		}
+		&[x-placement="left"],
+		&[x-placement="left-start"]{
+			& div[data-role="arrow"]::after{
+				border-left-color:currentColor;
 			}
 		}
 		& div[data-role="arrow"]::after{
@@ -2385,7 +2571,7 @@ urlenc(x){
 		}
 	}
 }
-@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at/my/.*") {
+@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at/my/.*"), regexp("https?:\\/\\/moodle\\.necode\\.it/my/.*") {
 	.dashboard-card{
 		border-width:0;
 		background-color:bg3;
@@ -2425,7 +2611,7 @@ urlenc(x){
 		}
 	}
 }
-@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/?(\\?.*)?$"), regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/mod\\/forum\\/discuss\\.php.*") {
+@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/?(\\?.*)?$"), regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/mod\\/forum\\/discuss\\.php.*"), regexp("https?:\\/\\/moodle\\.necode\\.it\\/?(\\?.*)?$"), regexp("https?:\\/\\/moodle\\.necode\\.it\\/mod\\/forum\\/discuss\\.php.*") {
 	.sitelink{
 		filter:invert(1) hue-rotate(180deg);}
 	#login_username,
@@ -2436,7 +2622,7 @@ urlenc(x){
 		border-color:brd !important;
 		border-radius:crad;}
 }
-@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/login\\/index\\.php.*") {
+@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/login\\/index\\.php.*"), regexp("https?:\\/\\/moode\\.necode\\.it\\/login\\/index\\.php.*") {
 	.mt-3{
 		color:txt;}
 	img.img-fluid{
@@ -2447,7 +2633,7 @@ urlenc(x){
 		&-footer{border-top:none;}
 	}
 }
-@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/course\\/view\\.php.*") {
+@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/course\\/view\\.php.*"), regexp("https?:\\/\\/moodle\\.necode\\.it\\/course\\/view\\.php.*") {
 	#region-main{
 		background-color:bg2;}
 	.section{
@@ -2457,6 +2643,14 @@ urlenc(x){
 		}
 		&.current::before{
 			border-color:btn;
+		}
+	}
+	.course-section {
+		.sectionname > a {
+			color: htxt;
+		}
+		.section-item {
+			border-color: brd;
 		}
 	}
 	.progressEventInfo .iconInInfo{ /*Fixes a specific icon being distorted because someone forgot that width was set to 12px*/
@@ -2681,7 +2875,7 @@ urlenc(x){
 		border-radius:crad;
 	}
 }
-@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/user\\/files\\.php.*") {
+@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/user\\/files\\.php.*"), regexp("https?:\\/\\/moodle\\.necode\\.it\\/user\\/files\\.php.*") {
 	.filemanager-container,
 	.fp-navbar{
 		background-color:bg3;
@@ -2696,14 +2890,14 @@ urlenc(x){
 		}
 	}
 }
-@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/grade\\/report\\/overview\\/index\\.php.*") {
+@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/grade\\/report\\/overview\\/index\\.php.*"), regexp("https?:\\/\\/moodle\\.necode\\.it\\/grade\\/report\\/overview\\/index\\.php.*") {
 	thead>tr>th{
 		border-bottom:none !important;}
 	table td,
 	table th{
 		border-color:brd !important;}
 }
-@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/message\\/output\\/popup\\/notifications\\.php.*") {
+@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/message\\/output\\/popup\\/notifications\\.php.*"), regexp("https?:\\/\\/moodle\\.necode\\.it\\/message\\/output\\/popup\\/notifications\\.php.*") {
 	.content-item-container{
 		background-color:bg2;
 		color:txt;
@@ -2733,11 +2927,11 @@ urlenc(x){
 		}
 	}
 }
-@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/message\\/index\\.php.*") {
+@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/message\\/index\\.php.*"), regexp("https?:\\/\\/moodle\\.necode\\.it\\/message\\/index\\.php.*") {
 	#region-main .border-right.h-100{
 		border-color:bg3 !important;}
 }
-@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/mod\\/organizer\\/view\\.php.*") {
+@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/mod\\/organizer\\/view\\.php.*"), regexp("https?:\\/\\/moodle\\.necode\\.it\\/mod\\/organizer\\/view\\.php.*") {
 	#region-main .profile_tree>.node_category{
 		background-color:bg3;
 		border-radius:crad;}
@@ -2764,22 +2958,13 @@ urlenc(x){
 		}
 	}
 }
-@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/mod\\/assign\\/view\\.php.*") {
+@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/mod\\/assign\\/view\\.php.*"), regexp("https?:\\/\\/moodle\\.necode\\.it\\/mod\\/assign\\/view\\.php.*") {
 	/*Abgabestatus*/
-	.submissionsummarytable table>tbody>tr{
-		&>td,
-		&>th{
-			background-color:bg3;
-			&:first-child{
-				background-color:bg4;
-				color:htxt;
-				border-left:none;
-			}
-			&:last-child{
-				border-right:none;
-			}
+	.path-mod-assign .submissionsummarytable{
+		.c0{
+			width:auto;
 		}
-		&>td.submission{
+		td.submission{
 			&graded,
 			&statussubmitted{
 				background-color:tru;
@@ -2794,22 +2979,40 @@ urlenc(x){
 				color:hidk;
 			}
 		}
-		&>td.latesubmission,
-		&>td.overdue{
+		td.latesubmission,
+		td.overdue{
 			background-color:fals;
 			color:hfals;
 			&>font{
 				color:hfals;
 			}
 		}
-		&>td.earlysubmission{
+		td.earlysubmission{
 			background-color:tru;
 			color:htru;
 		}
-		&:first-of-type{
+	}
+	.feedbacktable,
+	.submissionsummarytable{
+		display:grid;
+		grid-template-columns:1fr 5fr;
+		tr,tbody,thead,table,
+		.table-responsive{
+			display:contents;
+		}
+		th,td{
+			border:none;
+			margin-bottom:1px;
+		}
+		th{
+			background-color:bg4;
+		}
+		td{
+			background-color:bg3;
+		}
+		tr:first-of-type{
 			&>td,
 			&>th{
-				border-top:none;
 				&:first-child{
 					border-top-left-radius:crad;
 				}
@@ -2818,10 +3021,10 @@ urlenc(x){
 				}
 			}
 		}
-		&:last-of-type{
+		tr:last-of-type{
 			&>td,
 			&>th{
-				border-bottom:none;
+				margin-bottom:0;
 				&:first-child{
 					border-bottom-left-radius:crad;
 				}
@@ -2836,7 +3039,7 @@ urlenc(x){
 		border-color:brd;
 		color:txt;}
 	/*Grading criteria in full assignment view*/
-	//see -> https://elearning.tgm.ac.at/mod/assign/view.php?id=206006
+	//see -> https://elearning.tgm.ac.at/mod/assign/view.php?id=43871
 	.gradingform_rubric .criteria>tbody{
 		border-radius:crad;
 		overflow:hidden;
@@ -2849,17 +3052,17 @@ urlenc(x){
 		&.even{
 			border:none;
 			background:#0000;
-			&>td{
+			& td{
 				background:bg4;
-				&:first-of-type{
+				&.description{
 					background:bg5;
 				}
 			}
 		}
 		&.odd{
-			&>td{
+			& td{
 				background:bg3;
-				&:first-of-type{
+				&.description{
 					background:bg4;
 				}
 			}
@@ -2981,15 +3184,15 @@ urlenc(x){
 		}
 	}
 }
-@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/user\\/preferences\\.php.*") {
+@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/user\\/preferences\\.php.*"), regexp("https?:\\/\\/moodle\\.necode\\.it\\/user\\/preferences\\.php.*") {
 	#region-main .card.mb-3{
 		background-color:bg3;}
 }
-@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/admin\\/tool\\/dataprivacy\\/mydatarequests\\.php.*") {
+@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/admin\\/tool\\/dataprivacy\\/mydatarequests\\.php.*"), regexp("https?:\\/\\/moodle\\.necode\\.it\\/admin\\/tool\\/dataprivacy\\/mydatarequests\\.php.*") {
 	div[data-region="datarequests"]>.mt-1.mb-1>.btn.btn-primary{
 		color:txt !important;}
 }
-@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/mod\\/(student)?quiz.*") {
+@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/mod\\/(student)?quiz.*"), regexp("https?:\\/\\/moodle\\.necode\\.it\\/mod\\/(student)?quiz.*") {
 	.que.multichoice .answer{
 		& div.r0,
 		& div.r1{
@@ -3088,6 +3291,10 @@ urlenc(x){
 		& img.group1{
 			filter:EICC;
 		}
+		& .draghome{
+			width:fit-content !important;
+			padding:0 0.5em;
+		}
 	}
 	.que .answer{
 		&>.correct>.specificfeedback{
@@ -3101,6 +3308,10 @@ urlenc(x){
 		&>div>.specificfeedback{
 			border-radius:irad;
 			margin:-1px -1px -1px 0;
+			align-self:center;
+			& p{
+				margin:0;
+			}
 		}
 	}
 	.que.multianswer .feedbackspan{
@@ -3112,7 +3323,9 @@ urlenc(x){
 		box-shadow:0 0.2em 0.5em bg0,0 0.2em 0.2em idk;
 	}
 	.path-mod-quiz #mod_quiz_navblock{
-		& :is(a,span).qnbutton{
+		& a.qnbutton,
+		& span.qnbutton,
+		& .qnbutton{
 			color:txt !important;
 			background-color:bg4;
 			&:hover{
@@ -3149,10 +3362,12 @@ urlenc(x){
 					background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 6 6'%3E%3Cpath fill='"+urlenc(hfals)+"' d='M0 1l1-1 2 2 2-2 1 1-2 2 2 2-1 1-2-2-2 2-1-1 2-2z'/%3E%3C/svg%3E");
 				}
 			}
-			&.notyetanswered>.trafficlight{	
+			&.notyetanswered>.trafficlight{
 				background-color:bg4;
 			}
-			&.answersaved>.trafficlight{	
+			&.answersaved>.trafficlight,
+			&.complete>.trafficlight,
+			&.requiresgrading>.trafficlight{
 				background-color:brd;
 			}
 			&.flagged>.thispageholder{
@@ -3171,7 +3386,9 @@ urlenc(x){
 			}
 		}
 		& .allquestionsononepage{
-			& :is(span,a).qnbutton.thispage{
+			& a.qnbutton.thispage,
+			& span.qnbutton.thispage,
+			& .qnbutton.thispage{
 				&>.thispageholder{
 					outline:none;
 					border:none;
@@ -3185,27 +3402,37 @@ urlenc(x){
 			}
 		}
 	}
-	.quizreviewsummary{
+	table.quizreviewsummary{
+		display:grid;
+		grid-template-columns:auto auto;
+		width:fit-content;
 		border-radius:crad;
 		overflow:hidden;
-		&>tbody>tr{
-			&:first-child>.cell{
-				border-top:none;
-			}
-			&>.cell:first-child{
-				background-color:bg3_5;
-			}
-			&>.cell:last-child{
-				background-color:bg3;
-			}
+		tbody,tr{
+			display:contents;
 		}
-	}
-	#page-mod-quiz-view table.quizattemptsummary tr.bestrow td{
-		border-color:brd;
-		background-color:bg2;
-	}
-	.quizattemptsummary>thead>tr>th{
-		border-bottom:none;
+		th.cell,
+		td.cell{
+			border:none;
+			margin-bottom:1px;
+			padding:0.25em 1em;
+			width:auto;
+			text-align:start;
+		}
+		.cell:first-child{
+			background-color:bg4;
+			padding-left:0.75em;
+		}
+		.cell:last-child{
+			background-color:bg3;
+			padding-right:0.75em;
+		}
+		tr:last-child .cell{
+			margin-bottom:0;
+		}
+		p{
+			margin-bottom:0;
+		}
 	}
 	.answer>input[type="text"]{	
 		background-color:bg4;
@@ -3215,21 +3442,6 @@ urlenc(x){
 		border-color:brd;
 		border-radius:irad;
 		color:txt;
-	}
-	.submitbtns{
-		& button[type="submit"].btn,
-		& input[type="submit"].btn{
-			background-color:bg3;
-			border-radius:irad;
-			&.mod_quiz-next-nav{
-				background-color:btn;
-				border-color:btn;
-			}
-			&.btn.mod_quiz-next-nav:hover{
-				background-color:hbtn;
-				border-color:hbtn;
-			}
-		}
 	}
 	#quiz-timer-wrapper #quiz-timer{
 		border-color:hidk;
@@ -3332,8 +3544,36 @@ urlenc(x){
 	.path-mod-studentquiz .mod-studentquiz-summary-highlight{
 		background-color:bg3;
 	}
+	/*summary table of quiz attempts*/
+	#page-mod-quiz-view table.quizattemptsummary{
+		display:grid;
+		grid-template-columns:0fr;
+		border-radius:crad;
+		overflow:clip;
+		thead,tbody,tr{
+			display:contents;
+		}
+		th{
+			grid-row:1;
+			background-color:bg4;
+			border:none;
+		}
+		td{
+			background-color:bg3;
+			border:none;
+			margin-top:1px;
+		}
+		td:first-child,
+		th:first-child{
+			border-left:solid crad bg4;
+		}
+		tr.bestrow td{
+			border-color:btn;
+			background-color:bg3;
+		}
+	}
 }
-@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/user\\/index\\.php.*") {
+@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/user\\/index\\.php.*"), regexp("https?:\\/\\/moodle\\.necode\\.it\\/user\\/index\\.php.*") {
 	.filter-group{
 		border:none !important;
 		border-radius:irad;
@@ -3344,13 +3584,13 @@ urlenc(x){
 		}
 	}
 }
-@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/mod\\/lesson\\/view\\.php.*") {
+@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/mod\\/lesson\\/view\\.php.*"), regexp("https?:\\/\\/moodle\\.necode\\.it\\/mod\\/lesson\\/view\\.php.*") {
 	.no-overflow img[role="presentation"]{
 		width:100%;
 		margin:0;
 	}
 }
-@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/mod\\/studentquiz\\/view\\.php.*") {
+@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/mod\\/studentquiz\\/view\\.php.*"), regexp("https?:\\/\\/moodle\\.necode\\.it\\/mod\\/studentquiz\\/view\\.php.*") {
 	#categoryquestions{
 		//table head
 		& thead,
@@ -3471,7 +3711,7 @@ urlenc(x){
 		}
 	}
 }
-@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/mod\\/studentquiz\\/(attempt|commenthistory)\\.php.*"){
+@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/mod\\/studentquiz\\/(attempt|commenthistory)\\.php.*"), regexp("https?:\\/\\/moodle\\.necode\\.it\\/mod\\/studentquiz\\/(attempt|commenthistory)\\.php.*"){
 	svg[width="100%"] rect{
 		&:first-of-type{
 			fill:bg3 !important;
@@ -3581,7 +3821,7 @@ urlenc(x){
 		filter:contrast(0.1) saturate(10) brightness(0.8) hue-rotate(-30deg);
 	}
 }
-@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/login\\/index\\.php.*"){
+@-moz-document regexp("https?:\\/\\/elearning\\.tgm\\.ac\\.at\\/login\\/index\\.php.*"), regexp("https?:\\/\\/moodle\\.necode\\.it\\/login\\/index\\.php.*"){
 	.pagelayout-login #page{
 		background-image:none;
 	}
